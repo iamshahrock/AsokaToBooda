@@ -42,7 +42,7 @@ $("photo").addEventListener("change",async e=>{if(photoUrl){URL.revokeObjectURL(
 $("idea").addEventListener("input",()=>$("count").textContent=$("idea").value.length);
 function cover(ctx,img,x,y,w,h){const s=Math.max(w/img.width,h/img.height),sw=img.width*s,sh=img.height*s;ctx.drawImage(img,x+(w-sw)/2,y+(h-sh)/2,sw,sh)}
 function wrap(ctx,text,x,y,max,lineH){const words=text.split(/\s+/);let line="",yy=y;for(const word of words){const test=line+word+" ";if(ctx.measureText(test).width>max&&line){ctx.fillText(line.trim(),x,yy);line=word+" ";yy+=lineH}else line=test}if(line)ctx.fillText(line.trim(),x,yy)}
-const POSTER_API_URL = "https://asokatobooda.iamsharck.workers.dev";
+const POSTER_API_URL = "https://asokatobooda.iamshahrock.workers.dev";
 $("make").onclick=async()=>{
   if(sel.value!=="bauua"){updatePack();return}
   const photoFile=$("photo").files?.[0];
