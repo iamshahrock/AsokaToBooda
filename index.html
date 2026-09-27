@@ -52,18 +52,38 @@ $("make").onclick=async()=>{
   $("createStatus").textContent="Preparing your photo and the ZERO reference artwork…";
   try {
     const form=new FormData();
+    const chosenGenre=$("genre").value;
+    const genreDirection={
+      "Fantasy / Surreal":"Use impossible, dreamlike imagery and visual wonder, but keep the ZERO/Bauua world unmistakable.",
+      "Action":"Use dynamic action, movement, danger and cinematic scale without changing the characters or film universe.",
+      "Romance":"Use emotional intimacy, expressive composition and romantic lighting while retaining ZERO-specific world details.",
+      "Comedy":"Use playful visual timing and whimsical expressions, not random animals or unrelated slapstick.",
+      "Thriller":"Use suspense, shadows and tension while preserving recognizable ZERO/Bauua character and world cues.",
+      "Sci-fi":"Use science-fiction spectacle only within ZERO's established visual world; do not default to a generic spaceship or astronaut design.",
+      "Mythic / Historical":"Apply mythic grandeur and symbolic staging without replacing the film's characters, setting identity or costumes.",
+      "Drama":"Prioritize human emotion, character relationships and a dramatic theatrical composition rooted in ZERO.",
+      "Horror":"Use eerie atmosphere and controlled horror lighting, but do not transform Bauua into a monster, animal or unrelated creature.",
+      "Musical":"Use expressive rhythm, color, movement and theatrical staging while preserving ZERO's visual identity."
+    };
+    const coStarCount=Number($("costars").value);
+    const coStarRule=coStarCount===0
+      ?"Show only the fan protagonist as the newly introduced human character; do not invent any additional foreground co-stars."
+      : "Include exactly "+coStarCount+" additional co-star character(s) beside or around the fan protagonist. Keep them visually distinct and secondary to the fan protagonist. Do not substitute animals, props, clones, or background extras for the requested co-stars.";
+    const story=$("idea").value.trim();
     const prompt=[
-      "Create one original, high-end cinematic vertical movie poster (2:3 portrait composition) that is unmistakably set in the specific world of the 2018 film ZERO and its character Bauua Singh. This is a ZERO/Bauua fan poster, not a generic space-adventure or generic monkey poster.",
-      "REFERENCE PRIORITY IS CRITICAL: The user's uploaded photo is the identity reference for the fan protagonist. The FIRST supplied film artwork reference (the original ZERO theatrical poster) is the primary visual and story anchor. Closely preserve recognizable ZERO-specific visual language, locations, costume styling, surreal world, color palette, scale relationships, and Bauua Singh's character design from that original poster and the supplied Bauua references. Use the remaining supplied images as supporting references, not as replacements for the original ZERO poster.",
-      "Bauua Singh is a human adult male character, short in stature, with the recognizable styling and appearance shown in the supplied ZERO/Bauua references. Do not turn Bauua into a monkey, ape, animal, astronaut, or unrelated character. Do not make a monkey the main subject. If a monkey appears in the supplied reference material, it may appear only as a small secondary background element when appropriate to the user's story; it must never replace Bauua or the ZERO film world.",
-      "Compose a new scene that combines the user's photo as the central fan protagonist WITH clear, immediately recognizable ZERO/Bauua-specific elements from the primary film reference. The poster should visibly communicate ZERO and Bauua Singh even to someone familiar with the film. Do not discard, generalize, or ignore the supplied original ZERO poster or Bauua references. Do not create a generic science-fiction scene that merely borrows one animal from a reference.",
-      "Invent a fresh cinematic moment, with dramatic theatrical lighting and polished film-poster composition, while retaining the recognizable ZERO/Bauua visual identity. Do not simply paste a face onto the original poster or copy the original layout exactly.",
-      "Do not render readable text, logos, billing blocks, watermarks, or celebrity likenesses other than the person in the user's uploaded photo. Leave clear negative space near the lower quarter for title typography that the website may add separately only if needed.",
-      "Genre: "+$("genre").value+". Requested number of co-stars: "+$("costars").value+". User's story idea: "+$("idea").value.trim(),
-      "Final quality check before returning the image: (1) the fan's uploaded face is the central protagonist; (2) the scene clearly retains ZERO's visual world and Bauua Singh's human character identity; (3) no monkey or other animal has replaced Bauua; (4) the user's requested genre and story idea are represented. If any condition is missing, revise the image before returning it. Output one single image."
+      "TASK: Create one original, high-end vertical 2:3 theatrical fan poster in the recognizable visual universe of the 2018 film ZERO, featuring Bauua Singh. This is not a generic space film.",
+      "IMAGE INPUT MAP AND PRIORITY: Image 1 is the original ZERO theatrical poster and is the PRIMARY film-world/composition reference. Images 2–7 are supplementary Bauua/ZERO visual references. The final image input is the user's personal photo and is the PRIMARY identity reference for the fan protagonist. Do not confuse these roles.",
+      "NON-NEGOTIABLE FILM IDENTITY: Retain unmistakable ZERO-specific visual cues from the original poster and supplementary references: Bauua Singh's recognizable HUMAN character design and stature, the film's distinctive costume/prop/setting language, surreal scale and visual motifs, and the relevant color and lighting vocabulary. Create a new scene, but keep the world recognizable to a viewer who knows ZERO.",
+      "NON-NEGOTIABLE CHARACTER RULE: Bauua Singh is a human adult male character. Never depict or replace Bauua with a monkey, ape, animal, alien, astronaut, or unrelated character. A monkey must not be the lead, must not stand in for Bauua, and must not dominate the composition. Do not infer that an animal appearing in a reference is the film's protagonist.",
+      "FAN IDENTITY RULE: Use the user's uploaded photo to portray the fan as the central new protagonist. Preserve their recognizable face, skin tone, age presentation, and natural features; do not turn them into Bauua or another celebrity. Integrate them naturally into the ZERO scene with matching lighting, perspective, scale and costume styling.",
+      "CO-STAR CONDITION: "+coStarRule,
+      "GENRE CONDITION: The selected genre is "+chosenGenre+". "+(genreDirection[chosenGenre]||"Apply the selected genre through atmosphere, lighting and scene action without changing film identity."),
+      "USER STORY CONDITION: Represent this story idea visually, using it to determine the action, emotional beat, setting and relationship: "+story,
+      "COMPOSITION AND QUALITY: Invent a fresh scene rather than copying the source poster or pasting a face onto it. The fan protagonist must be clearly visible and central; Bauua and ZERO-specific elements must remain clearly recognizable. Use professional theatrical lighting, coherent anatomy, natural hands, consistent perspective, detailed production design and polished key-art composition. Leave the lower quarter relatively uncluttered for title treatment.",
+      "DO NOT: create a generic outer-space scene; discard the supplied ZERO poster; make the monkey the hero; add unrequested foreground characters; replace the user's face; copy-paste a supplied poster; render text, logos, billing blocks or watermarks; add celebrity likenesses other than characters represented by the supplied licensed/approved references.",
+      "FINAL ACCEPTANCE CHECK: Before returning the single image, verify all of the following: (1) fan's face is recognizable and central; (2) Bauua is human and not replaced by an animal; (3) multiple recognizable ZERO/Bauua visual cues remain; (4) exactly the requested number of additional co-stars appears; (5) the chosen genre and user's story idea are visibly expressed. Film identity and character rules take priority over decorative genre inventions."
     ].join("\n\n");
     form.append("prompt",prompt);
-    form.append("image",photoFile,photoFile.name||"user-photo.jpg");
     $("createStatus").textContent="Loading the installed ZERO visual references…";
     for(const path of ["00-zero-original-poster.jpeg","01-bauua-surreal-reference.png","02-bauua-surreal-reference.png","03-bauua-surreal-reference.png","04-bauua-surreal-reference.png","05-bauua-surreal-reference.png","06-bauua-surreal-reference.png"]){
       const response=await fetch(new URL("Bauua%20Raw%20Material/"+encodeURIComponent(path),document.baseURI));
@@ -71,6 +91,9 @@ $("make").onclick=async()=>{
       const blob=await response.blob();
       form.append("image",blob,path);
     }
+    // Send references first: the original ZERO poster is the primary visual anchor.
+    // The user's photo follows as the identity reference, never as the film-world anchor.
+    form.append("image",photoFile,photoFile.name||"user-photo.jpg");
     $("createStatus").textContent="Generating your original AI poster. This can take a minute—please keep this page open…";
     const response=await fetch(POSTER_API_URL,{method:"POST",body:form});
     let data={};try{data=await response.json()}catch{}
