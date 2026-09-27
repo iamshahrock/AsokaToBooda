@@ -20,3 +20,8 @@ Open `index.html` in a modern browser, or enable GitHub Pages for this repositor
 5. Wait for GitHub Pages to publish; the site URL will appear in the Pages section.
 
 This is a front-end demo. Timer, poster creation, and crown status are local and do not constitute a verified contest or prize entry. No backend, account system, matchmaking, or shared leaderboard is included yet.
+
+
+## Latest test build
+- Story prompt limit: 555 characters.
+- Build trigger: GitHub Actions deploys the `main` branch to GitHub Pages on each push.
