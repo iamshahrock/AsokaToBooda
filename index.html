@@ -42,19 +42,55 @@ $("photo").addEventListener("change",async e=>{if(photoUrl){URL.revokeObjectURL(
 $("idea").addEventListener("input",()=>$("count").textContent=$("idea").value.length);
 function cover(ctx,img,x,y,w,h){const s=Math.max(w/img.width,h/img.height),sw=img.width*s,sh=img.height*s;ctx.drawImage(img,x+(w-sw)/2,y+(h-sh)/2,sw,sh)}
 function wrap(ctx,text,x,y,max,lineH){const words=text.split(/\s+/);let line="",yy=y;for(const word of words){const test=line+word+" ";if(ctx.measureText(test).width>max&&line){ctx.fillText(line.trim(),x,yy);line=word+" ";yy+=lineH}else line=test}if(line)ctx.fillText(line.trim(),x,yy)}
-$("make").onclick=async()=>{if(sel.value!=="bauua"){updatePack();return}if(!photoUrl){$("createStatus").textContent="Upload your own photo to become the protagonist.";return}if(!$("idea").value.trim()){$("createStatus").textContent="Write your story twist first.";return}
-$("make").disabled=true;$("createStatus").textContent="Creating your poster from the automatically loaded ZERO artwork and your photo…";
-try{const face=await loadImage(photoUrl);let bg=null,refs=[];try{bg=await loadImage(assetUrl("00-zero-original-poster.jpeg"));refs=await Promise.all(bauuaAssets.slice(1).map(n=>loadImage(assetUrl(n))))}catch(assetErr){console.warn("Could not load all source artwork; using a branded original canvas background",assetErr)}const c=document.createElement("canvas");c.width=900;c.height=1200;const x=c.getContext("2d");if(bg)cover(x,bg,0,0,900,1200);else{const grad=x.createLinearGradient(0,0,900,1200);grad.addColorStop(0,"#39250d");grad.addColorStop(.55,"#110d17");grad.addColorStop(1,"#030303");x.fillStyle=grad;x.fillRect(0,0,900,1200);x.strokeStyle="#e8bf63";x.lineWidth=8;x.strokeRect(25,25,850,1150)}x.fillStyle="rgba(5,4,9,.36)";x.fillRect(0,0,900,1200);
-// Poster portrait and royal frame
-x.save();x.shadowColor="#000";x.shadowBlur=35;x.beginPath();x.ellipse(450,420,215,265,0,0,Math.PI*2);x.clip();cover(x,face,235,155,430,530);x.restore();x.strokeStyle="#efc66c";x.lineWidth=10;x.beginPath();x.ellipse(450,420,226,276,0,0,Math.PI*2);x.stroke();
-// surreal visual motifs from the preloaded pack
-refs.forEach((im,i)=>{const w=112,h=125,xx=18+i*126,yy=1005;x.save();x.globalAlpha=.9;x.drawImage(im,xx,yy,w,h);x.strokeStyle="#e8bf63";x.lineWidth=3;x.strokeRect(xx,yy,w,h);x.restore()});
-x.fillStyle="#e9b5a1";x.beginPath();x.arc(145,300,62,0,Math.PI*2);x.fill();x.strokeStyle="#fff0b9";x.lineWidth=3;x.beginPath();x.ellipse(145,300,90,25,-.45,0,Math.PI*2);x.stroke();
-x.textAlign="center";x.fillStyle="#f1d18a";x.font="bold 25px Georgia";x.fillText($("genre").value.toUpperCase()+" · GHOST OF THE TIMELESS PRESENT",450,770);x.fillStyle="#fff";x.font="bold 88px Georgia";x.fillText("BAUUA",450,885);x.fillStyle="#e8bf63";x.font="bold 34px Arial";x.fillText("BECOMES KING",450,935);x.fillStyle="#fff";x.font="25px Arial";wrap(x,"“"+$("idea").value.trim()+"”",450,970,760,32);x.fillStyle="#e8bf63";x.font="bold 22px Arial";x.fillText($("genre").value.toUpperCase()+" · CO-STARS: "+$("costars").value+" · ZERO REIMAGINED",450,1180);x.textAlign="left";
-c.toBlob(blob=>{if(!blob){$("createStatus").textContent="Poster creation failed. Try another photo.";$("make").disabled=false;return}posterBlob=blob;if(posterUrl)URL.revokeObjectURL(posterUrl);posterUrl=URL.createObjectURL(blob);$("poster").innerHTML="";const img=document.createElement("img");img.src=posterUrl;img.alt="Your personalised Bauua KING poster";$("poster").append(img);$("download").disabled=$("share").disabled=false;$("challengeCard").classList.remove("hidden");$("gameStatus").textContent="Poster created! This poster is your player identity. Start the challenge whenever you're ready.";$("createStatus").textContent="Your poster is ready. No timer was used. Scroll down and press BEGIN ROYAL CHALLENGE when you want to start.";$("make").disabled=false;$("challengeCard").scrollIntoView({behavior:"smooth",block:"start"})},"image/png")
-}catch(err){$("createStatus").textContent="The bundled film artwork could not be loaded. Check the GitHub Pages deployment, then try again.";$("make").disabled=false}};
-$("download").onclick=()=>{if(!posterBlob)return;const a=document.createElement("a");a.href=posterUrl;a.download="agar-main-king-hota-bauua-poster.png";a.click()};
-$("share").onclick=async()=>{if(!posterBlob)return;const f=new File([posterBlob],"bauua-king-poster.png",{type:"image/png"});if(navigator.canShare?.({files:[f]})){try{await navigator.share({files:[f],title:"Agar Main King Hota · Bauua",text:"Your face. Your kingdom. Your story. #AgarMainKingHota"})}catch(e){}}else $("createStatus").textContent="Direct sharing isn't supported by this browser. Download the poster to share it."};
+const POSTER_API_URL = "https://asokatobooda.iamsharck.workers.dev";
+$("make").onclick=async()=>{
+  if(sel.value!=="bauua"){updatePack();return}
+  const photoFile=$("photo").files?.[0];
+  if(!photoFile){$("createStatus").textContent="Upload your own photo to become the protagonist.";return}
+  if(!$("idea").value.trim()){$("createStatus").textContent="Write your story twist first.";return}
+  $("make").disabled=true;
+  $("createStatus").textContent="Preparing your photo and the ZERO reference artwork…";
+  try {
+    const form=new FormData();
+    const prompt=[
+      "Create one original, high-end cinematic vertical movie poster (2:3 portrait composition) for a fan-made creative project inspired by the fictional ZERO/Bauua Singh universe.",
+      "Use the uploaded personal photo as the central protagonist reference, preserving the person's recognizable facial identity and natural appearance. Treat the other supplied images as visual inspiration for surreal atmosphere, color, visual motifs and world-building—not as a layout to copy.",
+      "Invent a genuinely new cinematic scene with dramatic lighting, sophisticated film-poster composition, rich surreal detail, polished theatrical key art. Do not simply paste a face onto a poster or reproduce any supplied poster.",
+      "Do not render readable text, logos, billing blocks, watermarks, or celebrity likenesses other than the person in the user's uploaded photo. Leave clear negative space near the lower quarter for title typography that the website may add separately only if needed.",
+      "Genre: "+$("genre").value+". Co-star count requested: "+$("costars").value+". User's story idea: "+$("idea").value.trim(),
+      "The result must be a fresh, original visual interpretation based on the user photo and supplied reference images. Output a single image."
+    ].join("\n\n");
+    form.append("prompt",prompt);
+    form.append("image",photoFile,photoFile.name||"user-photo.jpg");
+    $("createStatus").textContent="Loading the installed ZERO visual references…";
+    for(const path of ["00-zero-original-poster.jpeg","01-bauua-surreal-reference.png","02-bauua-surreal-reference.png","03-bauua-surreal-reference.png","04-bauua-surreal-reference.png","05-bauua-surreal-reference.png","06-bauua-surreal-reference.png"]){
+      const response=await fetch(new URL("Bauua%20Raw%20Material/"+encodeURIComponent(path),document.baseURI));
+      if(!response.ok) throw new Error("Could not load the ZERO artwork pack ("+path+"). Check that GitHub Pages has finished publishing.");
+      const blob=await response.blob();
+      form.append("image",blob,path);
+    }
+    $("createStatus").textContent="Generating your original AI poster. This can take a minute—please keep this page open…";
+    const response=await fetch(POSTER_API_URL,{method:"POST",body:form});
+    let data={};try{data=await response.json()}catch{}
+    if(!response.ok) throw new Error(data.error||("Poster service returned error "+response.status+"."));
+    if(!data.image) throw new Error("The image service returned no poster. Please try again.");
+    const raw=atob(data.image),bytes=new Uint8Array(raw.length);
+    for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+    posterBlob=new Blob([bytes],{type:"image/png"});
+    if(posterUrl)URL.revokeObjectURL(posterUrl);
+    posterUrl=URL.createObjectURL(posterBlob);
+    $("poster").innerHTML="";
+    const img=document.createElement("img");img.src=posterUrl;img.alt="AI-generated personalised ZERO/Bauua cinematic poster";$("poster").append(img);
+    $("download").disabled=$("share").disabled=false;
+    $("challengeCard").classList.remove("hidden");
+    $("gameStatus").textContent="AI poster created! Your poster is your player identity. Start the challenge whenever you're ready.";
+    $("createStatus").textContent="Your original AI poster is ready. No timer was used. Scroll down and press BEGIN ROYAL CHALLENGE when you want to start.";
+    $("posterNote").textContent="AI-generated image created from your uploaded photo and the installed ZERO visual reference pack. Image generation may incur OpenAI API charges.";
+    $("challengeCard").scrollIntoView({behavior:"smooth",block:"start"});
+  } catch(err) {
+    $("createStatus").textContent=err.message||"Poster generation failed. Please try again.";
+  } finally {$("make").disabled=sel.value!=="bauua";}
+};
 function showRound(){const r=rounds[round];$("roundLabel").textContent="ROUND "+(round+1)+" / 4";$("challengeTitle").textContent=r.title;$("challengeText").textContent=r.text;$("choices").innerHTML="";r.choices.forEach(([label,pts])=>{const b=document.createElement("button");b.className="choice";b.textContent=label;b.onclick=()=>pick(pts,b);$("choices").append(b)});if(round===2&&!twistUsed){twistUsed=true;$("feedback").textContent="SURPRISE TWIST: The rules just changed. Adaptation matters."}else $("feedback").textContent=""}
 function pick(pts,button){if(!gameActive||choiceLocked)return;choiceLocked=true;score+=pts;[...$("choices").children].forEach(b=>b.disabled=true);button.style.borderColor="#e8bf63";$("feedback").textContent="Decision locked · +"+pts+" points";setTimeout(()=>{if(!gameActive)return;if(round<3&&timeLeft>0){round++;choiceLocked=false;showRound()}else endGame(false)},650)}
 function startGame(){clearInterval(gameTimer);timeLeft=60;round=0;score=0;twistUsed=false;choiceLocked=false;gameActive=true;$("timer").style.display="inline-block";$("begin").classList.add("hidden");$("playAgain").classList.add("hidden");$("gameStatus").textContent="The clock is live. Make your royal decisions!";showRound();$("timer").textContent="01:00";$("timebar").style.width="100%";gameTimer=setInterval(()=>{timeLeft--; $("timer").textContent="00:"+String(timeLeft).padStart(2,"0");$("timebar").style.width=(timeLeft/60*100)+"%";if(timeLeft<=0)endGame(true)},1000)}
