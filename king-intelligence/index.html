@@ -41,6 +41,23 @@
 .summary-items{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
 .summary-items span{padding:7px 9px;border:1px solid rgba(255,255,255,.07);border-radius:7px;font-size:10px}
 @media(max-width:900px){.conversation-grid{grid-template-columns:1fr}}
+<style>
+.conversation-ledger{font-size:10px}
+.conversation-ledger th{font-size:9px;letter-spacing:.05em}
+.conversation-ledger td{vertical-align:top;line-height:1.42}
+.conversation-ledger td:nth-child(1){white-space:nowrap;width:8%}
+.conversation-ledger td:nth-child(2){width:18%}
+.conversation-ledger td:nth-child(3){width:30%;font-weight:500}
+.conversation-ledger td:nth-child(4){width:24%}
+.conversation-ledger td:nth-child(5){width:20%;white-space:normal}
+.conversation-readout{margin-top:10px;border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:13px}
+.readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.readout-grid div{padding:9px;border:1px solid rgba(255,255,255,.06);border-radius:7px}
+.readout-grid b{display:block;font-size:10px;margin-bottom:4px}
+.readout-grid span{display:block;font-size:10px;line-height:1.4;opacity:.7}
+@media(max-width:1100px){.readout-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.readout-grid{grid-template-columns:1fr}.conversation-ledger{font-size:9px}.conversation-ledger th,.conversation-ledger td{padding:6px}}
+</style>
 </style>
 </style>
 </style>
@@ -59,71 +76,39 @@
 
 <div class="card full" id="fan-sentiment-top">
 <h2>WHAT FANS ARE TALKING ABOUT</h2>
-<div class="note"><b>LIVE PUBLIC CONVERSATION SIGNALS · 05 OCT 2026</b> — actual fan language and engagement from indexed public fan feeds. The board shows representative high-signal posts; it does not invent a topic-volume denominator where the source does not provide one.</div>
+<div class="note"><b>05 OCTOBER 2026 · PUBLIC FAN CONVERSATION LEDGER</b> — actual indexed posts, exact language, account, geography, audience footprint and visible interaction data. This is the conversation itself, not a sentiment score.</div>
 
-<div class="conversation-grid">
-<div class="conversation-card">
-<div class="conversation-topic">KING · FDFS / THEATRE MOBILISATION</div>
-<div class="conversation-source">SRK FC Pune · @SRKFC_PUNE</div>
-<div class="conversation-quote">“PUNE, ARE YOU READY? The KING is coming! Join SRK FC Pune for the FIRST DAY FIRST SHOW of #KING!”</div>
-<div class="conversation-metrics"><b>24,700</b> followers · <b>142,800</b> posts · post surfaced with <b>1,000+</b> views</div>
-<div class="conversation-read">Fans are already organising the theatrical experience, not waiting for the film campaign to tell them what to do.</div>
-</div>
+<table class="conversation-ledger">
+<thead><tr><th>WHEN</th><th>WHO / WHERE</th><th>WHAT THEY SAID</th><th>WHAT THEY ARE TALKING ABOUT</th><th>VISIBLE SIGNAL</th></tr></thead>
+<tbody>
+<tr><td>20 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune · 24,700 followers · 142,800 posts</td><td>“PUNE, ARE YOU READY? The KING is coming! … Join SRK FC Pune for the FIRST DAY FIRST SHOW of #KING!”</td><td><b>FDFS / theatre mobilisation</b><br>Bookings and local coordination.</td><td>2 replies · 31 reposts · 10 likes · 1 bookmark · 1,000 views</td></tr>
+<tr><td>6 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“We Want Don3 with SRK”</td><td><b>Future SRK demand</b><br>Fans are extending the conversation beyond KING.</td><td>0 replies · 291 reposts · 34 likes · 4 bookmarks · 3,000 views</td></tr>
+<tr><td>6 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“Humble appeal to @FarOutAkhtar on behalf of all SRKians - Sir, We Want Don 3 and we want to see you and @iamsrk collaborating on this project!”</td><td><b>Collective demand / franchise pressure</b></td><td>1 reply · 320 reposts · 67 likes · 7 bookmarks · 15,000 views</td></tr>
+<tr><td>6 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“34 DAYS TO GO! … 2 NOVEMBER — The King’s Day. Are you ready, SRKIANS?”</td><td><b>SRK Day / birthday mobilisation</b></td><td>0 replies · 51 reposts · 12 likes · 1 bookmark · 818 views</td></tr>
+<tr><td>11 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“READY for the KING 👑” — amplifying Red Chillies’ “The countdown to DEHSHAT has begun… #KING is ready to ROAR on 24.12.2026.”</td><td><b>Countdown / campaign language</b></td><td>101 replies · 4,000 reposts · 863 likes · 56 bookmarks · 110,000 views on the amplified source post</td></tr>
+<tr><td>4 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club · 74,200 followers · 74,600 posts</td><td>“3 MONTHS TO KING 👑 The countdown is ON … Introducing the SRK Warriors Information Portal - latest SRK updates + a daily newsletter…”</td><td><b>Fan information infrastructure</b><br>Moving fans from social followers into a owned information channel.</td><td>9 replies · 147 reposts · 67 likes · 5 bookmarks · 2,000 views</td></tr>
+<tr><td>2 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club</td><td>“Never miss an update on Shah Rukh Khan &amp; KING. Register now and get daily newsletter in your inbox.”</td><td><b>Retention / database building</b></td><td>4 replies · 189 reposts · 48 likes · 9 bookmarks · 2,000 views</td></tr>
+<tr><td>7 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club</td><td>“Kolkata SRK Warriors have officially entered the KING era! … the city of joy is now roaring for its KING as the promotions begin!”</td><td><b>City-level activation</b><br>Kolkata moving from fandom into local promotion.</td><td>2 replies · 92 reposts · 28 likes · 2 bookmarks · 2,000 views</td></tr>
+<tr><td>8 days ago</td><td><b>@TeamSRKWarriors</b><br>Global / international</td><td>“🇦🇿❤️🇮🇳 From Azerbaijan to Mannat! Shah Rukh Khan fans travel across borders to stand outside the home of their King…”</td><td><b>International pilgrimage / physical fandom</b></td><td>1 reply · 410 reposts · 110 likes · 11 bookmarks · 5,000 views</td></tr>
+<tr><td>14 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club</td><td>“33 years later on the same date but this time Darr nahi Deshshat hogi 🔥🔥 KING ROARS IN 100 DAYS”</td><td><b>Legacy / release mythology</b><br>Connecting KING to SRK history.</td><td>0 replies · 182 reposts · 56 likes · 10 bookmarks · 7,000 views</td></tr>
+<tr><td>about 14 hours ago</td><td><b>@Samim_Srkians</b><br>Patna · 280 followers · 30,300 posts</td><td>“#KING Teaser Leaked … upcoming movie KING Teaser leak Real Or Ai?”</td><td><b>Leak / authenticity anxiety</b><br>A distinct risk conversation inside the fan ecosystem.</td><td>6 replies · 191 reposts · 20 likes · 11 bookmarks · 13,000 views</td></tr>
+<tr><td>6 days ago</td><td><b>@Samim_Srkians</b><br>Patna</td><td>“#EXCLUSIVE UPDATE: #KING TEASER … could get its full-fledged teaser in November… 2 November — SRK’s Birthday…”</td><td><b>Teaser timing speculation</b><br>Birthday-to-KING conversion is already being discussed.</td><td>0 replies · 82 reposts · 4 likes · 1 bookmark · 5,000 views</td></tr>
+<tr><td>6 days ago</td><td><b>@Samim_Srkians</b><br>Patna</td><td>“hope it's fake” — responding to the KING teaser-leak conversation.</td><td><b>Trust / leak verification</b></td><td>0 replies · 0 reposts · 0 likes · 0 bookmarks · 522 views</td></tr>
+<tr><td>6 days ago</td><td><b>@Samim_Srkians</b><br>Patna</td><td>“kyu pada hai srk k chakkar me koi nahi hai Takkar me”</td><td><b>Competitive fan identity</b><br>SRK positioned against rival-star discourse.</td><td>0 replies · 20 reposts · 1 like · 0 bookmarks · 861 views</td></tr>
+</tbody></table>
 
-<div class="conversation-card">
-<div class="conversation-topic">KING · CONTENT DEMAND</div>
-<div class="conversation-source">SRKUniverse · @SRKUniverse</div>
-<div class="conversation-quote">“Sir please give some dialogue from King? We can’t wait anymore to hear from you!! December is still so far away!!!”</div>
-<div class="conversation-metrics"><b>29,000</b> views · <b>35</b> likes · <b>7</b> replies</div>
-<div class="conversation-read">The audience is asking for more story material: dialogue, trailer and glimpses before release.</div>
-</div>
-
-<div class="conversation-card">
-<div class="conversation-topic">KING · MUSIC SPECULATION</div>
-<div class="conversation-source">SRK FC Pune · @SRKFC_PUNE</div>
-<div class="conversation-quote">“Just imagine a song like Jhoome Jo Pathaan in King 🔥”</div>
-<div class="conversation-metrics">Fan speculation · no reliable post-volume denominator exposed</div>
-<div class="conversation-read">Music is already being used as a memory bridge to the Pathaan-era SRK mass experience.</div>
-</div>
-
-<div class="conversation-card">
-<div class="conversation-topic">SRK · NEXT FILM DEMAND</div>
-<div class="conversation-source">SRK FC Pune · @SRKFC_PUNE</div>
-<div class="conversation-quote">“We Want Don3 with SRK”</div>
-<div class="conversation-metrics"><b>2,000</b> views · <b>259</b> likes · <b>32</b> replies</div>
-<div class="conversation-read">The fan conversation is extending beyond KING into demands for what SRK should do next.</div>
-</div>
-
-<div class="conversation-card">
-<div class="conversation-topic">SRK · BIRTHDAY / COMMUNITY RITUAL</div>
-<div class="conversation-source">SRK Hooghly Fan Club · @srkhooghlyfans</div>
-<div class="conversation-quote">“The most special day of the year for us SRKians… is just 50 DAYS AWAY! Are you excited?”</div>
-<div class="conversation-metrics">Current indexed post · <b>477</b> followers · <b>26,200</b> posts</div>
-<div class="conversation-read">The fan calendar is not only KING: birthday rituals and Mannat Yatra are becoming a parallel mobilisation engine.</div>
-</div>
-
-<div class="conversation-card">
-<div class="conversation-topic">KING · RELEASE IDENTITY</div>
-<div class="conversation-source">Red Chillies Entertainment · amplified by SRK FC Pune</div>
-<div class="conversation-quote">“The ROAR says it all. KING akela hi kaafi hai … 24.12.2026 in cinemas.”</div>
-<div class="conversation-metrics"><b>184,000</b> views · <b>9,000</b> likes · <b>1,000</b> comments · <b>138</b> reposts</div>
-<div class="conversation-read">“Roar” and “KING akela hi kaafi hai” are becoming campaign language that fan accounts repeat and operationalise.</div>
-</div>
-</div>
-
-<div class="conversation-summary">
-<div><b>THE CONVERSATION IN ONE SCREEN</b></div>
-<div class="summary-items">
-<span><b>WAITING FOR:</b> dialogue · trailer · new footage</span>
-<span><b>ORGANISING:</b> FDFS · theatre groups · fan events</span>
-<span><b>SPECULATING:</b> music · songs · character / content</span>
-<span><b>EXTENDING:</b> Don3 · SRK's next moves</span>
-<span><b>RITUALISING:</b> SRK Day · Mannat Yatra · community events</span>
-<span><b>AMPLIFYING:</b> “ROAR” · “KING” · “KING akela hi kaafi hai”</span>
-</div>
-</div>
-
-<div class="note"><b>Important:</b> these are actual surfaced public posts, not a manufactured sentiment survey. Where the source exposes engagement, the exact engagement is shown. Where it does not expose a defensible count, the dashboard says so rather than inventing one.</div>
+<div class="conversation-readout">
+<div><b>WHAT IS ACTUALLY EMERGING</b></div>
+<div class="readout-grid">
+<div><b>1 · FDFS</b><span>Fans are organising theatres and registrations before release.</span></div>
+<div><b>2 · MORE CONTENT</b><span>Dialogue, teaser, poster and footage are being actively demanded.</span></div>
+<div><b>3 · TEASER TIMING</b><span>November and especially 2 November are being discussed as a possible conversion moment.</span></div>
+<div><b>4 · FAN INFRASTRUCTURE</b><span>Fan clubs are building portals, newsletters and local databases—not just posting.</span></div>
+<div><b>5 · GLOBAL PHYSICAL FANDOM</b><span>Azerbaijan → Mannat and Kolkata activation show geographic participation.</span></div>
+<div><b>6 · RISK SIGNAL</b><span>AI/leak authenticity is generating its own conversation and needs controlled official clarification.</span></div>
+<div><b>7 · BEYOND KING</b><span>Fans are already asking for DON 3 with SRK; the conversation is about the larger SRK future.</span></div>
+</div></div>
+<div class="note"><b>Interaction fields:</b> reply · repost · like · bookmark · views, as displayed by the indexed X mirror. Audience/post totals are account-level footprints, not unique people. Full post language is retained where it is necessary to understand the signal.</div>
 </div>
 <div class="card full" id="daily-hashtags"><h2>TOP HASHTAGS · DAILY POST COUNT <span class="pill">DAILY MONITOR</span></h2>
 <div class="note">Daily measurement of the number of public posts using the leading SRK × KING hashtags. This is <b>post volume, not unique people</b>. The 04 OCT baseline remains fixed; each new day adds a new observation and change rate.</div>
