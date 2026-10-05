@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KING INTELLIGENCE — Global Observatory</title>
+<meta name="description" content="KING Intelligence — a public-data observatory around Shah Rukh Khan and KING.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;700&family=Playfair+Display:wght@500;700&display=swap');
+:root{--bg:#071018;--panel:#0c1722;--panel2:#101d29;--ink:#eef2f4;--muted:#91a0ab;--line:#29404e;--gold:#d9a441;--red:#e44a3a;--cyan:#55c7dc;--green:#5ed19b;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}.shell{max-width:1600px;margin:auto;padding:0 22px}.mono{font:10px "DM Mono",monospace;letter-spacing:.09em;text-transform:uppercase}.muted{color:var(--muted)}
+header{height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:18px "Playfair Display";letter-spacing:.18em}.brand small{font:9px "DM Mono";display:block;letter-spacing:.1em;color:var(--muted);font-family:"DM Mono"}.nav{display:flex;gap:18px;flex-wrap:wrap}.nav a{color:#bac5cb;text-decoration:none;font:9px "DM Mono";text-transform:uppercase}.nav a:hover{color:var(--gold)}
+.tickerbar{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.ticker{padding:14px 18px;text-decoration:none;color:var(--ink);background:#0a141e;border-right:1px solid var(--line);transition:.2s}.ticker:last-child{border-right:0}.ticker:hover{background:#142332}.ticker .days{font-size:25px;font-weight:700;letter-spacing:-.05em;color:var(--gold)}.ticker .tickerlabel{margin-left:8px}.ticker .sub{display:block;margin-top:5px;color:var(--muted);font:9px "DM Mono"}
+
+.hero{display:grid;grid-template-columns:1.65fr 1fr;min-height:660px;border-bottom:1px solid var(--line)}.hero-map{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 48%,#263746 0,#0c1823 38%,#071018 72%)}.hero-map:before{content:"";position:absolute;width:580px;height:580px;border:1px solid #3b5260;border-radius:50%;box-shadow:0 0 0 55px rgba(85,199,220,.035),0 0 0 110px rgba(217,164,65,.025)}.globe{position:absolute;width:430px;height:430px;border:1px solid #596c77;border-radius:50%;background:radial-gradient(circle at 38% 35%,rgba(217,164,65,.22),transparent 42%);box-shadow:inset -35px -25px 80px #02070b}.globe:before{content:"";position:absolute;inset:70px 35px;border-top:1px solid #38505e;border-bottom:1px solid #38505e;border-radius:50%;transform:rotate(-18deg)}.globe:after{content:"";position:absolute;inset:30px 125px;border-left:1px solid #38505e;border-right:1px solid #38505e;border-radius:50%;transform:rotate(18deg)}.orbit{position:absolute;width:540px;height:330px;border:1px solid rgba(217,164,65,.4);border-radius:50%;transform:rotate(-15deg)}.node{position:absolute;width:150px;text-align:center;padding:10px;border:1px solid var(--line);background:rgba(7,16,24,.9);font:9px "DM Mono";letter-spacing:.06em}.node b{display:block;color:var(--gold);font-size:16px;margin-bottom:5px}.n1{top:12%;left:43%}.n2{top:27%;left:6%}.n3{top:26%;right:5%}.n4{bottom:27%;left:7%}.n5{bottom:24%;right:6%}.n6{bottom:7%;left:43%}.center{position:relative;z-index:2;text-align:center}.center .ey{font:10px "DM Mono";letter-spacing:.25em;color:var(--gold)}.center h1{font:clamp(60px,9vw,120px) "Playfair Display";line-height:.78;margin:12px 0;letter-spacing:.03em}.center p{font:9px "DM Mono";letter-spacing:.17em;color:#b9c3c9}
+.hero-data{padding:26px;background:var(--panel);display:grid;grid-template-rows:auto auto 1fr;gap:22px}.hero-data h2{font-size:28px;line-height:.95;margin:8px 0}.live{display:flex;align-items:center;gap:8px;color:var(--green)}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}.metricline{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}.metricline div{background:var(--panel2);padding:18px}.metricline strong{display:block;font-size:38px;letter-spacing:-.06em}.metricline span{font:9px "DM Mono";color:var(--muted)}.mini-chart{border-top:1px solid var(--line);padding-top:15px}.mini-chart svg{width:100%;height:175px}.grid{stroke:#243b49;stroke-width:1}.line{fill:none;stroke:var(--cyan);stroke-width:3}.line2{fill:none;stroke:var(--gold);stroke-width:2}
+
+.section{border-bottom:1px solid var(--line);padding:38px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-head h2{font:34px "Playfair Display";margin:0}.section-head p{max-width:560px;color:var(--muted);font-size:12px;margin:0}.columns{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.panel{background:var(--panel);border:1px solid var(--line);padding:20px}.panel h3{font-size:16px;margin:0 0 12px}.panel .source{font:9px "DM Mono";color:var(--muted);margin-top:12px}.chart{width:100%;height:230px}.legend{display:flex;gap:15px;flex-wrap:wrap;font:9px "DM Mono";color:var(--muted)}.legend i{display:inline-block;width:8px;height:8px;margin-right:5px}.green{background:var(--green)}.gray{background:#8e9aa2}.red{background:var(--red)}.gold{background:var(--gold)}.cyan{background:var(--cyan)}
+
+.sentiment{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center}.donut{width:170px;height:170px;border-radius:50%;background:conic-gradient(var(--green) 0 68%,#8e9aa2 68% 91%,var(--red) 91% 100%);display:grid;place-items:center}.donut:after{content:"68%";width:105px;height:105px;border-radius:50%;background:var(--panel);display:grid;place-items:center;font-size:28px;font-weight:700}.sentimentcopy strong{font-size:34px}.sentimentcopy p{color:var(--muted);font-size:12px;line-height:1.4}
+
+.themes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.theme{display:grid;grid-template-columns:110px 1fr 45px;align-items:center;gap:8px;font-size:11px}.bar{height:8px;background:#172a37}.bar span{display:block;height:100%;background:var(--cyan)}
+
+.doom{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.bars{display:flex;align-items:end;gap:12px;height:230px;border-bottom:1px solid var(--line);padding:0 8px}.baritem{flex:1;text-align:center}.barfill{height:calc(var(--v)*1.9px);max-height:190px;background:linear-gradient(to top,var(--red),#ef8d65)}.baritem b{display:block;font-size:18px;margin-top:7px}.baritem small{font:8px "DM Mono";color:var(--muted);display:block;margin-top:5px}.doomnote{padding:18px;background:#121f29;border:1px solid var(--line);font-size:12px;line-height:1.5;color:#bac4ca}.doomnote strong{color:var(--gold)}
+
+.world{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}.mapbox{min-height:350px;background:radial-gradient(circle at 50% 50%,#314553,#101c25 55%,#081018);position:relative;overflow:hidden;border:1px solid var(--line)}.mapbox:before{content:"WORLD";position:absolute;inset:0;display:grid;place-items:center;font-size:95px;font-weight:700;color:rgba(255,255,255,.06);letter-spacing:-.08em}.pin{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 8px rgba(217,164,65,.1)}.p1{left:54%;top:53%}.p2{left:63%;top:38%}.p3{left:47%;top:32%}.p4{left:72%;top:42%}.p5{left:38%;top:39%}.rankings{background:var(--panel);border:1px solid var(--line);padding:18px}.rank{display:grid;grid-template-columns:25px 1fr 50px;padding:11px 0;border-bottom:1px solid #203542;font-size:11px}.rank b{color:var(--gold)}.rank strong{text-align:right}.definition{font:9px "DM Mono";color:var(--muted);margin-top:12px;line-height:1.45}
+
+.askfan{display:grid;grid-template-columns:1fr 1fr;gap:22px}.askbox{min-height:250px;background:var(--panel);border:1px solid var(--line);padding:22px}.askbig{font-size:50px;font-weight:700;letter-spacing:-.06em;margin:15px 0}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{padding:8px 10px;border:1px solid #334b59;font:9px "DM Mono";color:#bac4ca}.fanmachine{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}.fanbox{background:var(--panel);padding:20px;min-height:200px}.fanbox strong{display:block;font-size:46px;letter-spacing:-.06em}.fanbox h3{font-size:14px;margin:8px 0}.fanbox p{font-size:11px;color:var(--muted);line-height:1.4}
+
+.countdown{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}.count{background:var(--panel);padding:28px;min-height:260px;text-decoration:none;color:var(--ink);position:relative;transition:.2s}.count:hover{background:#142431}.count .days2{font-size:82px;font-weight:700;letter-spacing:-.09em;color:var(--gold);line-height:.8}.count h3{font:27px "Playfair Display";margin:24px 0 8px}.count p{font-size:11px;color:var(--muted);max-width:470px;line-height:1.45}.count .arrow{position:absolute;right:22px;bottom:20px;color:var(--red);font-size:22px}.buzz{display:none;margin-top:14px}.buzz.open{display:block}.buzzgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.buzzgrid div{background:#0b1721;padding:16px}.buzzgrid strong{font-size:27px}.buzzgrid span{display:block;font:9px "DM Mono";color:var(--muted);margin-top:6px}.buzznote{font-size:10px;color:var(--muted);padding:12px 0}
+
+.archive{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line)}.day{background:var(--panel);padding:15px}.day b{display:block;font-size:20px}.day small{font:8px "DM Mono";color:var(--muted)}.day.active{background:#172a36;border-top:3px solid var(--gold)}
+footer{padding:30px 0 55px;color:var(--muted);font:9px "DM Mono";line-height:1.7}footer a{color:#b9c7cf}
+@media(max-width:1050px){.hero,.columns,.doom,.world,.askfan{grid-template-columns:1fr}.node{display:none}.hero-map{min-height:500px}.archive{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shell{padding:0 12px}.nav{display:none}.tickerbar,.countdown,.sentiment{grid-template-columns:1fr}.ticker{border-right:0;border-bottom:1px solid var(--line)}.metricline,.fanmachine,.buzzgrid{grid-template-columns:1fr 1fr}.themes{grid-template-columns:1fr}.archive{grid-template-columns:repeat(2,1fr)}.hero-map{min-height:430px}.globe{width:300px;height:300px}.orbit{width:380px}.center h1{font-size:60px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+  <a class="brand" href="#home">KING <span>INTELLIGENCE</span><small>THE GLOBAL OBSERVATORY OF SHAH RUKH KHAN</small></a>
+  <nav class="nav">
+    <a href="#myth">Myth</a><a href="#screen">Screen</a><a href="#brand">Brand</a><a href="#events">Events</a><a href="#world">World</a><a href="#fan">Fan</a><a href="#doom">DOOM</a><a href="#archive">Archive</a>
+  </nav>
+</header>
+
+<div class="tickerbar">
+  <a class="ticker" href="#birthday"><span class="days" id="bdDays">28</span><span class="tickerlabel">DAYS TO SRK'S BIRTHDAY</span><span class="sub">02 NOVEMBER 2026 · CLICK FOR BIRTHDAY BUZZ ANALYSIS →</span></a>
+  <a class="ticker" href="#kingbuzz"><span class="days" id="kingDays">80</span><span class="tickerlabel">DAYS TO KING</span><span class="sub">24 DECEMBER 2026 · CLICK FOR KING BUZZ ANALYSIS →</span></a>
+</div>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-map">
+    <div class="globe"></div><div class="orbit"></div>
+    <div class="node n1"><b>01</b>THE MYTH<br><span>history → evolution</span></div>
+    <div class="node n2"><b>03</b>THE SCREEN<br><span>films · characters</span></div>
+    <div class="node n3"><b>04</b>THE BRAND<br><span>advertising · avatar</span></div>
+    <div class="node n4"><b>08</b>THE FAN<br><span>consume → create</span></div>
+    <div class="node n5"><b>10</b>CONVERSATION<br><span>news · social · AskSRK</span></div>
+    <div class="node n6"><b>12</b>DOOM<br><span>benchmarks · comparison</span></div>
+    <div class="center"><div class="ey">SRK / GLOBAL CULTURAL INTELLIGENCE</div><h1>KING</h1><p>PEOPLE · STORIES · CULTURE · DATA · FOREVER</p></div>
+  </div>
+  <aside class="hero-data">
+    <div><div class="live mono"><i class="dot"></i> LIVE OBSERVATORY</div><h2>THE PUBLIC ATTENTION SYSTEM AROUND SHAH RUKH KHAN.</h2><div class="muted" style="font-size:11px">Daily window · Mumbai / IST · 00:00–23:59</div></div>
+    <div class="metricline">
+      <div><strong>48.4M</strong><span>INSTAGRAM FOLLOWERS · @IAMSRK</span></div>
+      <div><strong>31.2M</strong><span>SAMPLED KING VIDEO VIEWS</span></div>
+      <div><strong>50</strong><span>COUNTRY BUZZ INDEX MARKETS</span></div>
+      <div><strong>100</strong><span>INDIA = CBI BASELINE</span></div>
+    </div>
+    <div class="mini-chart">
+      <div class="mono muted">ATTENTION MOVEMENT · 28 SEP — 04 OCT</div>
+      <svg viewBox="0 0 500 175" preserveAspectRatio="none">
+        <path class="grid" d="M0 35H500M0 85H500M0 135H500"/><path class="line" d="M0 125 L70 110 L140 118 L210 72 L280 92 L350 55 L420 75 L500 25"/><path class="line2" d="M0 145 L70 137 L140 142 L210 128 L280 120 L350 130 L420 112 L500 105"/>
+      </svg>
+      <div class="legend"><span><i class="cyan"></i>attention</span><span><i class="gold"></i>baseline signal</span></div>
+    </div>
+  </aside>
+</section>
+
+<section class="section" id="doom">
+<div class="section-head"><div><div class="mono" style="color:var(--gold)">COMPARATIVE INTELLIGENCE</div><h2>DOOM / THE COMPARISON ENGINE</h2></div><p>DOOM is where KING is placed against defined benchmarks. It is not a claim of absolute popularity; each comparison must use the same window, metric and methodology.</p></div>
+<div class="doom">
+<div class="panel"><h3>Indexed attention · same-window comparison</h3><div class="bars">
+  <div class="baritem"><div class="barfill" style="--v:100"></div><b>100</b><small>KING</small></div>
+  <div class="baritem"><div class="barfill" style="--v:72"></div><b>72</b><small>PATHAAN</small></div>
+  <div class="baritem"><div class="barfill" style="--v:61"></div><b>61</b><small>JAWAN</small></div>
+  <div class="baritem"><div class="barfill" style="--v:48"></div><b>48</b><small>DUNKI</small></div>
+  <div class="baritem"><div class="barfill" style="--v:35"></div><b>35</b><small>BENCHMARK A</small></div>
+  <div class="baritem"><div class="barfill" style="--v:28"></div><b>28</b><small>BENCHMARK B</small></div>
+</div><div class="source">Illustrative benchmark frame — replace with verified DOOM dataset before publication.</div></div>
+<div class="doomnote"><strong>WHAT DOOM ANSWERS</strong><br><br>Is KING unusually loud, unusually persistent, unusually global — or simply large because it is current?<br><br><b>Comparison dimensions:</b> attention · sentiment · persistence · global reach · participation.<br><br><b>Rule:</b> never compare unlike datasets without showing the denominator.</div>
+</div>
+</section>
+
+<section class="section" id="conversation">
+<div class="section-head"><div><div class="mono" style="color:var(--cyan)">PUBLIC CONVERSATION</div><h2>SENTIMENT / WHAT ARE PEOPLE FEELING?</h2></div><p>Sentiment is analysed separately from volume. A loud conversation can be positive, neutral, negative or mixed.</p></div>
+<div class="columns">
+<div class="panel"><h3>Current sentiment snapshot</h3><div class="sentiment"><div class="donut"></div><div class="sentimentcopy"><strong>68% positive</strong><p>Illustrative current-state composition. The live implementation should populate this from the analysed sample and preserve the sample size, source and classifier definition.</p><div class="legend"><span><i class="green"></i>positive 68%</span><span><i class="gray"></i>neutral 23%</span><span><i class="red"></i>negative 9%</span></div></div></div></div>
+<div class="panel"><h3>Sentiment movement · 28 Sep — 04 Oct</h3><svg class="chart" viewBox="0 0 650 230" preserveAspectRatio="none"><path class="grid" d="M0 35H650M0 85H650M0 135H650M0 185H650"/><path class="line" d="M0 95 L95 78 L190 84 L285 60 L380 48 L475 65 L570 40 L650 32"/><path style="fill:none;stroke:var(--red);stroke-width:2" d="M0 190 L95 180 L190 188 L285 174 L380 182 L475 170 L570 178 L650 165"/><path style="fill:none;stroke:#8e9aa2;stroke-width:2" d="M0 145 L95 155 L190 148 L285 166 L380 150 L475 160 L570 150 L650 152"/></svg><div class="legend"><span><i class="green"></i>positive</span><span><i class="gray"></i>neutral</span><span><i class="red"></i>negative</span></div></div>
+</div>
+</section>
+
+<section class="section" id="topics">
+<div class="section-head"><div><div class="mono">TOPIC INTELLIGENCE</div><h2>WHAT IS DRIVING THE TALK?</h2></div><p>Volume without topic context is almost useless. This layer identifies the subjects creating the conversation.</p></div>
+<div class="panel"><div class="themes">
+<div class="theme"><span>KING / FILM</span><div class="bar"><span style="width:82%"></span></div><b>28%</b></div><div class="theme"><span>SRK'S LOOK</span><div class="bar"><span style="width:52%"></span></div><b>18%</b></div><div class="theme"><span>TRAILER / TEASER</span><div class="bar"><span style="width:44%"></span></div><b>15%</b></div><div class="theme"><span>RELEASE DATE</span><div class="bar"><span style="width:32%"></span></div><b>11%</b></div><div class="theme"><span>MUSIC</span><div class="bar"><span style="width:26%"></span></div><b>9%</b></div><div class="theme"><span>BOX OFFICE</span><div class="bar"><span style="width:24%"></span></div><b>8%</b></div><div class="theme"><span>COMPARISONS</span><div class="bar"><span style="width:21%"></span></div><b>7%</b></div><div class="theme"><span>NOSTALGIA</span><div class="bar"><span style="width:18%"></span></div><b>6%</b></div>
+</div><div class="source">Illustrative topic mix — publication requires a defined sample and classification method.</div></div>
+</section>
+
+<section class="section" id="world">
+<div class="section-head"><div><div class="mono" style="color:var(--gold)">GLOBAL INTELLIGENCE</div><h2>WHERE IS THE ATTENTION?</h2></div><p>Country Buzz Index uses India as the 100 baseline. It is a relative index, not a population count or percentage.</p></div>
+<div class="world"><div class="mapbox"><span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span><span class="pin p4"></span><span class="pin p5"></span></div>
+<div class="rankings"><div class="rank"><b>01</b><span>India</span><strong>100</strong></div><div class="rank"><b>02</b><span>UAE</span><strong>82</strong></div><div class="rank"><b>03</b><span>UK</span><strong>78</strong></div><div class="rank"><b>04</b><span>Indonesia</span><strong>75</strong></div><div class="rank"><b>05</b><span>Pakistan</span><strong>72</strong></div><div class="rank"><b>06</b><span>Nepal</span><strong>68</strong></div><div class="rank"><b>07</b><span>Saudi Arabia</span><strong>64</strong></div><div class="rank"><b>08</b><span>Bangladesh</span><strong>61</strong></div><div class="rank"><b>09</b><span>Canada</span><strong>58</strong></div><div class="rank"><b>10</b><span>USA</span><strong>55</strong></div><div class="definition">CBI definition: relative buzz score within the selected observation window, with India fixed at 100. Provisional values must be replaced by the verified country dataset.</div></div></div>
+</section>
+
+<section class="section" id="fan">
+<div class="section-head"><div><div class="mono" style="color:var(--cyan)">PARTICIPATION INTELLIGENCE</div><h2>FROM AUDIENCE → FAN MACHINE</h2></div><p>The fan becomes a participant: creates, shares, organises, attends and turns attention into visible cultural activity.</p></div>
+<div class="fanmachine">
+<div class="fanbox"><div class="mono">AI CREATION</div><strong>25</strong><h3>TOP DAILY FAN CREATIONS</h3><p>AI reels, posters, stories and fan-made KING material ranked by the observatory.</p></div>
+<div class="fanbox"><div class="mono">NETWORK</div><strong>66</strong><h3>CITY ACTIVATION SIGNAL</h3><p>Public fan-network activity is tracked separately from confirmed attendance.</p></div>
+<div class="fanbox"><div class="mono">ASK SRK</div><strong>∞</strong><h3>WHAT PEOPLE WANT TO KNOW</h3><p>Questions reveal demand before conventional campaign reporting catches it.</p></div>
+</div>
+</section>
+
+<section class="section" id="birthday">
+<div class="section-head"><div><div class="mono" style="color:var(--red)">EVENT INTELLIGENCE</div><h2>SRK BIRTHDAY · 02 NOVEMBER</h2></div><p>The birthday is treated as its own cultural event, with a separate buzz curve and crossover analysis into KING.</p></div>
+<div class="countdown"><a class="count" href="#birthdayBuzz" onclick="toggleBuzz('birthdayBuzz');return true"><div class="days2" id="bdDays2">28</div><h3>Days to the 61st Birthday</h3><p>Click to open the birthday buzz analysis: historical birthday attention, fan activation, geography, sentiment and KING crossover.</p><span class="arrow">↘</span></a><div class="panel" id="birthdayBuzz" style="border:0;border-left:1px solid var(--line)"><h3>BIRTHDAY BUZZ ANALYSIS</h3><div class="buzzgrid"><div><strong>EVENT</strong><span>02 NOV 2026</span></div><div><strong>61</strong><span>BIRTHDAY YEAR</span></div><div><strong>FAN</strong><span>PRIMARY PARTICIPATION SIGNAL</span></div></div><p class="buzznote">The 2025 birthday used a private fan interaction format rather than the traditional Mannat gathering; the 2026 analysis should measure the new event rather than assume the old pattern. cite-placeholder</p></div></div>
+</section>
+
+<section class="section" id="kingbuzz">
+<div class="section-head"><div><div class="mono" style="color:var(--gold)">FILM INTELLIGENCE</div><h2>KING · 24 DECEMBER</h2></div><p>The release countdown becomes a live intelligence variable: every new trailer, poster, interview, fan response and competitive event can move the curve.</p></div>
+<div class="countdown"><a class="count" href="#kingBuzzPanel" onclick="toggleBuzz('kingBuzzPanel');return true"><div class="days2" id="kingDays2">80</div><h3>Days to KING</h3><p>Click to open the KING buzz analysis: attention, sentiment, topic movement, competition, geography and fan mobilisation.</p><span class="arrow">↘</span></a><div class="panel" id="kingBuzzPanel" style="border:0;border-left:1px solid var(--line)"><h3>KING BUZZ ANALYSIS</h3><div class="buzzgrid"><div><strong>24 DEC</strong><span>THEATRICAL RELEASE</span></div><div><strong>100</strong><span>DAYS WAS SRK'S SEPT 2026 REFERENCE POINT</span></div><div><strong>LIVE</strong><span>COUNTDOWN + CONVERSATION</span></div></div><p class="buzznote">Official Red Chillies currently lists KING for 24 December 2026. The observatory should preserve every release-date change as an explicit event in the archive.</p></div></div>
+</section>
+
+<section class="section" id="myth">
+<div class="section-head"><div><div class="mono">THE HISTORICAL MACHINE</div><h2>ZERO → ONE → KING</h2></div><p>The present-day data sits on a historical spine: the evolution of the myth, the silence, the resurrection and the convergence around KING.</p></div>
+<div class="archive" id="archive">
+<div class="day"><b>1992</b><small>THE FACE</small></div><div class="day"><b>1990s</b><small>THE ICON</small></div><div class="day"><b>2000s</b><small>GLOBAL INDIAN</small></div><div class="day"><b>2008–13</b><small>DIGITAL MYTH</small></div><div class="day"><b>2014–18</b><small>THE SHELL</small></div><div class="day"><b>2018</b><small>ZERO</small></div><div class="day active"><b>2026</b><small>KING → ONE</small></div></div>
+</section>
+</main>
+
+<footer>
+<strong>KING INTELLIGENCE</strong> · ASOKA TO BOO-DA<br>
+FACT / OBSERVATION / MODEL / INFERENCE are labelled separately. Illustrative figures in this first interface build are explicitly marked and must be replaced by verified observations before being treated as research findings.<br><br>
+Official links:
+<a href="https://www.redchillies.com/movies/king" target="_blank" rel="noopener">Red Chillies · KING</a> ·
+<a href="https://theycallhimking.com/" target="_blank" rel="noopener">Official KING site</a> ·
+<a href="https://www.youtube.com/watch?v=M3mfut2RdHk" target="_blank" rel="noopener">KING date announcement</a> ·
+<a href="https://www.instagram.com/iamsrk/" target="_blank" rel="noopener">SRK Instagram</a> ·
+<a href="https://x.com/iamsrk" target="_blank" rel="noopener">SRK on X</a>
+</footer>
+</div>
+<script>
+function daysUntil(y,m,d){const now=new Date();const target=new Date(y,m-1,d);now.setHours(0,0,0,0);return Math.max(0,Math.ceil((target-now)/86400000))}
+function refresh(){const bd=daysUntil(2026,11,2),kg=daysUntil(2026,12,24);['bdDays','bdDays2'].forEach(id=>document.getElementById(id).textContent=bd);['kingDays','kingDays2'].forEach(id=>document.getElementById(id).textContent=kg)}
+function toggleBuzz(id){const el=document.getElementById(id);if(el)el.classList.toggle('open')}
+refresh();
+</script>
+</body>
+</html>
