@@ -60,7 +60,28 @@
 <style>
 .conversation-ledger td:last-child{font-size:10px;line-height:1.55;border-left:2px solid rgba(255,255,255,.12);padding-left:10px}
 .conversation-ledger td:last-child b{font-size:8px;letter-spacing:.06em;opacity:.62}
-</style></style>
+<style>
+.conversation-ranking{display:grid;gap:8px}
+.conv-head{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;padding:10px 12px;border:1px solid rgba(255,255,255,.09);border-radius:8px 8px 0 0;background:rgba(255,255,255,.025)}
+.conv-head>span{font-size:18px;font-weight:800;opacity:.45}
+.conv-head b{display:block;font-size:11px;letter-spacing:.04em}
+.conv-head small{display:block;font-size:9px;opacity:.58;margin-top:3px}
+.conv-head strong{font-size:12px;white-space:nowrap}
+.conv-body{margin-top:-8px;padding:12px;border:1px solid rgba(255,255,255,.07);border-top:0;border-radius:0 0 8px 8px}
+.conv-body blockquote{margin:0 0 9px;padding-left:10px;border-left:2px solid rgba(255,255,255,.2);font-size:12px;line-height:1.45}
+.conv-body p{margin:8px 0 0;font-size:10px;line-height:1.45;opacity:.72}
+.stats{display:flex;flex-wrap:wrap;gap:5px}
+.stats b{font-size:9px;padding:4px 6px;border:1px solid rgba(255,255,255,.09);border-radius:5px}
+.fan-intel-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.fan-intel-grid>div,.conversation-buckets>div{padding:10px;border:1px solid rgba(255,255,255,.07);border-radius:7px}
+.fan-intel-grid h3{font-size:9px;margin:0 0 5px;opacity:.6}
+.fan-intel-grid b{display:block;font-size:15px}
+.fan-intel-grid span,.conversation-buckets span{display:block;font-size:9px;line-height:1.35;opacity:.62;margin-top:3px}
+.conversation-buckets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.conversation-buckets b{display:block;font-size:9px}
+@media(max-width:800px){.fan-intel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.conversation-buckets{grid-template-columns:1fr 1fr}.conv-head{grid-template-columns:30px 1fr}.conv-head strong{grid-column:2}}
+@media(max-width:520px){.fan-intel-grid,.conversation-buckets{grid-template-columns:1fr}}
+</style></style></style>
 </style>
 </style>
 </style>
@@ -78,42 +99,50 @@
 
 
 <div class="card full" id="fan-sentiment-top">
-<h2>WHAT FANS ARE TALKING ABOUT</h2>
-<div class="note"><b>05 OCTOBER 2026 · PUBLIC FAN CONVERSATION LEDGER</b> — actual indexed posts, exact language, account, geography, audience footprint and visible interaction data. This is the conversation itself, not a sentiment score.</div>
+<h2>FAN CONVERSATION INTELLIGENCE · 05 OCTOBER 2026</h2>
+<div class="note"><b>RANKED BY OBSERVED SIGNAL</b> — reach, visible interaction and real-world fan mobilisation are separated. A 2,000-view post is not treated as a top sentiment simply because it was found.</div>
 
-<table class="conversation-ledger">
-<thead><tr><th>WHEN</th><th>WHO / WHERE</th><th>WHAT THEY SAID</th><th>WHAT THEY ARE TALKING ABOUT</th><th>STATISTICS · RIGHT BESIDE THE CONVERSATION</th></tr></thead>
-<tbody>
-<tr><td>20 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune · 24,700 followers · 142,800 posts</td><td>“PUNE, ARE YOU READY? The KING is coming! … Join SRK FC Pune for the FIRST DAY FIRST SHOW of #KING!”</td><td><b>FDFS / theatre mobilisation</b><br>Bookings and local coordination.</td><td><b>REPLIES</b> 2 · <b>REPOSTS</b> 31<br><b>LIKES</b> 10 · <b>BOOKMARKS</b> 1<br><b>VIEWS</b> 1,000+</td></tr>
-<tr><td>6 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“We Want Don3 with SRK”</td><td><b>Future SRK demand</b><br>Fans are extending the conversation beyond KING.</td><td><b>REPLIES</b> 0 · <b>REPOSTS</b> 291<br><b>LIKES</b> 34 · <b>BOOKMARKS</b> 4<br><b>VIEWS</b> 3,000</td></tr>
-<tr><td>6 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“Humble appeal to @FarOutAkhtar on behalf of all SRKians - Sir, We Want Don 3 and we want to see you and @iamsrk collaborating on this project!”</td><td><b>Collective demand / franchise pressure</b></td><td><b>REPLIES</b> 1 · <b>REPOSTS</b> 320<br><b>LIKES</b> 67 · <b>BOOKMARKS</b> 7<br><b>VIEWS</b> 15,000</td></tr>
-<tr><td>6 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“34 DAYS TO GO! … 2 NOVEMBER — The King’s Day. Are you ready, SRKIANS?”</td><td><b>SRK Day / birthday mobilisation</b></td><td><b>REPLIES</b> 0 · <b>REPOSTS</b> 51<br><b>LIKES</b> 12 · <b>BOOKMARKS</b> 1<br><b>VIEWS</b> 818</td></tr>
-<tr><td>11 days ago</td><td><b>@SRKFC_PUNE</b><br>Pune</td><td>“READY for the KING 👑” — amplifying Red Chillies’ “The countdown to DEHSHAT has begun… #KING is ready to ROAR on 24.12.2026.”</td><td><b>Countdown / campaign language</b></td><td><b>REPLIES</b> 101 · <b>REPOSTS</b> 4,000<br><b>LIKES</b> 863 · <b>BOOKMARKS</b> 56<br><b>VIEWS</b> 110,000</td></tr>
-<tr><td>4 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club · 74,200 followers · 74,600 posts</td><td>“3 MONTHS TO KING 👑 The countdown is ON … Introducing the SRK Warriors Information Portal - latest SRK updates + a daily newsletter…”</td><td><b>Fan information infrastructure</b><br>Moving fans from social followers into a owned information channel.</td><td><b>REPLIES</b> 9 · <b>REPOSTS</b> 147<br><b>LIKES</b> 67 · <b>BOOKMARKS</b> 5<br><b>VIEWS</b> 2,000</td></tr>
-<tr><td>2 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club</td><td>“Never miss an update on Shah Rukh Khan &amp; KING. Register now and get daily newsletter in your inbox.”</td><td><b>Retention / database building</b></td><td><b>REPLIES</b> 4 · <b>REPOSTS</b> 189<br><b>LIKES</b> 48 · <b>BOOKMARKS</b> 9<br><b>VIEWS</b> 2,000</td></tr>
-<tr><td>7 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club</td><td>“Kolkata SRK Warriors have officially entered the KING era! … the city of joy is now roaring for its KING as the promotions begin!”</td><td><b>City-level activation</b><br>Kolkata moving from fandom into local promotion.</td><td><b>REPLIES</b> 2 · <b>REPOSTS</b> 92<br><b>LIKES</b> 28 · <b>BOOKMARKS</b> 2<br><b>VIEWS</b> 2,000</td></tr>
-<tr><td>8 days ago</td><td><b>@TeamSRKWarriors</b><br>Global / international</td><td>“🇦🇿❤️🇮🇳 From Azerbaijan to Mannat! Shah Rukh Khan fans travel across borders to stand outside the home of their King…”</td><td><b>International pilgrimage / physical fandom</b></td><td><b>REPLIES</b> 1 · <b>REPOSTS</b> 410<br><b>LIKES</b> 110 · <b>BOOKMARKS</b> 11<br><b>VIEWS</b> 5,000</td></tr>
-<tr><td>14 days ago</td><td><b>@TeamSRKWarriors</b><br>Global fan club</td><td>“33 years later on the same date but this time Darr nahi Deshshat hogi 🔥🔥 KING ROARS IN 100 DAYS”</td><td><b>Legacy / release mythology</b><br>Connecting KING to SRK history.</td><td><b>REPLIES</b> 0 · <b>REPOSTS</b> 182<br><b>LIKES</b> 56 · <b>BOOKMARKS</b> 10<br><b>VIEWS</b> 7,000</td></tr>
-<tr><td>about 14 hours ago</td><td><b>@Samim_Srkians</b><br>Patna · 280 followers · 30,300 posts</td><td>“#KING Teaser Leaked … upcoming movie KING Teaser leak Real Or Ai?”</td><td><b>Leak / authenticity anxiety</b><br>A distinct risk conversation inside the fan ecosystem.</td><td><b>REPLIES</b> 6 · <b>REPOSTS</b> 191<br><b>LIKES</b> 20 · <b>BOOKMARKS</b> 11<br><b>VIEWS</b> 13,000</td></tr>
-<tr><td>6 days ago</td><td><b>@Samim_Srkians</b><br>Patna</td><td>“#EXCLUSIVE UPDATE: #KING TEASER … could get its full-fledged teaser in November… 2 November — SRK’s Birthday…”</td><td><b>Teaser timing speculation</b><br>Birthday-to-KING conversion is already being discussed.</td><td><b>REPLIES</b> 0 · <b>REPOSTS</b> 82<br><b>LIKES</b> 4 · <b>BOOKMARKS</b> 1<br><b>VIEWS</b> 5,000</td></tr>
-<tr><td>6 days ago</td><td><b>@Samim_Srkians</b><br>Patna</td><td>“hope it's fake” — responding to the KING teaser-leak conversation.</td><td><b>Trust / leak verification</b></td><td><b>REPLIES</b> 0 · <b>REPOSTS</b> 0<br><b>LIKES</b> 0 · <b>BOOKMARKS</b> 0<br><b>VIEWS</b> 522</td></tr>
-<tr><td>6 days ago</td><td><b>@Samim_Srkians</b><br>Patna</td><td>“kyu pada hai srk k chakkar me koi nahi hai Takkar me”</td><td><b>Competitive fan identity</b><br>SRK positioned against rival-star discourse.</td><td><b>REPLIES</b> 0 · <b>REPOSTS</b> 20<br><b>LIKES</b> 1 · <b>BOOKMARKS</b> 0<br><b>VIEWS</b> 861</td></tr>
-</tbody></table>
+<div class="conversation-ranking">
+<div class="conv-head"><span>01</span><div><b>KING · ROAR / COUNTDOWN</b><small>SRK FC Pune · amplification of Red Chillies Entertainment</small></div><strong>109,000 VIEWS</strong></div>
+<div class="conv-body"><blockquote>“The ROAR says it all. KING akela hi kaafi hai … 24.12.2026 in cinemas.”</blockquote><div class="stats"><b>109,000 views</b><b>4,000 reposts</b><b>861 likes</b><b>101 replies</b><b>56 bookmarks</b></div><p><b>Signal:</b> This is the strongest surfaced KING fan-amplification signal in the current ledger. “ROAR” and “KING akela hi kaafi hai” are functioning as repeatable fan language.</p></div>
 
-<div class="conversation-readout">
-<div><b>WHAT IS ACTUALLY EMERGING</b></div>
-<div class="readout-grid">
-<div><b>1 · FDFS</b><span>Fans are organising theatres and registrations before release.</span></div>
-<div><b>2 · MORE CONTENT</b><span>Dialogue, teaser, poster and footage are being actively demanded.</span></div>
-<div><b>3 · TEASER TIMING</b><span>November and especially 2 November are being discussed as a possible conversion moment.</span></div>
-<div><b>4 · FAN INFRASTRUCTURE</b><span>Fan clubs are building portals, newsletters and local databases—not just posting.</span></div>
-<div><b>5 · GLOBAL PHYSICAL FANDOM</b><span>Azerbaijan → Mannat and Kolkata activation show geographic participation.</span></div>
-<div><b>6 · RISK SIGNAL</b><span>AI/leak authenticity is generating its own conversation and needs controlled official clarification.</span></div>
-<div><b>7 · BEYOND KING</b><span>Fans are already asking for DON 3 with SRK; the conversation is about the larger SRK future.</span></div>
-</div></div>
-<div class="note"><b>Interaction fields:</b> reply · repost · like · bookmark · views, as displayed by the indexed X mirror. Audience/post totals are account-level footprints, not unique people. Full post language is retained where it is necessary to understand the signal.</div>
+<div class="conv-head"><span>02</span><div><b>KING · FAN INFORMATION INFRASTRUCTURE</b><small>Team SRK Warriors · global fan network</small></div><strong>57,000 VIEWS</strong></div>
+<div class="conv-body"><blockquote>“Never miss an update on Shah Rukh Khan &amp; KING. Register now and get daily newsletter in your inbox.”</blockquote><div class="stats"><b>57,000 views</b><b>2,000 reposts</b><b>446 likes</b><b>34 replies</b><b>39 bookmarks</b></div><p><b>Signal:</b> The fan ecosystem is converting social attention into an owned information/database channel. This is infrastructure, not just chatter.</p></div>
+
+<div class="conv-head"><span>03</span><div><b>KING · CONTENT DEMAND</b><small>SRKUniverse · fan question amplified in indexed feed</small></div><strong>29,000 VIEWS</strong></div>
+<div class="conv-body"><blockquote>“Sir please give some dialogue from King? We can’t wait anymore to hear from you!! December is still so far away!!!”</blockquote><div class="stats"><b>29,000 views</b><b>35 likes</b><b>7 replies</b><b>engagement shown by source</b></div><p><b>Signal:</b> The audience is explicitly asking for dialogue/story material before the trailer window. The demand is for <b>more content</b>, not simply more reminders of the release date.</p></div>
+
+<div class="conv-head"><span>04</span><div><b>KING · TEASER / AI AUTHENTICITY</b><small>@Samim_Srkians · Patna fan account</small></div><strong>13,000 VIEWS</strong></div>
+<div class="conv-body"><blockquote>“#KING Teaser Leaked … upcoming movie KING Teaser leak Real Or Ai?”</blockquote><div class="stats"><b>13,000 views</b><b>191 reposts</b><b>20 likes</b><b>6 replies</b><b>11 bookmarks</b></div><p><b>Signal:</b> A separate risk conversation is forming around authenticity. Fans are not merely consuming leak material; they are asking whether it is AI-generated.</p></div>
+
+<div class="conv-head"><span>05</span><div><b>KING · FDFS / THEATRE MOBILISATION</b><small>SRK FC Pune · local fan organisation</small></div><strong>1,000+ VIEWS</strong></div>
+<div class="conv-body"><blockquote>“PUNE, ARE YOU READY? The KING is coming! … Join SRK FC Pune for the FIRST DAY FIRST SHOW of #KING!”</blockquote><div class="stats"><b>24,700 followers</b><b>142,800 account posts</b><b>1,000+ post views</b><b>31 reposts</b><b>10 likes</b><b>2 replies</b></div><p><b>Signal:</b> Lower visible reach than the viral amplification above, but much higher <b>conversion value</b>: the conversation is asking fans to organise a physical theatrical experience.</p></div>
+
+<div class="conv-head"><span>06</span><div><b>SRK · DON 3 DEMAND</b><small>SRK FC Pune · franchise demand</small></div><strong>15,000 VIEWS</strong></div>
+<div class="conv-body"><blockquote>“Humble appeal to @FarOutAkhtar on behalf of all SRKians - Sir, We Want Don 3 and we want to see you and @iamsrk collaborating on this project!”</blockquote><div class="stats"><b>15,000 views</b><b>320 reposts</b><b>67 likes</b><b>1 reply</b><b>7 bookmarks</b></div><p><b>Signal:</b> Fan attention is already extending beyond KING into the next SRK franchise demand.</p></div>
+
+<div class="conv-head"><span>07</span><div><b>SRK · BIRTHDAY / COMMUNITY RITUAL</b><small>SRK FC Pune · SRK Day mobilisation</small></div><strong>3,000+ VIEWS</strong></div>
+<div class="conv-body"><blockquote>“34 DAYS TO GO! … 2 NOVEMBER — The King’s Day. Are you ready, SRKIANS?”</blockquote><div class="stats"><b>3,000+ views</b><b>51 reposts</b><b>12 likes</b><b>0 replies</b><b>1 bookmark</b></div><p><b>Signal:</b> 2 November is functioning as a fan mobilisation date and a natural bridge into the KING campaign window.</p></div>
 </div>
-<div class="card full" id="daily-hashtags"><h2>TOP HASHTAGS · DAILY POST COUNT <span class="pill">DAILY MONITOR</span></h2>
+
+<div class="fan-intel-grid">
+<div><h3>TOP REACH</h3><b>109,000 views</b><span>“ROAR” / KING countdown amplification</span></div>
+<div><h3>TOP FAN INFRASTRUCTURE</h3><b>57,000 views</b><span>SRK Warriors newsletter / information portal</span></div>
+<div><h3>TOP CONTENT DEMAND</h3><b>29,000 views</b><span>Request for KING dialogue / more material</span></div>
+<div><h3>TOP RISK SIGNAL</h3><b>13,000 views</b><span>AI vs real KING teaser question</span></div>
+</div>
+
+<div class="conversation-buckets">
+<div><b>FAN MOBILISATION</b><span>FDFS · theatre groups · city activation · SRK Day</span></div>
+<div><b>CONTENT DEMAND</b><span>Dialogue · teaser · trailer · footage · music</span></div>
+<div><b>FAN INFRASTRUCTURE</b><span>Newsletters · portals · registrations · local networks</span></div>
+<div><b>GLOBAL PHYSICAL FANDOM</b><span>12 Indonesian cities · Kolkata · Azerbaijan → Mannat</span></div>
+<div><b>FUTURE SRK DEMAND</b><span>Don 3 · next collaborations · franchise pressure</span></div>
+<div><b>RISK / AUTHENTICITY</b><span>AI-generated material · leak verification · fake-vs-real discussion</span></div>
+</div>
+
+<div class="note"><b>Reading rule:</b> reach and engagement rank online conversation; mobilisation is assessed separately because a smaller post can have substantially greater marketing conversion value. Statistics are the visible figures exposed by the indexed source; unavailable fields are not invented.</div>
+</div><div class="card full" id="daily-hashtags"><h2>TOP HASHTAGS · DAILY POST COUNT <span class="pill">DAILY MONITOR</span></h2>
 <div class="note">Daily measurement of the number of public posts using the leading SRK × KING hashtags. This is <b>post volume, not unique people</b>. The 04 OCT baseline remains fixed; each new day adds a new observation and change rate.</div>
 <div class="hashtag-chart">
 <div class="note">PUBLIC INDEXED INSTAGRAM HASHTAG POST VOLUME · ranked comparison. <b>Posts using the hashtag, not unique people.</b></div>
