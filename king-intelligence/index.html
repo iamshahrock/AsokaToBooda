@@ -1,48 +1,140 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KING — Intelligence Observatory</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KING — Intelligence</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;700;800&display=swap');
-:root{--black:#070707;--ink:#111;--paper:#f3f1ec;--red:#c9151b;--muted:#777;--line:#c9c6bf;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif}.wrap{max-width:1500px;margin:auto;padding:0 34px}
-.top{height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(243,241,236,.95);z-index:10}.brand{font:500 11px "DM Mono";letter-spacing:.12em}.brand strong{font-size:17px;letter-spacing:-.04em;margin-right:10px}.nav{display:flex;gap:22px}.nav a{color:var(--ink);text-decoration:none;font:9px "DM Mono";text-transform:uppercase}.hero{min-height:680px;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--ink)}.heroCopy{padding:75px 55px 65px 0;display:flex;flex-direction:column;justify-content:space-between}.ey{font:9px "DM Mono";color:var(--red);letter-spacing:.15em}.hero h1{font-size:clamp(80px,12vw,170px);line-height:.78;letter-spacing:-.085em;margin:30px 0}.hero h1 span{display:block;font-weight:400}.hero p{max-width:570px;font-size:16px;line-height:1.5;color:#555}.heroImage{min-height:680px;background:#111 url('https://staticassets.redchillies.com/wp-content/uploads/2026/02/1920-X-676.jpg') center/cover no-repeat;position:relative}.heroImage:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.02))}.heroStamp{position:absolute;z-index:1;left:28px;bottom:25px;color:#fff;font:10px "DM Mono";letter-spacing:.1em}.count{border-top:1px solid var(--ink);padding-top:16px;display:flex;justify-content:space-between;max-width:570px}.count b{font-size:32px;letter-spacing:-.06em}.count small{font:8px "DM Mono";color:var(--muted);display:block}
-.archive{padding:20px 0;border-bottom:1px solid var(--ink);display:grid;grid-template-columns:190px 1fr;gap:25px}.archiveTitle{font:9px "DM Mono";color:var(--red);text-transform:uppercase}.days{display:flex;gap:8px;flex-wrap:wrap}.day{border:1px solid var(--line);padding:10px 13px;text-decoration:none;color:var(--ink);font:9px "DM Mono"}.day.active{background:var(--black);color:#fff;border-color:var(--black)}
-section{padding:72px 0;border-bottom:1px solid var(--line)}.sectionHead{display:grid;grid-template-columns:55px 1fr 320px;gap:20px;margin-bottom:38px}.num{font:9px "DM Mono";color:var(--red)}h2{font-size:clamp(42px,6vw,88px);line-height:.82;letter-spacing:-.075em;margin:0}.sectionHead p{font-size:11px;color:#666;line-height:1.5;margin:0}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}.kpi{background:var(--paper);padding:25px}.kpi label{font:8px "DM Mono";color:#777}.kpi strong{display:block;font-size:46px;letter-spacing:-.07em;margin:18px 0 5px}.up{color:#0a7b3e}.chart{border:1px solid var(--line);background:#fff;padding:22px;margin-top:18px}.chartHead{display:flex;justify-content:space-between;margin-bottom:14px}.chartHead b{font-size:13px}.chartHead span{font:8px "DM Mono";color:#777}.chart svg{width:100%;height:auto}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.movement{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}.move{background:#fff;padding:25px;min-height:250px}.move:nth-child(2){background:#111;color:#fff}.move:nth-child(3){background:#ddd9d1}.move:nth-child(4){background:var(--red);color:#fff}.move span{font:8px "DM Mono";letter-spacing:.1em}.move h3{font-size:29px;letter-spacing:-.05em;margin:65px 0 8px}.move p{font-size:11px;line-height:1.5;opacity:.7}
-.table{width:100%;border-collapse:collapse;font-size:11px}.table th{font:8px "DM Mono";color:#777;text-align:left;padding:12px;border-bottom:1px solid var(--ink)}.table td{padding:15px 12px;border-bottom:1px solid var(--line)}.table td:not(:first-child),.table th:not(:first-child){text-align:right}.sample{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}.sample div{background:#fff;padding:20px}.sample span{font:8px "DM Mono";color:#777}.sample b{font-size:28px;display:block;margin:13px 0 4px}
-.engine{display:grid;grid-template-columns:1fr 1fr;gap:20px}.engineBox{background:#fff;border:1px solid var(--line);padding:25px}.bar{margin:19px 0}.bar label{display:flex;justify-content:space-between;font-size:11px}.track{height:7px;background:#ddd;margin-top:7px}.fill{height:100%;background:var(--red)}.callout{padding:30px;background:var(--black);color:#fff;border-left:5px solid var(--red)}.callout h3{font-size:30px;letter-spacing:-.05em;margin:0 0 10px}.callout p{color:#aaa;line-height:1.5}
-.calendar{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--ink)}.calHead{padding:12px;border-bottom:1px solid var(--ink);font:8px "DM Mono";color:#777}.cell{min-height:120px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px;position:relative}.cell:nth-child(7n){border-right:0}.cell.empty{background:#e9e6df}.cell .d{font:10px "DM Mono"}.cell .event{position:absolute;left:12px;right:12px;bottom:12px;font-size:10px}.cell.king{background:#111;color:#fff}.cell.king .event{color:#fff}.cell a{color:inherit;text-decoration:none}
-footer{padding:35px 0 70px;font:8px "DM Mono";color:#777;line-height:1.7}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.heroImage{min-height:430px}.heroCopy{padding-right:0}.sectionHead{grid-template-columns:35px 1fr}.sectionHead p{grid-column:2}.movement,.grid2,.engine{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}.sample{grid-template-columns:1fr 1fr}.archive{grid-template-columns:1fr}.nav{display:none}.wrap{padding:0 18px}}
-</style></head><body><div class="wrap">
-<header class="top"><div class="brand"><strong>KING</strong> INTELLIGENCE OBSERVATORY</div><nav class="nav"><a href="#daily">Daily</a><a href="#movement">Movement</a><a href="#compare">Compare</a><a href="#fan">Fan Network</a><a href="#calendar">Calendar</a></nav><div class="brand">05 OCT 2026</div></header>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;600;800&display=swap');
+:root{--bg:#090909;--panel:#111;--panel2:#151515;--white:#f4f1eb;--muted:#8b8882;--line:#2b2b2b;--red:#d71920;--green:#9fe870}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
+body{min-height:100vh}.shell{max-width:1540px;margin:auto;padding:0 28px}
+header{height:62px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:baseline;gap:12px}.king{font-size:27px;font-weight:800;letter-spacing:-.09em}.logo span,.mono{font:9px 'DM Mono';letter-spacing:.12em;color:var(--muted)}
+.nav{display:flex;gap:22px}.nav a{color:var(--muted);text-decoration:none;font:9px 'DM Mono';text-transform:uppercase}.nav a:hover{color:#fff}
+.ticker{display:flex;align-items:center;gap:18px;font:9px 'DM Mono';white-space:nowrap}.dot{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(215,25,32,.12)}
+main{padding:18px 0 28px}
+.topline{display:grid;grid-template-columns:1.55fr .75fr .75fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.intro,.countdown,.network{background:var(--panel);min-height:138px;padding:22px 24px}
+.kicker{font:9px 'DM Mono';color:var(--red);letter-spacing:.16em}.intro h1{font-size:clamp(42px,5.2vw,78px);line-height:.82;letter-spacing:-.08em;margin:17px 0 9px}.intro p{margin:0;color:var(--muted);font-size:11px;max-width:590px;line-height:1.45}
+.countdown strong{display:block;font-size:29px;letter-spacing:-.07em;margin:14px 0 4px}.countdown small,.network small{font:8px 'DM Mono';color:var(--muted)}.release{font:9px 'DM Mono';color:var(--white)}
+.network .big{font-size:30px;font-weight:800;letter-spacing:-.07em;margin-top:13px}.network .sub{margin-top:6px;color:var(--muted);font:8px 'DM Mono'}
+.dashboard{display:grid;grid-template-columns:1.55fr .72fr;gap:18px;margin-top:18px}.left{min-width:0}.right{min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.kpi{background:var(--panel);padding:18px 20px}.kpi label{font:8px 'DM Mono';color:var(--muted)}.kpi b{display:block;font-size:34px;letter-spacing:-.07em;margin:10px 0 3px}.up{color:var(--green);font:9px 'DM Mono'}
+.graphs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px}.graph{background:var(--panel);padding:17px 18px}.graphhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}.graphhead b{font-size:12px}.graphhead span{font:8px 'DM Mono';color:var(--muted)}svg{width:100%;height:150px;display:block}.axis{stroke:#303030;stroke-width:1}.gridline{stroke:#202020;stroke-width:1}.g1{fill:none;stroke:var(--red);stroke-width:3}.g2{fill:none;stroke:#e7e2d8;stroke-width:2}.g3{fill:none;stroke:#777;stroke-width:2}.point{fill:var(--red)}text{font-family:'DM Mono';font-size:8px;fill:#777}.value{fill:#e8e4dd;font-size:8px}
+.analysis{display:grid;grid-template-columns:1.05fr .95fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px}.analysis>div{background:var(--panel);padding:19px}.analysis h2{font-size:22px;letter-spacing:-.06em;margin:0 0 14px}.signal{display:grid;grid-template-columns:80px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line)}.signal:first-of-type{border-top:0}.signal label{font:8px 'DM Mono';color:var(--red);padding-top:2px}.signal b{font-size:12px}.signal p{margin:4px 0 0;color:var(--muted);font-size:9px;line-height:1.4}
+.calendar{background:var(--panel);border:1px solid var(--line);padding:17px}.caltop{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.caltop h2{margin:0;font-size:21px;letter-spacing:-.06em}.caltop span{font:8px 'DM Mono';color:var(--muted)}.week,.dates{display:grid;grid-template-columns:repeat(7,1fr)}.week div{font:7px 'DM Mono';color:#666;text-align:center;padding:7px 0}.date{aspect-ratio:1/1;min-height:39px;border:1px solid #202020;margin:-1px 0 0 -1px;padding:7px;position:relative;color:#777;font:8px 'DM Mono'}.date a{color:inherit;text-decoration:none;display:block;height:100%}.date.active{background:#e8e3da;color:#090909;border-color:#e8e3da}.date.active b{color:#090909}.date.today{background:var(--red);color:#fff;border-color:var(--red)}.date.today b{color:#fff}.date .tag{position:absolute;left:7px;bottom:6px;font-size:6px;color:inherit}.date.muted{opacity:.32}.calendar .legend{display:flex;justify-content:space-between;margin-top:12px;font:7px 'DM Mono';color:#666}.legend i{display:inline-block;width:6px;height:6px;background:var(--red);margin-right:5px}.legend i.base{background:#e8e3da}
+.networkBox{margin-top:18px;background:var(--panel);border:1px solid var(--line);padding:18px}.networkBox .row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:10px 0;font-size:9px}.networkBox .row:first-of-type{border-top:0}.networkBox b{font:9px 'DM Mono';color:var(--green)}.networkBox h2{font-size:18px;margin:0 0 8px;letter-spacing:-.05em}
+.footer{border-top:1px solid var(--line);padding:13px 0 25px;display:flex;justify-content:space-between;gap:20px;color:#666;font:7px 'DM Mono';text-transform:uppercase}
+@media(max-width:1050px){.topline{grid-template-columns:1fr 1fr}.intro{grid-column:1/-1}.dashboard{grid-template-columns:1fr}.right{display:grid;grid-template-columns:1fr 1fr;gap:18px}.networkBox{margin-top:0}}
+@media(max-width:720px){.shell{padding:0 14px}.nav{display:none}.ticker{font-size:7px}.topline,.graphs,.analysis,.right{grid-template-columns:1fr}.intro{grid-column:auto}.kpis{grid-template-columns:1fr}.intro h1{font-size:52px}.footer{display:block}.footer span{display:block;margin-top:7px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+  <div class="logo"><div class="king">KING</div><span>INTELLIGENCE / 2026</span></div>
+  <nav class="nav"><a href="#pulse">Pulse</a><a href="#analysis">Analysis</a><a href="#calendar">Archive</a></nav>
+  <div class="ticker"><i class="dot"></i>LIVE FAN SIGNAL <b>818</b></div>
+</header>
 
 <main>
-<div class="hero"><div class="heroCopy"><div><div class="ey">A PUBLIC MARKETING-INTELLIGENCE ARCHIVE</div><h1>KING<span>INTELLIGENCE.</span></h1><p>What is moving around KING? This observatory records attention, velocity, narrative, fan mobilisation and competitive movement — day by day, without overwriting the past.</p></div><div class="count"><div><small>RELEASE</small><b>24.12.26</b></div><div><small>BASELINE</small><b>04.10.26</b></div><div><small>TODAY</small><b>05.10.26</b></div></div></div><div class="heroImage"><div class="heroStamp">OFFICIAL KING VISUAL · RED CHILLIES ENTERTAINMENT</div></div></div>
+<section class="topline" id="pulse">
+  <div class="intro">
+    <div class="kicker">PUBLIC MARKETING-INTELLIGENCE ARCHIVE</div>
+    <h1>THE KING<br>IS MOVING.</h1>
+    <p>A compact daily view of attention, velocity, narrative change and organised fan mobilisation. <b>04 OCT</b> remains the immutable baseline.</p>
+  </div>
+  <div class="countdown">
+    <small>RELEASE DATE</small>
+    <strong>24 DEC 2026</strong>
+    <div class="release">T−80 DAYS · OBSERVATION WINDOW OPEN</div>
+  </div>
+  <div class="network">
+    <small>TEAM SRK · LIVE PAGE SIGNAL</small>
+    <div class="big">818</div>
+    <div class="sub">FANS REGISTERED</div>
+    <div class="sub">5,320 MEMBERS · 45 COUNTRIES · 207 CITIES</div>
+  </div>
+</section>
 
-<div class="archive"><div class="archiveTitle">Daily Update Archive</div><div class="days"><a class="day" href="./2026-10-04.html">04 OCT · BASELINE</a><a class="day active" href="./2026-10-05.html">05 OCT · TODAY</a><a class="day" href="./2026-10-06.html">06 OCT · NEXT</a><a class="day" href="#calendar">ALL DATES →</a></div></div>
+<section class="dashboard">
+<div class="left">
+  <div class="kpis">
+    <div class="kpi"><label>KING POSTS</label><b>742.4K</b><span class="up">↑ 6.2% · +43.4K</span></div>
+    <div class="kpi"><label>VIDEO VIEWS</label><b>38.72M</b><span class="up">↑ 24.2% · +7.54M</span></div>
+    <div class="kpi"><label>TOP VIDEO</label><b>16.21M</b><span class="up">↑ 25.0% · +3.24M</span></div>
+  </div>
 
-<section id="daily"><div class="sectionHead"><div class="num">01</div><h2>THE<br>NUMBERS</h2><p>The first layer is observable movement. Unknowns remain —. No metric is invented to make the dashboard look complete.</p></div><div class="kpis"><div class="kpi"><label>TOTAL KING POSTS</label><strong>742.4K</strong><span class="up">+43.4K · +6.2%</span></div><div class="kpi"><label>KING VIDEO VIEWS</label><strong>38.72M</strong><span class="up">+7.54M · +24.2%</span></div><div class="kpi"><label>TOP VIDEO</label><strong>16.21M</strong><span class="up">+3.24M · +25.0%</span></div></div>
-<div class="chart"><div class="chartHead"><b>Attention trajectory</b><span>04 OCT BASELINE → 05 OCT TODAY</span></div><svg viewBox="0 0 1100 330"><line x1="60" y1="275" x2="1050" y2="275" stroke="#bbb"/><line x1="60" y1="45" x2="60" y2="275" stroke="#bbb"/><line x1="60" y1="105" x2="1050" y2="105" stroke="#e2dfd9"/><line x1="60" y1="190" x2="1050" y2="190" stroke="#e2dfd9"/><polyline points="90,200 1000,135" fill="none" stroke="#c9151b" stroke-width="5"/><polyline points="90,225 1000,75" fill="none" stroke="#222" stroke-width="3"/><polyline points="90,245 1000,155" fill="none" stroke="#777" stroke-width="3"/><circle cx="90" cy="200" r="7" fill="#c9151b"/><circle cx="1000" cy="135" r="7" fill="#c9151b"/><circle cx="90" cy="225" r="7" fill="#222"/><circle cx="1000" cy="75" r="7" fill="#222"/><circle cx="90" cy="245" r="7" fill="#777"/><circle cx="1000" cy="155" r="7" fill="#777"/><text x="80" y="300" font-size="12">04 OCT</text><text x="960" y="300" font-size="12">05 OCT</text><text x="110" y="190" font-size="12">699K POSTS</text><text x="840" y="65" font-size="12">38.72M VIEWS</text><text x="830" y="145" font-size="12">16.21M TOP VIDEO</text></svg></div></section>
+  <div class="graphs">
+    <div class="graph">
+      <div class="graphhead"><b>Attention movement</b><span>POSTS</span></div>
+      <svg viewBox="0 0 620 180" aria-label="KING posts increased from 699 thousand to 742.4 thousand">
+        <line class="axis" x1="35" y1="150" x2="595" y2="150"/><line class="gridline" x1="35" y1="90" x2="595" y2="90"/><line class="gridline" x1="35" y1="30" x2="595" y2="30"/>
+        <polyline class="g1" points="55,121 565,79"/><circle class="point" cx="55" cy="121" r="5"/><circle class="point" cx="565" cy="79" r="5"/>
+        <text x="45" y="170">04 OCT</text><text x="540" y="170">05 OCT</text><text class="value" x="45" y="110">699K</text><text class="value" x="530" y="68">742.4K</text>
+      </svg>
+    </div>
+    <div class="graph">
+      <div class="graphhead"><b>Video velocity</b><span>VIEWS / TOP VIDEO</span></div>
+      <svg viewBox="0 0 620 180" aria-label="KING video views and top video both increased">
+        <line class="axis" x1="35" y1="150" x2="595" y2="150"/><line class="gridline" x1="35" y1="90" x2="595" y2="90"/><line class="gridline" x1="35" y1="30" x2="595" y2="30"/>
+        <polyline class="g2" points="55,117 565,42"/><polyline class="g3" points="55,128 565,69"/>
+        <circle class="point" cx="55" cy="117" r="4"/><circle class="point" cx="565" cy="42" r="4"/>
+        <text x="45" y="170">04 OCT</text><text x="540" y="170">05 OCT</text><text class="value" x="43" y="108">31.18M</text><text class="value" x="525" y="32">38.72M</text><text x="430" y="108">12.97M → 16.21M</text>
+      </svg>
+    </div>
+  </div>
 
-<section id="movement"><div class="sectionHead"><div class="num">02</div><h2>WHAT<br>CHANGED?</h2><p>Not yesterday's Top 10. This is the daily delta: what entered, accelerated, declined and broke through.</p></div><div class="movement"><article class="move"><span>ENTERED</span><h3>New discussion</h3><p>New narratives are added only when they appear in the day's evidence set.</p></article><article class="move"><span>ACCELERATED</span><h3>Trailer +47%</h3><p>Framework example from the intelligence specification. Replace with measured daily evidence when available.</p></article><article class="move"><span>DECLINED</span><h3>SRK look −12%</h3><p>Framework example. The final system will calculate this from the underlying observation set.</p></article><article class="move"><span>NEW VIRAL</span><h3>Asset trigger</h3><p>The exact image, line or video responsible for a spike becomes part of the record.</p></article></div></section>
+  <div class="analysis" id="analysis">
+    <div>
+      <h2>What changed?</h2>
+      <div class="signal"><label>VELOCITY</label><div><b>Video is moving faster than posts.</b><p>Posts +6.2%, while total video views rose +24.2% and the top video rose +25.0%.</p></div></div>
+      <div class="signal"><label>SIGNAL</label><div><b>The attention layer is deepening.</b><p>The strongest observed movement is video consumption, not simply the number of posts.</p></div></div>
+      <div class="signal"><label>READ</label><div><b>KING remains a live anticipation event.</b><p>This is a two-day movement, not a claim about the full market. The archive will test whether the velocity persists.</p></div></div>
+    </div>
+    <div>
+      <h2>Evidence window</h2>
+      <div class="signal"><label>SAMPLE</label><div><b>52,134 classified items</b><p>31,842 accounts/users · 48,327 posts/comments · 1,284 articles · 416 videos · 2,107 images.</p></div></div>
+      <div class="signal"><label>COVERAGE</label><div><b>27 geographies · 8 platforms</b><p>Sampling window: 00:00–23:59 IST. Estimated reach: 4.7M.</p></div></div>
+      <div class="signal"><label>CONFIDENCE</label><div><b>Medium–high</b><p>Unknown fields remain —. No composite buzz score is invented.</p></div></div>
+    </div>
+  </div>
+</div>
 
-<section><div class="sectionHead"><div class="num">03</div><h2>THE<br>EVIDENCE</h2><p>The size of the observation window sits beside the story, so the reader can judge confidence.</p></div><div class="sample"><div><span>ACCOUNTS / USERS</span><b>31,842</b><span>analysed</span></div><div><span>POSTS / COMMENTS</span><b>48,327</b><span>analysed</span></div><div><span>ARTICLES</span><b>1,284</b><span>analysed</span></div><div><span>VIDEOS</span><b>416</b><span>analysed</span></div><div><span>IMAGES</span><b>2,107</b><span>analysed</span></div><div><span>CLASSIFIED ITEMS</span><b>52,134</b><span>total</span></div><div><span>ESTIMATED REACH</span><b>4.7M</b><span>estimated</span></div><div><span>GEOGRAPHIES</span><b>27</b><span>covered</span></div><div><span>PLATFORMS</span><b>8</b><span>covered</span></div><div><span>WINDOW</span><b>24H</b><span>00:00–23:59 IST</span></div></div></section>
+<aside class="right">
+  <div class="calendar" id="calendar">
+    <div class="caltop"><h2>OCT 2026</h2><span>DAILY ARCHIVE</span></div>
+    <div class="week"><div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div></div>
+    <div class="dates">
+      <div class="date muted"></div><div class="date muted"></div><div class="date muted"></div><div class="date muted"></div>
+      <div class="date"><b>1</b></div><div class="date"><b>2</b></div><div class="date"><b>3</b></div>
+      <div class="date active"><a href="./2026-10-04.html"><b>4</b><span class="tag">BASELINE</span></a></div>
+      <div class="date today"><a href="./2026-10-05.html"><b>5</b><span class="tag">TODAY</span></a></div>
+      <div class="date"><a href="./2026-10-06.html"><b>6</b><span class="tag">NEXT</span></a></div>
+      <div class="date"><b>7</b></div><div class="date"><b>8</b></div><div class="date"><b>9</b></div><div class="date"><b>10</b></div>
+      <div class="date"><b>11</b></div><div class="date"><b>12</b></div><div class="date"><b>13</b></div><div class="date"><b>14</b></div><div class="date"><b>15</b></div><div class="date"><b>16</b></div><div class="date"><b>17</b></div>
+      <div class="date"><b>18</b></div><div class="date"><b>19</b></div><div class="date"><b>20</b></div><div class="date"><b>21</b></div><div class="date"><b>22</b></div><div class="date"><b>23</b></div><div class="date"><b>24</b></div>
+      <div class="date"><b>25</b></div><div class="date"><b>26</b></div><div class="date"><b>27</b></div><div class="date"><b>28</b></div><div class="date"><b>29</b></div><div class="date"><b>30</b></div><div class="date"><b>31</b></div>
+    </div>
+    <div class="legend"><span><i class="base"></i>baseline</span><span><i></i>latest record</span></div>
+  </div>
 
-<section id="compare"><div class="sectionHead"><div class="num">04</div><h2>KING<br>VS DOOM</h2><p>Longitudinal comparison. No invented composite score. The gap only exists when both sides have comparable evidence.</p></div><div class="grid2"><div class="chart"><div class="chartHead"><b>Observable attention</b><span>SAME BASELINE</span></div><svg viewBox="0 0 650 300"><line x1="55" y1="250" x2="610" y2="250" stroke="#bbb"/><line x1="55" y1="45" x2="55" y2="250" stroke="#bbb"/><polyline points="85,185 570,115" fill="none" stroke="#c9151b" stroke-width="5"/><circle cx="85" cy="185" r="7" fill="#c9151b"/><circle cx="570" cy="115" r="7" fill="#c9151b"/><text x="75" y="275" font-size="11">04 OCT</text><text x="535" y="275" font-size="11">05 OCT</text><text x="70" y="173" font-size="12">KING 699K</text><text x="495" y="103" font-size="12">KING 742.4K</text><text x="90" y="70" fill="#777" font-size="12">DOOM / RDJ = —</text></svg></div><div class="chart"><div class="chartHead"><b>Comparative ledger</b><span>NO MADE-UP SCORE</span></div><table class="table"><tr><th>METRIC</th><th>KING</th><th>DOOM</th></tr><tr><td>04 OCT BASE</td><td>699K</td><td>—</td></tr><tr><td>05 OCT</td><td>742.4K</td><td>—</td></tr><tr><td>CHANGE</td><td class="up">+43.4K</td><td>—</td></tr><tr><td>VELOCITY</td><td class="up">+6.2%</td><td>—</td></tr><tr><td>SENTIMENT</td><td>—</td><td>—</td></tr><tr><td>MEDIA ACCELERATION</td><td>—</td><td>—</td></tr></table></div></div></section>
-
-<section><div class="sectionHead"><div class="num">05</div><h2>THE<br>HYPE ENGINE</h2><p>Six structural dimensions. The weights explain the architecture; they are not a daily “buzz score”.</p></div><div class="engine"><div class="engineBox"><div class="bar"><label>Actor popularity <b>25%</b></label><div class="track"><div class="fill" style="width:100%"></div></div></div><div class="bar"><label>Home-market penetration <b>20%</b></label><div class="track"><div class="fill" style="width:80%"></div></div></div><div class="bar"><label>Global cultural connectivity <b>15%</b></label><div class="track"><div class="fill" style="width:60%"></div></div></div><div class="bar"><label>Franchise / character equity <b>15%</b></label><div class="track"><div class="fill" style="width:60%"></div></div></div><div class="bar"><label>Campaign amplification <b>15%</b></label><div class="track"><div class="fill" style="width:60%"></div></div></div><div class="bar"><label>Offline → online connectivity <b>10%</b></label><div class="track"><div class="fill" style="width:40%"></div></div></div></div><div class="callout"><h3>The system measures movement.</h3><p>The useful question is not “who has the higher score?” It is how attention, participation, geography, narrative and amplification change over time — and why.</p></div></div></section>
-
-<section id="fan"><div class="sectionHead"><div class="num">06</div><h2>FAN<br>NETWORK</h2><p>Publicly announced activity. Announcement is not execution. Registration is not attendance.</p></div><table class="table"><tr><th>NETWORK</th><th>GEOGRAPHY</th><th>ACTIVITY</th><th>STATUS</th></tr><tr><td>Team Shah Rukh Khan Fan Club</td><td>India — city-by-city</td><td>KING FDFS registration · WhatsApp · King ID</td><td class="up">OPEN / ACTIVE</td></tr><tr><td>SRK Chennai FC</td><td>Chennai / global</td><td>100 Days / 100 Reasons to Roar</td><td class="up">ACTIVE</td></tr><tr><td>TSFK Pune</td><td>Pune</td><td>FDFS city registration</td><td class="up">OPEN · 66 DISPLAYED</td></tr><tr><td>TSFK Jalgaon</td><td>Jalgaon</td><td>FDFS + meetup coordination</td><td class="up">OPEN</td></tr><tr><td>TSFK Malegaon</td><td>Malegaon</td><td>FDFS + celebration coordination</td><td class="up">OPEN</td></tr></table></section>
-
-<section id="calendar"><div class="sectionHead"><div class="num">07</div><h2>THE<br>CALENDAR</h2><p>The archive becomes the product. Every day gets its own permanent record and comparison against the original baseline.</p></div><div class="calendar"><div class="calHead">SUN</div><div class="calHead">MON</div><div class="calHead">TUE</div><div class="calHead">WED</div><div class="calHead">THU</div><div class="calHead">FRI</div><div class="calHead">SAT</div>
-<div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><span class="d">01</span></div><div class="cell"><span class="d">02</span></div><div class="cell"><span class="d">03</span></div>
-<div class="cell king"><span class="d">04</span><div class="event"><a href="./2026-10-04.html">BASELINE<br>699K POSTS</a></div></div><div class="cell king"><span class="d">05</span><div class="event"><a href="./2026-10-05.html">TODAY<br>742.4K POSTS</a></div></div><div class="cell"><span class="d">06</span><div class="event">NEXT UPDATE</div></div><div class="cell"><span class="d">07</span></div><div class="cell"><span class="d">08</span></div><div class="cell"><span class="d">09</span></div><div class="cell"><span class="d">10</span></div>
-<div class="cell"><span class="d">11</span></div><div class="cell"><span class="d">12</span></div><div class="cell"><span class="d">13</span></div><div class="cell"><span class="d">14</span></div><div class="cell"><span class="d">15</span></div><div class="cell"><span class="d">16</span></div><div class="cell"><span class="d">17</span></div>
-<div class="cell"><span class="d">18</span></div><div class="cell"><span class="d">19</span></div><div class="cell"><span class="d">20</span></div><div class="cell"><span class="d">21</span></div><div class="cell"><span class="d">22</span></div><div class="cell"><span class="d">23</span></div><div class="cell"><span class="d">24</span></div>
-<div class="cell"><span class="d">25</span></div><div class="cell"><span class="d">26</span></div><div class="cell"><span class="d">27</span></div><div class="cell"><span class="d">28</span></div><div class="cell"><span class="d">29</span></div><div class="cell"><span class="d">30</span></div><div class="cell"><span class="d">31</span></div></div></section>
-
-<section><div class="sectionHead"><div class="num">08</div><h2>THE<br>RULE</h2><p>A public intelligence record is only useful if the archive remains trustworthy.</p></div><div class="callout"><h3>04 OCT is never overwritten.</h3><p>Every subsequent report is appended. Unknown fields remain —. Fan announcements are recorded as announcements. Registration is not attendance. The system distinguishes measured fact, sampled observation and analytical interpretation.</p></div></section>
+  <div class="networkBox">
+    <h2>Fan mobilisation</h2>
+    <div class="row"><span>Fans registered</span><b>818</b></div>
+    <div class="row"><span>Network members</span><b>5,320</b></div>
+    <div class="row"><span>Countries</span><b>45+</b></div>
+    <div class="row"><span>Cities</span><b>207</b></div>
+    <div class="row"><span>Signal type</span><b>INTENT</b></div>
+    <div class="row"><span>Attendance</span><b>—</b></div>
+    <p class="mono" style="line-height:1.5;margin:11px 0 0">Registration ≠ attendance.<br>Announcement ≠ execution.</p>
+  </div>
+</aside>
+</section>
 </main>
-<footer>Independent KING marketing-intelligence archive. KING official film information and imagery referenced from Red Chillies Entertainment. This observatory is not an official analytics dashboard or endorsement by the film's rights-holders.</footer>
-</div></body></html>
+
+<div class="footer"><span>KING INTELLIGENCE · APPEND-ONLY DAILY ARCHIVE</span><span>BASELINE 04 OCT 2026 · TODAY 05 OCT 2026 · RELEASE 24 DEC 2026</span></div>
+</div>
+</body>
+</html>
