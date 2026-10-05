@@ -1,140 +1,33 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KING — Intelligence</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;600;800&display=swap');
-:root{--bg:#090909;--panel:#111;--panel2:#151515;--white:#f4f1eb;--muted:#8b8882;--line:#2b2b2b;--red:#d71920;--green:#9fe870}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
-body{min-height:100vh}.shell{max-width:1540px;margin:auto;padding:0 28px}
-header{height:62px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:baseline;gap:12px}.king{font-size:27px;font-weight:800;letter-spacing:-.09em}.logo span,.mono{font:9px 'DM Mono';letter-spacing:.12em;color:var(--muted)}
-.nav{display:flex;gap:22px}.nav a{color:var(--muted);text-decoration:none;font:9px 'DM Mono';text-transform:uppercase}.nav a:hover{color:#fff}
-.ticker{display:flex;align-items:center;gap:18px;font:9px 'DM Mono';white-space:nowrap}.dot{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(215,25,32,.12)}
-main{padding:18px 0 28px}
-.topline{display:grid;grid-template-columns:1.55fr .75fr .75fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-.intro,.countdown,.network{background:var(--panel);min-height:138px;padding:22px 24px}
-.kicker{font:9px 'DM Mono';color:var(--red);letter-spacing:.16em}.intro h1{font-size:clamp(42px,5.2vw,78px);line-height:.82;letter-spacing:-.08em;margin:17px 0 9px}.intro p{margin:0;color:var(--muted);font-size:11px;max-width:590px;line-height:1.45}
-.countdown strong{display:block;font-size:29px;letter-spacing:-.07em;margin:14px 0 4px}.countdown small,.network small{font:8px 'DM Mono';color:var(--muted)}.release{font:9px 'DM Mono';color:var(--white)}
-.network .big{font-size:30px;font-weight:800;letter-spacing:-.07em;margin-top:13px}.network .sub{margin-top:6px;color:var(--muted);font:8px 'DM Mono'}
-.dashboard{display:grid;grid-template-columns:1.55fr .72fr;gap:18px;margin-top:18px}.left{min-width:0}.right{min-width:0}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.kpi{background:var(--panel);padding:18px 20px}.kpi label{font:8px 'DM Mono';color:var(--muted)}.kpi b{display:block;font-size:34px;letter-spacing:-.07em;margin:10px 0 3px}.up{color:var(--green);font:9px 'DM Mono'}
-.graphs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px}.graph{background:var(--panel);padding:17px 18px}.graphhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}.graphhead b{font-size:12px}.graphhead span{font:8px 'DM Mono';color:var(--muted)}svg{width:100%;height:150px;display:block}.axis{stroke:#303030;stroke-width:1}.gridline{stroke:#202020;stroke-width:1}.g1{fill:none;stroke:var(--red);stroke-width:3}.g2{fill:none;stroke:#e7e2d8;stroke-width:2}.g3{fill:none;stroke:#777;stroke-width:2}.point{fill:var(--red)}text{font-family:'DM Mono';font-size:8px;fill:#777}.value{fill:#e8e4dd;font-size:8px}
-.analysis{display:grid;grid-template-columns:1.05fr .95fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px}.analysis>div{background:var(--panel);padding:19px}.analysis h2{font-size:22px;letter-spacing:-.06em;margin:0 0 14px}.signal{display:grid;grid-template-columns:80px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line)}.signal:first-of-type{border-top:0}.signal label{font:8px 'DM Mono';color:var(--red);padding-top:2px}.signal b{font-size:12px}.signal p{margin:4px 0 0;color:var(--muted);font-size:9px;line-height:1.4}
-.calendar{background:var(--panel);border:1px solid var(--line);padding:17px}.caltop{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.caltop h2{margin:0;font-size:21px;letter-spacing:-.06em}.caltop span{font:8px 'DM Mono';color:var(--muted)}.week,.dates{display:grid;grid-template-columns:repeat(7,1fr)}.week div{font:7px 'DM Mono';color:#666;text-align:center;padding:7px 0}.date{aspect-ratio:1/1;min-height:39px;border:1px solid #202020;margin:-1px 0 0 -1px;padding:7px;position:relative;color:#777;font:8px 'DM Mono'}.date a{color:inherit;text-decoration:none;display:block;height:100%}.date.active{background:#e8e3da;color:#090909;border-color:#e8e3da}.date.active b{color:#090909}.date.today{background:var(--red);color:#fff;border-color:var(--red)}.date.today b{color:#fff}.date .tag{position:absolute;left:7px;bottom:6px;font-size:6px;color:inherit}.date.muted{opacity:.32}.calendar .legend{display:flex;justify-content:space-between;margin-top:12px;font:7px 'DM Mono';color:#666}.legend i{display:inline-block;width:6px;height:6px;background:var(--red);margin-right:5px}.legend i.base{background:#e8e3da}
-.networkBox{margin-top:18px;background:var(--panel);border:1px solid var(--line);padding:18px}.networkBox .row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:10px 0;font-size:9px}.networkBox .row:first-of-type{border-top:0}.networkBox b{font:9px 'DM Mono';color:var(--green)}.networkBox h2{font-size:18px;margin:0 0 8px;letter-spacing:-.05em}
-.footer{border-top:1px solid var(--line);padding:13px 0 25px;display:flex;justify-content:space-between;gap:20px;color:#666;font:7px 'DM Mono';text-transform:uppercase}
-@media(max-width:1050px){.topline{grid-template-columns:1fr 1fr}.intro{grid-column:1/-1}.dashboard{grid-template-columns:1fr}.right{display:grid;grid-template-columns:1fr 1fr;gap:18px}.networkBox{margin-top:0}}
-@media(max-width:720px){.shell{padding:0 14px}.nav{display:none}.ticker{font-size:7px}.topline,.graphs,.analysis,.right{grid-template-columns:1fr}.intro{grid-column:auto}.kpis{grid-template-columns:1fr}.intro h1{font-size:52px}.footer{display:block}.footer span{display:block;margin-top:7px}}
-</style>
-</head>
-<body>
-<div class="shell">
-<header>
-  <div class="logo"><div class="king">KING</div><span>INTELLIGENCE / 2026</span></div>
-  <nav class="nav"><a href="#pulse">Pulse</a><a href="#analysis">Analysis</a><a href="#calendar">Archive</a></nav>
-  <div class="ticker"><i class="dot"></i>LIVE FAN SIGNAL <b>818</b></div>
-</header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KING — Global Buzz & Intelligence</title><meta name="description" content="KING × Shah Rukh Khan Global Daily Buzz & Fan Intelligence"><style>
+:root{--bg:#070707;--p:#111;--p2:#161616;--line:#292929;--t:#f5f2eb;--m:#92908b;--r:#d71920;--g:#8ee0a8;--gold:#e2b45d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#18110d 0,#080808 36%,#050505 100%);color:var(--t);font:14px Inter,system-ui,sans-serif}.wrap{max-width:1440px;margin:auto;padding:22px 24px 45px}header{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line);padding-bottom:16px}.eyebrow{font:9px ui-monospace,monospace;letter-spacing:.16em;color:var(--r)}h1{font-size:clamp(36px,5vw,68px);line-height:.86;letter-spacing:-.07em;margin:12px 0 8px}h2{font-size:16px;margin:0 0 10px;letter-spacing:-.03em}.sub{color:var(--m);font-size:11px;max-width:700px}.date{text-align:right;color:var(--m);font:9px ui-monospace,monospace}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:16px}.card{background:linear-gradient(145deg,var(--p),#0c0c0c);border:1px solid var(--line);border-radius:13px;padding:16px}.k{grid-column:span 2}.wide{grid-column:span 8}.side{grid-column:span 4}.half{grid-column:span 6}.full{grid-column:1/-1}.label{font:8px ui-monospace,monospace;color:var(--m);letter-spacing:.1em;text-transform:uppercase}.value{font-size:29px;font-weight:800;letter-spacing:-.06em;margin:9px 0 2px}.delta{font:9px ui-monospace,monospace;color:var(--g)}.muted{font-size:10px;color:var(--m)}table{width:100%;border-collapse:collapse;font-size:11px}th,td{padding:9px 7px;border-bottom:1px solid #252525;text-align:left}th{font:8px ui-monospace,monospace;color:var(--m);text-transform:uppercase}.num{text-align:right}.bars{display:flex;align-items:end;height:190px;gap:28px;border-bottom:1px solid #333;padding:12px 12px 0}.barcol{height:100%;flex:1;display:flex;flex-direction:column;justify-content:end;text-align:center}.bar{background:linear-gradient(#e2b45d,#76531e);border-radius:7px 7px 0 0;min-height:5px}.bar.alt{background:linear-gradient(#bbb,#555)}.barlab{font:9px ui-monospace,monospace;color:var(--m);padding:7px 0 10px}.donut{width:150px;height:150px;margin:15px auto;position:relative;border-radius:50%;background:conic-gradient(var(--gold) 0 15.38%,#2b2b2b 15.38% 100%)}.donut:after{content:'';position:absolute;inset:28px;border-radius:50%;background:#111}.donut span{position:absolute;inset:0;display:grid;place-items:center;z-index:2;font-size:24px;font-weight:800}.signal{display:grid;grid-template-columns:75px 1fr;gap:12px;border-top:1px solid var(--line);padding:10px 0}.signal:first-of-type{border-top:0}.signal b{font-size:11px}.signal p{margin:3px 0 0;color:var(--m);font-size:9px;line-height:1.45}.sig{font:8px ui-monospace,monospace;color:var(--r)}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.day{aspect-ratio:1;border:1px solid #222;padding:6px;font:9px ui-monospace,monospace;color:#777}.day.base{background:#eee9df;color:#090909}.day.today{background:var(--r);color:white}.foot{border-top:1px solid var(--line);margin-top:16px;padding-top:12px;color:#666;font:8px ui-monospace,monospace;line-height:1.6}@media(max-width:900px){.k{grid-column:span 4}.wide,.side,.half{grid-column:1/-1}}@media(max-width:560px){.wrap{padding:14px}.k{grid-column:span 6}header{display:block}.date{text-align:left;margin-top:10px}}
+</style></head><body><div class="wrap">
+<header><div><div class="eyebrow">GLOBAL DAILY BUZZ & FAN INTELLIGENCE</div><h1>KING × SHAH RUKH KHAN</h1><div class="sub">An independent longitudinal intelligence dashboard tracking conversation, video attention, organised fandom and the competitive environment around KING.</div></div><div class="date"><b>MASTER BASELINE</b><br>04–05 OCTOBER 2026<br>PUBLIC SOURCE DATA</div></header>
 
-<main>
-<section class="topline" id="pulse">
-  <div class="intro">
-    <div class="kicker">PUBLIC MARKETING-INTELLIGENCE ARCHIVE</div>
-    <h1>THE KING<br>IS MOVING.</h1>
-    <p>A compact daily view of attention, velocity, narrative change and organised fan mobilisation. <b>04 OCT</b> remains the immutable baseline.</p>
-  </div>
-  <div class="countdown">
-    <small>RELEASE DATE</small>
-    <strong>24 DEC 2026</strong>
-    <div class="release">T−80 DAYS · OBSERVATION WINDOW OPEN</div>
-  </div>
-  <div class="network">
-    <small>TEAM SRK · LIVE PAGE SIGNAL</small>
-    <div class="big">818</div>
-    <div class="sub">FANS REGISTERED</div>
-    <div class="sub">5,320 MEMBERS · 45 COUNTRIES · 207 CITIES</div>
-  </div>
-</section>
+<div class="grid">
+<div class="card k"><div class="label">#srkking posts</div><div class="value">699K+</div><div class="delta">verified public baseline</div></div>
+<div class="card k"><div class="label">avg Reel views</div><div class="value">2.598M</div><div class="delta">sampled #srkking</div></div>
+<div class="card k"><div class="label">top fan Reel</div><div class="value">12.973M</div><div class="delta">sampled peak</div></div>
+<div class="card k"><div class="label">@iamsrk</div><div class="value">48.375M</div><div class="delta">Instagram followers</div></div>
+<div class="card k"><div class="label">community</div><div class="value">5,320</div><div class="delta">reported members</div></div>
+<div class="card k"><div class="label">registered</div><div class="value">818</div><div class="delta">reported registrations</div></div>
 
-<section class="dashboard">
-<div class="left">
-  <div class="kpis">
-    <div class="kpi"><label>KING POSTS</label><b>742.4K</b><span class="up">↑ 6.2% · +43.4K</span></div>
-    <div class="kpi"><label>VIDEO VIEWS</label><b>38.72M</b><span class="up">↑ 24.2% · +7.54M</span></div>
-    <div class="kpi"><label>TOP VIDEO</label><b>16.21M</b><span class="up">↑ 25.0% · +3.24M</span></div>
-  </div>
+<div class="card wide"><h2>KING official video footprint</h2><div class="muted">Two major official Red Chillies Entertainment YouTube assets.</div><div class="bars"><div class="barcol"><div class="bar" style="height:100%"></div><div class="barlab">TITLE REVEAL<br><b>47.878M</b></div></div><div class="barcol"><div class="bar alt" style="height:66.0%"></div><div class="barlab">DATE ANNOUNCEMENT<br><b>31.645M</b></div></div></div><div class="muted">Combined verified views: <b>79.523M</b>. This is a floor for these two assets, not total KING video consumption.</div></div>
 
-  <div class="graphs">
-    <div class="graph">
-      <div class="graphhead"><b>Attention movement</b><span>POSTS</span></div>
-      <svg viewBox="0 0 620 180" aria-label="KING posts increased from 699 thousand to 742.4 thousand">
-        <line class="axis" x1="35" y1="150" x2="595" y2="150"/><line class="gridline" x1="35" y1="90" x2="595" y2="90"/><line class="gridline" x1="35" y1="30" x2="595" y2="30"/>
-        <polyline class="g1" points="55,121 565,79"/><circle class="point" cx="55" cy="121" r="5"/><circle class="point" cx="565" cy="79" r="5"/>
-        <text x="45" y="170">04 OCT</text><text x="540" y="170">05 OCT</text><text class="value" x="45" y="110">699K</text><text class="value" x="530" y="68">742.4K</text>
-      </svg>
-    </div>
-    <div class="graph">
-      <div class="graphhead"><b>Video velocity</b><span>VIEWS / TOP VIDEO</span></div>
-      <svg viewBox="0 0 620 180" aria-label="KING video views and top video both increased">
-        <line class="axis" x1="35" y1="150" x2="595" y2="150"/><line class="gridline" x1="35" y1="90" x2="595" y2="90"/><line class="gridline" x1="35" y1="30" x2="595" y2="30"/>
-        <polyline class="g2" points="55,117 565,42"/><polyline class="g3" points="55,128 565,69"/>
-        <circle class="point" cx="55" cy="117" r="4"/><circle class="point" cx="565" cy="42" r="4"/>
-        <text x="45" y="170">04 OCT</text><text x="540" y="170">05 OCT</text><text class="value" x="43" y="108">31.18M</text><text class="value" x="525" y="32">38.72M</text><text x="430" y="108">12.97M → 16.21M</text>
-      </svg>
-    </div>
-  </div>
+<div class="card side"><h2>Fan community conversion</h2><div class="muted">Registered fans as a share of the reported 5,320-member community.</div><div class="donut"><span>15.4%</span></div><table><tr><td>Registered</td><td class="num"><b>818</b></td></tr><tr><td>Other members</td><td class="num"><b>4,502</b></td></tr></table></div>
 
-  <div class="analysis" id="analysis">
-    <div>
-      <h2>What changed?</h2>
-      <div class="signal"><label>VELOCITY</label><div><b>Video is moving faster than posts.</b><p>Posts +6.2%, while total video views rose +24.2% and the top video rose +25.0%.</p></div></div>
-      <div class="signal"><label>SIGNAL</label><div><b>The attention layer is deepening.</b><p>The strongest observed movement is video consumption, not simply the number of posts.</p></div></div>
-      <div class="signal"><label>READ</label><div><b>KING remains a live anticipation event.</b><p>This is a two-day movement, not a claim about the full market. The archive will test whether the velocity persists.</p></div></div>
-    </div>
-    <div>
-      <h2>Evidence window</h2>
-      <div class="signal"><label>SAMPLE</label><div><b>52,134 classified items</b><p>31,842 accounts/users · 48,327 posts/comments · 1,284 articles · 416 videos · 2,107 images.</p></div></div>
-      <div class="signal"><label>COVERAGE</label><div><b>27 geographies · 8 platforms</b><p>Sampling window: 00:00–23:59 IST. Estimated reach: 4.7M.</p></div></div>
-      <div class="signal"><label>CONFIDENCE</label><div><b>Medium–high</b><p>Unknown fields remain —. No composite buzz score is invented.</p></div></div>
-    </div>
-  </div>
+<div class="card half"><h2>SRK vs RDJ — Instagram</h2><div class="muted">Current follower footprint used for the star-level comparison.</div><div class="bars"><div class="barcol"><div class="bar" style="height:82.1%"></div><div class="barlab">SHAH RUKH KHAN<br><b>48.38M</b></div></div><div class="barcol"><div class="bar alt" style="height:100%"></div><div class="barlab">ROBERT DOWNEY JR.<br><b>58.90M</b></div></div></div><div class="muted">Follower size alone does not measure fan intensity or cultural imprint.</div></div>
+
+<div class="card half"><h2>Major fan-site footprints</h2><table><thead><tr><th>Fan ecosystem</th><th class="num">Audience</th></tr></thead><tbody><tr><td>Team Shah Rukh Khan</td><td class="num">4.7M+</td></tr><tr><td>SRKUniverse</td><td class="num">592K X</td></tr><tr><td>SRKCFC</td><td class="num">160.5K X</td></tr><tr><td>SRKUniverse Indonesia</td><td class="num">24.1K X</td></tr><tr><td>SRKUniverse UAE</td><td class="num">9.6K X</td></tr></tbody></table></div>
+
+<div class="card half"><h2>Fan-site publishing footprint</h2><div class="muted">Accumulated public X post counts.</div><div class="bars"><div class="barcol"><div class="bar" style="height:100%"></div><div class="barlab">SRKCFC<br><b>284.4K</b></div></div><div class="barcol"><div class="bar" style="height:47.5%"></div><div class="barlab">INDONESIA<br><b>135.2K</b></div></div><div class="barcol"><div class="bar" style="height:43.9%"></div><div class="barlab">SRKUNIVERSE<br><b>125K</b></div></div><div class="barcol"><div class="bar alt" style="height:7.8%"></div><div class="barlab">UAE<br><b>22.1K</b></div></div></div></div>
+
+<div class="card half"><h2>Instagram fan-site engagement</h2><table><thead><tr><th>Account</th><th class="num">Followers</th><th class="num">Engagement</th></tr></thead><tbody><tr><td>Team Shah Rukh Khan</td><td class="num">382.1K</td><td class="num">0.32%</td></tr><tr><td>SRKUniverse</td><td class="num">150.3K</td><td class="num">0.32%</td></tr><tr><td>SRK Fan Club Shahada</td><td class="num">45.6K</td><td class="num">1.87%</td></tr><tr><td>SRK FC Pune</td><td class="num">6.2K</td><td class="num">1.02%</td></tr></tbody></table><div class="muted" style="margin-top:9px">Smaller fan accounts can materially outperform larger accounts on engagement rate.</div></div>
+
+<div class="card half"><h2>Competitive calendar</h2><div class="signal"><div class="sig">18 DEC</div><div><b>AVENGERS: DOOMSDAY</b><p>Robert Downey Jr. · Doctor Doom · Marvel</p></div></div><div class="signal"><div class="sig">24 DEC</div><div><b>KING</b><p>Shah Rukh Khan · Siddharth Anand · Red Chillies / Marflix</p></div></div><div class="signal"><div class="sig">GAP</div><div><b>6 DAYS</b><p>The competitive window is unusually compressed.</p></div></div></div>
+
+<div class="card full"><h2>Daily archive</h2><div class="calendar"><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day base"><b>4</b><br>BASE</div><div class="day today"><b>5</b><br>TODAY</div><div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div></div></div>
+
+<div class="card full"><h2>Intelligence rules</h2><div class="signal"><div class="sig">01</div><div><b>Posts ≠ people.</b><p>699K posts cannot be described as 699K unique fans. Unique discussants require account-level social-listening data.</p></div></div><div class="signal"><div class="sig">02</div><div><b>Followers ≠ engagement.</b><p>Fan sites are ranked separately by audience footprint, publishing activity and engagement.</p></div></div><div class="signal"><div class="sig">03</div><div><b>Baseline stays locked.</b><p>Each daily report adds a new observation rather than rewriting the original baseline.</p></div></div></div>
 </div>
-
-<aside class="right">
-  <div class="calendar" id="calendar">
-    <div class="caltop"><h2>OCT 2026</h2><span>DAILY ARCHIVE</span></div>
-    <div class="week"><div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div></div>
-    <div class="dates">
-      <div class="date muted"></div><div class="date muted"></div><div class="date muted"></div><div class="date muted"></div>
-      <div class="date"><b>1</b></div><div class="date"><b>2</b></div><div class="date"><b>3</b></div>
-      <div class="date active"><a href="./2026-10-04.html"><b>4</b><span class="tag">BASELINE</span></a></div>
-      <div class="date today"><a href="./2026-10-05.html"><b>5</b><span class="tag">TODAY</span></a></div>
-      <div class="date"><a href="./2026-10-06.html"><b>6</b><span class="tag">NEXT</span></a></div>
-      <div class="date"><b>7</b></div><div class="date"><b>8</b></div><div class="date"><b>9</b></div><div class="date"><b>10</b></div>
-      <div class="date"><b>11</b></div><div class="date"><b>12</b></div><div class="date"><b>13</b></div><div class="date"><b>14</b></div><div class="date"><b>15</b></div><div class="date"><b>16</b></div><div class="date"><b>17</b></div>
-      <div class="date"><b>18</b></div><div class="date"><b>19</b></div><div class="date"><b>20</b></div><div class="date"><b>21</b></div><div class="date"><b>22</b></div><div class="date"><b>23</b></div><div class="date"><b>24</b></div>
-      <div class="date"><b>25</b></div><div class="date"><b>26</b></div><div class="date"><b>27</b></div><div class="date"><b>28</b></div><div class="date"><b>29</b></div><div class="date"><b>30</b></div><div class="date"><b>31</b></div>
-    </div>
-    <div class="legend"><span><i class="base"></i>baseline</span><span><i></i>latest record</span></div>
-  </div>
-
-  <div class="networkBox">
-    <h2>Fan mobilisation</h2>
-    <div class="row"><span>Fans registered</span><b>818</b></div>
-    <div class="row"><span>Network members</span><b>5,320</b></div>
-    <div class="row"><span>Countries</span><b>45+</b></div>
-    <div class="row"><span>Cities</span><b>207</b></div>
-    <div class="row"><span>Signal type</span><b>INTENT</b></div>
-    <div class="row"><span>Attendance</span><b>—</b></div>
-    <p class="mono" style="line-height:1.5;margin:11px 0 0">Registration ≠ attendance.<br>Announcement ≠ execution.</p>
-  </div>
-</aside>
-</section>
-</main>
-
-<div class="footer"><span>KING INTELLIGENCE · APPEND-ONLY DAILY ARCHIVE</span><span>BASELINE 04 OCT 2026 · TODAY 05 OCT 2026 · RELEASE 24 DEC 2026</span></div>
-</div>
-</body>
-</html>
+<div class="foot">SOURCE DISCIPLINE · PUBLICLY VERIFIABLE FIGURES ONLY · INDEPENDENT ANALYSIS · NOT AN OFFICIAL SHAH RUKH KHAN / KING / RED CHILLIES / MARVEL PUBLICATION · LAST BASELINE UPDATE 05 OCT 2026</div>
+</div></body></html>
