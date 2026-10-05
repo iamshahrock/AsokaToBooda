@@ -17,6 +17,19 @@
 .word-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:11px}
 .word-row b{font-size:12px}
 @media(max-width:900px){.sentiment-data-grid{grid-template-columns:1fr}}
+<style>
+.sentiment-clean-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.sentiment-clean-panel{border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:12px;min-width:0}
+.metric-title{font-size:10px;font-weight:800;letter-spacing:.08em;opacity:.72;margin-bottom:10px}
+.signal-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:11px}
+.signal-row b{font-size:9px;letter-spacing:.05em;white-space:nowrap}
+.word-cloud{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:90px}
+.word-cloud span{display:inline-block}
+.word-cloud .w3{font-size:27px;font-weight:900}.word-cloud .w2{font-size:18px;font-weight:700}.word-cloud .w1{font-size:12px;opacity:.82}
+.smallnote{font-size:9px;line-height:1.4;opacity:.58;margin-top:9px}
+.sentiment-bottom{margin-top:10px;padding:11px 12px;border-left:3px solid rgba(255,255,255,.25);font-size:11px;line-height:1.5}
+@media(max-width:900px){.sentiment-clean-grid{grid-template-columns:1fr}}
+</style>
 </style>
 </style>
 </style></head><body><main class="wrap">
@@ -31,35 +44,39 @@
 <div class="card k"><div class="label">community registered</div><div class="val">818</div><div class="delta">15.4% of members</div></div>
 
 
-<div class="card full" id="fan-sentiment-top"><h2>FAN SENTIMENT · VERIFIED CONVERSATION SIGNALS</h2>
-<div class="note"><b>04 OCTOBER 2026 · public discovery sample.</b> The underlying evidence contains <b>12 surfaced #SRKKing Reels</b> from <b>8 unique creators</b>, with <b>31,176,089 combined views</b>. It does <b>not</b> contain a statistically representative post/comment corpus, so no fabricated sentiment percentages are shown.</div>
-<div class="sentiment-data-grid">
-<div class="sentiment-data-panel"><h3>MEASURABLE SAMPLE</h3>
-<div class="barrow"><div class="barhead"><span>Public #SRKKing posts</span><b>699,000</b></div><div class="track"><div class="fill r" style="width:100%"></div></div></div>
-<div class="barrow"><div class="barhead"><span>Surfaced fan Reels</span><b>12</b></div><div class="track"><div class="fill" style="width:65%"></div></div></div>
-<div class="barrow"><div class="barhead"><span>Unique creators</span><b>8</b></div><div class="track"><div class="fill" style="width:44%"></div></div></div>
-<div class="barrow"><div class="barhead"><span>Combined Reel views</span><b>31,176,089</b></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
-<div class="barrow"><div class="barhead"><span>Average views / surfaced Reel</span><b>2,598,007</b></div><div class="track"><div class="fill" style="width:50%"></div></div></div>
+<div class="card full" id="fan-sentiment-top">
+<h2>FAN SENTIMENT</h2>
+<div class="note"><b>04 OCT 2026 · 12 surfaced #SRKKing Reels · 8 unique creators · 31,176,089 combined views.</b> This is a qualitative sentiment read from the surfaced discovery set — not a population survey.</div>
+
+<div class="sentiment-clean-grid">
+<div class="sentiment-clean-panel">
+<div class="metric-title">OBSERVED EMOTIONAL SIGNAL</div>
+<div class="signal-row"><span>Admiration / visual praise</span><b>DOMINANT</b></div>
+<div class="signal-row"><span>Excitement / anticipation</span><b>HIGH</b></div>
+<div class="signal-row"><span>Fan affection</span><b>HIGH</b></div>
+<div class="signal-row"><span>Negative KING theme</span><b>NOT VISIBLE</b></div>
+<div class="smallnote">Confidence is limited by the discovery-set methodology.</div>
 </div>
-<div class="sentiment-data-panel"><h3>TOP SENTIMENT SIGNALS · OBSERVED</h3>
-<div class="item"><b>01 · POSITIVE / ADMIRATION</b><span><b>Dominant signal.</b> Visual praise, affection and admiration for SRK's look/aura.</span></div>
-<div class="item"><b>02 · EXCITEMENT / ANTICIPATION</b><span><b>High signal.</b> Trailer/teaser anticipation is a recurring discussion cluster.</span></div>
-<div class="item"><b>03 · FAN AFFECTION</b><span><b>High signal.</b> Emotional fan-edit language and SRK identity tags recur in the surfaced content.</span></div>
-<div class="item"><b>04 · NEGATIVE</b><span><b>No major negative KING theme visible</b> in this surfaced sample; confidence is low because the sample is discovery-based.</span></div>
+
+<div class="sentiment-clean-panel">
+<div class="metric-title">LANGUAGE SIGNAL</div>
+<div class="word-cloud">
+<span class="w3">KING</span><span class="w2">aura</span><span class="w2">look</span><span class="w2">handsome</span>
+<span class="w1">teaser</span><span class="w1">trailer</span><span class="w1">King of Bollywood</span><span class="w1">Him</span>
 </div>
-<div class="sentiment-data-panel"><h3>WORDS / LANGUAGE ACTUALLY OBSERVED</h3>
-<div class="word-row"><span>King</span><b>observed</b></div>
-<div class="word-row"><span>aura</span><b>observed</b></div>
-<div class="word-row"><span>look</span><b>observed</b></div>
-<div class="word-row"><span>handsome</span><b>observed</b></div>
-<div class="word-row"><span>teaser</span><b>observed</b></div>
-<div class="word-row"><span>trailer</span><b>observed</b></div>
-<div class="word-row"><span>King of Bollywood</span><b>observed</b></div>
-<div class="word-row"><span>“Him” + SRK / fan-club / edit tags</span><b>observed</b></div>
+<div class="smallnote">These are recurring terms explicitly identified in the 04 OCT source sample; frequency counts were not exposed by the source and are therefore not fabricated.</div>
+</div>
+
+<div class="sentiment-clean-panel">
+<div class="metric-title">EMOTIONAL ATTENTION · VERIFIED VIEWS</div>
+<div class="barrow"><div class="barhead"><span>@srkking555 · SRK visual Reel</span><b>12,973,281</b></div><div class="track"><div class="fill r" style="width:100%"></div></div></div>
+<div class="barrow"><div class="barhead"><span>@shahforlife · fan edit</span><b>3,920,907</b></div><div class="track"><div class="fill" style="width:30.22%"></div></div></div>
+<div class="barrow"><div class="barhead"><span>12-Reel discovery set</span><b>31,176,089</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+<div class="smallnote">The strongest visible emotional driver in the source analysis was SRK's visual identity / aura, followed by teaser/trailer anticipation and fan edits.</div>
 </div>
 </div>
-<div class="sentiment-callout"><b>VIRAL SENTIMENT EVIDENCE:</b> <b>@srkking555</b> generated the largest surfaced Reel at <b>12,973,281 views</b>; <b>@shahforlife</b> generated the second-largest at <b>3,920,907 views</b>. The 12-Reel cluster totalled <b>31,176,089 views</b>. The strongest visible emotional driver was <b>SRK's visual identity / aura</b>, followed by trailer/teaser anticipation and fan edits. citeturn193file0turn193file1</div>
-<div class="note"><b>What this does NOT claim:</b> no “60% positive / 20% neutral / 20% negative” type population split. The source explicitly records <b>0 people polled</b> and says the sentiment denominator is the <b>12 surfaced Reels</b>. A statistically valid sentiment percentage requires a larger defined post/comment corpus. fileciteturn193file3</div>
+
+<div class="sentiment-bottom"><b>READ:</b> The conversation visible in the baseline is admiration-led and anticipation-led. The important marketing signal is the <b>conversion of affection into fan content and participation</b>, rather than a generic “positive sentiment” score.</div>
 </div>
 <div class="card full" id="daily-hashtags"><h2>TOP HASHTAGS · DAILY POST COUNT <span class="pill">DAILY MONITOR</span></h2>
 <div class="note">Daily measurement of the number of public posts using the leading SRK × KING hashtags. This is <b>post volume, not unique people</b>. The 04 OCT baseline remains fixed; each new day adds a new observation and change rate.</div>
