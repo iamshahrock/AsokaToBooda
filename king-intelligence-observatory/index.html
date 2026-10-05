@@ -44,8 +44,8 @@ footer{padding:30px 0 55px;color:var(--muted);font:9px "DM Mono";line-height:1.7
 </header>
 
 <div class="tickerbar">
-  <a class="ticker" href="#birthday"><span class="days" id="bdDays">28</span><span class="tickerlabel">DAYS TO SRK'S BIRTHDAY</span><span class="sub">02 NOVEMBER 2026 · CLICK FOR BIRTHDAY BUZZ ANALYSIS →</span></a>
-  <a class="ticker" href="#kingbuzz"><span class="days" id="kingDays">80</span><span class="tickerlabel">DAYS TO KING</span><span class="sub">24 DECEMBER 2026 · CLICK FOR KING BUZZ ANALYSIS →</span></a>
+  <a class="ticker" href="#birthdayBuzz" onclick="openBuzz('birthdayBuzz');return false"><span class="days" id="bdDays">28</span><span class="tickerlabel">DAYS TO SRK'S BIRTHDAY</span><span class="sub">02 NOVEMBER 2026 · CLICK FOR BIRTHDAY BUZZ ANALYSIS →</span></a>
+  <a class="ticker" href="#kingBuzzPanel" onclick="openBuzz('kingBuzzPanel');return false"><span class="days" id="kingDays">80</span><span class="tickerlabel">DAYS TO KING</span><span class="sub">24 DECEMBER 2026 · CLICK FOR KING BUZZ ANALYSIS →</span></a>
 </div>
 
 <main id="home">
@@ -125,12 +125,12 @@ footer{padding:30px 0 55px;color:var(--muted);font:9px "DM Mono";line-height:1.7
 
 <section class="section" id="birthday">
 <div class="section-head"><div><div class="mono" style="color:var(--red)">EVENT INTELLIGENCE</div><h2>SRK BIRTHDAY · 02 NOVEMBER</h2></div><p>The birthday is treated as its own cultural event, with a separate buzz curve and crossover analysis into KING.</p></div>
-<div class="countdown"><a class="count" href="#birthdayBuzz" onclick="toggleBuzz('birthdayBuzz');return true"><div class="days2" id="bdDays2">28</div><h3>Days to the 61st Birthday</h3><p>Click to open the birthday buzz analysis: historical birthday attention, fan activation, geography, sentiment and KING crossover.</p><span class="arrow">↘</span></a><div class="panel" id="birthdayBuzz" style="border:0;border-left:1px solid var(--line)"><h3>BIRTHDAY BUZZ ANALYSIS</h3><div class="buzzgrid"><div><strong>EVENT</strong><span>02 NOV 2026</span></div><div><strong>61</strong><span>BIRTHDAY YEAR</span></div><div><strong>FAN</strong><span>PRIMARY PARTICIPATION SIGNAL</span></div></div><p class="buzznote">The 2025 birthday used a private fan interaction format rather than the traditional Mannat gathering; the 2026 analysis should measure the new event rather than assume the old pattern. cite-placeholder</p></div></div>
+<div class="countdown"><a class="count" href="#birthdayBuzz" onclick="toggleBuzz('birthdayBuzz');return true"><div class="days2" id="bdDays2">28</div><h3>Days to the 61st Birthday</h3><p>Click to open the birthday buzz analysis: historical birthday attention, fan activation, geography, sentiment and KING crossover.</p><span class="arrow">↘</span></a><div class="panel buzz" id="birthdayBuzz" style="border:0;border-left:1px solid var(--line)"><h3>BIRTHDAY BUZZ ANALYSIS</h3><div class="buzzgrid"><div><strong>EVENT</strong><span>02 NOV 2026</span></div><div><strong>61</strong><span>BIRTHDAY YEAR</span></div><div><strong>FAN</strong><span>PRIMARY PARTICIPATION SIGNAL</span></div></div><p class="buzznote">The 2025 birthday used a private fan interaction format rather than the traditional Mannat gathering; the 2026 analysis should measure the new event rather than assume the old pattern. cite-placeholder</p></div></div>
 </section>
 
 <section class="section" id="kingbuzz">
 <div class="section-head"><div><div class="mono" style="color:var(--gold)">FILM INTELLIGENCE</div><h2>KING · 24 DECEMBER</h2></div><p>The release countdown becomes a live intelligence variable: every new trailer, poster, interview, fan response and competitive event can move the curve.</p></div>
-<div class="countdown"><a class="count" href="#kingBuzzPanel" onclick="toggleBuzz('kingBuzzPanel');return true"><div class="days2" id="kingDays2">80</div><h3>Days to KING</h3><p>Click to open the KING buzz analysis: attention, sentiment, topic movement, competition, geography and fan mobilisation.</p><span class="arrow">↘</span></a><div class="panel" id="kingBuzzPanel" style="border:0;border-left:1px solid var(--line)"><h3>KING BUZZ ANALYSIS</h3><div class="buzzgrid"><div><strong>24 DEC</strong><span>THEATRICAL RELEASE</span></div><div><strong>100</strong><span>DAYS WAS SRK'S SEPT 2026 REFERENCE POINT</span></div><div><strong>LIVE</strong><span>COUNTDOWN + CONVERSATION</span></div></div><p class="buzznote">Official Red Chillies currently lists KING for 24 December 2026. The observatory should preserve every release-date change as an explicit event in the archive.</p></div></div>
+<div class="countdown"><a class="count" href="#kingBuzzPanel" onclick="toggleBuzz('kingBuzzPanel');return true"><div class="days2" id="kingDays2">80</div><h3>Days to KING</h3><p>Click to open the KING buzz analysis: attention, sentiment, topic movement, competition, geography and fan mobilisation.</p><span class="arrow">↘</span></a><div class="panel buzz" id="kingBuzzPanel" style="border:0;border-left:1px solid var(--line)"><h3>KING BUZZ ANALYSIS</h3><div class="buzzgrid"><div><strong>24 DEC</strong><span>THEATRICAL RELEASE</span></div><div><strong>100</strong><span>DAYS WAS SRK'S SEPT 2026 REFERENCE POINT</span></div><div><strong>LIVE</strong><span>COUNTDOWN + CONVERSATION</span></div></div><p class="buzznote">Official Red Chillies currently lists KING for 24 December 2026. The observatory should preserve every release-date change as an explicit event in the archive.</p></div></div>
 </section>
 
 <section class="section" id="myth">
@@ -154,7 +154,7 @@ Official links:
 <script>
 function daysUntil(y,m,d){const now=new Date();const target=new Date(y,m-1,d);now.setHours(0,0,0,0);return Math.max(0,Math.ceil((target-now)/86400000))}
 function refresh(){const bd=daysUntil(2026,11,2),kg=daysUntil(2026,12,24);['bdDays','bdDays2'].forEach(id=>document.getElementById(id).textContent=bd);['kingDays','kingDays2'].forEach(id=>document.getElementById(id).textContent=kg)}
-function toggleBuzz(id){const el=document.getElementById(id);if(el)el.classList.toggle('open')}
+function toggleBuzz(id){const el=document.getElementById(id);if(el)el.classList.toggle("open")} function openBuzz(id){const el=document.getElementById(id);if(!el)return;el.classList.add("open");el.scrollIntoView({behavior:"smooth",block:"center"})}
 refresh();
 </script>
 </body>
