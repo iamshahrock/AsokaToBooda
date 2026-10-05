@@ -29,6 +29,19 @@
 .smallnote{font-size:9px;line-height:1.4;opacity:.58;margin-top:9px}
 .sentiment-bottom{margin-top:10px;padding:11px 12px;border-left:3px solid rgba(255,255,255,.25);font-size:11px;line-height:1.5}
 @media(max-width:900px){.sentiment-clean-grid{grid-template-columns:1fr}}
+<style>
+.conversation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.conversation-card{border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:13px;min-width:0}
+.conversation-topic{font-size:10px;font-weight:800;letter-spacing:.07em;margin-bottom:7px}
+.conversation-source{font-size:10px;opacity:.62;margin-bottom:9px}
+.conversation-quote{font-size:12px;line-height:1.5;font-weight:600}
+.conversation-metrics{font-size:10px;margin-top:11px;padding-top:9px;border-top:1px solid rgba(255,255,255,.07);opacity:.8}
+.conversation-read{font-size:10px;line-height:1.4;margin-top:9px;opacity:.68}
+.conversation-summary{margin-top:10px;padding:13px;border:1px solid rgba(255,255,255,.09);border-radius:9px}
+.summary-items{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.summary-items span{padding:7px 9px;border:1px solid rgba(255,255,255,.07);border-radius:7px;font-size:10px}
+@media(max-width:900px){.conversation-grid{grid-template-columns:1fr}}
+</style>
 </style>
 </style>
 </style>
@@ -45,38 +58,72 @@
 
 
 <div class="card full" id="fan-sentiment-top">
-<h2>FAN SENTIMENT</h2>
-<div class="note"><b>04 OCT 2026 · 12 surfaced #SRKKing Reels · 8 unique creators · 31,176,089 combined views.</b> This is a qualitative sentiment read from the surfaced discovery set — not a population survey.</div>
+<h2>WHAT FANS ARE TALKING ABOUT</h2>
+<div class="note"><b>LIVE PUBLIC CONVERSATION SIGNALS · 05 OCT 2026</b> — actual fan language and engagement from indexed public fan feeds. The board shows representative high-signal posts; it does not invent a topic-volume denominator where the source does not provide one.</div>
 
-<div class="sentiment-clean-grid">
-<div class="sentiment-clean-panel">
-<div class="metric-title">OBSERVED EMOTIONAL SIGNAL</div>
-<div class="signal-row"><span>Admiration / visual praise</span><b>DOMINANT</b></div>
-<div class="signal-row"><span>Excitement / anticipation</span><b>HIGH</b></div>
-<div class="signal-row"><span>Fan affection</span><b>HIGH</b></div>
-<div class="signal-row"><span>Negative KING theme</span><b>NOT VISIBLE</b></div>
-<div class="smallnote">Confidence is limited by the discovery-set methodology.</div>
-</div>
-
-<div class="sentiment-clean-panel">
-<div class="metric-title">LANGUAGE SIGNAL</div>
-<div class="word-cloud">
-<span class="w3">KING</span><span class="w2">aura</span><span class="w2">look</span><span class="w2">handsome</span>
-<span class="w1">teaser</span><span class="w1">trailer</span><span class="w1">King of Bollywood</span><span class="w1">Him</span>
-</div>
-<div class="smallnote">These are recurring terms explicitly identified in the 04 OCT source sample; frequency counts were not exposed by the source and are therefore not fabricated.</div>
+<div class="conversation-grid">
+<div class="conversation-card">
+<div class="conversation-topic">KING · FDFS / THEATRE MOBILISATION</div>
+<div class="conversation-source">SRK FC Pune · @SRKFC_PUNE</div>
+<div class="conversation-quote">“PUNE, ARE YOU READY? The KING is coming! Join SRK FC Pune for the FIRST DAY FIRST SHOW of #KING!”</div>
+<div class="conversation-metrics"><b>24,700</b> followers · <b>142,800</b> posts · post surfaced with <b>1,000+</b> views</div>
+<div class="conversation-read">Fans are already organising the theatrical experience, not waiting for the film campaign to tell them what to do.</div>
 </div>
 
-<div class="sentiment-clean-panel">
-<div class="metric-title">EMOTIONAL ATTENTION · VERIFIED VIEWS</div>
-<div class="barrow"><div class="barhead"><span>@srkking555 · SRK visual Reel</span><b>12,973,281</b></div><div class="track"><div class="fill r" style="width:100%"></div></div></div>
-<div class="barrow"><div class="barhead"><span>@shahforlife · fan edit</span><b>3,920,907</b></div><div class="track"><div class="fill" style="width:30.22%"></div></div></div>
-<div class="barrow"><div class="barhead"><span>12-Reel discovery set</span><b>31,176,089</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
-<div class="smallnote">The strongest visible emotional driver in the source analysis was SRK's visual identity / aura, followed by teaser/trailer anticipation and fan edits.</div>
+<div class="conversation-card">
+<div class="conversation-topic">KING · CONTENT DEMAND</div>
+<div class="conversation-source">SRKUniverse · @SRKUniverse</div>
+<div class="conversation-quote">“Sir please give some dialogue from King? We can’t wait anymore to hear from you!! December is still so far away!!!”</div>
+<div class="conversation-metrics"><b>29,000</b> views · <b>35</b> likes · <b>7</b> replies</div>
+<div class="conversation-read">The audience is asking for more story material: dialogue, trailer and glimpses before release.</div>
+</div>
+
+<div class="conversation-card">
+<div class="conversation-topic">KING · MUSIC SPECULATION</div>
+<div class="conversation-source">SRK FC Pune · @SRKFC_PUNE</div>
+<div class="conversation-quote">“Just imagine a song like Jhoome Jo Pathaan in King 🔥”</div>
+<div class="conversation-metrics">Fan speculation · no reliable post-volume denominator exposed</div>
+<div class="conversation-read">Music is already being used as a memory bridge to the Pathaan-era SRK mass experience.</div>
+</div>
+
+<div class="conversation-card">
+<div class="conversation-topic">SRK · NEXT FILM DEMAND</div>
+<div class="conversation-source">SRK FC Pune · @SRKFC_PUNE</div>
+<div class="conversation-quote">“We Want Don3 with SRK”</div>
+<div class="conversation-metrics"><b>2,000</b> views · <b>259</b> likes · <b>32</b> replies</div>
+<div class="conversation-read">The fan conversation is extending beyond KING into demands for what SRK should do next.</div>
+</div>
+
+<div class="conversation-card">
+<div class="conversation-topic">SRK · BIRTHDAY / COMMUNITY RITUAL</div>
+<div class="conversation-source">SRK Hooghly Fan Club · @srkhooghlyfans</div>
+<div class="conversation-quote">“The most special day of the year for us SRKians… is just 50 DAYS AWAY! Are you excited?”</div>
+<div class="conversation-metrics">Current indexed post · <b>477</b> followers · <b>26,200</b> posts</div>
+<div class="conversation-read">The fan calendar is not only KING: birthday rituals and Mannat Yatra are becoming a parallel mobilisation engine.</div>
+</div>
+
+<div class="conversation-card">
+<div class="conversation-topic">KING · RELEASE IDENTITY</div>
+<div class="conversation-source">Red Chillies Entertainment · amplified by SRK FC Pune</div>
+<div class="conversation-quote">“The ROAR says it all. KING akela hi kaafi hai … 24.12.2026 in cinemas.”</div>
+<div class="conversation-metrics"><b>184,000</b> views · <b>9,000</b> likes · <b>1,000</b> comments · <b>138</b> reposts</div>
+<div class="conversation-read">“Roar” and “KING akela hi kaafi hai” are becoming campaign language that fan accounts repeat and operationalise.</div>
 </div>
 </div>
 
-<div class="sentiment-bottom"><b>READ:</b> The conversation visible in the baseline is admiration-led and anticipation-led. The important marketing signal is the <b>conversion of affection into fan content and participation</b>, rather than a generic “positive sentiment” score.</div>
+<div class="conversation-summary">
+<div><b>THE CONVERSATION IN ONE SCREEN</b></div>
+<div class="summary-items">
+<span><b>WAITING FOR:</b> dialogue · trailer · new footage</span>
+<span><b>ORGANISING:</b> FDFS · theatre groups · fan events</span>
+<span><b>SPECULATING:</b> music · songs · character / content</span>
+<span><b>EXTENDING:</b> Don3 · SRK's next moves</span>
+<span><b>RITUALISING:</b> SRK Day · Mannat Yatra · community events</span>
+<span><b>AMPLIFYING:</b> “ROAR” · “KING” · “KING akela hi kaafi hai”</span>
+</div>
+</div>
+
+<div class="note"><b>Important:</b> these are actual surfaced public posts, not a manufactured sentiment survey. Where the source exposes engagement, the exact engagement is shown. Where it does not expose a defensible count, the dashboard says so rather than inventing one.</div>
 </div>
 <div class="card full" id="daily-hashtags"><h2>TOP HASHTAGS · DAILY POST COUNT <span class="pill">DAILY MONITOR</span></h2>
 <div class="note">Daily measurement of the number of public posts using the leading SRK × KING hashtags. This is <b>post volume, not unique people</b>. The 04 OCT baseline remains fixed; each new day adds a new observation and change rate.</div>
