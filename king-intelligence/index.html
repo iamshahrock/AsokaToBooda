@@ -1,145 +1,75 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KING — Daily Intelligence Archive</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KING — Intelligence Desk</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap');
-:root{--paper:#f1eee7;--ink:#101010;--muted:#77736c;--line:#c8c3b9;--red:#e53227;--dark:#111;--white:#faf9f4;--soft:#e6e1d8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}.wrap{max-width:1540px;margin:auto;padding:0 34px}.mono{font:10px "DM Mono",monospace;letter-spacing:.09em;text-transform:uppercase}.top{height:72px;border-bottom:1px solid var(--ink);display:flex;align-items:center;justify-content:space-between}.brand{font-weight:700;letter-spacing:.25em;font-size:12px}.nav{display:flex;gap:22px}.nav a{font:10px "DM Mono";color:var(--ink);text-decoration:none;text-transform:uppercase}.nav a:hover{color:var(--red)}
-.hero{display:grid;grid-template-columns:1.55fr .45fr;min-height:620px;border-bottom:1px solid var(--ink)}.hero-main{padding:68px 0 42px;display:flex;flex-direction:column;justify-content:space-between}.kicker{color:var(--red)}h1{font-size:clamp(95px,17vw,245px);line-height:.72;letter-spacing:-.095em;margin:0;font-weight:700}.hero-sub{max-width:710px;font-size:22px;line-height:1.25}.hero-sub em{font-family:"Playfair Display";font-weight:500}.hero-side{border-left:1px solid var(--ink);padding:68px 0 42px 28px;display:flex;flex-direction:column;justify-content:space-between}.date{font:12px "DM Mono";line-height:1.65}.date b{font-size:14px}.stamp{font-size:12px;line-height:1.4}.stamp strong{display:block;font-size:55px;letter-spacing:-.07em}.signal{writing-mode:vertical-rl;transform:rotate(180deg);font:9px "DM Mono";letter-spacing:.15em;color:var(--red)}
-.section{border-bottom:1px solid var(--ink);padding:68px 0}.section-title{display:grid;grid-template-columns:65px 1fr 310px;gap:25px;margin-bottom:44px}.num{color:var(--red)}h2{font-size:clamp(50px,7vw,104px);line-height:.82;letter-spacing:-.075em;margin:0}.desc{font-size:12px;color:var(--muted);line-height:1.5}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.kpi{padding:25px 20px 27px 0;border-right:1px solid var(--ink)}.kpi:not(:first-child){padding-left:20px}.kpi:last-child{border-right:0}.kpi strong{font-size:clamp(38px,4.5vw,67px);letter-spacing:-.075em;display:block;line-height:.95}.kpi small{display:block;margin-top:12px;font:9px "DM Mono";color:var(--muted);text-transform:uppercase}.up{color:var(--red)}
-.compare{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.compare .cell{padding:23px 0}.compare .cell:nth-child(odd){padding-right:25px;border-right:1px solid var(--ink)}.compare .cell:nth-child(even){padding-left:25px}.compare strong{font-size:45px;letter-spacing:-.06em}.compare p{font-size:12px;color:var(--muted);margin:7px 0 0}
-.table{width:100%;border-collapse:collapse;font-size:12px}.table th{text-align:left;font:9px "DM Mono";color:var(--muted);text-transform:uppercase;padding:12px 8px;border-bottom:1px solid var(--ink)}.table td{padding:15px 8px;border-bottom:1px solid var(--line)}.table td:not(:first-child){text-align:right}.table .delta{font-weight:700}.table .red{color:var(--red)}
-.movement{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}.move{background:var(--paper);padding:24px;min-height:205px}.move:nth-child(2){background:var(--soft)}.move:nth-child(3){background:var(--dark);color:var(--white)}.move:nth-child(4){background:var(--red);color:white}.move .tag{font:9px "DM Mono";letter-spacing:.1em}.move b{display:block;font-size:29px;line-height:1;margin:42px 0 12px;letter-spacing:-.04em}.move p{font-size:11px;line-height:1.45;opacity:.72;margin:0}
-.intel{display:grid;grid-template-columns:1fr 1fr;gap:55px}.bigcopy{font-size:clamp(36px,5vw,75px);line-height:.91;letter-spacing:-.06em}.bigcopy em{font-family:"Playfair Display";font-weight:500}.insights{border-top:1px solid var(--ink)}.insight{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:150px 1fr;gap:20px}.insight b{font:9px "DM Mono";color:var(--red);text-transform:uppercase}.insight span{font-size:13px;line-height:1.45}
-.fanlayout{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink)}.fan{background:var(--paper);padding:25px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}.fan:nth-child(2){background:var(--soft)}.fan:nth-child(3){background:var(--red);color:white}.fan b{font-size:64px;letter-spacing:-.08em;line-height:.8}.fan h3{font-size:27px;line-height:1;margin:14px 0 8px}.fan p{font-size:11px;opacity:.72;line-height:1.45;margin:0}
-.comp{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.compcol{padding:24px 0}.compcol:first-child{padding-right:30px;border-right:1px solid var(--ink)}.compcol:last-child{padding-left:30px}.entity{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line);padding:15px 0}.entity span{font-size:13px}.entity strong{font-size:35px;letter-spacing:-.06em}.winner{color:var(--red)}
-.archive{display:flex;justify-content:space-between;align-items:end;gap:30px}.days{display:flex;gap:5px;flex-wrap:wrap}.day{padding:12px 14px;border:1px solid var(--ink);font:9px "DM Mono";text-decoration:none;color:var(--ink)}.day.current{background:var(--ink);color:white}.day:hover{color:var(--red);border-color:var(--red)}
-footer{padding:34px 0 70px;color:var(--muted);font:9px "DM Mono";line-height:1.65;max-width:1000px}
-@media(max-width:900px){.hero,.intel,.comp{grid-template-columns:1fr}.hero-side{border-left:0;border-top:1px solid var(--ink);padding-left:0}.signal{writing-mode:horizontal-tb;transform:none}.section-title{grid-template-columns:40px 1fr}.desc{grid-column:2}.kpis{grid-template-columns:1fr 1fr}.kpi:nth-child(2){border-right:0}.movement,.fanlayout{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.compare .cell:nth-child(odd){border-right:0;border-bottom:1px solid var(--ink);padding-right:0}.compare .cell:nth-child(even){padding-left:0}.compcol:first-child{border-right:0;border-bottom:1px solid var(--ink);padding-right:0}.compcol:last-child{padding-left:0}.nav{display:none}.wrap{padding:0 18px}.insight{grid-template-columns:110px 1fr}}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Libre+Baskerville:ital@0;1&display=swap');
+:root{--ink:#151515;--paper:#eeeae1;--red:#d92d25;--grey:#716d66;--rule:#aaa59b;--white:#f8f5ed;--black:#0d0d0d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}.page{max-width:1280px;margin:auto;padding:0 34px}
+.mono{font:10px "DM Mono",monospace;letter-spacing:.09em;text-transform:uppercase}.mast{border-bottom:2px solid var(--ink);padding:18px 0 13px;display:grid;grid-template-columns:1fr auto 1fr;align-items:end}.mast .right{text-align:right}.title{font-size:14px;font-weight:700;letter-spacing:.2em;text-align:center}.red{color:var(--red)}
+.hero{padding:70px 0 55px;border-bottom:1px solid var(--ink);display:grid;grid-template-columns:1.7fr .3fr;gap:50px}.eyebrow{color:var(--red);margin-bottom:20px}.hero h1{font-size:clamp(75px,11vw,150px);line-height:.83;letter-spacing:-.08em;margin:0 0 32px}.hero h1 span{font-family:"Libre Baskerville",serif;font-style:italic;font-weight:400}.dek{font-size:22px;line-height:1.3;max-width:750px}.hero-note{border-left:1px solid var(--ink);padding-left:24px;display:flex;flex-direction:column;justify-content:space-between}.hero-note strong{font-size:45px;letter-spacing:-.07em;display:block}.hero-note p{font-size:11px;line-height:1.45;color:var(--grey)}
+.band{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--ink)}.band .fact{padding:22px 24px 25px 0;border-right:1px solid var(--ink)}.band .fact:not(:first-child){padding-left:24px}.band .fact:last-child{border-right:0}.fact b{font-size:42px;letter-spacing:-.06em}.fact small{display:block;font:9px "DM Mono";color:var(--grey);margin-top:5px;text-transform:uppercase}
+section{padding:65px 0;border-bottom:1px solid var(--ink)}.sectionhead{display:grid;grid-template-columns:55px 1fr 330px;gap:20px;margin-bottom:38px}.sectionhead h2{font-size:clamp(43px,6vw,82px);line-height:.85;letter-spacing:-.07em;margin:0}.sectionhead p{font-size:11px;line-height:1.5;color:var(--grey);margin:0}.num{color:var(--red)}
+.lead{display:grid;grid-template-columns:1.1fr .9fr;gap:60px}.leadquote{font-size:clamp(34px,4.5vw,61px);line-height:.94;letter-spacing:-.055em}.leadquote em{font-family:"Libre Baskerville",serif;font-style:italic;font-weight:400}.note{border-top:1px solid var(--ink);padding-top:17px}.note b{font:9px "DM Mono";color:var(--red)}.note p{font-size:14px;line-height:1.5;margin:12px 0 0}
+table{width:100%;border-collapse:collapse;font-size:12px}th{font:9px "DM Mono";text-align:left;color:var(--grey);padding:11px 8px;border-bottom:1px solid var(--ink);text-transform:uppercase}td{padding:15px 8px;border-bottom:1px solid var(--rule)}td:not(:first-child){text-align:right}.gain{font-weight:700;color:var(--red)}
+.movement{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink)}.movement article{background:var(--paper);padding:28px;min-height:230px}.movement article:nth-child(2){background:var(--black);color:var(--white)}.movement article:nth-child(3){background:#ddd8ce}.movement article:nth-child(4){background:var(--red);color:white}.movement .tag{font:9px "DM Mono";letter-spacing:.12em}.movement h3{font-size:35px;letter-spacing:-.05em;margin:52px 0 10px}.movement p{font-size:11px;line-height:1.5;opacity:.7;max-width:430px}
+.evidence{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink)}.evidence .card{background:var(--paper);padding:25px;min-height:190px}.evidence .card:nth-child(2){background:#ddd8ce}.evidence .card:nth-child(3){background:#171717;color:white}.evidence .card:nth-child(4){background:var(--red);color:white}.card .label{font:9px "DM Mono";text-transform:uppercase}.card strong{display:block;font-size:31px;line-height:1;margin:38px 0 12px;letter-spacing:-.04em}.card p{font-size:11px;line-height:1.5;opacity:.7;margin:0}
+.network{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}.network h3{font-size:45px;letter-spacing:-.05em;line-height:.95;margin:0}.chain{font:19px "DM Mono";line-height:1.7}.chain span{color:var(--red)}.activations{border-top:1px solid var(--ink)}.act{display:grid;grid-template-columns:120px 1fr auto;gap:18px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:12px}.act .status{font:9px "DM Mono";color:var(--red);text-transform:uppercase}
+.comparison{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink)}.comparison .side{padding:25px}.comparison .side:first-child{border-right:1px solid var(--ink)}.comparison h3{font-size:28px;margin:0 0 22px}.row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule);font-size:12px}.row strong{font-size:22px;letter-spacing:-.04em}.warning{margin-top:18px;font:10px "DM Mono";color:var(--grey);line-height:1.5}
+.archive{display:flex;justify-content:space-between;gap:20px;align-items:center}.dates{display:flex;gap:6px;flex-wrap:wrap}.datebtn{border:1px solid var(--ink);padding:11px 13px;color:var(--ink);text-decoration:none;font:9px "DM Mono"}.datebtn:hover,.active{background:var(--ink);color:white}
+footer{padding:30px 0 65px;max-width:950px;color:var(--grey);font:9px "DM Mono";line-height:1.65}
+@media(max-width:850px){.hero,.lead,.network,.comparison{grid-template-columns:1fr}.hero-note{border-left:0;border-top:1px solid var(--ink);padding:22px 0 0}.band{grid-template-columns:1fr}.band .fact{border-right:0;border-bottom:1px solid var(--ink);padding:20px 0!important}.sectionhead{grid-template-columns:38px 1fr}.sectionhead p{grid-column:2}.movement,.evidence{grid-template-columns:1fr}.comparison .side:first-child{border-right:0;border-bottom:1px solid var(--ink)}.mast{grid-template-columns:1fr auto}.mast .center{grid-column:1;grid-row:1}.mast .right{display:none}.page{padding:0 18px}}
 </style>
 </head>
-<body>
-<div class="wrap">
-<header class="top"><div class="brand">KING / DAILY INTELLIGENCE</div><nav class="nav"><a href="#today">Today</a><a href="#movement">Movement</a><a href="#fan">Fans</a><a href="#competitive">Competitive</a><a href="#archive">Archive</a></nav><div class="mono">LIVE ARCHIVE</div></header>
+<body><main class="page">
+<header class="mast"><div class="mono">Independent research desk</div><div class="title">KING / INTELLIGENCE</div><div class="right mono">DAILY EDITION · 05 OCT 2026</div></header>
 
-<section class="hero">
-<div class="hero-main">
-<div class="kicker mono">Public attention observatory / daily edition</div>
-<div><h1>KING</h1><div class="hero-sub">A longitudinal intelligence archive measuring <em>attention, participation, narrative and cultural movement</em> around Shah Rukh Khan and <em>KING</em>.</div></div>
-<div class="mono">04 OCT BASELINE → 05 OCT UPDATE · LIVE ARCHIVE</div>
-</div>
-<aside class="hero-side">
-<div class="date">LIVE ARCHIVE<br><b>BASELINE → TODAY</b><br>04 OCT → 05 OCT</div>
-<div class="stamp"><strong>+24.2%</strong>VIDEO-VIEW VELOCITY<br><br><span class="up">+6.2%</span> POST VELOCITY</div>
-<div class="signal">OBSERVE / COMPARE / EXPLAIN / ACT</div>
-</aside>
-</section>
+<section class="hero"><div><div class="eyebrow mono">THE DAILY RECORD / UPDATE 002</div><h1>What changed<br>around <span>KING</span>?</h1><div class="dek">A public intelligence record of attention, conversation, fan mobilisation and cultural movement — measured against yesterday and the original baseline.</div></div><aside class="hero-note"><div><div class="mono">BASELINE</div><strong>04 OCT</strong><p>699,000 observable KING posts<br>31.18M video views</p></div><div><div class="mono red">TODAY</div><strong>05 OCT</strong><p>742,400 observable KING posts<br>38.72M video views</p></div></aside></section>
 
-<section class="section" id="today">
-<div class="section-title"><div class="num mono">01</div><h2>TODAY'S<br>SNAPSHOT</h2><div class="desc">The first permanent rule: yesterday is never overwritten. Every observation is stored against the 04 October baseline.</div></div>
-<div class="kpis">
-<div class="kpi"><strong>742.4K</strong><small>Observable KING posts</small></div>
-<div class="kpi"><strong>38.72M</strong><small>KING video views</small></div>
-<div class="kpi"><strong>16.21M</strong><small>Top video</small></div>
-<div class="kpi"><strong class="up">+24.2%</strong><small>Video-view change vs baseline</small></div>
-</div>
-<div class="compare">
-<div class="cell"><strong>+43,400</strong><p>Additional observable KING posts · +6.2%</p></div>
-<div class="cell"><strong>+3.24M</strong><p>Additional top-video views · +25.0%</p></div>
-</div>
-</section>
+<div class="band"><div class="fact"><b>+6.2%</b><small>Post velocity</small></div><div class="fact"><b>+24.2%</b><small>Video-view velocity</small></div><div class="fact"><b>+25.0%</b><small>Top-video velocity</small></div></div>
 
-<section class="section">
-<div class="section-title"><div class="num mono">02</div><h2>MASTER<br>COMPARISON</h2><div class="desc">Measured change first. Unknown values remain — rather than being invented.</div></div>
-<table class="table">
-<thead><tr><th>KPI</th><th>04 OCT BASE</th><th>05 OCT TODAY</th><th>CHANGE</th><th>%</th></tr></thead>
-<tbody>
-<tr><td>Total observable KING posts</td><td>699,000</td><td>742,400</td><td class="delta">+43,400</td><td class="red">+6.2%</td></tr>
+<section id="today"><div class="sectionhead"><div class="num mono">01</div><h2>THE<br>NUMBERS</h2><p>The report begins with observable movement. Unknown fields remain —. Nothing is filled by assumption.</p></div>
+<table><thead><tr><th>Master KPI</th><th>04 OCT</th><th>05 OCT</th><th>Change</th><th>%</th></tr></thead><tbody>
+<tr><td>Total observable KING posts</td><td>699,000</td><td>742,400</td><td>+43,400</td><td class="gain">+6.2%</td></tr>
 <tr><td>Unique accounts</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>KING video views</td><td>31.18M</td><td>38.72M</td><td class="delta">+7.54M</td><td class="red">+24.2%</td></tr>
-<tr><td>Top video</td><td>12.97M</td><td>16.21M</td><td class="delta">+3.24M</td><td class="red">+25.0%</td></tr>
+<tr><td>KING video views</td><td>31.18M</td><td>38.72M</td><td>+7.54M</td><td class="gain">+24.2%</td></tr>
+<tr><td>Top video</td><td>12.97M</td><td>16.21M</td><td>+3.24M</td><td class="gain">+25.0%</td></tr>
 <tr><td>Media articles</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Positive sentiment</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Negative sentiment</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Countries generating buzz</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-</tbody>
-</table>
-</section>
+<tr><td>Positive / negative sentiment</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody></table></section>
 
-<section class="section" id="movement">
-<div class="section-title"><div class="num mono">03</div><h2>WHAT<br>MOVED?</h2><div class="desc">The daily addition is not yesterday's Top 10. It is the movement between observations.</div></div>
+<section><div class="sectionhead"><div class="num mono">02</div><h2>THE<br>MOVEMENT</h2><p>Not another Top 10. The daily report records what entered, accelerated, declined or broke through.</p></div>
 <div class="movement">
-<article class="move"><span class="tag">NEW</span><b>Topic enters</b><p>New discussion is captured only when it is actually observable in today's sample.</p></article>
-<article class="move"><span class="tag">ACCELERATING</span><b>Trailer +47%</b><p>Conversation velocity is measured against the prior observation.</p></article>
-<article class="move"><span class="tag">DECLINING</span><b>SRK look −12%</b><p>A declining topic is recorded as movement, not erased from history.</p></article>
-<article class="move"><span class="tag">NEW VIRAL</span><b>Asset trigger</b><p>The specific post, image or video responsible becomes part of the evidence trail.</p></article>
-</div>
-</section>
+<article><span class="tag">NEW</span><h3>What entered?</h3><p>New discussions are added only when they are actually observable in today's evidence set.</p></article>
+<article><span class="tag">ACCELERATING</span><h3>Trailer +47%</h3><p>Conversation velocity is measured against the previous observation, not described vaguely as “buzz”.</p></article>
+<article><span class="tag">DECLINING</span><h3>SRK look −12%</h3><p>A declining narrative is still valuable intelligence. It tells the campaign where attention is moving away from.</p></article>
+<article><span class="tag">NEW VIRAL</span><h3>The trigger</h3><p>The specific post, image or video that caused the spike becomes part of the evidence trail.</p></article>
+</div></section>
 
-<section class="section">
-<div class="section-title"><div class="num mono">04</div><h2>SO<br>WHAT?</h2><div class="desc">The report becomes marketing intelligence only when movement is translated into meaning.</div></div>
-<div class="intel">
-<div class="bigcopy">Video attention is growing <em>far faster</em> than posting volume.</div>
-<div class="insights">
-<div class="insight"><b>Signal</b><span>Posts +6.2% while video views +24.2%.</span></div>
-<div class="insight"><b>Interpretation</b><span>The day's attention increase is disproportionately driven by consumption of video rather than simply increased posting.</span></div>
-<div class="insight"><b>Strategic read</b><span>Video-led assets currently deserve more attention than a volume-only social count would suggest.</span></div>
-<div class="insight"><b>Next question</b><span>Which specific assets created the +7.54M view movement, and can their creative trigger be replicated?</span></div>
-</div>
-</div>
-</section>
+<section><div class="sectionhead"><div class="num mono">03</div><h2>THE<br>READ</h2><p>The point of intelligence is not the number. It is the strategic meaning of the number.</p></div>
+<div class="lead"><div class="leadquote">Attention did not merely grow.<br><em>Its composition changed.</em></div><div><div class="note"><b>OBSERVATION</b><p>Posts increased 6.2%. Video views increased 24.2%. The top video increased 25.0%.</p></div><div class="note" style="margin-top:28px"><b>INTERPRETATION</b><p>Today's attention increase is disproportionately video-led rather than simply the result of more people posting.</p></div><div class="note" style="margin-top:28px"><b>MARKETING IMPLICATION</b><p>Identify the creative trigger behind the video acceleration before deciding what the next campaign asset should be.</p></div></div></div></section>
 
-<section class="section" id="fan">
-<div class="section-title"><div class="num mono">05</div><h2>THE FAN<br>MACHINE</h2><div class="desc">Publicly announced activity is evidence of intent. Registration is not treated as attendance.</div></div>
-<div class="fanlayout">
-<article class="fan"><span class="mono">01 / ORGANISATION</span><div><b>05</b><h3>OBSERVED CITY / FAN ACTIVATIONS</h3><p>Pune, Jalgaon, Malegaon and Chennai activity are part of today's observable network.</p></div></article>
-<article class="fan"><span class="mono">02 / REGISTRATION</span><div><b>66</b><h3>PUBLIC PUNE SIGNAL</h3><p>Displayed public registration count is recorded as a signal, not a guaranteed attendance figure.</p></div></article>
-<article class="fan"><span class="mono">03 / RULE</span><div><b>≠</b><h3>ANNOUNCEMENT ≠ EXECUTION</h3><p>The archive preserves what was publicly announced without claiming that the event occurred.</p></div></article>
-</div>
-</section>
+<section><div class="sectionhead"><div class="num mono">04</div><h2>THE<br>EVIDENCE</h2><p>The public record distinguishes measured fact, sampled observation and analytical inference.</p></div>
+<div class="evidence"><article class="card"><span class="label">Sample</span><strong>31,842</strong><p>Unique accounts / users analysed.</p></article><article class="card"><span class="label">Conversation</span><strong>48,327</strong><p>Posts and comments analysed.</p></article><article class="card"><span class="label">Media</span><strong>1,284</strong><p>Articles and public media items analysed.</p></article><article class="card"><span class="label">Coverage</span><strong>27 / 8</strong><p>Geographies / platforms in the observation window.</p></article></div>
+<p class="mono" style="margin-top:18px;color:var(--grey)">WINDOW 00:00—23:59 IST · VIDEOS 416 · IMAGES 2,107 · TOTAL CLASSIFIED ITEMS 52,134 · ESTIMATED REACH 4.7M</p></section>
 
-<section class="section" id="competitive">
-<div class="section-title"><div class="num mono">06</div><h2>KING<br>VS DOOM</h2><div class="desc">The competitive comparison is longitudinal. No synthetic “82 vs 76” score replaces actual movement.</div></div>
-<div class="comp">
-<div class="compcol">
-<div class="mono">SRK / KING</div>
-<div class="entity"><span>04 OCT baseline</span><strong>699K</strong></div>
-<div class="entity"><span>05 OCT today</span><strong>742K</strong></div>
-<div class="entity"><span>Velocity</span><strong class="winner">+6.2%</strong></div>
-<div class="entity"><span>New viral assets</span><strong>—</strong></div>
-</div>
-<div class="compcol">
-<div class="mono">RDJ / DOOM</div>
-<div class="entity"><span>04 OCT baseline</span><strong>—</strong></div>
-<div class="entity"><span>05 OCT today</span><strong>—</strong></div>
-<div class="entity"><span>Velocity</span><strong>—</strong></div>
-<div class="entity"><span>New viral assets</span><strong>—</strong></div>
-</div>
-</div>
-<p class="desc" style="margin-top:18px">Today's comparative movement: KING gained <b>+6.2%</b> against its baseline. DOOM figures remain unfilled until the corresponding evidence is measured; the system does not manufacture a comparison.</p>
-</section>
+<section><div class="sectionhead"><div class="num mono">05</div><h2>THE FAN<br>NETWORK</h2><p>Fan mobilisation is treated as a measurable layer of the campaign ecosystem. Announced plans are not assumed to have happened.</p></div>
+<div class="network"><div><h3>POST<br><span class="red">→</span> CITY<br><span class="red">→</span> WHATSAPP<br><span class="red">→</span> REGISTRATION<br><span class="red">→</span> FDFS</h3></div><div class="activations">
+<div class="act"><span>Team Shah Rukh Khan</span><span>India / city-by-city</span><span class="status">Open / active</span></div>
+<div class="act"><span>SRK Chennai FC</span><span>Chennai / global</span><span class="status">Active</span></div>
+<div class="act"><span>TSFK Pune</span><span>Pune</span><span class="status">Open · 66 displayed</span></div>
+<div class="act"><span>TSFK Jalgaon</span><span>Jalgaon</span><span class="status">Open</span></div>
+<div class="act"><span>TSFK Malegaon</span><span>Malegaon</span><span class="status">Open</span></div>
+</div></div></section>
 
-<section class="section">
-<div class="section-title"><div class="num mono">07</div><h2>THE<br>METHOD</h2><div class="desc">The public interface distinguishes measured fact, sampled observation and analytical inference.</div></div>
-<div class="kpis">
-<div class="kpi"><strong>31,842</strong><small>Unique accounts/users analysed</small></div>
-<div class="kpi"><strong>48,327</strong><small>Posts / comments analysed</small></div>
-<div class="kpi"><strong>2,107</strong><small>Images analysed</small></div>
-<div class="kpi"><strong>27</strong><small>Geographies observed</small></div>
-</div>
-<p class="desc" style="margin-top:18px">Sampling window: 00:00–23:59 IST · Platforms: 8 · Videos: 416 · Articles: 1,284 · Total classified items: 52,134 · Estimated reach: 4.7M.</p>
-</section>
+<section id="competitive"><div class="sectionhead"><div class="num mono">06</div><h2>KING<br>VS DOOM</h2><p>Competitive intelligence remains a longitudinal comparison. No invented composite score replaces actual evidence.</p></div>
+<div class="comparison"><div class="side"><h3>KING / SRK</h3><div class="row"><span>04 OCT baseline</span><strong>699K</strong></div><div class="row"><span>05 OCT</span><strong>742.4K</strong></div><div class="row"><span>Velocity</span><strong class="red">+6.2%</strong></div><div class="row"><span>Video velocity</span><strong class="red">+24.2%</strong></div></div>
+<div class="side"><h3>DOOM / RDJ</h3><div class="row"><span>04 OCT baseline</span><strong>—</strong></div><div class="row"><span>05 OCT</span><strong>—</strong></div><div class="row"><span>Velocity</span><strong>—</strong></div><div class="row"><span>Video velocity</span><strong>—</strong></div></div></div>
+<div class="warning">COMPARISON RULE · If the corresponding DOOM evidence is not measured, it remains —. “KING = 82 / DOOM = 76” is not an intelligence finding.</div></section>
 
-<section class="section" id="archive">
-<div class="section-title"><div class="num mono">08</div><h2>THE DAILY<br>LEDGER</h2><div class="desc">A research archive, not a feed. Completed windows are preserved and new dates are appended.</div></div>
-<div class="archive"><div class="mono">OCTOBER 2026 / PERMANENT ARCHIVE</div><div class="days"><a class="day" href="./2026-10-04-full.html">04 OCT · BASELINE</a><a class="day current" href="./2026-10-05.html">05 OCT · TODAY</a><span class="day">06 OCT · NEXT</span></div></div>
-</section>
+<section id="archive"><div class="sectionhead"><div class="num mono">07</div><h2>THE<br>ARCHIVE</h2><p>Every day is a permanent observation. The past is never overwritten.</p></div>
+<div class="archive"><div class="mono">OCTOBER 2026 / DAILY LEDGER</div><div class="dates"><a class="datebtn" href="./2026-10-04-full.html">04 OCT · BASELINE</a><a class="datebtn active" href="./2026-10-05.html">05 OCT · TODAY</a><span class="datebtn">06 OCT · NEXT</span></div></div></section>
 
-<footer>RESEARCH STANDARD — Measured fact ≠ sampled observation ≠ analytical inference ≠ valuation. Publicly announced fan plans are not treated as attendance. Unknown values remain —. This is an independent research / marketing-intelligence interface and is not an official analytics dashboard or endorsement by any rights-holder.</footer>
-</div>
-</body>
-</html>
+<footer>RESEARCH STANDARD — Publicly observable activity is recorded as observation, not assumed outcome. Registration is not attendance. Announcement is not execution. Measured fact ≠ sampled observation ≠ analytical inference. This is an independent marketing-intelligence publication and is not an official analytics dashboard or endorsement by any rights-holder.</footer>
+</main></body></html>
