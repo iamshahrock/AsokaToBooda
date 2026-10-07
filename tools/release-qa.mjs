@@ -28,6 +28,17 @@ const required = {
 };
 
 const browser = await chromium.launch({ headless: true });
+
+// Release 4 architecture checks: the canonical registry and shared platform template must exist.
+const registryResponse = await fetch(base + '/data/intelligence-pages.json');
+if (!registryResponse.ok) { console.error(`FAIL [ARCH] registry HTTP ${registryResponse.status}`); process.exit(1); }
+const registry = await registryResponse.json();
+if (!Array.isArray(registry.pages) || registry.pages.length !== 18) { console.error('FAIL [ARCH] canonical registry must contain exactly 18 pages'); process.exit(1); }
+const sharedResponse = await fetch(base + '/king-intelligence-shared/platform.html');
+if (!sharedResponse.ok) { console.error(`FAIL [ARCH] shared platform template HTTP ${sharedResponse.status}`); process.exit(1); }
+const sharedTemplate = await sharedResponse.text();
+if (!sharedTemplate.includes('data/platform-pages.json')) { console.error('FAIL [ARCH] shared template is not wired to canonical platform data'); process.exit(1); }
+console.log('PASS [ARCH] canonical 18-page registry + shared platform template');
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 });
 let failures = 0;
 
@@ -37,6 +48,10 @@ for (const [id, path] of pages) {
     const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
     const status = response?.status() ?? 0;
     const html = await page.content();
+    if (Number(id) >= 6 && Number(id) <= 18) {
+      if (!html.includes('DATA RULE')) issues.push('shared platform template did not render');
+      if (!text.includes('KING INTELLIGENCE')) issues.push('shared platform identity missing');
+    }
     const text = (await page.locator('body').innerText()).replace(/\s+/g, ' ').trim();
     const title = await page.title();
     const issues = [];
