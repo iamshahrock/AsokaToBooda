@@ -1,0 +1,48 @@
+name: Release QA
+
+on:
+  workflow_run:
+    workflows: ["Deploy static site to GitHub Pages"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      site_base_url:
+        description: "Optional live site base URL"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout deployed commit
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Run live release QA
+        env:
+          SITE_BASE_URL: ${{ inputs.site_base_url || vars.SITE_BASE_URL }}
+        run: node tools/release-qa.mjs
+
+      - name: Upload rendered QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: release-qa-screenshots
+          path: qa-page-*.png
+          if-no-files-found: warn
