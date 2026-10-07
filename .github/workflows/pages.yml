@@ -1,5 +1,6 @@
 name: Deploy static site to GitHub Pages
 
+# Release 5: publish only the explicit site/ artifact; repository-root files are never published.
 on:
   push:
     branches: ["main"]
