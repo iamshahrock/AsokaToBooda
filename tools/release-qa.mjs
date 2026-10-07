@@ -10,6 +10,7 @@ const pages = [
   ['10','/king-intelligence-10/'], ['11','/king-intelligence-11/'], ['12','/king-intelligence-12/'],
   ['13','/king-intelligence-13/'], ['14','/king-intelligence-14/'], ['15','/king-intelligence-15/'],
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
+  ['D','/king-intelligence/daily.html'],
 ];
 
 const forbidden = [
@@ -22,6 +23,7 @@ const required = {
   '01': ['KING INTELLIGENCE'], '02': ['KING INTELLIGENCE'],
   '10': ['KING INTELLIGENCE', 'PLATFORM 10'],
   '18': ['KING INTELLIGENCE', 'PLATFORM 18'],
+  'D': ['DAILY DATA LEDGER', '06 OCT 2026', '2,933,427', '31.176M'],
 };
 
 const browser = await chromium.launch({ headless: true });
