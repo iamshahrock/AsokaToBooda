@@ -31,6 +31,7 @@ jobs:
           rm -rf site
           mkdir -p site
           cp index.html site/
+          cp master-home.html site/
           cp -R "Bauua Raw Material" site/
           cp -R data site/
           cp -R king-intelligence-shared site/
