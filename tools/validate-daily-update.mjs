@@ -15,7 +15,7 @@ for (const key of required) {
   if (!(key in input)) throw new Error(`Missing required field: ${key}`);
 }
 
-if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(input.date)) {
+if (!/^\d{4}-\d{2}-\d{2}$/.test(input.date)) {
   throw new Error("date must be YYYY-MM-DD");
 }
 
