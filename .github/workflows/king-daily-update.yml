@@ -1,0 +1,70 @@
+name: KING Daily Intelligence Update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/daily-input/*.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: king-daily-update
+  cancel-in-progress: false
+
+jobs:
+  update-ledger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate daily inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(data/daily-input/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No daily input JSON files found."
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            echo "Validating $file"
+            node tools/validate-daily-update.mjs "$file"
+          done
+
+      - name: Apply new records
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(data/daily-input/*.json)
+          for file in "${files[@]}"; do
+            echo "Applying $file"
+            node tools/apply-daily-update.mjs "$file"
+          done
+
+      - name: Verify ledger changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git diff -- data/king-intelligence-daily.json
+          if git diff --quiet -- data/king-intelligence-daily.json; then
+            echo "No ledger change produced."
+            exit 1
+          fi
+
+      - name: Commit canonical ledger
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/king-intelligence-daily.json
+          git commit -m "Daily intelligence: append validated ledger record"
+          git push
