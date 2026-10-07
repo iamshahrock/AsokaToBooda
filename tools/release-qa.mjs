@@ -11,6 +11,7 @@ const pages = [
   ['13','/king-intelligence-13/'], ['14','/king-intelligence-14/'], ['15','/king-intelligence-15/'],
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
+  ['M','/master-home.html'],
 ];
 
 const forbidden = [
@@ -25,6 +26,7 @@ const required = {
   '18': ['KING INTELLIGENCE', 'PLATFORM 18'],
   'D': ['DAILY DATA LEDGER', '06 OCT 2026', '2,933,427', '31.176M', '699,000'],
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
+  'M': ['AGAR MAIN KING HOTA', 'BE THE KING', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD'],
 };
 
 const legacyPaths = [
