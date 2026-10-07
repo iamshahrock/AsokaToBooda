@@ -25,10 +25,23 @@ jobs:
         uses: actions/checkout@v6
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build intended public site
+        run: |
+          rm -rf site
+          mkdir -p site
+          cp index.html site/
+          cp -R "Bauua Raw Material" site/
+          cp -R data site/
+          cp -R king-intelligence-shared site/
+          for n in "" "-2" "-3" "-4" "-5" "-6" "-7" "-8" "-9" "-10" "-11" "-12" "-13" "-14" "-15" "-16" "-17" "-18"; do
+            cp -R "king-intelligence${n}" site/
+          done
+          rm -f site/king-intelligence/index.backup-20261006.html
+          touch site/.nojekyll
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .
+          path: site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
