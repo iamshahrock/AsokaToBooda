@@ -22,33 +22,49 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate daily inputs
+      - name: Identify changed daily inputs
+        id: inputs
         shell: bash
         run: |
           set -euo pipefail
-          shopt -s nullglob
-          files=(data/daily-input/*.json)
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No daily input JSON files found."
+          files="$(git diff --name-only "$GITHUB_EVENT_BEFORE" "$GITHUB_SHA" | grep -E '^data/daily-input/[^/]+\.json$' || true)"
+          if [ -z "$files" ]; then
+            echo "No changed daily input JSON files in this push."
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          for file in "${files[@]}"; do
-            echo "Validating $file"
-            node tools/validate-daily-update.mjs "$file"
-          done
+          printf '%s\n' "$files"
+          {
+            echo "has_files=true"
+            echo 'files<<EOF'
+            printf '%s\n' "$files"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
 
-      - name: Apply new records
+      - name: Validate changed daily inputs
+        if: steps.inputs.outputs.has_files == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          shopt -s nullglob
-          files=(data/daily-input/*.json)
-          for file in "${files[@]}"; do
+          while IFS= read -r file; do
+            [ -n "$file" ] || continue
+            echo "Validating $file"
+            node tools/validate-daily-update.mjs "$file"
+          done <<< '${{ steps.inputs.outputs.files }}'
+
+      - name: Apply changed records
+        if: steps.inputs.outputs.has_files == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r file; do
+            [ -n "$file" ] || continue
             echo "Applying $file"
             node tools/apply-daily-update.mjs "$file"
-          done
+          done <<< '${{ steps.inputs.outputs.files }}'
 
       - name: Verify ledger changed
+        if: steps.inputs.outputs.has_files == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -60,6 +76,7 @@ jobs:
           fi
 
       - name: Commit canonical ledger
+        if: steps.inputs.outputs.has_files == 'true'
         shell: bash
         run: |
           set -euo pipefail
