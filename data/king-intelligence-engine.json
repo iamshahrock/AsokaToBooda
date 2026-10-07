@@ -1,0 +1,667 @@
+{
+  "schema_version": "1.0",
+  "engine": "KING Intelligence Engine",
+  "timezone": "Asia/Kolkata",
+  "baseline": {
+    "date": "2026-10-04",
+    "immutable": true
+  },
+  "rules": {
+    "no_fabrication": true,
+    "posts_are_not_people": true,
+    "followers_are_not_king_buzz": true,
+    "country_signals_are_not_country_volume": true,
+    "sentiment_requires_denominator": true,
+    "rdj_score_requires_like_for_like_corpus": true
+  },
+  "records": [
+    {
+      "date": "2026-10-04",
+      "role": "BASELINE",
+      "kpis": {
+        "king_hashtag_posts": {
+          "series_id": "king_srk_king_pikory_posts",
+          "value": 699000,
+          "unit": "public #srk-king posts",
+          "source": "Pikory #srk-king snapshot",
+          "method": "public hashtag volume",
+          "status": "usable"
+        },
+        "reel_views": {
+          "series_id": "king_srk_king_reels_total_views",
+          "value": 31176089,
+          "unit": "views",
+          "source": "Pikory",
+          "method": "12 trending Reels",
+          "status": "usable"
+        },
+        "peak_reel_views": {
+          "series_id": "king_srk_king_reel_peak_views",
+          "value": 12973281,
+          "unit": "views",
+          "source": "Pikory",
+          "method": "highest surfaced Reel",
+          "status": "usable"
+        }
+      },
+      "sample": {
+        "people_polled": 0,
+        "reels_surfaced": 12,
+        "unique_creators": 8,
+        "combined_views": 31176089,
+        "denominator_note": "12 surfaced Reels; passive social listening, not a population survey."
+      },
+      "sentiment": {
+        "classification": "positive-dominant",
+        "positive": null,
+        "neutral": null,
+        "negative": null,
+        "confidence": "medium",
+        "method": "qualitative read of 12 surfaced Reels",
+        "note": "No population percentage claimed."
+      },
+      "topics": [
+        "Trailer",
+        "SRK look",
+        "Fan edits",
+        "Character",
+        "Release"
+      ],
+      "viral": [
+        {
+          "rank": 1,
+          "creator": "@srkking555",
+          "views": 12973281,
+          "label": "SRK visual / fan Reel"
+        },
+        {
+          "rank": 2,
+          "creator": "@shahforlife",
+          "views": 3920907,
+          "label": "SRK fan edit"
+        },
+        {
+          "rank": 3,
+          "creator": "12-Reel #srk-king sample",
+          "views": 31176089,
+          "label": "combined sample"
+        }
+      ],
+      "geography": {
+        "available": false,
+        "note": "No country-level KING post counts verified in the baseline source."
+      },
+      "comparison": {
+        "king": "Very high star equity; extreme India penetration; large directly observed fan-content ecosystem.",
+        "rdj_doom": "Very high star equity; extreme global franchise machinery.",
+        "numerical_score": null,
+        "note": "Like-for-like RDJ/Doom daily corpus not captured; numerical score withheld."
+      },
+      "boss_line": "KING's strongest measurable signal is the surrounding SRK fan-content machine: 699K public #srk-king posts and 31.18M views across a 12-Reel sample."
+    },
+    {
+      "date": "2026-10-05",
+      "role": "DAILY UPDATE",
+      "kpis": {
+        "king_public_observable_posts": {
+          "series_id": "king_public_observable_posts",
+          "value": 742400,
+          "unit": "posts",
+          "source": "05 Oct internal/tracked daily intelligence",
+          "method": "day-over-day tracked count",
+          "status": "usable"
+        },
+        "king_video_views": {
+          "series_id": "king_video_views_tracked",
+          "value": 38720000,
+          "unit": "views",
+          "source": "05 Oct internal/tracked daily intelligence",
+          "method": "tracked aggregate",
+          "status": "usable"
+        },
+        "top_video_views": {
+          "series_id": "king_top_video_views_tracked",
+          "value": 16210000,
+          "unit": "views",
+          "source": "05 Oct internal/tracked daily intelligence",
+          "method": "tracked top-video peak",
+          "status": "usable"
+        }
+      },
+      "sample": {
+        "people_polled": null,
+        "reels_surfaced": null,
+        "unique_creators": null,
+        "classified_items": null,
+        "note": "No independently supported 05 Oct corpus-size figures located."
+      },
+      "sentiment": {
+        "classification": null,
+        "positive": null,
+        "neutral": null,
+        "negative": null,
+        "confidence": "unavailable",
+        "method": null,
+        "note": "No independently supported 05 Oct denominator/classification located."
+      },
+      "topics": {
+        "baseline": [
+          "Trailer",
+          "SRK look",
+          "Fan edits",
+          "Character",
+          "Release"
+        ],
+        "daily_change": null,
+        "note": "The supplied 05 Oct framework contains placeholders for entered/accelerated/declined topics; placeholders are not treated as measurements."
+      },
+      "viral": [
+        {
+          "rank": 1,
+          "creator": null,
+          "views": 16210000,
+          "label": "Tracked top video",
+          "status": "usable"
+        }
+      ],
+      "geography": {
+        "available": false,
+        "note": "No country-level absolute KING counts verified for 05 Oct."
+      },
+      "comparison": {
+        "king": "+6.2% posts; +24.2% tracked video views; +25.0% top-video views versus 04 Oct.",
+        "rdj_doom": "unavailable on identical basis",
+        "numerical_score": null,
+        "note": "No like-for-like RDJ/Doom daily corpus."
+      },
+      "boss_line": "The verified 04→05 movement is +6.2% in the established observable-post series, with video views rising +24.2%."
+    },
+    {
+      "date": "2026-10-06",
+      "role": "DAILY UPDATE",
+      "kpis": {
+        "king_srk_king_pikory_posts": {
+          "series_id": "king_srk_king_pikory_posts",
+          "value": 699000,
+          "unit": "public #srk-king posts",
+          "source": "Pikory #srk-king live snapshot",
+          "method": "public hashtag volume",
+          "status": "usable"
+        },
+        "srk_indexed_posts": {
+          "series_id": "srk_indexed_posts",
+          "value": 2933427,
+          "unit": "indexed #SRK posts",
+          "source": "06 Oct public-index geography refresh",
+          "method": "public index; not KING-specific",
+          "status": "usable"
+        },
+        "srkking_reels_total_views": {
+          "series_id": "king_srk_king_reels_total_views",
+          "value": 31176000,
+          "unit": "views",
+          "source": "06 Oct verified Reel refresh",
+          "method": "sampled #srkking Reels",
+          "status": "usable"
+        },
+        "srkking_reels_average_views": {
+          "series_id": "king_srk_king_reels_average_views",
+          "value": 2598000,
+          "unit": "views/reel",
+          "source": "06 Oct verified Reel refresh",
+          "method": "sample average",
+          "status": "usable"
+        },
+        "srkking_reel_peak_views": {
+          "series_id": "king_srk_king_reel_peak_views",
+          "value": 12973000,
+          "unit": "views",
+          "source": "06 Oct verified Reel refresh",
+          "method": "sample peak",
+          "status": "usable"
+        },
+        "doomsday_youtube_views": {
+          "series_id": "doomsday_youtube_views",
+          "value": 77349000,
+          "unit": "views",
+          "source": "06 Oct competitive anchor",
+          "method": "cumulative YouTube view count",
+          "status": "usable"
+        },
+        "doomsday_first_24h_views": {
+          "series_id": "doomsday_first_24h_views",
+          "value": 503000000,
+          "unit": "views",
+          "source": "reported launch-window metric",
+          "method": "first-24-hour reported views",
+          "status": "context-only"
+        }
+      },
+      "sample": {
+        "people_polled": 0,
+        "reels_surfaced": 12,
+        "unique_creators": 8,
+        "combined_views": 31176089,
+        "denominator_note": "Pikory sample basis; not a census of people or all KING posts."
+      },
+      "sentiment": {
+        "classification": "positive-dominant",
+        "positive": null,
+        "neutral": null,
+        "negative": null,
+        "confidence": "medium",
+        "method": "qualitative read of surfaced Reel sample",
+        "note": "No population percentage claimed."
+      },
+      "topics": [
+        "SRK aura / visual",
+        "King look",
+        "Fan edits",
+        "King / release anticipation"
+      ],
+      "viral": [
+        {
+          "rank": 1,
+          "creator": "@srkking555",
+          "views": 12973232,
+          "label": "SRK visual / fan Reel"
+        },
+        {
+          "rank": 2,
+          "creator": "@shahforlife",
+          "views": 3920140,
+          "label": "SRK fan edit"
+        },
+        {
+          "rank": 3,
+          "creator": "@edityouneed",
+          "views": 5290688,
+          "label": "SRK birthday / King-adjacent Reel"
+        }
+      ],
+      "geography": {
+        "available": true,
+        "ranked_signals": [
+          "India",
+          "Pakistan",
+          "USA",
+          "UAE",
+          "Bangladesh",
+          "UK",
+          "Iran",
+          "Australia",
+          "Germany",
+          "Japan"
+        ],
+        "direct_king_activation": [
+          "Indonesia — 12-city activation"
+        ],
+        "note": "Ranked geographic signals only; no country-level KING post counts or unique-person counts verified."
+      },
+      "country_top50": {
+        "metric": "KING country volume",
+        "status": "not_available",
+        "reason": "Only 10 geographic signals are source-backed; no defensible absolute country counts for 50 countries were located.",
+        "rows": [
+          {
+            "rank": 1,
+            "country": "India",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 2,
+            "country": "Pakistan",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 3,
+            "country": "USA",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 4,
+            "country": "UAE",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 5,
+            "country": "Bangladesh",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 6,
+            "country": "UK",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 7,
+            "country": "Iran",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 8,
+            "country": "Australia",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 9,
+            "country": "Germany",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 10,
+            "country": "Japan",
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "signal-only"
+          },
+          {
+            "rank": 11,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 12,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 13,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 14,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 15,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 16,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 17,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 18,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 19,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 20,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 21,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 22,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 23,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 24,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 25,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 26,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 27,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 28,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 29,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 30,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 31,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 32,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 33,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 34,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 35,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 36,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 37,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 38,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 39,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 40,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 41,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 42,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 43,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 44,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 45,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 46,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 47,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 48,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 49,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          },
+          {
+            "rank": 50,
+            "country": null,
+            "absolute_value": null,
+            "unit": "KING posts",
+            "status": "unverified"
+          }
+        ]
+      },
+      "comparison": {
+        "king": "699K #srk-king public posts; 31.18M views across the surfaced Reel sample.",
+        "rdj_doom": "77.349M cumulative YouTube views; 503M reported first-24h metric is a different measurement window.",
+        "numerical_score": null,
+        "note": "No like-for-like RDJ/Doom social corpus; no numerical head-to-head score."
+      },
+      "boss_line": "On 06 Oct the cleanest verified KING-specific absolute is 699K public #srk-king posts; the viral layer remains measurable through the 12-Reel sample."
+    }
+  ]
+}
