@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "project": "KING INTELLIGENCE",
+  "timezone": "Asia/Kolkata",
+  "architecture": "shared registry + page-specific intelligence modules",
+  "pages": [
+    {
+      "id": "01",
+      "path": "king-intelligence/",
+      "family": "global-intelligence",
+      "template": "king-intelligence/index.html",
+      "data": "king-intelligence/index.html",
+      "role": "Global Buzz & Intelligence"
+    },
+    {
+      "id": "02",
+      "path": "king-intelligence-2/",
+      "family": "command-centre",
+      "template": "king-intelligence-2/index.html",
+      "data": "king-intelligence-2/index.html",
+      "role": "Expanded Marketing Intelligence"
+    },
+    {
+      "id": "03",
+      "path": "king-intelligence-3/",
+      "family": "instagram",
+      "template": "king-intelligence-3/index.html",
+      "data": "king-intelligence-3/index.html",
+      "role": "Instagram Fan World"
+    },
+    {
+      "id": "04",
+      "path": "king-intelligence-4/",
+      "family": "x",
+      "template": "king-intelligence-4/index.html",
+      "data": "king-intelligence-4/index.html",
+      "role": "X Fan Pages"
+    },
+    {
+      "id": "05",
+      "path": "king-intelligence-5/",
+      "family": "snapchat",
+      "template": "king-intelligence-5/index.html",
+      "data": "king-intelligence-5/index.html",
+      "role": "Snapchat Fan Pages"
+    },
+    {
+      "id": "06",
+      "path": "king-intelligence-6/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 6"
+    },
+    {
+      "id": "07",
+      "path": "king-intelligence-7/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 7"
+    },
+    {
+      "id": "08",
+      "path": "king-intelligence-8/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 8"
+    },
+    {
+      "id": "09",
+      "path": "king-intelligence-9/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 9"
+    },
+    {
+      "id": "10",
+      "path": "king-intelligence-10/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 10"
+    },
+    {
+      "id": "11",
+      "path": "king-intelligence-11/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 11"
+    },
+    {
+      "id": "12",
+      "path": "king-intelligence-12/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 12"
+    },
+    {
+      "id": "13",
+      "path": "king-intelligence-13/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 13"
+    },
+    {
+      "id": "14",
+      "path": "king-intelligence-14/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 14"
+    },
+    {
+      "id": "15",
+      "path": "king-intelligence-15/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 15"
+    },
+    {
+      "id": "16",
+      "path": "king-intelligence-16/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 16"
+    },
+    {
+      "id": "17",
+      "path": "king-intelligence-17/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 17"
+    },
+    {
+      "id": "18",
+      "path": "king-intelligence-18/",
+      "family": "platform-shared",
+      "template": "king-intelligence-shared/platform.html",
+      "data": "data/platform-pages.json",
+      "role": "Platform 18"
+    }
+  ]
+}
