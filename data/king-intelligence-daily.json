@@ -2,46 +2,188 @@
   "schema_version": "1.0",
   "project": "KING — SOCIAL INTELLIGENCE",
   "timezone": "Asia/Kolkata",
-  "baseline": {"date":"2026-10-04","record_id":"KING-2026-10-04","immutable":true},
+  "baseline": {
+    "date": "2026-10-04",
+    "record_id": "KING-2026-10-04",
+    "immutable": true
+  },
   "records": [
     {
-      "date":"2026-10-04","record_id":"KING-2026-10-04","role":"BASELINE",
-      "metrics":[
-        {"series_id":"king_public_observable_posts","value":699000,"unit":"posts","source":"04 Oct intelligence baseline","method":"baseline record","confidence":"tracked","status":"usable"},
-        {"series_id":"king_video_views_tracked","value":31180000,"unit":"views","source":"04 Oct intelligence baseline","method":"tracked video-view aggregate","confidence":"tracked","status":"usable"},
-        {"series_id":"king_top_video_views_tracked","value":12970000,"unit":"views","source":"04 Oct intelligence baseline","method":"tracked top-video peak","confidence":"tracked","status":"usable"}
+      "date": "2026-10-04",
+      "record_id": "KING-2026-10-04",
+      "role": "BASELINE",
+      "metrics": [
+        {
+          "series_id": "king_public_observable_posts",
+          "value": 699000,
+          "unit": "posts",
+          "source": "04 Oct intelligence baseline",
+          "method": "baseline record",
+          "confidence": "tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_video_views_tracked",
+          "value": 31180000,
+          "unit": "views",
+          "source": "04 Oct intelligence baseline",
+          "method": "tracked video-view aggregate",
+          "confidence": "tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_top_video_views_tracked",
+          "value": 12970000,
+          "unit": "views",
+          "source": "04 Oct intelligence baseline",
+          "method": "tracked top-video peak",
+          "confidence": "tracked",
+          "status": "usable"
+        }
       ]
     },
     {
-      "date":"2026-10-05","record_id":"KING-2026-10-05","role":"DAILY UPDATE",
-      "metrics":[
-        {"series_id":"king_public_observable_posts","value":742400,"unit":"posts","source":"05 Oct internal/tracked daily intelligence","method":"day-over-day tracked count","confidence":"tracked","status":"usable"},
-        {"series_id":"king_video_views_tracked","value":38720000,"unit":"views","source":"05 Oct internal/tracked daily intelligence","method":"day-over-day tracked aggregate","confidence":"tracked","status":"usable"},
-        {"series_id":"king_top_video_views_tracked","value":16210000,"unit":"views","source":"05 Oct internal/tracked daily intelligence","method":"tracked top-video peak","confidence":"tracked","status":"usable"}
+      "date": "2026-10-05",
+      "record_id": "KING-2026-10-05",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_public_observable_posts",
+          "value": 742400,
+          "unit": "posts",
+          "source": "05 Oct internal/tracked daily intelligence",
+          "method": "day-over-day tracked count",
+          "confidence": "tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_video_views_tracked",
+          "value": 38720000,
+          "unit": "views",
+          "source": "05 Oct internal/tracked daily intelligence",
+          "method": "day-over-day tracked aggregate",
+          "confidence": "tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_top_video_views_tracked",
+          "value": 16210000,
+          "unit": "views",
+          "source": "05 Oct internal/tracked daily intelligence",
+          "method": "tracked top-video peak",
+          "confidence": "tracked",
+          "status": "usable"
+        }
       ]
     },
     {
-      "date":"2026-10-06","record_id":"KING-2026-10-06","role":"DAILY UPDATE",
-      "metrics":[
-        {"series_id":"king_public_observable_posts","value":null,"unit":"posts","source":"No verified 06 Oct total located in supplied intelligence record","method":"not reported","confidence":"unavailable","status":"missing"},
-        {"series_id":"srk_indexed_posts","value":2933427,"unit":"indexed posts","source":"06 Oct public-index geography refresh","method":"indexed #SRK footprint; not KING-specific","confidence":"tracked/public-index","status":"usable"},
-        {"series_id":"srkking_reels_total_views","value":31176000,"unit":"views","source":"06 Oct verified Reel refresh","method":"sampled #srkking Reel total","confidence":"verified/tracked","status":"usable"},
-        {"series_id":"srkking_reels_average_views","value":2598000,"unit":"views/reel","source":"06 Oct verified Reel refresh","method":"sampled #srkking Reel average","confidence":"verified/tracked","status":"usable"},
-        {"series_id":"srkking_reel_peak_views","value":12973000,"unit":"views","source":"06 Oct verified Reel refresh","method":"sampled #srkking Reel peak","confidence":"verified/tracked","status":"usable"},
-        {"series_id":"doomsday_youtube_views","value":77349000,"unit":"views","source":"06 Oct tracked competitive anchor","method":"YouTube cumulative view count","confidence":"tracked","status":"usable"},
-        {"series_id":"doomsday_first_24h_views","value":503000000,"unit":"views","source":"reported launch-window metric","method":"first-24-hour reported views; not comparable to cumulative YouTube views","confidence":"reported","status":"context-only"}
+      "date": "2026-10-06",
+      "record_id": "KING-2026-10-06",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_srk_king_pikory_posts",
+          "value": 699000,
+          "unit": "public #srk-king posts",
+          "source": "06 Oct Pikory #srk-king live snapshot",
+          "method": "public hashtag volume",
+          "confidence": "verified/public",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 06 Oct total located in supplied intelligence record",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": 2933427,
+          "unit": "indexed posts",
+          "source": "06 Oct public-index geography refresh",
+          "method": "indexed #SRK footprint; not KING-specific",
+          "confidence": "tracked/public-index",
+          "status": "usable"
+        },
+        {
+          "series_id": "srkking_reels_total_views",
+          "value": 31176000,
+          "unit": "views",
+          "source": "06 Oct verified Reel refresh",
+          "method": "sampled #srkking Reel total",
+          "confidence": "verified/tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "srkking_reels_average_views",
+          "value": 2598000,
+          "unit": "views/reel",
+          "source": "06 Oct verified Reel refresh",
+          "method": "sampled #srkking Reel average",
+          "confidence": "verified/tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "srkking_reel_peak_views",
+          "value": 12973000,
+          "unit": "views",
+          "source": "06 Oct verified Reel refresh",
+          "method": "sampled #srkking Reel peak",
+          "confidence": "verified/tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_youtube_views",
+          "value": 77349000,
+          "unit": "views",
+          "source": "06 Oct tracked competitive anchor",
+          "method": "YouTube cumulative view count",
+          "confidence": "tracked",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_first_24h_views",
+          "value": 503000000,
+          "unit": "views",
+          "source": "reported launch-window metric",
+          "method": "first-24-hour reported views; not comparable to cumulative YouTube views",
+          "confidence": "reported",
+          "status": "context-only"
+        }
       ],
-      "geography":{
-        "ranked_signals":["India","Pakistan","USA","UAE","Bangladesh","UK","Iran","Australia","Germany","Japan"],
-        "direct_king_activation":["Indonesia — 12-city activation"],
-        "caveat":"No country-level KING post counts or unique-person counts were verified; these are geographic signals, not absolute KING country volumes."
+      "geography": {
+        "ranked_signals": [
+          "India",
+          "Pakistan",
+          "USA",
+          "UAE",
+          "Bangladesh",
+          "UK",
+          "Iran",
+          "Australia",
+          "Germany",
+          "Japan"
+        ],
+        "direct_king_activation": [
+          "Indonesia — 12-city activation"
+        ],
+        "caveat": "No country-level KING post counts or unique-person counts were verified; these are geographic signals, not absolute KING country volumes."
       },
-      "notes":[
+      "notes": [
         "699K and 32,455 are separate series and must not be merged or interpreted as a decline.",
         "Posts are not people.",
-        "06 Oct total KING-post count is intentionally null because no verified absolute was found."
+        "06 Oct verified KING-specific absolute: 699,000 public #srk-king posts from Pikory; this is a named series and is not merged with the 04/05 observable-post series."
       ]
     }
   ],
-  "source_rules":{"value_required":true,"provenance_required":true,"series_id_required":true,"unknown_value":null,"append_only":true}
+  "source_rules": {
+    "value_required": true,
+    "provenance_required": true,
+    "series_id_required": true,
+    "unknown_value": null,
+    "append_only": true
+  }
 }
