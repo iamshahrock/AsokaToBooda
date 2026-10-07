@@ -27,6 +27,14 @@ const required = {
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
 };
 
+const legacyPaths = [
+  '/king-intelligence-06/', '/king-intelligence-07/', '/king-intelligence-08/', '/king-intelligence-09/',
+  '/king-intelligence-3-live/', '/king-intelligence-command/', '/king-intelligence-command-v2/',
+  '/king-intelligence-new/', '/king-intelligence-observatory/', '/king-intelligence-v2.html',
+  '/king-intelligence-v2-data.html', '/king-intelligence/index.backup-20261006.html',
+  '/archive/RELEASE-5-ARCHIVE.md', '/backend/worker.js', '/Character%20Packs/', '/temp/01.jpg'
+];
+
 const browser = await chromium.launch({ headless: true });
 
 // Release 4 architecture checks: the canonical registry and shared platform template must exist.
