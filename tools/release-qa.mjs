@@ -48,13 +48,13 @@ for (const [id, path] of pages) {
     const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
     const status = response?.status() ?? 0;
     const html = await page.content();
+    const text = (await page.locator('body').innerText()).replace(/\s+/g, ' ').trim();
+    const title = await page.title();
+    const issues = [];
     if (Number(id) >= 6 && Number(id) <= 18) {
       if (!html.includes('DATA RULE')) issues.push('shared platform template did not render');
       if (!text.includes('KING INTELLIGENCE')) issues.push('shared platform identity missing');
     }
-    const text = (await page.locator('body').innerText()).replace(/\s+/g, ' ').trim();
-    const title = await page.title();
-    const issues = [];
     if (status !== 200) issues.push(`HTTP ${status}`);
     if (!html.toLowerCase().includes('<html')) issues.push('missing HTML document');
     for (const f of forbidden) if (f.re.test(html)) issues.push(f.label);
