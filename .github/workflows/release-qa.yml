@@ -29,6 +29,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Run Release 7 daily operating procedure QA
+        run: node tools/release-7-daily-qa.mjs
+
       - name: Install Playwright
         run: |
           npm install --no-save playwright@1.55.0
