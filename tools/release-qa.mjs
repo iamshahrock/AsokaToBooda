@@ -47,6 +47,14 @@ if (!sharedResponse.ok) { console.error(`FAIL [ARCH] shared platform template HT
 const sharedTemplate = await sharedResponse.text();
 if (!sharedTemplate.includes('data/platform-pages.json')) { console.error('FAIL [ARCH] shared template is not wired to canonical platform data'); process.exit(1); }
 console.log('PASS [ARCH] canonical 18-page registry + shared platform template');
+for (const legacyPath of legacyPaths) {
+  const legacyResponse = await fetch(base + legacyPath);
+  if (legacyResponse.status !== 404) {
+    console.error(`FAIL [ARCH] legacy path still publicly exposed: ${legacyPath} — HTTP ${legacyResponse.status}`);
+    process.exit(1);
+  }
+  console.log(`PASS [ARCH] retired path is not publicly exposed: ${legacyPath}`);
+}
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 });
 let failures = 0;
 
