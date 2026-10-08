@@ -5,125 +5,75 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CHESS81 — CHECK. FIRE. MATE.</title>
 <style>
-:root{--bg:#080808;--panel:#111;--line:#2a2a2a;--text:#f3f3f3;--muted:#999;--red:#e11d2e;--red2:#ff4050;--blue:#2878ff;--blue2:#61a0ff;--fire:#ff8b1f}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-body{padding:18px}main{max-width:1180px;margin:auto}header{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:8px 0 18px;border-bottom:1px solid var(--line)}
-.brand h1{font:900 clamp(38px,6vw,72px)/.85 Georgia,serif;letter-spacing:-.05em;margin:0}.brand h1 span{color:var(--red)}.brand p{margin:10px 0 0;color:var(--muted);letter-spacing:.18em;font-size:12px;text-transform:uppercase}
-.topscore{text-align:right}.topscore small{display:block;color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.topscore b{font-size:26px}
-.layout{display:grid;grid-template-columns:minmax(320px,660px) minmax(280px,1fr);gap:18px;padding-top:18px}.boardwrap{background:#0d0d0d;border:1px solid var(--line);padding:12px}
-#board{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));grid-template-rows:repeat(9,minmax(0,1fr));width:100%;aspect-ratio:1/1;border:2px solid #333}
-.sq{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:0;min-height:0;font-size:clamp(23px,5.2vw,43px);cursor:pointer;user-select:none}
-.sq.light{background:#f1eee9;color:#111}.sq.dark{background:#222;color:#eee}.sq.center{background:#5b2a86!important;color:#fff;box-shadow:inset 0 0 0 3px #a66bd1}
-.sq.sel{outline:3px solid #fff;outline-offset:-3px}.sq.move:after{content:"";width:22%;height:22%;border-radius:50%;background:#777;position:absolute}.sq.capture:after{content:"";width:72%;height:72%;border:3px solid var(--red);border-radius:50%;position:absolute}
-.sq.fire{background-image:linear-gradient(#ff8b1f33,#ff8b1f33)}.sq.check{background-image:linear-gradient(#e11d2e88,#e11d2e88)!important}
-.pieceIcon{display:inline-flex;align-items:center;justify-content:center;width:.78em;height:.9em;position:relative;line-height:1}
-.torchIcon{width:.58em;height:.86em;display:inline-block;position:relative;filter:drop-shadow(0 2px 2px #000)}
-.torchIcon:before{content:"";position:absolute;left:35%;top:30%;width:30%;height:56%;background:#8b5a2b;border:2px solid currentColor;border-radius:3px}
-.torchIcon:after{content:"";position:absolute;left:22%;top:0;width:56%;height:48%;background:currentColor;border-radius:55% 45% 55% 45%;transform:rotate(-45deg);box-shadow:inset 0 0 0 3px #ffcf66}
-.torchIcon.lit{animation:torchPulse 1s infinite alternate}
-@keyframes torchPulse{from{filter:drop-shadow(0 0 2px #ff8b1f)}to{filter:drop-shadow(0 0 10px #ff8b1f)}}
-.lighterIcon{width:.48em;height:.62em;display:inline-block;position:relative;border:3px solid currentColor;border-radius:58% 42% 58% 42%;transform:rotate(-45deg);opacity:.72}
-.lighterIcon:after{content:"";position:absolute;width:34%;height:34%;left:31%;top:31%;border:2px solid currentColor;border-radius:50%;opacity:.35}
-.redpiece .torchIcon,.redpiece .lighterIcon{color:#e11d2e}.bluepiece .torchIcon,.bluepiece .lighterIcon{color:#2878ff}
-.coord{position:absolute;font:10px monospace;color:#777}.rank{left:3px;top:2px}.file{right:3px;bottom:2px}
-.redpiece{color:#e11d2e;text-shadow:0 1px 2px #000}.bluepiece{color:#2878ff;text-shadow:0 1px 2px #000}.lighter{color:#ff8b1f!important;text-shadow:0 0 8px #ff8b1f}.dormant{opacity:.38;filter:grayscale(1)}
-#panel{display:flex;flex-direction:column;gap:10px}.card{background:var(--panel);border:1px solid var(--line);padding:14px;border-radius:5px}
-.status{font:700 18px Georgia,serif}.status em{color:var(--red);font-style:normal}.turn{display:flex;gap:8px;margin-top:6px}.pill{padding:5px 9px;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:.08em}.pill.red{background:#e11d2e22;color:#ff6470;border:1px solid #e11d2e66}.pill.blue{background:#2878ff22;color:#6ca8ff;border:1px solid #2878ff66}
-.firegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.firebox{border:1px solid #292929;padding:10px}.firebox.red{border-left:4px solid var(--red)}.firebox.blue{border-left:4px solid var(--blue)}.firebar{display:flex;gap:4px;margin:8px 0}.pip{height:8px;flex:1;background:#2b2b2b}.pip.on{background:var(--fire);box-shadow:0 0 6px #ff8b1f88}
-button{background:#171717;color:#fff;border:1px solid #444;padding:9px 12px;border-radius:4px;font:700 12px Arial;cursor:pointer}button:hover{border-color:#aaa}button.primary{border-color:var(--red);background:#250b0e}button.blue{border-color:var(--blue);background:#07152c}.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px}.modes button{padding:12px}.muted{color:var(--muted);font-size:12px;line-height:1.5}.actions{display:flex;flex-wrap:wrap;gap:7px}.actions button{margin:0}
-details{border-top:1px solid #252525;padding-top:10px;margin-top:2px}summary{cursor:pointer;font-weight:800;letter-spacing:.04em}ol{padding-left:20px;line-height:1.55}.diff{display:grid;grid-template-columns:1fr 1fr;gap:10px}.diff div{padding:10px;border:1px solid #282828}.diff b{display:block;margin-bottom:5px}
-.scoretable{width:100%;border-collapse:collapse;font-size:12px}.scoretable td{padding:5px;border-bottom:1px solid #242424}.scoretable td:last-child{text-align:right;font-weight:800}.scoretable .total td{font-size:14px;border-top:1px solid #555}
-.log{max-height:170px;overflow:auto;font:11px/1.45 monospace;color:#bbb;white-space:pre-wrap}.notice{color:#ffb45d;font-size:11px}.footer{color:#555;font-size:10px;text-align:center;padding:18px 0 6px;letter-spacing:.12em;text-transform:uppercase}
-@media(max-width:900px){.layout{grid-template-columns:1fr}header{align-items:start}.topscore{text-align:left}.brand h1{font-size:48px}}
+:root{--black:#050505;--panel:#0d0d0f;--red:#d9151f;--blue:#155cff;--purple:#642b8f;--purple2:#a56ad2;--white:#f4f4f2;--grey:#98989b;--line:#29292d;--fire:#ff8a19}
+*{box-sizing:border-box}html,body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif}body{min-height:100vh;overflow-x:hidden}
+button{font:800 12px Arial;cursor:pointer;color:#fff;background:#151518;border:1px solid #444;padding:11px 14px;border-radius:3px;letter-spacing:.04em}button:hover{border-color:#aaa}button.primary{background:var(--red);border-color:var(--red)}button.blue{background:#082052;border-color:var(--blue)}
+main{max-width:1500px;margin:0 auto;padding:0 22px 30px}.hero{position:relative;padding:26px 0 18px;border-bottom:1px solid var(--line);overflow:hidden}.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.kicker{font-size:10px;letter-spacing:.32em;color:#aaa;text-transform:uppercase;margin-bottom:4px}.logo{margin:0;display:inline-block;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(72px,10vw,142px);line-height:.78;letter-spacing:.025em;transform:scaleX(.84);transform-origin:left center;color:var(--red);text-shadow:3px 4px 0 #35070a,0 0 24px #d9151f22}.logo span{color:#fff}.logoSub{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(18px,2.3vw,30px);letter-spacing:.14em;color:#fff;margin-top:6px}.logoSub b{color:var(--red)}
+.heroLine{margin-top:13px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:#aaa;font-size:11px;letter-spacing:.15em;text-transform:uppercase}.heroLine strong{color:#fff}.slash{color:var(--red)}.designQuote{position:absolute;right:0;top:26px;font-family:Georgia,serif;font-weight:900;font-size:clamp(18px,2.2vw,31px);color:#fff;max-width:410px;text-align:right;line-height:1.05}.designQuote em{color:var(--red);font-style:normal}
+.playArea{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:20px;padding-top:20px}.boardCard{background:#0a0a0b;border:1px solid var(--line);padding:14px;box-shadow:0 20px 60px #000}.boardTop{display:flex;justify-content:space-between;align-items:end;padding:0 2px 10px}.boardTop h2{margin:0;font:900 22px Georgia,serif}.boardTop h2 span{color:var(--red)}.boardTop small{color:#777;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.boardFrame{background:#ddd;border:8px solid #ddd;box-shadow:0 0 0 1px #777}#board{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));grid-template-rows:repeat(9,minmax(0,1fr));width:100%;aspect-ratio:1;border:2px solid #222}
+.sq{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:0;min-height:0;font-size:clamp(22px,4vw,54px);cursor:pointer;user-select:none}.sq.light{background:#f0efec;color:#111}.sq.dark{background:#222;color:#eee}.sq.center{background:var(--purple)!important;color:#fff;box-shadow:inset 0 0 0 3px var(--purple2)}.sq.sel{outline:4px solid #fff;outline-offset:-4px}.sq.move:after{content:"";width:19%;height:19%;border-radius:50%;background:#777;position:absolute}.sq.capture:after{content:"";width:72%;height:72%;border:3px solid var(--red);border-radius:50%;position:absolute}.sq.fire{background-image:linear-gradient(#ff8b1f2b,#ff8b1f2b)}.sq.check{background-image:linear-gradient(#d9151f88,#d9151f88)!important}
+.coord{position:absolute;font:900 10px Georgia,serif;color:#1d4ed8;z-index:2}.rank{left:4px;top:3px}.file{right:4px;bottom:3px}.redpiece{color:#e11d2e;text-shadow:0 2px 2px #000}.bluepiece{color:#155cff;text-shadow:0 2px 2px #000}.pieceIcon{display:inline-flex;align-items:center;justify-content:center;width:.78em;height:.9em;position:relative;line-height:1}
+.torchIcon{width:.58em;height:.86em;display:inline-block;position:relative;filter:drop-shadow(0 2px 2px #000)}.torchIcon:before{content:"";position:absolute;left:35%;top:30%;width:30%;height:56%;background:#7d5128;border:2px solid currentColor;border-radius:3px}.torchIcon:after{content:"";position:absolute;left:22%;top:0;width:56%;height:48%;background:currentColor;border-radius:55% 45% 55% 45%;transform:rotate(-45deg);box-shadow:inset 0 0 0 3px #ffcf66}.torchIcon.lit{animation:torchPulse 1s infinite alternate}@keyframes torchPulse{from{filter:drop-shadow(0 0 2px #ff8b1f)}to{filter:drop-shadow(0 0 12px #ff8b1f)}}
+.lighterIcon{width:.48em;height:.62em;display:inline-block;position:relative;border:3px solid currentColor;border-radius:58% 42% 58% 42%;transform:rotate(-45deg);opacity:.8}.lighterIcon:after{content:"";position:absolute;width:34%;height:34%;left:31%;top:31%;border:2px solid currentColor;border-radius:50%;opacity:.4}.redpiece .torchIcon,.redpiece .lighterIcon{color:#e11d2e}.bluepiece .torchIcon,.bluepiece .lighterIcon{color:#155cff}
+.side{display:flex;flex-direction:column;gap:12px}.card{background:var(--panel);border:1px solid var(--line);padding:15px}.status{font:900 24px Georgia,serif}.status em{color:var(--red);font-style:normal}.message{margin-top:6px;color:#aaa;font-size:12px;line-height:1.45}.turn{display:flex;gap:7px;margin-top:12px}.pill{padding:5px 10px;border-radius:99px;font-size:10px;font-weight:900;letter-spacing:.1em}.pill.red{background:#d9151f22;color:#ff6670;border:1px solid #d9151f66}.pill.blue{background:#155cff22;color:#69a0ff;border:1px solid #155cff66}.modes{display:grid;grid-template-columns:1fr 1fr;gap:7px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.firegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.firebox{padding:10px;border:1px solid #29292d}.firebox.red{border-left:4px solid var(--red)}.firebox.blue{border-left:4px solid var(--blue)}.firebar{display:flex;gap:4px;margin:8px 0}.pip{height:7px;flex:1;background:#28282b}.pip.on{background:var(--fire);box-shadow:0 0 7px #ff8b1f88}.firebox small{font-size:9px;color:#888;letter-spacing:.08em}
+.commandTitle{font:900 14px Georgia,serif;margin:0 0 10px}.commandTitle span{color:var(--red)}.legend{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px}.legend div{background:#111;border:1px solid #222;padding:8px;text-align:center;font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:.06em}.legend b{display:block;color:#fff;font-size:14px;margin-bottom:3px}.quoteCard{position:relative;min-height:105px;overflow:hidden;background:linear-gradient(135deg,#111,#17131b)}.quoteCard:after{content:"?";position:absolute;right:-10px;bottom:-30px;font:900 180px Georgia,serif;color:#ffffff08}.quoteCard b{font:900 22px Georgia,serif}.quoteCard span{color:var(--blue)}
+details{border-top:1px solid #27272b;padding-top:11px;margin-top:2px}summary{cursor:pointer;font-weight:900;letter-spacing:.05em;font-size:12px}ol{padding-left:20px;line-height:1.55;font-size:12px;color:#bbb}.diff{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.diff div{padding:9px;border:1px solid #29292d;font-size:11px}.diff b{display:block;color:#fff;margin-bottom:4px}.notice{color:#ffb45d;font-size:10px;line-height:1.4}.scoretable{width:100%;border-collapse:collapse;font-size:11px}.scoretable td{padding:5px;border-bottom:1px solid #242428}.scoretable td:last-child{text-align:right;font-weight:900}.scoretable .total td{font-size:13px;border-top:1px solid #555}.log{max-height:160px;overflow:auto;font:10px/1.45 monospace;color:#aaa;white-space:pre-wrap}.footer{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#555;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+@media(max-width:1050px){.playArea{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr}.designQuote{display:none}}@media(max-width:700px){main{padding:0 10px 20px}.logo{font-size:72px}.side{display:flex}.boardFrame{border-width:4px}.sq{font-size:clamp(19px,7vw,35px)}.legend{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <main>
-<header>
-  <div class="brand"><h1>CHESS<span>81</span></h1><p>CHECK. FIRE. MATE.</p></div>
-  <div class="topscore"><small>Your Chess81 points</small><b id="career">0</b></div>
+<header class="hero">
+<div class="kicker">AGAR MAIN KING HOTA · GAME SYSTEM 02</div>
+<h1 class="logo">CHESS <span>81</span></h1>
+<div class="logoSub">CHECK. <b>FIRE.</b> MATE.</div>
+<div class="heroLine"><strong>9 × 9</strong><span class="slash">/</span><strong>36 PIECES</strong><span class="slash">/</span><strong>RED VS BLUE</strong><span class="slash">/</span><strong>THE KING HAS A SECOND POWER</strong></div>
+<div class="designQuote">PICTURE ABHI BAAKI HAI.<br><em>KING AKELA KAAFI HAI.</em></div>
 </header>
 
-<section class="layout">
-<div class="boardwrap"><div id="board"></div></div>
-<aside id="panel">
-  <div class="card">
-    <div class="status" id="status">RED TO MOVE</div>
-    <div class="turn"><span class="pill red">RED</span><span class="pill blue">BLUE</span></div>
-    <div class="muted" id="message">Reach e5 with your Lighter to ignite your Torch. Your Queen is limited to 3 squares.</div>
-  </div>
+<section class="playArea">
+<div class="boardCard">
+<div class="boardTop"><div><h2>CHESS <span>81</span></h2><small>THE 81-SQUARE KING BOARD</small></div><small id="modeText">Machine controls BLUE.</small></div>
+<div class="boardFrame"><div id="board"></div></div>
+<div class="legend"><div><b>K</b>King</div><div><b>Q</b>Queen · 3-square max</div><div><b>🔥</b>Torch</div><div><b>◐</b>Lighter</div></div>
+</div>
 
-  <div class="card firegrid" id="fire"></div>
-
-  <div class="card">
-    <div class="modes">
-      <button class="primary" onclick="setMode('machine')">PLAY VS MACHINE</button>
-      <button class="blue" onclick="setMode('human')">PLAY VS HUMAN</button>
-    </div>
-    <div class="actions" style="margin-top:8px">
-      <button onclick="newGame()">NEW GAME</button>
-      <button onclick="undo()">UNDO</button>
-      <button onclick="downloadLog()">DOWNLOAD MATCH</button>
-    </div>
-    <div class="muted" id="modeText" style="margin-top:8px">Machine controls BLUE.</div>
-  </div>
-
-  <div class="card">
-    <details open><summary>HOW TO PLAY</summary>
-    <ol>
-      <li>Chess81 is played on a <b>9×9 board</b>. RED moves first.</li>
-      <li>The familiar chess pieces move as you already know them. Chess81 adds a <b>Torch</b> and a <b>Lighter</b>. RED and BLUE are the only player colours.</li>
-      <li>Your Lighter starts on the e-file. Move it to <b>e5</b>. At e5 it ignites your Torch.</li>
-      <li>Once lit, your Torch moves one square like a King and becomes <b>royal</b>: it cannot be left in attack.</li>
-      <li><b>The Queen is deliberately reduced.</b> It still moves diagonally, horizontally and vertically, but it can move a maximum of <b>3 squares per move</b>.</li>
-      <li>Your Fire grows when your own <b>Rooks, Bishops and Knights</b> fall. There are 6 officer pieces in total. Every officer lost raises your Fire by 1, up to Fire 4.</li>
-      <li><b>1 officer down:</b> Fire Level 1 — adjacent enemy Pawns can burn.</li>
-      <li><b>2 officers down:</b> Fire Level 2 — adjacent enemy Pawns, Rooks, Bishops and Knights can burn.</li>
-      <li><b>3 officers down:</b> Fire Level 3 — the Queen is now vulnerable to the Torch's fire.</li>
-      <li><b>4 or more officers down:</b> Fire Level 4 — the Torch becomes a major territorial weapon and the opposing King cannot enter the 2-square zone around it.</li>
-      <li>The King is never burned. <b>CHECK. FIRE. MATE.</b> You win by checkmating the enemy King or capturing the enemy Torch.</li>
-      <li>For this playtest edition: no castling, no en passant, automatic Queen promotion. The Queen's 3-square limit applies after promotion too.</li>
-    </ol>
-    <div class="notice">Playtest rule set: these mechanics are deliberately provisional and are being tested before the human focus group. Visual reference: CHESS81 Master Design.</div>
-    </details>
-  </div>
-
-  <div class="card">
-    <details><summary>HOW IS CHESS81 DIFFERENT FROM CHESS64?</summary>
-      <div class="diff" style="margin-top:10px">
-        <div><b>CHESS64</b>8×8 · 32 pieces · White/Black · one King.</div>
-        <div><b>CHESS81</b>9×9 · 36 pieces · RED/BLUE · King + Torch.</div>
-      </div>
-      <ol>
-        <li>You do <b>not</b> have to relearn how the familiar pieces move.</li>
-        <li>Chess81 adds the <b>Torch + Lighter + Fire</b> system.</li>
-        <li>The <b>Lighter</b> reaches e5 to ignite the Torch.</li>
-        <li>Your 6 officers (2 Rooks, 2 Bishops, 2 Knights) are the Fire fuel: every one that falls increases your Fire.</li>
-        <li>At <b>3 officers down</b>, Fire can burn the Queen; at <b>4+</b>, Fire becomes territorial around the Torch.</li>
-        <li>The <b>Queen is deliberately weaker</b>: maximum 3-square range.</li>
-        <li>The strategic hierarchy changes: <b>King → Torch → Fire → Queen</b>.</li>
-      </ol>
-      <p class="muted">The beachhead idea: if you already play Chess64, you already know most of Chess81. Learn the Torch. Learn Fire. Then play.</p>
-    </details>
-  </div>
-
-  <div class="card">
-    <details open><summary>SCORING SYSTEM</summary>
-      <table class="scoretable">
-        <tr><td>Win</td><td>+100</td></tr><tr><td>Draw</td><td>+50</td></tr><tr><td>Loss / completed game</td><td>+25</td></tr>
-        <tr><td>Ignite Torch</td><td>+10</td></tr><tr><td>Reach each new Fire level</td><td>+10</td></tr><tr><td>Capture Queen</td><td>+20</td></tr><tr><td>Capture Torch</td><td>+40</td></tr><tr><td>Check the enemy King</td><td>+5</td></tr>
-        <tr class="total"><td>GAME POINTS</td><td id="gamePoints">0</td></tr>
-      </table>
-      <p class="muted">Chess81 points are the current playtest score. The game emits a structured <b>STARKS_SCORE</b> event and stores the result locally so the Master Trading / STARKS layer can consume it. The point-to-STARKS conversion remains an integration setting, not a hidden rule.</p>
-    </details>
-  </div>
-
-  <div class="card">
-    <details><summary>MATCH LOG</summary><div id="log" class="log" style="margin-top:8px"></div></details>
-  </div>
+<aside class="side">
+<div class="card"><div class="status" id="status">RED TO MOVE</div><div class="message" id="message">Reach e5 with your Lighter to ignite your Torch. Your Queen is limited to 3 squares.</div><div class="turn"><span class="pill red">RED</span><span class="pill blue">BLUE</span></div></div>
+<div class="card"><div class="commandTitle">FIRE <span>STATUS</span></div><div class="firegrid" id="fire"></div></div>
+<div class="card"><div class="commandTitle">PLAY <span>CHESS81</span></div><div class="modes"><button class="primary" onclick="setMode('machine')">VS MACHINE</button><button class="blue" onclick="setMode('human')">VS HUMAN</button></div><div class="actions"><button onclick="newGame()">NEW GAME</button><button onclick="undo()">UNDO</button><button onclick="downloadLog()">DOWNLOAD MATCH</button></div><div class="message">Play immediately. No account required for the playtest.</div></div>
+<div class="card quoteCard"><b>Aisa <span>Kyaa?</span></b><div class="message">You already know chess. You only have to learn the Torch, the Lighter and Fire.</div></div>
 </aside>
 </section>
-<div class="footer">CHESS81 PLAYTEST EDITION · RED / BLUE · 9×9 · 36 PIECES</div>
+
+<section class="card" style="margin-top:18px"><details open><summary>HOW TO PLAY CHESS81</summary><ol>
+<li>Chess81 is played on a <b>9×9 board</b>. RED moves first.</li>
+<li>The familiar pieces move in the familiar way. Chess81 adds a <b>Torch</b> and a <b>Lighter</b>.</li>
+<li>Move your Lighter to <b>e5</b>. At e5 it ignites your Torch.</li>
+<li>Once lit, the Torch moves one square like a King and becomes <b>royal</b>: it cannot be left in attack.</li>
+<li><b>The Queen is deliberately reduced:</b> maximum 3 squares per move in any direction.</li>
+<li>Your six officers — 2 Rooks, 2 Bishops and 2 Knights — are your Fire fuel.</li>
+<li><b>1 officer down:</b> Fire 1 — adjacent enemy Pawns can burn.</li>
+<li><b>2 officers down:</b> Fire 2 — adjacent enemy Pawns, Rooks, Bishops and Knights can burn.</li>
+<li><b>3 officers down:</b> Fire 3 — the Queen becomes vulnerable to the Torch's fire.</li>
+<li><b>4+ officers down:</b> Fire 4 — the Torch creates a territorial zone around itself.</li>
+<li>The King is never burned. Win by checkmating the enemy King or capturing the enemy Torch.</li>
+<li>Playtest edition: no castling, no en passant, automatic Queen promotion.</li>
+</ol><div class="notice">CHECK. FIRE. MATE. is a new strategic layer built on top of familiar chess movement. The rules are intentionally being playtested before the human focus group.</div></details></section>
+
+<section style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px">
+<div class="card"><details open><summary>HOW IS CHESS81 DIFFERENT FROM CHESS64?</summary><div class="diff"><div><b>CHESS64</b>8×8 · 32 pieces · one King.</div><div><b>CHESS81</b>9×9 · 36 pieces · King + Torch.</div></div><ol>
+<li>You do not relearn the basic movement of the familiar pieces.</li><li>The Lighter reaches e5 to ignite the Torch.</li><li>Fallen officers increase Fire, creating a comeback mechanism.</li><li>The Queen has a 3-square maximum range.</li><li>At 3 officers down, Fire can burn the Queen.</li><li>At 4+, Fire controls territory around the Torch.</li></ol></details></div>
+<div class="card"><details open><summary>SCORING SYSTEM</summary><table class="scoretable">
+<tr><td>Win</td><td>+100</td></tr><tr><td>Draw</td><td>+50</td></tr><tr><td>Loss / completed game</td><td>+25</td></tr><tr><td>Ignite Torch</td><td>+10</td></tr><tr><td>New Fire level</td><td>+10</td></tr><tr><td>Capture Queen</td><td>+20</td></tr><tr><td>Capture Torch</td><td>+40</td></tr><tr><td>Check King</td><td>+5</td></tr><tr class="total"><td>GAME POINTS</td><td id="gamePoints">RED 0 · BLUE 0</td></tr>
+</table><div class="message">Career Chess81 points: <b id="career">0</b>. Game results emit the structured STARKS_SCORE event for the Master Trading layer.</div></details></div>
+</section>
+
+<section class="card" style="margin-top:18px"><details><summary>MATCH LOG</summary><div id="log" class="log" style="margin-top:8px"></div></details></section>
+<footer class="footer"><span>CHESS81 PLAYTEST EDITION</span><span>RED / BLUE · 9×9 · 36 PIECES</span><span>AGAR MAIN KING HOTA</span></footer>
 </main>
 
 <script>
