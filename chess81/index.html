@@ -156,7 +156,7 @@ function attackMoves(st,i){
   const add=(rr,cc)=>{if(!inside(rr,cc))return true;const q=st.b[idx(rr,cc)];if(!q)o.push(idx(rr,cc));else{if(q.s!==p.s&&q.t!=='T')o.push(idx(rr,cc));return true}return false};
   const slide=(dirs)=>dirs.forEach(([dr,dc])=>{let rr=r+dr,cc=c+dc;while(inside(rr,cc)){if(add(rr,cc))break;rr+=dr;cc+=dc}});
   const O=[[1,0],[-1,0],[0,1],[0,-1]],D=[[1,1],[1,-1],[-1,1],[-1,-1]];
-  if(p.t==='R')slide(O); else if(p.t==='B')slide(D); else if(p.t==='Q')slide(O.concat(D));
+  if(p.t==='R')slide(O); else if(p.t==='B')slide(D); else if(p.t==='Q'){const dirs=O.concat(D);dirs.forEach(([dr,dc])=>{for(let n=1;n<=3;n++){if(!inside(r+dr*n,c+dc*n))break;if(add(r+dr*n,c+dc*n))break}})}
   else if(p.t==='K'||p.t==='T')O.concat(D).forEach(d=>add(r+d[0],c+d[1]));
   else if(p.t==='N')[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]].forEach(d=>add(r+d[0],c+d[1]));
   else{
