@@ -32,6 +32,7 @@ jobs:
           mkdir -p site
           cp index.html site/
           cp master-home.html site/
+          cp -R chess81 site/
           cp -R "Bauua Raw Material" site/
           cp -R data site/
           cp -R king-intelligence-shared site/
