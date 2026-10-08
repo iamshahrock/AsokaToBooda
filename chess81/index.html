@@ -11,9 +11,9 @@ body{padding:18px}main{max-width:1180px;margin:auto}header{display:flex;justify-
 .brand h1{font:900 clamp(38px,6vw,72px)/.85 Georgia,serif;letter-spacing:-.05em;margin:0}.brand h1 span{color:var(--red)}.brand p{margin:10px 0 0;color:var(--muted);letter-spacing:.18em;font-size:12px;text-transform:uppercase}
 .topscore{text-align:right}.topscore small{display:block;color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.topscore b{font-size:26px}
 .layout{display:grid;grid-template-columns:minmax(320px,660px) minmax(280px,1fr);gap:18px;padding-top:18px}.boardwrap{background:#0d0d0d;border:1px solid var(--line);padding:12px}
-#board{display:grid;grid-template-columns:repeat(9,1fr);aspect-ratio:1;border:2px solid #333}
-.sq{position:relative;display:flex;align-items:center;justify-content:center;font-size:clamp(23px,5.2vw,43px);cursor:pointer;user-select:none}
-.sq.light{background:#f1eee9;color:#111}.sq.dark{background:#222;color:#eee}.sq.center{box-shadow:inset 0 0 0 3px var(--fire)}
+#board{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));grid-template-rows:repeat(9,minmax(0,1fr));width:100%;aspect-ratio:1/1;border:2px solid #333}
+.sq{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:0;min-height:0;font-size:clamp(23px,5.2vw,43px);cursor:pointer;user-select:none}
+.sq.light{background:#f1eee9;color:#111}.sq.dark{background:#222;color:#eee}.sq.center{background:#5b2a86!important;color:#fff;box-shadow:inset 0 0 0 3px #a66bd1}
 .sq.sel{outline:3px solid #fff;outline-offset:-3px}.sq.move:after{content:"";width:22%;height:22%;border-radius:50%;background:#777;position:absolute}.sq.capture:after{content:"";width:72%;height:72%;border:3px solid var(--red);border-radius:50%;position:absolute}
 .sq.fire{background-image:linear-gradient(#ff8b1f33,#ff8b1f33)}.sq.check{background-image:linear-gradient(#e11d2e88,#e11d2e88)!important}
 .pieceIcon{display:inline-flex;align-items:center;justify-content:center;width:.78em;height:.9em;position:relative;line-height:1}
@@ -84,7 +84,7 @@ details{border-top:1px solid #252525;padding-top:10px;margin-top:2px}summary{cur
       <li>The King is never burned. <b>CHECK. FIRE. MATE.</b> You win by checkmating the enemy King or capturing the enemy Torch.</li>
       <li>For this playtest edition: no castling, no en passant, automatic Queen promotion. The Queen's 3-square limit applies after promotion too.</li>
     </ol>
-    <div class="notice">Playtest rule set: these mechanics are deliberately provisional and are being tested before the human focus group.</div>
+    <div class="notice">Playtest rule set: these mechanics are deliberately provisional and are being tested before the human focus group. Visual reference: CHESS81 Master Design.</div>
     </details>
   </div>
 
@@ -128,6 +128,9 @@ details{border-top:1px solid #252525;padding-top:10px;margin-top:2px}summary{cur
 
 <script>
 const files='abcdefghi';
+const TOP_LABELS=['A','B','C','D','0','E','F','G','H'];
+const BOTTOM_LABELS=['H','G','F','E','X','D','C','B','A'];
+const SIDE_LABELS=['18','27','36','45','X0','54','63','72','81'];
 const ICON={K:'♚',Q:'♛',R:'♜',B:'♝',N:'♞',P:'♟',T:''};
 const LABEL={K:'King',Q:'Queen',R:'Rook',B:'Bishop',N:'Knight',P:'Pawn',T:'Torch'};
 const VALUE={K:100,Q:9,R:5,B:3,N:3,P:1,T:30};
@@ -298,7 +301,14 @@ function render(){
       const rr=Math.floor(t/9),cc=t%9;if(Math.abs(rr-r)<=1&&Math.abs(cc-c)<=1)cl.push('fire');
     }
     let glyph='';if(p){let pc=p.s===0?'redpiece':'bluepiece';if(p.lt)pc+=' lighter';if(p.t==='T'&&!S.lit[p.s])pc+=' dormant';if(p.t==='T')glyph='<span class="'+pc+' pieceIcon"><span class="torchIcon '+(S.lit[p.s]?'lit':'')+'" aria-label="Torch"></span></span>';else if(p.lt)glyph='<span class="'+pc+' pieceIcon"><span class="lighterIcon" aria-label="Unlit fire"></span></span>';else glyph='<span class="'+pc+' pieceIcon">'+ICON[p.t]+'</span>'}
-    html+='<div class="'+cl.join(' ')+'" data-i="'+i+'">'+(c===0?'<span class="coord rank">'+(r+1)+'</span>':'')+(r===0?'<span class="coord file">'+files[c]+'</span>':'')+glyph+'</div>';
+    const topLabel = TOP_LABELS[c], bottomLabel = BOTTOM_LABELS[c];
+    const sideLabel = SIDE_LABELS[r];
+    const centerSide = r===4;
+    html+='<div class="'+cl.join(' ')+'" data-i="'+i+'">'+
+      (c===0?'<span class="coord rank">'+sideLabel+(centerSide?'<br><span style="color:#e11d2e">0X</span>':'')+'</span>':'')+
+      (c===8?'<span class="coord rank" style="left:auto;right:3px">'+sideLabel+(centerSide?'<br><span style="color:#e11d2e">X0</span>':'')+'</span>':'')+
+      (r===8?'<span class="coord file" style="right:auto;left:3px">'+topLabel+'</span>':'')+
+      (r===0?'<span class="coord file">'+bottomLabel+'</span>':'')+glyph+'</div>';
   }
   b.innerHTML=html;b.onclick=e=>{const el=e.target.closest('[data-i]');if(el)click(+el.dataset.i)};
   const ch=positionCheck(S,S.turn);
