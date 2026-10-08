@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 220" role="img" aria-label="Torch">
+<defs><linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2e7dff"/><stop offset=".5" stop-color="#064bd8"/><stop offset="1" stop-color="#001b63"/></linearGradient><linearGradient id="flame" x1=".5" y1="0" x2=".5" y2="1"><stop stop-color="#fff6b0"/><stop offset=".28" stop-color="#ffbf25"/><stop offset=".7" stop-color="#ff4a12"/><stop offset="1" stop-color="#d71920"/></linearGradient></defs>
+<path fill="url(#flame)" d="M60 4C42 26 46 38 35 51 20 69 27 91 60 100c33-9 40-31 25-49C74 38 78 26 60 4Z"/>
+<path fill="#155cff" d="M52 28c-6 15-3 23-11 31-8 8-5 25 19 31 24-6 27-23 19-31-8-8-5-16-11-31-5 10-7 14-8 22-1-7-3-12-8-22Z" opacity=".9"/>
+<path fill="url(#metal)" stroke="#79a7ff" stroke-width="2" d="M42 82h36l7 12-10 12-6 8v58l16 9v12H35v-12l16-9v-58l-6-8-10-12 7-12Z"/>
+<ellipse cx="60" cy="191" rx="43" ry="13" fill="url(#metal)" stroke="#79a7ff" stroke-width="2"/>
+<ellipse cx="60" cy="177" rx="26" ry="8" fill="#0a3eb2" stroke="#79a7ff" stroke-width="2"/>
+</svg>
