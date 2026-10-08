@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -26,8 +26,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Build intended public site
         shell: bash
@@ -48,7 +46,6 @@ jobs:
 
           rm -f site/king-intelligence/index.backup-20261006.html
           touch site/.nojekyll
-
           test -f site/index.html
           test -f site/CHESS81.HTML
 
@@ -59,4 +56,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
