@@ -1,6 +1,5 @@
 name: Deploy static site to GitHub Pages
 
-# Release 5: publish only the explicit site/ artifact; repository-root files are never published.
 on:
   push:
     branches: ["main"]
@@ -17,35 +16,47 @@ concurrency:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Build intended public site
+        shell: bash
         run: |
+          set -euo pipefail
           rm -rf site
           mkdir -p site
+
           cp index.html site/
           cp master-home.html site/
           cp CHESS81.HTML site/
-          cp -R chess81 site/
-          cp -R "Bauua Raw Material" site/
-          cp -R data site/
-          cp -R king-intelligence-shared site/
-          for n in "" "-2" "-3" "-4" "-5" "-6" "-7" "-8" "-9" "-10" "-11" "-12" "-13" "-14" "-15" "-16" "-17" "-18"; do
-            cp -R "king-intelligence${n}" site/
+
+          for dir in             "chess81"             "Bauua Raw Material"             "data"             "king-intelligence-shared"             "king-intelligence"             "king-intelligence-2"             "king-intelligence-3"             "king-intelligence-4"             "king-intelligence-5"             "king-intelligence-6"             "king-intelligence-7"             "king-intelligence-8"             "king-intelligence-9"             "king-intelligence-10"             "king-intelligence-11"             "king-intelligence-12"             "king-intelligence-13"             "king-intelligence-14"             "king-intelligence-15"             "king-intelligence-16"             "king-intelligence-17"             "king-intelligence-18"
+          do
+            test -d "$dir"
+            cp -R "$dir" site/
           done
+
           rm -f site/king-intelligence/index.backup-20261006.html
           touch site/.nojekyll
+
+          test -f site/index.html
+          test -f site/CHESS81.HTML
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
