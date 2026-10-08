@@ -204,7 +204,7 @@ function render(){
     if(t>=0&&S.lit[1-S.turn]&&S.fire[1-S.turn]>=1){
       const rr=Math.floor(t/9),cc=t%9;if(Math.abs(rr-r)<=1&&Math.abs(cc-c)<=1)cl.push('fire');
     }
-    let glyph='';if(p){let pc=p.s===0?'redpiece':'bluepiece';if(p.lt)pc+=' lighter';if(p.t==='T'&&!S.lit[p.s])pc+=' dormant';if(p.t==='T')glyph='<span class="'+pc+' pieceIcon"><img class="torchSvg lit" src="torch.svg" aria-label="Torch"></span>';else if(p.lt)glyph='<span class="'+pc+' pieceIcon"><img class="fireSvg" src="fire.svg" aria-label="Fire"></span>';else glyph='<span class="'+pc+' pieceIcon">'+ICON[p.t]+'</span>'}
+    let glyph='';if(p){let pc=p.s===0?'redpiece':'bluepiece';if(p.lt)pc+=' lighter';if(p.t==='T'&&!S.lit[p.s])pc+=' dormant';if(p.t==='T')glyph='<span class="'+pc+' pieceIcon"><img class="torchSvg '+(S.lit[p.s]?'lit':'')+'" src="torch.svg" aria-label="Torch"></span>';else if(p.lt)glyph='<span class="'+pc+' pieceIcon"><img class="fireSvg" src="fire.svg" aria-label="Fire"></span>';else glyph='<span class="'+pc+' pieceIcon">'+ICON[p.t]+'</span>'}
     const topLabel = TOP_LABELS[c], bottomLabel = BOTTOM_LABELS[c];
     const sideLabel = SIDE_LABELS[r];
     const centerSide = r===4;
