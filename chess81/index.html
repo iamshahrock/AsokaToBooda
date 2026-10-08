@@ -1,0 +1,238 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CHESS 81</title><style>:root{--red:#e31620;--blue:#164cff;--black:#000;--white:#f4f4f2;--panel:#0a0a0b;--line:#29292d;--purple:#6c2e94;--fire:#ff8a19}
+*{box-sizing:border-box}html,body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif}body{min-height:100vh;overflow-x:hidden}
+button{font:900 14px Arial,sans-serif;color:#fff;cursor:pointer;border:1px solid #444;background:#111;padding:11px 16px;border-radius:3px}button.primary{background:var(--red);border-color:var(--red)}button.blue{background:#062257;border-color:var(--blue)}
+.page{width:100%;min-height:100vh;padding:20px 24px 18px}
+.header{height:128px;display:grid;grid-template-columns:minmax(470px,1fr) 300px minmax(430px,1fr);align-items:center;gap:28px;border-bottom:2px solid var(--red)}
+.title{width:min(600px,100%);display:block}.learn{justify-self:center;background:var(--red);color:#000;border:0;border-radius:30px;padding:12px 28px;font-size:17px;letter-spacing:.01em}.tagline{justify-self:end;text-align:right;font-family:Impact,"Arial Black",Arial,sans-serif;font-size:clamp(24px,2.25vw,43px);line-height:.94;font-weight:900;color:var(--red);text-transform:uppercase}
+.main{display:grid;grid-template-columns:minmax(500px,42vw) minmax(390px,28vw) minmax(380px,1fr);gap:16px;align-items:start;padding-top:28px}
+.boardWrap{width:min(100%,650px);aspect-ratio:1;margin:0 auto;background:#ddd;border:5px solid #ddd;box-shadow:0 0 0 2px #777}.board{width:100%;height:100%;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(9,1fr);border:2px solid #222}
+.sq{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:clamp(15px,2.25vw,35px);user-select:none;cursor:pointer}.sq.light{background:#f0efec;color:#111}.sq.dark{background:#222;color:#eee}.sq.center{background:var(--purple)!important;box-shadow:inset 0 0 0 3px #a86ed0}.sq.sel{outline:3px solid #fff;outline-offset:-3px}.sq.move:after{content:"";width:17%;height:17%;border-radius:50%;background:#777}.sq.capture:after{content:"";width:72%;height:72%;border:2px solid var(--red);border-radius:50%}.sq.fire{background-image:linear-gradient(#ff8a192b,#ff8a192b)}.sq.check{background-image:linear-gradient(#d9151f88,#d9151f88)!important}
+.coord{position:absolute;z-index:2;font:bold 11px Georgia,serif;color:#154ed8}.rank{left:4px;top:3px}.file{right:4px;bottom:3px}.redpiece{color:var(--red);text-shadow:0 2px 2px #000}.bluepiece{color:var(--blue);text-shadow:0 2px 2px #000}.pieceIcon{display:inline-flex;align-items:center;justify-content:center;width:.8em;height:.9em;line-height:1}.torchSvg{width:.58em;height:.9em;filter:drop-shadow(0 2px 2px #000)}.torchSvg.lit{animation:pulse 1s infinite alternate}@keyframes pulse{to{filter:drop-shadow(0 0 10px #ff8a19)}}.fireSvg{width:.5em;height:.66em;filter:drop-shadow(0 0 6px #ff8a19)}
+.machine{font-size:28px;font-weight:900;margin:0 0 7px;text-transform:uppercase}.card{background:var(--panel);border:1px solid var(--line);padding:15px;margin-bottom:11px}.status{font:900 25px Georgia,serif}.status em{color:var(--red);font-style:normal}.msg{color:#aaa;font-size:13px;line-height:1.3;margin-top:5px}.pills{display:flex;gap:8px;margin-top:12px}.pill{font-size:11px;font-weight:900;padding:5px 12px;border-radius:99px}.pill.red{color:#ff6570;border:1px solid #a51b25}.pill.blue{color:#70a0ff;border:1px solid #164cff}
+.section{font:900 17px Georgia,serif;margin-bottom:11px}.section span{color:var(--red)}.firegrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.firebox{border:1px solid #29292d;padding:10px}.firebox.red{border-left:5px solid var(--red)}.firebox.blue{border-left:5px solid var(--blue)}.firebar{display:flex;gap:4px;margin:7px 0}.pip{height:7px;flex:1;background:#29292d}.pip.on{background:var(--fire);box-shadow:0 0 7px #ff8a19}.firebox small{font-size:10px;color:#888}.modes{display:grid;grid-template-columns:1fr 1fr;gap:9px}.modes button{padding:13px 8px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}.actions button:last-child{grid-column:1/-1}
+.artPanel{min-width:0}.art{width:100%;height:590px;overflow:hidden;background:#050505}.art img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}.rules{margin-top:0;background:var(--panel);border:1px solid var(--line);padding:11px 14px}.rules summary{cursor:pointer;font:900 14px Georgia,serif}.rules ol{margin:8px 0 0 18px;padding:0;color:#aaa;font-size:11px;line-height:1.4}
+@media(max-width:1250px){.page{padding:16px}.header{grid-template-columns:minmax(390px,1fr) 240px minmax(340px,1fr);gap:18px}.main{grid-template-columns:minmax(450px,40vw) minmax(350px,28vw) minmax(300px,1fr)}.art{height:520px}.machine{font-size:23px}}
+@media(max-width:980px){body{overflow:auto}.header{height:auto;min-height:110px;grid-template-columns:1fr auto}.tagline{grid-column:1/-1;justify-self:end;padding-bottom:10px}.main{grid-template-columns:1fr}.boardWrap{width:min(100%,650px)}.side,.artPanel{max-width:650px;margin:0 auto;width:100%}.art{height:auto;aspect-ratio:16/11}}
+@media(max-width:560px){.page{padding:10px}.header{grid-template-columns:1fr}.learn{justify-self:start}.tagline{grid-column:auto;justify-self:start;text-align:left}.firegrid,.modes{grid-template-columns:1fr}.main{padding-top:18px}}</style></head><body><div class="page">
+<header class="header">
+  <img class="title" src="title.svg" alt="CHESS 81">
+  <button class="learn" onclick="document.getElementById('rules').scrollIntoView({behavior:'smooth'})">LEARN THE RULES</button>
+  <div class="tagline">PICTURE ABHI BAAKI HAIN,<br>KING AKELA KAAFI HAIN</div>
+</header>
+<section class="main">
+  <div class="boardWrap"><div class="board" id="board"></div></div>
+  <div class="side">
+    <div class="machine" id="modeText">MACHINE CONTROLS BLUE</div>
+    <div class="card"><div class="status" id="status">RED TO MOVE</div><div class="msg" id="message">Reach O5 with your Lighter to ignite your Torch. Queen range: 3 squares.</div><div class="pills"><span class="pill red">RED</span><span class="pill blue">BLUE</span></div></div>
+    <div class="card"><div class="section">FIRE <span>STATUS</span></div><div class="firegrid" id="fire"></div></div>
+    <div class="card"><div class="section">PLAY <span>CHESS81</span></div><div class="modes"><button class="primary" onclick="setMode('machine')">VS MACHINE</button><button class="blue" onclick="setMode('human')">VS HUMAN</button></div><div class="actions"><button onclick="newGame()">NEW GAME</button><button onclick="undo()">UNDO</button><button onclick="downloadLog()">DOWNLOAD MATCH</button></div><div class="msg">Play immediately. No account required for the playtest.</div></div>
+  </div>
+  <div class="artPanel">
+    <div class="art"><img src="master-design.jpg" alt="Chess81 design artwork"></div>
+    <details class="rules" id="rules" open><summary>HOW TO PLAY CHESS 81</summary><ol><li>Chess81 is played on a 9×9 board. RED moves first.</li><li>Reach <b>O5</b> with your Fire to ignite your Torch.</li><li>The top coordinate sequence is <b>A B C D O E F G H</b>.</li><li>Your Queen moves a maximum of 3 squares in any direction.</li><li>Each fallen Rook, Bishop or Knight raises your Fire level.</li><li>Win by checkmating the enemy King or capturing the enemy Torch.</li></ol></details>
+  </div>
+</section></div>
+<script>
+const files='abcdefghi';
+const TOP_LABELS=['A','B','C','D','0','E','F','G','H'];
+const BOTTOM_LABELS=['H','G','F','E','X','D','C','B','A'];
+const SIDE_LABELS=['18','27','36','45','X0','54','63','72','81'];
+const ICON={K:'♚',Q:'♛',R:'♜',B:'♝',N:'♞',P:'♟',T:''};
+const LABEL={K:'King',Q:'Queen',R:'Rook',B:'Bishop',N:'Knight',P:'Pawn',T:'Torch'};
+const VALUE={K:100,Q:9,R:5,B:3,N:3,P:1,T:30};
+let S=null,history=[],selected=null,mode='machine',log=[],gameOver=false;
+let score={red:0,blue:0,reason:[]},career=Number(localStorage.getItem('chess81_points')||0);
+
+function color(s){return s===0?'RED':'BLUE'}
+function idx(r,c){return r*9+c}
+function sq(i){return TOP_LABELS[i%9]+(Math.floor(i/9)+1)}
+function inside(r,c){return r>=0&&r<9&&c>=0&&c<9}
+function cloneBoard(b){return b.map(p=>p?p={...p}:null)}
+function addScore(s,n,reason){score[s===0?'red':'blue']+=n;score.reason.push(color(s)+' +'+n+' '+reason)}
+function newGame(){
+  const b=Array(81).fill(null), back=['R','N','B','Q','T','K','B','N','R'];
+  for(let s=0;s<2;s++){
+    const br=s?8:0, pr=s?7:1;
+    for(let c=0;c<9;c++){b[idx(br,c)]={t:back[c],s};b[idx(pr,c)]={t:'P',s,lt:c===4}}
+  }
+  S={b,lit:[false,false],fire:[0,0],turn:0,lighterTimer:[null,null],half:0};
+  history=[];selected=null;log=[];gameOver=false;score={red:0,blue:0,reason:[]};
+  render();botMove();
+}
+function attackMoves(st,i){
+  const p=st.b[i]; if(!p)return[];
+  const r=Math.floor(i/9),c=i%9,o=[];
+  const add=(rr,cc)=>{if(!inside(rr,cc))return true;const q=st.b[idx(rr,cc)];if(!q)o.push(idx(rr,cc));else{if(q.s!==p.s&&q.t!=='T')o.push(idx(rr,cc));return true}return false};
+  const slide=(dirs)=>dirs.forEach(([dr,dc])=>{let rr=r+dr,cc=c+dc;while(inside(rr,cc)){if(add(rr,cc))break;rr+=dr;cc+=dc}});
+  const O=[[1,0],[-1,0],[0,1],[0,-1]],D=[[1,1],[1,-1],[-1,1],[-1,-1]];
+  if(p.t==='R')slide(O); else if(p.t==='B')slide(D); else if(p.t==='Q'){const dirs=O.concat(D);dirs.forEach(([dr,dc])=>{for(let n=1;n<=3;n++){if(!inside(r+dr*n,c+dc*n))break;if(add(r+dr*n,c+dc*n))break}})}
+  else if(p.t==='K'||p.t==='T')O.concat(D).forEach(d=>add(r+d[0],c+d[1]));
+  else if(p.t==='N')[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]].forEach(d=>add(r+d[0],c+d[1]));
+  else{
+    const d=p.s===0?1:-1;
+    for(const dc of[-1,1]){const rr=r+d,cc=c+dc;if(inside(rr,cc)){const q=st.b[idx(rr,cc)];if(q&&q.s!==p.s&&q.t!=='T')o.push(idx(rr,cc))}}
+    const rr=r+d;if(inside(rr,c)&&!st.b[idx(rr,c)]){o.push(idx(rr,c));if((p.s===0?r===1:r===7)&&!st.b[idx(r+2*d,c)])o.push(idx(r+2*d,c))}
+  }
+  return o;
+}
+function attacked(st,target,by){
+  for(let i=0;i<81;i++){const p=st.b[i];if(p&&p.s===by&&attackMoves(st,i).includes(target))return true}
+  return false;
+}
+function royals(st,s){
+  let k=-1,t=-1;
+  st.b.forEach((p,i)=>{if(p&&p.s===s){if(p.t==='K')k=i;if(p.t==='T'&&st.lit[s])t=i}});
+  return [k,t];
+}
+function safe(st,s){
+  const [k,t]=royals(st,s),opp=1-s;
+  if(k>=0&&attacked(st,k,opp))return false;
+  if(t>=0&&attacked(st,t,opp))return false;
+  if(k>=0&&st.fire[opp]>=4){
+    const [ot]=royals(st,opp);
+    if(ot>=0){
+      const d=Math.max(Math.abs(Math.floor(ot/9)-Math.floor(k/9)),Math.abs((ot%9)-(k%9)));
+      if(d<=2)return false;
+    }
+  }
+  return true;
+}
+function apply(st,from,to){
+  const b=cloneBoard(st.b), p=b[from], q=b[to], lit=st.lit.slice(), fire=st.fire.slice(), timer=st.lighterTimer.slice();
+  const s=p.s, captured=q?LABEL[q.t]:'';
+  let bonus=0;
+  if(q&&'RBN'.includes(q.t)){fire[q.s]++;if(fire[q.s]<=4) bonus+=10}
+  b[to]={...p}; b[from]=null;
+  if(p.t==='P'&&(Math.floor(to/9)===(p.s===0?8:0)))b[to]={t:'Q',s:p.s};
+  let ignited=false;
+  if(p.lt&&to===40&&!lit[s]){lit[s]=true;timer[s]=2;ignited=true}
+  if(p.lt&&lit[s]&&from===40&&to!==40)timer[s]=null;
+  const waiting=1-s;
+  if(timer[waiting]!==null && lit[waiting]){
+    const li=b.findIndex(x=>x&&x.s===waiting&&x.lt);
+    if(li>=0 && li===40) timer[waiting]--;
+    if(timer[waiting]!==null && timer[waiting]<=0){
+      b[li]=null; timer[waiting]=null;
+    }
+  }
+  const ti=b.findIndex(x=>x&&x.s===s&&x.t==='T');
+  let burned=[];
+  if(lit[s]&&ti>=0){
+    const n=fire[s];
+    const allowed=n>=3?'PNBRQ':n>=2?'PNBR':n>=1?'P':'';
+    const tr=Math.floor(ti/9),tc=ti%9;
+    for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){
+      if(!dr&&!dc)continue;const rr=tr+dr,cc=tc+dc;if(!inside(rr,cc))continue;
+      const bi=idx(rr,cc),x=b[bi];
+      if(x&&x.s!==s&&allowed.includes(x.t)){burned.push({piece:x.t,s:x.s,sq:sq(bi)});if('RBN'.includes(x.t))fire[x.s]++;b[bi]=null}
+    }
+  }
+  return {b,lit,fire,turn:1-s,lighterTimer:timer,half:st.half+1,captured,burned,bonus,ignited};
+}
+function legal(st){
+  const out=[];
+  for(let i=0;i<81;i++){const p=st.b[i];if(!p||p.s!==st.turn)continue;for(const to of attackMoves(st,i)){const n=apply(st,i,to);if(safe(n,st.turn))out.push([i,to])}}
+  return out;
+}
+function positionCheck(st,s){return !safe(st,s)}
+function makeMove(m){
+  if(gameOver)return;
+  const p=S.b[m[0]], before=S;
+  const n=apply(S,m[0],m[1]);
+  history.push(before);
+  S=n;
+  if(n.ignited)addScore(p.s,10,'ignited Torch');
+  if(n.captured==='Queen')addScore(p.s,20,'captured Queen');
+  if(n.captured==='Torch'){addScore(p.s,40,'captured Torch');gameOver=true;endGame(p.s,'TORCH CAPTURE');}
+  for(const side of [0,1]){
+    if(n.fire[side]>before.fire[side]){
+      for(let lv=before.fire[side]+1;lv<=n.fire[side]&&lv<=4;lv++)addScore(side,10,'reached Fire '+lv);
+    }
+  }
+  const opp=S.turn;
+  if(!gameOver && positionCheck(S,opp))addScore(p.s,5,'gave Check');
+  const lm=legal(S);
+  if(!lm.length&&!gameOver){
+    gameOver=true;
+    if(!safe(S,opp)){addScore(p.s,50,'MATE');endGame(p.s,'CHECK. FIRE. MATE.');}
+    else endGame(null,'DRAW');
+  }
+  log.push(color(p.s)+' '+sq(m[0])+'–'+sq(m[1])+(p.lt?' [LIGHTER]':p.t!=='P'?' ['+LABEL[p.t]+']':'')+(n.ignited?' — TORCH LIT':'')+(n.burned.length?' — FIRE: '+n.burned.map(x=>x.sq).join(', '):''));
+  selected=null;render();botMove();
+}
+function endGame(winner,reason){
+  if(winner===null){score.red+=50;score.blue+=50;log.push('RESULT: DRAW — +50 each')}
+  else{const loser=1-winner;score[ winner===0?'red':'blue']+=100;score[loser===0?'red':'blue']+=25;log.push('RESULT: '+color(winner)+' WINS — '+reason)}
+  const total=score.red+score.blue;
+  career+=total;localStorage.setItem('chess81_points',career);
+  const payload={system:'CHESS81',version:'0.1-playtest',red:score.red,blue:score.blue,total,reason,fireRed:S.fire[0],fireBlue:S.fire[1],timestamp:new Date().toISOString()};
+  window.dispatchEvent(new CustomEvent('STARKS_SCORE',{detail:payload}));
+  try{window.parent.postMessage({type:'STARKS_SCORE',payload},'*')}catch(_){}
+  localStorage.setItem('chess81_last_score',JSON.stringify(payload));
+}
+function undo(){
+  if(!history.length||gameOver)return;
+  S=history.pop();selected=null;render();
+}
+function setMode(m){mode=m;newGame();document.getElementById('modeText').textContent=m==='machine'?'Machine controls BLUE.':'Two humans share this board.'}
+function botMove(){
+  if(mode!=='machine'||!S||S.turn!==1||gameOver)return;
+  setTimeout(()=>{
+    const moves=legal(S);if(!moves.length)return;
+    let best=moves[0],bestScore=-1e9;
+    for(const m of moves){
+      const n=apply(S,m[0],m[1]);let v=evaluate(n);
+      if(n.captured==='Q')v+=30;if(n.captured==='T')v+=100;if(n.fire[1]>S.fire[1])v+=8;
+      v+=Math.random()*2;
+      if(v>bestScore){bestScore=v;best=m}
+    }
+    makeMove(best);
+  },280);
+}
+function evaluate(st){
+  let v=0;st.b.forEach(p=>{if(p)v+=(p.s===1?1:-1)*VALUE[p.t]});
+  v+=(st.fire[1]-st.fire[0])*4;
+  return v;
+}
+function render(){
+  if(!S)return;
+  const b=document.getElementById('board'),lm=legal(S),moves=new Set(lm.filter(m=>m[0]===selected).map(m=>m[1]));
+  let html='';
+  for(let r=8;r>=0;r--)for(let c=0;c<9;c++){
+    const i=idx(r,c),p=S.b[i],cl=['sq',(r+c)%2?'dark':'light'];
+    if(i===40)cl.push('center');if(selected===i)cl.push('sel');if(moves.has(i))cl.push(p?'capture':'move');
+    const [rk,rt]=royals(S,S.turn);if((i===rk||i===rt)&&positionCheck(S,S.turn))cl.push('check');
+    const [or,ot]=royals(S,1-S.turn);const t=ot>=0?ot:or;
+    if(t>=0&&S.lit[1-S.turn]&&S.fire[1-S.turn]>=1){
+      const rr=Math.floor(t/9),cc=t%9;if(Math.abs(rr-r)<=1&&Math.abs(cc-c)<=1)cl.push('fire');
+    }
+    let glyph='';if(p){let pc=p.s===0?'redpiece':'bluepiece';if(p.lt)pc+=' lighter';if(p.t==='T'&&!S.lit[p.s])pc+=' dormant';if(p.t==='T')glyph='<span class="'+pc+' pieceIcon"><img class="torchSvg '+(S.lit[p.s]?'lit':'')+'" src="torch.svg" aria-label="Torch"></span>';else if(p.lt)glyph='<span class="'+pc+' pieceIcon"><img class="fireSvg" src="fire.svg" aria-label="Fire"></span>';else glyph='<span class="'+pc+' pieceIcon">'+ICON[p.t]+'</span>'}
+    const topLabel = TOP_LABELS[c], bottomLabel = BOTTOM_LABELS[c];
+    const sideLabel = SIDE_LABELS[r];
+    const centerSide = r===4;
+    html+='<div class="'+cl.join(' ')+'" data-i="'+i+'">'+
+      (c===0?'<span class="coord rank">'+sideLabel+(centerSide?'<br><span style="color:#e11d2e">0X</span>':'')+'</span>':'')+
+      (c===8?'<span class="coord rank" style="left:auto;right:3px">'+sideLabel+(centerSide?'<br><span style="color:#e11d2e">X0</span>':'')+'</span>':'')+
+      (r===8?'<span class="coord file" style="right:auto;left:3px">'+topLabel+'</span>':'')+
+      (r===0?'<span class="coord file">'+bottomLabel+'</span>':'')+glyph+'</div>';
+  }
+  b.innerHTML=html;b.onclick=e=>{const el=e.target.closest('[data-i]');if(el)click(+el.dataset.i)};
+  const ch=positionCheck(S,S.turn);
+  document.getElementById('status').innerHTML=gameOver?(log[log.length-1]||'GAME OVER'):(color(S.turn)+' TO MOVE'+(ch?' — <em>CHECK</em>':''));
+  document.getElementById('message').textContent=S.lit[0]||S.lit[1]?'Fire rises for every fallen Rook, Bishop or Knight. At 3 officers down the Queen becomes vulnerable.':'Reach O5 with your Lighter to ignite your Torch. Queen range: 3 squares.';
+  document.getElementById('fire').innerHTML=[0,1].map(s=>'<div class="firebox '+(s?'blue':'red')+'"><b>'+color(s)+' FIRE</b><div class="firebar">'+[0,1,2,3].map(k=>'<span class="pip '+(k<S.fire[s]?'on':'')+'"></span>').join('')+'</div><small>LEVEL '+S.fire[s]+'/4 · '+(S.lit[s]?'TORCH LIT':'TORCH DORMANT')+'</small></div>').join('');
+  document.getElementById('gamePoints').textContent='RED '+score.red+' · BLUE '+score.blue;
+  document.getElementById('career').textContent=career;
+  document.getElementById('log').textContent=log.join('\n');
+}
+function click(i){
+  if(gameOver||(mode==='machine'&&S.turn===1))return;
+  if(selected!==null){const m=legal(S).find(x=>x[0]===selected&&x[1]===i);if(m){makeMove(m);return}}
+  const p=S.b[i];selected=(p&&p.s===S.turn)?i:null;render();
+}
+function downloadLog(){
+  const payload={system:'CHESS81',version:'0.1-playtest',score:{...score},careerPoints:career,moves:log};
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));a.download='chess81-match.json';a.click();
+}
+newGame();
+</script></body></html>
