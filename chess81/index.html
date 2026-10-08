@@ -16,6 +16,15 @@ body{padding:18px}main{max-width:1180px;margin:auto}header{display:flex;justify-
 .sq.light{background:#f1eee9;color:#111}.sq.dark{background:#222;color:#eee}.sq.center{box-shadow:inset 0 0 0 3px var(--fire)}
 .sq.sel{outline:3px solid #fff;outline-offset:-3px}.sq.move:after{content:"";width:22%;height:22%;border-radius:50%;background:#777;position:absolute}.sq.capture:after{content:"";width:72%;height:72%;border:3px solid var(--red);border-radius:50%;position:absolute}
 .sq.fire{background-image:linear-gradient(#ff8b1f33,#ff8b1f33)}.sq.check{background-image:linear-gradient(#e11d2e88,#e11d2e88)!important}
+.pieceIcon{display:inline-flex;align-items:center;justify-content:center;width:.78em;height:.9em;position:relative;line-height:1}
+.torchIcon{width:.58em;height:.86em;display:inline-block;position:relative;filter:drop-shadow(0 2px 2px #000)}
+.torchIcon:before{content:"";position:absolute;left:35%;top:30%;width:30%;height:56%;background:#8b5a2b;border:2px solid currentColor;border-radius:3px}
+.torchIcon:after{content:"";position:absolute;left:22%;top:0;width:56%;height:48%;background:currentColor;border-radius:55% 45% 55% 45%;transform:rotate(-45deg);box-shadow:inset 0 0 0 3px #ffcf66}
+.torchIcon.lit{animation:torchPulse 1s infinite alternate}
+@keyframes torchPulse{from{filter:drop-shadow(0 0 2px #ff8b1f)}to{filter:drop-shadow(0 0 10px #ff8b1f)}}
+.lighterIcon{width:.48em;height:.62em;display:inline-block;position:relative;border:3px solid currentColor;border-radius:58% 42% 58% 42%;transform:rotate(-45deg);opacity:.72}
+.lighterIcon:after{content:"";position:absolute;width:34%;height:34%;left:31%;top:31%;border:2px solid currentColor;border-radius:50%;opacity:.35}
+.redpiece .torchIcon,.redpiece .lighterIcon{color:#e11d2e}.bluepiece .torchIcon,.bluepiece .lighterIcon{color:#2878ff}
 .coord{position:absolute;font:10px monospace;color:#777}.rank{left:3px;top:2px}.file{right:3px;bottom:2px}
 .redpiece{color:#e11d2e;text-shadow:0 1px 2px #000}.bluepiece{color:#2878ff;text-shadow:0 1px 2px #000}.lighter{color:#ff8b1f!important;text-shadow:0 0 8px #ff8b1f}.dormant{opacity:.38;filter:grayscale(1)}
 #panel{display:flex;flex-direction:column;gap:10px}.card{background:var(--panel);border:1px solid var(--line);padding:14px;border-radius:5px}
@@ -41,7 +50,7 @@ details{border-top:1px solid #252525;padding-top:10px;margin-top:2px}summary{cur
   <div class="card">
     <div class="status" id="status">RED TO MOVE</div>
     <div class="turn"><span class="pill red">RED</span><span class="pill blue">BLUE</span></div>
-    <div class="muted" id="message">Reach e5 with your Lighter to ignite your Torch.</div>
+    <div class="muted" id="message">Reach e5 with your Lighter to ignite your Torch. Your Queen is limited to 3 squares.</div>
   </div>
 
   <div class="card firegrid" id="fire"></div>
@@ -63,13 +72,17 @@ details{border-top:1px solid #252525;padding-top:10px;margin-top:2px}summary{cur
     <details open><summary>HOW TO PLAY</summary>
     <ol>
       <li>Chess81 is played on a <b>9×9 board</b>. RED moves first.</li>
-      <li>The familiar chess pieces move as you already know them. Chess81 adds a <b>Torch</b> and a <b>Lighter</b>.</li>
-      <li>Your Lighter starts on the e-file. Get it to <b>e5</b> to ignite your Torch.</li>
-      <li>Once lit, your Torch moves one square like a King and becomes <b>royal</b>: it must not be left in attack.</li>
-      <li>Your Fire grows when your own <b>Rooks, Bishops and Knights</b> fall. Fire levels are 0–4.</li>
-      <li>Fire 1 burns adjacent enemy Pawns. Fire 2 also burns enemy Rooks, Bishops and Knights. Fire 3 also burns the Queen. Fire 4 closes the King's territory around the Torch.</li>
-      <li>The King is never burned. <b>CHECK → FIRE → MATE.</b> Win by checkmating the King or by capturing the opponent's Torch.</li>
-      <li>For this playtest edition: no castling, no en passant, automatic Queen promotion.</li>
+      <li>The familiar chess pieces move as you already know them. Chess81 adds a <b>Torch</b> and a <b>Lighter</b>. RED and BLUE are the only player colours.</li>
+      <li>Your Lighter starts on the e-file. Move it to <b>e5</b>. At e5 it ignites your Torch.</li>
+      <li>Once lit, your Torch moves one square like a King and becomes <b>royal</b>: it cannot be left in attack.</li>
+      <li><b>The Queen is deliberately reduced.</b> It still moves diagonally, horizontally and vertically, but it can move a maximum of <b>3 squares per move</b>.</li>
+      <li>Your Fire grows when your own <b>Rooks, Bishops and Knights</b> fall. There are 6 officer pieces in total. Every officer lost raises your Fire by 1, up to Fire 4.</li>
+      <li><b>1 officer down:</b> Fire Level 1 — adjacent enemy Pawns can burn.</li>
+      <li><b>2 officers down:</b> Fire Level 2 — adjacent enemy Pawns, Rooks, Bishops and Knights can burn.</li>
+      <li><b>3 officers down:</b> Fire Level 3 — the Queen is now vulnerable to the Torch's fire.</li>
+      <li><b>4 or more officers down:</b> Fire Level 4 — the Torch becomes a major territorial weapon and the opposing King cannot enter the 2-square zone around it.</li>
+      <li>The King is never burned. <b>CHECK. FIRE. MATE.</b> You win by checkmating the enemy King or capturing the enemy Torch.</li>
+      <li>For this playtest edition: no castling, no en passant, automatic Queen promotion. The Queen's 3-square limit applies after promotion too.</li>
     </ol>
     <div class="notice">Playtest rule set: these mechanics are deliberately provisional and are being tested before the human focus group.</div>
     </details>
@@ -83,10 +96,12 @@ details{border-top:1px solid #252525;padding-top:10px;margin-top:2px}summary{cur
       </div>
       <ol>
         <li>You do <b>not</b> have to relearn how the familiar pieces move.</li>
-        <li>Chess81 adds one new strategic system: <b>Fire</b>.</li>
-        <li>The <b>Lighter</b> reaches the centre to ignite the Torch.</li>
-        <li>Your fallen officers can make your Fire stronger — creating a comeback mechanism.</li>
-        <li>The Queen is no longer the only dominant power: the <b>King, Torch and Fire</b> change the strategic hierarchy.</li>
+        <li>Chess81 adds the <b>Torch + Lighter + Fire</b> system.</li>
+        <li>The <b>Lighter</b> reaches e5 to ignite the Torch.</li>
+        <li>Your 6 officers (2 Rooks, 2 Bishops, 2 Knights) are the Fire fuel: every one that falls increases your Fire.</li>
+        <li>At <b>3 officers down</b>, Fire can burn the Queen; at <b>4+</b>, Fire becomes territorial around the Torch.</li>
+        <li>The <b>Queen is deliberately weaker</b>: maximum 3-square range.</li>
+        <li>The strategic hierarchy changes: <b>King → Torch → Fire → Queen</b>.</li>
       </ol>
       <p class="muted">The beachhead idea: if you already play Chess64, you already know most of Chess81. Learn the Torch. Learn Fire. Then play.</p>
     </details>
@@ -113,7 +128,7 @@ details{border-top:1px solid #252525;padding-top:10px;margin-top:2px}summary{cur
 
 <script>
 const files='abcdefghi';
-const ICON={K:'♚',Q:'♛',R:'♜',B:'♝',N:'♞',P:'♟',T:'🔥'};
+const ICON={K:'♚',Q:'♛',R:'♜',B:'♝',N:'♞',P:'♟',T:''};
 const LABEL={K:'King',Q:'Queen',R:'Rook',B:'Bishop',N:'Knight',P:'Pawn',T:'Torch'};
 const VALUE={K:100,Q:9,R:5,B:3,N:3,P:1,T:30};
 let S=null,history=[],selected=null,mode='machine',log=[],gameOver=false;
@@ -282,13 +297,13 @@ function render(){
     if(t>=0&&S.lit[1-S.turn]&&S.fire[1-S.turn]>=1){
       const rr=Math.floor(t/9),cc=t%9;if(Math.abs(rr-r)<=1&&Math.abs(cc-c)<=1)cl.push('fire');
     }
-    let glyph='';if(p){let pc=p.s===0?'redpiece':'bluepiece';if(p.lt)pc+=' lighter';if(p.t==='T'&&!S.lit[p.s])pc+=' dormant';glyph='<span class="'+pc+'">'+ICON[p.t]+'</span>'}
+    let glyph='';if(p){let pc=p.s===0?'redpiece':'bluepiece';if(p.lt)pc+=' lighter';if(p.t==='T'&&!S.lit[p.s])pc+=' dormant';if(p.t==='T')glyph='<span class="'+pc+' pieceIcon"><span class="torchIcon '+(S.lit[p.s]?'lit':'')+'" aria-label="Torch"></span></span>';else if(p.lt)glyph='<span class="'+pc+' pieceIcon"><span class="lighterIcon" aria-label="Unlit fire"></span></span>';else glyph='<span class="'+pc+' pieceIcon">'+ICON[p.t]+'</span>'}
     html+='<div class="'+cl.join(' ')+'" data-i="'+i+'">'+(c===0?'<span class="coord rank">'+(r+1)+'</span>':'')+(r===0?'<span class="coord file">'+files[c]+'</span>':'')+glyph+'</div>';
   }
   b.innerHTML=html;b.onclick=e=>{const el=e.target.closest('[data-i]');if(el)click(+el.dataset.i)};
   const ch=positionCheck(S,S.turn);
   document.getElementById('status').innerHTML=gameOver?(log[log.length-1]||'GAME OVER'):(color(S.turn)+' TO MOVE'+(ch?' — <em>CHECK</em>':''));
-  document.getElementById('message').textContent=S.lit[0]||S.lit[1]?'Fire changes as your Rooks, Bishops and Knights fall.':'Reach e5 with your Lighter to ignite your Torch.';
+  document.getElementById('message').textContent=S.lit[0]||S.lit[1]?'Fire rises for every fallen Rook, Bishop or Knight. At 3 officers down the Queen becomes vulnerable.':'Reach e5 with your Lighter to ignite your Torch. Queen range: 3 squares.';
   document.getElementById('fire').innerHTML=[0,1].map(s=>'<div class="firebox '+(s?'blue':'red')+'"><b>'+color(s)+' FIRE</b><div class="firebar">'+[0,1,2,3].map(k=>'<span class="pip '+(k<S.fire[s]?'on':'')+'"></span>').join('')+'</div><small>LEVEL '+S.fire[s]+'/4 · '+(S.lit[s]?'TORCH LIT':'TORCH DORMANT')+'</small></div>').join('');
   document.getElementById('gamePoints').textContent='RED '+score.red+' · BLUE '+score.blue;
   document.getElementById('career').textContent=career;
