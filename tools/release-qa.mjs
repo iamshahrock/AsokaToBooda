@@ -26,8 +26,8 @@ const required = {
   '18': ['KING INTELLIGENCE', 'PLATFORM 18'],
   'D': ['DAILY DATA LEDGER', '06 OCT 2026', '2,933,427', '31.176M', '699,000'],
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
-  'H': ['AGAR MAIN KING HOTA', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'COMMAND CENTER'],
-  'A': ['AGAR MAIN KING HOTA', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'COMMAND CENTER'],
+  'H': ['AGAR MAIN KING HOTA', 'PLAY THE GAME', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'DAYS TO KING', 'NOT AFFILIATED'],
+  'A': ['AGAR MAIN KING HOTA', 'PLAY THE GAME', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'DAYS TO KING', 'NOT AFFILIATED'],
 };
 
 const legacyPaths = [
@@ -93,6 +93,8 @@ for (const [id, path] of pages) {
     for (const phrase of (required[id] || [])) {
       if (!text.toUpperCase().includes(phrase.toUpperCase())) issues.push(`missing required text: ${phrase}`);
     }
+    const distorted = await page.evaluate(() => [...document.images].filter(i => i.naturalWidth && i.getBoundingClientRect().width > 2 && getComputedStyle(i).objectFit !== 'contain' && getComputedStyle(i).objectFit !== 'cover').filter(i => { const r = i.getBoundingClientRect(); return Math.abs((r.width / r.height) / (i.naturalWidth / i.naturalHeight) - 1) > 0.02; }).map(i => i.getAttribute('src')));
+    if (['H', 'A'].includes(id) && distorted.length) issues.push('distorted image(s): ' + distorted.join(', '));
     if (issues.length) {
       failures++;
       console.error(`FAIL [${id}] ${url} — ${issues.join('; ')}`);
