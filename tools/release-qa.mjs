@@ -102,6 +102,27 @@ for (const [id, path] of pages) {
       if (broken.length) issues.push('image(s) failed to load: ' + broken.join(', '));
       else console.log(`PASS [${id}] all ${await page.evaluate(() => document.images.length)} images loaded`);
     }
+    // slider must mirror the six section cards: slide N = card N (number, image, destination)
+    if (['H', 'A'].includes(id)) {
+      const mirror = await page.evaluate(() => {
+        const slides = [...document.querySelectorAll('#hero .slide')], cards = [...document.querySelectorAll('.cards .card')];
+        const out = [];
+        if (slides.length !== 6 || cards.length !== 6) out.push(`expected 6 slides and 6 cards, found ${slides.length} and ${cards.length}`);
+        slides.forEach((s, k) => {
+          const c = cards[k]; if (!c) return;
+          const dest = new URL(c.getAttribute('href'), location.href).pathname;
+          const bad = [...s.querySelectorAll('a[href]')].map(a => new URL(a.getAttribute('href'), location.href).pathname).filter(p => !p.startsWith(dest));
+          if (bad.length) out.push(`slide ${k + 1} links leave its section (${dest}): ${bad.join(', ')}`);
+          const si = s.querySelector('img.art')?.getAttribute('src'), ci = c.querySelector('.pic img')?.getAttribute('src');
+          if (si !== ci) out.push(`slide ${k + 1} image ${si} != card image ${ci}`);
+          const sn = (s.querySelector('.eyebrow')?.textContent || '').trim().slice(0, 2), cn = (c.querySelector('.num')?.textContent || '').trim();
+          if (sn !== cn) out.push(`slide ${k + 1} number ${sn} != card number ${cn}`);
+        });
+        return out;
+      });
+      if (mirror.length) issues.push('slider/cards mismatch: ' + mirror.join(' | '));
+      else console.log(`PASS [${id}] slider mirrors the six section cards`);
+    }
     if (['H', 'A'].includes(id) && distorted.length) issues.push('distorted image(s): ' + distorted.join(', '));
     if (issues.length) {
       failures++;
