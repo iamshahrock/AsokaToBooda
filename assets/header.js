@@ -39,10 +39,10 @@
     '#site-header .sh-stage{position:absolute;top:0;left:0;width:100%;height:100%;container-type:inline-size}',
     '#site-header .sh-el{position:absolute;height:auto}',
     '#site-header .sh-boy{left:24.6%;top:1%;width:5.9%}',
-    '#site-header .sh-zero{left:31.6%;top:36%;width:15%}',
+    '#site-header .sh-zero{left:31.6%;top:33.98%;width:15%}',
     /* TO in KING lettering, small, with equal gaps to ZERO and ONE (measured from their visible edges) */
-    '#site-header .sh-to{left:48.23%;top:48.27%;height:1.9cqw;width:auto}',
-    '#site-header .sh-one{left:53.8%;top:6%;width:12.9%}',
+    '#site-header .sh-to{left:48.23%;top:48.21%;height:1.9cqw;width:auto}',
+    '#site-header .sh-one{left:53.8%;top:8.02%;width:12.9%}',
     '#site-header .sh-one img{width:100%;height:auto}',
     '#site-header .sh-one .sh-crown,#site-header .sh-one .sh-drip{position:absolute;left:0;top:0}',
     /* crown split at the drip line: the crown lands, then the blood runs down */
