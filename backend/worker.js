@@ -16,6 +16,8 @@
 // so an unbounded deploy cannot happen by accident.
 
 const ALLOWED_ORIGINS = new Set([
+  "https://agarmainkinghota.com",
+  "https://www.agarmainkinghota.com",
   "https://iamshahrock.github.io",
   "http://localhost:8788",
   "http://127.0.0.1:8788"
