@@ -94,6 +94,14 @@ for (const [id, path] of pages) {
       if (!text.toUpperCase().includes(phrase.toUpperCase())) issues.push(`missing required text: ${phrase}`);
     }
     const distorted = await page.evaluate(() => [...document.images].filter(i => i.naturalWidth && i.getBoundingClientRect().width > 2 && getComputedStyle(i).objectFit !== 'contain' && getComputedStyle(i).objectFit !== 'cover').filter(i => { const r = i.getBoundingClientRect(); return Math.abs((r.width / r.height) / (i.naturalWidth / i.naturalHeight) - 1) > 0.02; }).map(i => i.getAttribute('src')));
+    // every homepage image must actually load (scroll so lazy images fetch)
+    if (['H', 'A'].includes(id)) {
+      await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } window.scrollTo(0, 0); });
+      await page.evaluate(() => Promise.all([...document.images].map(i => i.loading === 'lazy' ? (i.loading = 'eager', i.decode().catch(() => {})) : i.decode().catch(() => {}))));
+      const broken = await page.evaluate(() => [...document.images].filter(i => !i.naturalWidth).map(i => i.getAttribute('src')));
+      if (broken.length) issues.push('image(s) failed to load: ' + broken.join(', '));
+      else console.log(`PASS [${id}] all ${await page.evaluate(() => document.images.length)} images loaded`);
+    }
     if (['H', 'A'].includes(id) && distorted.length) issues.push('distorted image(s): ' + distorted.join(', '));
     if (issues.length) {
       failures++;
