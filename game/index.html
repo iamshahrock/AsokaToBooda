@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Play the Game — Agar Main King Hota</title>
 <meta name="description" content="Agar Main King Hota, the fan game: choose an SRK film, add your photo, get your own AI KING poster, then take the 60-second Royal Challenge.">
-<link rel="canonical" href="https://iamshahrock.github.io/AsokaToBooda/game/">
+<link rel="canonical" href="https://agarmainkinghota.com/game/">
 <meta name="theme-color" content="#0a0707">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agar Main King Hota — play the game">
 <meta property="og:description" content="Your face. Your film. Your KING poster. Then 60 seconds to prove it.">
-<meta property="og:url" content="https://iamshahrock.github.io/AsokaToBooda/game/">
-<meta property="og:image" content="https://iamshahrock.github.io/AsokaToBooda/assets/home/social-card.jpg">
+<meta property="og:url" content="https://agarmainkinghota.com/game/">
+<meta property="og:image" content="https://agarmainkinghota.com/assets/home/social-card.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
 <link rel="apple-touch-icon" href="../assets/home/apple-touch-icon.png">
@@ -369,7 +369,7 @@ $("share").addEventListener("click", async () => {
   const msg = $("shareStatus"); msg.className = "status";
   const file = new File([posterBlob], FILE_NAME, { type: "image/png" });
   const text = "Agar main King hota… This is my KING poster. Make yours:";
-  const url = "https://iamshahrock.github.io/AsokaToBooda/game/";
+  const url = "https://agarmainkinghota.com/game/";
   try {
     if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: "My KING poster", text: text + " " + url }); }
     else if (navigator.share) { await navigator.share({ title: "Agar Main King Hota", text, url }); msg.className = "status ok"; msg.textContent = "Link shared. Download the poster to attach the image too."; }

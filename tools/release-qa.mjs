@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 
-const DEFAULT_BASE = 'https://iamshahrock.github.io/AsokaToBooda';
+const DEFAULT_BASE = 'https://agarmainkinghota.com';
 const base = (process.env.SITE_BASE_URL || DEFAULT_BASE).replace(/\/$/, '');
 
 const pages = [
