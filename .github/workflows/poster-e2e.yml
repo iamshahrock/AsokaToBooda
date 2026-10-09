@@ -1,0 +1,23 @@
+name: Poster generation end-to-end test
+on:
+  workflow_dispatch:
+  push:
+    branches: ["test/poster-e2e"]
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Generate one test poster through the live Worker
+        run: node tools/poster-e2e.mjs
+      - name: Keep the result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: poster-e2e
+          path: e2e-out/
