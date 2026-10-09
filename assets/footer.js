@@ -36,8 +36,7 @@
     ['sf-line1', 'Picture Toh Abhi Shuru Bhi Nahin Hui Hain Dost'],
     ['sf-line2', 'Many Happy Returns Of The Second ACT Shah Rukh Jaan!'],
     ['sf-line3', 'SHAH ROCK JAAN - Remember ME ! ;-)'],
-    ['sf-line4', 'Created & Managed By Fans Who Love You KING!'],
-    ['sf-disc', 'A fan-made campaign. Not affiliated with, or endorsed by, Shah Rukh Khan, Red Chillies Entertainment or the makers of KING.']
+    ['sf-line4', 'Created & Managed By Fans Who Love You KING!']
   ].forEach(function (l) { var p = document.createElement('p'); p.className = l[0]; p.textContent = l[1]; inner.appendChild(p); });
   f.appendChild(inner);
   document.body.appendChild(f);
