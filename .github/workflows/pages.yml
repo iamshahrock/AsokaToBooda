@@ -34,7 +34,7 @@ jobs:
           rm -rf site
           mkdir -p site
 
-          cp index.html site/
+          cp agarmainkinghota.html site/index.html
           cp agarmainkinghota.html site/
           cp master-home.html site/
           cp -R asoka-to-booda site/
