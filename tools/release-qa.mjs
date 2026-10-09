@@ -11,7 +11,7 @@ const pages = [
   ['13','/king-intelligence-13/'], ['14','/king-intelligence-14/'], ['15','/king-intelligence-15/'],
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
-  ['H','/'], ['A','/agarmainkinghota.html'],
+  ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'],
 ];
 
 const forbidden = [
@@ -26,6 +26,7 @@ const required = {
   '18': ['KING INTELLIGENCE', 'PLATFORM 18'],
   'D': ['DAILY DATA LEDGER', '06 OCT 2026', '2,933,427', '31.176M', '699,000'],
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
+  'G': ['AGAR MAIN KING HOTA', 'CREATE YOUR KING POSTER', 'PLAY FOR 60 SECONDS', 'NOT AFFILIATED'],
   'H': ['AGAR MAIN KING HOTA', 'PLAY THE GAME', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'DAYS TO KING', 'NOT AFFILIATED'],
   'A': ['AGAR MAIN KING HOTA', 'PLAY THE GAME', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'DAYS TO KING', 'NOT AFFILIATED'],
 };
@@ -94,11 +95,11 @@ for (const [id, path] of pages) {
       if (!text.toUpperCase().includes(phrase.toUpperCase())) issues.push(`missing required text: ${phrase}`);
     }
     const distorted = await page.evaluate(() => [...document.images].filter(i => i.naturalWidth && i.getBoundingClientRect().width > 2 && getComputedStyle(i).objectFit !== 'contain' && getComputedStyle(i).objectFit !== 'cover').filter(i => { const r = i.getBoundingClientRect(); return Math.abs((r.width / r.height) / (i.naturalWidth / i.naturalHeight) - 1) > 0.02; }).map(i => i.getAttribute('src')));
-    // every homepage image must actually load (scroll so lazy images fetch)
-    if (['H', 'A'].includes(id)) {
+    // every homepage/game image must actually load (scroll so lazy images fetch)
+    if (['H', 'A', 'G'].includes(id)) {
       await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } window.scrollTo(0, 0); });
       await page.evaluate(() => Promise.all([...document.images].map(i => i.loading === 'lazy' ? (i.loading = 'eager', i.decode().catch(() => {})) : i.decode().catch(() => {}))));
-      const broken = await page.evaluate(() => [...document.images].filter(i => !i.naturalWidth).map(i => i.getAttribute('src')));
+      const broken = await page.evaluate(() => [...document.images].filter(i => i.getAttribute('src') && !i.naturalWidth).map(i => i.getAttribute('src')));
       if (broken.length) issues.push('image(s) failed to load: ' + broken.join(', '));
       else console.log(`PASS [${id}] all ${await page.evaluate(() => document.images.length)} images loaded`);
     }
@@ -123,7 +124,20 @@ for (const [id, path] of pages) {
       if (mirror.length) issues.push('slider/cards mismatch: ' + mirror.join(' | '));
       else console.log(`PASS [${id}] slider mirrors the six section cards`);
     }
-    if (['H', 'A'].includes(id) && distorted.length) issues.push('distorted image(s): ' + distorted.join(', '));
+    // game: playable on arrival, and the ZERO artwork pack the poster needs is reachable
+    if (id === 'G') {
+      const g = await page.evaluate(async () => {
+        const out = [];
+        if (document.getElementById('movie').value !== 'bauua') out.push('default film is not the playable ZERO pack');
+        if (document.getElementById('make').disabled) out.push('Create my poster is disabled on arrival');
+        for (const f of ['00-zero-original-poster.jpeg', '06-bauua-surreal-reference.png']) {
+          const r = await fetch(new URL('../Bauua%20Raw%20Material/' + f, location.href)); if (!r.ok) out.push('artwork pack file ' + f + ' HTTP ' + r.status);
+        }
+        return out;
+      });
+      if (g.length) issues.push('game: ' + g.join('; ')); else console.log('PASS [G] game playable on arrival; ZERO artwork pack reachable');
+    }
+    if (['H', 'A', 'G'].includes(id) && distorted.length) issues.push('distorted image(s): ' + distorted.join(', '));
     if (issues.length) {
       failures++;
       console.error(`FAIL [${id}] ${url} — ${issues.join('; ')}`);
