@@ -12,6 +12,8 @@ const pages = [
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
   ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'], ['P','/preview/'],
+  ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'],
+  ['R4','/king-intelligence/2026-10-04.html'], ['R5','/king-intelligence/2026-10-05.html'], ['T','/king-intelligence/top-100-fan-clubs.html'],
 ];
 
 const forbidden = [
@@ -98,7 +100,7 @@ for (const [id, path] of pages) {
     });
     if (foot !== 'ok') issues.push('fan footer ' + foot);
     // shared story header (assets/header.js): present, every image loaded, none distorted
-    if (id === 'P' || await page.evaluate(() => !!document.getElementById('site-header'))) {
+    {  // every page carries the story header
       const h = await page.evaluate(async () => {
         const hd = document.getElementById('site-header'); if (!hd) return 'missing';
         const imgs = [...hd.querySelectorAll('img')]; await Promise.all(imgs.map(i => i.decode().catch(() => {})));
@@ -111,6 +113,16 @@ for (const [id, path] of pages) {
         return 'ok';
       });
       if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 6 section links`);
+    }
+    // tablet and phone: one header, nothing pushes the page sideways
+    for (const width of [900, 390]) {
+      const m = await browser.newPage({ viewport: { width, height: 900 } });
+      await m.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+      const r = await m.evaluate(() => ({ n: document.querySelectorAll('#site-header').length, over: document.documentElement.scrollWidth - innerWidth }));
+      await m.close();
+      if (r.n !== 1) issues.push(`${width}px: expected 1 story header, found ${r.n}`);
+      else if (r.over > 0) issues.push(`${width}px: page scrolls sideways by ${r.over}px`);
+      else console.log(`PASS [${id}] ${width}px: story header present, no sideways scroll`);
     }
     if (status !== 200) issues.push(`HTTP ${status}`);
     if (!html.toLowerCase().includes('<html')) issues.push('missing HTML document');
