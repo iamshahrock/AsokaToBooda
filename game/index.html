@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Play the Game — Agar Main King Hota</title>
+<meta name="description" content="Agar Main King Hota, the fan game: choose an SRK film, add your photo, get your own AI KING poster, then take the 60-second Royal Challenge.">
+<link rel="canonical" href="https://agarmainkinghota.com/game/">
+<meta name="theme-color" content="#0a0707">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agar Main King Hota — play the game">
+<meta property="og:description" content="Your face. Your film. Your KING poster. Then 60 seconds to prove it.">
+<meta property="og:url" content="https://agarmainkinghota.com/game/">
+<meta property="og:image" content="https://agarmainkinghota.com/assets/home/social-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="apple-touch-icon" href="../assets/home/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* page-specific styles; shared styles live in assets/site.css */
+.intro{position:relative;overflow:hidden;border:1px solid var(--line);background:radial-gradient(110% 120% at 80% 30%,#3a0a0c 0%,#170607 45%,#0a0707 78%);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding:44px clamp(20px,4vw,56px) 0}
+.intro .copy{display:flex;flex-direction:column;gap:18px;padding-bottom:44px;max-width:640px}
+.intro .wm{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.intro .wm img:first-child{width:min(500px,100%);height:auto}
+.intro .wm img:last-child{width:min(462px,93%);height:auto}
+.intro .tag{margin:0;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(22px,2.2vw,30px);line-height:1.2}
+.intro .lede{margin:0;max-width:520px;font-size:16px;line-height:1.6;color:#c9bdb5}
+.intro .art{height:clamp(300px,34vw,440px);width:auto;max-width:none;align-self:end}
+.steps{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.steps li{display:flex;align-items:center;gap:10px;min-height:40px;padding:0 14px;border:1px solid var(--field-line);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.steps li b{font-family:var(--display);font-weight:400;font-size:16px;color:var(--red-text)}
+.steps li.on{border-color:var(--red);color:var(--ink);background:#2a0b0c}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:18px}
+.panel{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,2.6vw,32px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.panel h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1;text-transform:uppercase}
+.panel h2 .n{color:var(--red-text);margin-right:10px}
+.chip{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);border:1px solid var(--field-line);padding:6px 10px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label,.field .label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.field select,.field textarea{width:100%;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 15px var(--body);padding:12px 14px;min-height:48px;border-radius:0}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--red-text) 50%),linear-gradient(135deg,var(--red-text) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px;cursor:pointer}
+.field textarea{min-height:120px;resize:vertical;line-height:1.5}
+.field select:focus,.field textarea:focus{outline:none;border-color:var(--red-text)}
+.note{margin:0;font-size:14px;line-height:1.55;color:var(--mute)}
+.pack{border-left:3px solid var(--red);background:#1a0f10;padding:12px 14px;font-size:14px;line-height:1.5;color:var(--mute)}
+.pack strong{display:block;color:var(--ink);font-weight:600;letter-spacing:.04em}
+.upload{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.upload input{position:absolute;opacity:0;width:1px;height:1px}
+.upload label.btn{cursor:pointer}
+.upload input:focus-visible+label{outline:2px solid var(--red-text);outline-offset:3px}
+.upload .fname{font-size:14px;color:var(--mute)}
+.photo{max-width:200px;height:auto;border:1px solid var(--field-line);display:none}
+.counter{align-self:flex-end;font-size:12px;color:var(--faint);margin-top:-8px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.status{min-height:22px;font-size:14px;line-height:1.5;color:var(--red-text)}
+.status.ok{color:#7fd18b}
+.poster{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:2/3;width:100%;max-width:520px;margin:0 auto;border:1px dashed var(--field-line);background:radial-gradient(70% 60% at 50% 60%,#2a0b0c 0%,#0e0909 75%)}
+.poster img.result{width:100%;height:100%;object-fit:contain}
+.poster .empty{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:28px;max-width:360px}
+.poster .empty img{width:96px;height:auto}
+.poster .empty h3{margin:0;font-family:var(--display);font-weight:400;font-size:26px;text-transform:uppercase}
+.poster .empty p{margin:0;font-size:14px;line-height:1.55;color:var(--mute)}
+.poster.busy::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--red-hi),transparent);background-size:40% 100%;background-repeat:no-repeat;animation:sweep 1.4s linear infinite}
+@keyframes sweep{from{background-position:-40% 0}to{background-position:140% 0}}
+.challenge{margin-top:18px}
+.challenge[hidden]{display:none}
+.gamebox{border:1px solid var(--field-line);background:#0e0909;padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:16px}
+.game-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.round{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--field-line);padding:6px 10px;color:var(--mute)}
+.timer{font-family:var(--display);font-size:44px;line-height:1;color:var(--red-hi);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:#2a1c1c}.bar i{display:block;height:100%;width:100%;background:var(--red-hi);transition:width 1s linear}
+.q h3{margin:0 0 8px;font-family:var(--display);font-weight:400;font-size:clamp(28px,2.8vw,40px);line-height:1.02;text-transform:uppercase}
+.q p{margin:0;font-size:16px;line-height:1.6;color:#c9bdb5}
+.choices{display:grid;gap:10px}
+.choice{text-align:left;min-height:52px;padding:12px 16px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 15px var(--body);line-height:1.45}
+.choice:hover:not(:disabled),.choice:focus-visible{border-color:var(--red-text);color:var(--red-text)}
+.choice.picked{border-color:var(--red-hi);background:#2a0b0c;color:#fff}
+.choice:disabled{cursor:default}
+.feedback{min-height:22px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--red-text)}
+.result{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:12px 0}
+.result img{width:84px;height:auto}
+.result .rank{font-family:var(--display);font-size:clamp(32px,3.4vw,46px);text-transform:uppercase;line-height:1}
+.result .score{font-family:var(--display);font-size:clamp(56px,6vw,84px);line-height:1;color:var(--red-hi)}
+.result .fine{margin:0;font-size:13px;color:var(--faint);max-width:520px}
+@media (max-width:980px){.layout{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:820px){
+  .intro{grid-template-columns:minmax(0,1fr);padding-top:28px}
+  .intro .art{order:-1;height:260px;margin:0 auto}
+  .intro .copy{padding-bottom:28px}
+  .intro .wm img:first-child{width:100%}
+  .intro .wm img:last-child{width:93%}
+  .timer{font-size:36px}
+}
+@media (prefers-reduced-motion:reduce){.poster.busy::after{animation:none}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<script src="../assets/header.js"></script>
+<a class="skip" href="#create">Skip to the game</a>
+
+<main class="wrap" style="padding-bottom:64px">
+  <section class="intro" aria-labelledby="game-title">
+    <div class="copy">
+      <p class="eyebrow">01 · AGAR MAIN KING HOTA · PLAY THE GAME</p>
+      <h1 id="game-title" class="wm" style="margin:0">
+        <img src="../assets/home/wm-agar-main.webp" width="1912" height="220" alt="Agar Main">
+        <img src="../assets/home/wm-king-hota.webp" width="1839" height="220" alt="King Hota">
+      </h1>
+      <p class="tag">Your face. Your kingdom. Your story.</p>
+      <p class="lede">Choose an SRK film, add your photo and write your twist. You get your own AI-made KING poster, then 60 seconds to prove you deserve the crown.</p>
+      <ol class="steps" aria-label="How it works">
+        <li id="step1" class="on"><b>1</b>Choose your film</li>
+        <li id="step2"><b>2</b>Make your poster</li>
+        <li id="step3"><b>3</b>Play for 60 seconds</li>
+      </ol>
+    </div>
+    <img class="art" src="../assets/home/01-agar-main-king-hota.webp" width="692" height="1400" alt="Young Shah Rock Jaan, a card between his teeth, bags on his shoulder">
+  </section>
+
+  <div class="layout">
+    <section class="panel" id="create" aria-labelledby="create-h">
+      <h2 id="create-h"><span class="n">01</span>Create your KING poster</h2>
+      <span class="chip">No timer · take your time</span>
+
+      <div class="field">
+        <label for="movie">Your film and character</label>
+        <select id="movie"></select>
+      </div>
+      <div class="pack" id="packStatus" aria-live="polite"></div>
+
+      <div class="field">
+        <span class="label" id="photo-label">Your photo · you are the hero</span>
+        <div class="upload">
+          <input id="photo" type="file" accept="image/*" aria-labelledby="photo-label">
+          <label for="photo" class="btn btn-line">Choose photo</label>
+          <span class="fname" id="fname">No photo chosen</span>
+        </div>
+        <img id="photoPreview" class="photo" alt="Your chosen photo">
+        <p class="note">Use a clear photo of your face. It is sent to our AI image service only to make your poster; this site does not store it.</p>
+      </div>
+
+      <div class="field">
+        <label for="costars">Co-stars in your story</label>
+        <select id="costars"><option value="0">Just me</option><option value="1">1 co-star</option><option value="2">2 co-stars</option><option value="3">3 co-stars</option><option value="4">4 co-stars</option><option value="5">5 co-stars</option></select>
+      </div>
+      <div class="field">
+        <label for="genre">Poster genre</label>
+        <select id="genre"><option value="Fantasy / Surreal">Fantasy / Surreal</option><option value="Action">Action</option><option value="Romance">Romance</option><option value="Comedy">Comedy</option><option value="Thriller">Thriller</option><option value="Sci-fi">Sci-fi</option><option value="Mythic / Historical">Mythic / Historical</option><option value="Drama">Drama</option><option value="Horror">Horror</option><option value="Musical">Musical</option></select>
+      </div>
+      <div class="field">
+        <label for="idea">Your story twist</label>
+        <textarea id="idea" maxlength="555" placeholder="Agar main King hota… Describe the scene, who is with you, the mood and the twist."></textarea>
+        <span class="counter"><span id="count">0</span> / 555</span>
+      </div>
+      <div class="row">
+        <button class="btn btn-red" id="make" type="button">Create my poster <span aria-hidden="true">→</span></button>
+        <button class="btn btn-line" id="reset" type="button">Start over</button>
+      </div>
+      <div class="status" id="createStatus" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="poster-h">
+      <h2 id="poster-h"><span class="n">02</span>Your KING poster</h2>
+      <div class="poster" id="poster">
+        <div class="empty">
+          <img src="../assets/home/crown.webp" width="900" height="985" alt="">
+          <h3>Your kingdom awaits</h3>
+          <p>Your poster appears here. The film's artwork comes from the game; you only bring your photo and your story.</p>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-red" id="download" type="button" disabled>Download poster</button>
+        <button class="btn btn-line" id="share" type="button" disabled>Share poster</button>
+      </div>
+      <p class="note" id="posterNote">AI-made from your photo and the film's artwork pack.</p>
+      <div class="status" id="shareStatus" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <section class="panel challenge" id="challengeCard" aria-labelledby="ch-h" hidden>
+    <h2 id="ch-h"><span class="n">03</span>The 60-second Royal Challenge</h2>
+    <p class="note">Your poster is your player identity. Four decisions, one surprise twist, and the clock only starts when you press Begin.</p>
+    <div class="gamebox">
+      <div class="game-top"><span class="round" id="roundLabel">Ready</span><span class="timer" id="timer" aria-live="off" aria-label="Time remaining">01:00</span></div>
+      <div class="bar" aria-hidden="true"><i id="timebar"></i></div>
+      <div class="q"><h3 id="challengeTitle">Ready, King?</h3><p id="challengeText">Your poster is ready. Enter the challenge when you choose.</p></div>
+      <div class="choices" id="choices"></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+      <div id="gameResult" aria-live="polite"></div>
+    </div>
+    <div class="row">
+      <button class="btn btn-red" id="begin" type="button">Begin the Royal Challenge <span aria-hidden="true">→</span></button>
+      <button class="btn btn-line" id="playAgain" type="button" hidden>Play again</button>
+    </div>
+  </section>
+</main>
+
+
+<script>
+(function () {
+const $ = id => document.getElementById(id);
+const PACK_DIR = "../Bauua%20Raw%20Material/";   // artwork pack lives at the site root, one level up from /game/
+const PACK_FILES = ["00-zero-original-poster.jpeg","01-bauua-surreal-reference.png","02-bauua-surreal-reference.png","03-bauua-surreal-reference.png","04-bauua-surreal-reference.png","05-bauua-surreal-reference.png","06-bauua-surreal-reference.png"];
+const POSTER_API_URL = "https://asokatobooda.iamshahrock.workers.dev";
+const films=[
+["1992","Deewana","Raja"],["1992","Chamatkar","Sunder"],["1992","Raju Ban Gaya Gentleman","Raju"],["1992","Dil Aashna Hai","Karan"],["1993","King Uncle","Anil"],["1993","Baazigar","Ajay / Vicky"],["1993","Darr","Rahul"],["1994","Kabhi Haan Kabhi Naa","Sunil"],["1994","Anjaam","Vijay"],["1995","Karan Arjun","Arjun"],["1995","Zamaana Deewana","Rahul"],["1995","Guddu","Guddu"],["1995","Oh Darling! Yeh Hai India!","Hero"],["1995","Dilwale Dulhania Le Jayenge","Raj"],["1995","Ram Jaane","Ram Jaane"],["1995","Trimurti","Romy"],["1996","English Babu Desi Mem","Vikram / Hari"],["1996","Chaahat","Roop"],["1996","Army","Arjun"],["1996","Dushman Duniya Ka","Special appearance"],["1997","Koyla","Shankar"],["1997","Yes Boss","Rahul"],["1997","Pardes","Arjun"],["1997","Dil To Pagal Hai","Rahul"],["1998","Duplicate","Bablu / Manu"],["1998","Dil Se","Amar"],["1998","Kuch Kuch Hota Hai","Rahul"],["1999","Baadshah","Baadshah"],["2000","Phir Bhi Dil Hai Hindustani","Ajay"],["2000","Josh","Max"],["2000","Mohabbatein","Raj Aryan"],["2000","Hey Ram","Amjad Khan"],["2001","One 2 Ka 4","Arun"],["2001","Asoka","Asoka"],["2001","Kabhi Khushi Kabhie Gham","Rahul"],["2002","Devdas","Devdas"],["2002","Shakti: The Power","Jai"],["2003","Chalte Chalte","Raj"],["2003","Kal Ho Naa Ho","Aman"],["2004","Main Hoon Na","Ram"],["2004","Veer-Zaara","Veer"],["2004","Swades","Mohan"],["2005","Paheli","Kishan / Ghost"],["2006","Kabhi Alvida Naa Kehna","Dev"],["2006","Don","Don"],["2007","Chak De! India","Kabir Khan"],["2007","Om Shanti Om","Om / OK"],["2008","Rab Ne Bana Di Jodi","Surinder / Raj"],["2009","Billu","Sahir Khan"],["2010","My Name Is Khan","Rizwan"],["2011","Ra.One","Shekhar / G.One"],["2011","Don 2","Don"],["2012","Jab Tak Hai Jaan","Samar"],["2013","Chennai Express","Rahul"],["2014","Happy New Year","Charlie"],["2015","Dilwale","Raj"],["2016","Fan","Gaurav / Aryan"],["2016","Dear Zindagi","Dr. Jehangir"],["2017","Raees","Raees"],["2017","Jab Harry Met Sejal","Harry"],["2018","ZERO","Bauua Singh"],["2019","The Zoya Factor","Himself · cameo"],["2022","Rocketry: The Nambi Effect","Himself · cameo"],["2022","Laal Singh Chaddha","Himself · cameo"],["2023","Pathaan","Pathaan"],["2023","Jawan","Vikram / Azad"],["2023","Dunki","Hardayal 'Hardy' Singh"],["2024","Mufasa: The Lion King","Hindi voice · Mufasa"],["2026","KING","KING"]
+];
+
+// Film list: playable packs first, the rest grouped as coming soon. Default = the first playable film.
+const sel = $("movie");
+const playable = new Set(["ZERO"]);
+const gNow = document.createElement("optgroup"); gNow.label = "Playable now";
+const gSoon = document.createElement("optgroup"); gSoon.label = "Coming soon";
+films.forEach(([year, title, character]) => {
+  const o = document.createElement("option");
+  o.value = title === "ZERO" ? "bauua" : title;
+  o.textContent = year + " · " + title + " · " + character;
+  (playable.has(title) ? gNow : gSoon).append(o);
+});
+sel.append(gNow, gSoon);
+sel.value = "bauua";
+
+let photoUrl = null, posterBlob = null, posterUrl = null;
+function setStep(n) { [1, 2, 3].forEach(k => $("step" + k).classList.toggle("on", k === n)); }
+function updatePack() {
+  const available = sel.value === "bauua";
+  const pack = $("packStatus"); pack.textContent = "";
+  const s = document.createElement("strong"); const t = document.createElement("span");
+  if (available) { s.textContent = "ZERO · Bauua Singh — artwork pack ready"; t.textContent = "The original ZERO poster and six Bauua references are supplied by the game. You only add your photo."; }
+  else { s.textContent = sel.options[sel.selectedIndex].text + " — coming soon"; t.textContent = "This film's artwork pack isn't in the game yet. Choose ZERO · Bauua Singh to play now."; }
+  pack.append(s, t);
+  $("make").disabled = !available;
+  $("createStatus").className = "status";
+  $("createStatus").textContent = "";
+}
+sel.addEventListener("change", updatePack);
+updatePack();
+
+function fileImage(file) { return new Promise((resolve, reject) => { const url = URL.createObjectURL(file); const im = new Image(); im.onload = () => resolve({ im, url }); im.onerror = () => { URL.revokeObjectURL(url); reject(Error("Could not read photo")); }; im.src = url; }); }
+$("photo").addEventListener("change", async e => {
+  if (photoUrl) { URL.revokeObjectURL(photoUrl); photoUrl = null; }
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  if (!file.type.startsWith("image/")) { $("createStatus").textContent = "Please choose an image file."; e.target.value = ""; return; }
+  try {
+    const result = await fileImage(file);
+    photoUrl = result.url; $("photoPreview").src = photoUrl; $("photoPreview").style.display = "block";
+    $("fname").textContent = file.name;
+    $("createStatus").className = "status ok"; $("createStatus").textContent = "Photo ready. Add your story twist, then create your poster.";
+  } catch (err) { $("createStatus").className = "status"; $("createStatus").textContent = "Could not open that image. Try another photo."; }
+});
+$("idea").addEventListener("input", () => $("count").textContent = $("idea").value.length);
+
+function emptyPoster() {
+  $("poster").innerHTML = '<div class="empty"><img src="../assets/home/crown.webp" width="900" height="985" alt=""><h3>Your kingdom awaits</h3><p>Your poster appears here. The film\'s artwork comes from the game; you only bring your photo and your story.</p></div>';
+}
+
+$("make").addEventListener("click", async () => {
+  const status = $("createStatus"); status.className = "status";
+  if (sel.value !== "bauua") { updatePack(); return; }
+  const photoFile = $("photo").files && $("photo").files[0];
+  if (!photoFile) { status.textContent = "Add your photo first: you are the hero of this poster."; return; }
+  if (!$("idea").value.trim()) { status.textContent = "Write your story twist first."; $("idea").focus(); return; }
+  $("make").disabled = true; setStep(2); $("poster").classList.add("busy");
+  status.className = "status ok"; status.textContent = "Preparing your photo and the ZERO artwork…";
+  try {
+    const form = new FormData();
+    const chosenGenre=$("genre").value;
+    const genreDirection={
+      "Fantasy / Surreal":"Use impossible, dreamlike imagery and visual wonder, but keep the ZERO/Bauua world unmistakable.",
+      "Action":"Use dynamic action, movement, danger and cinematic scale without changing the characters or film universe.",
+      "Romance":"Use emotional intimacy, expressive composition and romantic lighting while retaining ZERO-specific world details.",
+      "Comedy":"Use playful visual timing and whimsical expressions, not random animals or unrelated slapstick.",
+      "Thriller":"Use suspense, shadows and tension while preserving recognizable ZERO/Bauua character and world cues.",
+      "Sci-fi":"Use science-fiction spectacle only within ZERO's established visual world; do not default to a generic spaceship or astronaut design.",
+      "Mythic / Historical":"Apply mythic grandeur and symbolic staging without replacing the film's characters, setting identity or costumes.",
+      "Drama":"Prioritize human emotion, character relationships and a dramatic theatrical composition rooted in ZERO.",
+      "Horror":"Use eerie atmosphere and controlled horror lighting, but do not transform Bauua into a monster, animal or unrelated creature.",
+      "Musical":"Use expressive rhythm, color, movement and theatrical staging while preserving ZERO's visual identity."
+    };
+    const coStarCount=Number($("costars").value);
+    const coStarRule=coStarCount===0
+      ?"Show only the fan protagonist as the newly introduced human character; do not invent any additional foreground co-stars."
+      : "Include exactly "+coStarCount+" additional co-star character(s) beside or around the fan protagonist. Keep them visually distinct and secondary to the fan protagonist. Do not substitute animals, props, clones, or background extras for the requested co-stars.";
+    const story=$("idea").value.trim();
+    const prompt=[
+      "TASK: Create one original, high-end vertical 2:3 theatrical fan poster in the recognizable visual universe of the 2018 film ZERO, featuring Bauua Singh. This is not a generic space film.",
+      "IMAGE INPUT MAP AND PRIORITY: Image 1 is the original ZERO theatrical poster and is the PRIMARY film-world/composition reference. Images 2–7 are supplementary Bauua/ZERO visual references. The final image input is the user's personal photo and is the PRIMARY identity reference for the fan protagonist. Do not confuse these roles.",
+      "NON-NEGOTIABLE FILM IDENTITY: Retain unmistakable ZERO-specific visual cues from the original poster and supplementary references: Bauua Singh's recognizable HUMAN character design and stature, the film's distinctive costume/prop/setting language, surreal scale and visual motifs, and the relevant color and lighting vocabulary. Create a new scene, but keep the world recognizable to a viewer who knows ZERO.",
+      "NON-NEGOTIABLE CHARACTER RULE: Bauua Singh is a human adult male character. Never depict or replace Bauua with a monkey, ape, animal, alien, astronaut, or unrelated character. A monkey must not be the lead, must not stand in for Bauua, and must not dominate the composition. Do not infer that an animal appearing in a reference is the film's protagonist.",
+      "FAN IDENTITY RULE: Use the user's uploaded photo to portray the fan as the central new protagonist. Preserve their recognizable face, skin tone, age presentation, and natural features; do not turn them into Bauua or another celebrity. Integrate them naturally into the ZERO scene with matching lighting, perspective, scale and costume styling.",
+      "CO-STAR CONDITION: "+coStarRule,
+      "GENRE CONDITION: The selected genre is "+chosenGenre+". "+(genreDirection[chosenGenre]||"Apply the selected genre through atmosphere, lighting and scene action without changing film identity."),
+      "USER STORY CONDITION: Represent this story idea visually, using it to determine the action, emotional beat, setting and relationship: "+story,
+      "COMPOSITION AND QUALITY: Invent a fresh scene rather than copying the source poster or pasting a face onto it. The fan protagonist must be clearly visible and central; Bauua and ZERO-specific elements must remain clearly recognizable. Use professional theatrical lighting, coherent anatomy, natural hands, consistent perspective, detailed production design and polished key-art composition. Leave the lower quarter relatively uncluttered for title treatment.",
+      "DO NOT: create a generic outer-space scene; discard the supplied ZERO poster; make the monkey the hero; add unrequested foreground characters; replace the user's face; copy-paste a supplied poster; render text, logos, billing blocks or watermarks; add celebrity likenesses other than characters represented by the supplied licensed/approved references.",
+      "FINAL ACCEPTANCE CHECK: Before returning the single image, verify all of the following: (1) fan's face is recognizable and central; (2) Bauua is human and not replaced by an animal; (3) multiple recognizable ZERO/Bauua visual cues remain; (4) exactly the requested number of additional co-stars appears; (5) the chosen genre and user's story idea are visibly expressed. Film identity and character rules take priority over decorative genre inventions."
+    ].join("\n\n");
+    form.append("prompt", prompt);
+    status.textContent = "Loading the ZERO artwork pack…";
+    for (const path of PACK_FILES) {
+      const response = await fetch(new URL(PACK_DIR + encodeURIComponent(path), document.baseURI));
+      if (!response.ok) throw new Error("Could not load the ZERO artwork pack. Please try again in a minute.");
+      form.append("image", await response.blob(), path);
+    }
+    // The original ZERO poster goes first as the film-world anchor; the user's photo last as the identity reference.
+    form.append("image", photoFile, photoFile.name || "user-photo.jpg");
+    status.textContent = "Making your poster. This can take up to a minute; keep this page open…";
+    const response = await fetch(POSTER_API_URL, { method: "POST", body: form });
+    let data = {}; try { data = await response.json(); } catch (e) {}
+    if (!response.ok) throw new Error(data.error || ("The poster service returned error " + response.status + "."));
+    if (!data.image) throw new Error("The image service returned no poster. Please try again.");
+    const raw = atob(data.image), bytes = new Uint8Array(raw.length);
+    for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+    posterBlob = new Blob([bytes], { type: "image/png" });
+    if (posterUrl) URL.revokeObjectURL(posterUrl);
+    posterUrl = URL.createObjectURL(posterBlob);
+    $("poster").innerHTML = "";
+    const img = document.createElement("img"); img.className = "result"; img.src = posterUrl; img.alt = "Your AI-made KING poster in the world of ZERO";
+    $("poster").append(img);
+    $("download").disabled = $("share").disabled = false;
+    $("challengeCard").hidden = false; setStep(3);
+    status.textContent = "Your poster is ready. Download it, share it, then take the Royal Challenge below.";
+    $("challengeCard").scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (err) {
+    status.className = "status"; status.textContent = err.message || "Poster generation failed. Please try again."; setStep(1);
+  } finally { $("make").disabled = sel.value !== "bauua"; $("poster").classList.remove("busy"); }
+});
+
+// Download and share the finished poster
+const FILE_NAME = "agar-main-king-hota-poster.png";
+$("download").addEventListener("click", () => {
+  if (!posterBlob) return;
+  const a = document.createElement("a"); a.href = posterUrl; a.download = FILE_NAME; document.body.append(a); a.click(); a.remove();
+});
+$("share").addEventListener("click", async () => {
+  if (!posterBlob) return;
+  const msg = $("shareStatus"); msg.className = "status";
+  const file = new File([posterBlob], FILE_NAME, { type: "image/png" });
+  const text = "Agar main King hota… This is my KING poster. Make yours:";
+  const url = "https://agarmainkinghota.com/game/";
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: "My KING poster", text: text + " " + url }); }
+    else if (navigator.share) { await navigator.share({ title: "Agar Main King Hota", text, url }); msg.className = "status ok"; msg.textContent = "Link shared. Download the poster to attach the image too."; }
+    else { await navigator.clipboard.writeText(text + " " + url); msg.className = "status ok"; msg.textContent = "Link copied. Download the poster and post it with the link."; }
+  } catch (e) { if (e && e.name !== "AbortError") msg.textContent = "Sharing isn't available here. Download the poster and share it from your gallery."; }
+});
+
+// The 60-second Royal Challenge
+const rounds = [
+  { title: "The kingdom is broke", text: "Your kingdom has one hour of power left and no treasury. What is your first move?", choices: [["Invite citizens to co-create a solution and share the reward", 25], ["Sell the crown and disappear", 5], ["Spend everything on a spectacular throne", 0]] },
+  { title: "The crowd turns", text: "The crowd is angry. You have one move to win them back. Choose.", choices: [["Listen publicly, own the mistake, and invite a fix", 25], ["Blame a rival kingdom", 5], ["Order everyone to applaud", 0]] },
+  { title: "The story flips", text: "A portal opens. Your co-star says the story has changed. Adapt fast.", choices: [["Rewrite the plan around the new reality", 25], ["Pretend the twist never happened", 0], ["Ask the team for one fast idea, then adapt", 20]] },
+  { title: "The royal flush", text: "You can save only one: your image, your people, or your promise. What do you protect?", choices: [["Keep the promise and protect the people, even at personal cost", 25], ["Protect the image at any cost", 0], ["Make a bold deal and explain the trade-off honestly", 18]] }
+];
+let timer = null, timeLeft = 60, round = 0, score = 0, active = false, locked = false;
+function fmt(s) { return "00:" + String(Math.max(0, s)).padStart(2, "0"); }
+function showRound() {
+  const r = rounds[round];
+  $("roundLabel").textContent = "Round " + (round + 1) + " / 4";
+  $("challengeTitle").textContent = r.title; $("challengeText").textContent = r.text;
+  const box = $("choices"); box.innerHTML = "";
+  r.choices.forEach(([label, pts]) => { const b = document.createElement("button"); b.type = "button"; b.className = "choice"; b.textContent = label; b.addEventListener("click", () => pick(pts, b)); box.append(b); });
+  $("feedback").textContent = round === 2 ? "Surprise twist: the rules just changed. Adaptation matters." : "";
+}
+function pick(pts, button) {
+  if (!active || locked) return;
+  locked = true; score += pts;
+  [...$("choices").children].forEach(b => b.disabled = true); button.classList.add("picked");
+  $("feedback").textContent = "Decision locked · +" + pts + " points";
+  setTimeout(() => { if (!active) return; if (round < 3 && timeLeft > 0) { round++; locked = false; showRound(); } else end(false); }, 650);
+}
+function start() {
+  clearInterval(timer); timeLeft = 60; round = 0; score = 0; active = true; locked = false;
+  $("begin").hidden = true; $("playAgain").hidden = true; $("gameResult").innerHTML = "";
+  $("timer").textContent = "01:00"; $("timebar").style.width = "100%";
+  showRound();
+  timer = setInterval(() => { timeLeft--; $("timer").textContent = fmt(timeLeft); $("timebar").style.width = (timeLeft / 60 * 100) + "%"; if (timeLeft <= 0) end(true); }, 1000);
+}
+function end(timesUp) {
+  clearInterval(timer); timer = null; active = false; locked = true;
+  $("choices").innerHTML = ""; $("feedback").textContent = "";
+  $("challengeTitle").textContent = timesUp ? "Time's up" : "Royal Challenge complete";
+  $("challengeText").textContent = timesUp ? "The clock has stopped. Your decisions are locked." : "You cleared all four rounds before time ran out.";
+  const rank = score >= 90 ? "Crown Conqueror" : score >= 65 ? "King in the making" : score >= 35 ? "Royal Rebel" : "Kingdom Apprentice";
+  const box = $("gameResult"); box.innerHTML = "";
+  const wrap = document.createElement("div"); wrap.className = "result";
+  const im = document.createElement("img"); im.src = "../assets/home/crown.webp"; im.width = 900; im.height = 985; im.alt = "";
+  const rk = document.createElement("div"); rk.className = "rank"; rk.textContent = rank;
+  const sc = document.createElement("div"); sc.className = "score"; sc.textContent = score + " / 100";
+  const fine = document.createElement("p"); fine.className = "fine"; fine.textContent = "Your score stays on this device. The Fan Billboard opens once scores can be verified.";
+  wrap.append(im, rk, sc, fine); box.append(wrap);
+  $("playAgain").hidden = false;
+}
+$("begin").addEventListener("click", start);
+$("playAgain").addEventListener("click", start);
+
+$("reset").addEventListener("click", () => {
+  clearInterval(timer); timer = null; active = locked = false;
+  if (photoUrl) URL.revokeObjectURL(photoUrl); if (posterUrl) URL.revokeObjectURL(posterUrl);
+  photoUrl = posterUrl = posterBlob = null;
+  $("photo").value = ""; $("fname").textContent = "No photo chosen";
+  $("photoPreview").removeAttribute("src"); $("photoPreview").style.display = "none";
+  $("idea").value = ""; $("count").textContent = "0"; $("costars").value = "0"; $("genre").value = "Fantasy / Surreal";
+  emptyPoster(); $("download").disabled = $("share").disabled = true; $("shareStatus").textContent = "";
+  $("challengeCard").hidden = true; $("gameResult").innerHTML = "";
+  $("begin").hidden = false; $("playAgain").hidden = true;
+  $("timer").textContent = "01:00"; $("timebar").style.width = "100%";
+  $("roundLabel").textContent = "Ready"; $("challengeTitle").textContent = "Ready, King?"; $("challengeText").textContent = "Your poster is ready. Enter the challenge when you choose."; $("choices").innerHTML = ""; $("feedback").textContent = "";
+  sel.value = "bauua"; updatePack(); setStep(1);
+});
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

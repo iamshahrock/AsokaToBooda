@@ -1,0 +1,87 @@
+name: KING Daily Intelligence Update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/daily-input/*.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: king-daily-update
+  cancel-in-progress: false
+
+jobs:
+  update-ledger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Identify changed daily inputs
+        id: inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          files="$(git diff --name-only "$GITHUB_EVENT_BEFORE" "$GITHUB_SHA" | grep -E '^data/daily-input/[^/]+\.json$' || true)"
+          if [ -z "$files" ]; then
+            echo "No changed daily input JSON files in this push."
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          printf '%s\n' "$files"
+          {
+            echo "has_files=true"
+            echo 'files<<EOF'
+            printf '%s\n' "$files"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Validate changed daily inputs
+        if: steps.inputs.outputs.has_files == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r file; do
+            [ -n "$file" ] || continue
+            echo "Validating $file"
+            node tools/validate-daily-update.mjs "$file"
+          done <<< '${{ steps.inputs.outputs.files }}'
+
+      - name: Apply changed records
+        if: steps.inputs.outputs.has_files == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r file; do
+            [ -n "$file" ] || continue
+            echo "Applying $file"
+            node tools/apply-daily-update.mjs "$file"
+          done <<< '${{ steps.inputs.outputs.files }}'
+
+      - name: Verify ledger changed
+        if: steps.inputs.outputs.has_files == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git diff -- data/king-intelligence-daily.json
+          if git diff --quiet -- data/king-intelligence-daily.json; then
+            echo "No ledger change produced."
+            exit 1
+          fi
+
+      - name: Commit canonical ledger
+        if: steps.inputs.outputs.has_files == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/king-intelligence-daily.json
+          git commit -m "Daily intelligence: append validated ledger record"
+          git push

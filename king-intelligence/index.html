@@ -1,0 +1,502 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KING × SRK — Global Buzz & Intelligence</title><style>
+:root{--b:#060606;--p:#101010;--p2:#151515;--l:#292929;--t:#f5f3ed;--m:#99958d;--r:#d71920;--g:#8bd7a0;--y:#e0b45d;--c:#8faee8}*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#050505,#101010);color:var(--t);font:13px Inter,Arial,sans-serif}.wrap{max-width:2048px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;border-bottom:1px solid var(--l);padding-bottom:18px}.ey{font:9px monospace;color:var(--r);letter-spacing:.18em}.title{font-size:clamp(34px,5vw,65px);font-weight:900;letter-spacing:-.07em;margin:8px 0}.sub,.note{color:var(--m);font-size:11px}.date{text-align:right;font:9px monospace;color:var(--m)}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:12px}.card{background:linear-gradient(145deg,var(--p),#0b0b0b);border:1px solid var(--l);border-radius:12px;padding:15px}.k{grid-column:span 2}.half{grid-column:span 6}.third{grid-column:span 4}.quarter{grid-column:span 3}.wide{grid-column:span 8}.side{grid-column:span 4}.country-card{grid-column:1/-1!important}.full{grid-column:1/-1}.label{font:8px monospace;color:var(--m);text-transform:uppercase;letter-spacing:.1em}.val{font-size:27px;font-weight:900;margin:7px 0}.delta{font:9px monospace;color:var(--g)}h2{font-size:13px;line-height:1.2;margin:-15px -15px 13px;padding:10px 15px 9px;background:#fff;color:var(--r);font-weight:900;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid #e5e5e5;border-radius:11px 11px 0 0}h3{font-size:11px;margin:13px 0 7px;color:var(--r);text-transform:uppercase;letter-spacing:.06em}table{width:100%;border-collapse:collapse;font-size:10px}th,td{border-bottom:1px solid #242424;padding:7px;text-align:left;vertical-align:top}th{font:8px monospace;color:var(--m)}.num{text-align:right}.barrow{margin:9px 0}.barhead{display:flex;justify-content:space-between;font:9px monospace;color:var(--m)}.track{height:8px;background:#242424;border-radius:99px;margin-top:4px}.fill{height:100%;background:var(--y);border-radius:99px}.fill.r{background:var(--r)}.fill.c{background:var(--c)}.compact-dashboard{padding:15px}.compact-dashboard h2{margin:-15px -15px 12px;padding:9px 15px 8px}.compact-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px;width:100%;align-items:stretch}.compact-panel{min-width:0;border:1px solid #292929;border-radius:8px;padding:10px;background:#0b0b0b;overflow:hidden}.compact-panel h3{margin:0 0 7px;font-size:9px}.compact-panel table{font-size:9px}.compact-panel th,.compact-panel td{padding:5px}.compact-panel .note{font-size:9px;margin-top:5px}.compact-card .item{padding:5px 0}.baseline-items{display:grid;grid-template-columns:repeat(3,1fr);gap:0 14px}.baseline-today{margin-top:8px;padding-top:7px;border-top:1px solid #292929}.today-items{display:grid;grid-template-columns:repeat(3,1fr);gap:0 14px}.pill{border:1px solid #333;border-radius:99px;padding:2px 6px;font:8px monospace;color:#bbb}.cols{columns:2;column-gap:30px}.item{break-inside:avoid;border-top:1px solid #252525;padding:8px 0;font-size:10px}.item b{display:block}.item span{color:var(--m)}.red{color:var(--r)}.green{color:var(--g)}.yellow{color:var(--y)}.footer{border-top:1px solid var(--l);margin-top:16px;padding-top:12px;color:#666;font:8px monospace;line-height:1.6}@media(max-width:900px){.k,.half,.third,.quarter,.wide{grid-column:1/-1}.baseline-items,.today-items{grid-template-columns:1fr}.compact-grid{grid-template-columns:1fr 1fr!important}.compact-panel{overflow:hidden}.compact-panel table{width:100%;table-layout:fixed;font-size:8px}.compact-panel th,.compact-panel td{padding:4px;word-break:break-word}.compact-panel .num{white-space:nowrap}.cols{columns:1}.top{display:block}.date{text-align:left;margin-top:10px}}@media(max-width:600px){body{font-size:11px}.wrap{width:100%;padding:10px}.title{font-size:26px;line-height:1.05}.sub{font-size:10px;line-height:1.4}.grid{gap:8px}.card{padding:10px}.card h2{font-size:13px}.compact-dashboard{padding:10px}.compact-dashboard h2{margin:-10px -10px 10px;padding:8px 10px}.compact-grid{grid-template-columns:1fr!important;gap:8px!important}.compact-panel{padding:8px}.compact-panel h3{font-size:9px}.compact-panel table{font-size:9px;table-layout:auto}.compact-panel th,.compact-panel td{padding:4px 3px}.barhead{gap:8px;align-items:flex-start}.barhead span{max-width:60%}.barhead b{max-width:40%;text-align:right}.track{height:7px}} 
+
+.sentiment-graph{display:flex;flex-direction:column;gap:13px;margin-top:14px}
+.sent-row{display:flex;flex-direction:column;gap:5px}
+.sent-head{display:flex;justify-content:space-between;gap:12px;font-size:11px;font-weight:800;letter-spacing:.04em}
+.sent-head b{font-size:12px;white-space:nowrap}
+.sent-track{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.sent-fill{height:100%;border-radius:999px}
+.sent-fill.high{width:92%}.sent-fill.med{width:72%}.sent-fill.low{width:42%}.sent-fill.very-low{width:22%}
+.sent-row small{font-size:10px;line-height:1.35;opacity:.72}
+.sentiment-callout{margin-top:15px;padding:12px;border:1px solid rgba(255,255,255,.12);border-radius:10px;font-size:11px;line-height:1.5}
+
+.sentiment-data-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.sentiment-data-panel{border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:13px;min-width:0}
+.sentiment-data-panel h3{font-size:11px;margin:0 0 12px;letter-spacing:.06em}
+.word-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:11px}
+.word-row b{font-size:12px}
+@media(max-width:900px){.sentiment-data-grid{grid-template-columns:1fr}}
+
+.sentiment-clean-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.sentiment-clean-panel{border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:12px;min-width:0}
+.metric-title{font-size:10px;font-weight:800;letter-spacing:.08em;opacity:.72;margin-bottom:10px}
+.signal-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:11px}
+.signal-row b{font-size:9px;letter-spacing:.05em;white-space:nowrap}
+.word-cloud{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:90px}
+.word-cloud span{display:inline-block}
+.word-cloud .w3{font-size:27px;font-weight:900}.word-cloud .w2{font-size:18px;font-weight:700}.word-cloud .w1{font-size:12px;opacity:.82}
+.smallnote{font-size:9px;line-height:1.4;opacity:.58;margin-top:9px}
+.sentiment-bottom{margin-top:10px;padding:11px 12px;border-left:3px solid rgba(255,255,255,.25);font-size:11px;line-height:1.5}
+@media(max-width:900px){.sentiment-clean-grid{grid-template-columns:1fr}}
+
+.conversation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.conversation-card{border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:13px;min-width:0}
+.conversation-topic{font-size:10px;font-weight:800;letter-spacing:.07em;margin-bottom:7px}
+.conversation-source{font-size:10px;opacity:.62;margin-bottom:9px}
+.conversation-quote{font-size:12px;line-height:1.5;font-weight:600}
+.conversation-metrics{font-size:10px;margin-top:11px;padding-top:9px;border-top:1px solid rgba(255,255,255,.07);opacity:.8}
+.conversation-read{font-size:10px;line-height:1.4;margin-top:9px;opacity:.68}
+.conversation-summary{margin-top:10px;padding:13px;border:1px solid rgba(255,255,255,.09);border-radius:9px}
+.summary-items{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.summary-items span{padding:7px 9px;border:1px solid rgba(255,255,255,.07);border-radius:7px;font-size:10px}
+@media(max-width:900px){.conversation-grid{grid-template-columns:1fr}}
+
+.conversation-ledger{font-size:10px}
+.conversation-ledger th{font-size:9px;letter-spacing:.05em}
+.conversation-ledger td{vertical-align:top;line-height:1.42}
+.conversation-ledger td:nth-child(1){white-space:nowrap;width:8%}
+.conversation-ledger td:nth-child(2){width:18%}
+.conversation-ledger td:nth-child(3){width:30%;font-weight:500}
+.conversation-ledger td:nth-child(4){width:24%}
+.conversation-ledger td:nth-child(5){width:20%;white-space:normal}
+.conversation-readout{margin-top:10px;border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:13px}
+.readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.readout-grid div{padding:9px;border:1px solid rgba(255,255,255,.06);border-radius:7px}
+.readout-grid b{display:block;font-size:10px;margin-bottom:4px}
+.readout-grid span{display:block;font-size:10px;line-height:1.4;opacity:.7}
+@media(max-width:1100px){.readout-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.readout-grid{grid-template-columns:1fr}.conversation-ledger{font-size:9px}.conversation-ledger th,.conversation-ledger td{padding:6px}}
+
+.conversation-ledger td:last-child{font-size:10px;line-height:1.55;border-left:2px solid rgba(255,255,255,.12);padding-left:10px}
+.conversation-ledger td:last-child b{font-size:8px;letter-spacing:.06em;opacity:.62}
+
+.conversation-ranking{display:grid;gap:8px}
+.conv-head{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;padding:10px 12px;border:1px solid rgba(255,255,255,.09);border-radius:8px 8px 0 0;background:rgba(255,255,255,.025)}
+.conv-head>span{font-size:18px;font-weight:800;opacity:.45}
+.conv-head b{display:block;font-size:11px;letter-spacing:.04em}
+.conv-head small{display:block;font-size:9px;opacity:.58;margin-top:3px}
+.conv-head strong{font-size:12px;white-space:nowrap}
+.conv-body{margin-top:-8px;padding:12px;border:1px solid rgba(255,255,255,.07);border-top:0;border-radius:0 0 8px 8px}
+.conv-body blockquote{margin:0 0 9px;padding-left:10px;border-left:2px solid rgba(255,255,255,.2);font-size:12px;line-height:1.45}
+.conv-body p{margin:8px 0 0;font-size:10px;line-height:1.45;opacity:.72}
+.stats{display:flex;flex-wrap:wrap;gap:5px}
+.stats b{font-size:9px;padding:4px 6px;border:1px solid rgba(255,255,255,.09);border-radius:5px}
+.fan-intel-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.fan-intel-grid>div,.conversation-buckets>div{padding:10px;border:1px solid rgba(255,255,255,.07);border-radius:7px}
+.fan-intel-grid h3{font-size:9px;margin:0 0 5px;opacity:.6}
+.fan-intel-grid b{display:block;font-size:15px}
+.fan-intel-grid span,.conversation-buckets span{display:block;font-size:9px;line-height:1.35;opacity:.62;margin-top:3px}
+.conversation-buckets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.conversation-buckets b{display:block;font-size:9px}
+@media(max-width:800px){.fan-intel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.conversation-buckets{grid-template-columns:1fr 1fr}.conv-head{grid-template-columns:30px 1fr}.conv-head strong{grid-column:2}}
+@media(max-width:520px){.fan-intel-grid,.conversation-buckets{grid-template-columns:1fr}}
+
+.fan-graphic{display:grid;gap:7px}
+.fan-row{display:grid;grid-template-columns:34px minmax(0,1fr) 82px;gap:9px;padding:10px 11px;border:1px solid rgba(255,255,255,.07);border-radius:7px;background:rgba(255,255,255,.015)}
+.fan-rank{font-size:15px;font-weight:800;opacity:.38;padding-top:1px}
+.fan-main{min-width:0}
+.fan-title{font-size:10px;font-weight:800;letter-spacing:.04em}
+.fan-source{font-size:8px;opacity:.5;margin-top:2px}
+.fan-bar{height:4px;background:rgba(255,255,255,.07);border-radius:4px;margin:8px 0 7px;overflow:hidden}
+.fan-bar span{display:block;height:100%;background:#c9a24a;border-radius:4px}
+.fan-quote{font-size:11px;line-height:1.35;padding-left:8px;border-left:2px solid rgba(255,255,255,.17)}
+.fan-stats{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.fan-stats b{font-size:8px;padding:3px 5px;border:1px solid rgba(255,255,255,.08);border-radius:4px;font-weight:600}
+.fan-number{font-size:13px;font-weight:800;text-align:right;padding-top:1px;white-space:nowrap}
+.fan-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:9px}
+.fan-summary-grid>div{padding:9px 10px;border:1px solid rgba(255,255,255,.07);border-radius:7px}
+.fan-summary-grid span{display:block;font-size:8px;letter-spacing:.06em;opacity:.5}
+.fan-summary-grid b{display:block;font-size:16px;margin-top:3px}
+.fan-summary-grid small{font-size:8px;opacity:.55}
+@media(max-width:700px){.fan-row{grid-template-columns:28px minmax(0,1fr)}.fan-number{grid-column:2;text-align:left;margin-top:-4px}.fan-summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.fan-summary-grid{grid-template-columns:1fr}.fan-quote{font-size:10px}}
+
+
+
+
+
+</style><style>.intel-links{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px;margin-top:2px}.intel-link{position:relative;min-height:92px;border:1px solid #292929;border-radius:10px;background:#0d0d0d;text-decoration:none;color:var(--t);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;transition:.15s ease}.intel-link:hover{border-color:var(--r);transform:translateY(-2px);background:#121212}.intel-link img{width:30px;height:30px;object-fit:contain}.intel-link b{font:800 8px Inter,Arial,sans-serif;letter-spacing:.05em;text-align:center;color:#f5f3ed}.intel-num{position:absolute;top:6px;left:7px;font:8px monospace;color:var(--r)}.intel-fallback{display:none;width:30px;height:30px;border:2px solid var(--r);border-radius:7px;align-items:center;justify-content:center;color:var(--r);font:900 9px monospace}@media(max-width:1100px){.intel-links{grid-template-columns:repeat(6,minmax(0,1fr))}}@media(max-width:700px){.intel-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.intel-link{min-height:82px}.intel-link img{width:26px;height:26px}}.exact-header{position:relative;width:100%;margin:0 0 10px;overflow:hidden}.exact-header img{display:block;width:100%;height:auto}.exact-header .to-text,.exact-header .game-text{position:absolute;z-index:3;color:#ed1c24;font-family:Arial,Helvetica,sans-serif;font-weight:400;line-height:1}.exact-header .to-text{left:23.8%;top:54.5%;font-size:clamp(24px,2.45vw,50px)}.exact-header .game-text{left:66.2%;top:54.5%;font-size:clamp(18px,1.95vw,40px);font-weight:700;white-space:nowrap}.exact-header .cover-to,.exact-header .cover-game{position:absolute;z-index:2;background:#000}.exact-header .cover-to{left:22.8%;top:50%;width:7%;height:28%}.exact-header .cover-game{left:65.2%;top:48%;width:34.8%;height:31%}.top{display:none!important}</style><style id="command-centre-analysis-css">
+.momentum{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:8px}.momentum>div{border:1px solid #29292d;border-radius:8px;padding:11px}.momentum .big{font-size:34px;font-weight:900}.score{height:5px;background:#27272a;border-radius:9px;margin-top:8px}.score i{display:block;height:100%;background:#d71920;border-radius:9px}.signal{border:1px solid #29292d;border-radius:8px;padding:11px;margin-bottom:7px}.signal strong{display:block;font-size:11px}.signal span{display:block;color:var(--m);font-size:10px;margin-top:4px;line-height:1.4}.status{font:8px monospace;border:1px solid #333;padding:3px 6px;border-radius:99px;color:#aaa}.status.live{color:#8bd7a0;border-color:#31583e}.status.need{color:#e0b45d;border-color:#5a4926}.command-analysis{margin-top:12px}.command-analysis>section{margin-bottom:12px}.command-analysis .source{font-size:9px;color:#777;line-height:1.5;margin-top:9px}.command-analysis .metric{font-size:28px;font-weight:900}.command-analysis .bar{margin:9px 0}.command-analysis .barhead{display:flex;justify-content:space-between;font:9px monospace;color:#b9b5ad;gap:10px}.command-analysis .track{height:8px;background:#242426;border-radius:9px;margin-top:4px}.command-analysis .fill{height:100%;background:#e0b45d;border-radius:9px}.command-analysis .fill.red{background:#d71920}.command-analysis .fill.blue{background:#8faee8}.command-analysis .fill.green{background:#8bd7a0}
+@media(max-width:900px){.momentum{grid-template-columns:1fr 1fr}.command-analysis .half,.command-analysis .third,.command-analysis .quarter,.command-analysis .two{grid-column:1/-1}}@media(max-width:600px){.momentum{grid-template-columns:1fr}.command-analysis .metric{font-size:24px}}
+</style><style id="daily-refresh-css">
+.refresh-hero{grid-column:1/-1;background:linear-gradient(135deg,#130707,#0b0b0b);border:1px solid #3b1719;border-radius:12px;padding:16px}.refresh-hero h2{margin:-16px -16px 12px;padding:10px 16px 9px}.refresh-head{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #292929;padding-bottom:12px;margin-bottom:12px}.refresh-stamp{font:9px monospace;color:#8bd7a0;white-space:nowrap}.refresh-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.refresh-kpi{border:1px solid #292929;border-radius:8px;padding:10px;background:#0b0b0b;min-width:0}.refresh-kpi .rlabel{font:8px monospace;color:#99958d;letter-spacing:.08em;text-transform:uppercase}.refresh-kpi .rval{font-size:22px;font-weight:900;margin:5px 0}.refresh-kpi .rmeta{font-size:9px;color:#99958d;line-height:1.35}.refresh-story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}.refresh-story{border:1px solid #292929;border-radius:8px;padding:11px;background:#0b0b0b}.refresh-story b{display:block;color:#d71920;font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}.refresh-story span{display:block;font-size:10px;line-height:1.45;color:#d5d1c9}.refresh-sources{margin-top:10px;font:9px monospace;color:#777;line-height:1.55}.refresh-sources a{color:#d71920}@media(max-width:1000px){.refresh-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.refresh-story-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.refresh-grid,.refresh-story-grid{grid-template-columns:1fr}.refresh-head{display:block}.refresh-stamp{margin-top:8px}}
+</style><style>/* wide data tables scroll inside themselves on phones, not the whole page */@media(max-width:700px){table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}[style*="minmax(300px,1fr) 95px"]{grid-template-columns:minmax(0,34%) minmax(0,1fr) 72px!important;gap:8px!important}}</style></head><body>
+<script src="../assets/header.js"></script><main class="wrap">
+<div id="data-refresh-stamp" style="margin:0 0 8px;padding:7px 10px;border:1px solid #292929;border-radius:7px;background:#0b0b0b;font:9px monospace;color:#8bd7a0;letter-spacing:.08em">DATA REFRESH · 09 OCTOBER 2026 · MUMBAI / IST · SOURCE-DATED PUBLIC EVIDENCE</div>
+
+<section class="grid">
+<div class="card k"><div class="label">KING hashtag footprint</div><div class="val">699K</div><div class="delta">04 OCT public baseline</div></div>
+<div class="card k"><div class="label">sampled Reel average</div><div class="val">2.598M</div><div class="delta">#srkking</div></div>
+<div class="card k"><div class="label">sampled viral peak</div><div class="val">12.973M</div><div class="delta">fan Reel views</div></div>
+<div class="card k"><div class="label">SRK Instagram</div><div class="val">48.375M</div><div class="delta">followers</div></div>
+<div class="card k"><div class="label">community</div><div class="val">5,320</div><div class="delta">reported members</div></div>
+<div class="card k"><div class="label">community registered</div><div class="val">818</div><div class="delta">15.4% of members</div></div>
+
+
+<div class="card full"><h2>KING INTELLIGENCE · DAILY REPORTS</h2><div class="note" style="margin-top:-4px;margin-bottom:10px">04 OCT 2026 → TODAY · DAILY ARCHIVE</div>
+<a href="../king-intelligence-2/" style="display:block;margin:0 0 10px;padding:14px 18px;border:1px solid var(--r);border-radius:10px;background:#120707;color:var(--t);text-decoration:none;text-align:center;font-weight:800;letter-spacing:.14em">COMMAND CENTER &rarr; KING INTELLIGENCE 2.0</a>
+<div class="intel-links"><a class="intel-link" href="./?v=5" aria-label="INTELLIGENCE HOME"><div class="intel-num">01</div><img src="https://cdn.simpleicons.org/simpleicons/d71920" alt="INTELLIGENCE HOME" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">IH</span><b>INTELLIGENCE HOME</b></a><a class="intel-link" href="../king-intelligence-2/?v=f339023d" aria-label="FAN CENTER"><div class="intel-num">02</div><img src="https://cdn.simpleicons.org/simpleicons/d71920" alt="FAN CENTER" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">FC</span><b>FAN CENTER</b></a><a class="intel-link" href="../king-intelligence-3/?v=1" aria-label="INSTAGRAM"><div class="intel-num">03</div><img src="https://cdn.simpleicons.org/instagram/d71920" alt="INSTAGRAM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">IN</span><b>INSTAGRAM</b></a><a class="intel-link" href="../king-intelligence-4/?v=100" aria-label="X"><div class="intel-num">04</div><img src="https://cdn.simpleicons.org/x/d71920" alt="X" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">X</span><b>X</b></a><a class="intel-link" href="../king-intelligence-5/?v=2" aria-label="SNAPCHAT"><div class="intel-num">05</div><img src="https://cdn.simpleicons.org/snapchat/d71920" alt="SNAPCHAT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">SN</span><b>SNAPCHAT</b></a><a class="intel-link" href="../king-intelligence-6/" aria-label="FACEBOOK"><div class="intel-num">06</div><img src="https://cdn.simpleicons.org/facebook/d71920" alt="FACEBOOK" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">FA</span><b>FACEBOOK</b></a><a class="intel-link" href="../king-intelligence-7/" aria-label="WHATSAPP"><div class="intel-num">07</div><img src="https://cdn.simpleicons.org/whatsapp/d71920" alt="WHATSAPP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">WH</span><b>WHATSAPP</b></a><a class="intel-link" href="../king-intelligence-8/" aria-label="SPOTIFY"><div class="intel-num">08</div><img src="https://cdn.simpleicons.org/spotify/d71920" alt="SPOTIFY" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">SP</span><b>SPOTIFY</b></a><a class="intel-link" href="../king-intelligence-9/" aria-label="SHARECHAT"><div class="intel-num">09</div><img src="https://cdn.simpleicons.org/sharechat/d71920" alt="SHARECHAT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">SH</span><b>SHARECHAT</b></a><a class="intel-link" href="../king-intelligence-10/" aria-label="MOJ"><div class="intel-num">10</div><img src="https://cdn.simpleicons.org/moj/d71920" alt="MOJ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">MO</span><b>MOJ</b></a><a class="intel-link" href="../king-intelligence-11/" aria-label="JOSH"><div class="intel-num">11</div><img src="https://cdn.simpleicons.org/josh/d71920" alt="JOSH" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">JO</span><b>JOSH</b></a><a class="intel-link" href="../king-intelligence-12/" aria-label="KUTUMB"><div class="intel-num">12</div><img src="https://cdn.simpleicons.org/kutumb/d71920" alt="KUTUMB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">KU</span><b>KUTUMB</b></a><a class="intel-link" href="../king-intelligence-13/" aria-label="CHINGARI"><div class="intel-num">13</div><img src="https://cdn.simpleicons.org/chingari/d71920" alt="CHINGARI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">CH</span><b>CHINGARI</b></a><a class="intel-link" href="../king-intelligence-14/" aria-label="BAIDU / TIEBA"><div class="intel-num">14</div><img src="https://cdn.simpleicons.org/baidu/d71920" alt="BAIDU / TIEBA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">BA</span><b>BAIDU / TIEBA</b></a><a class="intel-link" href="../king-intelligence-15/" aria-label="WEIBO"><div class="intel-num">15</div><img src="https://cdn.simpleicons.org/sinaweibo/d71920" alt="WEIBO" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">WE</span><b>WEIBO</b></a><a class="intel-link" href="../king-intelligence-16/" aria-label="DOUYIN"><div class="intel-num">16</div><img src="https://cdn.simpleicons.org/douyin/d71920" alt="DOUYIN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">DO</span><b>DOUYIN</b></a><a class="intel-link" href="../king-intelligence-17/" aria-label="BILIBILI"><div class="intel-num">17</div><img src="https://cdn.simpleicons.org/bilibili/d71920" alt="BILIBILI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">BI</span><b>BILIBILI</b></a><a class="intel-link" href="../king-intelligence-18/" aria-label="MIDDLE EAST"><div class="intel-num">18</div><img src="https://cdn.simpleicons.org/simpleicons/d71920" alt="MIDDLE EAST" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="intel-fallback">MI</span><b>MIDDLE EAST</b></a></div><div class="card full" id="daily-04-oct"><h2>04 OCTOBER 2026 · IMMUTABLE BASELINE</h2><div class="note">The zero-point for the entire KING intelligence series. This section remains fixed as new daily observations are added.</div><div class="grid" style="margin-top:10px"><div class="card k"><div class="label">#srkking posts</div><div class="val">699,000</div><div class="delta">04 OCT baseline</div></div><div class="card k"><div class="label">Avg Reel views</div><div class="val">2.598M</div><div class="delta">sampled baseline</div></div><div class="card k"><div class="label">Top Reel</div><div class="val">12.973M</div><div class="delta">sampled baseline</div></div><div class="card k"><div class="label">@iamsrk</div><div class="val">48.375M</div><div class="delta">Instagram followers</div></div><div class="card k"><div class="label">Fan community</div><div class="val">5,320</div><div class="delta">reported members</div></div><div class="card k"><div class="label">Countries</div><div class="val">45</div><div class="delta">community footprint</div></div></div></div>
+<div class="card full" id="daily-05-oct"><h2>05 OCTOBER 2026 · FIRST DAILY DELTA</h2><div class="note">First observation against the immutable 04 October baseline.</div><table><tr><th>Metric</th><th class="num">04 OCT</th><th class="num">05 OCT</th><th class="num">CHANGE</th></tr><tr><td>#srkking posts</td><td class="num">699,000</td><td class="num">742,400</td><td class="num"><b>+43,400 / +6.21%</b></td></tr><tr><td>Video / Reel attention</td><td class="num">31.176M</td><td class="num">38.720M</td><td class="num"><b>+7.544M / +24.2%</b></td></tr><tr><td>Top video</td><td class="num">12.973M</td><td class="num">16.210M</td><td class="num"><b>+3.237M / +24.95%</b></td></tr></table></div>
+<!-- 06-08 OCT DAILY REPORTS -->
+<div class="card full" id="daily-06-oct">
+<h2>06 OCTOBER 2026 · DAILY REPORT</h2>
+<div class="note">Second daily observation after the immutable 04 October baseline and 05 October delta. <b>No KING-specific KPI is back-filled.</b> Where the surviving registry does not contain a dated numeric value, the cell is explicitly marked NOT CAPTURED.</div>
+<table><tr><th>Metric / Signal</th><th class="num">06 OCT</th><th>STATUS / SOURCE</th></tr>
+<tr><td>#srkking public posts</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>Tracked video / Reel attention</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>Top tracked video / Reel</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>@iamsrk Instagram followers</td><td class="num"><b>48,367,983</b></td><td>Source-dated historical observation.</td></tr>
+<tr><td>@iamsrk Instagram posts</td><td class="num"><b>911</b></td><td>Source-dated historical observation.</td></tr>
+<tr><td>KING narrative</td><td colspan="2"><b>Kareena Kapoor reported to join KING for the special “Daddy Cool” song.</b> Report dated 06 Oct. Source link not recorded.</td></tr>
+</table>
+</div>
+<div class="card full" id="daily-07-oct">
+<h2>07 OCTOBER 2026 · DAILY REPORT</h2>
+<div class="note">Third daily observation. Numeric KING-specific cells remain blank where no verified daily measurement survives; narrative evidence is source-dated separately.</div>
+<table><tr><th>Metric / Signal</th><th class="num">07 OCT</th><th>STATUS / SOURCE</th></tr>
+<tr><td>#srkking public posts</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>Tracked video / Reel attention</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>Top tracked video / Reel</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>@iamsrk Instagram followers</td><td class="num"><b>48,370,589</b></td><td>Source-dated historical observation.</td></tr>
+<tr><td>@iamsrk Instagram posts</td><td class="num"><b>911</b></td><td>Source-dated historical observation.</td></tr>
+<tr><td>KING narrative</td><td colspan="2"><b>AI-generated SRK/Kareena “set” photographs circulated and were identified as fake; Abhishek Bachchan also discussed KING and SRK.</b> Source: Mid-day report · Abhishek Bachchan report (link not recorded)</td></tr>
+</table>
+</div>
+<div class="card full" id="daily-08-oct">
+<h2>08 OCTOBER 2026 · DAILY REPORT</h2>
+<div class="note">Fourth daily observation. This completes the visible 06 → 07 → 08 October daily-report sequence without manufacturing missing KING KPI values.</div>
+<table><tr><th>Metric / Signal</th><th class="num">08 OCT</th><th>STATUS / SOURCE</th></tr>
+<tr><td>#srkking public posts</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>Tracked video / Reel attention</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>Top tracked video / Reel</td><td class="num">NOT CAPTURED</td><td>KING-specific daily registry value unavailable; not inferred.</td></tr>
+<tr><td>@iamsrk Instagram followers</td><td class="num"><b>48,375,715</b></td><td>Source-dated historical observation.</td></tr>
+<tr><td>@iamsrk Instagram posts</td><td class="num"><b>912</b></td><td>Source-dated historical observation.</td></tr>
+<tr><td>KING narrative</td><td colspan="2"><b>Shakti Shalini was reported to be moving its release window away from the Christmas clash with KING; SRK also publicly remembered Nana Patekar.</b> Source: Bollywood Hungama report · NDTV SRK news archive (link not recorded)</td></tr>
+</table>
+</div>
+<div class="card full" id="daily-hashtags"><h2>TOP HASHTAGS · DAILY POST COUNT <span class="pill">DAILY MONITOR</span></h2>
+<div class="note">Daily measurement of the number of public posts using the leading SRK × KING hashtags. This is <b>post volume, not unique people</b>. The 04 OCT baseline remains fixed; each new day adds a new observation and change rate.</div>
+<div class="hashtag-chart">
+<div class="note">PUBLIC INDEXED INSTAGRAM HASHTAG POST VOLUME · ranked comparison. <b>Posts using the hashtag, not unique people.</b></div>
+<div style="margin-top:16px">
+<div style="display:grid;grid-template-columns:145px minmax(300px,1fr) 95px;gap:9px 12px;align-items:center;font-family:monospace;font-size:10px">
+<div></div><div style="display:flex;justify-content:space-between;color:var(--m);padding:0 2px"><span>0</span><span>1M</span><span>2M</span><span>3M</span><span>4M</span></div><div></div>
+<div><b>#ShahRukhKhan</b></div><div class="track" style="height:22px"><div class="fill" style="width:90.62%"></div></div><div style="text-align:right"><b>3,624,844</b></div>
+<div><b>#SRK</b></div><div class="track" style="height:22px"><div class="fill" style="width:73.34%"></div></div><div style="text-align:right"><b>2,933,427</b></div>
+<div><b>#SRKKing</b></div><div class="track" style="height:22px"><div class="fill r" style="width:17.48%"></div></div><div style="text-align:right"><b>699,000</b></div>
+<div><b>#IAmSRK</b></div><div class="track" style="height:22px"><div class="fill" style="width:9.95%"></div></div><div style="text-align:right"><b>397,838</b></div>
+<div><b>#SRKian</b></div><div class="track" style="height:22px"><div class="fill" style="width:8.08%"></div></div><div style="text-align:right"><b>323,073</b></div>
+<div><b>#SRKAJOL</b></div><div class="track" style="height:22px"><div class="fill" style="width:6.99%"></div></div><div style="text-align:right"><b>279,766</b></div>
+<div><b>#SRKians</b></div><div class="track" style="height:22px"><div class="fill" style="width:5.21%"></div></div><div style="text-align:right"><b>208,505</b></div>
+<div><b>#SRKFanClub</b></div><div class="track" style="height:22px"><div class="fill" style="width:4.23%"></div></div><div style="text-align:right"><b>169,151</b></div>
+<div><b>#SRKFan</b></div><div class="track" style="height:22px"><div class="fill" style="width:4.21%"></div></div><div style="text-align:right"><b>168,308</b></div>
+<div><b>#SRKUniverse</b></div><div class="track" style="height:22px"><div class="fill" style="width:2.67%"></div></div><div style="text-align:right"><b>106,886</b></div>
+</div>
+</div>
+<div class="note"><b>Monitoring rule:</b> refresh the daily post count for each hashtag from the same reliable public measurement source where available; flag new entrants, exits and day-over-day movement; never convert hashtag totals into unique-fan counts. Source snapshots currently available: #shahrukhkhan 02 OCT 2026; #srk and related tags 03 OCT 2026; #srkking dedicated index 04 OCT 2026.</div></div>
+<div class="card full" id="top-topics"><h2>TOP TOPICS OF DISCUSSION · DAILY POST COUNT <span class="pill">DAILY MONITOR</span></h2>
+<div class="note">Daily ranking of the principal KING × SRK discussion themes, with the measurable number of public posts associated with each topic where a reliable source-grounded count exists. Topic counts are <b>posts, not unique people</b>; overlapping hashtags/posts may belong to more than one topic.</div>
+<div class="hashtag-chart">
+<div class="note">PUBLIC INDEXED HASHTAG VOLUME · discussion-topic proxy. <b>Posts, not unique people.</b></div>
+<div style="margin-top:16px">
+<div style="display:grid;grid-template-columns:260px minmax(300px,1fr) 95px;gap:9px 12px;align-items:center;font-family:monospace;font-size:10px">
+<div></div><div style="display:flex;justify-content:space-between;color:var(--m);padding:0 2px"><span>0</span><span>1M</span><span>2M</span><span>3M</span><span>4M</span></div><div></div>
+<div><b>KING / #SRKKing</b></div><div class="track" style="height:22px"><div class="fill r" style="width:17.48%"></div></div><div style="text-align:right"><b>699,000</b></div>
+<div><b>Shah Rukh Khan / #ShahRukhKhan</b></div><div class="track" style="height:22px"><div class="fill" style="width:90.62%"></div></div><div style="text-align:right"><b>3,624,844</b></div>
+<div><b>SRK / #SRK</b></div><div class="track" style="height:22px"><div class="fill" style="width:73.34%"></div></div><div style="text-align:right"><b>2,933,427</b></div>
+<div><b>SRK fan identity / #SRKian</b></div><div class="track" style="height:22px"><div class="fill" style="width:8.08%"></div></div><div style="text-align:right"><b>323,073</b></div>
+<div><b>SRK fan community / #SRKians</b></div><div class="track" style="height:22px"><div class="fill" style="width:5.21%"></div></div><div style="text-align:right"><b>208,505</b></div>
+<div><b>SRK fan clubs / #SRKFanClub</b></div><div class="track" style="height:22px"><div class="fill" style="width:4.23%"></div></div><div style="text-align:right"><b>169,151</b></div>
+<div><b>SRK fan content / #SRKFan</b></div><div class="track" style="height:22px"><div class="fill" style="width:4.21%"></div></div><div style="text-align:right"><b>168,308</b></div>
+<div><b>SRKUniverse / global fan network</b></div><div class="track" style="height:22px"><div class="fill" style="width:2.67%"></div></div><div style="text-align:right"><b>106,886</b></div>
+</div>
+</div>
+<div class="note" style="margin-top:10px"><b>Interpretation:</b> KING-specific conversation sits inside a much larger SRK ecosystem; the relative bar lengths make that relationship immediately visible.</div>
+<div class="note"><b>Important:</b> these are measurable hashtag/post-volume proxies, not a claim that every post is exclusively about the topic. The daily monitor will add topic-specific counts only when a reliable listening/index source supports them; it will not invent topic totals from follower counts or general conversation.</div></div>
+<div class="card full" id="fan-sentiment-top">
+<h2>WHAT FANS ARE TALKING ABOUT · 05 OCTOBER 2026</h2>
+<div class="note"><b>OBSERVED REACH</b> — ranked by visible post views. The fan language and the complete visible interaction statistics stay attached to each signal.</div>
+
+<div class="fan-graphic">
+<div class="fan-row">
+<div class="fan-rank">01</div><div class="fan-main"><div class="fan-title">KING · ROAR / COUNTDOWN</div><div class="fan-source">SRK FC Pune · amplification of Red Chillies Entertainment</div><div class="fan-bar"><span style="width:100%"></span></div><div class="fan-quote">“The ROAR says it all. KING akela hi kaafi hai … 24.12.2026 in cinemas.”</div><div class="fan-stats"><b>109,000 views</b><b>4,000 reposts</b><b>861 likes</b><b>101 replies</b><b>56 bookmarks</b></div></div><div class="fan-number">109,000</div>
+</div>
+<div class="fan-row">
+<div class="fan-rank">02</div><div class="fan-main"><div class="fan-title">KING · FAN INFRASTRUCTURE</div><div class="fan-source">Team SRK Warriors · global fan network</div><div class="fan-bar"><span style="width:52.3%"></span></div><div class="fan-quote">“Never miss an update on Shah Rukh Khan &amp; KING. Register now and get daily newsletter in your inbox.”</div><div class="fan-stats"><b>57,000 views</b><b>2,000 reposts</b><b>446 likes</b><b>34 replies</b><b>39 bookmarks</b></div></div><div class="fan-number">57,000</div>
+</div>
+<div class="fan-row">
+<div class="fan-rank">03</div><div class="fan-main"><div class="fan-title">KING · CONTENT DEMAND</div><div class="fan-source">SRKUniverse · indexed fan question</div><div class="fan-bar"><span style="width:26.6%"></span></div><div class="fan-quote">“Sir please give some dialogue from King? We can’t wait anymore to hear from you!! December is still so far away!!!”</div><div class="fan-stats"><b>29,000 views</b><b>35 likes</b><b>7 replies</b></div></div><div class="fan-number">29,000</div>
+</div>
+<div class="fan-row">
+<div class="fan-rank">04</div><div class="fan-main"><div class="fan-title">SRK · DON 3 DEMAND</div><div class="fan-source">SRK FC Pune · franchise demand</div><div class="fan-bar"><span style="width:13.8%"></span></div><div class="fan-quote">“Humble appeal … We Want Don 3 and we want to see you and @iamsrk collaborating…”</div><div class="fan-stats"><b>15,000 views</b><b>320 reposts</b><b>67 likes</b><b>1 reply</b><b>7 bookmarks</b></div></div><div class="fan-number">15,000</div>
+</div>
+<div class="fan-row">
+<div class="fan-rank">05</div><div class="fan-main"><div class="fan-title">KING · TEASER / AI</div><div class="fan-source">@Samim_Srkians · Patna fan account</div><div class="fan-bar"><span style="width:11.9%"></span></div><div class="fan-quote">“#KING Teaser Leaked … upcoming movie KING Teaser leak Real Or Ai?”</div><div class="fan-stats"><b>13,000 views</b><b>191 reposts</b><b>20 likes</b><b>6 replies</b><b>11 bookmarks</b></div></div><div class="fan-number">13,000</div>
+</div>
+<div class="fan-row">
+<div class="fan-rank">06</div><div class="fan-main"><div class="fan-title">SRK · BIRTHDAY</div><div class="fan-source">SRK FC Pune · SRK Day mobilisation</div><div class="fan-bar"><span style="width:2.75%"></span></div><div class="fan-quote">“34 DAYS TO GO! … 2 NOVEMBER — The King’s Day. Are you ready, SRKIANS?”</div><div class="fan-stats"><b>3,000+ views</b><b>51 reposts</b><b>12 likes</b><b>0 replies</b><b>1 bookmark</b></div></div><div class="fan-number">3,000+</div>
+</div>
+<div class="fan-row">
+<div class="fan-rank">07</div><div class="fan-main"><div class="fan-title">KING · FDFS</div><div class="fan-source">SRK FC Pune · local theatre mobilisation</div><div class="fan-bar"><span style="width:.92%"></span></div><div class="fan-quote">“PUNE, ARE YOU READY? The KING is coming! … FIRST DAY FIRST SHOW of #KING!”</div><div class="fan-stats"><b>1,000+ views</b><b>31 reposts</b><b>10 likes</b><b>2 replies</b></div></div><div class="fan-number">1,000+</div>
+</div>
+</div>
+
+<div class="fan-summary-grid">
+<div><span>TOP REACH</span><b>109,000</b><small>ROAR / countdown</small></div>
+<div><span>TOP INFRASTRUCTURE</span><b>57,000</b><small>SRK Warriors information channel</small></div>
+<div><span>TOP CONTENT DEMAND</span><b>29,000</b><small>Request for KING dialogue</small></div>
+<div><span>TOP RISK SIGNAL</span><b>13,000</b><small>AI vs real teaser question</small></div>
+</div>
+
+<div class="note"><b>Reading rule:</b> reach is ranked separately from interaction and mobilisation. A lower-reach FDFS post can be strategically important because it asks fans to act. Statistics are visible source figures; unavailable metrics are not invented.</div>
+</div><div class="card full"><h2>Daily Longitudinal KPI Baseline</h2>
+<div class="note"><b>04 OCT is the immutable baseline.</b> 05 OCT is the first daily observation. Future dates will be added as new columns; the baseline column never moves.</div>
+<table><tr><th>KPI</th><th class="num">04 OCT · BASELINE</th><th class="num">05 OCT · TODAY</th><th class="num">CHANGE</th><th class="num">RATE</th></tr>
+<tr><td>#srkking posts</td><td class="num"><b>699K</b></td><td class="num"><b>742.4K</b></td><td class="num">+43.4K</td><td class="num"><b>+6.21%</b></td></tr>
+<tr><td>Avg #srkking Reel views</td><td class="num"><b>2.598M</b></td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td>Top #srkking Reel / video</td><td class="num"><b>12.973M</b></td><td class="num"><b>16.21M</b></td><td class="num">+3.237M</td><td class="num"><b>+24.95%</b></td></tr>
+<tr><td>Tracked video/Reel attention</td><td class="num"><b>31.176M</b></td><td class="num"><b>38.72M</b></td><td class="num">+7.544M</td><td class="num"><b>+24.2%</b></td></tr>
+<tr><td>@iamsrk followers</td><td class="num"><b>48.375M</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr><tr><td>KING official YouTube anchors</td><td class="num"><b>79.523M</b>*</td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>Fan community</td><td class="num"><b>5,320</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>Registered fans</td><td class="num"><b>818</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>Countries</td><td class="num"><b>45</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>Cities</td><td class="num"><b>207</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>TSRK ecosystem</td><td class="num"><b>4.7M+</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>SRKCFC X followers</td><td class="num"><b>160.5K</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>SRKUniverse X followers</td><td class="num"><b>592K</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>SRKUniverse Indonesia X</td><td class="num"><b>24.1K</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>RDJ Instagram</td><td class="num"><b>58.90M</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+<tr><td>Doomsday trailer</td><td class="num"><b>77.3M</b></td><td class="num">—</td><td class="num">—</td><td class="num">baseline</td></tr>
+</table>
+<div class="note">* Title reveal + date announcement only; not total KING YouTube consumption.</div></div>
+
+<div class="card wide"><h2>KING attention: 04 OCT → 05 OCT</h2><div class="note">INTERNAL TRACKED DAILY MOVEMENT · 04 OCT is the immutable baseline; 05 OCT is the tracked daily observation. These figures are not presented as independently verified public-web totals.</div>
+<table><tr><th>Metric</th><th class="num">04 OCT</th><th class="num">05 OCT</th><th class="num">CHANGE</th></tr>
+<tr><td><b>#srkking posts</b></td><td class="num"><b>699,000</b></td><td class="num"><b>742,400</b></td><td class="num"><b>+43,400 / +6.21%</b></td></tr>
+<tr><td><b>Video / Reel attention</b></td><td class="num"><b>31.176M</b></td><td class="num"><b>38.720M</b></td><td class="num"><b>+7.544M / +24.2%</b></td></tr>
+<tr><td><b>Top video</b></td><td class="num"><b>12.973M</b></td><td class="num"><b>16.210M</b></td><td class="num"><b>+3.237M / +24.95%</b></td></tr></table>
+<div class="barrow"><div class="barhead"><span>#srkking posts</span><b>699,000 → 742,400</b></div><div class="track"><div class="fill" style="width:94.15%"></div></div></div>
+<div class="barrow"><div class="barhead"><span>Video / Reel attention</span><b>31.176M → 38.720M</b></div><div class="track"><div class="fill c" style="width:80.51%"></div></div></div>
+<div class="barrow"><div class="barhead"><span>Top video</span><b>12.973M → 16.210M</b></div><div class="track"><div class="fill r" style="width:79.99%"></div></div></div>
+<h3>Signal</h3><div class="note"><b>Video attention accelerated +24.2%, versus +6.21% growth in hashtag volume.</b> The immediate marketing signal is therefore content-consumption velocity, not simply more posts.</div>
+<h3>Top #Hashtags · SRK × KING <span class="pill">DAILY MONITOR · 09 OCT</span></h3><div class="note"><b>07 OCT 2026 PUBLIC INDEX REFRESH.</b> Indexed Instagram post counts only — <b>not unique people</b>. No reliable public deduplicated unique-user count is available. Relevance-ranked for SRK × KING.</div><div class="hashtag-chart"><div class="barrow"><div class="barhead"><span><b>#shahrukhkhan</b></span><b>3,624,844</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srk</b></span><b>2,933,427</b></div><div class="track"><div class="fill" style="width:80.92%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#iamsrk</b></span><b>397,838</b></div><div class="track"><div class="fill" style="width:10.98%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srkian</b></span><b>323,073</b></div><div class="track"><div class="fill" style="width:8.91%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srkians</b></span><b>208,505</b></div><div class="track"><div class="fill" style="width:5.75%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srkfanclub</b></span><b>169,151</b></div><div class="track"><div class="fill" style="width:4.67%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srkfan</b></span><b>168,308</b></div><div class="track"><div class="fill" style="width:4.64%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srkuniverse</b></span><b>106,886</b></div><div class="track"><div class="fill" style="width:2.95%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srkfans</b></span><b>101,424</b></div><div class="track"><div class="fill" style="width:2.80%"></div></div></div><div class="barrow"><div class="barhead"><span><b>#srkking</b></span><b>32,455</b></div><div class="track"><div class="fill r" style="width:0.90%"></div></div></div></div><div class="note"><b>Sources:</b> Display Purposes #srk index — <b>07 OCT 2026</b> snapshot for #srk and related tags; Display Purposes #shahrukh index — <b>06 OCT 2026</b> for #shahrukhkhan. <b>#srkking is 32,455 on the indexed Instagram dataset.</b> Pikory previously tracked <b>#srk-king at 699K live public posts</b>; that is a different index and is retained as a<div class="card full" id="visual-evidence"><h2>VISUAL EVIDENCE BOARD <span class="pill">DAILY MONITOR · 07 OCT</span></h2><div class="grid" style="margin-top:0"><div class="card quarter"><div class="label">#SHAHRUKHKHAN</div><div class="val">3.625M</div><div class="delta">3,624,844 indexed Instagram posts · 06 OCT source</div></div><div class="card quarter"><div class="label">#SRK</div><div class="val">2.933M</div><div class="delta">2,933,427 indexed Instagram posts · 07 OCT source</div></div><div class="card quarter"><div class="label">#SRKKING</div><div class="val">32,455</div><div class="delta">Display Purposes indexed Instagram posts · 07 OCT</div></div><div class="card quarter"><div class="label">PIKORY #SRK-KING</div><div class="val">699K</div><div class="delta">public live index carried from 06 OCT · different source</div></div></div><table><tr><th>EVIDENCE NODE</th><th>ABSOLUTE SIGNAL</th><th>KING MOVEMENT / CHANGE</th><th>READ</th></tr><tr><td><b>Hashtag volume</b></td><td>#ShahRukhKhan <b>3,624,844</b>; #SRK <b>2,933,427</b>; #SRKKing <b>32,455</b> indexed Instagram posts</td><td>07 OCT public snapshot; no unique-user number published</td><td>SRK's broad identity footprint remains much larger than the dedicated KING hashtag index; the two indexes are not conflated.</td></tr><tr><td><b>Video / Reel attention</b></td><td><b>38.720M</b> sampled attention; best tracked Reel <b>16.210M</b></td><td>05 OCT internal tracked dataset; no comparable public 07 OCT sample found, so values retained</td><td>Carry-forward is deliberate; no invented daily velocity.</td></tr><tr><td><b>Official KING date anchor</b></td><td><b>31,645,251 YouTube views · 209K likes</b></td><td>Current public YouTube observation for the official 24 DEC 2026 date announcement</td><td>Owned-film asset remains a durable attention anchor.</td></tr><tr><td><b>Official KING title anchor</b></td><td><b>47.878M views</b></td><td>Retained from prior 06 OCT dashboard snapshot; current public refresh unavailable</td><td>Retained rather than replaced with an estimate.</td></tr><tr><td><b>Fan-network activation</b></td><td>SRKCFC <b>160.5K followers / 284.4K posts</b>; Team SRK Pune <b>725 members / 250 events / 68 KING FDFS registrations</b></td><td>Pune moved <b>66 → 68</b> versus the prior dashboard snapshot; SRKCFC is actively publishing 3-month / FDFS mobilisation</td><td>Physical conversion is measurable at city level even when national unique-fan counts are unavailable.</td></tr><tr><td><b>Indonesia</b></td><td>SRKUniverse Indonesia <b>24.1K followers / 135.2K posts</b></td><td><b>12 cities</b> preparing for KING remains the latest published country-level activation signal in the public source set</td><td>One of the clearest international organised-community signals.</td></tr><tr><td><b>UAE</b></td><td>SRKUniverse UAE <b>9.6K followers / 22.1K posts</b></td><td>Active KING publishing / amplification</td><td>Regional Gulf node with measurable fan-account infrastructure.</td></tr><tr><td><b>Nepal</b></td><td>SRK Universe Nepal <b>7K followers</b>; admin account <b>4K followers / 101K posts</b></td><td>Recent public posts continue to amplify KING / SRK Universe material</td><td>High-frequency international publishing node; not a unique-fan count.</td></tr><tr><td><b>Avengers: Doomsday</b></td><td>Marvel Studios Instagram: <b>145M impressions</b> on “Doom does not knock”; <b>131M</b> on “December 18, 2026. #AvengersDoomsday”</td><td>Current directional competitive anchor; benchmark refreshed about 1 month ago</td><td>Competitive attention is materially larger on Marvel's owned Instagram benchmark; not a like-for-like KING hashtag or unique-person comparison.</td></tr></table><div class="note"><b>DATA DISCIPLINE · 07 OCT:</b> Indexed posts are <b>posts, not people</b>. Fan-account followers are <b>account followers, not unique SRK fans</b>. City FDFS registrations are <b>registrations, not tickets sold</b>. Official-video views and social impressions are different metrics. No unavailable unique-user count has been fabricated.</div><div class="note"><b>IMMUTABLE BASELINE:</b> 04 OCT 2026 remains the zero-point. The original 04 OCT values — <b>699,000 #srkking posts, 31.176M sampled video attention and 12.973M sampled viral peak</b> — are not overwritten. 05 OCT's tracked movement — <b>742,400 posts, 38.720M video attention and 16.210M peak</b> — remains historical; 07 OCT public source snapshots are added alongside them.</div><div class="note"><b>Sources:</b> Display Purposes; Red Chillies Entertainment official KING date announcement; SRKCFC public X snapshot; Team Shah Rukh Khan Pune; SRKUniverse Indonesia; SRKUniverse UAE; SRK Universe Nepal; SocialPruf — Marvel Studios Instagram. Public-source dates are retained in the text above.</div></div> HypeAuditor; SocialPruf. These are public observable signals, not deduplicated people. Source timestamps are retained in the underlying report notes.</div></div><div class="card full country-card" id="country-buzz"><h2>TOP 50 COUNTRIES · KING-SPECIFIC COUNTRY SIGNAL BOARD <span class="pill">06 OCT 2026</span></h2>
+<div class="note"><b>THIS IS NOT AN SRK GEOGRAPHY RANK.</b> Countries are ordered by the strength of publicly observable <b>KING-specific</b> evidence first, then documented SRK fan-network presence where no country-level KING volume is published. <b>No country-wide KING post count is invented.</b></div>
+<table><tr><th>#</th><th>COUNTRY</th><th>KING EVIDENCE CLASS</th><th>OBSERVABLE KING SIGNAL</th><th>STRENGTH</th><th>DATA CLASS</th></tr><tr><td>01</td><td><b>India</b></td><td><b>DIRECT KING</b></td><td>SRKCFC / Team Shah Rukh Khan countdowns, KING FDFS and city activations</td><td><b>HIGH</b></td><td>KING activation</td></tr><tr><td>02</td><td><b>Indonesia</b></td><td><b>DIRECT KING</b></td><td>12 Indonesian cities publicly reported preparing for KING</td><td><b>HIGH</b></td><td>KING activation</td></tr><tr><td>03</td><td><b>United States</b></td><td><b>DIRECT KING</b></td><td>SRK Universe USA public KING countdown</td><td><b>HIGH</b></td><td>KING activation</td></tr><tr><td>04</td><td><b>Nepal</b></td><td><b>DIRECT KING</b></td><td>SRK Universe Nepal actively amplifying KING countdown / official KING posts</td><td><b>HIGH</b></td><td>KING activation</td></tr><tr><td>05</td><td><b>United Arab Emirates</b></td><td><b>KING + FAN</b></td><td>Regional SRK fan-network node with KING activity</td><td><b>HIGH</b></td><td>KING activation / fan network</td></tr><tr><td>06</td><td><b>United Kingdom</b></td><td><b>KING + FAN</b></td><td>SRK Universe UK Club fan-network node; KING interest</td><td><b>MEDIUM</b></td><td>Fan-network activation</td></tr><tr><td>07</td><td><b>Sri Lanka</b></td><td><b>KING + FAN</b></td><td>SRK Universe Sri Lanka fan-network node</td><td><b>MEDIUM</b></td><td>Fan-network activation</td></tr><tr><td>08</td><td><b>Egypt</b></td><td><b>KING + FAN</b></td><td>SRK Universe Egypt fan-network node</td><td><b>MEDIUM</b></td><td>Fan-network activation</td></tr><tr><td>09</td><td><b>Kuwait</b></td><td><b>FAN SIGNAL</b></td><td>International SRK fan presence; KING country volume not published</td><td><b>LOW</b></td><td>Fan signal only</td></tr><tr><td>10</td><td><b>Turkey</b></td><td><b>FAN SIGNAL</b></td><td>International SRK fan presence; KING country volume not published</td><td><b>LOW</b></td><td>Fan signal only</td></tr><tr><td>11</td><td><b>France</b></td><td><b>FAN SIGNAL</b></td><td>International SRK fan presence; KING country volume not published</td><td><b>LOW</b></td><td>Fan signal only</td></tr><tr><td>12</td><td><b>Switzerland</b></td><td><b>FAN SIGNAL</b></td><td>International SRK fan presence; KING country volume not published</td><td><b>LOW</b></td><td>Fan signal only</td></tr><tr><td>13</td><td><b>Peru</b></td><td><b>FAN SIGNAL</b></td><td>International SRK fan presence; KING country volume not published</td><td><b>LOW</b></td><td>Fan signal only</td></tr><tr><td>14</td><td><b>Pakistan</b></td><td><b>FAN NETWORK</b></td><td>Large SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>15</td><td><b>Bangladesh</b></td><td><b>FAN NETWORK</b></td><td>Large SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>16</td><td><b>Iran</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>17</td><td><b>Australia</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>18</td><td><b>Germany</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>19</td><td><b>Japan</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>20</td><td><b>Philippines</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>21</td><td><b>Cambodia</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>22</td><td><b>South Africa</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>23</td><td><b>Austria</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>24</td><td><b>Bulgaria</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>25</td><td><b>Nigeria</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>26</td><td><b>Italy</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>27</td><td><b>Spain</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>28</td><td><b>Canada</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>29</td><td><b>Saudi Arabia</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>30</td><td><b>Qatar</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>31</td><td><b>Oman</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>32</td><td><b>Bahrain</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>33</td><td><b>Malaysia</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>34</td><td><b>Singapore</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>35</td><td><b>Thailand</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>36</td><td><b>Mauritius</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>37</td><td><b>Fiji</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>38</td><td><b>New Zealand</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>39</td><td><b>Netherlands</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>40</td><td><b>Belgium</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>41</td><td><b>Sweden</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>42</td><td><b>Norway</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>43</td><td><b>Denmark</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>44</td><td><b>Russia</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>45</td><td><b>Kenya</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>46</td><td><b>Tanzania</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>47</td><td><b>Ghana</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>48</td><td><b>Uganda</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>49</td><td><b>Brazil</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr><tr><td>50</td><td><b>Mexico</b></td><td><b>FAN NETWORK</b></td><td>SRK international fan market; no country-level KING count published</td><td><b>LOW</b></td><td>Directional</td></tr></table>
+<div class="note"><b>NUMERIC RULE:</b> A country enters the numeric KING ranking only when a source publishes a comparable country-level KING measurement. Account posts, followers, hashtag totals and views are not converted into country-wide KING volume or unique people.</div>
+<div class="note"><b>CURRENT READ:</b> India, Indonesia, USA and Nepal have the clearest direct KING activation evidence in the public source set. UAE, UK, Sri Lanka and Egypt have identifiable KING/fan-network signals. The remaining countries are retained as documented international fan-market signals, not falsely ranked by volume.</div></div>
+
+<div class="card full"><h2>Fan-site KING / SRK discussion intensity</h2>
+<table><tr><th>Fan ecosystem</th><th>SRK footprint</th><th>KING discussion / activation</th><th>What the signal means</th></tr>
+<tr><td><b>Team Shah Rukh Khan</b></td><td>4.7M+ reported ecosystem</td><td><b>Very high</b> — dedicated KING FDFS operation</td><td>Mass-reach amplifier with direct campaign conversion.</td></tr>
+<tr><td><b>SRKUniverse</b></td><td>592K X / 125K posts</td><td><b>Very high</b></td><td>Global conversation hub and high-volume publisher.</td></tr>
+<tr><td><b>SRKCFC</b></td><td>160.5K X / 284.4K posts</td><td><b>Very high</b> — KING countdown</td><td>High-frequency activation engine.</td></tr>
+<tr><td><b>SRKUniverse Indonesia</b></td><td>24.1K X / 135.2K posts</td><td><b>Very high</b> — 12-city preparation signal</td><td>Digital fandom converting into geographic mobilisation.</td></tr>
+<tr><td><b>SRKUniverse UAE</b></td><td>9.6K X / 22.1K posts</td><td><b>High</b></td><td>Regional amplification node.</td></tr>
+<tr><td><b>Nepal / Sri Lanka / Egypt nodes</b></td><td>7.1K X / ~4K X / ~512 X respectively</td><td><b>Active–very high</b></td><td>Nepal adds a high-volume international publishing node; Sri Lanka and Egypt extend the distributed footprint.</td></tr><tr><td><b>Pune / Shahada</b></td><td>52.0K IG / 45.6K IG on measured accounts</td><td><b>High</b></td><td>Regional fan communities with measurable engagement and physical activation potential.</td></tr>
+</table>
+<div class="note">The table deliberately reports activation intensity where the available evidence supports it; it does not invent a KING-specific post count for individual fan sites.</div></div>
+<div class="card full"><h2>Birthday Buzz — 02 NOVEMBER 2026</h2>
+<div class="grid" style="margin-top:0">
+<div class="card third"><div class="label">Birthday</div><div class="val">02 NOV</div><div class="delta">SRK turns 61</div></div>
+<div class="card third"><div class="label">KING runway</div><div class="val" id="king-runway">&mdash;</div><div class="delta">to 24 DEC release</div></div>
+<div class="card third"><div class="label">Strategic role</div><div class="val">LAUNCH</div><div class="delta">birthday → KING conversion window</div></div>
+</div>
+<div class="note">Birthday Buzz is now a dedicated intelligence stream: measure hashtag volume, total posts, unique discussants where measurable, fan activations, video velocity, geography, sentiment and the relationship between birthday attention and KING attention. Shah Rukh Khan was born on 2 November 1965; his 2026 birthday falls on 2 November. </div></div>
+<div class="card full"><h2>Topics & narrative intelligence</h2><div class="cols"><div class="item"><b>1 · KING anticipation</b><span>Title, character, release-date and teaser conversation remain the core narrative spine.</span></div><div class="item"><b>2 · Fan edits / AI creativity</b><span>Fan-created visual culture is a major attention multiplier; teaser secrecy has also driven speculative edits.</span></div><div class="item"><b>3 · SRK “King” identity</b><span>The title functions as both movie property and long-standing cultural identity.</span></div><div class="item"><b>4 · Countdown behaviour</b><span>Organised fan communities are converting anticipation into repeatable campaign rituals.</span></div><div class="item"><b>5 · Global fandom</b><span>Indonesia, UAE, Sri Lanka and Egypt illustrate distributed international activation.</span></div><div class="item"><b>6 · Competitive comparison</b><span>KING is increasingly interpreted within the December global blockbuster frame.</span></div><div class="item"><b>7 · AI / leak anxiety</b><span>Public reporting around AI-generated material and security has become part of the information environment.</span></div><div class="item"><b>8 · SRK responsibility</b><span>Public conversation around being called “King” increasingly carries a responsibility / legacy dimension, not merely a title.</span></div></div></div>
+
+<div class="card half"><h2>Viral intelligence</h2><table><tr><th>Signal</th><th class="num">Baseline</th><th>Tracked movement</th></tr><tr><td>Sampled #srkking Reel average</td><td class="num">2.598M</td><td>Tracked video attention +24.2%</td></tr><tr><td>Best sampled Reel</td><td class="num">12.973M</td><td>Tracked peak 16.21M</td></tr><tr><td>Official KING title reveal</td><td class="num">47.878M</td><td>Major official attention anchor</td></tr><tr><td>Official date announcement</td><td class="num">31.645M</td><td>Second major official anchor</td></tr></table><div class="note">Velocity and repeatability matter more than one-off peak reach.</div></div>
+
+<div class="card half"><h2>FAN SENTIMENT · SIGNAL BOARD</h2>
+<div class="note">Current public evidence points to a strongly <b>positive / anticipatory</b> fan environment, with a smaller but strategically important <b>concern / risk</b> layer. These are <b>analyst-coded signal strengths</b>, not a population-wide percentage split.</div>
+<div class="sentiment-graph">
+<div class="sent-row"><div class="sent-head"><span>CELEBRATION / EXCITEMENT</span><b>★★★★★</b></div><div class="sent-track"><div class="sent-fill high"></div></div><small>Title reveal · fan edits · countdowns · KING promotional activity</small></div>
+<div class="sent-row"><div class="sent-head"><span>ANTICIPATION / HYPE</span><b>★★★★★</b></div><div class="sent-track"><div class="sent-fill high"></div></div><small>100-day countdown · AskSRK · release-date conversation · FDFS mobilisation</small></div>
+<div class="sent-row"><div class="sent-head"><span>AFFECTION / LOYALTY</span><b>★★★★★</b></div><div class="sent-track"><div class="sent-fill high"></div></div><small>Fan identity, global fan-club activity and long-term community behaviour</small></div>
+<div class="sent-row"><div class="sent-head"><span>CURIOSITY / SPECULATION</span><b>★★★★☆</b></div><div class="sent-track"><div class="sent-fill med"></div></div><small>Character, story, teaser and release-competition speculation</small></div>
+<div class="sent-row"><div class="sent-head"><span>CONCERN / ANXIETY</span><b>★★☆☆☆</b></div><div class="sent-track"><div class="sent-fill low"></div></div><small>Recent concern around viral footage and SRK's appearance; AI/security leak risk</small></div>
+<div class="sent-row"><div class="sent-head"><span>CRITICISM / NEGATIVE NOISE</span><b>★☆☆☆☆</b></div><div class="sent-track"><div class="sent-fill very-low"></div></div><small>Visible in broader public discussion, but not sufficient to quantify as a fan-population share</small></div>
+</div>
+<div class="sentiment-callout"><b>MARKETING READ:</b> The dominant opportunity is not to manufacture positivity; it is to <b>convert existing affection + anticipation into participation</b>. The risk layer should be managed through clarity, controlled information release and rapid correction of misinformation.</div>
+<div class="note">Evidence includes recent #AskSRK reporting, KING fan reactions, fan-club promotional activity and recent concern around viral footage. </div>
+</div>
+
+<div class="card half" id="king-doom"><h2>KING vs Avengers: Doomsday</h2><table><tr><th>Metric</th><th class="num">KING</th><th class="num">DOOMSDAY</th></tr><tr><td>Release</td><td class="num">24 Dec 2026</td><td class="num">18 Dec 2026</td></tr><tr><td>Official / tracked YouTube footprint</td><td class="num">79.523M*</td><td class="num">~77.3M*</td></tr><tr><td>Launch-window report</td><td class="num">—</td><td class="num">503M views / first 24h†</td></tr><tr><td>Lead star Instagram</td><td class="num">SRK 48.38M</td><td class="num">RDJ ~58.90M</td></tr></table><div class="note">*Not equivalent datasets: KING combines two official assets; Doomsday figure is a tracked trailer. †503M is a reported launch-window metric and must not be compared directly with cumulative YouTube views.</div></div>
+
+<div class="card half"><h2>SRK vs RDJ — longitudinal lens</h2><table><tr><th>Dimension</th><th>SRK</th><th>RDJ</th></tr><tr><td>Instagram followers</td><td>48.375M</td><td>~58.90M</td></tr><tr><td>Avg Instagram likes</td><td>~761.9K</td><td>~2.17M</td></tr><tr><td>Avg comments</td><td>~13.6K</td><td>~8.15K</td></tr><tr><td>Engagement rate</td><td>5.58%</td><td>~3.69%</td></tr><tr><td>Strategic reading</td><td>High interaction density / cultural fandom</td><td>Larger follower scale / blockbuster ecosystem</td></tr></table></div>
+
+<div class="card full"><h2>Competitive imprint — what the numbers do NOT say</h2><div class="cols"><div class="item"><b>Audience size is not cultural imprint.</b><span>A larger account can have lower interaction density.</span></div><div class="item"><b>Trailer views are not fandom.</b><span>Launch velocity, repeat engagement and organised fan behaviour need separate measurement.</span></div><div class="item"><b>Fan-site followers are not unique fans.</b><span>People can belong to multiple communities.</span></div><div class="item"><b>Geography is activation infrastructure.</b><span>City-level organised fandom can matter more to campaign execution than aggregate reach.</span></div></div></div>
+
+<div class="card full"><h2>Marketing intelligence — daily decision layer</h2><table><tr><th>Observation</th><th>What changed / signal</th><th>Marketing implication</th></tr><tr><td><b>Video is accelerating</b></td><td>Tracked video/Reel attention +24.2% vs baseline dataset.</td><td>Prioritise repeatable visual formats, not merely hashtag volume.</td></tr><tr><td><b>Fan infrastructure is distributed</b></td><td>45 countries / 207 cities; multiple organised international nodes.</td><td>Design campaign assets that local fan communities can adapt without losing the KING identity.</td></tr><tr><td><b>Smaller communities can outperform on engagement</b></td><td>Shahada 1.87% vs larger accounts at 0.32%.</td><td>Reward activation quality, not only audience size.</td></tr><tr><td><b>December is competitive</b></td><td>Doomsday opens 6 days before KING.</td><td>Build a pre-release attention moat before 18 DEC rather than relying on opening-week competition.</td></tr><tr><td><b>AI is part of the information environment</b></td><td>AI-generated material/leak anxiety has entered public reporting.</td><td>Official assets must be rapidly identifiable, source-stamped and culturally distinctive.</td></tr></table></div>
+
+<div class="card full"><h2>Source & methodology register</h2><div class="cols"><div class="item"><b>Team Shah Rukh Khan</b><span>Public fan ecosystem / reported audience footprint.</span></div><div class="item"><b>SocialBlade</b><span>Public social-account measurement for selected fan accounts.</span></div><div class="item"><b>HypeAuditor</b><span>@iamsrk Instagram benchmark.</span></div><div class="item"><b>Pikory / public hashtag discovery</b><span>#srkking public-post and sampled-Reel signals.</span></div><div class="item"><b>Official KING YouTube assets</b><span>Title reveal and date announcement view/like counts.</span></div><div class="item"><b>Public X account footprints</b><span>SRKUniverse / SRKCFC / regional accounts.</span></div><div class="item"><b>Public Snapchat topic signals</b><span>Popularity / fan-reaction topic indicators.</span></div><div class="item"><b>Internal tracking dataset</b><span>05 OCT movement figures explicitly labelled as internal/tracked rather than independently verified public counts.</span></div><div class="item"><b>India Today</b><span>Reporting on KING AI-leak/security environment.</span></div><div class="item"><b>Hollywood Reporter India</b><span>Reporting on KING teaser secrecy and fan edits.</span></div><div class="item"><b>Bollywood Hungama</b><span>#AskSRK / KING conversation.</span></div><div class="item"><b>NDTV</b><span>SRK commentary on “King” as responsibility.</span></div></div></div>
+
+<div class="command-analysis"><div class="card full"><h2>COMMAND CENTRE ANALYSIS · INTEGRATED</h2><div class="note">The analytical layer below is carried directly from KING Intelligence 2.0 — Expanded Command Centre. The FAN-MADE AI VIDEO UNIVERSE is intentionally excluded here because it now lives as the separate FAN MADE AI UNIVERSE page.</div></div><section class="card full"><h2>01 · KING MOMENTUM INDEX</h2>
+<div class="momentum">
+<div><div class="muted">COMPOSITE DIRECTION</div><div class="big green">ACCELERATING</div><div class="muted">Built from observable movement across attention, content, creators, geography and fan action. No fabricated score.</div></div>
+<div><h3>Attention</h3><div class="metric">+24.2%</div><div class="muted">Tracked video/Reel attention</div><div class="score"><i style="width:82%"></i></div></div>
+<div><h3>Hashtag</h3><div class="metric">+6.21%</div><div class="muted">#SRKKing posts</div><div class="score"><i style="width:35%"></i></div></div>
+<div><h3>Fan Action</h3><div class="metric">66</div><div class="muted">Pune KING FDFS registrations</div><div class="score"><i style="width:66%"></i></div></div>
+<div><h3>Global</h3><div class="metric">12</div><div class="muted">Indonesian cities preparing for KING</div><div class="score"><i style="width:72%"></i></div></div>
+</div>
+<div class="source">Interpretation: video attention is accelerating materially faster than public hashtag volume. The fan network is also moving from posting toward physical and database-led activation.</div>
+</section><section class="refresh-hero">
+<h2>09 OCTOBER 2026 · LIVE DAILY REFRESH</h2>
+<div class="refresh-head"><div class="note">CURRENT PUBLIC EVIDENCE LAYER · MUMBAI / IST · 09 OCT 2026</div><div class="refresh-stamp">REFRESHED 09 OCT · SOURCE-DATED</div></div>
+<div class="refresh-grid">
+<div class="refresh-kpi"><div class="rlabel">SRK Instagram</div><div class="rval">48.4M</div><div class="rmeta">48,369,675 recorded 04 Oct in HypeAuditor historical data.</div></div>
+<div class="refresh-kpi"><div class="rlabel">#SRK</div><div class="rval">2,933,427</div><div class="rmeta">Current indexed Instagram post count.</div></div>
+<div class="refresh-kpi"><div class="rlabel">#SHAHRUKHKHAN</div><div class="rval">3,624,844</div><div class="rmeta">Current indexed Instagram post count.</div></div>
+<div class="refresh-kpi"><div class="rlabel">#SRKKING</div><div class="rval">32,455</div><div class="rmeta">Current indexed Instagram post count.</div></div>
+<div class="refresh-kpi"><div class="rlabel">#SRK-KING</div><div class="rval">699K</div><div class="rmeta">Pikory indexed hashtag snapshot; not a unique-person count.</div></div>
+<div class="refresh-kpi"><div class="rlabel">Sampled Reels</div><div class="rval">31.176M</div><div class="rmeta">12 sampled reels; 2.598M average; 12.973M peak.</div></div>
+</div>
+<div class="refresh-story-grid">
+<div class="refresh-story"><b>01 · Current narrative</b><span>Abhishek Bachchan's 7 Oct interview put SRK's personal support for him — including on <b>King</b> — back into the news cycle.</span></div>
+<div class="refresh-story"><b>02 · AI / authenticity</b><span>Viral images claiming to show SRK and Kareena Kapoor on the <b>King</b> set were identified as AI-generated/fake by Mid-Day. This is a live trust-risk signal.</span></div>
+<div class="refresh-story"><b>03 · Release runway</b><span><b>King</b> remains dated 24 Dec 2026. Reporting says promotion may begin around SRK's 2 Nov birthday, while the film remains positioned in the Christmas release corridor.</span></div>
+<div class="refresh-story"><b>04 · Competitive movement</b><span><b>Shakti Shalini</b> is now reported as moving away from the Christmas window to avoid a clash with <b>King</b>, reducing one direct domestic release conflict.</span></div>
+<div class="refresh-story"><b>05 · Cultural conversation</b><span>SRK's 8 Oct tribute to Nana Patekar became a major fresh SRK conversation driver. It is relevant to SRK attention, but is <b>not counted as KING-specific demand</b>.</span></div>
+<div class="refresh-story"><b>06 · Birthday runway</b><span>09 Oct → 02 Nov = <b>24 days</b>. 09 Oct → 24 Dec = <b>76 days</b>. These are live calendar signals.</span></div>
+</div>
+<div class="refresh-sources"><b>SOURCE REGISTER:</b> <a href="https://hypeauditor.com/instagram/iamsrk/" target="_blank">HypeAuditor</a> · <a href="https://pikory.com/tag/srk-king" target="_blank">Pikory</a> · <a href="https://displaypurposes.com/hashtags/hashtag/srk" target="_blank">Display Purposes #srk</a> · <a href="https://displaypurposes.com/hashtags/hashtag/shahrukh" target="_blank">Display Purposes #shahrukh</a> · <a href="https://www.mid-day.com/entertainment/bollywood-news/article/shah-rukh-khan-kareena-kapoor-spotted-in-south-africa-shooting-for-king-heres-what-we-know-23653878" target="_blank">Mid-Day</a> · <a href="https://www.moneycontrol.com/entertainment/bollywood/shah-rukh-khan-s-king-promotion-may-begin-in-november-with-ramayana-as-the-launchpad-suhana-khan-to-feature-in-dance-song-report-article-14043786.html" target="_blank">Moneycontrol</a> · <a href="https://indianexpress.com/article/entertainment/bollywood/shah-rukh-khan-recalls-raju-ban-gaya-gentleman-co-star-nana-patekar-advice-10912653/" target="_blank">Indian Express</a>.</div>
+</section>
+
+<section class="card half"><h2>02 · WHAT CHANGED TODAY</h2>
+<div class="signal"><strong>VIDEO ATTENTION OUTRAN HASHTAG GROWTH</strong><span>31,176,089 → 38,720,000 tracked views · +7,543,911 / +24.2%</span></div>
+<div class="signal"><strong>KING CONVERSATION EXPANDED</strong><span>#SRKKing 699,000 → 742,400 public indexed posts · +43,400 / +6.21%</span></div>
+<div class="signal"><strong>FAN INFRASTRUCTURE IS EMERGING</strong><span>Fan networks are building newsletters, portals, registrations and city-level FDFS activity.</span></div>
+<div class="signal"><strong>CONTENT HUNGER IS VISIBLE</strong><span>Fans are directly requesting dialogue, teaser, poster and additional KING material.</span></div>
+</section>
+
+<section class="card half"><h2>03 · CONTENT DEMAND INDEX</h2>
+<div class="bar"><div class="barhead"><span>TRAILER / TEASER</span><b>ACTIVE DEMAND</b></div><div class="track"><div class="fill red" style="width:100%"></div></div></div>
+<div class="bar"><div class="barhead"><span>DIALOGUE / STORY MATERIAL</span><b>29,000-view surfaced signal</b></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+<div class="bar"><div class="barhead"><span>MUSIC / SONG</span><b>ACTIVE SPECULATION</b></div><div class="track"><div class="fill" style="width:63%"></div></div></div>
+<div class="bar"><div class="barhead"><span>POSTER / NEW FOOTAGE</span><b>ACTIVE DEMAND</b></div><div class="track"><div class="fill" style="width:57%"></div></div></div>
+<div class="muted">The bars are demand-priority indicators, not fabricated post counts. Exact daily topic denominators should be populated once listening/search data is available.</div>
+<div class="source">Current evidence: SRK directly acknowledged fan requests for teaser/poster and said the team was taking time to put its best foot forward; he also teased dialogue and discussed VFX. </div>
+</section>
+
+<section class="card third"><h2>04 · FAN ACTION</h2>
+<div class="metric">66</div><div class="muted">KING FDFS registrations · Pune</div>
+<div class="bar"><div class="barhead"><span>BRANCH MEMBERS</span><b>725</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+<div class="bar"><div class="barhead"><span>EVENTS ORGANised</span><b>250</b></div><div class="track"><div class="fill" style="width:34%"></div></div></div>
+<div class="source">Official Pune branch data. The key new metric is conversion: fans are registering for an actual KING theatre experience. </div>
+</section>
+
+<section class="card third"><h2>05 · CREATOR / FAN CONTENT ENGINE</h2>
+<div class="metric">1,307,000</div><div class="muted">SRK555 Instagram footprint · established benchmark</div>
+<div class="bar"><div class="barhead"><span>SAMPLED #SRKKing VIEWS</span><b>31,176,089</b></div><div class="track"><div class="fill blue" style="width:86%"></div></div></div>
+<div class="bar"><div class="barhead"><span>TOP SURFACED REEL</span><b>12,973,281</b></div><div class="track"><div class="fill blue" style="width:36%"></div></div></div>
+<div class="muted">Daily additions: top creators, new creators, original vs reposted, creator velocity, AI edits, memes, theories and fan posters.</div>
+</section>
+
+<section class="card third"><h2>06 · CONTENT FORMAT WAR</h2>
+<span class="tag">FAN EDITS</span><span class="tag">MEMES</span><span class="tag">POSTERS</span><span class="tag">THEORIES</span><span class="tag">REACTION VIDEO</span><span class="tag">AI</span><span class="tag">FAN ART</span><span class="tag">SONG EDITS</span><span class="tag">FDFS</span>
+<div class="source">Daily objective: identify which format is gaining the most reach and which format is generating the most reuse. THR India has previously noted the “sea of fan edits” around KING. </div>
+</section>
+
+<section class="card half"><h2>07 · SEARCH INTENT</h2>
+<table><tr><th>SEARCH CLUSTER</th><th>DAILY STATUS</th><th>MEASURE</th></tr>
+<tr><td>KING trailer / teaser</td><td><span class="status need">LISTENING FEED</span></td><td>Daily search volume + change</td></tr>
+<tr><td>KING release date</td><td><span class="status need">LISTENING FEED</span></td><td>Daily search volume + change</td></tr>
+<tr><td>KING songs / Arijit</td><td><span class="status need">LISTENING FEED</span></td><td>Daily search volume + change</td></tr>
+<tr><td>KING cast / character</td><td><span class="status need">LISTENING FEED</span></td><td>Daily search volume + change</td></tr>
+<tr><td>KING FDFS / tickets</td><td><span class="status need">LISTENING FEED</span></td><td>Daily search volume + change</td></tr></table>
+<div class="source">Search should become a separate demand signal: active information-seeking is not equivalent to social posting.</div>
+</section>
+
+<section class="card half"><h2>08 · EARNED MEDIA / SHARE OF VOICE</h2>
+<div class="bar"><div class="barhead"><span>KING NEWS VOLUME</span><b>DAILY FEED NEEDED</b></div><div class="track"><div class="fill red" style="width:78%"></div></div></div>
+<div class="bar"><div class="barhead"><span>TRAILER / PROMOTION NARRATIVE</span><b>HIGH CURRENT RELEVANCE</b></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+<div class="bar"><div class="barhead"><span>CAST / FAMILY NARRATIVE</span><b>ACTIVE</b></div><div class="track"><div class="fill" style="width:61%"></div></div></div>
+<div class="bar"><div class="barhead"><span>COMPETITIVE RELEASE NARRATIVE</span><b>ACTIVE</b></div><div class="track"><div class="fill blue" style="width:55%"></div></div></div>
+<div class="source">Recent reporting is already discussing November promotion timing and a possible Ramayana launchpad; this should become a daily media narrative tracker, not a static news list. </div>
+</section>
+
+<section class="card full"><h2>09 · NARRATIVE WAR ROOM</h2>
+<div class="grid" style="margin:0">
+<div class="card third"><h3>WINNING NARRATIVE</h3><div class="metric">ROAR</div><div class="muted">“KING akela hi kaafi hai” is moving from official campaign language into fan repetition.</div></div>
+<div class="card third"><h3>CONTENT NARRATIVE</h3><div class="metric">WAIT</div><div class="muted">The delayed teaser/poster has become part of the conversation itself.</div></div>
+<div class="card third"><h3>RISK NARRATIVE</h3><div class="metric">REAL / AI?</div><div class="muted">Leak authenticity is now a distinct fan conversation that should be monitored.</div></div>
+</div>
+<div class="source">Daily output should show narrative volume, velocity, new entrants, declining narratives and the exact language gaining adoption.</div>
+</section>
+
+<section class="card third"><h2>10 · MEME / CULTURAL LANGUAGE</h2>
+<table><tr><th>LANGUAGE</th><th>STATUS</th></tr><tr><td>ROAR</td><td class="green">REPEATING</td></tr><tr><td>KING AKELA HI KAAFI HAI</td><td class="green">REPEATING</td></tr><tr><td>DEHSHAT</td><td class="green">CAMPAIGN LANGUAGE</td></tr><tr><td>KING DAY / 02 NOV</td><td class="gold">RITUALISING</td></tr></table>
+</section>
+
+<section class="card third"><h2>11 · SRK × KING BRAND CROSSOVER</h2>
+<div class="signal"><strong>BRAND APPEARANCE → KING THEORY</strong><span>Fans have previously interpreted SRK's Visa campaign styling as a possible KING look.</span></div>
+<div class="signal"><strong>DAILY MONITOR</strong><span>Visa · endorsements · KKR · public appearances · interviews · Mannat · other SRK assets.</span></div>
+<div class="source">The objective is to measure whether unrelated SRK activity creates measurable KING attention spillover. </div>
+</section>
+
+<section class="card third"><h2>12 · OFFICIAL ASSET PERFORMANCE</h2>
+<div class="bar"><div class="barhead"><span>TITLE REVEAL</span><b>47,877,968</b></div><div class="track"><div class="fill red" style="width:100%"></div></div></div>
+<div class="bar"><div class="barhead"><span>DATE ANNOUNCEMENT</span><b>31,645,251</b></div><div class="track"><div class="fill" style="width:66.1%"></div></div></div>
+<div class="metric">79,523,219</div><div class="muted">Combined views of these two official KING YouTube assets.</div>
+<div class="source">The two assets are not total KING video consumption; they are the verified anchor assets used in the existing baseline. </div>
+</section>
+
+<section class="card half"><h2>13 · GEOGRAPHIC VELOCITY</h2>
+<table><tr><th>NODE</th><th>KNOWN SIGNAL</th><th>DAILY MONITOR</th></tr><tr><td>Indonesia</td><td><b>12 cities</b></td><td>new cities / activation</td></tr><tr><td>Pune</td><td><b>66 FDFS registrations</b></td><td>registrations / referrals</td></tr><tr><td>Global fan footprint</td><td><b>45 countries · 207 cities</b></td><td>new countries / cities</td></tr><tr><td>Kolkata</td><td><b>local KING activation</b></td><td>event / content velocity</td></tr></table>
+</section>
+
+<section class="card half"><h2>14 · FAN-CLUB OPERATIONS INDEX</h2>
+<div class="bar"><div class="barhead"><span>FDFS / THEATRE</span><b>ACTIVE</b></div><div class="track"><div class="fill green" style="width:90%"></div></div></div>
+<div class="bar"><div class="barhead"><span>NEWSLETTER / DATABASE</span><b>ACTIVE</b></div><div class="track"><div class="fill green" style="width:82%"></div></div></div>
+<div class="bar"><div class="barhead"><span>CITY CAMPAIGNS</span><b>ACTIVE</b></div><div class="track"><div class="fill green" style="width:74%"></div></div></div>
+<div class="bar"><div class="barhead"><span>EVENTS / PHYSICAL ACTIVATION</span><b>ACTIVE</b></div><div class="track"><div class="fill green" style="width:69%"></div></div></div>
+<div class="muted">Priority is daily operational evidence, not follower count.</div>
+</section>
+
+<section class="card half"><h2>15 · RISK &amp; AUTHENTICITY</h2>
+<div class="signal"><strong>AI / FAKE MATERIAL</strong><span>Track fake teasers, posters, announcements and manipulated KING assets.</span></div>
+<div class="signal"><strong>LEAKS</strong><span>Measure reach, repost velocity and whether official clarification is required.</span></div>
+<div class="signal"><strong>FALSE CAST / RELEASE CLAIMS</strong><span>Separate fan speculation from confirmed information.</span></div>
+<div class="signal"><strong>NEGATIVE NARRATIVE</strong><span>Track whether criticism is isolated, repeating or breaking into mainstream media.</span></div>
+</section>
+
+<section class="card half"><h2>16 · KING × COMPETITION · DAILY SHARE OF ATTENTION</h2>
+<table><tr><th>DIMENSION</th><th>KING</th><th>DOOMSDAY</th><th>DAILY INPUT</th></tr>
+<tr><td>Video anchor</td><td>79,523,219*</td><td>77,300,000†</td><td>refresh views</td></tr><tr><td>Lead-star IG</td><td>48,375,471</td><td>58,900,000</td><td>refresh followers</td></tr><tr><td>Social volume</td><td>tracked</td><td>tracked</td><td>daily listening</td></tr><tr><td>Search</td><td>new</td><td>new</td><td>daily search</td></tr><tr><td>Creator activity</td><td>new</td><td>new</td><td>daily creator feed</td></tr></table>
+<div class="source">* KING = title reveal + date announcement. † Doomsday = tracked trailer YouTube view count. These are directional anchors, not like-for-like campaign totals.</div>
+</section>
+
+<section class="card half"><h2>17 · SRK × RDJ · CULTURAL IMPRINT</h2>
+<table><tr><th>DIMENSION</th><th>SRK</th><th>RDJ</th></tr><tr><td>Instagram audience</td><td>48,375,471</td><td>58,900,000</td></tr><tr><td>Franchise identity</td><td>SRK / KING</td><td>Marvel / Iron Man</td></tr><tr><td>Fan network</td><td>Global distributed clubs</td><td>Marvel ecosystem</td></tr><tr><td>Daily additions</td><td>language / memes / creator activity</td><td>language / memes / creator activity</td></tr></table>
+<div class="muted">The expanded version tracks cultural imprint, not follower count alone.</div>
+</section>
+
+<section class="card full"><h2>18 · DAILY DECISION LAYER</h2>
+<div class="grid" style="margin:0">
+<div class="card third"><h3>WHAT TO WATCH</h3><div class="metric">CONTENT</div><div class="muted">Teaser / dialogue / music demand is the immediate attention-release valve.</div></div>
+<div class="card third"><h3>WHAT TO AMPLIFY</h3><div class="metric">ROAR</div><div class="muted">The strongest surfaced language is already being repeated by fan accounts.</div></div>
+<div class="card third"><h3>WHAT TO PROTECT</h3><div class="metric">TRUST</div><div class="muted">AI/fake-content signals need monitoring before they become a mainstream narrative.</div></div>
+</div>
+</section>
+
+<section class="card full"><h2>19 · DATA COMPLETENESS &amp; PROXY REGISTER <span class="pill">09 OCT 2026</span></h2>
+<div class="note" style="margin-bottom:10px">Every KPI now carries a measured public value, a clearly labelled proxy, or an explicit non-measurable status. No unique-person figure is inferred from posts, followers or views.</div>
+<table><tr><th>FIELD</th><th>CURRENT VALUE / PROXY</th><th>STATUS</th><th>READ</th></tr>
+<tr><td>Search Intent</td><td><b>QUALITATIVE LIVE PROXY</b><br>KING trailer/concept · SRK + KING · KING + Deepika · KING + AI · KING release / Christmas.</td><td><span class="status live">PROXY ACTIVE</span></td><td>Public sources do not expose defensible daily search-volume counts here, so no volume is fabricated.</td></tr>
+<tr><td>Creator Velocity</td><td><b>8 unique creators / 12 sampled Reels</b><br>31,176,089 combined views; top 3 creators account for 80.5% of the sample.</td><td><span class="status live">MEASURED SNAPSHOT</span></td><td>Creator concentration signal, not an Instagram-wide census.</td></tr>
+<tr><td>Media Share of Voice</td><td><b>LIVE SOURCE SAMPLE</b><br>Current stories cover King promotion/release, Abhishek Bachchan, Kareena/AI authenticity and SRK–Nana Patekar.</td><td><span class="status live">WEB CORPUS ACTIVE</span></td><td>Not presented as an all-media article count.</td></tr>
+<tr><td>Topic Demand Counts</td><td><b>6 active narrative clusters</b><br>Release runway · promotion/birthday · cast/song speculation · AI authenticity · SRK cultural news · competition.</td><td><span class="status live">TAXONOMY ACTIVE</span></td><td>Topic buckets, not social-post volumes.</td></tr>
+<tr><td>Unique People</td><td><b>NOT PUBLICLY MEASURABLE</b></td><td><span class="status need">DO NOT INFER</span></td><td>Followers, posts and views cannot be converted into deduplicated people.</td></tr>
+<tr><td>Country Buzz</td><td><b>06 OCT is the latest defensible ranked board</b>; current evidence continues to show India as the dominant direct-market signal.</td><td><span class="status live">SOURCE-DATED</span></td><td>No country-wide KING post count is invented.</td></tr>
+<tr><td>Sentiment</td><td><b>DIRECTIONAL: POSITIVE / ANTICIPATORY</b> with an <b>AUTHENTICITY-RISK</b> pocket.</td><td><span class="status live">QUALITATIVE</span></td><td>Fresh evidence supports anticipation; AI-generated fake-set imagery creates a separate trust issue.</td></tr>
+</table>
+<div class="source">Refreshed 09 OCT 2026 from public hashtag-index pages, HypeAuditor, Pikory, current entertainment reporting and source-linked social/news evidence. “Measured snapshot” means measured by the cited source, not a platform-wide census.</div>
+</section></div>
+
+<div class="card full"><h2>Data discipline</h2><div class="note"><b>Verified/public:</b> directly supported by identifiable public sources. <b>Tracked/internal:</b> carried forward from the intelligence dataset already assembled in this chat. <b>Unavailable:</b> never invented. Posts are not people. Platform followers are not summed into unique fans. Cumulative views are not substituted for launch-window views. Where datasets are not comparable, the dashboard says so.</div></div>
+</section>
+</main><script>
+/* Countdown is computed from today's date in Mumbai (IST), so every visitor sees the same number and it never goes stale. */
+(function(){
+  function istToday(){
+    var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).split('-');
+    return Date.UTC(+p[0],+p[1]-1,+p[2]);
+  }
+  var el=document.getElementById('king-runway');
+  if(!el) return;
+  var n=Math.round((Date.UTC(2026,11,24)-istToday())/86400000);
+  el.textContent = n>0 ? n+(n===1?' DAY':' DAYS') : (n===0 ? 'RELEASE DAY' : 'IN CINEMAS');
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body></html>

@@ -1,0 +1,60 @@
+/* Agar Main King Hota — shared site styles (header, nav, buttons, footer, tokens).
+   Every page links this file so the whole site reads as one campaign. */
+:root{--ink:#f4efe9;--mute:#b8aca4;--faint:#8f837c;--ground:#0a0707;--panel:#130d0d;--line:#2a1c1c;--field:#150f0f;--field-line:#3a2626;--red:#c3121a;--red-hi:#e3242b;--red-text:#ff4a4f;--display:Anton,Impact,"Arial Narrow",sans-serif;--body:Archivo,"Helvetica Neue",sans-serif;--serif:"Cormorant Garamond",Georgia,serif}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{background:var(--ground);scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--ink);text-decoration:none;cursor:pointer}
+a:hover,a:focus-visible{color:var(--red-text)}
+button{cursor:pointer;font:inherit}
+button:disabled{cursor:not-allowed}
+:focus-visible{outline:2px solid var(--red-text);outline-offset:3px}
+.wrap{max-width:1440px;margin:0 auto;padding-left:clamp(16px,3vw,34px);padding-right:clamp(16px,3vw,34px)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--red);color:#fff;padding:10px 14px;z-index:20}.skip:focus{left:8px;color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px;padding-top:22px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .crown{width:54px;height:auto}
+.brand .lines{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.brand .lines img{height:30px;width:auto}
+.brand .lines img+img{margin-left:38px}
+.right{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.nav{display:flex;flex-wrap:wrap;gap:4px 22px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.nav a{position:relative;padding:12px 2px;display:inline-block}
+.nav a:hover::after,.nav a:focus-visible::after,.nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:2px;background:var(--red-hi)}
+.nav a[aria-current="page"]{color:var(--red-text)}
+.search{position:relative;display:flex;align-items:center;gap:8px;width:260px}
+.search input{flex:1;min-width:0;height:44px;padding:0 14px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 14px var(--body)}
+.search input::placeholder{color:var(--faint)}
+.search button{width:44px;height:44px;background:var(--red);border:0;color:#fff;display:flex;align-items:center;justify-content:center}
+.search button:hover{background:var(--ground);box-shadow:inset 0 0 0 2px var(--red-hi);color:var(--red-text)}
+.results{position:absolute;top:50px;left:0;right:0;z-index:10;background:var(--field);border:1px solid var(--field-line);margin:0;padding:6px 0;list-style:none;max-height:340px;overflow:auto}
+.results[hidden]{display:none}
+.results a{display:block;padding:10px 14px;font-size:14px}
+.results a span{display:block;font-size:12px;color:var(--faint);margin-top:2px}
+.results li.none{padding:10px 14px;font-size:14px;color:var(--mute)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border:0;font-family:var(--display);font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:transparent}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover:not(:disabled),.btn-red:focus-visible{background:var(--ground);box-shadow:inset 0 0 0 2px var(--red-hi);color:var(--red-text)}
+.btn-line{border:1px solid rgba(244,239,233,.5)}
+.btn-line:hover:not(:disabled),.btn-line:focus-visible{border-color:var(--red-text);color:var(--red-text)}
+.btn:disabled{opacity:.42}
+.eyebrow{font-size:13px;letter-spacing:.32em;font-weight:600;color:var(--red-text);margin:0}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:#070505}
+.foot-in{padding-top:40px;padding-bottom:44px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:28px 40px}
+.sig{display:flex;align-items:center;gap:16px}
+.sig img{width:48px;height:auto}
+.sig p{margin:0}
+.sig .q{font-family:var(--serif);font-style:italic;font-weight:600;font-size:24px}
+.sig .by{font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--red-text);margin-top:6px}
+.disc{margin:0;flex-basis:100%;max-width:820px;font-size:13px;line-height:1.6;color:var(--faint)}
+
+@media (max-width:820px){.search{width:100%}.brand .lines img{height:24px}}

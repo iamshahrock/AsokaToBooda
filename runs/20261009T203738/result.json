@@ -1,0 +1,5 @@
+{
+ "status": 400,
+ "error": "Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID req_6408a8bc3bd040589ef17ddfbff1cfd4.",
+ "seconds": 28.384
+}

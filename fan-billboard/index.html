@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>FAN BILLBOARD — THE WORLD OF KING</title>
+<style>
+:root{--bg:#080808;--panel:#101010;--line:#292929;--text:#f4f4f4;--muted:#999;--red:#d71920}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:28px}
+header{padding:70px 0 55px;border-bottom:1px solid var(--line)}.kicker{font-size:11px;letter-spacing:.28em;color:var(--red);font-weight:800}.title{font-family:Georgia,serif;font-size:clamp(62px,10vw,140px);line-height:.82;letter-spacing:-.06em;margin:18px 0}.lead{max-width:760px;color:#aaa;font-size:18px;line-height:1.6}
+nav{position:sticky;top:0;background:rgba(8,8,8,.94);border-bottom:1px solid var(--line);z-index:5}.nav{display:flex;gap:22px;overflow:auto;padding:12px 28px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}.nav a{text-decoration:none;color:#aaa;white-space:nowrap}
+section{padding:55px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,66px);font-weight:400;line-height:.95;margin:0 0 18px}.note{color:#888;line-height:1.6}
+table{width:100%;border-collapse:collapse;margin-top:28px;background:var(--panel)}th,td{padding:15px;border-bottom:1px solid var(--line);text-align:left}th{font-size:10px;letter-spacing:.16em;color:#888;text-transform:uppercase}td{font-size:14px}.rank{color:var(--red);font-weight:900;width:90px}.empty{color:#666}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}.card{border:1px solid var(--line);padding:22px;background:var(--panel)}.card strong{font-family:Georgia,serif;font-size:27px;font-weight:400}.card p{color:#999;line-height:1.5}.button{display:inline-block;margin-top:12px;border:1px solid #555;padding:10px 14px;text-decoration:none;font-size:10px;letter-spacing:.15em;font-weight:800}.button:hover{border-color:var(--red)}
+footer{padding:55px 0;text-align:center;color:#666;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:700px){.wrap{padding:18px}.cards{grid-template-columns:1fr}th,td{padding:11px 8px}}
+</style>
+</head>
+<body>
+<script src="../assets/header.js"></script>
+<header><div class="wrap"><div class="kicker">06 · COMPETITION / RECOGNITION</div><div class="title">FAN<br><span style="color:var(--red)">BILLBOARD</span></div><p class="lead">The public scoreboard for the KING fan world: daily scores, weekly winners and cumulative rankings. This page is connected to the game layer and is deliberately not populated with invented rankings.</p></div></header>
+<main>
+<section><div class="wrap"><div class="kicker">TODAY'S BOARD</div><h2>DAILY TOP SCORES</h2><p class="note">The repository currently has the game score event bridge, but it does not yet contain a server-side historical score registry. The board below therefore shows the latest score recorded in this browser, when available, and leaves the public ranking rows empty until real score records are supplied.</p>
+<table><thead><tr><th>Rank</th><th>Player</th><th>Score</th><th>Source</th></tr></thead><tbody id="board"><tr><td class="rank">01</td><td id="player">—</td><td id="score">—</td><td id="source" class="empty">Awaiting score record</td></tr><tr><td class="rank">02</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr><tr><td class="rank">03</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr><tr><td class="rank">04</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr><tr><td class="rank">05</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr></tbody></table></div></section>
+<section><div class="wrap"><div class="kicker">THE COMPETITIVE LOOP</div><h2>PLAY → SCORE → RANK</h2><div class="cards">
+<div class="card"><strong>01 · PLAY</strong><p>Enter Agar Main King Hota and complete the poster / challenge experience.</p><a class="button" href="../game/">PLAY GAME →</a></div>
+<div class="card"><strong>02 · CHALLENGE</strong><p>Play CHECK. MATE. FIRE. and build another competitive score in the KING world.</p><a class="button" href="../CHESS81.HTML">PLAY CHESS81 →</a></div>
+<div class="card"><strong>03 · RANK</strong><p>Verified score records can be promoted here into the daily, weekly and cumulative billboard.</p><a class="button" href="../asoka-to-booda/">READ THE THESIS →</a></div>
+</div></div></section>
+</main>
+<footer>FAN BILLBOARD · DAILY TOP SCORES · THE WORLD OF KING · 06</footer>
+<script>
+(function(){
+ const el=(id)=>document.getElementById(id);
+ try{
+  const raw=localStorage.getItem('chess81_last_score');
+  if(raw){const p=JSON.parse(raw);el('score').textContent=p.total ?? '—';el('source').textContent='CHESS81 · browser score bridge';el('source').className='';}
+ }catch(e){}
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

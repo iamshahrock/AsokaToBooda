@@ -1,0 +1,40 @@
+name: Poster generation end-to-end test
+on:
+  workflow_dispatch:
+  push:
+    branches: ["test/poster-e2e"]
+permissions:
+  contents: write
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Generate one test poster through the live Worker
+        run: |
+          set +e
+          node tools/poster-e2e.mjs > e2e.log 2>&1; code=$?
+          cat e2e.log
+          echo "::notice title=poster-e2e::$(tr '\n' ' ' < e2e.log | cut -c1-900)"
+          mkdir -p e2e-out; cp e2e.log e2e-out/
+          exit $code
+      - name: Save result to the test-results branch
+        if: always()
+        run: |
+          git config user.name "poster-e2e"; git config user.email "poster-e2e@users.noreply.github.com"
+          stamp=$(date -u +%Y%m%dT%H%M%S)
+          mkdir -p /tmp/out && cp -r e2e-out/* /tmp/out/ 2>/dev/null || true
+          git fetch origin test/poster-e2e-results || true
+          git checkout --orphan results-tmp && git rm -rq . && rm -rf ./*
+          git checkout origin/test/poster-e2e-results -- . 2>/dev/null || true
+          mkdir -p runs/$stamp && cp -r /tmp/out/* runs/$stamp/ 2>/dev/null || true
+          git add runs && git commit -qm "poster e2e $stamp" && git push -q origin HEAD:test/poster-e2e-results
+      - name: Keep the result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: poster-e2e
+          path: e2e-out/
