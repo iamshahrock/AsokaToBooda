@@ -43,7 +43,10 @@
     '#site-header .sh-to{left:47.9%;top:44%;font-family:Anton,Impact,sans-serif;font-size:2.7cqw;line-height:1;color:var(--sh-red);letter-spacing:.04em}',
     '#site-header .sh-one{left:53.8%;top:6%;width:12.9%}',
     '#site-header .sh-one img{width:100%;height:auto}',
-    '#site-header .sh-one .sh-crown{position:absolute;left:0;top:0}',
+    '#site-header .sh-one .sh-crown,#site-header .sh-one .sh-drip{position:absolute;left:0;top:0}',
+    /* crown split at the drip line: the crown lands, then the blood runs down */
+    '#site-header .sh-one .sh-crown{clip-path:inset(0 0 48.97% 0)}',
+    '#site-header .sh-one .sh-drip{clip-path:inset(51.03% 0 0 0)}',
     '#site-header .sh-man{left:67.6%;top:2%;width:6.3%}',
     '#site-header .sh-mirror{position:absolute;top:0;bottom:0;width:23%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.7cqw}',
     '#site-header .sh-mirror.l{left:1.2%}#site-header .sh-mirror.r{left:75.8%}',
@@ -94,6 +97,7 @@
     '  #site-header.sh-intro .sh-to{animation:sh-fade .4s .75s both}',
     '  #site-header.sh-intro .sh-one .sh-base{animation:sh-rise .55s .9s cubic-bezier(.2,.8,.2,1) both}',
     '  #site-header.sh-intro .sh-crown{animation:sh-crown .9s 1.35s cubic-bezier(.3,1.5,.5,1) both}',
+    '  #site-header.sh-intro .sh-drip{animation:sh-drip 1.6s 2.2s cubic-bezier(.55,0,.75,.4) both}',
     '  #site-header.sh-intro .sh-man{animation:sh-in-r .7s 1.75s cubic-bezier(.2,.8,.2,1) both}',
     '  #site-header.sh-intro .sh-mirror{animation:sh-fade .7s 2.2s both}',
     '}',
@@ -101,6 +105,7 @@
     '@keyframes sh-in-r{from{opacity:0;transform:translateX(60%)}to{opacity:1;transform:none}}',
     '@keyframes sh-fade{from{opacity:0;filter:blur(6px)}to{opacity:1;filter:none}}',
     '@keyframes sh-rise{from{opacity:0;transform:translateY(30%)}to{opacity:1;transform:none}}',
+    '@keyframes sh-drip{from{clip-path:inset(51.03% 0 48.97% 0)}to{clip-path:inset(51.03% 0 0 0)}}',
     '@keyframes sh-crown{0%{opacity:0;transform:translateY(-140%) rotate(-12deg)}55%{opacity:1}100%{opacity:1;transform:none}}'
   ].join('\n');
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
@@ -135,7 +140,7 @@
         img(A('boy.webp'), 452, 900, 'sh-el sh-boy'),
         img(A('zero.webp'), 972, 349, 'sh-el sh-zero'),
         el('div', { class: 'sh-el sh-to', text: 'TO', 'aria-hidden': 'true' }),
-        el('div', { class: 'sh-el sh-one' }, [img(A('one-base.webp'), 794, 522, 'sh-base'), img(A('one-crown.webp'), 794, 522, 'sh-crown')]),
+        el('div', { class: 'sh-el sh-one' }, [img(A('one.webp'), 900, 584, 'sh-base'), img(A('crown.webp'), 900, 584, 'sh-crown'), img(A('crown.webp'), 900, 584, 'sh-drip')]),
         img(A('king-man.webp'), 499, 900, 'sh-el sh-man'),
         mirror('r', 'fan')
       ])
@@ -153,7 +158,7 @@
   var burger = el('button', { class: 'sh-burger', type: 'button', 'aria-label': 'Open menu', 'aria-expanded': 'false', 'aria-controls': 'sh-drawer' });
   burger.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
   var brand = el('a', { class: 'sh-brand', href: root, 'aria-label': 'Agar Main King Hota — home' }, [
-    img(A('one-full.webp'), 794, 522, '', ''),
+    img(A('one-full.webp'), 900, 584, '', ''),
     el('span', {}, [document.createTextNode('AGAR MAIN '), el('b', { text: 'KING' }), document.createTextNode(' HOTA')])
   ]);
   var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, [brand, nav, burger])]);
