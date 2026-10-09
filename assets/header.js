@@ -33,6 +33,8 @@
     '#site-header *{box-sizing:border-box}',
     '#site-header img{display:block;max-width:none;border:0}',
     '#site-header a{text-decoration:none}',
+    /* shield from page-level element rules (e.g. a page that styles every nav as a sticky bar) */
+    '#site-header nav,#site-header div,#site-header span,#site-header a,#site-header button{position:static;top:auto;z-index:auto;float:none;margin:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;border:0;box-shadow:none;filter:none;opacity:1;transform:none;min-height:0;max-width:none}',
     /* banner */
     '#site-header .sh-banner{display:block;position:relative;z-index:40;font-family:Archivo,"Helvetica Neue",Arial,sans-serif;background:var(--sh-ground);overflow:hidden;border-bottom:1px solid #2a1c1c}',
     '#site-header .sh-frame-box{position:relative;max-width:1600px;margin:0 auto;aspect-ratio:2000/240;overflow:hidden}',
@@ -50,7 +52,7 @@
     '#site-header .sh-one .sh-drip{clip-path:inset(51.03% 0 0 0)}',
     '#site-header .sh-man{left:67.6%;top:2%;width:6.3%}',
     '#site-header .sh-mirror{position:absolute;top:0;bottom:0;width:23%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.7cqw}',
-    '#site-header .sh-mirror.l{left:1.2%}#site-header .sh-mirror.r{left:75.8%}',
+    '#site-header .sh-mirror.sh-l{left:1.2%}#site-header .sh-mirror.sh-r{left:75.8%}',
     '#site-header .sh-agar{height:2.6cqw;width:auto}',
     '#site-header .sh-row{display:flex;align-items:flex-end;gap:.9cqw}',
 
@@ -117,14 +119,14 @@
     (kids || []).forEach(function (c) { if (c) e.appendChild(c); });
     return e;
   }
-  function img(src, w, h, cls, alt) { return el('img', { src: src, width: w, height: h, class: cls || '', alt: alt || '', decoding: 'async' }); }
+  function img(src, w, h, cls, alt) { return el('img', { src: src, width: w, height: h, class: cls || '', alt: alt || '' }); }
 
   // Left: Bauua (ZERO) dreams "Agar main KING hota" in KING lettering.
   // Right: the King (KING) answers "Agar main FAN hota" in FAN lettering. No swapping.
   function mirror(side, film) {
     var s = film === 'king'
-      ? { agar: ['agar-king.webp', 1841, 220], word: ['king-word-cap.webp', 1000, 274], hota: ['hota-king.webp', 896, 220] }
-      : { agar: ['agar-fan.webp', 1841, 220], word: ['fan-word-cap.webp', 807, 234], hota: ['hota-fan.webp', 896, 220] };
+      ? { agar: ['agar-king.webp', 1907, 220], word: ['king-word-cap.webp', 1000, 274], hota: ['hota-king.webp', 935, 220] }
+      : { agar: ['agar-fan.webp', 1910, 220], word: ['fan-word-cap.webp', 807, 234], hota: ['hota-fan.webp', 936, 220] };
     return el('div', { class: 'sh-mirror ' + side, 'aria-hidden': 'true' }, [
       img(A(s.agar[0]), s.agar[1], s.agar[2], 'sh-agar'),
       el('div', { class: 'sh-row' }, [img(A(s.word[0]), s.word[1], s.word[2], 'sh-word'), img(A(s.hota[0]), s.hota[1], s.hota[2], 'sh-hota')])
@@ -137,13 +139,13 @@
   var banner = el('a', { class: 'sh-banner', href: root, 'aria-label': 'Agar Main King Hota — Agar Main Fan Hota. From ZERO to ONE. Home' }, [
     el('div', { class: 'sh-frame-box' }, [
       el('div', { class: 'sh-stage' }, [
-        mirror('l', 'king'),
+        mirror('sh-l', 'king'),
         img(A('boy.webp'), 452, 900, 'sh-el sh-boy'),
         img(A('zero.webp'), 972, 349, 'sh-el sh-zero'),
         img(A('to-king.webp'), 442, 220, 'sh-el sh-to'),
         el('div', { class: 'sh-el sh-one' }, [img(A('one.webp'), 900, 584, 'sh-base'), img(A('crown.webp'), 900, 584, 'sh-crown'), img(A('crown.webp'), 900, 584, 'sh-drip')]),
         img(A('king-man.webp'), 499, 900, 'sh-el sh-man'),
-        mirror('r', 'fan')
+        mirror('sh-r', 'fan')
       ])
     ])
   ]);
@@ -186,6 +188,9 @@
     new IntersectionObserver(function (es) { header.classList.toggle('sh-stuck', !es[0].isIntersecting); }).observe(banner);
   }
 
+  // pages with their own sticky bar sit it under ours: top: var(--sh-bar-h)
+  function barH() { document.documentElement.style.setProperty('--sh-bar-h', bar.offsetHeight + 'px'); }
+  barH(); window.addEventListener('resize', barH);
 
   // first view of the session plays the intro; later pages appear still
   var seen = false;
