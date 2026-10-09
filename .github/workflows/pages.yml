@@ -37,6 +37,7 @@ jobs:
           cp index.html site/
           cp agarmainkinghota.html site/
           cp master-home.html site/
+          cp -R asoka-to-booda site/
           cp CHESS81.HTML site/
           cp -R game site/
 
