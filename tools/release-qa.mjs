@@ -88,6 +88,15 @@ for (const [id, path] of pages) {
       if (!html.includes('DATA RULE')) issues.push('shared platform template did not render');
       if (!text.includes('KING INTELLIGENCE')) issues.push('shared platform identity missing');
     }
+    // every page carries the shared fan footer (assets/footer.js) with its emblem
+    const foot = await page.evaluate(async () => {
+      const f = document.getElementById('site-footer'); if (!f) return 'missing';
+      const img = f.querySelector('img.sf-mark'); if (img) { img.loading = 'eager'; await img.decode().catch(() => {}); }
+      if (!/Created & Managed By Fans Who Love You KING!/.test(f.innerText)) return 'text missing';
+      if (!img || !img.naturalWidth) return 'emblem did not load';
+      return 'ok';
+    });
+    if (foot !== 'ok') issues.push('fan footer ' + foot);
     if (status !== 200) issues.push(`HTTP ${status}`);
     if (!html.toLowerCase().includes('<html')) issues.push('missing HTML document');
     for (const f of forbidden) if (f.re.test(html)) issues.push(f.label);
