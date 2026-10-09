@@ -1,0 +1,64 @@
+name: Deploy poster Worker to Cloudflare
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "backend/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Check Cloudflare credentials
+        id: creds
+        shell: bash
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::warning::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID repository secrets are not set. Worker was NOT deployed."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.creds.outputs.ready == 'true'
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        if: steps.creds.outputs.ready == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Syntax check
+        if: steps.creds.outputs.ready == 'true'
+        run: node --check backend/worker.js
+
+      - name: Deploy with Wrangler
+        if: steps.creds.outputs.ready == 'true'
+        working-directory: backend
+        run: npx --yes wrangler@4 deploy
+
+      - name: Smoke test deployed Worker
+        if: steps.creds.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          url="https://asokatobooda.iamshahrock.workers.dev"
+          # A GET must be refused with 405; a POST from an unknown origin with 403.
+          get=$(curl -s -o /dev/null -w '%{http_code}' "$url")
+          post=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Origin: https://example.com' "$url")
+          echo "GET -> $get, foreign-origin POST -> $post"
+          [ "$get" = "405" ] && [ "$post" = "403" ]

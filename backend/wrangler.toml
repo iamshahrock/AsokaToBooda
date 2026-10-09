@@ -1,0 +1,29 @@
+# Cloudflare Worker: asokatobooda (poster generation backend)
+# Deployed by .github/workflows/deploy-worker.yml, or manually with:
+#   cd backend && npx wrangler deploy
+# The OpenAI key is a Worker secret (wrangler secret put OPENAI_API_KEY);
+# it is never stored in this file or in Git.
+
+name = "asokatobooda"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+# Keep any variables set in the Cloudflare dashboard on deploy.
+keep_vars = true
+
+# Daily usage counters (per visitor and site-wide).
+[[kv_namespaces]]
+binding = "POSTER_USAGE"
+id = "374b1288b6cc48fe95dd2293f0ada5bb"
+
+# Burst limiter: at most 3 poster requests per visitor per 60 seconds.
+[[ratelimits]]
+name = "POSTER_BURST"
+namespace_id = "1001"
+simple = { limit = 3, period = 60 }
+
+# Spending limits. Change these numbers to raise or lower the caps.
+[vars]
+PER_VISITOR_DAILY_LIMIT = "5"
+SITE_DAILY_LIMIT = "100"
+MAX_UPLOAD_MB = "25"

@@ -11,7 +11,7 @@ const pages = [
   ['13','/king-intelligence-13/'], ['14','/king-intelligence-14/'], ['15','/king-intelligence-15/'],
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
-  ['M','/master-home.html'],
+  ['H','/'], ['A','/agarmainkinghota.html'],
 ];
 
 const forbidden = [
@@ -26,7 +26,8 @@ const required = {
   '18': ['KING INTELLIGENCE', 'PLATFORM 18'],
   'D': ['DAILY DATA LEDGER', '06 OCT 2026', '2,933,427', '31.176M', '699,000'],
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
-  'M': ['AGAR MAIN KING HOTA', 'BE THE KING', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD'],
+  'H': ['AGAR MAIN KING HOTA', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'COMMAND CENTER'],
+  'A': ['AGAR MAIN KING HOTA', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'COMMAND CENTER'],
 };
 
 const legacyPaths = [
@@ -56,6 +57,19 @@ for (const legacyPath of legacyPaths) {
     process.exit(1);
   }
   console.log(`PASS [ARCH] retired path is not publicly exposed: ${legacyPath}`);
+}
+// Homepage architecture: the site root serves AGAR MAIN KING HOTA directly,
+// and the retired master-home.html sends visitors back to the root.
+{
+  const rootHtml = await (await fetch(base + '/')).text();
+  if (/http-equiv=["']refresh/i.test(rootHtml)) { console.error('FAIL [HOME] site root is a redirect, not the homepage'); process.exit(1); }
+  const p = await browser.newPage();
+  await p.goto(base + '/master-home.html', { waitUntil: 'networkidle', timeout: 30000 });
+  const landed = new URL(p.url()).pathname.replace(/index\.html$/, '');
+  const expected = new URL(base + '/').pathname;
+  await p.close();
+  if (landed !== expected) { console.error(`FAIL [HOME] master-home.html should redirect to ${expected}, landed on ${landed}`); process.exit(1); }
+  console.log('PASS [HOME] root serves homepage; master-home.html redirects to root');
 }
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 });
 let failures = 0;
