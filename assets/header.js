@@ -40,7 +40,8 @@
     '#site-header .sh-el{position:absolute;height:auto}',
     '#site-header .sh-boy{left:24.6%;top:1%;width:5.9%}',
     '#site-header .sh-zero{left:31.6%;top:36%;width:15%}',
-    '#site-header .sh-to{left:47.9%;top:44%;font-family:Anton,Impact,sans-serif;font-size:2.7cqw;line-height:1;color:var(--sh-red);letter-spacing:.04em}',
+    /* TO in KING lettering, small, with equal gaps to ZERO and ONE (measured from their visible edges) */
+    '#site-header .sh-to{left:48.23%;top:48.27%;height:1.9cqw;width:auto}',
     '#site-header .sh-one{left:53.8%;top:6%;width:12.9%}',
     '#site-header .sh-one img{width:100%;height:auto}',
     '#site-header .sh-one .sh-crown,#site-header .sh-one .sh-drip{position:absolute;left:0;top:0}',
@@ -139,7 +140,7 @@
         mirror('l', 'king'),
         img(A('boy.webp'), 452, 900, 'sh-el sh-boy'),
         img(A('zero.webp'), 972, 349, 'sh-el sh-zero'),
-        el('div', { class: 'sh-el sh-to', text: 'TO', 'aria-hidden': 'true' }),
+        img(A('to-king.webp'), 442, 220, 'sh-el sh-to'),
         el('div', { class: 'sh-el sh-one' }, [img(A('one.webp'), 900, 584, 'sh-base'), img(A('crown.webp'), 900, 584, 'sh-crown'), img(A('crown.webp'), 900, 584, 'sh-drip')]),
         img(A('king-man.webp'), 499, 900, 'sh-el sh-man'),
         mirror('r', 'fan')

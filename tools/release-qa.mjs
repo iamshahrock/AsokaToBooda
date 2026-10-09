@@ -103,7 +103,7 @@ for (const [id, path] of pages) {
         const hd = document.getElementById('site-header'); if (!hd) return 'missing';
         const imgs = [...hd.querySelectorAll('img')]; await Promise.all(imgs.map(i => i.decode().catch(() => {})));
         const broken = imgs.filter(i => !i.naturalWidth).map(i => i.src.split('/').pop());
-        const bad = imgs.filter(i => { const w = i.offsetWidth, h = i.offsetHeight; return w > 2 && h > 2 && Math.abs((w / h) / (i.naturalWidth / i.naturalHeight) - 1) > 0.02; }).map(i => i.src.split('/').pop()); // layout size: ignores intro animation transforms
+        const bad = imgs.filter(i => { const cs = getComputedStyle(i), w = parseFloat(cs.width), h = parseFloat(cs.height); return w > 2 && h > 2 && Math.abs((w / h) / (i.naturalWidth / i.naturalHeight) - 1) > 0.02; }).map(i => i.src.split('/').pop()); // exact layout size: ignores animation transforms and whole-pixel rounding
         const links = hd.querySelectorAll('.sh-nav a').length;
         if (broken.length) return 'images failed: ' + broken.join(', ');
         if (bad.length) return 'distorted: ' + bad.join(', ');
