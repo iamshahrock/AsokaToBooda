@@ -11,7 +11,7 @@ const pages = [
   ['13','/king-intelligence-13/'], ['14','/king-intelligence-14/'], ['15','/king-intelligence-15/'],
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
-  ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'],
+  ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'], ['P','/preview/'],
 ];
 
 const forbidden = [
@@ -97,6 +97,21 @@ for (const [id, path] of pages) {
       return 'ok';
     });
     if (foot !== 'ok') issues.push('fan footer ' + foot);
+    // shared story header (assets/header.js): present, every image loaded, none distorted
+    if (id === 'P' || await page.evaluate(() => !!document.getElementById('site-header'))) {
+      const h = await page.evaluate(async () => {
+        const hd = document.getElementById('site-header'); if (!hd) return 'missing';
+        const imgs = [...hd.querySelectorAll('img')]; await Promise.all(imgs.map(i => i.decode().catch(() => {})));
+        const broken = imgs.filter(i => !i.naturalWidth).map(i => i.src.split('/').pop());
+        const bad = imgs.filter(i => { const r = i.getBoundingClientRect(); return r.width > 2 && r.height > 2 && Math.abs((r.width / r.height) / (i.naturalWidth / i.naturalHeight) - 1) > 0.02; }).map(i => i.src.split('/').pop());
+        const links = hd.querySelectorAll('.sh-nav a').length;
+        if (broken.length) return 'images failed: ' + broken.join(', ');
+        if (bad.length) return 'distorted: ' + bad.join(', ');
+        if (links !== 6) return 'expected 6 section links, found ' + links;
+        return 'ok';
+      });
+      if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 6 section links`);
+    }
     if (status !== 200) issues.push(`HTTP ${status}`);
     if (!html.toLowerCase().includes('<html')) issues.push('missing HTML document');
     for (const f of forbidden) if (f.re.test(html)) issues.push(f.label);
