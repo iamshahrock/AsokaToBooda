@@ -1,0 +1,20 @@
+[
+ {
+  "id": "A-original-neutral",
+  "status": 200,
+  "seconds": 30.808,
+  "error": null
+ },
+ {
+  "id": "B-blurred-neutral",
+  "status": 200,
+  "seconds": 28.617,
+  "error": null
+ },
+ {
+  "id": "C-original-nocrown",
+  "status": 200,
+  "seconds": 27.355,
+  "error": null
+ }
+]
