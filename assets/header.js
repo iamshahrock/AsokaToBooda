@@ -2,7 +2,8 @@
    Include it as the FIRST thing inside <body>, without defer:
      <script src="(path to)/assets/header.js"></script>
    It renders in place (no layout jump):
-   - the story banner: AGAR MAIN KING HOTA · boy · ZERO to ONE (crown drops) · the King · AGAR MAIN FAN HOTA
+   - the story banner: Bauua (ZERO) 'AGAR MAIN KING HOTA' in KING lettering · ZERO to ONE (crown drops) ·
+     the King (KING) 'AGAR MAIN FAN HOTA' in FAN lettering
    - a section bar under it that pins to the top on scroll (compact brand appears)
    - on phones: the middle of the story + a burger menu */
 (function () {
@@ -44,17 +45,18 @@
     '#site-header .sh-one img{width:100%;height:auto}',
     '#site-header .sh-one .sh-crown{position:absolute;left:0;top:0}',
     '#site-header .sh-man{left:67.6%;top:2%;width:6.3%}',
-    '#site-header .sh-mirror{position:absolute;top:13%;width:22.8%;display:flex;flex-direction:column;gap:.5cqw}',
+    '#site-header .sh-mirror{position:absolute;top:0;bottom:0;width:23%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.7cqw}',
     '#site-header .sh-mirror.l{left:1.2%}#site-header .sh-mirror.r{left:75.8%}',
-    '#site-header .sh-agar{font-family:Anton,Impact,sans-serif;font-size:4.1cqw;line-height:1;color:var(--sh-bone);letter-spacing:.01em;white-space:nowrap}',
-    '#site-header .sh-row{display:flex;align-items:flex-end;gap:1cqw}',
-    '#site-header .sh-word{position:relative;height:4.4cqw;perspective:600px;transform-style:preserve-3d}',
-    '#site-header .sh-word img{height:100%;width:auto;backface-visibility:hidden;transition:transform .6s cubic-bezier(.3,.7,.2,1)}',
-    '#site-header .sh-word img+img{position:absolute;left:0;top:0;transform:rotateX(180deg)}',
-    '#site-header .sh-word.fanfirst img:first-child{position:absolute;left:0;top:0;transform:rotateX(180deg)}#site-header .sh-word.fanfirst img+img{position:relative;transform:none}',
-    '#site-header.sh-flip .sh-word img:first-child{transform:rotateX(-180deg)}#site-header.sh-flip .sh-word img+img{transform:rotateX(0)}',
-    '#site-header.sh-flip .sh-word.fanfirst img:first-child{transform:rotateX(0)}#site-header.sh-flip .sh-word.fanfirst img+img{transform:rotateX(180deg)}',
-    '#site-header .sh-hota{font-family:Anton,Impact,sans-serif;font-size:3cqw;line-height:.86;color:var(--sh-bone);letter-spacing:.02em}',
+    '#site-header .sh-agar{height:2.6cqw;width:auto}',
+    '#site-header .sh-row{display:flex;align-items:flex-end;gap:.9cqw}',
+
+
+
+
+
+
+    '#site-header .sh-word{height:3.6cqw;width:auto}',
+    '#site-header .sh-hota{height:2.1cqw;width:auto}',
     /* section bar */
     '#site-header .sh-bar{position:sticky;top:0;z-index:60;font-family:Archivo,"Helvetica Neue",Arial,sans-serif;background:rgba(10,7,7,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #2a1c1c}',
     '#site-header .sh-bar-in{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px 28px;min-height:56px;padding:0 clamp(16px,3vw,34px)}',
@@ -75,6 +77,7 @@
     '#site-header .sh-drawer a small{font-family:Anton,Impact,sans-serif;font-size:15px;color:var(--sh-redtext);min-width:26px}',
     '#site-header .sh-drawer a:hover,#site-header .sh-drawer a:focus-visible,#site-header .sh-drawer a[aria-current="page"]{color:var(--sh-redtext)}',
     /* phone: show the middle of the story, burger menu */
+    '@media (max-width:1100px) and (min-width:761px){#site-header .sh-nav{gap:2px 16px}#site-header .sh-nav a{font-size:12px;letter-spacing:.09em}}',
     '@media (max-width:760px){',
     '  #site-header .sh-frame-box{aspect-ratio:1040/240}',
     '  #site-header .sh-stage{width:192.3%;left:-45.6%}',
@@ -110,15 +113,15 @@
   }
   function img(src, w, h, cls, alt) { return el('img', { src: src, width: w, height: h, class: cls || '', alt: alt || '', decoding: 'async' }); }
 
-  function mirror(side, fanFirst) {
+  // Left: Bauua (ZERO) dreams "Agar main KING hota" in KING lettering.
+  // Right: the King (KING) answers "Agar main FAN hota" in FAN lettering. No swapping.
+  function mirror(side, film) {
+    var s = film === 'king'
+      ? { agar: ['agar-king.webp', 1841, 220], word: ['king-word-cap.webp', 1000, 274], hota: ['hota-king.webp', 896, 220] }
+      : { agar: ['agar-fan.webp', 1841, 220], word: ['fan-word-cap.webp', 807, 234], hota: ['hota-fan.webp', 896, 220] };
     return el('div', { class: 'sh-mirror ' + side, 'aria-hidden': 'true' }, [
-      el('div', { class: 'sh-agar', text: 'AGAR MAIN' }),
-      el('div', { class: 'sh-row' }, [
-        el('div', { class: 'sh-word' + (fanFirst ? ' fanfirst' : '') }, [
-          img(A('king-word.webp'), 1000, 329), img(A('fan-word.webp'), 807, 249)
-        ]),
-        el('div', { class: 'sh-hota', text: 'HOTA' })
-      ])
+      img(A(s.agar[0]), s.agar[1], s.agar[2], 'sh-agar'),
+      el('div', { class: 'sh-row' }, [img(A(s.word[0]), s.word[1], s.word[2], 'sh-word'), img(A(s.hota[0]), s.hota[1], s.hota[2], 'sh-hota')])
     ]);
   }
 
@@ -128,13 +131,13 @@
   var banner = el('a', { class: 'sh-banner', href: root, 'aria-label': 'Agar Main King Hota — Agar Main Fan Hota. From ZERO to ONE. Home' }, [
     el('div', { class: 'sh-frame-box' }, [
       el('div', { class: 'sh-stage' }, [
-        mirror('l', false),
+        mirror('l', 'king'),
         img(A('boy.webp'), 452, 900, 'sh-el sh-boy'),
         img(A('zero.webp'), 972, 349, 'sh-el sh-zero'),
         el('div', { class: 'sh-el sh-to', text: 'TO', 'aria-hidden': 'true' }),
         el('div', { class: 'sh-el sh-one' }, [img(A('one-base.webp'), 794, 522, 'sh-base'), img(A('one-crown.webp'), 794, 522, 'sh-crown')]),
         img(A('king-man.webp'), 499, 900, 'sh-el sh-man'),
-        mirror('r', true)
+        mirror('r', 'fan')
       ])
     ])
   ]);
@@ -177,11 +180,6 @@
     new IntersectionObserver(function (es) { header.classList.toggle('sh-stuck', !es[0].isIntersecting); }).observe(banner);
   }
 
-  // KING <-> FAN flip: hover the banner (desktop), plus one flip after the intro
-  banner.addEventListener('mouseover', function () { header.classList.add('sh-flip'); });
-  banner.addEventListener('mouseleave', function () { header.classList.remove('sh-flip'); });
-  banner.addEventListener('focus', function () { header.classList.add('sh-flip'); });
-  banner.addEventListener('blur', function () { header.classList.remove('sh-flip'); });
 
   // first view of the session plays the intro; later pages appear still
   var seen = false;
@@ -189,7 +187,5 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!seen && !reduce) {
     header.classList.add('sh-intro');
-    setTimeout(function () { header.classList.add('sh-flip'); }, 3400);
-    setTimeout(function () { header.classList.remove('sh-flip'); }, 5000);
   }
 })();
