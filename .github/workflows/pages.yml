@@ -38,6 +38,8 @@ jobs:
           cp agarmainkinghota.html site/
           cp master-home.html site/
           cp -R asoka-to-booda site/
+          cp -R fan-made-ai-universe site/
+          cp -R fan-billboard site/
           cp CHESS81.HTML site/
           cp -R game site/
 
@@ -51,6 +53,8 @@ jobs:
           touch site/.nojekyll
           test -f site/index.html
           test -f site/CHESS81.HTML
+          test -f site/fan-made-ai-universe/index.html
+          test -f site/fan-billboard/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
