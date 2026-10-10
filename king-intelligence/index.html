@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/intel.css">
+<style>
+.pl-chart{display:flex;align-items:flex-end;gap:3px;height:180px;padding-top:8px;border-bottom:1px solid var(--ki-line)}
+.pl-chart .c{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.pl-chart .c i{display:block;width:100%;background:var(--ki-red,#d71920);border-radius:2px 2px 0 0;min-height:1px}
+.pl-chart .c b{font:500 10px var(--ki-mono,monospace);color:var(--ki-muted);margin-bottom:3px}
+.pl-axis{display:flex;justify-content:space-between;font:500 10px var(--ki-mono,monospace);color:var(--ki-muted);margin-top:6px}
+</style>
 </head>
 <body class="ki">
 <script src="../assets/header.js"></script>
@@ -92,7 +99,8 @@
     <li><a href="#activation"><span class="n">07</span>Fan activation</a></li>
     <li><a href="#engine"><span class="n">08</span>Hype engine</a></li>
     <li><a href="#competition"><span class="n">09</span>Competition</a></li>
-    <li><a href="#methodology"><span class="n">10</span>Methodology</a></li>
+    <li><a href="#platform-live"><span class="n">10</span>Our platform · live</a></li>
+    <li><a href="#methodology"><span class="n">11</span>Methodology</a></li>
   </ul>
 </nav>
 
@@ -838,6 +846,38 @@
 </section>
 
 <!-- ============ 10 METHODOLOGY ============ -->
+<!-- ============ 10 OUR PLATFORM (live) ============ -->
+<section class="ki-panel" id="platform-live" aria-labelledby="h-platform-live">
+  <div class="ki-sec-head">
+    <h2 class="ki-h2" id="h-platform-live">Agar Main King Hota · platform, live</h2>
+    <span class="ki-stamp" id="pl-stamp">Loading live numbers…</span>
+    <p>First-party numbers from this campaign platform, counted by our own server: unique visitors (one anonymous id per browser; no cookies, no IP addresses stored, automated test browsers excluded), page views, AI posters made, poster shares, game clears and the STARKS economy. Updated continuously.</p>
+  </div>
+  <div class="ki-kpis" id="pl-kpis" aria-live="polite">
+    <div class="ki-kpi"><span class="l">Unique visitors</span><span class="v" data-k="visitors">N/A</span><span class="s" data-s="since">All time</span></div>
+    <div class="ki-kpi"><span class="l">Visitors · last 7 days</span><span class="v" data-k="v7">N/A</span><span class="s" data-s="today">Today: N/A</span></div>
+    <div class="ki-kpi"><span class="l">Page views</span><span class="v" data-k="pageviews">N/A</span><span class="s">All time</span></div>
+    <div class="ki-kpi"><span class="l">AI posters made</span><span class="v" data-k="posters">N/A</span><span class="s" data-s="postersToday">Today: N/A</span></div>
+    <div class="ki-kpi"><span class="l">Posters shared</span><span class="v" data-k="shares">N/A</span><span class="s">Shares that earned STARKS (max one per fan per day)</span></div>
+    <div class="ki-kpi"><span class="l">Billboard fans</span><span class="v" data-k="billboardNames">N/A</span><span class="s" data-s="players">Players: N/A</span></div>
+  </div>
+  <div class="ki-grid" style="margin-top:14px">
+    <div class="ki-card s-7">
+      <h3 class="ki-h3">Unique visitors per day · last 30 days</h3>
+      <div class="pl-chart" id="pl-chart" role="img" aria-label="Unique visitors per day"><p class="ki-note">Loading…</p></div>
+    </div>
+    <div class="ki-card s-5">
+      <h3 class="ki-h3">Engagement · all time</h3>
+      <div class="ki-tablewrap"><table class="ki-table"><caption class="ki-sr">Engagement totals</caption><tbody id="pl-eng"><tr><td>Loading…</td></tr></tbody></table></div>
+    </div>
+    <div class="ki-card s-12">
+      <h3 class="ki-h3">Most visited pages · last 30 days</h3>
+      <div class="ki-tablewrap"><table class="ki-table"><thead><tr><th scope="col">Page</th><th scope="col" class="n">Views</th><th scope="col" class="n">Share of views</th></tr></thead><tbody id="pl-pages"><tr><td colspan="3">Loading…</td></tr></tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 METHODOLOGY ============ -->
 <section class="ki-panel" id="methodology" aria-labelledby="h-methodology">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-methodology">Methodology &amp; sources</h2>
@@ -951,6 +991,33 @@
   });
   window.addEventListener('hashchange',function(){ show(location.hash.slice(1),true); });
   show(location.hash.slice(1),false);
+})();
+</script>
+<script>
+/* Our platform · live: first-party numbers from the campaign server. */
+(function(){
+  var fmt=function(n){return (n===null||n===undefined)?'N/A':Number(n).toLocaleString('en-US');};
+  var $=function(q){return document.querySelector(q);};
+  fetch('https://asokatobooda.iamshahrock.workers.dev/stats',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+    var t=d.total||{};
+    var vals={visitors:t.visitors,v7:(d.last7||{}).visitors,pageviews:t.pageviews,posters:t.posters,shares:t.shares,billboardNames:t.billboardNames};
+    Object.keys(vals).forEach(function(k){var el=$('#pl-kpis [data-k="'+k+'"]'); if(el) el.textContent=fmt(vals[k]);});
+    var since=d.trackingSince?new Date(d.trackingSince+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):null;
+    $('[data-s="since"]').textContent=since?'Since '+since:'Tracking starts with the first visit';
+    $('[data-s="today"]').textContent='Today: '+fmt((d.today||{}).visitors);
+    $('[data-s="postersToday"]').textContent='Today: '+fmt((d.today||{}).posters);
+    $('[data-s="players"]').textContent='Players with STARKS: '+fmt(t.players);
+    var as=new Date(d.asOf); $('#pl-stamp').textContent='Live · '+as.toLocaleString('en-GB',{timeZone:'Asia/Kolkata',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})+' IST';
+    var eng=[['Page views',t.pageviews],['AI posters made',t.posters],['Posters shared',t.shares],["King's Lairs cleared",t.lairClears],['Throne Room cleared',t.thrones],['Story chapters finished',t.storyChapters],['Chess81 wins vs the Machine',t.chessWins],['STARKS awarded',t.starksAwarded]];
+    $('#pl-eng').innerHTML=eng.map(function(r){return '<tr><th scope="row">'+r[0]+'</th><td class="n">'+fmt(r[1])+'</td></tr>';}).join('');
+    var days=[],map={};(d.days||[]).forEach(function(x){map[x.day]=x;});
+    for(var i=29;i>=0;i--){var k=new Date(Date.now()+5.5*3600e3-i*864e5).toISOString().slice(0,10);days.push({day:k,v:(map[k]||{}).visitors||0});}
+    var max=Math.max.apply(null,days.map(function(x){return x.v;}))||1;
+    $('#pl-chart').innerHTML=days.map(function(x){return '<div class="c" title="'+x.day+': '+fmt(x.v)+' visitors">'+(x.v?'<b>'+fmt(x.v)+'</b>':'')+'<i style="height:'+(x.v/max*85)+'%"></i></div>';}).join('');
+    $('#pl-chart').insertAdjacentHTML('afterend','<div class="pl-axis"><span>'+days[0].day.slice(5)+'</span><span>'+days[29].day.slice(5)+' (today)</span></div>');
+    var pages=d.topPages||[], tot=pages.reduce(function(a,b){return a+b.n;},0)||1;
+    $('#pl-pages').innerHTML=pages.length?pages.map(function(p){return '<tr><th scope="row">'+p.path.replace(/[<>&]/g,'')+'</th><td class="n">'+fmt(p.n)+'</td><td class="n">'+(p.n/tot*100).toFixed(1)+'%</td></tr>';}).join(''):'<tr><td colspan="3">No page views recorded yet.</td></tr>';
+  }).catch(function(){var s=$('#pl-stamp'); if(s) s.textContent='Live numbers are unavailable right now'; ['#pl-eng','#pl-pages'].forEach(function(q){var e=$(q); if(e) e.innerHTML='<tr><td colspan="3">N/A · live service unreachable</td></tr>';}); var c=$('#pl-chart'); if(c) c.innerHTML='<p class="ki-note">N/A · live service unreachable</p>';});
 })();
 </script>
 <script src="../assets/footer.js" defer></script>

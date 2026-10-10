@@ -6,7 +6,7 @@
 (function () {
   if (window.STARKS) return;
   var KEY = 'amkh-starks';
-  var API = 'https://asokatobooda.iamshahrock.workers.dev/billboard';
+  var BASE = 'https://asokatobooda.iamshahrock.workers.dev', API = BASE + '/billboard';
   // reason -> [label, max awards per IST day]
   var RULES = {
     visit: ['Daily visit', 1],
@@ -17,7 +17,9 @@
     throne: ['Throne Room', 3],
     flush: ['Royal Flush jackpot', 3],
     allsix: ['All six lairs cleared', 1],
-    chess: ['Beat the Machine at Chess81', 5]
+    chess: ['Beat the Machine at Chess81', 5],
+    chapter: ['Finished a story chapter', 12],
+    verdict: ['Finished THE CONTRACT', 2]
   };
   var TIERS = [[0, 'Fan'], [500, 'Rebel'], [1500, 'Prince'], [4000, 'King'], [10000, 'Royal Flush']];
 
@@ -48,6 +50,17 @@
     setTimeout(function () { t.remove(); }, 2700);
   }
 
+  function post(path, body) {
+    return fetch(BASE + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error || 'STARKS error ' + r.status); return j; }); });
+  }
+  function adopt(j) {
+    if (!j || typeof j.balance !== 'number') return;
+    var s = load(); s.balance = j.balance; s.synced = true;
+    if (typeof j.joined === 'boolean') s.joined = j.joined;
+    if (j.name) s.name = j.name;
+    save(s); document.dispatchEvent(new CustomEvent('starks', { detail: s }));
+  }
   var api = {
     rules: RULES, tiers: TIERS, tier: tier, nextTier: nextTier,
     get: function () { var s = load(); save(s); return s; },
@@ -58,6 +71,7 @@
       if (once && s.once[once]) return 0;
       if ((s.counts[reason] || 0) >= rule[1]) return 0;
       amount = Math.round(amount);
+      var carry = s.synced ? undefined : s.balance;
       s.counts[reason] = (s.counts[reason] || 0) + 1;
       if (once) s.once[once] = Date.now();
       s.balance += amount;
@@ -66,19 +80,21 @@
       save(s);
       toast('+' + amount.toLocaleString('en-IN') + ' STARKS · ' + (note || rule[0]));
       document.dispatchEvent(new CustomEvent('starks', { detail: s }));
-      if (s.joined) api.sync().catch(function () {});
+      // the server checks every award and keeps the real balance
+      post('/starks/earn', { device: s.device, reason: reason, amount: amount, note: note || rule[0], once: once || null, carry: carry }).then(adopt).catch(function () {});
       return amount;
     },
     join: function (name) {
-      var s = load(); s.name = String(name || '').trim().slice(0, 18); s.joined = !!s.name; save(s);
-      document.dispatchEvent(new CustomEvent('starks', { detail: s }));
-      return api.sync();
+      var s = load(); s.name = String(name || '').trim().slice(0, 18);
+      return post('/billboard', { device: s.device, name: s.name, carry: s.synced ? undefined : s.balance }).then(function (j) {
+        var t = load(); t.name = j.name || t.name; t.joined = true; t.balance = j.starks; t.synced = true; save(t);
+        document.dispatchEvent(new CustomEvent('starks', { detail: t })); return j;
+      });
     },
-    leave: function () { var s = load(); s.joined = false; save(s); },
+    leave: function () { var s = load(); s.joined = false; save(s); return post('/billboard', { device: s.device, leave: true }).catch(function () {}); },
     sync: function () {
-      var s = load(); if (!s.joined || !s.name) return Promise.resolve(null);
-      return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ device: s.device, name: s.name, starks: s.balance }) })
-        .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'Billboard error ' + r.status); return j; }); });
+      var s = load();
+      return fetch(BASE + '/starks/me?device=' + s.device, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) { if (j && typeof j.balance === 'number') adopt(j); return j; });
     },
     board: function () { return fetch(API, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('Billboard error ' + r.status); return r.json(); }); }
   };

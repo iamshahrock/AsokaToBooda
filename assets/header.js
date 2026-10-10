@@ -234,3 +234,17 @@
     header.classList.add('sh-intro');
   }
 })();
+
+/* Visitor numbers: one anonymous page-view ping per page load.
+   A random id kept in this browser (no cookies, no IP stored) lets the site count unique visitors. */
+(function () {
+  try {
+    if (navigator.webdriver || !/agarmainkinghota\.com$|github\.io$/.test(location.hostname)) return;
+    var k = 'amkh-vid', v = localStorage.getItem(k);
+    if (!v) { v = Array.from(crypto.getRandomValues(new Uint8Array(12))).map(function (b) { return b.toString(16).padStart(2, '0'); }).join(''); localStorage.setItem(k, v); }
+    var body = JSON.stringify({ vid: v, path: location.pathname });
+    var url = 'https://asokatobooda.iamshahrock.workers.dev/track';
+    if (navigator.sendBeacon) navigator.sendBeacon(url, new Blob([body], { type: 'text/plain' }));
+    else fetch(url, { method: 'POST', body: body, keepalive: true, mode: 'no-cors' });
+  } catch (e) {}
+})();

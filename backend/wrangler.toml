@@ -22,6 +22,18 @@ name = "POSTER_BURST"
 namespace_id = "1001"
 simple = { limit = 3, period = 60 }
 
+# Platform database: STARKS ledger, Billboard and visitor numbers.
+[[d1_databases]]
+binding = "DB"
+database_name = "amkh-platform"
+database_id = "75fa2992-b99c-4124-b258-d41e26b73a78"
+
+# STARKS / Billboard burst limiter: 40 requests per visitor per 60 seconds.
+[[ratelimits]]
+name = "EARN_BURST"
+namespace_id = "1002"
+simple = { limit = 40, period = 60 }
+
 # Spending limits. Change these numbers to raise or lower the caps.
 [vars]
 PER_VISITOR_DAILY_LIMIT = "5"
