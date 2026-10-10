@@ -3,40 +3,183 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080808">
-<title>FAN BILLBOARD — THE WORLD OF KING</title>
+<title>Billboard — Agar Main King Hota</title>
+<meta name="description" content="The STARKS Billboard: fans earn STARKS by making KING posters and clearing King's Lairs. Join with your name and climb to Royal Flush.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/fan-billboard/">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
 <style>
-:root{--bg:#080808;--panel:#101010;--line:#292929;--text:#f4f4f4;--muted:#999;--red:#d71920}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:28px}
-header{padding:70px 0 55px;border-bottom:1px solid var(--line)}.kicker{font-size:11px;letter-spacing:.28em;color:var(--red);font-weight:800}.title{font-family:Georgia,serif;font-size:clamp(62px,10vw,140px);line-height:.82;letter-spacing:-.06em;margin:18px 0}.lead{max-width:760px;color:#aaa;font-size:18px;line-height:1.6}
-nav{position:sticky;top:0;background:rgba(8,8,8,.94);border-bottom:1px solid var(--line);z-index:5}.nav{display:flex;gap:22px;overflow:auto;padding:12px 28px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}.nav a{text-decoration:none;color:#aaa;white-space:nowrap}
-section{padding:55px 0;border-bottom:1px solid var(--line)}h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,66px);font-weight:400;line-height:.95;margin:0 0 18px}.note{color:#888;line-height:1.6}
-table{width:100%;border-collapse:collapse;margin-top:28px;background:var(--panel)}th,td{padding:15px;border-bottom:1px solid var(--line);text-align:left}th{font-size:10px;letter-spacing:.16em;color:#888;text-transform:uppercase}td{font-size:14px}.rank{color:var(--red);font-weight:900;width:90px}.empty{color:#666}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}.card{border:1px solid var(--line);padding:22px;background:var(--panel)}.card strong{font-family:Georgia,serif;font-size:27px;font-weight:400}.card p{color:#999;line-height:1.5}.button{display:inline-block;margin-top:12px;border:1px solid #555;padding:10px 14px;text-decoration:none;font-size:10px;letter-spacing:.15em;font-weight:800}.button:hover{border-color:var(--red)}
-footer{padding:55px 0;text-align:center;color:#666;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-@media(max-width:700px){.wrap{padding:18px}.cards{grid-template-columns:1fr}th,td{padding:11px 8px}}
+.top2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px;margin-top:22px}
+.wallet{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red-hi);padding:24px;display:flex;flex-direction:column;gap:14px}
+.wallet .bal{font-family:var(--display);font-size:clamp(64px,7vw,96px);line-height:.9;color:var(--red-hi)}
+.wallet .tier{font-family:var(--display);font-size:30px;text-transform:uppercase}
+.wallet small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.meter{height:10px;background:#2a1c1c}.meter i{display:block;height:100%;background:var(--red-hi);width:0}
+.join{display:flex;gap:10px;flex-wrap:wrap}
+.join input{flex:1;min-width:160px;height:48px;padding:0 12px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 15px var(--body)}
+.status{margin:0;font-size:14px;color:var(--mute);min-height:20px}
+.status.err{color:var(--red-text)}
+.hist{margin:0;padding:0;list-style:none;max-height:220px;overflow:auto;border-top:1px solid var(--line)}
+.hist li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--mute)}
+.hist li b{color:var(--ink);font-weight:600}
+.board{background:var(--panel);border:1px solid var(--line);padding:6px 0}
+.board table{width:100%;border-collapse:collapse;font-size:15px}
+.board th,.board td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--line)}
+.board th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.board td.r{font-family:var(--display);font-size:20px;color:var(--red-text);width:60px}
+.board td.s{font-family:var(--display);font-size:20px;text-align:right}
+.board th.s{text-align:right}
+.board tr.me td{background:#2a0b0d}
+.board .empty{padding:22px 16px;color:var(--mute)}
+.earn{width:100%;border-collapse:collapse;font-size:15px}
+.earn td{padding:10px 0;border-bottom:1px solid var(--line);color:#e6dcd4}
+.earn td.n{font-family:var(--display);font-size:20px;color:var(--red-hi);text-align:right;white-space:nowrap}
+.tiers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.tiers div{background:var(--panel);border:1px solid var(--line);padding:14px;text-align:center}
+.tiers b{display:block;font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase}
+.tiers span{font-size:13px;color:var(--faint)}
+.fine{font-size:13px;color:var(--faint);line-height:1.6}
+@media (max-width:860px){.top2{grid-template-columns:minmax(0,1fr)}.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
-<body>
+<body class="v2">
 <script src="../assets/header.js"></script>
-<header><div class="wrap"><div class="kicker">06 · COMPETITION / RECOGNITION</div><div class="title">FAN<br><span style="color:var(--red)">BILLBOARD</span></div><p class="lead">The public scoreboard for the KING fan world: daily scores, weekly winners and cumulative rankings. This page is connected to the game layer and is deliberately not populated with invented rankings.</p></div></header>
-<main>
-<section><div class="wrap"><div class="kicker">TODAY'S BOARD</div><h2>DAILY TOP SCORES</h2><p class="note">The repository currently has the game score event bridge, but it does not yet contain a server-side historical score registry. The board below therefore shows the latest score recorded in this browser, when available, and leaves the public ranking rows empty until real score records are supplied.</p>
-<table><thead><tr><th>Rank</th><th>Player</th><th>Score</th><th>Source</th></tr></thead><tbody id="board"><tr><td class="rank">01</td><td id="player">—</td><td id="score">—</td><td id="source" class="empty">Awaiting score record</td></tr><tr><td class="rank">02</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr><tr><td class="rank">03</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr><tr><td class="rank">04</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr><tr><td class="rank">05</td><td class="empty">—</td><td class="empty">—</td><td class="empty">No verified record</td></tr></tbody></table></div></section>
-<section><div class="wrap"><div class="kicker">THE COMPETITIVE LOOP</div><h2>PLAY → SCORE → RANK</h2><div class="cards">
-<div class="card"><strong>01 · PLAY</strong><p>Enter Agar Main King Hota and complete the poster / challenge experience.</p><a class="button" href="../game/">PLAY GAME →</a></div>
-<div class="card"><strong>02 · CHALLENGE</strong><p>Play CHECK. MATE. FIRE. and build another competitive score in the KING world.</p><a class="button" href="../CHESS81.HTML">PLAY CHESS81 →</a></div>
-<div class="card"><strong>03 · RANK</strong><p>Verified score records can be promoted here into the daily, weekly and cumulative billboard.</p><a class="button" href="../asoka-to-booda/">READ THE THESIS →</a></div>
-</div></div></section>
+<main class="wrap">
+  <div class="page-head">
+    <div><p class="eyebrow">04 · Billboard</p><h1>The STARKS <em>Billboard</em></h1></div>
+    <p>Every poster you make and every lair you clear earns STARKS. Join with a name to take your place on the public Billboard and climb from Fan to Royal Flush.</p>
+  </div>
+
+  <div class="top2">
+    <section class="wallet" aria-labelledby="w-h">
+      <small id="w-h">Your STARKS</small>
+      <div class="bal" id="bal">0</div>
+      <div class="tier" id="tier">Fan</div>
+      <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+      <p class="status" id="next"></p>
+      <form class="join" id="joinForm">
+        <label class="sr" for="nm">Your Billboard name</label>
+        <input id="nm" maxlength="18" autocomplete="nickname" placeholder="Your Billboard name">
+        <button class="btn btn-red" type="submit" id="joinBtn">Join the Billboard</button>
+      </form>
+      <p class="status" id="js"></p>
+      <ul class="hist" id="hist"></ul>
+      <div class="row" style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-line" href="../create/">Make a poster · +100</a>
+        <a class="btn btn-line" href="../lairs/">Enter the Lairs</a>
+      </div>
+    </section>
+
+    <section class="board" aria-labelledby="b-h">
+      <h2 id="b-h" class="sr">Top fans</h2>
+      <table>
+        <thead><tr><th>#</th><th>Fan</th><th>Rank</th><th class="s">STARKS</th></tr></thead>
+        <tbody id="rows"><tr><td colspan="4" class="empty">Loading the Billboard…</td></tr></tbody>
+      </table>
+    </section>
+  </div>
+
+  <section class="block" aria-labelledby="e-h">
+    <div class="block-head"><h2 id="e-h">How to earn <em>STARKS</em></h2><p>Earn limits reset every day at midnight, Mumbai time.</p></div>
+    <div class="two">
+      <table class="earn">
+        <tr><td>Make a KING poster (up to 5 a day)</td><td class="n">+100</td></tr>
+        <tr><td>Share your poster (once a day)</td><td class="n">+50</td></tr>
+        <tr><td>Clear a lair (by how well you play)</td><td class="n">+30 to +1,000</td></tr>
+        <tr><td>First time you clear each lair</td><td class="n">+100</td></tr>
+        <tr><td>Hit a Royal Flush in the Casino</td><td class="n">+1,000</td></tr>
+        <tr><td>Clear all six lairs</td><td class="n">+500</td></tr>
+        <tr><td>Visit the site (once a day)</td><td class="n">+10</td></tr>
+      </table>
+      <div>
+        <div class="tiers">
+          <div><b>Fan</b><span>0</span></div>
+          <div><b>Rebel</b><span>500</span></div>
+          <div><b>Prince</b><span>1,500</span></div>
+          <div><b>King</b><span>4,000</span></div>
+          <div><b>Royal Flush</b><span>10,000</span></div>
+        </div>
+        <p class="fine" style="margin-top:14px">STARKS are fan points for play and bragging rights. They have no cash value and cannot be bought, sold or exchanged. Your points are kept on this device; joining the Billboard publishes only your chosen name and your STARKS total.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="p-h">
+    <div class="block-head"><h2 id="p-h">Your <em>posters</em></h2><p>The posters you made on this device.</p></div>
+    <div class="gallery" id="mine"></div>
+    <div class="empty" id="none">No posters yet. <a href="../create/">Make your first KING poster →</a></div>
+  </section>
+
+  <section class="block" aria-labelledby="fw-h">
+    <div class="feature">
+      <div>
+        <p class="eyebrow">The fans' wall</p>
+        <h3 id="fw-h">Fan-made AI universe</h3>
+        <p>Posters, trailers, concept films and stories made by fans, each creator credited.</p>
+        <a class="btn btn-red" href="../fan-made-ai-universe/">Enter the fan universe →</a>
+      </div>
+      <img src="../assets/home/05-fan-made-ai-universe.webp" width="663" height="1400" alt="">
+    </div>
+  </section>
 </main>
-<footer>FAN BILLBOARD · DAILY TOP SCORES · THE WORLD OF KING · 06</footer>
+
+<script src="../assets/starks.js"></script>
 <script>
-(function(){
- const el=(id)=>document.getElementById(id);
- try{
-  const raw=localStorage.getItem('chess81_last_score');
-  if(raw){const p=JSON.parse(raw);el('score').textContent=p.total ?? '—';el('source').textContent='CHESS81 · browser score bridge';el('source').className='';}
- }catch(e){}
+(function () {
+var $ = function (id) { return document.getElementById(id); };
+function fmt(n) { return Number(n).toLocaleString('en-IN'); }
+function wallet() {
+  var s = STARKS.get();
+  $('bal').textContent = fmt(s.balance); $('tier').textContent = STARKS.tier(s.balance);
+  var nt = STARKS.nextTier(s.balance), tiers = STARKS.tiers, prevAt = 0;
+  tiers.forEach(function (t) { if (s.balance >= t[0]) prevAt = t[0]; });
+  $('meter').style.width = nt ? Math.round((s.balance - prevAt) / (nt.at - prevAt) * 100) + '%' : '100%';
+  $('next').textContent = nt ? fmt(nt.at - s.balance) + ' STARKS to ' + nt.name : 'Top rank reached: Royal Flush.';
+  if (s.name) $('nm').value = s.name;
+  $('joinBtn').textContent = s.joined ? 'Update my name' : 'Join the Billboard';
+  var h = $('hist'); h.innerHTML = '';
+  s.history.slice(0, 15).forEach(function (x) {
+    var li = document.createElement('li'); var a = document.createElement('span'); a.textContent = x.n;
+    var b = document.createElement('b'); b.textContent = '+' + fmt(x.a); li.append(a, b); h.appendChild(li);
+  });
+}
+function rows(top, myName) {
+  var tb = $('rows'); tb.innerHTML = '';
+  if (!top.length) { tb.innerHTML = '<tr><td colspan="4" class="empty">The Billboard is waiting for its first King. Join with your name.</td></tr>'; return; }
+  top.forEach(function (e) {
+    var tr = document.createElement('tr'); if (myName && e.name === myName) tr.className = 'me';
+    [[e.rank, 'r'], [e.name, ''], [e.tier, ''], [fmt(e.starks), 's']].forEach(function (c) { var td = document.createElement('td'); td.textContent = c[0]; if (c[1]) td.className = c[1]; tr.appendChild(td); });
+    tb.appendChild(tr);
+  });
+}
+function load() {
+  var s = STARKS.get();
+  STARKS.board().then(function (d) { rows(d.top || [], s.joined ? s.name : ''); })
+    .catch(function () { $('rows').innerHTML = '<tr><td colspan="4" class="empty">The Billboard could not load right now. Your STARKS are safe on this device.</td></tr>'; });
+}
+$('joinForm').addEventListener('submit', function (e) {
+  e.preventDefault(); var name = $('nm').value.trim();
+  if (name.length < 2) { $('js').className = 'status err'; $('js').textContent = 'Choose a name of at least 2 letters.'; return; }
+  $('js').className = 'status'; $('js').textContent = 'Joining…';
+  STARKS.join(name).then(function (r) {
+    $('js').textContent = r ? 'You are #' + r.rank + ' on the Billboard.' : '';
+    rows(r.top || [], name); wallet();
+  }).catch(function (err) { STARKS.leave(); $('js').className = 'status err'; $('js').textContent = err.message; wallet(); });
+});
+document.addEventListener('starks', wallet);
+wallet(); load();
+try {
+  var list = JSON.parse(localStorage.getItem('amkh-posters') || '[]');
+  if (list.length) {
+    $('none').hidden = true;
+    list.forEach(function (p) { var f = document.createElement('figure'); var im = document.createElement('img'); im.src = p.img; im.alt = 'Your KING poster in ' + p.film; var c = document.createElement('figcaption'); c.textContent = p.film + ' (' + p.year + ')'; f.append(im, c); $('mine').appendChild(f); });
+  }
+} catch (e) {}
 })();
 </script>
 <script src="../assets/footer.js" defer></script>

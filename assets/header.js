@@ -13,22 +13,17 @@
   var root = new URL('..', assets).href;           // site root
   var A = function (p) { return assets + 'header/' + p; };
 
-  // One journey, four doors (live from 10 Oct 2026).
+  // Six sections (remapped 10 Oct 2026) + utility links.
   var home = root;
   var LINKS = [
-    ['create/', 'Create'],
-    ['play/', 'Play'],
-    ['crown/', 'The Crown'],
-    ['know/', 'Know']
-  ];
-  var OLD_LINKS = [
-    ['game/', 'Agar Main King Hota'],
-    ['CHESS81.HTML', 'Check. Mate. Fire.'],
+    ['create/', 'Make Your Poster'],
+    ['lairs/', "King's Lairs"],
+    ['CHESS81.HTML', 'Chess81'],
+    ['fan-billboard/', 'Billboard'],
     ['king-intelligence/', 'KING Buzz'],
-    ['asoka-to-booda/', 'Asoka to Booda'],
-    ['fan-made-ai-universe/', 'Fan Universe'],
-    ['fan-billboard/', 'Billboard']
+    ['asoka-to-booda/', 'Asoka to Boo-Da']
   ];
+  var UTIL = [['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']];
 
   if (!document.querySelector('link[href*="fonts.googleapis.com"][href*="Anton"]')) {
     var fl = document.createElement('link'); fl.rel = 'stylesheet';
@@ -85,18 +80,34 @@
     '#site-header .sh-nav a:hover::after,#site-header .sh-nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:10px;height:2px;background:var(--sh-red)}',
     '#site-header .sh-burger{display:none;width:48px;height:48px;margin-left:auto;background:transparent;border:1px solid #3a2626;color:#f4efe9;align-items:center;justify-content:center;cursor:pointer}',
     '#site-header .sh-burger:hover,#site-header .sh-burger:focus-visible{border-color:var(--sh-redtext);color:var(--sh-redtext)}',
+    '#site-header .sh-util{display:flex;align-items:center;gap:2px 16px;margin-left:auto;padding-left:18px;border-left:1px solid #2a1c1c}',
+    '#site-header .sh-util a{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#b8aca4;padding:16px 0;white-space:nowrap}',
+    '#site-header .sh-util a:hover,#site-header .sh-util a[aria-current="page"]{color:var(--sh-redtext)}',
+    '#site-header .sh-starks{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid #3a2626;color:#f4efe9;font-size:12px;font-weight:700;letter-spacing:.08em;white-space:nowrap}',
+    '#site-header .sh-starks b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:16px;color:var(--sh-redtext);letter-spacing:.02em}',
+    '#site-header .sh-drawer .sh-dutil{display:flex;flex-wrap:wrap;gap:6px 22px;padding:18px 0}',
+    '#site-header .sh-drawer .sh-dutil a{font-family:Archivo,Arial,sans-serif;font-size:15px;border:0;padding:6px 0;text-transform:uppercase;letter-spacing:.1em;color:#b8aca4}',
     '#site-header .sh-drawer{position:fixed;left:0;right:0;bottom:0;top:57px;z-index:70;font-family:Archivo,"Helvetica Neue",Arial,sans-serif;background:rgba(5,3,3,.98);display:none;flex-direction:column;padding:12px 22px 40px;overflow:auto}',
     '#site-header .sh-drawer.open{display:flex}',
     '#site-header .sh-drawer a{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid #2a1c1c;font-family:Anton,Impact,sans-serif;font-size:30px;line-height:1.05;text-transform:uppercase;color:#f4efe9}',
     '#site-header .sh-drawer a small{font-family:Anton,Impact,sans-serif;font-size:15px;color:var(--sh-redtext);min-width:26px}',
     '#site-header .sh-drawer a:hover,#site-header .sh-drawer a:focus-visible,#site-header .sh-drawer a[aria-current="page"]{color:var(--sh-redtext)}',
     /* phone: show the middle of the story, burger menu */
-    '@media (max-width:1100px) and (min-width:761px){#site-header .sh-nav{gap:2px 16px}#site-header .sh-nav a{font-size:12px;letter-spacing:.09em}}',
+    '@media (max-width:1280px) and (min-width:761px){#site-header .sh-nav{gap:2px 14px}#site-header .sh-nav a{font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 10px;padding-left:12px}#site-header .sh-util a{font-size:11px}}',
+    '@media (max-width:1040px) and (min-width:761px){#site-header .sh-util{display:none}}',
+    '@media (max-width:1640px) and (min-width:761px){#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-nav{gap:2px 18px}}',
     '@media (max-width:760px){',
     '  #site-header .sh-frame-box{aspect-ratio:1040/240}',
     '  #site-header .sh-stage{width:192.3%;left:-45.6%}',
     '  #site-header .sh-mirror{display:none}',
     '  #site-header .sh-nav{display:none}',
+    '  #site-header .sh-util{border:0;padding:0;margin-left:auto}',
+    '  #site-header .sh-util a:not(.sh-starks){display:none}',
+    '  #site-header .sh-brand img{flex-shrink:0}',
+    '  #site-header .sh-starks{padding:4px 8px;font-size:10px;gap:4px}',
+    '  #site-header .sh-starks b{font-size:14px}',
+    '  #site-header .sh-sw{display:none}',
+    '  #site-header .sh-bar-in{gap:8px}',
     '  #site-header .sh-burger{display:inline-flex}',
     '  #site-header .sh-brand{display:flex}',
     '  #site-header .sh-brand span{font-size:17px}',
@@ -166,13 +177,28 @@
     if (isHere(l[0])) { a1.setAttribute('aria-current', 'page'); a2.setAttribute('aria-current', 'page'); }
     nav.appendChild(a1); drawer.appendChild(a2);
   });
+  var util = el('div', { class: 'sh-util' });
+  var dutil = el('div', { class: 'sh-dutil' });
+  UTIL.forEach(function (l) {
+    var u1 = el('a', { href: root + l[0], text: l[1] }), u2 = el('a', { href: root + l[0], text: l[1] });
+    if (isHere(l[0])) { u1.setAttribute('aria-current', 'page'); u2.setAttribute('aria-current', 'page'); }
+    util.appendChild(u1); dutil.appendChild(u2);
+  });
+  var starks = el('a', { class: 'sh-starks', href: root + 'fan-billboard/', 'aria-label': 'Your STARKS' });
+  function paintStarks() {
+    var n = 0; try { n = (JSON.parse(localStorage.getItem('amkh-starks') || '{}').balance) || 0; } catch (e) {}
+    starks.innerHTML = '★ <b>' + Number(n).toLocaleString('en-IN') + '</b><span class="sh-sw"> STARKS</span>';
+  }
+  paintStarks(); document.addEventListener('starks', paintStarks);
+  util.appendChild(starks);
+  drawer.appendChild(dutil);
   var burger = el('button', { class: 'sh-burger', type: 'button', 'aria-label': 'Open menu', 'aria-expanded': 'false', 'aria-controls': 'sh-drawer' });
   burger.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
   var brand = el('a', { class: 'sh-brand', href: home, 'aria-label': 'Agar Main King Hota — home' }, [
     img(A('one-full.webp'), 900, 584, '', ''),
     el('span', {}, [document.createTextNode('AGAR MAIN '), el('b', { text: 'KING' }), document.createTextNode(' HOTA')])
   ]);
-  var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, [brand, nav, burger])]);
+  var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, [brand, nav, util, burger])]);
 
   var header = el('header', { id: 'site-header' }, [banner, bar, drawer]);
   me.parentNode.insertBefore(header, me);

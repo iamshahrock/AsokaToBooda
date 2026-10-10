@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>King's Lairs — Agar Main King Hota</title>
+<meta name="description" content="Six lairs from the world of KING: the casino, the snow villain's dome, the secret city, the pit, the abyss and the throne room. Clear them, earn STARKS, climb the Billboard.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/lairs/">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+.hud{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;margin:18px 0 10px;padding:14px 18px;background:var(--panel);border:1px solid var(--line)}
+.hud .me{display:flex;align-items:center;gap:12px}
+.hud .me img{width:44px;height:66px;object-fit:cover;border:1px solid var(--line);background:#0d0909}
+.hud b{font-family:var(--display);font-weight:400;font-size:26px;color:var(--red-hi)}
+.hud small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lair{position:relative;min-height:220px;padding:20px;border:1px solid var(--line);background:#0d0909;color:var(--ink);text-align:left;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.lair::before{content:"";position:absolute;inset:0;opacity:.9;background:var(--bg)}
+.lair>*{position:relative}
+.lair .no{font-family:var(--display);color:var(--red-text);letter-spacing:.12em;font-size:14px}
+.lair h3{margin:4px 0 6px;font-family:var(--display);font-weight:400;font-size:30px;line-height:1;text-transform:uppercase}
+.lair p{margin:0;font-size:14px;line-height:1.45;color:#d9cfc7}
+.lair .st{margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.lair .st.done{color:#7fd38a}
+.lair:hover:not(:disabled){border-color:var(--red)}
+.lair:disabled{cursor:not-allowed}
+.lair:disabled::after{content:"LOCKED";position:absolute;top:16px;right:16px;font-size:11px;letter-spacing:.2em;font-weight:700;color:var(--faint);border:1px solid var(--field-line);padding:3px 8px}
+.stage{display:none;margin-top:18px;background:#070505;border:1px solid var(--line)}
+.stage.on{display:block}
+.stage-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.stage-top h2{margin:0;font-family:var(--display);font-weight:400;font-size:30px;text-transform:uppercase}
+.stage-top .meta{font-family:var(--display);font-size:22px;color:var(--red-hi)}
+.arena{position:relative;padding:22px;min-height:420px}
+.say{margin:0 0 14px;color:#d9cfc7;font-size:16px;line-height:1.5;max-width:720px}
+.msg{margin:14px 0 0;min-height:24px;font-size:15px;color:var(--red-text)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+/* casino */
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;max-width:640px}
+.card{aspect-ratio:5/7;border-radius:8px;background:#f4efe9;color:#111;display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-family:var(--display);font-size:clamp(20px,3.2vw,34px);border:3px solid transparent;cursor:pointer;position:relative}
+.card.r{color:#c3121a}
+.card .s{align-self:flex-end;font-size:1.2em}
+.card.hold{border-color:var(--red-hi);transform:translateY(-6px)}
+.card.hold::after{content:"HOLD";position:absolute;bottom:-26px;left:0;right:0;text-align:center;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--red-text)}
+.card.back{background:repeating-linear-gradient(45deg,#3a0a0c 0 8px,#1a0607 8px 16px);cursor:default}
+.pay{margin-top:30px;font-size:13px;color:var(--faint);line-height:1.6}
+/* dome */
+.dome{position:relative;height:240px;max-width:760px;background:linear-gradient(#0b1626,#1b2c44 60%,#d9e6f2 61%,#eef4fa);overflow:hidden;border:1px solid #233}
+.dome .beam{position:absolute;top:0;width:120px;height:100%;background:linear-gradient(rgba(255,255,220,.55),rgba(255,255,220,.05));clip-path:polygon(45% 0,55% 0,100% 100%,0 100%);transition:left .05s linear}
+.dome .hero{position:absolute;bottom:62px;width:34px;height:52px}
+.dome .hero img{width:100%;height:100%;object-fit:contain}
+.dome .goal{position:absolute;right:10px;bottom:62px;width:56px}
+.bar2{height:8px;background:#2a1c1c;max-width:760px;margin-top:10px}.bar2 i{display:block;height:100%;background:var(--red-hi);width:0}
+/* city */
+.pad{display:grid;grid-template-columns:repeat(2,140px);gap:12px}
+.tile{height:120px;border:0;border-radius:10px;opacity:.35;transition:opacity .12s, box-shadow .12s}
+.tile.lit{opacity:1;box-shadow:0 0 30px currentColor}
+.t0{background:#ff2d55;color:#ff2d55}.t1{background:#00e5ff;color:#00e5ff}.t2{background:#ffd60a;color:#ffd60a}.t3{background:#bf5af2;color:#bf5af2}
+/* pit */
+.prompt{font-family:var(--display);font-size:120px;line-height:1;color:var(--red-hi);height:130px;text-align:center;max-width:520px}
+.keys{display:grid;grid-template-columns:repeat(4,80px);gap:10px;justify-content:center;max-width:520px}
+.keys button{height:70px;font-size:30px;background:var(--field);border:1px solid var(--field-line);color:var(--ink)}
+.keys button:active{background:var(--red)}
+.timebar{height:6px;background:#2a1c1c;max-width:520px;margin:10px 0}.timebar i{display:block;height:100%;background:var(--red-hi)}
+/* den */
+canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:linear-gradient(#03121c,#020608);border:1px solid #123}
+/* throne */
+.choices{display:grid;gap:10px;max-width:720px}
+.choice{text-align:left;padding:14px 16px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font-size:15px;line-height:1.4}
+.choice:hover:not(:disabled){border-color:var(--red-text)}
+.choice.picked{background:var(--red);border-color:var(--red)}
+.big{font-family:var(--display);font-size:clamp(30px,4vw,48px);text-transform:uppercase;line-height:1;margin:0 0 8px}
+@media (max-width:900px){.map{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.map{grid-template-columns:minmax(0,1fr)}.lair{min-height:170px}.keys{grid-template-columns:repeat(4,64px)}.pad{grid-template-columns:repeat(2,120px)}.tile{height:100px}}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+  <div class="page-head">
+    <div><p class="eyebrow">02 · Play the game</p><h1>King's <em>Lairs</em></h1></div>
+    <p>Six lairs from the world of KING. Clear each one to unlock the next, earn STARKS for every win, and take the throne at the end.</p>
+  </div>
+
+  <div class="hud" aria-live="polite">
+    <div class="me"><img id="avatar" src="../assets/studio/crown.png" alt=""><div><small>Your STARKS</small><b id="bal">0</b></div></div>
+    <div><small>Rank</small><b id="tier" style="font-size:22px;color:var(--ink)">Fan</b></div>
+    <div><small>Lairs cleared</small><b id="cleared" style="font-size:22px;color:var(--ink)">0 / 6</b></div>
+    <a class="btn btn-line" href="../fan-billboard/">Billboard →</a>
+  </div>
+
+  <div class="map" id="map"></div>
+
+  <section class="stage" id="stage" aria-live="polite">
+    <div class="stage-top"><h2 id="sTitle">Lair</h2><span class="meta" id="sMeta"></span><button class="btn btn-line" id="back" type="button">← All lairs</button></div>
+    <div class="arena" id="arena"></div>
+  </section>
+</main>
+
+<script src="../assets/starks.js"></script>
+<script>
+(function () {
+var $ = function (id) { return document.getElementById(id); };
+var KEY = 'amkh-lairs';
+var LAIRS = [
+  { id: 'casino', name: 'The Casino Floor', no: '01', blurb: 'The gambling den. Five cards, one redraw. Make the best hand you can; a Royal Flush breaks the bank.', bg: 'radial-gradient(80% 80% at 70% 30%,#5a0a12,#120406)', play: casino },
+  { id: 'dome', name: 'The Mountain Dome', no: '02', blurb: 'The snow villain\'s lair. Cross the ice bridge only while the searchlight looks away.', bg: 'linear-gradient(160deg,#16324f,#0b1626 60%,#dfe9f3)', play: dome },
+  { id: 'city', name: 'The Secret City', no: '03', blurb: 'Underground, in crimson neon. Watch the code, then tap it back. Six in a row opens the gate.', bg: 'radial-gradient(70% 70% at 30% 70%,#3a0a3c,#0a0410)', play: city },
+  { id: 'pit', name: 'The Pit', no: '04', blurb: 'The fighting ring carved in rock. Hit the move before the clock runs out. Eight of twelve to win.', bg: 'radial-gradient(70% 70% at 50% 80%,#5a2a0a,#120806)', play: pit },
+  { id: 'den', name: 'The Abyssal Den', no: '05', blurb: 'The flooded lair. Dive for crowns, dodge the mines. Ten crowns in thirty seconds.', bg: 'radial-gradient(70% 70% at 50% 30%,#06384a,#020608)', play: den },
+  { id: 'throne', name: 'The Throne Room', no: '06', blurb: 'The Royal Challenge. Four decisions, sixty seconds. This is where a King is made.', bg: 'radial-gradient(70% 70% at 50% 30%,#6a0a10,#0a0303)', play: throne }
+];
+function prog() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; } }
+function setProg(p) { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {} }
+function fmt(n) { return Number(n).toLocaleString('en-IN'); }
+
+function hud() {
+  var s = STARKS.get(); $('bal').textContent = fmt(s.balance); $('tier').textContent = STARKS.tier(s.balance);
+  var p = prog(); $('cleared').textContent = LAIRS.filter(function (l) { return p[l.id] && p[l.id].cleared; }).length + ' / 6';
+}
+document.addEventListener('starks', hud);
+try { var mine = JSON.parse(localStorage.getItem('amkh-posters') || '[]'); if (mine.length) $('avatar').src = mine[0].img; } catch (e) {}
+
+function drawMap() {
+  var p = prog(); var map = $('map'); map.innerHTML = '';
+  LAIRS.forEach(function (l, i) {
+    var open = i === 0 || (p[LAIRS[i - 1].id] && p[LAIRS[i - 1].id].cleared);
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'lair'; b.style.setProperty('--bg', l.bg); b.disabled = !open;
+    var st = p[l.id] && p[l.id].cleared ? 'Cleared · best ' + fmt(p[l.id].best) + ' STARKS' : open ? 'Open · tap to enter' : 'Clear the lair before it to unlock';
+    b.innerHTML = '<span class="no">' + l.no + '</span><h3>' + l.name + '</h3><p>' + l.blurb + '</p><span class="st' + (p[l.id] && p[l.id].cleared ? ' done' : '') + '">' + st + '</span>';
+    b.addEventListener('click', function () { enter(l); });
+    map.appendChild(b);
+  });
+  hud();
+}
+var stopCurrent = null;
+function enter(l) {
+  if (stopCurrent) stopCurrent(); stopCurrent = null;
+  $('sTitle').textContent = l.name; $('sMeta').textContent = '';
+  $('stage').classList.add('on'); $('arena').innerHTML = '';
+  $('stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  stopCurrent = l.play($('arena'), function (won, starks, note) { finish(l, won, starks, note); }) || null;
+}
+$('back').addEventListener('click', function () { if (stopCurrent) stopCurrent(); stopCurrent = null; $('stage').classList.remove('on'); drawMap(); $('map').scrollIntoView({ behavior: 'smooth' }); });
+
+function finish(l, won, starks, note) {
+  var p = prog(); var rec = p[l.id] || { cleared: false, best: 0 };
+  var a = $('arena');
+  var box = document.createElement('div'); box.style.marginTop = '22px';
+  if (won) {
+    var first = !rec.cleared;
+    rec.cleared = true; rec.best = Math.max(rec.best, starks); p[l.id] = rec; setProg(p);
+    var got = STARKS.earn(l.id === 'throne' ? 'throne' : 'lair', starks, l.name + (note ? ' · ' + note : ''));
+    if (first) STARKS.earn('firstclear', 100, 'First clear · ' + l.name, 'first-' + l.id);
+    var all = LAIRS.every(function (x) { return p[x.id] && p[x.id].cleared; });
+    if (all) STARKS.earn('allsix', 500, 'All six lairs cleared', 'allsix');
+    box.innerHTML = '<p class="big">Lair cleared</p><p class="say">' + (got ? '+' + fmt(got) + ' STARKS' : 'Today\'s STARKS for this lair are used up; your best still counts.') + (first ? ' · +100 for the first clear' : '') + '</p>';
+    var i = LAIRS.indexOf(l);
+    var row = document.createElement('div'); row.className = 'row';
+    if (LAIRS[i + 1]) { var nx = document.createElement('button'); nx.className = 'btn btn-red'; nx.type = 'button'; nx.textContent = 'Next: ' + LAIRS[i + 1].name + ' →'; nx.onclick = function () { enter(LAIRS[i + 1]); }; row.appendChild(nx); }
+    else { var bb = document.createElement('a'); bb.className = 'btn btn-red'; bb.href = '../fan-billboard/'; bb.textContent = 'Take your place on the Billboard →'; row.appendChild(bb); }
+    var again = document.createElement('button'); again.className = 'btn btn-line'; again.type = 'button'; again.textContent = 'Play again'; again.onclick = function () { enter(l); }; row.appendChild(again);
+    box.appendChild(row);
+  } else {
+    box.innerHTML = '<p class="big">Not this time</p><p class="say">' + (note || 'The lair holds. Try again.') + '</p>';
+    var r = document.createElement('div'); r.className = 'row';
+    var t = document.createElement('button'); t.className = 'btn btn-red'; t.type = 'button'; t.textContent = 'Try again'; t.onclick = function () { enter(l); }; r.appendChild(t); box.appendChild(r);
+  }
+  a.appendChild(box); drawMap();
+}
+
+/* ---------- 01 Casino: Royal Flush draw poker ---------- */
+function casino(a, done) {
+  var SUITS = ['♠', '♥', '♦', '♣'], RANKS = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+  var deck = [], hand = [], held = [false,false,false,false,false], drawn = false;
+  for (var s = 0; s < 4; s++) for (var r = 0; r < 13; r++) deck.push({ r: r, s: s });
+  for (var i = deck.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = deck[i]; deck[i] = deck[j]; deck[j] = t; }
+  hand = deck.splice(0, 5);
+  a.innerHTML = '<p class="say">Tap the cards you want to keep, then draw once. You need a pair of Jacks or better to clear the casino.</p><div class="cards" id="cards"></div><div class="row"><button class="btn btn-red" id="draw" type="button">Draw</button></div><p class="msg" id="cmsg"></p><p class="pay">Royal Flush 1,000 · Straight Flush 500 · Four of a kind 300 · Full House 200 · Flush 150 · Straight 120 · Three of a kind 80 · Two Pair 50 · Jacks or better 30</p>';
+  function render() {
+    var c = $('cards'); c.innerHTML = '';
+    hand.forEach(function (card, k) {
+      var d = document.createElement('button'); d.type = 'button';
+      d.className = 'card' + (card.s === 1 || card.s === 2 ? ' r' : '') + (held[k] ? ' hold' : '');
+      d.setAttribute('aria-pressed', held[k] ? 'true' : 'false');
+      d.setAttribute('aria-label', RANKS[card.r] + ' of ' + ['spades','hearts','diamonds','clubs'][card.s] + (held[k] ? ', held' : ''));
+      d.innerHTML = '<span>' + RANKS[card.r] + '</span><span class="s">' + SUITS[card.s] + '</span>';
+      d.onclick = function () { if (drawn) return; held[k] = !held[k]; render(); };
+      c.appendChild(d);
+    });
+  }
+  function score(h) {
+    var rs = h.map(function (c) { return c.r; }).sort(function (x, y) { return x - y; });
+    var flush = h.every(function (c) { return c.s === h[0].s; });
+    var uniq = rs.filter(function (v, i) { return rs.indexOf(v) === i; });
+    var straight = uniq.length === 5 && (rs[4] - rs[0] === 4 || rs.join() === '0,1,2,3,12');
+    var counts = {}; rs.forEach(function (v) { counts[v] = (counts[v] || 0) + 1; });
+    var groups = Object.keys(counts).map(function (k) { return [counts[k], +k]; }).sort(function (x, y) { return y[0] - x[0] || y[1] - x[1]; });
+    if (straight && flush && rs[0] === 8) return ['Royal Flush', 1000];
+    if (straight && flush) return ['Straight Flush', 500];
+    if (groups[0][0] === 4) return ['Four of a kind', 300];
+    if (groups[0][0] === 3 && groups[1][0] === 2) return ['Full House', 200];
+    if (flush) return ['Flush', 150];
+    if (straight) return ['Straight', 120];
+    if (groups[0][0] === 3) return ['Three of a kind', 80];
+    if (groups[0][0] === 2 && groups[1][0] === 2) return ['Two Pair', 50];
+    if (groups[0][0] === 2 && groups[0][1] >= 9) return ['Jacks or better', 30];
+    return ['No hand', 0];
+  }
+  render();
+  $('draw').onclick = function () {
+    if (drawn) return; drawn = true;
+    hand = hand.map(function (c, k) { return held[k] ? c : deck.shift(); }); held = [false,false,false,false,false]; render();
+    var res = score(hand); $('draw').disabled = true;
+    $('cmsg').textContent = res[0] + (res[1] ? ' · ' + res[1] + ' STARKS' : '');
+    if (res[0] === 'Royal Flush') STARKS.earn('flush', 1000, 'ROYAL FLUSH');
+    setTimeout(function () { done(res[1] > 0, res[1], res[0]); }, 700);
+  };
+}
+
+/* ---------- 02 Dome: sneak past the searchlight ---------- */
+function dome(a, done) {
+  a.innerHTML = '<p class="say">Hold the button (or the space bar) to move. Freeze when the searchlight is on you. Three lives.</p><div class="dome" id="dm"><div class="beam" id="beam"></div><div class="hero" id="hero"><img src="../assets/home/02-check-mate-fire.webp" alt="You"></div><img class="goal" src="../assets/studio/crown.png" alt="The crown"></div><div class="bar2"><i id="dprog"></i></div><div class="row"><button class="btn btn-red" id="move" type="button">Hold to move</button></div><p class="msg" id="dmsg">Lives: 3</p>';
+  var x = 0, lives = 3, moving = false, t0 = performance.now(), raf, over = false, beamX = 0, dir = 1, speed = 2.4;
+  var dm = $('dm'), beam = $('beam'), hero = $('hero');
+  function down(e) { if (e) e.preventDefault(); moving = true; }
+  function up() { moving = false; }
+  var btn = $('move');
+  btn.addEventListener('pointerdown', down); btn.addEventListener('pointerup', up); btn.addEventListener('pointerleave', up);
+  function kd(e) { if (e.code === 'Space') { e.preventDefault(); moving = true; } }
+  function ku(e) { if (e.code === 'Space') moving = false; }
+  addEventListener('keydown', kd); addEventListener('keyup', ku);
+  function loop() {
+    if (over) return;
+    var W = dm.clientWidth;
+    beamX += dir * speed * (1 + x / 140); if (beamX > W - 120) { beamX = W - 120; dir = -1; } if (beamX < 0) { beamX = 0; dir = 1; }
+    beam.style.left = beamX + 'px';
+    if (moving) x = Math.min(100, x + 0.28);
+    var hx = 10 + (W - 110) * x / 100; hero.style.left = hx + 'px';
+    var lit = hx + 17 > beamX + 20 && hx + 17 < beamX + 100;
+    if (lit && moving) {
+      lives--; $('dmsg').textContent = lives > 0 ? 'Spotted! Back to the last checkpoint. Lives: ' + lives : 'Spotted!';
+      x = Math.max(0, Math.floor(x / 25) * 25); moving = false;
+      if (lives <= 0) return end(false);
+    }
+    $('dprog').style.width = x + '%';
+    if (x >= 100) return end(true);
+    raf = requestAnimationFrame(loop);
+  }
+  function end(won) {
+    over = true; cancelAnimationFrame(raf); cleanup();
+    var secs = (performance.now() - t0) / 1000;
+    var pts = won ? Math.max(60, Math.round(220 - secs * 3 + lives * 40)) : 0;
+    done(won, pts, won ? lives + ' lives left' : 'The snow villain\'s light found you.');
+  }
+  function cleanup() { removeEventListener('keydown', kd); removeEventListener('keyup', ku); }
+  raf = requestAnimationFrame(loop);
+  return function () { over = true; cancelAnimationFrame(raf); cleanup(); };
+}
+
+/* ---------- 03 Secret City: neon code (memory) ---------- */
+function city(a, done) {
+  a.innerHTML = '<p class="say">Watch the neon code, then tap it back in order. Reach a code of six to open the gate.</p><div class="pad" id="pad"><button class="tile t0" data-i="0" aria-label="Red"></button><button class="tile t1" data-i="1" aria-label="Blue"></button><button class="tile t2" data-i="2" aria-label="Gold"></button><button class="tile t3" data-i="3" aria-label="Violet"></button></div><div class="row"><button class="btn btn-red" id="go" type="button">Show the code</button></div><p class="msg" id="cm"></p>';
+  var seq = [], input = [], busy = true, stopped = false, timers = [];
+  var tiles = a.querySelectorAll('.tile');
+  function flash(i, ms) { tiles[i].classList.add('lit'); timers.push(setTimeout(function () { tiles[i].classList.remove('lit'); }, ms)); }
+  function play() {
+    busy = true; input = []; $('cm').textContent = 'Watch… (' + seq.length + ')';
+    seq.forEach(function (v, k) { timers.push(setTimeout(function () { if (!stopped) flash(v, 420); }, 650 * k + 400)); });
+    timers.push(setTimeout(function () { busy = false; $('cm').textContent = 'Your turn'; }, 650 * seq.length + 450));
+  }
+  function next() { seq.push(Math.floor(Math.random() * 4)); play(); }
+  tiles.forEach(function (t) {
+    t.addEventListener('click', function () {
+      if (busy) return; var i = +t.dataset.i; flash(i, 200); input.push(i);
+      if (seq[input.length - 1] !== i) { busy = true; var reached = seq.length - 1; return done(false, 0, 'Wrong code at step ' + input.length + '. You reached ' + reached + '.'); }
+      if (input.length === seq.length) {
+        if (seq.length >= 6) { busy = true; return done(true, 120 + (seq.length - 6) * 20, 'Code of ' + seq.length); }
+        busy = true; timers.push(setTimeout(next, 600));
+      }
+    });
+  });
+  $('go').onclick = function () { $('go').disabled = true; next(); };
+  return function () { stopped = true; timers.forEach(clearTimeout); };
+}
+
+/* ---------- 04 The Pit: quick-time fight ---------- */
+function pit(a, done) {
+  var ARROWS = [['←','ArrowLeft'],['↑','ArrowUp'],['↓','ArrowDown'],['→','ArrowRight']];
+  a.innerHTML = '<p class="say">A move flashes. Hit the same arrow (keyboard or buttons) before the bar empties. Twelve moves; land eight to win.</p><div class="prompt" id="pr">READY</div><div class="timebar"><i id="tb"></i></div><div class="keys" id="ks"></div><div class="row"><button class="btn btn-red" id="fight" type="button">Fight</button></div><p class="msg" id="pm"></p>';
+  var ks = $('ks');
+  ARROWS.forEach(function (ar, i) { var b = document.createElement('button'); b.type = 'button'; b.textContent = ar[0]; b.setAttribute('aria-label', ar[1].replace('Arrow', '')); b.onclick = function () { hit(i); }; ks.appendChild(b); });
+  var n = 0, hits = 0, cur = -1, start = 0, win = 1500, raf, live = false, stopped = false;
+  function nextMove() {
+    if (n >= 12) return finishFight();
+    cur = Math.floor(Math.random() * 4); n++; $('pr').textContent = ARROWS[cur][0];
+    start = performance.now(); win = Math.max(650, 1500 - n * 70); live = true; tick();
+  }
+  function tick() {
+    if (!live || stopped) return;
+    var left = 1 - (performance.now() - start) / win; $('tb').style.width = Math.max(0, left * 100) + '%';
+    if (left <= 0) { live = false; $('pm').textContent = 'Too slow! ' + hits + ' / ' + n; setTimeout(nextMove, 350); return; }
+    raf = requestAnimationFrame(tick);
+  }
+  function hit(i) {
+    if (!live) return; live = false; cancelAnimationFrame(raf);
+    if (i === cur) { hits++; $('pm').textContent = 'Landed! ' + hits + ' / ' + n; } else { $('pm').textContent = 'Blocked! ' + hits + ' / ' + n; }
+    setTimeout(nextMove, 300);
+  }
+  function kd(e) { var i = ARROWS.findIndex(function (x) { return x[1] === e.key; }); if (i >= 0) { e.preventDefault(); hit(i); } }
+  addEventListener('keydown', kd);
+  function finishFight() { removeEventListener('keydown', kd); $('pr').textContent = hits + '/12'; done(hits >= 8, hits * 15, hits + ' of 12 moves landed'); }
+  $('fight').onclick = function () { $('fight').disabled = true; nextMove(); };
+  return function () { stopped = true; cancelAnimationFrame(raf); removeEventListener('keydown', kd); };
+}
+
+/* ---------- 05 Abyssal Den: dive for crowns ---------- */
+function den(a, done) {
+  a.innerHTML = '<p class="say">Steer with ← → (or drag / touch left and right). Collect crowns, dodge the red mines. Ten crowns in thirty seconds.</p><canvas class="den" id="cv" width="480" height="640"></canvas><div class="row"><button class="btn btn-red" id="dive" type="button">Dive</button></div><p class="msg" id="dmg2"></p>';
+  var cv = $('cv'), ctx = cv.getContext('2d'), W = 480, H = 640, px = W / 2, keys = {}, items = [], crowns = 0, hitsTaken = 0, t0 = 0, raf, running = false, stopped = false, last = 0;
+  var crownImg = new Image(); crownImg.src = '../assets/studio/crown.png';
+  function kd(e) { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { keys[e.key] = true; e.preventDefault(); } }
+  function ku(e) { keys[e.key] = false; }
+  addEventListener('keydown', kd); addEventListener('keyup', ku);
+  function pointer(e) { var r = cv.getBoundingClientRect(); px = Math.max(24, Math.min(W - 24, (e.clientX - r.left) / r.width * W)); }
+  cv.addEventListener('pointermove', function (e) { if (e.buttons || e.pointerType === 'touch') pointer(e); });
+  cv.addEventListener('pointerdown', pointer);
+  function spawn() { var mine = Math.random() < 0.38; items.push({ x: 30 + Math.random() * (W - 60), y: H + 30, v: 2.4 + Math.random() * 2.2, mine: mine }); }
+  function draw(now) {
+    if (!running || stopped) return;
+    var el = (now - t0) / 1000, left = Math.max(0, 30 - el);
+    if (keys.ArrowLeft) px -= 7; if (keys.ArrowRight) px += 7; px = Math.max(24, Math.min(W - 24, px));
+    if (now - last > 420) { spawn(); last = now; }
+    ctx.clearRect(0, 0, W, H);
+    for (var b = 0; b < 30; b++) { ctx.fillStyle = 'rgba(120,220,255,.08)'; ctx.beginPath(); ctx.arc((b * 97 + el * 30) % W, (H - (b * 53 + el * 60) % H), 3, 0, 7); ctx.fill(); }
+    items.forEach(function (it) { it.y -= it.v; });
+    items = items.filter(function (it) {
+      var hit = Math.abs(it.x - px) < 34 && Math.abs(it.y - 120) < 34;
+      if (hit) { if (it.mine) { hitsTaken++; } else crowns++; return false; }
+      return it.y > -40;
+    });
+    items.forEach(function (it) {
+      if (it.mine) { ctx.fillStyle = '#e3242b'; ctx.beginPath(); ctx.arc(it.x, it.y, 16, 0, 7); ctx.fill(); ctx.strokeStyle = '#ff8a8e'; ctx.lineWidth = 3; for (var s = 0; s < 8; s++) { ctx.beginPath(); ctx.moveTo(it.x + Math.cos(s) * 16, it.y + Math.sin(s) * 16); ctx.lineTo(it.x + Math.cos(s) * 24, it.y + Math.sin(s) * 24); ctx.stroke(); } }
+      else if (crownImg.complete) ctx.drawImage(crownImg, it.x - 22, it.y - 24, 44, 50);
+    });
+    ctx.fillStyle = '#f1e9df'; ctx.beginPath(); ctx.moveTo(px, 96); ctx.lineTo(px - 22, 140); ctx.lineTo(px + 22, 140); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#00e5ff'; ctx.fillRect(px - 4, 140, 8, 14);
+    ctx.fillStyle = '#fff'; ctx.font = '28px Anton, Impact, sans-serif'; ctx.fillText('CROWNS ' + crowns + '   MINES ' + hitsTaken + '   ' + Math.ceil(left) + 's', 18, 40);
+    if (hitsTaken >= 3) return end(false, 'Three mines. The abyss wins this round.');
+    if (left <= 0) return end(crowns >= 10, crowns >= 10 ? null : 'Only ' + crowns + ' crowns. You need ten.');
+    raf = requestAnimationFrame(draw);
+  }
+  function end(won, note) { running = false; cancelAnimationFrame(raf); cleanup(); done(won, crowns * 12 + (3 - hitsTaken) * 20, note || crowns + ' crowns'); }
+  function cleanup() { removeEventListener('keydown', kd); removeEventListener('keyup', ku); }
+  $('dive').onclick = function () { $('dive').disabled = true; running = true; t0 = performance.now(); last = t0; raf = requestAnimationFrame(draw); };
+  ctx.fillStyle = '#fff'; ctx.font = '30px Anton, Impact, sans-serif'; ctx.fillText('PRESS DIVE', 160, 330);
+  return function () { stopped = true; cancelAnimationFrame(raf); cleanup(); };
+}
+
+/* ---------- 06 Throne Room: the Royal Challenge ---------- */
+function throne(a, done) {
+  var rounds = [
+    { title: 'The kingdom is broke', text: 'Your kingdom has one hour of power left and no treasury. What is your first move?', choices: [['Invite citizens to co-create a solution and share the reward', 25], ['Sell the crown and disappear', 5], ['Spend everything on a spectacular throne', 0]] },
+    { title: 'The crowd turns', text: 'The crowd is angry. You have one move to win them back.', choices: [['Listen publicly, own the mistake, and invite a fix', 25], ['Blame a rival kingdom', 5], ['Order everyone to applaud', 0]] },
+    { title: 'The story flips', text: 'A portal opens. Your co-star says the story has changed. Adapt fast.', choices: [['Rewrite the plan around the new reality', 25], ['Pretend the twist never happened', 0], ['Ask the team for one fast idea, then adapt', 20]] },
+    { title: 'The royal flush', text: 'You can save only one: your image, your people, or your promise. What do you protect?', choices: [['Keep the promise and protect the people, even at personal cost', 25], ['Protect the image at any cost', 0], ['Make a bold deal and explain the trade-off honestly', 18]] }
+  ];
+  a.innerHTML = '<p class="say">Four decisions in sixty seconds. Score 65 or more to take the throne.</p><div class="timebar" style="max-width:720px"><i id="tt" style="width:100%"></i></div><p class="big" id="tq">Ready, King?</p><p class="say" id="tx">The clock starts when you press Begin.</p><div class="choices" id="ch"></div><div class="row"><button class="btn btn-red" id="begin" type="button">Begin</button></div><p class="msg" id="tm"></p>';
+  var round = 0, score = 0, left = 60, timer, lock = false, stopped = false;
+  function show() {
+    var r = rounds[round]; $('tq').textContent = r.title; $('tx').textContent = r.text; $('ch').innerHTML = ''; lock = false;
+    r.choices.forEach(function (c) { var b = document.createElement('button'); b.className = 'choice'; b.type = 'button'; b.textContent = c[0]; b.onclick = function () { pick(c[1], b); }; $('ch').appendChild(b); });
+    $('tm').textContent = round === 2 ? 'Surprise twist: the rules just changed.' : '';
+  }
+  function pick(pts, b) {
+    if (lock) return; lock = true; score += pts; b.classList.add('picked');
+    [].forEach.call($('ch').children, function (x) { x.disabled = true; });
+    setTimeout(function () { if (stopped) return; if (round < 3 && left > 0) { round++; show(); } else end(); }, 550);
+  }
+  function end() {
+    clearInterval(timer); $('ch').innerHTML = '';
+    var rank = score >= 90 ? 'Crown Conqueror' : score >= 65 ? 'King in the making' : score >= 35 ? 'Royal Rebel' : 'Kingdom Apprentice';
+    $('tq').textContent = rank; $('tx').textContent = 'Score: ' + score + ' / 100';
+    try { var best = JSON.parse(localStorage.getItem('amkh-best') || 'null'); if (!best || score > best.score) localStorage.setItem('amkh-best', JSON.stringify({ score: score, rank: rank, at: Date.now() })); } catch (e) {}
+    done(score >= 65, score * 3, rank + ' · ' + score + '/100');
+  }
+  $('begin').onclick = function () {
+    $('begin').hidden = true; show();
+    timer = setInterval(function () { left--; $('tt').style.width = (left / 60 * 100) + '%'; if (left <= 0) { clearInterval(timer); end(); } }, 1000);
+  };
+  return function () { stopped = true; clearInterval(timer); };
+}
+
+drawMap();
+var want = new URLSearchParams(location.search).get('lair');
+var l = LAIRS.find(function (x) { return x.id === want; });
+if (l) { var p = prog(), i = LAIRS.indexOf(l); if (i === 0 || (p[LAIRS[i - 1].id] && p[LAIRS[i - 1].id].cleared)) enter(l); }
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

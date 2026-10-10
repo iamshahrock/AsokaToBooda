@@ -9,13 +9,30 @@ const log = [];
 for (const [name, vw, vh] of [['desktop', 1440, 1000], ['phone', 390, 844]]) {
   const p = await browser.newPage({ viewport: { width: vw, height: vh } });
   p.on('pageerror', e => log.push(`${name} pageerror ${e.message}`));
-  for (const path of ['/', '/play/', '/crown/', '/know/', '/asoka-to-booda/', '/v2/']) {
+  for (const path of ['/', '/lairs/', '/fan-billboard/', '/about/', '/contact/', '/faq/', '/asoka-to-booda/']) {
     const r = await p.goto(base + path + '?t=' + Date.now(), { waitUntil: 'networkidle' });
     log.push(`${name} ${path} HTTP ${r.status()}`);
     await p.screenshot({ path: `e2e-out/${name}${(path.replace(/\//g, '_') || '_')}.png`, fullPage: true });
   }
   await p.close();
 }
+const bbp = await browser.newPage();
+await bbp.goto(base + '/fan-billboard/?t=' + Date.now(), { waitUntil: 'networkidle' });
+const bb = await bbp.evaluate(async () => {
+  const g = await fetch('https://asokatobooda.iamshahrock.workers.dev/billboard', { cache: 'no-store' });
+  const gj = await g.json().catch(() => ({}));
+  const bad = await fetch('https://asokatobooda.iamshahrock.workers.dev/billboard', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ device: 'abcdef0123456789', name: 'x', starks: 10 }) });
+  return { get: g.status, entries: (gj.top || []).length, badPost: bad.status };
+});
+log.push(`billboard GET ${bb.get} (${bb.entries} entries), invalid POST rejected with ${bb.badPost}`);
+await bbp.close();
+const lp = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+lp.on('pageerror', e => log.push(`lairs pageerror ${e.message}`));
+await lp.goto(base + '/lairs/?t=' + Date.now(), { waitUntil: 'networkidle' });
+await lp.click('.lair >> nth=0'); await lp.click('#draw'); await lp.waitForTimeout(1500);
+log.push('lairs casino: ' + (await lp.textContent('#cmsg')));
+await lp.screenshot({ path: 'e2e-out/lairs-casino.png', fullPage: true });
+await lp.close();
 const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 p.on('pageerror', e => log.push(`studio pageerror ${e.message}`));
 const r = await p.goto(base + '/create/?film=21&t=' + Date.now(), { waitUntil: 'networkidle' });
@@ -38,4 +55,4 @@ await writeFile('e2e-out/final-poster.jpg', Buffer.from(dataUrl.split(',')[1], '
 await browser.close();
 await writeFile('e2e-out/log.txt', log.join('\n'));
 for (const l of log) console.log(`::notice title=v2-live::${l}`);
-if (log.some(l => /FAILED|pageerror|HTTP [45]/.test(l))) process.exit(1);
+if (log.some(l => /FAILED|pageerror|HTTP [45]|billboard GET [^2]/.test(l))) process.exit(1);
