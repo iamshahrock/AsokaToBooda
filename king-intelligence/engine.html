@@ -1,44 +1,77 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KING Intelligence — Intelligence Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/intel.css">
 <style>
-:root{--bg:#050505;--panel:#0d0d0f;--line:#29292d;--text:#f4f1ea;--muted:#929098;--red:#d71920;--gold:#d9ae58;--green:#7bd69a;--blue:#8ea9e5}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#171216 0,#070707 38%,#040404 100%);color:var(--text);font:13px Inter,Arial,sans-serif}.wrap{max-width:1540px;margin:auto;padding:20px}.ey{font:9px monospace;letter-spacing:.18em;color:var(--red)}h1{font-size:clamp(36px,5vw,68px);letter-spacing:-.07em;line-height:.92;margin:8px 0}.sub{color:var(--muted);max-width:1000px;line-height:1.5}.top{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px}.date{font:9px monospace;color:var(--muted);text-align:right}.controls{display:flex;gap:8px;align-items:center;margin-top:12px}.controls button{background:#111;border:1px solid #333;color:#fff;padding:8px 12px;border-radius:7px;cursor:pointer;font:10px monospace}.controls button.active{border-color:var(--red);color:#fff}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;margin-top:10px}.card{background:linear-gradient(145deg,#101012,#090909);border:1px solid var(--line);border-radius:10px;padding:14px}.full{grid-column:1/-1}.half{grid-column:span 6}.third{grid-column:span 4}.wide{grid-column:span 8}.narrow{grid-column:span 4}h2{margin:-14px -14px 12px;padding:9px 13px 8px;background:#f4f2ec;color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-radius:9px 9px 0 0}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.kpi{border:1px solid var(--line);border-radius:8px;padding:12px}.kpi .label{font:8px monospace;color:var(--muted);letter-spacing:.08em}.kpi .value{font-size:25px;font-weight:900;margin-top:5px}.delta{color:var(--green);font:9px monospace;margin-top:4px}.muted,.source{color:var(--muted);font-size:10px;line-height:1.5}table{width:100%;border-collapse:collapse;font-size:10px}th,td{padding:7px;border-bottom:1px solid #242426;text-align:left;vertical-align:top}th{font:8px monospace;color:var(--muted)}.num{text-align:right;white-space:nowrap}.badge{display:inline-block;border:1px solid #343438;border-radius:99px;padding:3px 7px;font:8px monospace;color:#bbb}.missing{color:var(--gold)}.barrow{display:grid;grid-template-columns:140px 1fr 80px;gap:8px;align-items:center;margin:8px 0;font-size:10px}.bar{height:10px;background:#19191c;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--red);border-radius:99px}.pill{display:inline-block;border:1px solid #343438;border-radius:99px;padding:5px 8px;margin:3px;font:9px monospace}.geo{display:flex;flex-wrap:wrap;gap:6px}.geo span{padding:6px 8px;border:1px solid var(--line);border-radius:7px;font-size:9px}.score{font-size:28px;font-weight:900}.boss{font-size:20px;line-height:1.25;font-weight:800}.small{font-size:9px;color:var(--muted)}.footer{border-top:1px solid var(--line);margin-top:15px;padding-top:12px;font:8px monospace;color:#666;line-height:1.6}
-@media(max-width:900px){.half,.third,.wide,.narrow{grid-column:1/-1}.top{display:block}.date{text-align:left;margin-top:10px}.kpis{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.wrap{padding:10px}.kpis{grid-template-columns:1fr}.barrow{grid-template-columns:100px 1fr 65px}}
-</style></head><body>
-<script src="../assets/header.js"></script><main class="wrap">
-<header class="top"><div><div class="ey">KING INTELLIGENCE · RELEASE 3</div><h1>INTELLIGENCE ENGINE</h1><div class="sub">Longitudinal intelligence layer for Top 50 geography, sample size, sentiment, viral movement and KING / RDJ comparison. Every output is generated from the dated data ledger; unsupported values remain explicitly unavailable.</div><div class="controls" id="controls"></div></div><div class="date" id="date"></div></header>
-<section class="grid" id="app"><div class="card full">Loading intelligence data…</div></section>
-<footer class="footer">KING × SHAH RUKH KHAN GLOBAL DAILY INTELLIGENCE · Release 3 · Asia/Kolkata · 04 OCT baseline immutable · No invented denominators · No population sentiment percentages without a defined corpus · No numerical KING/RDJ score without like-for-like data.</footer>
+/* engine-only: date switcher */
+.ki-switch{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.ki-switch button{font:500 12px/1 var(--ki-mono);letter-spacing:.04em;color:var(--ki-text-2);background:var(--ki-bg-1);border:1px solid var(--ki-line-2);border-radius:2px;padding:9px 12px;cursor:pointer}
+.ki-switch button:hover{border-color:var(--ki-red);color:var(--ki-text)}
+.ki-switch button[aria-pressed="true"]{border-color:var(--ki-red);background:var(--ki-red-dim);color:var(--ki-text)}
+.ki-boss{font:600 clamp(17px,1.8vw,21px)/1.4 var(--ki-font);color:var(--ki-text);margin:0}
+</style>
+</head><body class="ki">
+<script src="../assets/header.js"></script><main class="ki-wrap">
+
+<nav class="ki-crumbs" aria-label="KING Intelligence pages">
+  <a class="ki-crumbs-home" href="./">KING Intelligence</a><span class="sep" aria-hidden="true">/</span>
+  <a href="daily.html">Daily ledger</a>
+  <a href="engine.html" aria-current="page">Intelligence engine</a>
+  <a href="2026-10-04.html">04 Oct baseline</a>
+  <a href="2026-10-05.html">05 Oct record</a>
+  <a href="top-100-fan-clubs.html">Top 100 fan clubs</a>
+</nav>
+
+<header class="ki-head">
+  <div>
+    <p class="ki-eyebrow">KING Intelligence · Release 3</p>
+    <h1 class="ki-h1">Intelligence engine</h1>
+    <p class="ki-lede">Longitudinal intelligence layer for top 50 geography, sample size, sentiment, viral movement and KING / RDJ comparison. Every output is generated from the dated data ledger; unsupported values remain explicitly unavailable.</p>
+    <div class="ki-switch" id="controls" role="group" aria-label="Select record date"></div>
+  </div>
+  <dl class="ki-meta" id="date" aria-label="Record stamps"></dl>
+</header>
+
+<section class="ki-grid" id="app" aria-live="polite"><div class="ki-card s-12">Loading intelligence data.</div></section>
+
+<footer class="ki-pagefoot">KING × Shah Rukh Khan global daily intelligence · Release 3 · Asia/Kolkata · 04 Oct baseline immutable · No invented denominators · No population sentiment percentages without a defined corpus · No numerical KING / RDJ score without like-for-like data · Source: <a href="../data/king-intelligence-engine.json">data/king-intelligence-engine.json</a></footer>
 </main>
 <script>
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fmt=n=>n==null?"—":Number(n).toLocaleString("en-IN");
-const compact=n=>n==null?"—":n>=1e6?(n/1e6).toFixed(n%1e6?3:0)+"M":n>=1e3?(n/1e3).toFixed(n%1e3?1:0)+"K":fmt(n);
+const NA='<span class="ki-na">N/A</span>';
+const fmt=n=>n==null?NA:Number(n).toLocaleString("en-US");
+const compact=n=>n==null?NA:n>=1e6?(n/1e6).toFixed(n%1e6?3:0)+"M":n>=1e3?(n/1e3).toFixed(n%1e3?1:0)+"K":fmt(n);
+const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const nice=d=>{const p=String(d).split("-");return p.length===3?p[2]+" "+MONTHS[+p[1]-1]+" "+p[0]:esc(d)};
 async function boot(){
  const d=await fetch("../data/king-intelligence-engine.json",{cache:"no-store"}).then(r=>r.json());
  const records=d.records; let selected=records[records.length-1];
  const controls=document.getElementById("controls");
- records.forEach(r=>{const b=document.createElement("button");b.textContent=r.date.slice(8)+" OCT";b.onclick=()=>{selected=r;render(d,selected);document.querySelectorAll("#controls button").forEach(x=>x.classList.remove("active"));b.classList.add("active")};controls.appendChild(b)});
- controls.lastChild.classList.add("active");render(d,selected);
+ records.forEach(r=>{const b=document.createElement("button");b.type="button";b.textContent=nice(r.date);b.setAttribute("aria-pressed","false");b.onclick=()=>{selected=r;render(d,selected);controls.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true")};controls.appendChild(b)});
+ controls.lastChild.setAttribute("aria-pressed","true");render(d,selected);
 }
 function render(d,r){
- document.getElementById("date").innerHTML=r.date+"<br>"+r.role+"<br>ASIA/KOLKATA";
+ document.getElementById("date").innerHTML=`<dt>Record</dt><dd class="hl">${nice(r.date)}, IST</dd><dt>Role</dt><dd>${esc(r.role)}</dd><dt>Baseline</dt><dd>04 Oct 2026 · locked</dd><dt>Time zone</dt><dd>Asia/Kolkata</dd>`;
  const k=r.kpis||{}, s=r.sample||{}, sent=r.sentiment||{}, g=r.geography||{}, cmp=r.comparison||{};
  const country=r.country_top50?.rows||Array.from({length:50},(_,i)=>({rank:i+1,country:null,absolute_value:null,status:"unverified"}));
- const max=Math.max(...country.map(x=>x.absolute_value||0),1);
+ const max=Math.max(...country.map(x=>x.absolute_value||0),0);
+ const topics=Array.isArray(r.topics)?r.topics:(r.topics?.baseline||[]);
+ const pct=v=>v==null?'<span class="ki-na">Not quantified</span>':fmt(v);
  document.getElementById("app").innerHTML=`
- <div class="card full"><h2>EXECUTIVE SIGNAL</h2><div class="boss">${esc(r.boss_line||"No executive signal recorded.")}</div><div class="source" style="margin-top:9px">Record: ${esc(r.date)} · Source class is preserved at metric level.</div></div>
- <div class="card full"><h2>MASTER KPIs</h2><div class="kpis">${Object.values(k).slice(0,4).map(x=>`<div class="kpi"><div class="label">${esc(x.series_id||"METRIC")}</div><div class="value">${compact(x.value)}</div><div class="delta">${esc(x.unit||"")} · ${esc(x.status||"")}</div></div>`).join("")}</div></div>
- <div class="card half"><h2>SAMPLE SIZE / DENOMINATOR</h2><table><tr><th>MEASURE</th><th>VALUE</th></tr><tr><td>People polled</td><td>${fmt(s.people_polled)}</td></tr><tr><td>Reels surfaced</td><td>${fmt(s.reels_surfaced)}</td></tr><tr><td>Unique creators</td><td>${fmt(s.unique_creators)}</td></tr><tr><td>Combined views</td><td>${fmt(s.combined_views)}</td></tr></table><div class="source" style="margin-top:8px">${esc(s.denominator_note||s.note||"No denominator note recorded.")}</div></div>
- <div class="card half"><h2>SENTIMENT</h2><div class="score">${esc(sent.classification||"WITHHELD")}</div><div class="source" style="margin-top:8px">Positive: ${sent.positive==null?"not quantified":fmt(sent.positive)} · Neutral: ${sent.neutral==null?"not quantified":fmt(sent.neutral)} · Negative: ${sent.negative==null?"not quantified":fmt(sent.negative)}</div><div class="source" style="margin-top:6px">Method: ${esc(sent.method||"not supplied")} · Confidence: ${esc(sent.confidence||"unavailable")}</div><div class="source" style="margin-top:6px">${esc(sent.note||"")}</div></div>
- <div class="card half"><h2>TOP DISCUSSIONS</h2><div>${(Array.isArray(r.topics)?r.topics:(r.topics?.baseline||[])).map((x,i)=>`<span class="pill">${i+1}. ${esc(x)}</span>`).join("")||"<span class='missing'>No verified topic list for this date.</span>"}</div></div>
- <div class="card half"><h2>VIRAL DATA</h2><table><tr><th>RANK</th><th>CREATOR / ASSET</th><th>VIEWS</th></tr>${(r.viral||[]).map(x=>`<tr><td>${x.rank}</td><td>${esc(x.creator||"Tracked asset")}<br><span class="small">${esc(x.label||"")}</span></td><td class="num">${fmt(x.views)}</td></tr>`).join("")}</table></div>
- <div class="card full"><h2>GEOGRAPHY</h2><div class="geo">${(g.ranked_signals||[]).map((x,i)=>`<span>${String(i+1).padStart(2,"0")} · ${esc(x)}</span>`).join("")||"<span>NO VERIFIED COUNTRY RANKING</span>"}${(g.direct_king_activation||[]).map(x=>`<span>${esc(x)}</span>`).join("")}</div><div class="source" style="margin-top:9px">${esc(g.note||g.caveat||"Country-level absolute values unavailable.")}</div></div>
- <div class="card full"><h2>TOP 50 COUNTRY BOARD · ABSOLUTE KING VOLUME</h2><table><tr><th>RANK</th><th>COUNTRY</th><th>ABSOLUTE VALUE</th><th>STATUS</th><th>BAR</th></tr>${country.map(x=>`<tr><td>${x.rank}</td><td>${esc(x.country||"UNVERIFIED COUNTRY")}</td><td class="num">${x.absolute_value==null?"—":fmt(x.absolute_value)}</td><td><span class="badge">${esc(x.status||"unverified")}</span></td><td><div class="bar"><i style="width:${x.absolute_value?Math.max(2,(x.absolute_value/max)*100):0}%"></i></div></td></tr>`).join("")}</table><div class="source" style="margin-top:9px"><b>Important:</b> this is deliberately an absolute-value board. The source set currently supports geographic signals, not 50 country-level KING counts. No score has been substituted for an absolute count.</div></div>
- <div class="card half"><h2>KING / RDJ — LIKE-FOR-LIKE TEST</h2><table><tr><th></th><th>KING / SRK</th><th>RDJ / DOOM</th></tr><tr><td>Current measurable signal</td><td>${esc(cmp.king||"—")}</td><td>${esc(cmp.rdj_doom||"—")}</td></tr><tr><td>Numerical score</td><td>${cmp.numerical_score==null?"WITHHELD":cmp.numerical_score}</td><td>${cmp.numerical_score==null?"WITHHELD":cmp.numerical_score}</td></tr></table><div class="source" style="margin-top:8px">${esc(cmp.note||"")}</div></div>
- <div class="card half"><h2>ENGINE RULES</h2><table><tr><td>Posts ≠ people</td><td>YES</td></tr><tr><td>Sentiment needs denominator</td><td>YES</td></tr><tr><td>Country score cannot replace count</td><td>YES</td></tr><tr><td>RDJ score needs identical corpus</td><td>YES</td></tr><tr><td>Unknown stays unknown</td><td>YES</td></tr></table></div>`;
+ <div class="ki-card s-12"><h2 class="ki-h3">Executive signal <span class="ki-stamp">${nice(r.date)}</span></h2><p class="ki-boss">${esc(r.boss_line||"No executive signal recorded.")}</p><p class="ki-note">Record: ${nice(r.date)} · Source class is preserved at metric level.</p></div>
+ <div class="s-12"><h2 class="ki-sr">Master KPIs</h2><div class="ki-kpis c4">${Object.values(k).slice(0,4).map(x=>`<div class="ki-kpi"><span class="l">${esc(x.series_id||"Metric")}</span><span class="v">${compact(x.value)}</span><span class="s">${esc(x.unit||"")} · ${esc(x.status||"")}${x.source?" · "+esc(x.source):""}</span></div>`).join("")}</div></div>
+ <div class="ki-card s-6"><h2 class="ki-h3">Sample size / denominator</h2><div class="ki-tablewrap"><table class="ki-table compact"><thead><tr><th scope="col">Measure</th><th scope="col" class="n">Value</th></tr></thead><tbody><tr><th scope="row">People polled</th><td class="n">${fmt(s.people_polled)}</td></tr><tr><th scope="row">Reels surfaced</th><td class="n">${fmt(s.reels_surfaced)}</td></tr><tr><th scope="row">Unique creators</th><td class="n">${fmt(s.unique_creators)}</td></tr><tr><th scope="row">Combined views</th><td class="n">${fmt(s.combined_views)}</td></tr></tbody></table></div><p class="ki-note">${esc(s.denominator_note||s.note||"No denominator note recorded.")}</p></div>
+ <div class="ki-card s-6"><h2 class="ki-h3">Sentiment</h2><div class="ki-stats"><div class="ki-stat"><div class="l">Classification</div><div class="v">${sent.classification?esc(sent.classification):'<span class="ki-na">Withheld</span>'}</div><div class="s">Confidence: ${esc(sent.confidence||"unavailable")}</div></div></div><div class="ki-tablewrap"><table class="ki-table compact"><thead><tr><th scope="col">Share</th><th scope="col" class="n">Value</th></tr></thead><tbody><tr><th scope="row">Positive</th><td class="n">${pct(sent.positive)}</td></tr><tr><th scope="row">Neutral</th><td class="n">${pct(sent.neutral)}</td></tr><tr><th scope="row">Negative</th><td class="n">${pct(sent.negative)}</td></tr></tbody></table></div><p class="ki-note"><b>Method:</b> ${esc(sent.method||"not supplied")}. ${esc(sent.note||"")}</p></div>
+ <div class="ki-card s-6"><h2 class="ki-h3">Top discussions</h2>${topics.length?`<ol class="ki-list">${topics.map((x,i)=>`<li><span class="ix">${String(i+1).padStart(2,"0")}</span><span>${esc(x)}</span></li>`).join("")}</ol>`:'<p><span class="ki-na">Not captured</span> No verified topic list for this date.</p>'}${r.topics&&r.topics.note?`<p class="ki-note">${esc(r.topics.note)}</p>`:""}</div>
+ <div class="ki-card s-6"><h2 class="ki-h3">Viral data</h2><div class="ki-tablewrap"><table class="ki-table compact"><thead><tr><th scope="col">Rank</th><th scope="col">Creator / asset</th><th scope="col" class="n">Views</th></tr></thead><tbody>${(r.viral||[]).map(x=>`<tr><td class="rk">${String(x.rank).padStart(2,"0")}</td><td>${esc(x.creator||"Tracked asset")}<small>${esc(x.label||"")}</small></td><td class="n">${fmt(x.views)}</td></tr>`).join("")}</tbody></table></div></div>
+ <div class="ki-card s-12"><h2 class="ki-h3">Geography</h2><p style="display:flex;flex-wrap:wrap;gap:6px">${(g.ranked_signals||[]).map((x,i)=>`<span class="ki-chip">${String(i+1).padStart(2,"0")} · ${esc(x)}</span>`).join("")||'<span class="ki-na">No verified country ranking</span>'}${(g.direct_king_activation||[]).map(x=>`<span class="ki-chip red">${esc(x)}</span>`).join("")}</p><p class="ki-note">${esc(g.note||g.caveat||"Country-level absolute values unavailable.")}</p></div>
+ <div class="ki-card s-8"><h2 class="ki-h3">Top 50 country board · absolute KING volume</h2><div class="ki-tablewrap tall"><table class="ki-table compact"><thead><tr><th scope="col">Rank</th><th scope="col">Country</th><th scope="col" class="n">Absolute value</th><th scope="col">Status</th>${max?'<th scope="col">Bar</th>':""}</tr></thead><tbody>${country.map(x=>`<tr><td class="rk">${String(x.rank).padStart(2,"0")}</td><td>${x.country?esc(x.country):'<span class="ki-na">Not captured</span>'}</td><td class="n">${x.absolute_value==null?NA:fmt(x.absolute_value)}</td><td><span class="ki-chip ${x.status==="signal-only"?"":"mut"}">${esc(x.status||"unverified")}</span></td>${max?`<td style="min-width:120px"><div class="ki-bar" style="grid-template-columns:1fr"><span class="bt"><i style="width:${x.absolute_value?Math.max(2,(x.absolute_value/max)*100):0}%"></i></span></div></td>`:""}</tr>`).join("")}</tbody></table></div><p class="ki-note"><b>Important:</b> this is deliberately an absolute-value board. The source set currently supports geographic signals, not 50 country-level KING counts. No score has been substituted for an absolute count.${r.country_top50?.reason?" "+esc(r.country_top50.reason):""}</p></div>
+ <div class="ki-card s-4"><h2 class="ki-h3">Engine rules</h2><div class="ki-tablewrap"><table class="ki-table compact"><tbody><tr><th scope="row">Posts are not people</th><td><span class="ki-chip pos">Yes</span></td></tr><tr><th scope="row">Sentiment needs denominator</th><td><span class="ki-chip pos">Yes</span></td></tr><tr><th scope="row">Country score cannot replace count</th><td><span class="ki-chip pos">Yes</span></td></tr><tr><th scope="row">RDJ score needs identical corpus</th><td><span class="ki-chip pos">Yes</span></td></tr><tr><th scope="row">Unknown stays unknown</th><td><span class="ki-chip pos">Yes</span></td></tr></tbody></table></div></div>
+ <div class="ki-card s-12"><h2 class="ki-h3">KING / RDJ · like-for-like test</h2><div class="ki-tablewrap"><table class="ki-table"><thead><tr><th scope="col"></th><th scope="col">KING / SRK</th><th scope="col">RDJ / Doom</th></tr></thead><tbody><tr><th scope="row">Current measurable signal</th><td>${esc(cmp.king||"N/A")}</td><td>${esc(cmp.rdj_doom||"N/A")}</td></tr><tr><th scope="row">Numerical score</th><td>${cmp.numerical_score==null?'<span class="ki-na">Withheld</span>':esc(cmp.numerical_score)}</td><td>${cmp.numerical_score==null?'<span class="ki-na">Withheld</span>':esc(cmp.numerical_score)}</td></tr></tbody></table></div><p class="ki-note">${esc(cmp.note||"")}</p></div>`;
 }
-boot().catch(e=>{document.getElementById("app").innerHTML='<div class="card full"><h2>ENGINE ERROR</h2>'+esc(e.message)+'</div>'});
+boot().catch(e=>{document.getElementById("app").innerHTML='<div class="ki-card s-12"><h2 class="ki-h3">Engine error</h2><p>'+esc(e.message)+'</p></div>'});
 </script><script src="../assets/footer.js" defer></script>
 </body></html>
