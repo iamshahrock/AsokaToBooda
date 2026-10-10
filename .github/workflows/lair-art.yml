@@ -1,6 +1,11 @@
 name: Generate King's Lairs story art
 on:
   workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated chapter ids to generate (blank = all)"
+        required: false
+        default: ""
   push:
     branches: ["test/lair-art"]
 permissions:
@@ -16,6 +21,8 @@ jobs:
           node-version: 22
       - name: Generate chapter art through the live Worker
         run: node tools/lair-art.mjs
+        env:
+          ONLY: ${{ github.event.inputs.only }}
       - name: Save images to a results branch
         if: always()
         run: |
