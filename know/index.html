@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Know — Agar Main King Hota</title>
+<meta name="description" content="KING Buzz, the daily intelligence report on KING, and Asoka to Boo-Da, the story behind the campaign.">
+<meta name="theme-color" content="#0a0707">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+</head>
+<body class="v2">
+<script src="../assets/header.js" data-nav="v2"></script>
+<main class="wrap">
+  <div class="page-head">
+    <div><p class="eyebrow">Door 04 · Know</p><h1>Know the <em>King</em></h1></div>
+    <p>What fans are saying about KING every day, and the long story of how a star and his fans built a digital kingdom.</p>
+  </div>
+
+  <section class="block" aria-label="Countdowns">
+    <div class="clocks">
+      <div class="clock"><b data-until="2026-11-02T00:00:00+05:30">—</b><div><strong>Days to his birthday</strong><span>2 November 2026, Mumbai time</span></div></div>
+      <div class="clock"><b data-until="2026-12-24T00:00:00+05:30">—</b><div><strong>Days to KING</strong><span>In cinemas 24 December 2026</span></div></div>
+    </div>
+  </section>
+
+  <section class="block two" aria-label="Read">
+    <div class="feature">
+      <div>
+        <p class="eyebrow">Daily report</p>
+        <h3>KING Buzz</h3>
+        <p>Hashtags, reels, fan clubs and cities, measured every day against the 4 October baseline, all the way to 24 December.</p>
+        <a class="btn btn-red" href="../king-intelligence/">Today's KING Buzz →</a>
+      </div>
+      <img src="../assets/home/03-king-buzz.webp" width="714" height="1400" alt="">
+    </div>
+    <div class="feature">
+      <div>
+        <p class="eyebrow">The story</p>
+        <h3>Asoka to Boo-Da</h3>
+        <p>Before there was a King, there was a boy. A fan's case study of Shah Rukh Khan's digital story, with facts, memories and interpretation kept apart.</p>
+        <a class="btn btn-red" href="../asoka-to-booda/">Read the story →</a>
+      </div>
+      <img src="../assets/home/04-asoka-to-booda.webp" width="1800" height="1205" alt="">
+    </div>
+  </section>
+</main>
+<script>
+document.querySelectorAll('[data-until]').forEach(function (b) {
+  var d = Math.ceil((Date.parse(b.dataset.until) - Date.now()) / 864e5); b.textContent = d > 0 ? d : '0';
+});
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

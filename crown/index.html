@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Crown — Agar Main King Hota</title>
+<meta name="description" content="Your KING posters, your best Royal Challenge score and the fan-made AI universe.">
+<meta name="theme-color" content="#0a0707">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+.me{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px}
+.best{display:flex;flex-direction:column;justify-content:center;gap:8px;text-align:center;align-items:center}
+.best img{width:110px}
+.best .score{font-family:var(--display);font-size:72px;line-height:1;color:var(--red-hi)}
+.best .rank{font-family:var(--display);font-size:30px;text-transform:uppercase}
+.best p{margin:0;font-size:14px;color:var(--mute)}
+@media (max-width:820px){.me{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js" data-nav="v2"></script>
+<main class="wrap">
+  <div class="page-head">
+    <div><p class="eyebrow">Door 03 · The Crown</p><h1>Where fans get <em>crowned</em></h1></div>
+    <p>Your posters and your best score live here. The public Billboard opens on 2 November with the first verified results.</p>
+  </div>
+
+  <section class="block" aria-labelledby="me-h">
+    <div class="block-head"><h2 id="me-h">Your <em>crown</em></h2><p>Kept on this device only, until the Billboard opens.</p></div>
+    <div class="me">
+      <div class="panel best" id="best">
+        <img src="../assets/studio/crown.png" alt="">
+        <div class="rank">Not crowned yet</div>
+        <p>Play the 60-second Royal Challenge to set your score.</p>
+        <a class="btn btn-red" href="../play/#challenge">Play now →</a>
+      </div>
+      <div class="panel">
+        <h3 class="eyebrow" style="margin-bottom:14px">Your posters</h3>
+        <div class="gallery" id="mine"></div>
+        <div class="empty" id="none">No posters yet. <a href="../create/">Make your first KING poster →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="bb-h">
+    <div class="feature">
+      <div>
+        <p class="eyebrow">Opens 2 November</p>
+        <h3 id="bb-h">The Fan Billboard</h3>
+        <p>Daily top scores, the weekly Grand Winner and the all-time Top 100. It opens on his birthday with the first verified results, so every name on it earned its place.</p>
+        <a class="btn btn-line" href="../fan-billboard/">See the Billboard plan →</a>
+      </div>
+      <img src="../assets/home/06-fan-billboard.webp" width="900" height="985" alt="">
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="fu-h">
+    <div class="feature">
+      <div>
+        <p class="eyebrow">Fan work</p>
+        <h3 id="fu-h">The fan-made AI universe</h3>
+        <p>Posters, trailers, concept films and stories made by fans, each creator credited.</p>
+        <a class="btn btn-red" href="../fan-made-ai-universe/">Enter the fan universe →</a>
+      </div>
+      <img src="../assets/home/05-fan-made-ai-universe.webp" width="663" height="1400" alt="">
+    </div>
+  </section>
+</main>
+<script>
+(function () {
+  try {
+    var best = JSON.parse(localStorage.getItem('amkh-best') || 'null');
+    if (best) {
+      var b = document.getElementById('best');
+      b.querySelector('.rank').textContent = best.rank;
+      var s = document.createElement('div'); s.className = 'score'; s.textContent = best.score + ' / 100';
+      b.insertBefore(s, b.querySelector('.rank'));
+      b.querySelector('p').textContent = 'Your best Royal Challenge score.';
+      b.querySelector('a').textContent = 'Beat it →';
+    }
+    var list = JSON.parse(localStorage.getItem('amkh-posters') || '[]');
+    if (list.length) {
+      document.getElementById('none').hidden = true;
+      var g = document.getElementById('mine');
+      list.forEach(function (p) {
+        var f = document.createElement('figure');
+        var im = document.createElement('img'); im.src = p.img; im.alt = 'Your KING poster in ' + p.film;
+        var c = document.createElement('figcaption'); c.textContent = p.film + ' (' + p.year + ')';
+        f.append(im, c); g.appendChild(f);
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>
