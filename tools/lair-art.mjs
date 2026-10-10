@@ -15,7 +15,9 @@ const scenes = {
 await mkdir('lair-art-out', { recursive: true });
 const ref = await readFile('assets/studio/crown.png');
 const log = [];
+const only = (process.env.ONLY || '').split(',').map(x => x.trim()).filter(Boolean);
 for (const [id, scene] of Object.entries(scenes)) {
+  if (only.length && !only.includes(id)) continue;
   for (let attempt = 1; attempt <= 2; attempt++) {
     const form = new FormData();
     form.append('prompt', base + scene);
