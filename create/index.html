@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create your KING poster — Agar Main King Hota</title>
+<meta name="description" content="Pick one of Shah Rukh Khan's films, step into the role and get a one-of-a-kind KING poster with your face, your name and your line.">
+<meta name="theme-color" content="#0a0707">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.page{padding-top:28px;padding-bottom:72px}
+.intro{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:28px}
+.intro h1{margin:6px 0 0;font-family:var(--display);font-weight:400;font-size:clamp(44px,5.6vw,84px);line-height:.92;text-transform:uppercase}
+.intro h1 em{font-style:normal;color:var(--red-hi)}
+.intro p{margin:0;max-width:520px;color:var(--mute);font-size:16px;line-height:1.55}
+.steps{display:flex;gap:6px;margin:0 0 22px;padding:0;list-style:none;flex-wrap:wrap}
+.steps li{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding:8px 12px;border:1px solid var(--line)}
+.steps li.on{color:#fff;background:var(--red);border-color:var(--red)}
+.steps li.done{color:var(--red-text);border-color:var(--red)}
+.studio{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:28px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--line);padding:22px}
+.panel+.panel{margin-top:18px}
+.panel h2{margin:0 0 4px;font-family:var(--display);font-weight:400;font-size:28px;text-transform:uppercase;display:flex;gap:12px;align-items:baseline}
+.panel h2 .n{color:var(--red-text);font-size:16px;letter-spacing:.14em}
+.panel .hint{margin:0 0 16px;color:var(--mute);font-size:14px;line-height:1.5}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{min-height:38px;padding:0 14px;background:transparent;border:1px solid var(--field-line);color:var(--ink);font-size:13px;font-weight:600;letter-spacing:.06em}
+.chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.chip:hover{border-color:var(--red-text)}
+.find{flex:1;min-width:180px;height:38px;padding:0 12px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 14px var(--body)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;max-height:560px;overflow:auto;padding-right:6px}
+.tile{position:relative;padding:0;border:2px solid transparent;background:#0d0909;text-align:left;color:var(--ink)}
+.tile img{width:100%;aspect-ratio:2/3;object-fit:cover;background:#1a1010}
+.tile span{display:block;padding:6px 6px 8px;font-size:11.5px;line-height:1.3}
+.tile span b{display:block;font-weight:600;font-size:12.5px}
+.tile span i{font-style:normal;color:var(--faint)}
+.tile:hover{border-color:var(--red-text)}
+.tile[aria-pressed="true"]{border-color:var(--red-hi);box-shadow:0 0 0 2px var(--red-hi)}
+.tile.king img{object-fit:contain;padding:18px;background:radial-gradient(70% 60% at 50% 50%,#4a0d10,#0d0909)}
+.tile .tag{position:absolute;top:6px;left:6px;background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:.12em;padding:3px 6px}
+.chosen{display:flex;gap:14px;align-items:center;margin-top:14px;padding:12px;border:1px solid var(--line);background:#0e0a0a}
+.chosen img{width:56px;aspect-ratio:2/3;object-fit:cover}
+.chosen p{margin:0;font-size:14px;color:var(--mute)}
+.chosen strong{display:block;color:var(--ink);font-size:16px}
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.opt{padding:14px;border:1px solid var(--field-line);background:transparent;color:var(--ink);text-align:left;min-height:84px}
+.opt b{display:block;font-family:var(--display);font-weight:400;font-size:20px;text-transform:uppercase;margin-bottom:4px}
+.opt small{color:var(--mute);font-size:12.5px;line-height:1.4}
+.opt[aria-pressed="true"]{border-color:var(--red-hi);background:#2a0b0d}
+.looks{display:flex;flex-wrap:wrap;gap:8px}
+label.field{display:block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:14px 0 6px}
+input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 15px var(--body)}
+.photos{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ph{width:86px;height:86px;border:1px dashed var(--field-line);display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:12px;position:relative;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph button{position:absolute;top:2px;right:2px;width:26px;height:26px;border:0;background:rgba(0,0,0,.7);color:#fff}
+.upload{position:relative}
+.upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--mute);line-height:1.45}
+.consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--red-hi)}
+.count{font-size:12px;color:var(--faint);text-align:right;margin-top:4px}
+.stage{position:sticky;top:76px}
+.frame{background:#000;border:1px solid var(--line);aspect-ratio:2/3;position:relative;overflow:hidden}
+.frame canvas{width:100%;height:100%;display:block}
+.frame .busy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(7,5,5,.82);text-align:center;padding:24px}
+.frame .busy img{width:96px;animation:pulse 1.6s ease-in-out infinite}
+.frame .busy p{margin:0;font-family:var(--display);font-size:22px;letter-spacing:.04em;text-transform:uppercase}
+.frame .busy small{color:var(--mute);font-size:13px}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.actions .btn{flex:1;min-width:140px}
+.status{margin:12px 0 0;font-size:14px;line-height:1.5;color:var(--red-text);min-height:21px}
+.status.ok{color:#d9cfc7}
+.next{margin-top:18px;border-top:3px solid var(--red);padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.next p{margin:0;font-size:14px;color:var(--mute)}
+.note{font-size:12.5px;color:var(--faint);line-height:1.5;margin-top:10px}
+@media (max-width:980px){.studio{grid-template-columns:minmax(0,1fr)}.stage{position:static}.opts{grid-template-columns:minmax(0,1fr)}.grid{max-height:420px;grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
+@media (prefers-reduced-motion:reduce){.frame .busy img{animation:none}}
+</style>
+</head>
+<body>
+<script src="../assets/header.js" data-nav="v2"></script>
+<main class="wrap page">
+  <div class="intro">
+    <div>
+      <p class="eyebrow">Door 01 · Create</p>
+      <h1>Make your <em>KING</em> poster</h1>
+    </div>
+    <p>Pick one of his 80 films, step into the role and get a poster nobody else has: your face, his film's world, the KING crown and your own line.</p>
+  </div>
+
+  <ol class="steps" id="steps" aria-label="Progress">
+    <li data-s="1" class="on">1 · Film</li><li data-s="2">2 · Role</li><li data-s="3">3 · Photo</li><li data-s="4">4 · Look</li><li data-s="5">5 · Your line</li>
+  </ol>
+
+  <div class="studio">
+    <div>
+      <section class="panel" aria-labelledby="h1">
+        <h2 id="h1"><span class="n">01</span>Choose the film</h2>
+        <p class="hint">Every original poster from 1988 to 2018, plus the 81st, KING, still unwritten. Tap one.</p>
+        <div class="filters" role="group" aria-label="Filter by decade">
+          <button class="chip" type="button" data-era="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-era="1980">TV &amp; '80s</button>
+          <button class="chip" type="button" data-era="1990">'90s</button>
+          <button class="chip" type="button" data-era="2000">2000s</button>
+          <button class="chip" type="button" data-era="2010">2010s</button>
+          <input class="find" id="find" type="search" placeholder="Search a film or character" aria-label="Search a film or character">
+        </div>
+        <div class="grid" id="grid" aria-label="Films"></div>
+        <div class="chosen" id="chosen" hidden></div>
+      </section>
+
+      <section class="panel" aria-labelledby="h2">
+        <h2 id="h2"><span class="n">02</span>Your role</h2>
+        <p class="hint" id="roleHint">Who are you in this story?</p>
+        <div class="opts" id="roles" role="group" aria-label="Role">
+          <button class="opt" type="button" data-role="king" aria-pressed="true"><b>The King</b><small>You take the lead and own the poster.</small></button>
+          <button class="opt" type="button" data-role="rival" aria-pressed="false"><b>The Rival</b><small>Intense, dangerous, unforgettable.</small></button>
+          <button class="opt" type="button" data-role="sidekick" aria-pressed="false"><b>The Sidekick</b><small>Loyal, playful, steals every scene.</small></button>
+        </div>
+        <label class="field" for="world">Set it in a KING world (optional)</label>
+        <select class="text" id="world">
+          <option value="">The film's own world</option>
+          <option>an underground secret city lit by crimson neon</option>
+          <option>a fortress inside a mountain dome</option>
+          <option>a high-stakes casino floor at midnight</option>
+          <option>The Pit, a fighting arena carved into rock</option>
+          <option>the Abyssal Den, a flooded underwater lair</option>
+        </select>
+      </section>
+
+      <section class="panel" aria-labelledby="h3">
+        <h2 id="h3"><span class="n">03</span>Your photo</h2>
+        <p class="hint">A clear, front-facing photo works best. Add up to two friends for a squad poster.</p>
+        <div class="photos" id="photos">
+          <label class="ph upload" id="addPhoto"><input type="file" accept="image/jpeg,image/png,image/webp" id="photoInput"><span>+ Add photo</span></label>
+        </div>
+        <label class="consent"><input type="checkbox" id="consent"> <span>These photos are of me, or I have permission from everyone in them.</span></label>
+      </section>
+
+      <section class="panel" aria-labelledby="h4">
+        <h2 id="h4"><span class="n">04</span>The look</h2>
+        <p class="hint">How should your poster be painted?</p>
+        <div class="looks" id="looks" role="group" aria-label="Look">
+          <button class="chip" type="button" data-look="cinematic" aria-pressed="true">Cinematic</button>
+          <button class="chip" type="button" data-look="retro" aria-pressed="false">Retro Bollywood</button>
+          <button class="chip" type="button" data-look="popart" aria-pressed="false">Pop Art</button>
+          <button class="chip" type="button" data-look="noir" aria-pressed="false">Noir</button>
+          <button class="chip" type="button" data-look="anime" aria-pressed="false">Anime</button>
+          <button class="chip" type="button" data-look="cyberpunk" aria-pressed="false">Cyberpunk</button>
+          <button class="chip" type="button" data-look="shahrock" aria-pressed="false">Shah Rock Jaan pop</button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="h5">
+        <h2 id="h5"><span class="n">05</span>Your line</h2>
+        <p class="hint">Your name goes on the poster in the KING lettering. Your line goes underneath.</p>
+        <label class="field" for="name">Name on the poster</label>
+        <input class="text" id="name" maxlength="18" autocomplete="given-name" placeholder="e.g. Shailja">
+        <label class="field" for="line">Your dialogue</label>
+        <input class="text" id="line" maxlength="70" placeholder="Agar main King hota…">
+        <div class="count"><span id="lineCount">0</span> / 70</div>
+      </section>
+    </div>
+
+    <aside class="stage" aria-label="Your poster">
+      <div class="frame" id="frame">
+        <canvas id="canvas" width="1024" height="1536" role="img" aria-label="Your poster preview"></canvas>
+        <div class="busy" id="busy" hidden><img src="../assets/studio/crown.png" alt=""><p>Painting your poster</p><small>About a minute. Keep this page open.</small></div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-red" id="make" type="button">Make my poster <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="actions" id="afterActions" hidden>
+        <button class="btn btn-line" id="download" type="button">Download</button>
+        <button class="btn btn-line" id="share" type="button">Share</button>
+      </div>
+      <p class="status ok" id="status" role="status">Choose a film to see your frame.</p>
+      <p class="note">The preview shows the frame only. Your poster is painted fresh by AI from your photo, the film's world and the KING crown, so no two are alike. Five posters per person per day.</p>
+      <div class="next" id="next" hidden>
+        <p>Your poster is your player card. Ready for the 60-second Royal Challenge?</p>
+        <a class="btn btn-red" href="../play/#challenge">Play <span aria-hidden="true">→</span></a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<script type="module">
+import { buildPrompt } from '../assets/studio/prompt.js';
+import { renderPoster, loadImage, preloadKit } from '../assets/studio/compose.js';
+
+const $ = id => document.getElementById(id);
+const POSTER_API_URL = 'https://asokatobooda.iamshahrock.workers.dev';
+const BASE = new URL('../assets/posters/', location.href).href;
+// How the original poster is shared with the image model. 'original' sends it as-is;
+// 'blur' sends a softened copy (layout and colour only). Set from the end-to-end test results.
+const FILM_REF_MODE = 'original';
+
+const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null };
+let catalogue = [];
+
+// ---------- films ----------
+const KING = { id: '81', title: 'KING', year: 2026, kind: 'film', character: 'The King', king: true };
+async function loadCatalogue() {
+  const res = await fetch(BASE + 'catalogue.json');
+  const data = await res.json();
+  catalogue = [...data.posters, KING];
+  drawGrid();
+}
+function eraOf(p) { return p.year < 1990 || p.kind === 'tv' ? '1980' : String(Math.floor(p.year / 10) * 10); }
+function drawGrid() {
+  const era = document.querySelector('[data-era][aria-pressed="true"]').dataset.era;
+  const q = $('find').value.trim().toLowerCase();
+  const list = catalogue.filter(p => (era === 'all' || eraOf(p) === era || (p.king && era === '2010')) &&
+    (!q || (p.title + ' ' + p.character + ' ' + p.year).toLowerCase().includes(q)));
+  $('grid').replaceChildren(...list.map(p => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'tile' + (p.king ? ' king' : '');
+    b.setAttribute('aria-pressed', String(state.film && state.film.id === p.id));
+    const im = document.createElement('img');
+    im.loading = 'lazy'; im.alt = ''; im.width = 160; im.height = 240;
+    im.src = p.king ? '../assets/studio/crown.png' : BASE + p.thumb;
+    const s = document.createElement('span');
+    const t = document.createElement('b'); t.textContent = p.title;
+    const i = document.createElement('i'); i.textContent = p.year + (p.kind === 'tv' ? ' · TV' : '') + ' · ' + p.character;
+    s.append(t, i); b.append(im, s);
+    if (p.king) { const tag = document.createElement('em'); tag.className = 'tag'; tag.textContent = 'The 81st'; b.append(tag); }
+    b.addEventListener('click', () => chooseFilm(p));
+    return b;
+  }));
+  if (!list.length) $('grid').textContent = 'No film matches that search.';
+}
+document.querySelectorAll('[data-era]').forEach(c => c.addEventListener('click', () => {
+  document.querySelectorAll('[data-era]').forEach(x => x.setAttribute('aria-pressed', String(x === c))); drawGrid();
+}));
+$('find').addEventListener('input', drawGrid);
+
+function chooseFilm(p) {
+  state.film = p; state.aiArt = null;
+  drawGrid();
+  const c = $('chosen'); c.hidden = false; c.replaceChildren();
+  const im = document.createElement('img'); im.alt = ''; im.src = p.king ? '../assets/studio/crown.png' : BASE + p.thumb;
+  const t = document.createElement('p'); const s = document.createElement('strong');
+  s.textContent = `${p.title} (${p.year})`;
+  t.append(s, document.createTextNode(p.king ? 'The 81st poster. KING releases 24 Dec 2026; this one is yours to write.' : `You step in as ${p.character}.`));
+  c.append(im, t);
+  $('roleHint').textContent = p.king ? 'Who are you in KING?' : `In ${p.title}, who are you?`;
+  mark(2); refresh();
+}
+
+// ---------- role, look, world ----------
+function group(sel, key) {
+  document.querySelectorAll(sel).forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll(sel).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    state[key] = b.dataset[key]; if (key === 'role') mark(3); if (key === 'look') mark(5);
+  }));
+}
+group('[data-role]', 'role'); group('[data-look]', 'look');
+
+// ---------- photos ----------
+function downscale(file, max = 1024) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file); const im = new Image();
+    im.onload = () => {
+      const s = Math.min(1, max / Math.max(im.width, im.height));
+      const c = document.createElement('canvas'); c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
+      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      c.toBlob(b => b ? resolve(b) : reject(Error('Could not read photo')), 'image/jpeg', 0.9);
+    };
+    im.onerror = () => { URL.revokeObjectURL(url); reject(Error('Could not open that image.')); };
+    im.src = url;
+  });
+}
+$('photoInput').addEventListener('change', async e => {
+  const f = e.target.files && e.target.files[0]; e.target.value = '';
+  if (!f) return;
+  if (!/^image\/(jpeg|png|webp)$/.test(f.type)) { say('Please choose a JPG, PNG or WebP photo.'); return; }
+  try {
+    const blob = await downscale(f);
+    state.photos.push({ blob, url: URL.createObjectURL(blob) }); drawPhotos(); mark(4);
+    say('Photo added.', true);
+  } catch (err) { say(err.message); }
+});
+function drawPhotos() {
+  const box = $('photos'); const add = $('addPhoto');
+  box.replaceChildren(...state.photos.map((p, i) => {
+    const d = document.createElement('div'); d.className = 'ph';
+    const im = document.createElement('img'); im.src = p.url; im.alt = 'Photo ' + (i + 1);
+    const x = document.createElement('button'); x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label', 'Remove photo ' + (i + 1));
+    x.addEventListener('click', () => { URL.revokeObjectURL(p.url); state.photos.splice(i, 1); drawPhotos(); });
+    d.append(im, x); return d;
+  }), add);
+  add.hidden = state.photos.length >= 3;
+  add.querySelector('span').textContent = state.photos.length ? '+ Add a friend' : '+ Add photo';
+}
+
+// ---------- name / line ----------
+$('name').addEventListener('input', refresh);
+$('line').addEventListener('input', () => { $('lineCount').textContent = $('line').value.length; refresh(); });
+
+// ---------- steps + preview ----------
+function mark(n) {
+  document.querySelectorAll('#steps li').forEach(li => {
+    const s = Number(li.dataset.s); li.classList.toggle('on', s === n); li.classList.toggle('done', s < n);
+  });
+}
+function say(t, ok) { const s = $('status'); s.textContent = t; s.className = 'status' + (ok ? ' ok' : ''); }
+const today = () => new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' }).toUpperCase();
+let pending = 0;
+async function refresh() {
+  const my = ++pending;
+  const p = state.film;
+  let art = state.aiArt;
+  if (!art && p && !p.king) { try { art = await loadImage(BASE + p.ref); } catch (e) {} }
+  if (my !== pending) return;
+  await renderPoster($('canvas'), {
+    art, preview: !state.aiArt, name: $('name').value, line: $('line').value,
+    film: p ? p.title : '', year: p ? p.year : '', character: p ? p.character : '', date: today()
+  });
+  if (!state.aiArt && p) say('This is your frame. Make the poster to paint yourself into it.', true);
+}
+
+// ---------- make ----------
+async function filmReference(p) {
+  const im = await loadImage(BASE + p.ref);
+  const c = document.createElement('canvas'); const s = Math.min(1, 768 / Math.max(im.width, im.height));
+  c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
+  const ctx = c.getContext('2d');
+  if (FILM_REF_MODE === 'blur') ctx.filter = 'blur(12px)';
+  ctx.drawImage(im, 0, 0, c.width, c.height);
+  return new Promise(r => c.toBlob(r, 'image/jpeg', 0.88));
+}
+$('make').addEventListener('click', async () => {
+  const p = state.film;
+  if (!p) { say('Choose a film first.'); $('grid').scrollIntoView({ behavior: 'smooth' }); return; }
+  if (!state.photos.length) { say('Add your photo: you are the hero of this poster.'); return; }
+  if (!$('consent').checked) { say('Please confirm the photos are yours or that you have permission.'); return; }
+  $('make').disabled = true; $('busy').hidden = false; say('Sending your photo, the film and the crown…', true);
+  try {
+    const form = new FormData();
+    form.append('prompt', buildPrompt({
+      film: p.king ? 'KING' : p.title, year: p.year, character: p.king ? '' : p.character,
+      role: state.role, look: state.look, squad: state.photos.length, world: $('world').value,
+      hasFilmRef: !p.king
+    }));
+    state.photos.forEach((ph, i) => form.append('image', ph.blob, `fan-${i + 1}.jpg`));
+    if (!p.king) form.append('image', await filmReference(p), 'film.jpg');
+    form.append('image', await (await fetch('../assets/studio/crown.png')).blob(), 'crown.png');
+    const res = await fetch(POSTER_API_URL, { method: 'POST', body: form });
+    let data = {}; try { data = await res.json(); } catch (e) {}
+    if (!res.ok || !data.image) throw new Error(data.error || `The poster service returned error ${res.status}.`);
+    state.aiArt = await loadImage('data:image/png;base64,' + data.image);
+    await refresh();
+    $('afterActions').hidden = false; $('next').hidden = false;
+    saveToCrown(p);
+    say('Your poster is ready. Download it, share it, then take the challenge.', true);
+  } catch (err) {
+    say(/safety/i.test(err.message) ? 'The image service declined this one. Try a different photo or look.' : err.message);
+  } finally { $('make').disabled = false; $('busy').hidden = true; }
+});
+
+// ---------- keep a small copy for The Crown page (this device only) ----------
+function saveToCrown(p) {
+  try {
+    const c = document.createElement('canvas'); c.width = 320; c.height = 480;
+    c.getContext('2d').drawImage($('canvas'), 0, 0, 320, 480);
+    const list = JSON.parse(localStorage.getItem('amkh-posters') || '[]');
+    list.unshift({ img: c.toDataURL('image/jpeg', 0.8), film: p.title, year: p.year, name: $('name').value.trim(), at: Date.now() });
+    localStorage.setItem('amkh-posters', JSON.stringify(list.slice(0, 8)));
+  } catch (e) {}
+}
+
+// ---------- download / share ----------
+function posterBlob() { return new Promise(r => $('canvas').toBlob(r, 'image/jpeg', 0.92)); }
+$('download').addEventListener('click', async () => {
+  const b = await posterBlob(); const u = URL.createObjectURL(b);
+  const a = document.createElement('a'); a.href = u; a.download = 'agar-main-king-hota-poster.jpg'; document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(u), 4000);
+});
+$('share').addEventListener('click', async () => {
+  const b = await posterBlob(); const file = new File([b], 'agar-main-king-hota-poster.jpg', { type: 'image/jpeg' });
+  const text = 'Agar main King hota… This is my KING poster. Make yours:'; const url = 'https://agarmainkinghota.com/';
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file], title: 'My KING poster', text: text + ' ' + url });
+    else if (navigator.share) await navigator.share({ title: 'Agar Main King Hota', text, url });
+    else { await navigator.clipboard.writeText(text + ' ' + url); say('Link copied. Download the poster and post it with the link.', true); }
+  } catch (e) { if (e && e.name !== 'AbortError') say('Sharing is not available here. Download the poster instead.'); }
+});
+
+// deep link: ?film=21
+(async () => {
+  await Promise.all([loadCatalogue(), preloadKit(), document.fonts && document.fonts.ready]);
+  const want = new URLSearchParams(location.search).get('film');
+  const p = want && catalogue.find(x => x.id === want.padStart(2, '0'));
+  if (p) chooseFilm(p); else refresh();
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

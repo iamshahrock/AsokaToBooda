@@ -9,16 +9,16 @@ const log = [];
 for (const [name, vw, vh] of [['desktop', 1440, 1000], ['phone', 390, 844]]) {
   const p = await browser.newPage({ viewport: { width: vw, height: vh } });
   p.on('pageerror', e => log.push(`${name} pageerror ${e.message}`));
-  for (const path of ['/v2/', '/v2/play/', '/v2/crown/', '/v2/know/']) {
+  for (const path of ['/', '/play/', '/crown/', '/know/', '/asoka-to-booda/', '/v2/']) {
     const r = await p.goto(base + path + '?t=' + Date.now(), { waitUntil: 'networkidle' });
     log.push(`${name} ${path} HTTP ${r.status()}`);
-    await p.screenshot({ path: `e2e-out/${name}${path.replace(/\//g, '_')}.png`, fullPage: true });
+    await p.screenshot({ path: `e2e-out/${name}${(path.replace(/\//g, '_') || '_')}.png`, fullPage: true });
   }
   await p.close();
 }
 const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 p.on('pageerror', e => log.push(`studio pageerror ${e.message}`));
-const r = await p.goto(base + '/v2/create/?film=21&t=' + Date.now(), { waitUntil: 'networkidle' });
+const r = await p.goto(base + '/create/?film=21&t=' + Date.now(), { waitUntil: 'networkidle' });
 log.push(`studio HTTP ${r.status()}`);
 await p.setInputFiles('#photoInput', 'assets/studio/shahrock-dreaming.jpg');
 await p.fill('#name', 'Shah Rock');

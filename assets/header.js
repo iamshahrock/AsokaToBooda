@@ -13,15 +13,15 @@
   var root = new URL('..', assets).href;           // site root
   var A = function (p) { return assets + 'header/' + p; };
 
-  // data-nav="v2" on the script tag = the new four-door site (preview at /v2/).
-  var V2 = me.getAttribute('data-nav') === 'v2';
-  var home = V2 ? root + 'v2/' : root;
-  var LINKS = V2 ? [
-    ['v2/create/', 'Create'],
-    ['v2/play/', 'Play'],
-    ['v2/crown/', 'The Crown'],
-    ['v2/know/', 'Know']
-  ] : [
+  // One journey, four doors (live from 10 Oct 2026).
+  var home = root;
+  var LINKS = [
+    ['create/', 'Create'],
+    ['play/', 'Play'],
+    ['crown/', 'The Crown'],
+    ['know/', 'Know']
+  ];
+  var OLD_LINKS = [
     ['game/', 'Agar Main King Hota'],
     ['CHESS81.HTML', 'Check. Mate. Fire.'],
     ['king-intelligence/', 'KING Buzz'],

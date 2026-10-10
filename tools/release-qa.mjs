@@ -12,7 +12,7 @@ const pages = [
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
   ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'], ['P','/preview/'],
-  ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'],
+  ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'], ['CR','/create/'], ['PL','/play/'], ['CW','/crown/'], ['KN','/know/'],
   ['R4','/king-intelligence/2026-10-04.html'], ['R5','/king-intelligence/2026-10-05.html'], ['T','/king-intelligence/top-100-fan-clubs.html'],
 ];
 
@@ -29,8 +29,9 @@ const required = {
   'D': ['DAILY DATA LEDGER', '06 OCT 2026', '2,933,427', '31.176M', '699,000'],
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
   'G': ['AGAR MAIN KING HOTA', 'CREATE YOUR KING POSTER', 'PLAY FOR 60 SECONDS', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'H': ['AGAR MAIN KING HOTA', 'PLAY THE GAME', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'A': ['AGAR MAIN KING HOTA', 'PLAY THE GAME', 'CHECK. MATE. FIRE.', 'KING BUZZ', 'ASOKA TO BOODA', 'FAN MADE AI UNIVERSE', 'FAN BILLBOARD', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
+  'H': ['MAKE YOUR KING POSTER', 'FOUR DOORS', 'ROYAL CHALLENGE', 'KING BUZZ', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
+  'A': ['MAKE YOUR KING POSTER', 'FOUR DOORS', 'ROYAL CHALLENGE', 'KING BUZZ', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
+  'CR': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'PL': ['ROYAL CHALLENGE', 'CHESS81'], 'CW': ['THE FAN BILLBOARD'], 'KN': ['KING BUZZ', 'ASOKA TO BOO-DA'],
 };
 
 const legacyPaths = [
@@ -139,26 +140,12 @@ for (const [id, path] of pages) {
       if (broken.length) issues.push('image(s) failed to load: ' + broken.join(', '));
       else console.log(`PASS [${id}] all ${await page.evaluate(() => document.images.length)} images loaded`);
     }
-    // slider must mirror the six section cards: slide N = card N (number, image, destination)
+    // home: exactly four doors, each pointing at its section
     if (['H', 'A'].includes(id)) {
-      const mirror = await page.evaluate(() => {
-        const slides = [...document.querySelectorAll('#hero .slide')], cards = [...document.querySelectorAll('.cards .card')];
-        const out = [];
-        if (slides.length !== 6 || cards.length !== 6) out.push(`expected 6 slides and 6 cards, found ${slides.length} and ${cards.length}`);
-        slides.forEach((s, k) => {
-          const c = cards[k]; if (!c) return;
-          const dest = new URL(c.getAttribute('href'), location.href).pathname;
-          const bad = [...s.querySelectorAll('a[href]')].map(a => new URL(a.getAttribute('href'), location.href).pathname).filter(p => !p.startsWith(dest));
-          if (bad.length) out.push(`slide ${k + 1} links leave its section (${dest}): ${bad.join(', ')}`);
-          const si = s.querySelector('img.art')?.getAttribute('src'), ci = c.querySelector('.pic img')?.getAttribute('src');
-          if (si !== ci) out.push(`slide ${k + 1} image ${si} != card image ${ci}`);
-          const sn = (s.querySelector('.eyebrow')?.textContent || '').trim().slice(0, 2), cn = (c.querySelector('.num')?.textContent || '').trim();
-          if (sn !== cn) out.push(`slide ${k + 1} number ${sn} != card number ${cn}`);
-        });
-        return out;
-      });
-      if (mirror.length) issues.push('slider/cards mismatch: ' + mirror.join(' | '));
-      else console.log(`PASS [${id}] slider mirrors the six section cards`);
+      const doors = await page.evaluate(() => [...document.querySelectorAll('.doors .door')].map(a => new URL(a.getAttribute('href'), location.href).pathname));
+      const want = ['/create/', '/play/', '/crown/', '/know/'];
+      if (JSON.stringify(doors) !== JSON.stringify(want)) issues.push('four doors wrong: ' + doors.join(', '));
+      else console.log(`PASS [${id}] four doors point at Create, Play, The Crown, Know`);
     }
     // game: playable on arrival, and the ZERO artwork pack the poster needs is reachable
     if (id === 'G') {
