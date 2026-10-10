@@ -51,6 +51,8 @@
   }
 
   function post(path, body) {
+    // automated test browsers never touch the real Billboard or stats
+    if (navigator.webdriver && !/[?&]live-starks/.test(location.search)) return Promise.reject(new Error('test browser'));
     return fetch(BASE + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error || 'STARKS error ' + r.status); return j; }); });
   }
