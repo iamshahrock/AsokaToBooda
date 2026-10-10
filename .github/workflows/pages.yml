@@ -45,7 +45,7 @@ jobs:
           cp -R assets site/
           cp -R preview site/
           cp -R v2 site/
-          cp -R create play crown know site/
+          cp -R create play crown know lairs about contact faq site/
 
           for dir in             "Bauua Raw Material"             "data"             "king-intelligence-shared"             "king-intelligence"             "king-intelligence-2"             "king-intelligence-3"             "king-intelligence-4"             "king-intelligence-5"             "king-intelligence-6"             "king-intelligence-7"             "king-intelligence-8"             "king-intelligence-9"             "king-intelligence-10"             "king-intelligence-11"             "king-intelligence-12"             "king-intelligence-13"             "king-intelligence-14"             "king-intelligence-15"             "king-intelligence-16"             "king-intelligence-17"             "king-intelligence-18"
           do
@@ -62,6 +62,7 @@ jobs:
           test -f site/v2/index.html
           test -f site/v2/create/index.html
           test -f site/create/index.html
+          test -f site/lairs/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

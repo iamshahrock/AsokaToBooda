@@ -48,7 +48,7 @@ export default {
     const origin = request.headers.get("Origin") || "";
     const cors = {
       "Access-Control-Allow-Origin": ALLOWED_ORIGINS.has(origin) ? origin : "https://iamshahrock.github.io",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Vary": "Origin"
     };
@@ -56,6 +56,7 @@ export default {
       new Response(JSON.stringify(body), { status, headers: { ...cors, ...JSON_HEADERS, ...extra } });
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
+    if (new URL(request.url).pathname === "/billboard") return billboard(request, env, reply, origin);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -143,3 +144,54 @@ export default {
     }
   }
 };
+
+// ---------------- STARKS Billboard ----------------
+// GET  /billboard            -> { top: [{ rank, name, starks, tier }], updated }
+// POST /billboard {device, name, starks} -> updates that device's entry, returns { rank, top }
+// Storage: KV POSTER_USAGE, keys "bb:dev:<device>" and "bb:top" (top 100). Fans opt in by choosing a name.
+const BB_TOP = "bb:top";
+const BB_TIERS = [[0, "Fan"], [500, "Rebel"], [1500, "Prince"], [4000, "King"], [10000, "Royal Flush"]];
+const BB_BLOCK = /(fuck|shit|bitch|chut|madarch|bhench|behench|randi|gaand|lund|porn|sex|nazi)/i;
+function bbTier(n) { let t = "Fan"; for (const [at, name] of BB_TIERS) if (n >= at) t = name; return t; }
+function bbName(raw) {
+  const name = String(raw || "").replace(/[^\p{L}\p{N} ._-]/gu, "").replace(/\s+/g, " ").trim().slice(0, 18);
+  if (name.length < 2 || BB_BLOCK.test(name)) return null;
+  return name;
+}
+async function billboard(request, env, reply, origin) {
+  if (!env.POSTER_USAGE) return reply(503, { error: "The Billboard is not configured yet." });
+  const readTop = async () => { try { return JSON.parse(await env.POSTER_USAGE.get(BB_TOP) || "[]"); } catch (e) { return []; } };
+  if (request.method === "GET") {
+    const top = await readTop();
+    return reply(200, { top: top.map((e, i) => ({ rank: i + 1, name: e.name, starks: e.starks, tier: bbTier(e.starks) })), updated: Date.now() }, { "Cache-Control": "no-store" });
+  }
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the Billboard." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (env.POSTER_BURST) {
+    const { success } = await env.POSTER_BURST.limit({ key: "bb:" + ip });
+    if (!success) return reply(429, { error: "Too many Billboard updates. Try again in a minute." });
+  }
+  let body; try { body = await request.json(); } catch (e) { return reply(400, { error: "Send JSON." }); }
+  const device = String(body.device || "");
+  if (!/^[a-f0-9]{16,40}$/.test(device)) return reply(400, { error: "Unknown device." });
+  const name = bbName(body.name);
+  if (!name) return reply(400, { error: "Choose a name of 2 to 18 letters (no bad words)." });
+  let starks = Math.floor(Number(body.starks) || 0);
+  if (starks < 0) starks = 0;
+  const devKey = "bb:dev:" + device;
+  const prev = JSON.parse(await env.POSTER_USAGE.get(devKey) || "null");
+  // A device can gain at most 6,000 STARKS between two updates (a day of heavy play); anything beyond is capped.
+  if (prev && starks > prev.starks + 6000) starks = prev.starks + 6000;
+  if (!prev && starks > 6000) starks = 6000;
+  starks = Math.min(starks, 250000);
+  const entry = { device, name, starks, at: Date.now() };
+  await env.POSTER_USAGE.put(devKey, JSON.stringify(entry));
+  let top = (await readTop()).filter(e => e.device !== device);
+  top.push(entry);
+  top.sort((a, b) => b.starks - a.starks || a.at - b.at);
+  const rank = top.findIndex(e => e.device === device) + 1;
+  top = top.slice(0, 100);
+  await env.POSTER_USAGE.put(BB_TOP, JSON.stringify(top));
+  return reply(200, { rank, starks, tier: bbTier(starks), top: top.slice(0, 50).map((e, i) => ({ rank: i + 1, name: e.name, starks: e.starks, tier: bbTier(e.starks) })) });
+}

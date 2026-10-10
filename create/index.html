@@ -32,16 +32,16 @@
 .chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
 .chip:hover{border-color:var(--red-text)}
 .find{flex:1;min-width:180px;height:38px;padding:0 12px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 14px var(--body)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;max-height:560px;overflow:auto;padding-right:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;max-height:470px;overflow:auto;padding-right:6px}
 .tile{position:relative;padding:0;border:2px solid transparent;background:#0d0909;text-align:left;color:var(--ink)}
 .tile img{width:100%;aspect-ratio:2/3;object-fit:cover;background:#1a1010}
-.tile span{display:block;padding:6px 6px 8px;font-size:11.5px;line-height:1.3}
-.tile span b{display:block;font-weight:600;font-size:12.5px}
-.tile span i{font-style:normal;color:var(--faint)}
+.tile span{display:block;padding:4px 4px 6px;font-size:10px;line-height:1.25}
+.tile span b{display:block;font-weight:600;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile span i{font-style:normal;color:var(--faint);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile:hover{border-color:var(--red-text)}
 .tile[aria-pressed="true"]{border-color:var(--red-hi);box-shadow:0 0 0 2px var(--red-hi)}
 .tile.king img{object-fit:contain;padding:18px;background:radial-gradient(70% 60% at 50% 50%,#4a0d10,#0d0909)}
-.tile .tag{position:absolute;top:6px;left:6px;background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:.12em;padding:3px 6px}
+.tile .tag{position:absolute;top:4px;left:4px;background:var(--red);color:#fff;font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 5px}
 .chosen{display:flex;gap:14px;align-items:center;margin-top:14px;padding:12px;border:1px solid var(--line);background:#0e0a0a}
 .chosen img{width:56px;aspect-ratio:2/3;object-fit:cover}
 .chosen p{margin:0;font-size:14px;color:var(--mute)}
@@ -78,7 +78,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .next{margin-top:18px;border-top:3px solid var(--red);padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
 .next p{margin:0;font-size:14px;color:var(--mute)}
 .note{font-size:12.5px;color:var(--faint);line-height:1.5;margin-top:10px}
-@media (max-width:980px){.studio{grid-template-columns:minmax(0,1fr)}.stage{position:static}.opts{grid-template-columns:minmax(0,1fr)}.grid{max-height:420px;grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
+@media (max-width:980px){.studio{grid-template-columns:minmax(0,1fr)}.stage{position:static}.opts{grid-template-columns:minmax(0,1fr)}.grid{max-height:400px;grid-template-columns:repeat(auto-fill,minmax(70px,1fr))}}
 @media (prefers-reduced-motion:reduce){.frame .busy img{animation:none}}
 </style>
 </head>
@@ -87,7 +87,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 <main class="wrap page">
   <div class="intro">
     <div>
-      <p class="eyebrow">Door 01 · Create</p>
+      <p class="eyebrow">01 · Make your poster</p>
       <h1>Make your <em>KING</em> poster</h1>
     </div>
     <p>Pick one of his 80 films, step into the role and get a poster nobody else has: your face, his film's world, the KING crown and your own line.</p>
@@ -182,8 +182,8 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
       <p class="status ok" id="status" role="status">Choose a film to see your frame.</p>
       <p class="note">The preview shows the frame only. Your poster is painted fresh by AI from your photo, the film's world and the KING crown, so no two are alike. Five posters per person per day.</p>
       <div class="next" id="next" hidden>
-        <p>Your poster is your player card. Ready for the 60-second Royal Challenge?</p>
-        <a class="btn btn-red" href="../play/#challenge">Play <span aria-hidden="true">→</span></a>
+        <p>Your poster is your player card. Take it into King's Lairs and earn more STARKS.</p>
+        <a class="btn btn-red" href="../lairs/">Enter the lairs <span aria-hidden="true">→</span></a>
       </div>
     </aside>
   </div>
@@ -357,7 +357,8 @@ $('make').addEventListener('click', async () => {
     await refresh();
     $('afterActions').hidden = false; $('next').hidden = false;
     saveToCrown(p);
-    say('Your poster is ready. Download it, share it, then take the challenge.', true);
+    if (window.STARKS) STARKS.earn('poster', 100, 'KING poster · ' + p.title);
+    say('Your poster is ready. Download it, share it, then take it into the lairs.', true);
   } catch (err) {
     say(/safety/i.test(err.message) ? 'The image service declined this one. Try a different photo or look.' : err.message);
   } finally { $('make').disabled = false; $('busy').hidden = true; }
@@ -385,7 +386,7 @@ $('share').addEventListener('click', async () => {
   const b = await posterBlob(); const file = new File([b], 'agar-main-king-hota-poster.jpg', { type: 'image/jpeg' });
   const text = 'Agar main King hota… This is my KING poster. Make yours:'; const url = 'https://agarmainkinghota.com/';
   try {
-    if (navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file], title: 'My KING poster', text: text + ' ' + url });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'My KING poster', text: text + ' ' + url }); if (window.STARKS) STARKS.earn('share', 50, 'Shared your poster'); }
     else if (navigator.share) await navigator.share({ title: 'Agar Main King Hota', text, url });
     else { await navigator.clipboard.writeText(text + ' ' + url); say('Link copied. Download the poster and post it with the link.', true); }
   } catch (e) { if (e && e.name !== 'AbortError') say('Sharing is not available here. Download the poster instead.'); }
@@ -399,6 +400,7 @@ $('share').addEventListener('click', async () => {
   if (p) chooseFilm(p); else refresh();
 })();
 </script>
+<script src="../assets/starks.js"></script>
 <script src="../assets/footer.js" defer></script>
 </body>
 </html>

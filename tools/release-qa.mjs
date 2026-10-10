@@ -12,7 +12,7 @@ const pages = [
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
   ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'], ['P','/preview/'],
-  ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'], ['CR','/create/'], ['PL','/play/'], ['CW','/crown/'], ['KN','/know/'],
+  ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'], ['CR','/create/'], ['LA','/lairs/'], ['AB','/about/'], ['CT','/contact/'], ['FQ','/faq/'],
   ['R4','/king-intelligence/2026-10-04.html'], ['R5','/king-intelligence/2026-10-05.html'], ['T','/king-intelligence/top-100-fan-clubs.html'],
 ];
 
@@ -29,9 +29,9 @@ const required = {
   'D': ['DAILY DATA LEDGER', '06 OCT 2026', '2,933,427', '31.176M', '699,000'],
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
   'G': ['AGAR MAIN KING HOTA', 'CREATE YOUR KING POSTER', 'PLAY FOR 60 SECONDS', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'H': ['MAKE YOUR KING POSTER', 'FOUR DOORS', 'ROYAL CHALLENGE', 'KING BUZZ', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'A': ['MAKE YOUR KING POSTER', 'FOUR DOORS', 'ROYAL CHALLENGE', 'KING BUZZ', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'CR': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'PL': ['ROYAL CHALLENGE', 'CHESS81'], 'CW': ['THE FAN BILLBOARD'], 'KN': ['KING BUZZ', 'ASOKA TO BOO-DA'],
+  'H': ['MAKE YOUR KING POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
+  'A': ['MAKE YOUR KING POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
+  'CR': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'LA': ['THE CASINO FLOOR', 'THE MOUNTAIN DOME', 'THE THRONE ROOM'], 'F': ['STARKS BILLBOARD', 'HOW TO EARN'], 'AB': ['ABOUT'], 'CT': ['CONTACT'], 'FQ': ['FREQUENTLY ASKED'],
 };
 
 const legacyPaths = [
@@ -110,10 +110,10 @@ for (const [id, path] of pages) {
         const links = hd.querySelectorAll('.sh-nav a').length;
         if (broken.length) return 'images failed: ' + broken.join(', ');
         if (bad.length) return 'distorted: ' + bad.join(', ');
-        if (links !== 4) return 'expected 4 section links, found ' + links;
+        if (links !== 6) return 'expected 6 section links, found ' + links;
         return 'ok';
       });
-      if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 4 section links`);
+      if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 6 section links`);
     }
     // tablet and phone: one header, nothing pushes the page sideways
     for (const width of [900, 390]) {
@@ -143,9 +143,9 @@ for (const [id, path] of pages) {
     // home: exactly four doors, each pointing at its section
     if (['H', 'A'].includes(id)) {
       const doors = await page.evaluate(() => [...document.querySelectorAll('.doors .door')].map(a => new URL(a.getAttribute('href'), location.href).pathname));
-      const want = ['/create/', '/play/', '/crown/', '/know/'];
-      if (JSON.stringify(doors) !== JSON.stringify(want)) issues.push('four doors wrong: ' + doors.join(', '));
-      else console.log(`PASS [${id}] four doors point at Create, Play, The Crown, Know`);
+      const want = ['/create/', '/lairs/', '/CHESS81.HTML', '/fan-billboard/', '/king-intelligence/', '/asoka-to-booda/'];
+      if (JSON.stringify(doors) !== JSON.stringify(want)) issues.push('six sections wrong: ' + doors.join(', '));
+      else console.log(`PASS [${id}] six sections in order`);
     }
     // game: playable on arrival, and the ZERO artwork pack the poster needs is reachable
     if (id === 'G') {
