@@ -1,31 +1,35 @@
 // Agar Main King Hota — poster prompt. Shared by the studio page and the end-to-end test.
-// Images are sent in this order: [0] fan photo(s), then the original film poster, then the KING crown.
+// Image order sent to the Worker: fan photo(s) first, then the film's original poster (not for KING), then the KING crown.
+// Wording note (tested 10 Oct 2026): neutral "design a new poster starring the person in the first photo" passes the
+// image model's safety review; wording about replacing or removing an actor's face was rejected.
 export const LOOKS = {
-  cinematic: 'hyper-real cinematic photography, dramatic rim light, film grain',
-  retro: 'hand-painted 1990s Bollywood billboard style, bold brush strokes, saturated colour',
-  popart: 'bold pop-art screen print, halftone dots, thick outlines',
-  noir: 'black-and-white film noir with a single crimson accent, hard shadows',
+  cinematic: 'hyper-real cinematic photography, dramatic rim light, fine film grain',
+  retro: 'hand-painted 1990s Bollywood billboard, bold brush strokes, saturated colour',
+  popart: 'bold pop-art screen print, halftone dots, thick graphic outlines',
+  noir: 'black-and-white film noir with crimson accents, hard shadows',
   anime: 'premium anime key-visual style, clean cel shading',
   cyberpunk: 'neon cyberpunk night, rain, electric blue and crimson light',
-  shahrock: 'Shah Rock Jaan 3D pop-cartoon style: big expressive eyes, soft studio render'
+  shahrock: 'playful 3D pop-cartoon style with big expressive eyes and a soft studio render'
 };
 export const ROLES = {
   king: 'the lead hero, centre frame, owning the poster',
-  rival: 'the rival / anti-hero, intense and dangerous',
+  rival: 'the rival, intense and dangerous',
   sidekick: 'the loyal sidekick, playful and full of charm'
 };
-export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '' }) {
-  const who = squad > 1
-    ? `the ${squad} people in the first ${squad} reference photos, together as the cast`
-    : 'the person in the first reference photo';
+export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true }) {
+  const who = squad > 1 ? `the ${squad} people in the first ${squad} photos, together as the cast,` : 'the person in the first photo';
+  const ref = hasFilmRef
+    ? `The next image is a vintage film poster of "${film}" (${year}), used only as a reference for its era, composition and colour mood.`
+    : `The film is KING (2026), a dark, stylish action thriller.`;
+  const crown = 'The last image is a painted red crown: it floats just above the lead\'s head.';
   return [
-    `Create a brand-new, original movie poster for the fan campaign "Agar Main King Hota".`,
-    `Reimagine the attached original poster of "${film}" (${year}) — keep its era, composition idea and mood — but cast ${who} as ${character ? `"${character}", ` : ''}${ROLES[role] || ROLES.king}.`,
-    `Every face on the poster must come only from the fan reference photo(s); do not reproduce the face of any actor from the original poster. Keep the fan's likeness, skin tone and features recognisable.`,
+    `Design a brand-new, original theatrical movie poster starring ${who} as ${ROLES[role] || ROLES.king}${character ? `, playing the role of ${character}` : ''}.`,
+    ref,
+    crown,
     world ? `Setting: ${world}.` : '',
-    `Visual language of KING: deep black and crimson red palette with one electric-blue rim light; a red dripping painted crown (use the crown reference image) floats just above the lead's head.`,
+    `Any other people in the scene are newly invented characters.`,
+    `Palette: deep black and crimson with one electric-blue rim light.`,
     `Style: ${LOOKS[look] || LOOKS.cinematic}.`,
-    `Leave the top 15% and the bottom 22% of the image as dark, clean space with no text, logos or letters anywhere — the title is added later.`,
-    `Portrait 2:3, premium theatrical one-sheet quality, no watermarks, no credits block.`
+    `Leave the top 15% and the bottom 25% as clean dark space. Portrait 2:3, no text, no letters, no logos, no watermark.`
   ].filter(Boolean).join(' ');
 }

@@ -199,7 +199,7 @@ const POSTER_API_URL = 'https://asokatobooda.iamshahrock.workers.dev';
 const BASE = new URL('../../assets/posters/', location.href).href;
 // How the original poster is shared with the image model. 'original' sends it as-is;
 // 'blur' sends a softened copy (layout and colour only). Set from the end-to-end test results.
-const FILM_REF_MODE = 'blur';
+const FILM_REF_MODE = 'original';
 
 const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null };
 let catalogue = [];
@@ -346,7 +346,7 @@ $('make').addEventListener('click', async () => {
     form.append('prompt', buildPrompt({
       film: p.king ? 'KING' : p.title, year: p.year, character: p.king ? '' : p.character,
       role: state.role, look: state.look, squad: state.photos.length, world: $('world').value,
-      hasFilmRef: !p.king, filmRefMode: FILM_REF_MODE
+      hasFilmRef: !p.king
     }));
     state.photos.forEach((ph, i) => form.append('image', ph.blob, `fan-${i + 1}.jpg`));
     if (!p.king) form.append('image', await filmReference(p), 'film.jpg');
@@ -357,11 +357,23 @@ $('make').addEventListener('click', async () => {
     state.aiArt = await loadImage('data:image/png;base64,' + data.image);
     await refresh();
     $('afterActions').hidden = false; $('next').hidden = false;
+    saveToCrown(p);
     say('Your poster is ready. Download it, share it, then take the challenge.', true);
   } catch (err) {
     say(/safety/i.test(err.message) ? 'The image service declined this one. Try a different photo or look.' : err.message);
   } finally { $('make').disabled = false; $('busy').hidden = true; }
 });
+
+// ---------- keep a small copy for The Crown page (this device only) ----------
+function saveToCrown(p) {
+  try {
+    const c = document.createElement('canvas'); c.width = 320; c.height = 480;
+    c.getContext('2d').drawImage($('canvas'), 0, 0, 320, 480);
+    const list = JSON.parse(localStorage.getItem('amkh-posters') || '[]');
+    list.unshift({ img: c.toDataURL('image/jpeg', 0.8), film: p.title, year: p.year, name: $('name').value.trim(), at: Date.now() });
+    localStorage.setItem('amkh-posters', JSON.stringify(list.slice(0, 8)));
+  } catch (e) {}
+}
 
 // ---------- download / share ----------
 function posterBlob() { return new Promise(r => $('canvas').toBlob(r, 'image/jpeg', 0.92)); }

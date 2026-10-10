@@ -123,7 +123,7 @@ export async function renderPoster(canvas, o) {
   ctx.font = `600 ${Math.round(H * 0.012)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.006)}px`;
   const as = o.character ? `AS ${o.character.toUpperCase()}` : '';
   ctx.fillText([as, o.film ? `IN ${o.film.toUpperCase()} (${o.year})` : ''].filter(Boolean).join('  ·  '), W / 2, H * 0.935);
-  ctx.fillStyle = '#b8aca4';
+  ctx.fillStyle = '#b8aca4'; ctx.letterSpacing = `${Math.round(W * 0.003)}px`;
   ctx.fillText(`PICTURE ABHI BAAKI HAI  ·  ${o.date || ''}  ·  AGARMAINKINGHOTA.COM`, W / 2, H * 0.962);
   ctx.restore();
 
