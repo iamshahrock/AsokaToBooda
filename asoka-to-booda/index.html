@@ -69,6 +69,16 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 .sources{font-size:13px;color:var(--faint);line-height:1.7;padding:24px 0 0}
 .sources a{color:var(--mute);text-decoration:underline}
 .label{display:inline-block;font-size:11px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;padding:2px 8px;border:1px solid var(--field-line);color:var(--faint);margin-left:8px;vertical-align:middle}
+.sub3{margin:30px 0 10px;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,32px);text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.code{display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,28px);margin:18px 0 28px;padding:22px 10px;border:1px solid var(--line);background:var(--panel)}
+.code span{display:flex;flex-direction:column;align-items:center;font-family:var(--display);font-size:clamp(56px,9vw,104px);line-height:1}
+.code span small{font-family:var(--body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.code span.k1{color:var(--red-hi)}
+.code i{font-style:normal;font-family:var(--display);font-size:clamp(28px,4vw,44px);color:var(--faint)}
+.lessons{margin:0 0 26px;padding-left:22px}
+.lessons li{font-size:17px;line-height:1.65;color:#e6dcd4;margin-bottom:14px}
+.lessons b{color:var(--ink)}
+.draft{margin:30px auto 0;max-width:620px;font-family:var(--body)!important;font-style:normal!important;font-size:14px!important;color:var(--faint)}
 @media (max-width:720px){.t td.n.na{white-space:normal}.t th,.t td{padding:9px 6px}.t td.n{white-space:normal}.toc{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:minmax(0,1fr)}.duel{grid-template-columns:minmax(0,1fr)}.vs{justify-self:center}.act p{font-size:17px}.t{font-size:13.5px}.t td.n{font-size:17px}}
 </style>
 </head>
@@ -79,7 +89,7 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 
 <header class="cover">
   <img src="../assets/studio/crown.png" alt="">
-  <p class="eyebrow">A fan's marketing thesis · Part One</p>
+  <p class="eyebrow">A fan's marketing thesis · Part One · First draft, October 2026</p>
   <h1>Asoka to <em>Boo-Da</em></h1>
   <p class="sub">The Silence Before the King</p>
   <p class="by">Facts are sourced · Interpretation is labelled · Questions are left open on purpose</p>
@@ -93,7 +103,9 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
     <li><a href="#act6"><span>VI</span>The King's court</a></li>
     <li><a href="#act7"><span>VII</span>The unreal hype of KING</a></li>
     <li><a href="#act8"><span>VIII</span>KING vs DOOM</a></li>
-    <li><a href="#finale"><span>IX</span>The Royal Flush</a></li>
+    <li><a href="#act9"><span>IX</span>The marketing code</a></li>
+    <li><a href="#act10"><span>X</span>What brands can learn</a></li>
+    <li><a href="#finale"><span>XI</span>The Royal Flush</a></li>
   </ol>
 </header>
 
@@ -126,17 +138,18 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
   <table class="t">
     <thead><tr><th>Year</th><th>Film</th><th>Worldwide gross</th><th>What the marketing did</th></tr></thead>
     <tbody>
-      <tr class="peak"><td>2013</td><td>Chennai Express</td><td class="n na">N/A in this edition</td><td>The benchmark: digital-first, everywhere at once.</td></tr>
-      <tr><td>2014</td><td>Happy New Year</td><td class="n na">N/A in this edition</td><td>A live world tour of the cast before release.</td></tr>
+      <tr class="peak"><td>2013</td><td>Chennai Express</td><td class="n">₹422 cr</td><td>The benchmark: digital-first, everywhere at once.</td></tr>
+      <tr><td>2014</td><td>Happy New Year</td><td class="n">₹397 cr</td><td>A live world tour of the cast before release.</td></tr>
       <tr><td>2015</td><td>Dilwale</td><td class="n">₹408 cr</td><td>The SRK and Kajol reunion carried the campaign.</td></tr>
-      <tr><td>2016</td><td>Fan</td><td class="n na">N/A in this edition</td><td>"Jabra Fan", one anthem released in several Indian languages.</td></tr>
+      <tr><td>2016</td><td>Fan</td><td class="n">₹182.30 cr</td><td>"Jabra Fan", one anthem released in several Indian languages.</td></tr>
       <tr><td>2016</td><td>Dear Zindagi</td><td class="n">₹139 cr</td><td>SRK in a supporting role; the film sold itself as a quiet story.</td></tr>
       <tr><td>2017</td><td>Raees</td><td class="n">₹272 cr</td><td>The star took a train from Mumbai to Delhi to meet fans along the route.</td></tr>
       <tr><td>2017</td><td>Jab Harry Met Sejal</td><td class="n">₹152 cr</td><td>A series of short "mini trails" instead of one big trailer.</td></tr>
       <tr><td>2018</td><td>Zero</td><td class="n">₹178 cr</td><td>An ambitious film, a grand teaser, and then the longest pause of his career.</td></tr>
     </tbody>
   </table>
-  <p class="src">Worldwide figures as reported by Filmibeat (2023). "N/A in this edition" means a figure was not verified for this draft; it will be added from a primary trade source.</p>
+  <p class="src">Worldwide gross. Chennai Express, Happy New Year and Fan: Sacnilk. Dilwale, Dear Zindagi, Raees, Jab Harry Met Sejal and Zero: Filmibeat (2023). Trade sources differ by a few crore; each figure is shown as its source reports it.</p>
+  <p>Read the column on the right and a pattern appears. The money held up: Happy New Year and Dilwale each crossed ₹390 crore, and even the films called disappointments earned more than most stars' hits. What thinned out was the story around the films. Each campaign was a clever stunt, but no longer a movement led by the man himself.</p>
   <div class="q">
     <p>Raees took a train to meet its fans. Why did that kind of campaign become the exception, not the rule?</p>
     <p>What happens to a brand when the founder stops telling its story?</p>
@@ -243,18 +256,53 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
   <p>It is a friendly fight. Both films can win. The only loser is anyone who watches just one.</p>
 </section>
 
+<section class="act" id="act9">
+  <p class="k">Act IX</p>
+  <h2>The <em>marketing code</em></h2>
+  <p class="years">Four analogies for one career</p>
+
+  <h3 class="sub3">1 · Alam Ara: the first oil strike</h3>
+  <p>In 1931 Alam Ara became the first Indian film to speak. If Indian cinema is an economy, that was its first oil strike: the day the screen found its voice, and a whole industry found the fuel it would run on for the next century. Every star since has been a well drilled into that same reserve.</p>
+  <p>This campaign's fan points are called STARKS for that reason. They are the fans' share of the oil: earned by making posters, playing the lairs and spreading the word, and counted on a public Billboard. <span class="label">Interpretation</span></p>
+
+  <h3 class="sub3">2 · Zero to One</h3>
+  <p>Every machine on Earth speaks in two digits, 0 and 1. His filmography happens to spell the same code. <b>Zero</b> (2018) was the low point: an ambitious film, a hard fall and four years of silence. <b>Ra.One</b> (2011) had already given him the "One": the superhero who lived online before he lived on screen. <b>KING</b> is what you get when you go from zero to one again, this time with the whole audience watching. <span class="label">Interpretation</span></p>
+  <div class="code" aria-label="Zero, Ra.One, KING"><span>0<small>Zero · 2018</small></span><i>→</i><span>1<small>Ra.One · 2011</small></span><i>→</i><span class="k1">K<small>KING · 2026</small></span></div>
+
+  <h3 class="sub3">3 · A sur to an asur</h3>
+  <p>For thirty years he was the sur: the note everyone hummed, the lover with open arms, Raj and Rahul. KING asks him to play the other half of the word. An asur is the force that walks into the room and changes its temperature. Add one letter, and the hero becomes a whole new character. The marketing question is whether the audience that loved the sur will follow the asur. Pathaan and Jawan suggest they already have. <span class="label">Interpretation</span></p>
+
+  <h3 class="sub3">4 · Asoka to Boo-Da</h3>
+  <p>In 2001 he played Asoka, the emperor who conquered everything, saw the cost at Kalinga, and gave up his sword for the Buddha's path. The title of this thesis bends that story. Between Asoka and the Buddha sits the "boo": the jeers after Zero, the trolling, the October that the whole country watched. Boo-Da is the man on the other side of the boos, someone the noise no longer reaches. <span class="label">Interpretation</span></p>
+  <p>Asoka renounced his throne. The question this thesis keeps open is whether this King will do the same.</p>
+</section>
+
+<section class="act" id="act10">
+  <p class="k">Act X</p>
+  <h2>What <em>brands</em> can learn</h2>
+  <p class="years">Five lessons from one career <span class="label">Interpretation</span></p>
+  <ol class="lessons">
+    <li><b>The founder is the medium.</b> Ra.One and Chennai Express worked because the star led the campaign himself. When the founder steps back, the product can still sell, but the story stops travelling.</li>
+    <li><b>Silence is a form of scarcity.</b> Four years with almost no interviews turned every appearance into an event. Pathaan opened with almost no promotion from its star, and crossed ₹1,000 crore worldwide.</li>
+    <li><b>Communities outlast campaigns.</b> The fan clubs kept the birthday, the trends and the theatre celebrations alive with no budget and no brief. A brand that owns a community never really goes off air.</li>
+    <li><b>Turn one day into a ritual.</b> 2 November at the gate in Mumbai is free, annual, global and owned entirely by the fans. Most brands spend millions trying to create one such day.</li>
+    <li><b>Let people make the work.</b> The next campaign is not a billboard; it is a million fan-made posters. That is what this platform is built to test, starting with his birthday on 2 November 2026.</li>
+  </ol>
+</section>
+
 <section class="finale" id="finale">
-  <p class="k eyebrow">Finale</p>
+  <p class="k eyebrow">Act XI · Finale</p>
   <p>The posts are climbing. The views are climbing. The fans are already in the theatre in their heads.</p>
   <p>This is the hype of KING.</p>
   <p class="big">This time the KING is not renouncing his throne.<br><em>He is going in for the Royal Flush.</em></p>
   <p class="ask">The KING's journey to Boo-Da is …?</p>
   <p style="margin-top:34px"><a class="btn btn-red" href="../create/">Write your own chapter: make your KING poster →</a></p>
+  <p class="draft">End of Part One · First draft, October 2026. Part Two follows the campaign live, from his birthday on 2 November to KING's release on 24 December.</p>
 </section>
 
 <section class="sources">
   <p class="eyebrow" style="margin-bottom:8px">Sources</p>
-  <p>Box office 2015–2018: <a href="https://filmibeat.com/bollywood/box-office/2023/ahead-of-jawan-release-look-at-box-office-collection-of-shah-rukh-khan-last-5-films-pathaan-gen-363513.html">Filmibeat</a> · Pathaan and Dunki: <a href="https://www.sentinelassam.com/more-news/entertainment/bollywood/shah-rukh-khan-creates-history-with-pathaan-jawan-dunki-685811">The Sentinel</a> · Jawan: <a href="https://english.madhyamam.com/entertainment/srks-jawan-earns-rs-1138-crore-continues-box-office-success-in-sixth-week-1215573">Madhyamam</a> · October 2021 timeline: <a href="https://www.freepressjournal.in/amp/mumbai/one-year-since-cordelia-cruise-drug-bust-case-when-aryan-khan-spent-over-25-days-behind-bars-timeline-of-the-case">Free Press Journal</a> · National Award: <a href="https://filmibeat.com/bollywood/news/2025/national-film-awards-2025-shah-rukh-khan-wins-his-national-award-for-best-actor-jawan-in-33-years-472487.html">Filmibeat</a> · Hurun: <a href="https://www.outlookbusiness.com/amp/story/news/shah-rukh-khans-red-chillies-propels-him-into-billionaires-club-check-his-net-worth">Outlook Business</a> · Met Gala: <a href="https://www.thenationalnews.com/lifestyle/2025/05/06/met-gala-shah-rukh-ambani-poonawalla/">The National</a> · KING and the December slate: <a href="https://www.hollywoodreporterindia.com/features/insight/shah-rukh-khans-king-locks-december-24-release-set-to-arrive-a-week-after-avengers-doomsday-and-dune-part-three">The Hollywood Reporter India</a> · KING attention figures: this campaign's <a href="../king-intelligence/">KING Intelligence</a> tracker.</p>
+  <p>Box office 2013, 2014 and Fan (2016): <a href="https://sacnilk.com/movieboxofficecomparison/Happy_New_Year_2014_vs_Chennai_Express_2013_Box_Office_Collection">Sacnilk (Chennai Express vs Happy New Year)</a>, <a href="https://sacnilk.com/movie/Fan_2016">Sacnilk (Fan)</a> · Box office 2015–2018: <a href="https://filmibeat.com/bollywood/box-office/2023/ahead-of-jawan-release-look-at-box-office-collection-of-shah-rukh-khan-last-5-films-pathaan-gen-363513.html">Filmibeat</a> · Pathaan and Dunki: <a href="https://www.sentinelassam.com/more-news/entertainment/bollywood/shah-rukh-khan-creates-history-with-pathaan-jawan-dunki-685811">The Sentinel</a> · Jawan: <a href="https://english.madhyamam.com/entertainment/srks-jawan-earns-rs-1138-crore-continues-box-office-success-in-sixth-week-1215573">Madhyamam</a> · October 2021 timeline: <a href="https://www.freepressjournal.in/amp/mumbai/one-year-since-cordelia-cruise-drug-bust-case-when-aryan-khan-spent-over-25-days-behind-bars-timeline-of-the-case">Free Press Journal</a> · National Award: <a href="https://filmibeat.com/bollywood/news/2025/national-film-awards-2025-shah-rukh-khan-wins-his-national-award-for-best-actor-jawan-in-33-years-472487.html">Filmibeat</a> · Hurun: <a href="https://www.outlookbusiness.com/amp/story/news/shah-rukh-khans-red-chillies-propels-him-into-billionaires-club-check-his-net-worth">Outlook Business</a> · Met Gala: <a href="https://www.thenationalnews.com/lifestyle/2025/05/06/met-gala-shah-rukh-ambani-poonawalla/">The National</a> · KING and the December slate: <a href="https://www.hollywoodreporterindia.com/features/insight/shah-rukh-khans-king-locks-december-24-release-set-to-arrive-a-week-after-avengers-doomsday-and-dune-part-three">The Hollywood Reporter India</a> · KING attention figures: this campaign's <a href="../king-intelligence/">KING Intelligence</a> tracker.</p>
 </section>
 
 </article>
