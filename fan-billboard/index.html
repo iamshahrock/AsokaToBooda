@@ -44,7 +44,8 @@
 .tiers b{display:block;font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase}
 .tiers span{font-size:13px;color:var(--faint)}
 .fine{font-size:13px;color:var(--faint);line-height:1.6}
-@media (max-width:860px){.top2{grid-template-columns:minmax(0,1fr)}.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.top2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}.tiers div:last-child{grid-column:1/-1}}
 </style>
 </head>
 <body class="v2">
