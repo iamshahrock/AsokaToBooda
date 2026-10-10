@@ -113,10 +113,20 @@
 
 <section class="block" aria-labelledby="films-h">
   <div class="block-head">
-    <h2 id="films-h">80 films. <em>The 81st is yours.</em></h2>
-    <p>Every original poster from Fauji (1989) to Zero (2018). Tap one to step into it.</p>
+    <div>
+      <p class="eyebrow">The Make Your Poster game</p>
+      <h2 id="films-h">80 films. <em>The 81st is yours.</em></h2>
+    </div>
+    <p>Every role he played was a step towards KING. From Fauji (1989) to Zero (2018), pick any of his 80 originals, step into the character and make the poster your own.</p>
   </div>
-  <div class="strip" id="strip"></div>
+  <div class="strip-bar">
+    <span class="strip-cue"><b>▶ Tap a film to play</b> · your face, his poster, KING lettering</span>
+    <span class="strip-nav"><button type="button" class="sn" id="stripPrev" aria-label="Scroll films left">←</button><button type="button" class="sn" id="stripNext" aria-label="Scroll films right">→</button></span>
+  </div>
+  <div class="strip-wrap" id="stripWrap">
+    <div class="strip" id="strip" tabindex="0" aria-label="His 80 films. Scroll sideways; tap one to make your poster."></div>
+  </div>
+  <p class="strip-hint">Swipe or scroll sideways for all 80 →</p>
 </section>
 
 <section class="block" aria-labelledby="how-h">
@@ -138,18 +148,31 @@
   });
   fetch('assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (data) {
     var strip = document.getElementById('strip');
-    var pick = data.posters.filter(function (p) { return p.kind === 'film'; }).reverse();
+    var pick = data.posters.slice().reverse();
     var king = document.createElement('a'); king.className = 'king'; king.href = 'create/?film=81';
-    king.innerHTML = '<img src="assets/studio/crown.png" alt="" loading="lazy"><span>KING<i>2026 · yours to write</i></span>';
+    king.innerHTML = '<img src="assets/studio/crown.png" alt="" loading="lazy"><b class="play">Make poster</b><span>KING<i>2026 · start here</i></span>';
     strip.appendChild(king);
     pick.forEach(function (p) {
       var a = document.createElement('a'); a.href = 'create/?film=' + p.id;
       var im = document.createElement('img'); im.src = 'assets/posters/' + p.thumb; im.alt = ''; im.loading = 'lazy'; im.width = 160; im.height = 240;
+      var tag = document.createElement('b'); tag.className = 'play'; tag.textContent = 'Make poster';
       var s = document.createElement('span'); s.textContent = p.title;
       var i = document.createElement('i'); i.textContent = p.year + ' · ' + p.character; s.appendChild(i);
-      a.append(im, s); strip.appendChild(a);
+      a.setAttribute('aria-label', 'Make your poster as ' + p.character + ' in ' + p.title);
+      a.append(im, tag, s); strip.appendChild(a);
     });
+    edges();
   }).catch(function () {});
+  var strip = document.getElementById('strip'), wrap = document.getElementById('stripWrap');
+  function edges() {
+    var max = strip.scrollWidth - strip.clientWidth - 2;
+    wrap.classList.toggle('at-start', strip.scrollLeft <= 2); wrap.classList.toggle('at-end', strip.scrollLeft >= max);
+    document.getElementById('stripPrev').disabled = strip.scrollLeft <= 2; document.getElementById('stripNext').disabled = strip.scrollLeft >= max;
+  }
+  strip.addEventListener('scroll', edges, { passive: true }); addEventListener('resize', edges);
+  function page(d) { strip.scrollBy({ left: d * Math.max(200, strip.clientWidth * 0.8), behavior: 'smooth' }); }
+  document.getElementById('stripPrev').onclick = function () { page(-1); };
+  document.getElementById('stripNext').onclick = function () { page(1); };
 })();
 </script>
 <script src="assets/starks.js"></script>

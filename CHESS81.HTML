@@ -1,35 +1,375 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CHESS81 — CHECK. FIRE. MATE.</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chess81 — CHECK. FIRE. MATE. — Agar Main King Hota</title>
+<meta name="description" content="Chess81: chess on a 9x9 board with a Torch, a Lighter and fire that grows as the battle turns. Play the Machine at three levels or a friend on one screen.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/CHESS81.HTML">
+<link rel="icon" type="image/png" href="assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/v2.css">
 <style>
-*{box-sizing:border-box}html,body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif}body{min-height:100vh}.page{max-width:2048px;margin:auto;background:#000}.head{display:block;width:100%;height:auto;border-bottom:1px solid #e11}.head img{display:block;width:100%;height:auto}.layout{display:grid;grid-template-columns:minmax(520px,1fr) minmax(390px,680px) minmax(300px,470px);gap:14px;padding:26px 2.2% 40px;align-items:start}.boardWrap{background:#d8d8d8;padding:8px;box-shadow:0 0 0 5px #151515;border:1px solid #777}.board{display:grid;grid-template-columns:repeat(9,1fr);aspect-ratio:1;border:4px solid #111}.sq{position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;font-size:clamp(22px,3.2vw,54px);line-height:1}.light{background:#eee}.dark{background:#222}.center{background:#6d2ca3;box-shadow:inset 0 0 0 3px #a25ee2}.piece{font-family:"Times New Roman",serif;font-weight:900;text-shadow:0 2px 3px #000,0 0 5px currentColor}.red{color:#e51b2d}.blue{color:#1768ff}.lighter{color:#ff6b00;text-shadow:0 0 10px #ff6b00}.dormant{opacity:.75}.coord{position:absolute;font:bold 10px Arial;color:#1768ff}.top{top:3px;left:4px}.bottom{bottom:3px;right:4px}.selected{outline:3px solid #fff;outline-offset:-3px;z-index:2}.legal:after{content:"";position:absolute;width:24%;height:24%;border-radius:50%;background:#ff9a18}.capture:after{content:"";position:absolute;inset:9%;border:3px solid #e51b2d;border-radius:50%}.check{background:#a41424!important}
-.panel{display:flex;flex-direction:column;gap:12px}.card{background:#0d0d0f;border:1px solid #303034;padding:18px 20px}.machine{font-weight:900;font-size:clamp(20px,1.65vw,34px);margin-bottom:12px}.blueTxt{color:#1768ff}.redTxt{color:#e51b2d}.move{font-family:Georgia,serif;font-weight:900;font-size:clamp(22px,1.8vw,36px);margin-bottom:7px}.sub{color:#aaa;font-size:14px;line-height:1.35}.pills{display:flex;gap:8px;margin-top:14px}.pill{border:1px solid #555;border-radius:20px;padding:5px 13px;font-weight:900;font-size:12px}.pill.r{border-color:#e51b2d;color:#e51b2d}.pill.b{border-color:#1768ff;color:#1768ff}.ft{font-family:Georgia,serif;font-size:18px;font-weight:900;margin-bottom:12px}.fireGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fire{border:1px solid #333;padding:14px}.fire h3{margin:0;font-size:20px}.meter{display:flex;gap:4px;margin:12px 0}.meter i{height:8px;flex:1;background:#333}.meter i.onR{background:#e51b2d}.meter i.onB{background:#1768ff}.tiny{color:#888;font-size:11px}.title{font-family:Georgia,serif;font-size:18px;font-weight:900;margin-bottom:12px}.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}.btn{background:#171719;border:1px solid #555;color:#fff;padding:12px 10px;font-weight:900;cursor:pointer}.btn.r{background:#e51b2d;border-color:#e51b2d}.btn.b{border-color:#1768ff}.row{display:flex;gap:8px;margin-top:8px}.row .btn{flex:1}.score{display:flex;justify-content:space-between;color:#aaa;font-size:12px;margin-top:10px}.score b{color:#fff}.log{font:10px/1.4 monospace;color:#777;white-space:pre-wrap;margin-top:8px;max-height:90px;overflow:auto}.art{min-height:440px;background:radial-gradient(circle at 50% 45%,#152449 0,#070a11 42%,#030303 75%);border:1px solid #16191f;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.art:before{content:"♨";font-size:210px;color:#1768ff;opacity:.12;position:absolute;top:35px}.art:after{content:"CHECK   FIRE   MATE";font-size:clamp(22px,2vw,38px);font-weight:900;letter-spacing:1px;position:absolute;bottom:58px;text-shadow:0 0 5px #000}.artText{font-size:72px;color:#fff;opacity:.85;z-index:1}.rules{background:#0a0a0b;border:1px solid #333;padding:16px 18px;margin-top:0}.rules h3{margin:0 0 8px;font-size:15px}.rules ol{margin:0;padding-left:20px;color:#aaa;font-size:12px;line-height:1.45}.rules b{color:#fff}.statusLine{color:#999;font-size:12px;margin-top:8px}
-@media(max-width:1100px){.layout{grid-template-columns:1fr 1fr}.art{grid-column:1/-1;min-height:300px}.rules{grid-column:1/-1}}@media(max-width:700px){.layout{grid-template-columns:1fr;padding:16px}.art,.rules{grid-column:auto}.head img{min-height:80px;object-fit:cover;object-position:left center}.boardWrap{width:100%}}
-</style></head><body>
-<script src="assets/header.js"></script><div class="page">
-<div class="layout">
-<section class="boardWrap"><div id="board" class="board"></div></section>
-<section class="panel">
-<div class="card"><div class="machine">MACHINE CONTROLS <span class="blueTxt">BLUE</span></div><div id="move" class="move">RED TO MOVE</div><div id="sub" class="sub">Reach O5 with your Lighter to ignite your Torch. Queen range: 3 squares.</div><div class="pills"><span class="pill r">RED</span><span class="pill b">BLUE</span></div></div>
-<div class="card"><div class="ft">FIRE <span class="redTxt">STATUS</span></div><div class="fireGrid"><div class="fire"><h3>RED FIRE</h3><div id="mr" class="meter"></div><div id="rt" class="tiny">LEVEL 0/4 · TORCH DORMANT</div></div><div class="fire"><h3>BLUE FIRE</h3><div id="mb" class="meter"></div><div id="bt" class="tiny">LEVEL 0/4 · TORCH DORMANT</div></div></div></div>
-<div class="card"><div class="title">PLAY <span class="redTxt">CHESS81</span></div><div class="btns"><button id="machine" class="btn r">VS MACHINE</button><button id="human" class="btn b">VS HUMAN</button></div><div class="row"><button id="new" class="btn">NEW GAME</button><button id="undo" class="btn">UNDO</button></div><button id="download" class="btn" style="width:100%;margin-top:8px">DOWNLOAD MATCH</button><div class="score"><span>RED <b id="rs">0</b></span><span>BLUE <b id="bs">0</b></span><span>TOTAL <b id="ts">0</b></span></div><div id="log" class="log"></div></div>
-</section>
-<aside><div class="art"><div class="artText">象</div></div><div class="rules"><h3>▾ HOW TO PLAY CHESS 81</h3><ol><li>Chess81 is played on a 9×9 board. <b>RED</b> moves first.</li><li>Reach <b>O5</b> with your Fire to ignite your Torch.</li><li>Your Queen moves a maximum of <b>3 squares</b> in any direction.</li><li>Each fallen Rook, Bishop or Knight raises your Fire level.</li><li>Win by checkmating the enemy King or capturing the enemy Torch.</li></ol></div></aside>
-</div></div>
+:root{--cell:60px;--lt:#e9e0d4;--dk:#7a6656;--redp:#d3141c;--bluep:#1d5cff}
+.game{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;margin:18px 0 10px}
+.frame{display:grid;grid-template-columns:22px auto;grid-template-rows:auto 22px;background:#1a1110;border:1px solid var(--line);padding:10px 12px 6px 6px;width:max-content}
+.ranks{display:grid;grid-template-rows:repeat(9,var(--cell))}
+.files{grid-column:2;display:grid;grid-template-columns:repeat(9,var(--cell))}
+.ranks span,.files span{display:flex;align-items:center;justify-content:center;font:700 12px var(--body);color:var(--faint)}
+.files span.o,.ranks span.o{color:#ffb547}
+.board{display:grid;grid-template-columns:repeat(9,var(--cell));grid-template-rows:repeat(9,var(--cell));width:calc(var(--cell)*9);height:calc(var(--cell)*9);border:3px solid #0b0707;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.sq{position:relative;width:var(--cell);height:var(--cell);padding:0;border:0;margin:0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:calc(var(--cell)*.74);line-height:1;-webkit-tap-highlight-color:transparent}
+.sq.l{background:var(--lt)}.sq.d{background:var(--dk)}
+.sq.fire{background:radial-gradient(circle,#ffcf6b 0,#f08a24 55%,#b8461a 100%)}
+.sq.fire::before{content:"O5";position:absolute;left:3px;top:2px;font:700 9px var(--body);color:rgba(60,20,0,.7)}
+.sq.last{box-shadow:inset 0 0 0 3px rgba(255,214,10,.75)}
+.sq.sel{box-shadow:inset 0 0 0 4px #fff}
+.sq.chk{background:radial-gradient(circle,#ff4a4f 0,#a3101a 75%)!important}
+.sq.danger{box-shadow:inset 0 0 0 4px #ff4a4f}
+.sq.dot::after{content:"";position:absolute;width:26%;height:26%;border-radius:50%;background:rgba(20,10,10,.45)}
+.sq.cap::after{content:"";position:absolute;inset:6%;border-radius:50%;border:4px solid rgba(195,18,26,.85)}
+.sq.burnt{animation:burnt .9s ease-out}
+@keyframes burnt{0%{background:#ff9a18}100%{}}
+.pc{position:relative;z-index:1;font-family:"DejaVu Sans","Segoe UI Symbol","Noto Sans Symbols 2","Arial Unicode MS",serif;pointer-events:none;user-select:none}
+.pc.r{color:var(--redp);text-shadow:0 0 1px #fff,0 0 2px #fff,0 2px 3px rgba(0,0,0,.6)}
+.pc.b{color:var(--bluep);text-shadow:0 0 1px #fff,0 0 2px #fff,0 2px 3px rgba(0,0,0,.6)}
+.pc svg{display:block;width:calc(var(--cell)*.78);height:calc(var(--cell)*.78);filter:drop-shadow(0 0 1px #fff) drop-shadow(0 2px 2px rgba(0,0,0,.55))}
+.pc .flame{animation:flick 1.1s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes flick{to{transform:scale(1.08,.92)}}
+.side{display:grid;gap:14px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);padding:16px 18px}
+.card h3{margin:0 0 10px;font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.04em;text-transform:uppercase}
+.status{font-family:var(--display);font-size:clamp(26px,2.6vw,36px);line-height:1.05;text-transform:uppercase;margin:0}
+.status .r{color:var(--redp)}.status .b{color:#5b8cff}
+.note{margin:8px 0 0;color:var(--mute);font-size:14px;line-height:1.5;min-height:21px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{flex:1 1 0;min-width:88px;min-height:46px;padding:6px 10px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:600 14px var(--body);line-height:1.2;cursor:pointer}
+.seg button small{display:block;font-weight:500;font-size:11px;color:var(--faint);margin-top:2px}
+.seg button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.seg button[aria-pressed="true"] small{color:#ffd6d6}
+.label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:14px 0 8px}
+.fires{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fireb{border:1px solid var(--line);padding:12px;background:#0d0909}
+.fireb b{font-family:var(--display);font-weight:400;font-size:18px;letter-spacing:.04em}
+.fireb.r b{color:var(--redp)}.fireb.b b{color:#5b8cff}
+.pips{display:flex;gap:4px;margin:8px 0 6px}.pips i{flex:1;height:8px;background:#2a1c1c}
+.fireb.r .pips i.on{background:var(--redp)}.fireb.b .pips i.on{background:var(--bluep)}
+.pips i.mark{outline:1px solid #ffb547;outline-offset:1px}
+.fireb small{display:block;font-size:12px;color:var(--mute);line-height:1.4}
+.taken{margin-top:6px;font-size:18px;min-height:22px;letter-spacing:1px;font-family:"DejaVu Sans","Segoe UI Symbol",serif}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px}.btnrow .btn{flex:1 1 auto;min-height:44px;font-size:15px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.log{font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;color:#cfc4bb;max-height:150px;overflow:auto;margin:0;padding:0;list-style:none;columns:2;column-gap:18px}
+.log li{break-inside:avoid}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:30px 0 10px}
+.rules h2{margin:0 0 12px;font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,40px);text-transform:uppercase;line-height:1}
+.rules h2 em{font-style:normal;color:var(--red-hi)}
+.rules ol,.rules ul{margin:0;padding-left:20px;color:#e3d9d0;font-size:15px;line-height:1.6}
+.rules li{margin-bottom:6px}
+.rules b{color:#fff}
+.ptable{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+.ptable td{padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:middle;color:#e3d9d0}
+.ptable td:first-child{width:46px;font-size:28px;text-align:center;font-family:"DejaVu Sans","Segoe UI Symbol",serif;color:var(--redp)}
+.ptable td:first-child svg{width:32px;height:32px;color:var(--redp)}
+.win{position:fixed;inset:0;z-index:150;display:none;align-items:center;justify-content:center;background:rgba(5,3,3,.78);padding:16px}
+.win.on{display:flex}
+.win .box{background:#120b0b;border:1px solid var(--red);max-width:520px;width:100%;padding:28px 26px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.win h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,64px);line-height:.95;text-transform:uppercase;color:var(--red-hi)}
+.win p{color:#e3d9d0;font-size:16px;line-height:1.5;margin:12px 0 0}
+.win .btnrow{margin-top:20px}
+@media (max-width:1180px){:root{--cell:54px}}
+@media (max-width:1000px){.game{grid-template-columns:minmax(0,1fr)}.frame{margin:0 auto}.rules{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){:root{--cell:calc((100vw - 32px - 46px) / 9)}.frame{padding:6px 8px 4px 4px;grid-template-columns:18px auto;grid-template-rows:auto 18px}.ranks span,.files span{font-size:10px}.log{columns:1}.fires{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.seg button{min-width:0}}
+</style>
+</head>
+<body class="v2">
+<script src="assets/header.js"></script>
+<main class="wrap">
+  <div class="page-head">
+    <div><p class="eyebrow">03 · The board game</p><h1>Chess<em>81</em></h1></div>
+    <p>Nine files, nine ranks, 81 squares. The King leads, the Queen is just another soldier, and the Torch decides the war. <b>CHECK. FIRE. MATE.</b></p>
+  </div>
+
+  <div class="game">
+    <div class="frame" aria-label="Chess81 board">
+      <div class="ranks" id="ranks"></div>
+      <div class="board" id="board" role="grid" aria-label="9 by 9 board"></div>
+      <div class="files" id="files"></div>
+    </div>
+
+    <div class="side">
+      <div class="card" aria-live="polite">
+        <p class="status" id="status">Red to move</p>
+        <p class="note" id="note">Walk your Lighter to O5 to light your Torch.</p>
+      </div>
+
+      <div class="card">
+        <h3>Play</h3>
+        <div class="seg" id="modes">
+          <button type="button" data-mode="machine" aria-pressed="true">Vs the Machine<small>You play Red</small></button>
+          <button type="button" data-mode="human" aria-pressed="false">Vs a friend<small>Same screen</small></button>
+        </div>
+        <div id="levelBox">
+          <p class="label">Machine level</p>
+          <div class="seg" id="levels">
+            <button type="button" data-level="squire" aria-pressed="false">Squire<small>Win +60 STARKS</small></button>
+            <button type="button" data-level="knight" aria-pressed="true">Knight<small>Win +200 STARKS</small></button>
+            <button type="button" data-level="king" aria-pressed="false">King<small>Win +500 STARKS</small></button>
+          </div>
+        </div>
+        <p class="label">Game</p>
+        <div class="btnrow">
+          <button class="btn btn-red" id="new" type="button">New game</button>
+          <button class="btn btn-line" id="undo" type="button">Take back</button>
+          <button class="btn btn-line" id="save" type="button">Save moves</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Fire</h3>
+        <div class="fires">
+          <div class="fireb r"><b>Red fire</b><div class="pips" id="pr"></div><small id="fr">Torch dormant</small><div class="taken" id="tr" aria-label="Pieces Red has taken"></div></div>
+          <div class="fireb b"><b>Blue fire</b><div class="pips" id="pb"></div><small id="fb">Torch dormant</small><div class="taken" id="tb" aria-label="Pieces Blue has taken"></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Moves</h3>
+        <ol class="log" id="log"></ol>
+      </div>
+    </div>
+  </div>
+
+  <section class="rules" aria-labelledby="rules-h">
+    <div>
+      <h2 id="rules-h">How to <em>play</em></h2>
+      <ol>
+        <li>The board is 9×9. Files run <b>A B C D O E F G H</b>; the centre file is <b>O</b> and the centre square <b>O5</b> is the Fire Square. <b>Red</b> sits at the bottom and moves first.</li>
+        <li>Back row, left to right: Rook, Knight, Bishop, Queen, <b>Torch</b>, <b>King</b>, Bishop, Knight, Rook. The Torch stands between the Queen and the King. The pawn in front of the Torch is the <b>Lighter</b>.</li>
+        <li><b>Light your Torch:</b> walk the Lighter onto O5. The Lighter steps one square in any direction (two straight ahead on its first move) and never captures. Lose the Lighter and the King carries the seed: your King on O5 lights the Torch instead.</li>
+        <li><b>A match burns out:</b> once lit, the Lighter must leave O5 within three of your moves or it is gone. When it leaves it carries on as an ordinary pawn.</li>
+        <li><b>The Torch breathes fire.</b> A dormant Torch cannot move and cannot be captured. A lit Torch steps one square in any direction, and after every move you make it burns enemy pieces standing next to it.</li>
+        <li><b>Fire grows as the enemy's assistants fall.</b> Each enemy Rook, Bishop or Knight you take or burn adds one to your Fire. <b>Spark</b> (lit): burns pawns. <b>Blaze</b> (Fire 2): also Knights and Bishops. <b>Inferno</b> (Fire 3 of 6): also Rooks and the Queen. Fire never touches a King.</li>
+        <li>The <b>King</b> is the strongest piece: it steps one square any way or leaps like a Knight. The <b>Queen</b> moves like a chess Queen but at most <b>3 squares</b>. Rooks, Bishops, Knights and pawns move as in chess; pawns promote to a Queen on the last rank. No castling, no en passant.</li>
+      </ol>
+    </div>
+    <div>
+      <h2>How a winner is <em>declared</em></h2>
+      <ul>
+        <li><b>Checkmate wins.</b> Put the enemy King in check with no way out. CHECK. FIRE. MATE.</li>
+        <li><b>Capture the enemy Torch and you win at once.</b> Lighting your Torch gives you fire, but a lit Torch can be taken, so guard it.</li>
+        <li><b>When the game stalls, Fire decides.</b> Stalemate, 50 moves each with no capture or pawn move, the same position three times, or only Kings and Torches left: the side with the higher Fire wins. Equal Fire is a draw.</li>
+        <li><b>STARKS:</b> beat the Machine as Red to earn STARKS for the Billboard: Squire +60, Knight +200, King +500 (up to five wins a day). Take-backs are only allowed at Squire level and in friend games.</li>
+      </ul>
+      <table class="ptable" id="ptable"></table>
+    </div>
+  </section>
+</main>
+
+<div class="win" id="win" role="dialog" aria-modal="true" aria-labelledby="winH">
+  <div class="box"><h2 id="winH">Check. Fire. Mate.</h2><p id="winP"></p>
+    <div class="btnrow"><button class="btn btn-red" id="again" type="button">Play again</button><a class="btn btn-line" href="fan-billboard/">Billboard →</a><button class="btn btn-line" id="close" type="button">Look at the board</button></div>
+  </div>
+</div>
+
+<script src="assets/starks.js"></script>
+<script src="assets/chess81-engine.js"></script>
 <script>
-const L=['A','B','C','D','O','E','F','G','H'],G={K:'♔',Q:'♕',R:'♖',B:'♗',N:'♘',P:'♙',T:'🔥'},V={K:100,Q:4,R:5,B:3,N:3,P:1,T:30};let S,H=[],sel=null,LM=[],mode='machine',logs=[];
-const sq=i=>L[i%9]+(Math.floor(i/9)+1);
-function inside(r,c){return r>=0&&r<9&&c>=0&&c<9}
-function mf(st,i,atk=false){let p=st.b[i],o=[];if(!p||p.t==='T'&&!st.lit[p.s])return o;let r=i/9|0,c=i%9;const add=(a,e)=>{if(!inside(a,e))return true;let j=a*9+e,q=st.b[j];if(!q){o.push(j);return false}if(q.s!==p.s&&!(q.t==='T'&&!st.lit[q.s]))o.push(j);return true},sl=D=>D.forEach(([dr,dc])=>{let a=r+dr,e=c+dc;while(inside(a,e)&&!add(a,e)){a+=dr;e+=dc}}),O=[[1,0],[-1,0],[0,1],[0,-1]],D=[[1,1],[1,-1],[-1,1],[-1,-1]];if(p.t==='R')sl(O);else if(p.t==='B')sl(D);else if(p.t==='Q')sl(O.concat(D));else if(p.t==='K'||p.t==='T')O.concat(D).forEach(x=>add(r+x[0],c+x[1]));else if(p.t==='N')[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]].forEach(x=>add(r+x[0],c+x[1]));else{let d=p.s?-1:1;for(let dc of[-1,1]){let a=r+d,e=c+dc;if(inside(a,e)){let q=st.b[a*9+e];if(atk||(q&&q.s!==p.s&&!(q.t==='T'&&!st.lit[q.s])))o.push(a*9+e)}}if(!atk&&inside(r+d,c)&&!st.b[(r+d)*9+c]){o.push((r+d)*9+c);if(r===(p.s?7:1)&&!st.b[(r+2*d)*9+c])o.push((r+2*d)*9+c)}}if(p.t==='Q')o=o.filter(j=>Math.max(Math.abs((j/9|0)-r),Math.abs(j%9-c))<=3);return o}
-function attacked(st,x,s){return st.b.some((p,i)=>p&&p.s===s&&mf(st,i,true).includes(x))}
-function royal(st,s){let k=-1,t=-1;st.b.forEach((p,i)=>{if(p&&p.s===s){if(p.t==='K')k=i;if(p.t==='T'&&st.lit[s])t=i}});return[k,t]}
-function safe(st,s){let[k,t]=royal(st,s);for(let x of[k,t])if(x>=0&&attacked(st,x,1-s))return false;if(k>=0&&st.lit[1-s]&&st.fire[1-s]>=4){let ot=st.b.findIndex(p=>p&&p.s===1-s&&p.t==='T');if(ot>=0&&Math.max(Math.abs((ot/9|0)-(k/9|0)),Math.abs(ot%9-k%9))<=2)return false}return true}
-function apply(st,f,t){let b=st.b.map(x=>x?{...x}:x),p=b[f],q=b[t],lit=[...st.lit],fire=[...st.fire],s=p.s;if(q&&'RBN'.includes(q.t))fire[q.s]++;b[t]={...p};b[f]=null;if(p.t==='P'&&(t/9|0)===(s?0:8))b[t]={t:'Q',s};if(p.light&&t===40&&!lit[s])lit[s]=true;let ti=b.findIndex(x=>x&&x.s===s&&x.t==='T'),burned=[];if(lit[s]&&ti>=0){let set=fire[s]>=3?'PNBRQ':fire[s]>=2?'PNBR':fire[s]>=1?'P':'';for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){if(!dr&&!dc)continue;let a=(ti/9|0)+dr,e=(ti%9)+dc;if(!inside(a,e))continue;let j=a*9+e,x=b[j];if(x&&x.s!==s&&set.includes(x.t)){burned.push(j);if('RBN'.includes(x.t))fire[x.s]++}}}burned.forEach(j=>b[j]=null);return{b,lit,fire,turn:1-s,burned}}
-function legal(st){let o=[];st.b.forEach((p,i)=>{if(p&&p.s===st.turn)mf(st,i).forEach(t=>{let n=apply(st,i,t);if(safe(n,st.turn))o.push([i,t])})});return o}
-function init(){let b=Array(81).fill(null),back='RNBQTKBNR';for(let s=0;s<2;s++){let r0=s?8:0,r1=s?7:1;for(let c=0;c<9;c++){b[r0*9+c]={t:back[c],s};b[r1*9+c]={t:'P',s,light:c===4}}}S={b,lit:[false,false],fire:[0,0],turn:0,over:false,reason:'',score:[0,0]};H=[];logs=[];sel=null;render();if(mode==='machine')setTimeout(bot,250)}
-function play(m){let old=JSON.parse(JSON.stringify(S)),p=S.b[m[0]],q=S.b[m[1]],n=apply(S,m[0],m[1]);H.push(old);let pts=25;if(n.lit[p.s]&&!S.lit[p.s])pts+=10;if(n.fire[p.s]>S.fire[p.s])pts+=10;if(q&&q.t==='Q')pts+=20;if(q&&q.t==='T')pts+=40;const scores=[...S.score];S=n;S.score=scores;S.score[p.s]+=pts;logs.push((p.s?'BLUE':'RED')+' '+sq(m[0])+'-'+sq(m[1])+(q?' × '+q.t:'')+(n.burned.length?' · FIRE '+n.burned.length:''));LM=legal(S);if(q&&q.t==='T'&&S.lit[q.s]){S.over=true;S.reason='win';S.score[p.s]+=40}else if(!LM.length){S.over=true;S.reason=safe(S,S.turn)?'draw':'win';if(S.reason==='win')S.score[p.s]+=100}emit();render();if(mode==='machine'&&!S.over&&S.turn===1)setTimeout(bot,250)}
-function bot(){if(mode!=='machine'||S.over||S.turn!==1)return;LM=legal(S);if(!LM.length){render();return}let best=LM[0],bv=-1e9;for(let m of LM){let n=apply(S,m[0],m[1]),v=0;for(let p of n.b)if(p)v+=(p.s?1:-1)*V[p.t];v+=n.fire[1]*2+n.lit[1]*5;v+=Math.random();if(v>bv){bv=v;best=m}}play(best)}
-function click(i){if(S.over||(mode==='machine'&&S.turn===1))return;let m=LM.find(x=>x[0]===sel&&x[1]===i);if(m){play(m);sel=null;return}let p=S.b[i];sel=p&&p.s===S.turn?i:null;render()}
-function render(){LM=legal(S);let b=document.getElementById('board');b.innerHTML='';let[k,t]=royal(S,S.turn),bad=!safe(S,S.turn);for(let r=8;r>=0;r--)for(let c=0;c<9;c++){let i=r*9+c,p=S.b[i],d=document.createElement('div');d.className='sq '+((r+c)%2?'dark':'light')+(i===40?' center':'')+(i===sel?' selected':'')+(bad&&(i===k||i===t)?' check':'');if(sel!==null&&LM.some(x=>x[0]===sel&&x[1]===i))d.className+=' '+(p?'capture':'legal');d.onclick=()=>click(i);if(c===0){let z=document.createElement('span');z.className='coord top';z.textContent=r+1;d.appendChild(z)}if(r===0){let z=document.createElement('span');z.className='coord bottom';z.textContent=L[c];d.appendChild(z)}if(p){let z=document.createElement('span');z.className='piece '+(p.s?'blue':'red')+(p.light?' lighter':'')+(p.t==='T'&&!S.lit[p.s]?' dormant':'');z.textContent=p.t==='T'?'🔥':G[p.t];d.appendChild(z)}b.appendChild(d)}document.getElementById('move').innerHTML=S.over?(S.reason==='draw'?'DRAW':'<span class="redTxt">'+(S.turn?'RED':'BLUE')+' WINS</span>'):(S.turn?'BLUE':'RED')+' TO MOVE';document.getElementById('sub').textContent=S.over?'Game complete.':'Reach O5 with your Lighter to ignite your Torch. Queen range: 3 squares.';for(let s=0;s<2;s++){let m=document.getElementById(s?'mb':'mr');m.innerHTML='';for(let i=0;i<4;i++){let x=document.createElement('i');if(i<S.fire[s])x.className='on'+(s?'B':'R');m.appendChild(x)}document.getElementById(s?'bt':'rt').textContent='LEVEL '+S.fire[s]+'/4 · TORCH '+(S.lit[s]?'LIT':'DORMANT')}document.getElementById('rs').textContent=S.score[0];document.getElementById('bs').textContent=S.score[1];document.getElementById('ts').textContent=S.score[0]+S.score[1];document.getElementById('log').textContent=logs.slice(-6).join('\n')}
-function emit(){let p={system:'CHESS81',version:'0.2',redScore:S.score[0],blueScore:S.score[1],total:S.score[0]+S.score[1],reason:S.reason||'ongoing',fireRed:S.fire[0],fireBlue:S.fire[1],timestamp:new Date().toISOString()};localStorage.setItem('chess81_last_score',JSON.stringify(p));window.dispatchEvent(new CustomEvent('STARKS_SCORE',{detail:p}));try{window.parent.postMessage({type:'STARKS_SCORE',payload:p},'*')}catch(e){}}
-document.getElementById('new').onclick=init;document.getElementById('machine').onclick=()=>{mode='machine';init()};document.getElementById('human').onclick=()=>{mode='human';init()};document.getElementById('undo').onclick=()=>{if(H.length){S=H.pop();render()}};document.getElementById('download').onclick=()=>{let a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['CHESS81 MATCH\n',...logs],{type:'text/plain'}));a.download='chess81-match.txt';a.click()};init();
-</script><script src="assets/footer.js" defer></script>
-</body></html>
+(function () {
+  var E = window.Chess81, $ = function (id) { return document.getElementById(id); };
+  var GLYPH = { 1: '♟', 3: '♞', 4: '♝', 5: '♜', 6: '♛', 8: '♚' };
+  var NAME = { 1: 'Pawn', 2: 'Lighter', 3: 'Knight', 4: 'Bishop', 5: 'Rook', 6: 'Queen', 7: 'Torch', 8: 'King' };
+  var REWARD = { squire: 60, knight: 200, king: 500 };
+  var LEVELNAME = { squire: 'Squire', knight: 'Knight', king: 'King' };
+  function torchSvg(lit) {
+    return '<svg viewBox="0 0 40 40" aria-hidden="true">' +
+      (lit ? '<path class="flame" d="M20 2c4 6 9 8 7 15-1 3-4 5-7 5s-6-2-7-5c-2-7 3-8 7-15z" fill="#ff8a00"/><path class="flame" d="M20 9c2 4 4 5 3 9-1 2-2 3-3 3s-3-1-3-3c-1-4 1-5 3-9z" fill="#ffd34d"/>' : '<path d="M14 18h12" stroke="#5a463a" stroke-width="2" stroke-linecap="round"/>') +
+      '<path d="M11 20h18l-3 7H14z" fill="currentColor" stroke="#fff" stroke-width="1.2"/><rect x="17.5" y="27" width="5" height="11" rx="1.5" fill="currentColor" stroke="#fff" stroke-width="1.2"/></svg>';
+  }
+  function lighterSvg() {
+    return '<svg viewBox="0 0 40 40" aria-hidden="true"><rect x="18" y="16" width="4" height="21" rx="1.5" fill="#f2d7a8" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="15" r="4.2" fill="currentColor" stroke="#fff" stroke-width="1"/><path class="flame" d="M20 1c3 4 6 6 4 10-1 2-2 3-4 3s-3-1-4-3c-2-4 1-6 4-10z" fill="#ff8a00"/></svg>';
+  }
+  function pieceHtml(p, s) {
+    var t = E.typeOf(p), side = E.sideOf(p);
+    var inner = t === 7 ? torchSvg(s.lit[side]) : t === 2 ? lighterSvg() : GLYPH[t] + '︎';
+    return '<span class="pc ' + (side ? 'b' : 'r') + '">' + inner + '</span>';
+  }
+
+  // board scaffolding
+  var cells = [];
+  (function () {
+    var rk = $('ranks'), fl = $('files'), bd = $('board');
+    for (var r = 8; r >= 0; r--) { var s = document.createElement('span'); s.textContent = r + 1; if (r === 4) s.className = 'o'; rk.appendChild(s); }
+    E.FILES.forEach(function (f, c) { var s = document.createElement('span'); s.textContent = f; if (c === 4) s.className = 'o'; fl.appendChild(s); });
+    for (r = 8; r >= 0; r--) for (var c = 0; c < 9; c++) {
+      var i = r * 9 + c, b = document.createElement('button');
+      b.type = 'button'; b.className = 'sq ' + ((r + c) % 2 ? 'l' : 'd') + (i === E.CENTRE ? ' fire' : '');
+      b.dataset.i = i; b.setAttribute('role', 'gridcell');
+      b.addEventListener('click', onSquare);
+      cells[i] = b; bd.appendChild(b);
+    }
+  })();
+
+  var S, hist, keys, moves, sel = -1, LM = [], last = null, over = null, mode = 'machine', level = 'knight', thinking = false, reqId = 0, taken, flash = [];
+  try { var saved = JSON.parse(localStorage.getItem('amkh-chess81') || 'null'); if (saved) { mode = saved.mode || mode; level = saved.level || level; } } catch (e) {}
+  var worker = null;
+  try { worker = new Worker('assets/chess81-engine.js'); worker.onmessage = function (e) { if (e.data.id === reqId) machineMoved(e.data.move); }; worker.onerror = function () { worker = null; }; } catch (e) { worker = null; }
+
+  function newGame() {
+    S = E.initial(); hist = []; keys = [E.key(S)]; moves = []; sel = -1; last = null; over = null; thinking = false; reqId++; taken = [[], []]; flash = [];
+    $('win').classList.remove('on');
+    try { localStorage.setItem('amkh-chess81', JSON.stringify({ mode: mode, level: level })); } catch (e) {}
+    render('Walk your Lighter to O5 to light your Torch.');
+  }
+  function human() { return mode === 'human' || S.turn === 0; }
+
+  function onSquare(e) {
+    if (over || thinking || !human()) return;
+    var i = +e.currentTarget.dataset.i, p = S.b[i];
+    if (sel >= 0) {
+      var m = sel * 81 + i;
+      if (LM.indexOf(m) >= 0) { sel = -1; play(m); return; }
+    }
+    sel = p && E.sideOf(p) === S.turn ? (sel === i ? -1 : i) : -1;
+    render();
+  }
+
+  function describe(ev, mover) {
+    var who = mover ? 'Blue' : 'Red', out = [];
+    ev.forEach(function (x) {
+      if (x[0] === 'lit') out.push(who + "'s Torch is lit" + (x[2] === 'king' ? ' by the King' : '') + '.');
+      if (x[0] === 'burn') out.push(who + "'s Torch burned the " + NAME[E.typeOf(x[2])] + ' on ' + E.sq(x[1]) + '.');
+      if (x[0] === 'burnout') out.push(who + "'s Lighter burned out on O5.");
+      if (x[0] === 'spent') out.push(who + "'s Lighter leaves O5 and fights on as a pawn.");
+      if (x[0] === 'promote') out.push(who + ' promotes to a Queen on ' + E.sq(x[1]) + '.');
+    });
+    return out.join(' ');
+  }
+
+  function play(m) {
+    var f = (m / 81) | 0, t = m % 81, mover = S.turn, p = S.b[f], q = S.b[t];
+    hist.push(S); S = E.make(S, m); keys.push(E.key(S)); last = [f, t]; flash = [];
+    S.events.forEach(function (x) { if (x[0] === 'take' || x[0] === 'burn') { taken[mover].push(x[2]); } if (x[0] === 'burn') flash.push(x[1]); });
+    var rep = keys.filter(function (k) { return k === keys[keys.length - 1]; }).length;
+    over = E.result(S, rep);
+    var chk = !over && E.inCheck(S, S.turn);
+    var txt = (mover ? 'Blue ' : 'Red ') + E.sq(f) + (q ? '×' : '–') + E.sq(t) + (S.events.some(function (x) { return x[0] === 'burn'; }) ? ' 🔥' : '') + (over && over.reason === 'mate' ? '#' : chk ? '+' : '');
+    moves.push(txt);
+    var note = describe(S.events, mover);
+    if (chk) note = (note ? note + ' ' : '') + (S.turn ? 'Blue' : 'Red') + ' King in check.';
+    render(note);
+    if (over) return finish();
+    if (mode === 'machine' && S.turn === 1) machine();
+  }
+
+  function machine() {
+    thinking = true; render(); var id = ++reqId;
+    var snapshot = { b: Array.prototype.slice.call(S.b), turn: S.turn, lit: S.lit, fire: S.fire, lage: S.lage, kpos: S.kpos, quiet: S.quiet, ply: S.ply, winner: S.winner, reason: S.reason, events: [] };
+    if (worker) worker.postMessage({ id: id, state: snapshot, level: level });
+    else setTimeout(function () { if (id === reqId) machineMoved(E.think(S, level)); }, 30);
+  }
+  function machineMoved(m) {
+    thinking = false;
+    if (over || S.turn !== 1 || mode !== 'machine') return;
+    if (m < 0 || E.legal(S).indexOf(m) < 0) { var lm = E.legal(S); if (!lm.length) return; m = lm[0]; }
+    setTimeout(function () { play(m); }, 120);
+  }
+
+  function finish() {
+    var w = over.winner, r = over.reason, head, body;
+    var why = { stalemate: 'Stalemate.', quiet: '50 moves each with no capture or pawn move.', repeat: 'The same position came up three times.', bare: 'Only Kings and Torches remain.' }[r];
+    if (r === 'mate') { head = 'Check. Fire. Mate.'; body = (w ? 'Blue' : 'Red') + ' wins by checkmate.'; }
+    else if (r === 'torch') { head = 'Torch taken'; body = (w ? 'Blue' : 'Red') + ' captured the enemy Torch and wins.'; }
+    else { head = w < 0 ? 'Draw' : 'Fire decides'; body = why + ' Fire: Red ' + S.fire[0] + ', Blue ' + S.fire[1] + '. ' + (w < 0 ? 'Equal fire, so the game is drawn.' : (w ? 'Blue' : 'Red') + ' wins on Fire.'); }
+    if (mode === 'machine') {
+      if (w === 0) {
+        var got = window.STARKS ? STARKS.earn('chess', REWARD[level], 'Chess81 · beat the ' + LEVELNAME[level] + ' Machine') : 0;
+        body += got ? ' +' + got + ' STARKS.' : ' Today\'s Chess81 STARKS are used up; come back tomorrow.';
+        try { var rec = JSON.parse(localStorage.getItem('amkh-chess81-wins') || '{}'); rec[level] = (rec[level] || 0) + 1; localStorage.setItem('amkh-chess81-wins', JSON.stringify(rec)); } catch (e) {}
+      } else if (w === 1) body += ' The ' + LEVELNAME[level] + ' Machine wins this one.';
+    }
+    $('winH').textContent = head; $('winP').textContent = body;
+    render(body);
+    setTimeout(function () { $('win').classList.add('on'); $('again').focus(); }, 500);
+    try { window.dispatchEvent(new CustomEvent('STARKS_SCORE', { detail: { system: 'CHESS81', version: '1.0', winner: w, reason: r, fireRed: S.fire[0], fireBlue: S.fire[1], moves: moves.length } })); } catch (e) {}
+  }
+
+  function stageName(s, side) { if (!s.lit[side]) return 'Torch dormant'; return ['', 'Lit · Spark: burns pawns', 'Lit · Blaze: burns pawns, Knights, Bishops', 'Lit · Inferno: burns all but the King'][E.stage(s.fire[side])]; }
+
+  function render(note) {
+    LM = over ? [] : E.legal(S);
+    var chk = !over && E.inCheck(S, S.turn), kp = S.kpos[S.turn];
+    var targets = {}; if (sel >= 0) LM.forEach(function (m) { if (((m / 81) | 0) === sel) targets[m % 81] = 1; });
+    // your lit Torch under attack?
+    var danger = -1;
+    for (var side = 0; side < 2; side++) if (S.lit[side]) { var tp = Array.prototype.indexOf.call(S.b, (side ? -1 : 1) * 7); if (tp >= 0 && E.attacked(S, tp, 1 - side) && side === S.turn) danger = tp; }
+    for (var i = 0; i < 81; i++) {
+      var c = cells[i], p = S.b[i], r = i / 9 | 0, col = i % 9;
+      c.className = 'sq ' + ((r + col) % 2 ? 'l' : 'd') + (i === E.CENTRE ? ' fire' : '') + (last && (i === last[0] || i === last[1]) ? ' last' : '') + (i === sel ? ' sel' : '') + (chk && i === kp ? ' chk' : '') + (i === danger ? ' danger' : '') + (targets[i] ? (p ? ' cap' : ' dot') : '') + (flash.indexOf(i) >= 0 ? ' burnt' : '');
+      c.innerHTML = p ? pieceHtml(p, S) : '';
+      c.setAttribute('aria-label', E.sq(i) + (p ? ' ' + (E.sideOf(p) ? 'Blue ' : 'Red ') + NAME[E.typeOf(p)] : ''));
+    }
+    flash = [];
+    var st = $('status');
+    if (over) st.innerHTML = over.winner < 0 ? 'Draw' : '<span class="' + (over.winner ? 'b' : 'r') + '">' + (over.winner ? 'Blue' : 'Red') + '</span> wins';
+    else if (thinking) st.innerHTML = '<span class="b">Blue</span> is thinking…';
+    else st.innerHTML = (chk ? 'Check · ' : '') + '<span class="' + (S.turn ? 'b' : 'r') + '">' + (S.turn ? 'Blue' : 'Red') + '</span> to move';
+    if (note !== undefined) $('note').textContent = note || (danger >= 0 ? 'Your lit Torch is under attack. Lose it and you lose the game.' : '');
+    else if (danger >= 0) $('note').textContent = 'Your lit Torch is under attack. Lose it and you lose the game.';
+    [['pr', 'fr', 'tr', 0], ['pb', 'fb', 'tb', 1]].forEach(function (x) {
+      var pips = $(x[0]); pips.innerHTML = '';
+      for (var k = 0; k < 6; k++) { var e = document.createElement('i'); if (k < S.fire[x[3]]) e.className = 'on'; pips.appendChild(e); }
+      $(x[1]).textContent = 'Fire ' + S.fire[x[3]] + ' of 6 · ' + stageName(S, x[3]);
+      $(x[2]).innerHTML = taken[x[3]].map(function (q) { var t = E.typeOf(q); return '<span style="color:' + (E.sideOf(q) ? 'var(--bluep)' : 'var(--redp)') + '">' + (GLYPH[t] || (t === 2 ? '•' : '')) + '︎</span>'; }).join('');
+    });
+    var log = $('log'); log.innerHTML = '';
+    moves.forEach(function (m, k) { var li = document.createElement('li'); li.textContent = (k + 1) + '. ' + m; log.appendChild(li); });
+    log.scrollTop = log.scrollHeight;
+    document.querySelectorAll('#modes button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
+    document.querySelectorAll('#levels button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.level === level ? 'true' : 'false'); });
+    $('levelBox').hidden = mode !== 'machine';
+    $('undo').disabled = !hist.length || thinking || (mode === 'machine' && level !== 'squire');
+  }
+
+  document.querySelectorAll('#modes button').forEach(function (b) { b.onclick = function () { mode = b.dataset.mode; newGame(); }; });
+  document.querySelectorAll('#levels button').forEach(function (b) { b.onclick = function () { level = b.dataset.level; newGame(); }; });
+  $('new').onclick = newGame;
+  $('again').onclick = newGame;
+  $('close').onclick = function () { $('win').classList.remove('on'); };
+  $('undo').onclick = function () {
+    if (!hist.length || thinking) return;
+    var n = mode === 'machine' ? (S.turn === 0 ? 2 : 1) : 1;
+    while (n-- > 0 && hist.length) { S = hist.pop(); keys.pop(); moves.pop(); }
+    over = null; sel = -1; last = null; $('win').classList.remove('on');
+    taken = [[], []]; // rebuild from history
+    hist.concat([S]).forEach(function (st, k, arr) { if (k) arr[k].events.forEach(function (x) { if (x[0] === 'take' || x[0] === 'burn') taken[arr[k - 1].turn].push(x[2]); }); });
+    render('Move taken back.');
+  };
+  $('save').onclick = function () {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(['CHESS81 · ' + new Date().toISOString() + '\n' + (mode === 'machine' ? 'Red (you) vs the ' + LEVELNAME[level] + ' Machine' : 'Red vs Blue') + '\n\n' + moves.map(function (m, k) { return (k + 1) + '. ' + m; }).join('\n') + (over ? '\n\nResult: ' + $('winH').textContent + ' · ' + $('winP').textContent : '') + '\n'], { type: 'text/plain' }));
+    a.download = 'chess81-match.txt'; a.click();
+  };
+
+  // piece guide
+  (function () {
+    var rows = [[GLYPH[8], 'King', 'One square any way, or a Knight leap. The strongest piece.'], [torchSvg(true), 'Torch', 'Dormant until lit. Lit: one square any way, burns neighbours. Lose it, lose the game.'], [lighterSvg(), 'Lighter', 'One square any way, two ahead on its first move. Never captures. Lights the Torch on O5.'], [GLYPH[6], 'Queen', 'Any direction, up to 3 squares.'], [GLYPH[5], 'Rook', 'Straight lines.'], [GLYPH[4], 'Bishop', 'Diagonals.'], [GLYPH[3], 'Knight', 'L-shaped leap.'], [GLYPH[1], 'Pawn', 'Forward one (two from the start), captures diagonally.']];
+    $('ptable').innerHTML = rows.map(function (x) { return '<tr><td>' + (x[0].charAt(0) === '<' ? x[0] : x[0] + '︎') + '</td><td><b>' + x[1] + '</b> · ' + x[2] + '</td></tr>'; }).join('');
+  })();
+
+  // for future AI-vs-AI matches: window.CHESS81.move('O2','O4')
+  window.CHESS81 = {
+    state: function () { return { turn: S.turn ? 'blue' : 'red', lit: S.lit.slice(), fire: S.fire.slice(), over: over, moves: moves.slice() }; },
+    legal: function () { return LM.map(function (m) { return E.sq((m / 81) | 0) + '-' + E.sq(m % 81); }); },
+    move: function (a, b) { var m = E.idx(a) * 81 + E.idx(b); if (over || thinking || LM.indexOf(m) < 0) return false; play(m); return true; }
+  };
+  newGame();
+})();
+</script>
+<script src="assets/footer.js" defer></script>
+</body>
+</html>

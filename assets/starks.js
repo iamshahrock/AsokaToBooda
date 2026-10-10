@@ -16,7 +16,8 @@
     firstclear: ['First clear of a lair', 6],
     throne: ['Throne Room', 3],
     flush: ['Royal Flush jackpot', 3],
-    allsix: ['All six lairs cleared', 1]
+    allsix: ['All six lairs cleared', 1],
+    chess: ['Beat the Machine at Chess81', 5]
   };
   var TIERS = [[0, 'Fan'], [500, 'Rebel'], [1500, 'Prince'], [4000, 'King'], [10000, 'Royal Flush']];
 
