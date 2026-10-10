@@ -29,9 +29,9 @@ await bbp.close();
 const lp = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 lp.on('pageerror', e => log.push(`lairs pageerror ${e.message}`));
 await lp.goto(base + '/lairs/?t=' + Date.now(), { waitUntil: 'networkidle' });
-await lp.click('.lair >> nth=0'); await lp.click('#deal'); await lp.waitForTimeout(300);
+await lp.click('.lair >> nth=0'); await lp.click('#sc .choice >> nth=0'); await lp.click('#srow .btn'); await lp.click('#deal'); await lp.waitForTimeout(300);
 for (let k = 0; k < 4; k++) { if (await lp.$('#check')) { await lp.click('#check'); await lp.waitForTimeout(100); } }
-log.push('lairs casino: ' + (await lp.textContent('#cmsg')));
+log.push('lairs casino: ' + (await lp.textContent('#cmsg')) + ' · story art: ' + (await lp.evaluate(() => [...document.querySelectorAll('img')].filter(i => i.src.includes('/lairs/') && i.naturalWidth > 0).length)) + ' images loaded');
 await lp.goto(base + '/CHESS81.HTML?t=' + Date.now(), { waitUntil: 'networkidle' });
 const hp = await browser.newPage({ viewport: { width: 390, height: 844 } }); await hp.goto(base + '/?t=' + Date.now(), { waitUntil: 'networkidle' });
 log.push('home slider (phone): ' + JSON.stringify(await hp.evaluate(() => { const sl = document.querySelector('.slide.on'), c = sl.querySelector('.copy').getBoundingClientRect(), a = sl.querySelector('.art').getBoundingClientRect(); return { slides: document.querySelectorAll('#hero .slide').length, dots: document.querySelectorAll('#dots .dot').length, arrows: document.querySelectorAll('#hero .arrow').length, sideBySide: a.left > c.left + c.width / 2 && a.top < c.bottom }; })));

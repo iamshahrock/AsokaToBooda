@@ -40,6 +40,40 @@
 .say{margin:0 0 14px;color:#d9cfc7;font-size:16px;line-height:1.5;max-width:720px}
 .msg{margin:14px 0 0;min-height:24px;font-size:15px;color:var(--red-text)}
 .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+/* THE CONTRACT */
+.contract{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;margin-top:18px;border:1px solid var(--line);background:#070404;overflow:hidden}
+.contract .c-art{width:100%;height:100%;max-height:640px;object-fit:cover;display:block}
+.contract .c-copy{padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.contract h1{margin:4px 0 6px;font-family:var(--display);font-weight:400;font-size:clamp(52px,6vw,92px);line-height:.9;text-transform:uppercase}
+.contract h1 em{font-style:normal;color:var(--red-hi)}
+.c-lede{margin:0;font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(20px,2vw,28px);line-height:1.25}
+.c-line{margin:6px 0 0;font-family:var(--display);font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--red-text)}
+.meters{display:flex;gap:12px;margin-top:8px}
+.meters span{flex:1;border:1px solid var(--line);background:#0d0909;padding:10px 12px}
+.meters small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.meters b{font-family:var(--display);font-weight:400;font-size:30px;color:var(--red-hi)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.lair .lair-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;z-index:0}
+.lair:disabled .lair-art{filter:grayscale(1);opacity:.25}
+.lair::before{z-index:1;opacity:.62}
+.lair>*:not(.lair-art){z-index:2}
+.lair .no{font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.scene{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:24px;align-items:start}
+.scene-art{margin:0;aspect-ratio:2/3;background:radial-gradient(80% 80% at 50% 40%,#4a0a0e,#0a0404);border:1px solid var(--line);overflow:hidden}
+.scene-art img{width:100%;height:100%;object-fit:cover;display:block}
+.scene-art.noart img{display:none}
+.scene-copy .q{font-family:var(--display);font-size:clamp(24px,2.6vw,34px);text-transform:uppercase;line-height:1.05;margin:14px 0 12px}
+.outcome{border-left:3px solid var(--red);padding:4px 0 4px 16px;margin:6px 0 16px}
+.still{margin-top:14px;border:1px solid var(--line);background:#0d0909;padding:16px;max-width:720px}
+.still-h{margin:0 0 4px;font-family:var(--display);font-size:24px;text-transform:uppercase}
+.still-p{margin:0 0 12px;color:var(--mute);font-size:14px;line-height:1.5}
+.still-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.still-row .face{width:52px;height:52px;object-fit:cover;border-radius:50%;border:2px solid var(--red)}
+.still-up{cursor:pointer}
+.still-ok{display:flex;gap:8px;align-items:center;margin-top:10px;font-size:13px;color:var(--mute)}
+.still-img{display:block;width:100%;max-width:360px;margin-top:14px;border:1px solid var(--line)}
+@media (max-width:900px){.contract{grid-template-columns:minmax(0,1fr)}.contract .c-art{max-height:420px;object-position:50% 35%}.contract .c-copy{padding:22px 18px}.scene{grid-template-columns:minmax(0,1fr)}.scene-art{max-width:300px;aspect-ratio:2/3}}
+@media (max-width:560px){.scene-art{max-width:none;aspect-ratio:4/3}.scene-art img{object-position:50% 40%}}
 /* casino */
 .felt{display:grid;gap:14px;max-width:760px;padding:18px;background:radial-gradient(90% 90% at 50% 40%,#0f4a2e,#062216);border:6px solid #3a1d0e;border-radius:18px}
 .seat small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#cfe8d8;margin-bottom:6px}
@@ -96,15 +130,23 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 <body class="v2">
 <script src="../assets/header.js"></script>
 <main class="wrap">
-  <div class="page-head">
-    <div><p class="eyebrow">02 · Play the game</p><h1>King's <em>Lairs</em></h1></div>
-    <p>Six lairs from the world of KING. Clear each one to unlock the next, earn STARKS for every win, and take the throne at the end.</p>
-  </div>
+  <section class="contract">
+    <img class="c-art" src="../assets/lairs/cover.webp" alt="" onerror="this.remove()">
+    <div class="c-copy">
+      <p class="eyebrow">02 · King's Lairs · The story game</p>
+      <h1>The <em>Contract</em></h1>
+      <p class="c-lede">They call him KING. Not because he was born to a throne, but because nobody who stood against him kept theirs.</p>
+      <p class="say">Tonight a sealed envelope arrives: six names, one client, no face. Every name hides in a lair. Play each chapter, make the calls a King would make, win the job, and star in the scene with your own face. Clear all six and the throne room opens.</p>
+      <p class="c-line">Darr nahin, dehshat hoon.</p>
+      <div class="meters" id="meters"></div>
+    </div>
+  </section>
+  <h1 class="sr">King's Lairs</h1>
 
   <div class="hud" aria-live="polite">
     <div class="me"><img id="avatar" src="../assets/studio/crown.png" alt=""><div><small>Your STARKS</small><b id="bal">0</b></div></div>
     <div><small>Rank</small><b id="tier" style="font-size:22px;color:var(--ink)">Fan</b></div>
-    <div><small>Lairs cleared</small><b id="cleared" style="font-size:22px;color:var(--ink)">0 / 6</b></div>
+    <div><small>Chapters cleared</small><b id="cleared" style="font-size:22px;color:var(--ink)">0 / 6</b></div>
     <a class="btn btn-line" href="../fan-billboard/">Billboard →</a>
   </div>
 
@@ -145,8 +187,8 @@ function drawMap() {
   LAIRS.forEach(function (l, i) {
     var open = i === 0 || (p[LAIRS[i - 1].id] && p[LAIRS[i - 1].id].cleared);
     var b = document.createElement('button'); b.type = 'button'; b.className = 'lair'; b.style.setProperty('--bg', l.bg); b.disabled = !open;
-    var st = p[l.id] && p[l.id].cleared ? 'Cleared · best ' + fmt(p[l.id].best) + ' STARKS' : open ? 'Open · tap to enter' : 'Clear the lair before it to unlock';
-    b.innerHTML = '<span class="no">' + l.no + '</span><h3>' + l.name + '</h3><p>' + l.blurb + '</p><span class="st' + (p[l.id] && p[l.id].cleared ? ' done' : '') + '">' + st + '</span>';
+    var st = p[l.id] && p[l.id].cleared ? 'Cleared · best ' + fmt(p[l.id].best) + ' STARKS' : open ? 'Open · tap to enter' : 'Clear the chapter before it to unlock';
+    b.innerHTML = '<img class="lair-art" src="' + artFor(l.id) + '" alt="" loading="lazy" onerror="this.remove()"><span class="no">' + STORY[l.id].chapter + '</span><h3>' + l.name + '</h3><p>' + l.blurb + '</p><span class="st' + (p[l.id] && p[l.id].cleared ? ' done' : '') + '">' + st + '</span>';
     b.addEventListener('click', function () { enter(l); });
     map.appendChild(b);
   });
@@ -158,9 +200,198 @@ function enter(l) {
   $('sTitle').textContent = l.name; $('sMeta').textContent = '';
   $('stage').classList.add('on'); $('arena').innerHTML = '';
   $('stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  stopCurrent = l.play($('arena'), function (won, starks, note) { finish(l, won, starks, note); }) || null;
+  story(l, function () {
+    $('arena').innerHTML = '';
+    stopCurrent = l.play($('arena'), function (won, starks, note) { finish(l, won, starks, note); }) || null;
+  });
 }
 $('back').addEventListener('click', function () { if (stopCurrent) stopCurrent(); stopCurrent = null; $('stage').classList.remove('on'); drawMap(); $('map').scrollIntoView({ behavior: 'smooth' }); });
+
+/* ---------- THE CONTRACT: the story that runs through the six lairs ---------- */
+var SKEY = 'amkh-contract';
+var STORY = {
+  casino: {
+    chapter: 'Chapter 1 · The Marker',
+    intro: ['A private casino that launders money for half the underworld. The first name on the list is Ace, and Ace never leaves the table.', 'Nobody touches a man while he is winning. So you will make him lose.'],
+    q: 'How do you take a seat at Ace\'s table?',
+    options: [
+      ['Buy in loud. Flash the money and let the whole room watch.', 2, 0, 'Every eye turns. Ace smiles: he likes a fool with cash.'],
+      ['Take the dealer\'s seat for the night. Quiet hands, quiet eyes.', 0, 2, 'Ace never looks at the help. That is his first mistake.'],
+      ['Send one card to his table: the King of Hearts.', 1, 1, 'He turns the card over. For one second, his hand shakes.']
+    ],
+    action: 'Five hands. Bleed his stack.',
+    win: 'Ace pushes away from the table, broke and sweating. On his way out he gives you the second name: the Snowman, who keeps the client\'s ledger in a dome above the snowline.',
+    lose: 'Ace rakes in the pot and laughs. The House wins tonight. The list is still in your pocket.',
+    scene: 'a grand private casino at midnight, green baize poker table under a low lamp, stacks of chips, crystal chandeliers; they sit at the table holding a King of Hearts'
+  },
+  dome: {
+    chapter: 'Chapter 2 · Cold Open',
+    intro: ['A glass dome on a Himalayan ridge, guarded by searchlights and men who do not feel the cold. The Snowman keeps the client\'s ledger in a safe at its heart.', 'One ice bridge in. No way to hide on it.'],
+    q: 'How do you cross?',
+    options: [
+      ['Cut the power and go in dark.', 2, 0, 'The dome hums, flickers, and the second light stutters.'],
+      ['Take a guard\'s coat and walk the bridge like you belong.', 0, 2, 'Head down, breath steady. Belonging is a costume.'],
+      ['Write it in the snow where the Snowman will see it: Darr nahin, dehshat hoon.', 3, 0, 'By morning the whole dome will be whispering your name.']
+    ],
+    action: 'Freeze when the light is on you.',
+    win: 'The ledger is yours. One page has been torn out, and the missing name is hidden somewhere in the Archive under the city.',
+    lose: 'The searchlight finds you on the bridge. You go over the edge into the snow, and live to try again.',
+    scene: 'a futuristic glass dome fortress on a snowy Himalayan peak at night, searchlights sweeping the snow; they stand on an ice ridge in a long black coat'
+  },
+  city: {
+    chapter: 'Chapter 3 · The Archive',
+    intro: ['Under Mumbai there is a city of red neon and an Archive that holds every film ever made, and every secret its keeper ever heard.', 'The vault opens only for someone who truly remembers his films.'],
+    q: 'The Archivist blocks the aisle. What do you do?',
+    options: [
+      ['Ask, with respect. You have read the same scripts.', 0, 3, 'The old man smiles. "Answer my questions, then."'],
+      ['Lean in close and let him see what you are.', 3, 0, '"Answer quickly," he says, and steps aside, shaking.'],
+      ['Offer him a first-day-first-show ticket to KING.', 1, 1, 'He pockets it like gold. "Five questions. Fifty-five seconds."']
+    ],
+    action: 'Five questions. Fifty-five seconds.',
+    win: 'The vault slides open. Inside is the torn page: the Broker, the man who runs the fighting Pit.',
+    lose: 'The vault stays shut and the neon flickers out. The Archivist shrugs: come back when you remember.',
+    scene: 'a secret underground city of red neon signs reflected in rain, towering shelves of old film reels glowing; they walk down the aisle in a black suit'
+  },
+  pit: {
+    chapter: 'Chapter 4 · Blood Money',
+    intro: ['The Broker sells names, and he only talks to whoever beats his champion in the Pit.', 'Three hundred people in the dark, all betting against you.'],
+    q: 'How do you walk into the ring?',
+    options: [
+      ['Bow to the champion. Fight clean.', 0, 3, 'The crowd goes quiet. Nobody bows in the Pit.'],
+      ['Ignore him. Stare at the Broker the whole time.', 2, 0, 'The Broker stops counting money.'],
+      ['Raise one hand and make the whole crowd chant KING.', 2, 1, 'The chant rolls around the rock like thunder.']
+    ],
+    action: 'Land the combos. Knock him down.',
+    win: 'The champion stays down. The Broker pays his debt in a single word: the Noctopus, under the sea, guarding the client\'s crown.',
+    lose: 'You hit the sand. The crowd roars for the other man tonight.',
+    scene: 'an underground fighting pit carved in rock with a ring of fire torches; they stand in the ring wrapping their knuckles, a shadowed crowd above'
+  },
+  den: {
+    chapter: 'Chapter 5 · Deep Water',
+    intro: ['A flooded lair beneath the harbour. The Noctopus coils in the dark, and somewhere below it lies the crown the client paid in.', 'Thirty seconds of air. Ink mines everywhere.'],
+    q: 'How do you go down?',
+    options: [
+      ['Dive alone, no light, no noise.', 0, 2, 'The water closes over you like a curtain.'],
+      ['Drop a charge first and let the Noctopus come to you.', 3, 0, 'The water shakes. Eight arms uncoil.'],
+      ['Take the old fisherman who knows the currents.', 0, 2, 'He points to a gap in the rocks. "Ten crowns. Then up."']
+    ],
+    action: 'Ten crowns in thirty seconds.',
+    win: 'Inside the last crown is a photograph of the client. You know the face. You have always known the face.',
+    lose: 'Your lungs burn and you kick for the surface. The Noctopus keeps its treasure for now.',
+    scene: 'a flooded underwater lair lit by red emergency light, a colossal octopus silhouette in the dark; they swim toward a golden crown on the sea floor'
+  },
+  throne: {
+    chapter: 'Chapter 6 · The Royal Flush',
+    intro: ['The client is waiting on the throne. One name is left on the contract, and it is yours.', 'Every King before you walked away from this room. This one has come for the Royal Flush.'],
+    q: 'What does the KING do?',
+    options: [
+      ['Take the throne. This time the King does not walk away.', 2, 2, 'You climb the steps. The room holds its breath.', 'flush'],
+      ['Burn the contract and vanish. A King needs no throne.', 0, 3, 'The paper curls in the candle flame.', 'ghost'],
+      ['Finish the job. Every last name.', 3, 0, 'The spotlight trembles.', 'blade']
+    ],
+    action: 'Open the Zero-to-One gate, then make the four decisions that make a King.',
+    win: '',
+    lose: 'The throne room doors close in your face. The client is still waiting.',
+    scene: 'a vast throne room with a blood-red throne under a single spotlight, playing cards of a royal flush scattered on black marble; they sit on the throne in a black suit'
+  }
+};
+var ENDINGS = {
+  flush: ['The Royal Flush', 'The KING takes the throne and keeps it. Fear and honour, both in one hand.'],
+  ghost: ['The Ghost King', 'No crown, no name, no trace. Somewhere a city sleeps a little easier, and a little more afraid.'],
+  blade: ['The Executioner', 'The contract is complete. Every name crossed out. The throne is empty, and that was always the point.']
+};
+function sload() { try { return JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch (e) { return {}; } }
+function ssave(s) { try { localStorage.setItem(SKEY, JSON.stringify(s)); } catch (e) {} }
+function meters() { var s = sload(), f = 0, h = 0; Object.keys(s.picks || {}).forEach(function (k) { var o = STORY[k] && STORY[k].options[s.picks[k]]; if (o) { f += o[1]; h += o[2]; } }); return { fear: f, honour: h }; }
+function drawMeters() {
+  var m = meters(), el = $('meters'); if (!el) return;
+  el.innerHTML = '<span><small>Dehshat (fear)</small><b>' + m.fear + '</b></span><span><small>Izzat (honour)</small><b>' + m.honour + '</b></span>';
+}
+function artFor(id) { return '../assets/lairs/' + id + '.webp'; }
+
+/* Story intro shown before each lair's game */
+function story(l, start) {
+  var st = STORY[l.id], a = $('arena'), s = sload(); s.picks = s.picks || {};
+  a.innerHTML = '<div class="scene"><figure class="scene-art"><img src="' + artFor(l.id) + '" alt="" onerror="this.parentNode.classList.add(\'noart\')"></figure><div class="scene-copy"><p class="eyebrow">' + st.chapter + '</p>' +
+    st.intro.map(function (p) { return '<p class="say">' + p + '</p>'; }).join('') + '<p class="q">' + st.q + '</p><div class="choices" id="sc"></div><p class="msg" id="sres"></p><div class="row" id="srow"></div></div></div>';
+  st.options.forEach(function (o, k) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'choice'; b.textContent = o[0];
+    b.onclick = function () {
+      s.picks[l.id] = k; ssave(s); drawMeters();
+      [].forEach.call($('sc').children, function (x, j) { x.disabled = true; if (j === k) x.classList.add('picked'); });
+      $('sres').textContent = o[3];
+      var go = document.createElement('button'); go.type = 'button'; go.className = 'btn btn-red'; go.textContent = st.action + ' →';
+      go.onclick = function () { start(); };
+      $('srow').innerHTML = ''; $('srow').appendChild(go); go.focus();
+    };
+    $('sc').appendChild(b);
+  });
+}
+
+/* Story outcome added after each game */
+function outcome(l, won, box) {
+  var st = STORY[l.id], s = sload(), pick = s.picks && s.picks[l.id], o = st.options[pick] || [0, 0, 0];
+  var p = document.createElement('div'); p.className = 'outcome';
+  if (l.id === 'throne' && won) {
+    var e = ENDINGS[o[4] || 'flush'], m = meters();
+    p.innerHTML = '<p class="eyebrow">Ending</p><p class="big">' + e[0] + '</p><p class="say">' + e[1] + '</p><p class="say">Dehshat ' + m.fear + ' · Izzat ' + m.honour + '. THE CONTRACT is complete.</p>';
+    s.ending = o[4] || 'flush'; ssave(s);
+    STARKS.earn('verdict', Math.min(750, 300 + (m.fear + m.honour) * 25), 'THE CONTRACT · ' + e[0]);
+  } else {
+    p.innerHTML = '<p class="say">' + (won ? st.win : st.lose) + '</p>';
+    if (won) STARKS.earn('chapter', 150 + (o[1] + o[2]) * 25, st.chapter);
+  }
+  if (won) p.appendChild(stillBox(l));
+  box.insertBefore(p, box.firstChild.nextSibling);
+}
+
+/* Star in this scene: the fan's own face in the chapter, painted like a poster */
+var FACE = 'amkh-face';
+function stillBox(l) {
+  var d = document.createElement('div'); d.className = 'still';
+  var face = null; try { face = localStorage.getItem(FACE); } catch (e) {}
+  d.innerHTML = '<p class="still-h">Star in this scene</p><p class="still-p">Put your own face into this chapter as a cinematic still, painted fresh like your poster. Uses one of your five daily posters.</p>' +
+    '<div class="still-row">' + (face ? '<img class="face" src="' + face + '" alt="Your photo">' : '') +
+    '<label class="btn btn-line still-up">' + (face ? 'Change photo' : 'Add your photo') + '<input type="file" accept="image/jpeg,image/png,image/webp" hidden></label>' +
+    '<button class="btn btn-red still-go" type="button"' + (face ? '' : ' disabled') + '>Paint my scene</button></div>' +
+    '<label class="still-ok"><input type="checkbox"> This is my photo, or I have permission to use it.</label><p class="msg still-msg"></p><div class="still-out"></div>';
+  var up = d.querySelector('input[type=file]'), go = d.querySelector('.still-go'), msg = d.querySelector('.still-msg'), ok = d.querySelector('.still-ok input');
+  up.onchange = function () {
+    var f = up.files && up.files[0]; if (!f) return;
+    var url = URL.createObjectURL(f), im = new Image();
+    im.onload = function () {
+      var sc = Math.min(1, 768 / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width * sc); c.height = Math.round(im.height * sc);
+      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      var data = c.toDataURL('image/jpeg', 0.86); try { localStorage.setItem(FACE, data); } catch (e) {}
+      var nd = stillBox(l); d.replaceWith(nd);
+    };
+    im.src = url;
+  };
+  go.onclick = function () {
+    if (!ok.checked) { msg.textContent = 'Please confirm the photo is yours or that you have permission.'; return; }
+    go.disabled = true; msg.textContent = 'Painting your scene. About a minute; keep this page open.';
+    var faceData = localStorage.getItem(FACE);
+    Promise.all([fetch(faceData).then(function (r) { return r.blob(); }), fetch(artFor(l.id)).then(function (r) { return r.ok ? r.blob() : fetch('../assets/studio/crown.png').then(function (x) { return x.blob(); }); })]).then(function (b) {
+      var form = new FormData();
+      form.append('prompt', 'Design a brand-new, original cinematic film still starring the person in the first photo as the lone hero of a stylish action-thriller called KING. Keep their face, skin tone and likeness clearly recognisable. They wear a sharp black suit and look calm and dangerous. Scene: ' + STORY[l.id].scene + '. Use the second image as the reference for the setting, lighting and red-and-black colour grade. Dramatic cinematic lighting, shallow depth of field, film grain, premium movie-poster quality. No text, no letters, no logos, no watermark. Vertical 2:3 frame.');
+      form.append('image', b[0], 'fan.jpg'); form.append('image', b[1], 'scene.' + (b[1].type === 'image/png' ? 'png' : 'webp'));
+      return fetch('https://asokatobooda.iamshahrock.workers.dev', { method: 'POST', body: form }).then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.image) throw new Error(j.error || 'The scene could not be painted.'); return j.image; }); });
+    }).then(function (img) {
+      var src = 'data:image/png;base64,' + img, out = d.querySelector('.still-out');
+      out.innerHTML = '<img class="still-img" src="' + src + '" alt="You in ' + STORY[l.id].chapter + '"><div class="row"><button class="btn btn-red" type="button" data-a="share">Share my scene</button><a class="btn btn-line" download="king-' + l.id + '-scene.png" href="' + src + '">Download</a></div>';
+      out.querySelector('[data-a=share]').onclick = function () {
+        fetch(src).then(function (r) { return r.blob(); }).then(function (blob) {
+          var file = new File([blob], 'king-' + l.id + '-scene.png', { type: 'image/png' }), text = 'I just starred in KING: ' + STORY[l.id].chapter + '. Play THE CONTRACT at https://agarmainkinghota.com/lairs/ #AgarMainKingHota #KING';
+          if (navigator.canShare && navigator.canShare({ files: [file] })) navigator.share({ files: [file], text: text }).then(function () { STARKS.earn('share', 50, 'Shared a story scene'); }).catch(function () {});
+          else { var a = document.createElement('a'); a.href = src; a.download = file.name; a.click(); STARKS.earn('share', 50, 'Shared a story scene'); }
+        });
+      };
+      msg.textContent = 'Your scene is ready.';
+      try { var list = JSON.parse(localStorage.getItem('amkh-stills') || '[]'); var c = document.createElement('canvas'); c.width = 240; c.height = 360; var im = new Image(); im.onload = function () { c.getContext('2d').drawImage(im, 0, 0, 240, 360); list.unshift({ id: l.id, img: c.toDataURL('image/jpeg', .8), at: Date.now() }); localStorage.setItem('amkh-stills', JSON.stringify(list.slice(0, 6))); }; im.src = src; } catch (e) {}
+    }).catch(function (e) { msg.textContent = /safety/i.test(e.message) ? 'The image service declined this one. Try a different photo.' : e.message; go.disabled = false; });
+  };
+  return d;
+}
 
 function finish(l, won, starks, note) {
   var p = prog(); var rec = p[l.id] || { cleared: false, best: 0 };
@@ -173,7 +404,7 @@ function finish(l, won, starks, note) {
     if (first) STARKS.earn('firstclear', 100, 'First clear · ' + l.name, 'first-' + l.id);
     var all = LAIRS.every(function (x) { return p[x.id] && p[x.id].cleared; });
     if (all) STARKS.earn('allsix', 500, 'All six lairs cleared', 'allsix');
-    box.innerHTML = '<p class="big">Lair cleared</p><p class="say">' + (got ? '+' + fmt(got) + ' STARKS' : 'Today\'s STARKS for this lair are used up; your best still counts.') + (first ? ' · +100 for the first clear' : '') + '</p>';
+    box.innerHTML = '<p class="big">' + (l.id === 'throne' ? 'Contract complete' : 'Chapter complete') + '</p><p class="say">' + (got ? '+' + fmt(got) + ' STARKS' : 'Today\'s STARKS for this lair are used up; your best still counts.') + (first ? ' · +100 for the first clear' : '') + '</p>';
     var i = LAIRS.indexOf(l);
     var row = document.createElement('div'); row.className = 'row';
     if (LAIRS[i + 1]) { var nx = document.createElement('button'); nx.className = 'btn btn-red'; nx.type = 'button'; nx.textContent = 'Next: ' + LAIRS[i + 1].name + ' →'; nx.onclick = function () { enter(LAIRS[i + 1]); }; row.appendChild(nx); }
@@ -185,7 +416,8 @@ function finish(l, won, starks, note) {
     var r = document.createElement('div'); r.className = 'row';
     var t = document.createElement('button'); t.className = 'btn btn-red'; t.type = 'button'; t.textContent = 'Try again'; t.onclick = function () { enter(l); }; r.appendChild(t); box.appendChild(r);
   }
-  a.appendChild(box); drawMap();
+  outcome(l, won, box);
+  a.appendChild(box); drawMap(); drawMeters();
 }
 
 /* ---------- 01 Casino Floor: heads-up Texas Hold'em vs the House ---------- */
@@ -540,7 +772,7 @@ function throne(a, done) {
   return function () { stopped = true; clearInterval(timer); };
 }
 
-drawMap();
+drawMap(); drawMeters();
 var want = new URLSearchParams(location.search).get('lair');
 var l = LAIRS.find(function (x) { return x.id === want; });
 if (l) { var p = prog(), i = LAIRS.indexOf(l); if (i === 0 || (p[LAIRS[i - 1].id] && p[LAIRS[i - 1].id].cleared)) enter(l); }
