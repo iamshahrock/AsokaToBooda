@@ -56,7 +56,11 @@ export default {
       new Response(JSON.stringify(body), { status, headers: { ...cors, ...JSON_HEADERS, ...extra } });
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
-    if (new URL(request.url).pathname === "/billboard") return billboard(request, env, reply, origin);
+    const path = new URL(request.url).pathname;
+    if (path === "/billboard") return billboard(request, env, reply, origin);
+    if (path === "/starks/earn" || path === "/starks/me") return starks(request, env, reply, origin, path);
+    if (path === "/track") return track(request, env, reply, origin);
+    if (path === "/stats") return stats(request, env, reply);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -134,10 +138,12 @@ export default {
       const data = await response.json();
       if (!response.ok) {
         const message = data?.error?.message || "OpenAI could not generate the image. Please try again.";
+        await bump(env, day, "poster_failed");
         return reply(response.status >= 500 ? 502 : response.status, { error: message });
       }
       const image = data?.data?.[0]?.b64_json;
       if (!image) return reply(502, { error: "The image service returned no image. Please try again." });
+      await bump(env, day, "posters");
       return reply(200, { image, revised_prompt: data.data[0].revised_prompt || null }, { "Cache-Control": "no-store" });
     } catch (error) {
       return reply(500, { error: "Poster request failed. Check your connection and try again." });
@@ -145,11 +151,16 @@ export default {
   }
 };
 
-// ---------------- STARKS Billboard ----------------
-// GET  /billboard            -> { top: [{ rank, name, starks, tier }], updated }
-// POST /billboard {device, name, starks} -> updates that device's entry, returns { rank, top }
-// Storage: KV POSTER_USAGE, keys "bb:dev:<device>" and "bb:top" (top 100). Fans opt in by choosing a name.
-const BB_TOP = "bb:top";
+// ---------------- Platform data (D1: DB) ----------------
+// The Worker is the source of truth for STARKS: every award is checked against
+// the same rules the site shows (amount ceiling and daily count per reason).
+// Visitor numbers are counted with a random per-browser id (no IP, no cookies).
+const RULES = {
+  visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
+  throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
+  chapter: [250, 12], verdict: [750, 2]
+};
+const CARRY_MAX = 3000;
 const BB_TIERS = [[0, "Fan"], [500, "Rebel"], [1500, "Prince"], [4000, "King"], [10000, "Royal Flush"]];
 const BB_BLOCK = /(fuck|shit|bitch|chut|madarch|bhench|behench|randi|gaand|lund|porn|sex|nazi)/i;
 function bbTier(n) { let t = "Fan"; for (const [at, name] of BB_TIERS) if (n >= at) t = name; return t; }
@@ -158,40 +169,158 @@ function bbName(raw) {
   if (name.length < 2 || BB_BLOCK.test(name)) return null;
   return name;
 }
+const okDevice = d => /^[a-f0-9]{16,40}$/.test(String(d || ""));
+async function bump(env, day, metric, by = 1) {
+  if (!env.DB) return;
+  try { await env.DB.prepare("INSERT INTO daily(day,metric,n) VALUES(?1,?2,?3) ON CONFLICT(day,metric) DO UPDATE SET n=n+?3").bind(day, metric, by).run(); } catch (e) {}
+}
+async function readBody(request) { try { return JSON.parse(await request.text()); } catch (e) { return null; } }
+async function burst(env, key) {
+  if (!env.EARN_BURST) return true;
+  const { success } = await env.EARN_BURST.limit({ key }); return success;
+}
+async function topBoard(env, limit = 50) {
+  const r = await env.DB.prepare("SELECT name, balance FROM players WHERE joined=1 AND balance>0 ORDER BY balance DESC, updated ASC LIMIT ?1").bind(limit).all();
+  return (r.results || []).map((e, i) => ({ rank: i + 1, name: e.name, starks: e.balance, tier: bbTier(e.balance) }));
+}
+async function player(env, device) {
+  return await env.DB.prepare("SELECT device,name,joined,balance FROM players WHERE device=?1").bind(device).first();
+}
+async function ensurePlayer(env, device, carry) {
+  let p = await player(env, device);
+  if (p) return p;
+  const now = Date.now(), start = Math.max(0, Math.min(CARRY_MAX, Math.floor(Number(carry) || 0)));
+  await env.DB.batch([
+    env.DB.prepare("INSERT OR IGNORE INTO players(device,name,joined,balance,created,updated) VALUES(?1,'',0,?2,?3,?3)").bind(device, start, now),
+    ...(start ? [env.DB.prepare("INSERT INTO ledger(device,reason,amount,note,ts) VALUES(?1,'carry',?2,'Carried over from this device',?3)").bind(device, start, now)] : [])
+  ]);
+  return await player(env, device);
+}
+
+// GET /billboard -> top 50 joined players.  POST /billboard {device, name} -> join / rename.
 async function billboard(request, env, reply, origin) {
-  if (!env.POSTER_USAGE) return reply(503, { error: "The Billboard is not configured yet." });
-  const readTop = async () => { try { return JSON.parse(await env.POSTER_USAGE.get(BB_TOP) || "[]"); } catch (e) { return []; } };
+  if (!env.DB) return reply(503, { error: "The Billboard is not configured yet." });
   if (request.method === "GET") {
-    const top = await readTop();
-    return reply(200, { top: top.map((e, i) => ({ rank: i + 1, name: e.name, starks: e.starks, tier: bbTier(e.starks) })), updated: Date.now() }, { "Cache-Control": "no-store" });
+    const [top, cnt] = await Promise.all([topBoard(env), env.DB.prepare("SELECT COUNT(*) AS n FROM players WHERE joined=1").first()]);
+    return reply(200, { top, players: cnt ? cnt.n : 0, updated: Date.now() }, { "Cache-Control": "no-store" });
   }
   if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
   if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the Billboard." });
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-  if (env.POSTER_BURST) {
-    const { success } = await env.POSTER_BURST.limit({ key: "bb:" + ip });
-    if (!success) return reply(429, { error: "Too many Billboard updates. Try again in a minute." });
+  if (!(await burst(env, "bb:" + ip))) return reply(429, { error: "Too many Billboard updates. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body) return reply(400, { error: "Send JSON." });
+  if (!okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const leave = body.leave === true;
+  const name = leave ? "" : bbName(body.name);
+  if (!leave && !name) return reply(400, { error: "Choose a name of 2 to 18 letters (no bad words)." });
+  await ensurePlayer(env, body.device, body.carry ?? body.starks);
+  await env.DB.prepare("UPDATE players SET name=CASE WHEN ?2='' THEN name ELSE ?2 END, joined=?3, updated=?4 WHERE device=?1").bind(body.device, name, leave ? 0 : 1, Date.now()).run();
+  const p = await player(env, body.device);
+  const rank = p.joined ? (await env.DB.prepare("SELECT COUNT(*) AS n FROM players WHERE joined=1 AND balance>?1").bind(p.balance).first()).n + 1 : null;
+  return reply(200, { rank, starks: p.balance, tier: bbTier(p.balance), name: p.name, joined: !!p.joined, top: await topBoard(env) });
+}
+
+// POST /starks/earn {device, reason, amount, note, once, carry} -> {awarded, balance}
+// GET  /starks/me?device=… -> {balance, tier, name, joined, rank, history}
+async function starks(request, env, reply, origin, path) {
+  if (!env.DB) return reply(503, { error: "STARKS are not configured yet." });
+  if (path === "/starks/me") {
+    const device = new URL(request.url).searchParams.get("device");
+    if (!okDevice(device)) return reply(400, { error: "Unknown device." });
+    const p = await player(env, device);
+    if (!p) return reply(200, { balance: null }, { "Cache-Control": "no-store" });
+    const [h, r] = await Promise.all([
+      env.DB.prepare("SELECT reason,amount,note,ts FROM ledger WHERE device=?1 ORDER BY ts DESC LIMIT 30").bind(device).all(),
+      p.joined ? env.DB.prepare("SELECT COUNT(*) AS n FROM players WHERE joined=1 AND balance>?1").bind(p.balance).first() : null
+    ]);
+    return reply(200, { balance: p.balance, tier: bbTier(p.balance), name: p.name, joined: !!p.joined, rank: r ? r.n + 1 : null, history: h.results || [] }, { "Cache-Control": "no-store" });
   }
-  let body; try { body = await request.json(); } catch (e) { return reply(400, { error: "Send JSON." }); }
-  const device = String(body.device || "");
-  if (!/^[a-f0-9]{16,40}$/.test(device)) return reply(400, { error: "Unknown device." });
-  const name = bbName(body.name);
-  if (!name) return reply(400, { error: "Choose a name of 2 to 18 letters (no bad words)." });
-  let starks = Math.floor(Number(body.starks) || 0);
-  if (starks < 0) starks = 0;
-  const devKey = "bb:dev:" + device;
-  const prev = JSON.parse(await env.POSTER_USAGE.get(devKey) || "null");
-  // A device can gain at most 6,000 STARKS between two updates (a day of heavy play); anything beyond is capped.
-  if (prev && starks > prev.starks + 6000) starks = prev.starks + 6000;
-  if (!prev && starks > 6000) starks = 6000;
-  starks = Math.min(starks, 250000);
-  const entry = { device, name, starks, at: Date.now() };
-  await env.POSTER_USAGE.put(devKey, JSON.stringify(entry));
-  let top = (await readTop()).filter(e => e.device !== device);
-  top.push(entry);
-  top.sort((a, b) => b.starks - a.starks || a.at - b.at);
-  const rank = top.findIndex(e => e.device === device) + 1;
-  top = top.slice(0, 100);
-  await env.POSTER_USAGE.put(BB_TOP, JSON.stringify(top));
-  return reply(200, { rank, starks, tier: bbTier(starks), top: top.slice(0, 50).map((e, i) => ({ rank: i + 1, name: e.name, starks: e.starks, tier: bbTier(e.starks) })) });
+  if (request.method !== "POST") return reply(405, { error: "Use POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to award STARKS." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "earn:" + ip))) return reply(429, { error: "Too many awards at once. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const rule = RULES[body.reason];
+  if (!rule) return reply(400, { error: "Unknown reason." });
+  const amount = Math.max(0, Math.min(rule[0], Math.round(Number(body.amount) || 0)));
+  if (!amount) return reply(400, { error: "Nothing to award." });
+  const p = await ensurePlayer(env, body.device, body.carry);
+  const day = istDay(), now = Date.now();
+  const used = await env.DB.prepare("SELECT n FROM earn_day WHERE device=?1 AND day=?2 AND reason=?3").bind(body.device, day, body.reason).first();
+  if (used && used.n >= rule[1]) return reply(200, { awarded: 0, reason: "daily-cap", balance: p.balance, tier: bbTier(p.balance) });
+  const once = body.once ? String(body.once).slice(0, 60) : null;
+  if (once && await env.DB.prepare("SELECT 1 AS x FROM once_awards WHERE device=?1 AND once_id=?2").bind(body.device, once).first()) {
+    return reply(200, { awarded: 0, reason: "already", balance: p.balance, tier: bbTier(p.balance) });
+  }
+  const note = String(body.note || "").replace(/[<>]/g, "").slice(0, 80);
+  const stmts = [
+    env.DB.prepare("INSERT INTO earn_day(device,day,reason,n,pts) VALUES(?1,?2,?3,1,?4) ON CONFLICT(device,day,reason) DO UPDATE SET n=n+1, pts=pts+?4").bind(body.device, day, body.reason, amount),
+    env.DB.prepare("UPDATE players SET balance=balance+?2, updated=?3 WHERE device=?1").bind(body.device, amount, now),
+    env.DB.prepare("INSERT INTO ledger(device,reason,amount,note,ts) VALUES(?1,?2,?3,?4,?5)").bind(body.device, body.reason, amount, note, now),
+    env.DB.prepare("INSERT INTO daily(day,metric,n) VALUES(?1,?2,1) ON CONFLICT(day,metric) DO UPDATE SET n=n+1").bind(day, "earn:" + body.reason),
+    env.DB.prepare("INSERT INTO daily(day,metric,n) VALUES(?1,'starks',?2) ON CONFLICT(day,metric) DO UPDATE SET n=n+?2").bind(day, amount)
+  ];
+  if (once) stmts.push(env.DB.prepare("INSERT OR IGNORE INTO once_awards(device,once_id,ts) VALUES(?1,?2,?3)").bind(body.device, once, now));
+  await env.DB.batch(stmts);
+  const after = p.balance + amount;
+  return reply(200, { awarded: amount, balance: after, tier: bbTier(after) });
+}
+
+// POST /track {vid, path} (sent with sendBeacon as text/plain) -> 204
+async function track(request, env, reply, origin) {
+  if (request.method !== "POST") return reply(405, { error: "Use POST." });
+  if (!env.DB || (origin && !ALLOWED_ORIGINS.has(origin))) return new Response(null, { status: 204 });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.vid)) return new Response(null, { status: 204 });
+  let path = String(body.path || "/").split("?")[0].split("#")[0].slice(0, 80) || "/";
+  path = path.replace(/\/index\.html$/i, "/").replace(/agarmainkinghota\.html$/i, "");
+  if (!path.startsWith("/")) path = "/" + path;
+  const day = istDay();
+  try {
+    const seen = await env.DB.prepare("INSERT OR IGNORE INTO visitors(day,vid) VALUES(?1,?2)").bind(day, body.vid).run();
+    const stmts = [
+      env.DB.prepare("INSERT INTO pages(day,path,n) VALUES(?1,?2,1) ON CONFLICT(day,path) DO UPDATE SET n=n+1").bind(day, path),
+      env.DB.prepare("INSERT INTO daily(day,metric,n) VALUES(?1,'pageviews',1) ON CONFLICT(day,metric) DO UPDATE SET n=n+1").bind(day),
+      env.DB.prepare("INSERT OR IGNORE INTO first_seen(vid,day) VALUES(?1,?2)").bind(body.vid, day)
+    ];
+    if (seen.meta && seen.meta.changes) stmts.push(env.DB.prepare("INSERT INTO daily(day,metric,n) VALUES(?1,'visitors',1) ON CONFLICT(day,metric) DO UPDATE SET n=n+1").bind(day));
+    await env.DB.batch(stmts);
+  } catch (e) {}
+  return new Response(null, { status: 204, headers: { "Access-Control-Allow-Origin": origin || "*" } });
+}
+
+// GET /stats -> aggregated platform numbers (no personal data)
+async function stats(request, env, reply) {
+  if (!env.DB) return reply(503, { error: "Stats are not configured yet." });
+  const today = istDay(), d7 = istDay(Date.now() - 6 * 864e5), d30 = istDay(Date.now() - 29 * 864e5);
+  const q = (sql, ...b) => env.DB.prepare(sql).bind(...b);
+  const [days, totals, uniq, first, pages, players, u7] = await env.DB.batch([
+    q("SELECT day, metric, n FROM daily WHERE day>=?1 ORDER BY day", d30),
+    q("SELECT metric, SUM(n) AS n FROM daily GROUP BY metric"),
+    q("SELECT COUNT(*) AS n FROM first_seen"),
+    q("SELECT MIN(day) AS d FROM first_seen"),
+    q("SELECT path, SUM(n) AS n FROM pages WHERE day>=?1 GROUP BY path ORDER BY n DESC LIMIT 12", d30),
+    q("SELECT COUNT(*) AS all_players, SUM(joined) AS joined, COALESCE(SUM(balance),0) AS starks FROM players"),
+    q("SELECT COUNT(DISTINCT vid) AS n FROM visitors WHERE day>=?1", d7)
+  ]);
+  const byDay = {};
+  for (const r of days.results || []) (byDay[r.day] = byDay[r.day] || { day: r.day })[r.metric] = r.n;
+  const tot = {}; for (const r of totals.results || []) tot[r.metric] = r.n;
+  const pl = (players.results || [])[0] || {};
+  const t = byDay[today] || {};
+  return reply(200, {
+    asOf: new Date().toISOString(), timezone: "Asia/Kolkata", trackingSince: (first.results[0] || {}).d || null,
+    today: { visitors: t.visitors || 0, pageviews: t.pageviews || 0, posters: t.posters || 0 },
+    last7: { visitors: (u7.results[0] || {}).n || 0 },
+    total: {
+      visitors: (uniq.results[0] || {}).n || 0, pageviews: tot.pageviews || 0, posters: tot.posters || 0,
+      shares: tot["earn:share"] || 0, lairClears: tot["earn:lair"] || 0, thrones: tot["earn:throne"] || 0,
+      chessWins: tot["earn:chess"] || 0, storyChapters: tot["earn:chapter"] || 0, starksAwarded: tot.starks || 0,
+      players: pl.all_players || 0, billboardNames: pl.joined || 0
+    },
+    days: Object.values(byDay),
+    topPages: pages.results || []
+  }, { "Cache-Control": "public, max-age=60" });
 }

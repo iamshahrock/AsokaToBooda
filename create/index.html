@@ -80,6 +80,16 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .note{font-size:12.5px;color:var(--faint);line-height:1.5;margin-top:10px}
 @media (max-width:980px){.studio{grid-template-columns:minmax(0,1fr)}.stage{position:static}.opts{grid-template-columns:minmax(0,1fr)}.grid{max-height:400px;grid-template-columns:repeat(auto-fill,minmax(70px,1fr))}}
 @media (prefers-reduced-motion:reduce){.frame .busy img{animation:none}}
+.sharebox{margin-top:14px;padding:16px;border:1px solid var(--line);background:#0d0909}
+.sb-h{margin:0 0 12px;font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.03em}
+.sb-h span{white-space:nowrap;font-family:var(--body);font-size:12px;letter-spacing:.1em;color:#ffcf6b;margin-left:8px;vertical-align:middle}
+.sb-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sb-row .btn{min-height:48px;padding:0 10px;font-size:16px}
+.sb-icons{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
+.sb-icons a,.sb-icons button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:64px;padding:8px 2px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:600 11px var(--body);text-decoration:none;cursor:pointer}
+.sb-icons a:hover,.sb-icons button:hover,.sb-icons a:focus-visible,.sb-icons button:focus-visible{border-color:var(--red-hi);color:#fff}
+.sb-icons svg{width:24px;height:24px}
+.sb-tip{margin:12px 0 0;font-size:13px;line-height:1.5;color:var(--mute)}
 </style>
 </head>
 <body>
@@ -175,9 +185,20 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
       <div class="actions">
         <button class="btn btn-red" id="make" type="button">Make my poster <span aria-hidden="true">→</span></button>
       </div>
-      <div class="actions" id="afterActions" hidden>
-        <button class="btn btn-line" id="download" type="button">Download</button>
-        <button class="btn btn-line" id="share" type="button">Share</button>
+      <div class="sharebox" id="afterActions" hidden>
+        <p class="sb-h">Share your poster <span>+50 STARKS</span></p>
+        <div class="sb-row">
+          <button class="btn btn-red" id="share" type="button">Share poster</button>
+          <button class="btn btn-line" id="story" type="button">Instagram Story</button>
+        </div>
+        <div class="sb-icons">
+          <a id="shWa" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg><span>WhatsApp</span></a>
+          <a id="shX" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.3L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z"/></svg><span>X</span></a>
+          <a id="shFb" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4a20 20 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.4V21h3.1Z"/></svg><span>Facebook</span></a>
+          <button type="button" id="copyLink" aria-label="Copy the site link"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span>Copy link</span></button>
+          <button type="button" id="download" aria-label="Download the poster"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span>Download</span></button>
+        </div>
+        <p class="sb-tip" id="sbTip">On your phone, <b>Share poster</b> opens Instagram, WhatsApp, Facebook, X and the rest with the image attached. <b>Instagram Story</b> makes a full-screen 9:16 version.</p>
       </div>
       <p class="status ok" id="status" role="status">Choose a film to see your frame.</p>
       <p class="note">The preview shows the frame only. Your poster is painted fresh by AI from your photo, the film's world and the KING crown, so no two are alike. Five posters per person per day.</p>
@@ -376,21 +397,52 @@ function saveToCrown(p) {
 }
 
 // ---------- download / share ----------
+const SITE = 'https://agarmainkinghota.com/';
+const TAGS = '#AgarMainKingHota #KING #SRK';
+function shareText() { const p = state.film; return `Agar main King hota… Here's my KING poster${p && !p.king ? ' as ' + p.character + ' in ' + p.title : ''}. Make yours: ${SITE} ${TAGS}`; }
 function posterBlob() { return new Promise(r => $('canvas').toBlob(r, 'image/jpeg', 0.92)); }
-$('download').addEventListener('click', async () => {
-  const b = await posterBlob(); const u = URL.createObjectURL(b);
-  const a = document.createElement('a'); a.href = u; a.download = 'agar-main-king-hota-poster.jpg'; document.body.append(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(u), 4000);
-});
-$('share').addEventListener('click', async () => {
-  const b = await posterBlob(); const file = new File([b], 'agar-main-king-hota-poster.jpg', { type: 'image/jpeg' });
-  const text = 'Agar main King hota… This is my KING poster. Make yours:'; const url = 'https://agarmainkinghota.com/';
-  try {
-    if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'My KING poster', text: text + ' ' + url }); if (window.STARKS) STARKS.earn('share', 50, 'Shared your poster'); }
-    else if (navigator.share) await navigator.share({ title: 'Agar Main King Hota', text, url });
-    else { await navigator.clipboard.writeText(text + ' ' + url); say('Link copied. Download the poster and post it with the link.', true); }
-  } catch (e) { if (e && e.name !== 'AbortError') say('Sharing is not available here. Download the poster instead.'); }
-});
+function fileName(kind) { const n = ($('name').value.trim() || 'my').replace(/[^\w-]+/g, '-').toLowerCase(); return `king-poster-${n}${kind ? '-' + kind : ''}.jpg`; }
+function saveBlob(b, name) { const u = URL.createObjectURL(b); const a = document.createElement('a'); a.href = u; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 4000); }
+function shared(where) { if (window.STARKS) STARKS.earn('share', 50, 'Shared your poster' + (where ? ' · ' + where : '')); }
+async function storyBlob() {
+  const W = 1080, H = 1920, c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
+  const g = x.createRadialGradient(W / 2, H * .42, 80, W / 2, H * .5, H * .75); g.addColorStop(0, '#4a0a0e'); g.addColorStop(.55, '#170607'); g.addColorStop(1, '#070404');
+  x.fillStyle = g; x.fillRect(0, 0, W, H);
+  try { const [a, k] = await Promise.all([loadImage('../assets/home/wm-agar-main.webp'), loadImage('../assets/home/wm-king-hota.webp')]); x.drawImage(a, 140, 92, 800, 800 * a.height / a.width); x.drawImage(k, 160, 92 + 800 * a.height / a.width + 18, 760, 760 * k.height / k.width); } catch (e) {}
+  const pw = 860, ph = Math.round(pw * 1.5), px = (W - pw) / 2, py = 330;
+  x.shadowColor = 'rgba(0,0,0,.7)'; x.shadowBlur = 50; x.fillStyle = '#000'; x.fillRect(px, py, pw, ph); x.shadowBlur = 0;
+  x.drawImage($('canvas'), px, py, pw, ph);
+  x.strokeStyle = '#c3121a'; x.lineWidth = 6; x.strokeRect(px - 3, py - 3, pw + 6, ph + 6);
+  x.textAlign = 'center'; x.fillStyle = '#fff'; x.font = '600 46px Archivo, Arial, sans-serif'; x.fillText('Make yours at', W / 2, py + ph + 92);
+  x.fillStyle = '#ff4a4f'; x.font = '64px Anton, Impact, sans-serif'; x.fillText('AGARMAINKINGHOTA.COM', W / 2, py + ph + 168);
+  x.fillStyle = '#b8aca4'; x.font = '500 34px Archivo, Arial, sans-serif'; x.fillText('KING · in cinemas 24 December 2026', W / 2, py + ph + 222);
+  return new Promise(r => c.toBlob(r, 'image/jpeg', 0.92));
+}
+async function shareFile(blob, name, where) {
+  const file = new File([blob], name, { type: 'image/jpeg' });
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    try { await navigator.share({ files: [file], title: 'My KING poster', text: shareText() }); shared(where); say('Shared. +50 STARKS once a day for sharing.', true); }
+    catch (e) { if (e && e.name !== 'AbortError') say('Sharing did not open here. Download it and post it from your gallery.'); }
+    return;
+  }
+  saveBlob(blob, name); shared(where);
+  say(where === 'Story' ? 'Story image downloaded. Open Instagram, add a Story and pick it from your gallery.' : 'Poster downloaded. Post it with the link: ' + SITE, true);
+}
+$('share').addEventListener('click', async () => shareFile(await posterBlob(), fileName(), ''));
+$('story').addEventListener('click', async () => { say('Making your 9:16 Story image…', true); shareFile(await storyBlob(), fileName('story'), 'Story'); });
+$('download').addEventListener('click', async () => saveBlob(await posterBlob(), fileName()));
+function links() {
+  const t = encodeURIComponent(shareText());
+  $('shWa').href = 'https://wa.me/?text=' + t;
+  $('shX').href = 'https://x.com/intent/post?text=' + t;
+  $('shFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SITE) + '&quote=' + t;
+}
+['shWa', 'shX', 'shFb'].forEach(id => $(id).addEventListener('click', () => {
+  links(); shared({ shWa: 'WhatsApp', shX: 'X', shFb: 'Facebook' }[id]);
+  say('Your caption and link are ready there. To attach the image too, use Download, or Share poster on your phone.', true);
+}));
+$('copyLink').addEventListener('click', async () => { try { await navigator.clipboard.writeText(shareText()); say('Caption and link copied.', true); } catch (e) { say(SITE, true); } });
+links();
 
 // deep link: ?film=21
 (async () => {

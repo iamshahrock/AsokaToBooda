@@ -43,6 +43,7 @@
 .tiers div{background:var(--panel);border:1px solid var(--line);padding:14px;text-align:center}
 .tiers b{display:block;font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase}
 .tiers span{font-size:13px;color:var(--faint)}
+.cap{caption-side:top;text-align:left;padding:0 0 10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 .fine{font-size:13px;color:var(--faint);line-height:1.6}
 @media (max-width:860px){.top2{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:560px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}.tiers div:last-child{grid-column:1/-1}}
@@ -79,6 +80,7 @@
     <section class="board" aria-labelledby="b-h">
       <h2 id="b-h" class="sr">Top fans</h2>
       <table>
+        <caption class="cap" id="cap">Top 50 fans</caption>
         <thead><tr><th>#</th><th>Fan</th><th>Rank</th><th class="s">STARKS</th></tr></thead>
         <tbody id="rows"><tr><td colspan="4" class="empty">Loading the Billboard…</td></tr></tbody>
       </table>
@@ -91,6 +93,8 @@
       <table class="earn">
         <tr><td>Make a KING poster (up to 5 a day)</td><td class="n">+100</td></tr>
         <tr><td>Share your poster (once a day)</td><td class="n">+50</td></tr>
+        <tr><td>Finish a chapter of THE CONTRACT (King's Lairs story)</td><td class="n">+60 to +250</td></tr>
+        <tr><td>Reach the end of THE CONTRACT</td><td class="n">+300 to +750</td></tr>
         <tr><td>Clear a lair (by how well you play)</td><td class="n">+30 to +1,000</td></tr>
         <tr><td>First time you clear each lair</td><td class="n">+100</td></tr>
         <tr><td>Hit a Royal Flush in the Casino</td><td class="n">+1,000</td></tr>
@@ -106,7 +110,7 @@
           <div><b>King</b><span>4,000</span></div>
           <div><b>Royal Flush</b><span>10,000</span></div>
         </div>
-        <p class="fine" style="margin-top:14px">STARKS are fan points for play and bragging rights. They have no cash value and cannot be bought, sold or exchanged. Your points are kept on this device; joining the Billboard publishes only your chosen name and your STARKS total.</p>
+        <p class="fine" style="margin-top:14px">STARKS are fan points for play and bragging rights. They have no cash value and cannot be bought, sold or exchanged. Every award is checked by the Billboard server against these rules and daily limits, so the board stays fair. Joining publishes only your chosen name and your STARKS total.</p>
       </div>
     </div>
   </section>
@@ -161,7 +165,7 @@ function rows(top, myName) {
 }
 function load() {
   var s = STARKS.get();
-  STARKS.board().then(function (d) { rows(d.top || [], s.joined ? s.name : ''); })
+  STARKS.board().then(function (d) { rows(d.top || [], s.joined ? s.name : ''); $('cap').textContent = 'Top 50 of ' + fmt(d.players || 0) + ' fans on the Billboard'; })
     .catch(function () { $('rows').innerHTML = '<tr><td colspan="4" class="empty">The Billboard could not load right now. Your STARKS are safe on this device.</td></tr>'; });
 }
 $('joinForm').addEventListener('submit', function (e) {
@@ -169,12 +173,20 @@ $('joinForm').addEventListener('submit', function (e) {
   if (name.length < 2) { $('js').className = 'status err'; $('js').textContent = 'Choose a name of at least 2 letters.'; return; }
   $('js').className = 'status'; $('js').textContent = 'Joining…';
   STARKS.join(name).then(function (r) {
-    $('js').textContent = r ? 'You are #' + r.rank + ' on the Billboard.' : '';
+    $('js').textContent = r && r.rank ? 'You are #' + fmt(r.rank) + ' on the Billboard.' : '';
     rows(r.top || [], name); wallet();
-  }).catch(function (err) { STARKS.leave(); $('js').className = 'status err'; $('js').textContent = err.message; wallet(); });
+  }).catch(function (err) { $('js').className = 'status err'; $('js').textContent = err.message; wallet(); });
 });
 document.addEventListener('starks', wallet);
 wallet(); load();
+STARKS.sync().then(function (j) {
+  if (!j || j.balance === null) return;
+  if (j.history && j.history.length) {
+    var h = $('hist'); h.innerHTML = '';
+    j.history.slice(0, 15).forEach(function (x) { var li = document.createElement('li'); var a = document.createElement('span'); a.textContent = x.note || x.reason; var b = document.createElement('b'); b.textContent = '+' + fmt(x.amount); li.append(a, b); h.appendChild(li); });
+  }
+  if (j.joined && j.rank) { $('js').className = 'status'; $('js').textContent = 'You are #' + fmt(j.rank) + ' on the Billboard.'; }
+}).catch(function () {});
 try {
   var list = JSON.parse(localStorage.getItem('amkh-posters') || '[]');
   if (list.length) {

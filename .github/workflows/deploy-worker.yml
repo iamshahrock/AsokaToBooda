@@ -62,3 +62,8 @@ jobs:
           post=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Origin: https://example.com' "$url")
           echo "GET -> $get, foreign-origin POST -> $post"
           [ "$get" = "405" ] && [ "$post" = "403" ]
+          stats=$(curl -s -o /dev/null -w '%{http_code}' "$url/stats")
+          board=$(curl -s -o /dev/null -w '%{http_code}' "$url/billboard")
+          echo "stats -> $stats, billboard -> $board"
+          [ "$stats" = "200" ] && [ "$board" = "200" ]
+          echo "::notice::Worker smoke test: GET $get, foreign POST $post, /stats $stats, /billboard $board"
