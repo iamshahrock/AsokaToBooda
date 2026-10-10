@@ -1,0 +1,14 @@
+desktop / HTTP 200
+desktop /play/ HTTP 200
+desktop /crown/ HTTP 200
+desktop /know/ HTTP 200
+desktop /asoka-to-booda/ HTTP 200
+desktop /v2/ HTTP 200
+phone / HTTP 200
+phone /play/ HTTP 200
+phone /crown/ HTTP 200
+phone /know/ HTTP 200
+phone /asoka-to-booda/ HTTP 200
+phone /v2/ HTTP 200
+studio HTTP 200
+studio poster OK in 30.0 s
