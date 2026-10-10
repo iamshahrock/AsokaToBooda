@@ -1,0 +1,29 @@
+name: Generate King's Lairs story art
+on:
+  workflow_dispatch:
+  push:
+    branches: ["test/lair-art"]
+permissions:
+  contents: write
+jobs:
+  art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Generate chapter art through the live Worker
+        run: node tools/lair-art.mjs
+      - name: Save images to a results branch
+        if: always()
+        run: |
+          stamp=$(date -u +%Y%m%dT%H%M%S)
+          mkdir -p /tmp/out && cp -r lair-art-out/. /tmp/out/ || true
+          git config user.name "lair-art"; git config user.email "lair-art@users.noreply.github.com"
+          git switch --orphan "r-$stamp"
+          mkdir -p "runs/$stamp" && cp -r /tmp/out/. "runs/$stamp/"
+          git add "runs/$stamp" && git commit -qm "lair art $stamp"
+          git push -f origin "HEAD:refs/heads/test/lair-art-$stamp"
+          echo "::notice title=results-branch::test/lair-art-$stamp"
