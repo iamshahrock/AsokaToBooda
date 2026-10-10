@@ -1,0 +1,9 @@
+cover: OK 29.0s
+casino: OK 28.0s
+dome: OK 31.0s
+city: OK 32.0s
+pit: OK 28.8s
+den: attempt 1 failed 429 You have made 5 posters today, the daily maximum. Come back after midnight IST.
+den: attempt 2 failed 429 You have made 5 posters today, the daily maximum. Come back after midnight IST.
+throne: attempt 1 failed 429 You have made 5 posters today, the daily maximum. Come back after midnight IST.
+throne: attempt 2 failed 429 You have made 5 posters today, the daily maximum. Come back after midnight IST.
