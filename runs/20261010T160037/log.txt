@@ -1,0 +1,18 @@
+desktop / HTTP 200
+desktop /lairs/ HTTP 200
+desktop /fan-billboard/ HTTP 200
+desktop /about/ HTTP 200
+desktop /contact/ HTTP 200
+desktop /faq/ HTTP 200
+desktop /asoka-to-booda/ HTTP 200
+phone / HTTP 200
+phone /lairs/ HTTP 200
+phone /fan-billboard/ HTTP 200
+phone /about/ HTTP 200
+phone /contact/ HTTP 200
+phone /faq/ HTTP 200
+phone /asoka-to-booda/ HTTP 200
+billboard GET 200 (0 entries), invalid POST rejected with 400
+lairs casino: Jacks or better · 30 STARKS
+studio HTTP 200
+studio poster OK in 28.9 s
