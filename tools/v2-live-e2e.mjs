@@ -9,7 +9,7 @@ const log = [];
 for (const [name, vw, vh] of [['desktop', 1440, 1000], ['phone', 390, 844]]) {
   const p = await browser.newPage({ viewport: { width: vw, height: vh } });
   p.on('pageerror', e => log.push(`${name} pageerror ${e.message}`));
-  for (const path of ['/', '/lairs/', '/fan-billboard/', '/about/', '/contact/', '/faq/', '/asoka-to-booda/']) {
+  for (const path of ['/', '/lairs/', '/CHESS81.HTML', '/fan-billboard/', '/about/', '/contact/', '/faq/', '/asoka-to-booda/']) {
     const r = await p.goto(base + path + '?t=' + Date.now(), { waitUntil: 'networkidle' });
     log.push(`${name} ${path} HTTP ${r.status()}`);
     await p.screenshot({ path: `e2e-out/${name}${(path.replace(/\//g, '_') || '_')}.png`, fullPage: true });
@@ -29,8 +29,14 @@ await bbp.close();
 const lp = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 lp.on('pageerror', e => log.push(`lairs pageerror ${e.message}`));
 await lp.goto(base + '/lairs/?t=' + Date.now(), { waitUntil: 'networkidle' });
-await lp.click('.lair >> nth=0'); await lp.click('#draw'); await lp.waitForTimeout(1500);
+await lp.click('.lair >> nth=0'); await lp.click('#deal'); await lp.waitForTimeout(300);
+for (let k = 0; k < 4; k++) { if (await lp.$('#check')) { await lp.click('#check'); await lp.waitForTimeout(100); } }
 log.push('lairs casino: ' + (await lp.textContent('#cmsg')));
+await lp.goto(base + '/CHESS81.HTML?t=' + Date.now(), { waitUntil: 'networkidle' });
+const sqs = await lp.evaluate(() => { const c = [...document.querySelectorAll('.sq')].map(x => x.getBoundingClientRect()); return c.length + ' squares, ' + [...new Set(c.map(r => r.width.toFixed(1) + 'x' + r.height.toFixed(1)))].join(','); });
+await lp.evaluate(() => window.CHESS81.move('O2', 'O4'));
+await lp.waitForFunction(() => window.CHESS81.state().turn === 'red', null, { timeout: 20000 }).catch(() => {});
+log.push('chess81: ' + sqs + ' · moves ' + JSON.stringify((await lp.evaluate(() => window.CHESS81.state())).moves));
 await lp.screenshot({ path: 'e2e-out/lairs-casino.png', fullPage: true });
 await lp.close();
 const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } });

@@ -41,14 +41,18 @@
 .msg{margin:14px 0 0;min-height:24px;font-size:15px;color:var(--red-text)}
 .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 /* casino */
-.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;max-width:640px}
-.card{aspect-ratio:5/7;border-radius:8px;background:#f4efe9;color:#111;display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-family:var(--display);font-size:clamp(20px,3.2vw,34px);border:3px solid transparent;cursor:pointer;position:relative}
+.felt{display:grid;gap:14px;max-width:760px;padding:18px;background:radial-gradient(90% 90% at 50% 40%,#0f4a2e,#062216);border:6px solid #3a1d0e;border-radius:18px}
+.seat small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#cfe8d8;margin-bottom:6px}
+.hand{display:flex;gap:8px;flex-wrap:wrap}
+.card{width:62px;aspect-ratio:5/7;border-radius:7px;background:#f4efe9;color:#111;display:flex;flex-direction:column;justify-content:space-between;padding:5px 6px;font-family:var(--display);font-size:22px;line-height:1;box-shadow:0 3px 8px rgba(0,0,0,.4)}
 .card.r{color:#c3121a}
-.card .s{align-self:flex-end;font-size:1.2em}
-.card.hold{border-color:var(--red-hi);transform:translateY(-6px)}
-.card.hold::after{content:"HOLD";position:absolute;bottom:-26px;left:0;right:0;text-align:center;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--red-text)}
-.card.back{background:repeating-linear-gradient(45deg,#3a0a0c 0 8px,#1a0607 8px 16px);cursor:default}
-.pay{margin-top:30px;font-size:13px;color:var(--faint);line-height:1.6}
+.card .s{align-self:flex-end;font-size:1.15em}
+.card.back{background:repeating-linear-gradient(45deg,#7a0a10 0 6px,#4a0609 6px 12px);align-items:center;justify-content:center;border:2px solid #f4efe9}
+.card.back .kh{font-size:16px;color:#fff;background:#c3121a;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid #fff}
+.card.slot{background:transparent;border:2px dashed rgba(255,255,255,.25);box-shadow:none}
+.hn{display:inline-block;margin-top:6px;font-size:13px;color:#ffe08a;min-height:18px}
+.chipline{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:14px;font-size:14px;color:var(--mute)}
+.chipline b{font-family:var(--display);font-weight:400;font-size:22px;color:var(--ink);margin-left:6px}
 /* dome */
 .dome{position:relative;height:240px;max-width:760px;background:linear-gradient(#0b1626,#1b2c44 60%,#d9e6f2 61%,#eef4fa);overflow:hidden;border:1px solid #233}
 .dome .beam{position:absolute;top:0;width:120px;height:100%;background:linear-gradient(rgba(255,255,220,.55),rgba(255,255,220,.05));clip-path:polygon(45% 0,55% 0,100% 100%,0 100%);transition:left .05s linear}
@@ -56,27 +60,37 @@
 .dome .hero img{width:100%;height:100%;object-fit:contain}
 .dome .goal{position:absolute;right:10px;bottom:62px;width:56px}
 .bar2{height:8px;background:#2a1c1c;max-width:760px;margin-top:10px}.bar2 i{display:block;height:100%;background:var(--red-hi);width:0}
+.dome .b2{background:linear-gradient(rgba(180,220,255,.5),rgba(180,220,255,.05))}
+.dome .snow{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1.5px);background-size:22px 22px;opacity:.25;animation:snow 6s linear infinite}
+@keyframes snow{to{background-position:0 220px}}
+.dome .flag{position:absolute;bottom:62px;width:2px;height:40px;background:#c3121a}
 /* city */
-.pad{display:grid;grid-template-columns:repeat(2,140px);gap:12px}
-.tile{height:120px;border:0;border-radius:10px;opacity:.35;transition:opacity .12s, box-shadow .12s}
-.tile.lit{opacity:1;box-shadow:0 0 30px currentColor}
-.t0{background:#ff2d55;color:#ff2d55}.t1{background:#00e5ff;color:#00e5ff}.t2{background:#ffd60a;color:#ffd60a}.t3{background:#bf5af2;color:#bf5af2}
+.quiz{display:flex;gap:18px;align-items:center;max-width:720px;margin-bottom:14px}
+.qposter{width:120px;height:180px;object-fit:cover;border:1px solid var(--line);flex:0 0 auto}
+.choice.good{background:#1d5a2a;border-color:#2f8a43}.choice.bad{background:var(--red);border-color:var(--red)}
 /* pit */
-.prompt{font-family:var(--display);font-size:120px;line-height:1;color:var(--red-hi);height:130px;text-align:center;max-width:520px}
 .keys{display:grid;grid-template-columns:repeat(4,80px);gap:10px;justify-content:center;max-width:520px}
 .keys button{height:70px;font-size:30px;background:var(--field);border:1px solid var(--field-line);color:var(--ink)}
 .keys button:active{background:var(--red)}
 .timebar{height:6px;background:#2a1c1c;max-width:520px;margin:10px 0}.timebar i{display:block;height:100%;background:var(--red-hi)}
+.fighters{display:flex;justify-content:space-between;gap:20px;max-width:520px;margin-bottom:12px}
+.fighters small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.hp{display:flex;gap:4px}.hp i{width:26px;height:12px;background:#2a1c1c}.hp i.on{background:#7fd38a}.hp.foe i.on{background:var(--red-hi)}
+.combo{font-family:var(--display);font-size:clamp(54px,9vw,90px);line-height:1;height:100px;display:flex;gap:10px;justify-content:center;align-items:center;max-width:520px;color:#5a4a44}
+.combo span.ok{color:var(--red-hi)}
 /* den */
 canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:linear-gradient(#03121c,#020608);border:1px solid #123}
 /* throne */
+.gate{display:grid;grid-template-columns:repeat(3,84px);gap:10px;margin:8px 0}
+.bit{width:84px;height:84px;font-family:var(--display);font-size:44px;background:#1a1010;color:#6d5a52;border:1px solid var(--field-line);cursor:pointer}
+.bit.one{background:var(--red);color:#fff;border-color:var(--red-hi);box-shadow:0 0 20px rgba(227,36,43,.5)}
 .choices{display:grid;gap:10px;max-width:720px}
 .choice{text-align:left;padding:14px 16px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font-size:15px;line-height:1.4}
 .choice:hover:not(:disabled){border-color:var(--red-text)}
 .choice.picked{background:var(--red);border-color:var(--red)}
 .big{font-family:var(--display);font-size:clamp(30px,4vw,48px);text-transform:uppercase;line-height:1;margin:0 0 8px}
 @media (max-width:900px){.map{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.map{grid-template-columns:minmax(0,1fr)}.lair{min-height:170px}.keys{grid-template-columns:repeat(4,64px)}.pad{grid-template-columns:repeat(2,120px)}.tile{height:100px}}
+@media (max-width:560px){.map{grid-template-columns:minmax(0,1fr)}.lair{min-height:170px}.keys{grid-template-columns:repeat(4,64px)}.quiz{flex-direction:column;align-items:flex-start}.card{width:44px;font-size:17px;padding:4px}.hand{gap:6px}.felt{padding:12px}.card.back .kh{width:28px;height:28px;font-size:13px}.gate{grid-template-columns:repeat(3,72px)}.bit{width:72px;height:72px}}
 </style>
 </head>
 <body class="v2">
@@ -108,12 +122,12 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 var $ = function (id) { return document.getElementById(id); };
 var KEY = 'amkh-lairs';
 var LAIRS = [
-  { id: 'casino', name: 'The Casino Floor', no: '01', blurb: 'The gambling den. Five cards, one redraw. Make the best hand you can; a Royal Flush breaks the bank.', bg: 'radial-gradient(80% 80% at 70% 30%,#5a0a12,#120406)', play: casino },
-  { id: 'dome', name: 'The Mountain Dome', no: '02', blurb: 'The snow villain\'s lair. Cross the ice bridge only while the searchlight looks away.', bg: 'linear-gradient(160deg,#16324f,#0b1626 60%,#dfe9f3)', play: dome },
-  { id: 'city', name: 'The Secret City', no: '03', blurb: 'Underground, in crimson neon. Watch the code, then tap it back. Six in a row opens the gate.', bg: 'radial-gradient(70% 70% at 30% 70%,#3a0a3c,#0a0410)', play: city },
-  { id: 'pit', name: 'The Pit', no: '04', blurb: 'The fighting ring carved in rock. Hit the move before the clock runs out. Eight of twelve to win.', bg: 'radial-gradient(70% 70% at 50% 80%,#5a2a0a,#120806)', play: pit },
-  { id: 'den', name: 'The Abyssal Den', no: '05', blurb: 'The flooded lair. Dive for crowns, dodge the mines. Ten crowns in thirty seconds.', bg: 'radial-gradient(70% 70% at 50% 30%,#06384a,#020608)', play: den },
-  { id: 'throne', name: 'The Throne Room', no: '06', blurb: 'The Royal Challenge. Four decisions, sixty seconds. This is where a King is made.', bg: 'radial-gradient(70% 70% at 50% 30%,#6a0a10,#0a0303)', play: throne }
+  { id: 'casino', name: 'The Casino Floor', no: '01', blurb: 'The gambling den. Heads-up Texas Hold\'em against the House: five hands to walk away richer. A Royal Flush breaks the bank.', bg: 'radial-gradient(80% 80% at 70% 30%,#5a0a12,#120406)', play: casino },
+  { id: 'dome', name: 'The Mountain Dome', no: '02', blurb: 'The snow villain\'s lair. Creep across the ice while two searchlights sweep. Darr nahin, dehshat hoon.', bg: 'linear-gradient(160deg,#16324f,#0b1626 60%,#dfe9f3)', play: dome },
+  { id: 'city', name: 'The Secret City', no: '03', blurb: 'The Archive under the city holds every film before KING. Five questions, fifty-five seconds. Four right opens the gate.', bg: 'radial-gradient(70% 70% at 30% 70%,#3a0a3c,#0a0410)', play: city },
+  { id: 'pit', name: 'The Pit', no: '04', blurb: 'The fighting ring carved in rock. Punch in the combos before the clock runs out and knock the brute down.', bg: 'radial-gradient(70% 70% at 50% 80%,#5a2a0a,#120806)', play: pit },
+  { id: 'den', name: 'The Abyssal Den', no: '05', blurb: 'The flooded lair of the Noctopus. Dive for ten crowns in thirty seconds and dodge its ink mines.', bg: 'radial-gradient(70% 70% at 50% 30%,#06384a,#020608)', play: den },
+  { id: 'throne', name: 'The Throne Room', no: '06', blurb: 'Flip the Zero-to-One gate, then face the Royal Challenge: four decisions, sixty seconds. This is where a King is made.', bg: 'radial-gradient(70% 70% at 50% 30%,#6a0a10,#0a0303)', play: throne }
 ];
 function prog() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; } }
 function setProg(p) { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {} }
@@ -174,76 +188,146 @@ function finish(l, won, starks, note) {
   a.appendChild(box); drawMap();
 }
 
-/* ---------- 01 Casino: Royal Flush draw poker ---------- */
+/* ---------- 01 Casino Floor: heads-up Texas Hold'em vs the House ---------- */
+var SUITS = ['♠', '♥', '♦', '♣'], RANKS = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+var HANDS = ['High card', 'Pair', 'Two pair', 'Three of a kind', 'Straight', 'Flush', 'Full house', 'Four of a kind', 'Straight flush', 'Royal flush'];
+function score5(h) {
+  var rs = h.map(function (c) { return c.r; }).sort(function (x, y) { return y - x; });
+  var flush = h.every(function (c) { return c.s === h[0].s; });
+  var cnt = {}; rs.forEach(function (v) { cnt[v] = (cnt[v] || 0) + 1; });
+  var groups = Object.keys(cnt).map(function (k) { return [cnt[k], +k]; }).sort(function (x, y) { return y[0] - x[0] || y[1] - x[1]; });
+  var uniq = groups.length === 5, hi = rs[0];
+  var straight = uniq && (rs[0] - rs[4] === 4 || rs.join() === '12,3,2,1,0');
+  if (straight && rs.join() === '12,3,2,1,0') hi = 3;
+  var kick = groups.map(function (g) { return g[1]; });
+  if (straight && flush) return [hi === 12 ? 9 : 8, hi];
+  if (groups[0][0] === 4) return [7].concat(kick);
+  if (groups[0][0] === 3 && groups[1][0] === 2) return [6].concat(kick);
+  if (flush) return [5].concat(rs);
+  if (straight) return [4, hi];
+  if (groups[0][0] === 3) return [3].concat(kick);
+  if (groups[0][0] === 2 && groups[1][0] === 2) return [2].concat(kick);
+  if (groups[0][0] === 2) return [1].concat(kick);
+  return [0].concat(rs);
+}
+function cmp(a, b) { for (var i = 0; i < Math.max(a.length, b.length); i++) { var d = (a[i] || 0) - (b[i] || 0); if (d) return d; } return 0; }
+function best(cards) {
+  if (cards.length < 5) { var rs = cards.map(function (c) { return c.r; }).sort(function (x, y) { return y - x; }); return rs[0] === rs[1] ? [1, rs[0]] : [0].concat(rs); }
+  var top = null;
+  (function pick(start, chosen) {
+    if (chosen.length === 5) { var sc = score5(chosen); if (!top || cmp(sc, top) > 0) top = sc; return; }
+    for (var i = start; i <= cards.length - (5 - chosen.length); i++) pick(i + 1, chosen.concat([cards[i]]));
+  })(0, []);
+  return top;
+}
+function cardHtml(c, hidden) {
+  if (hidden) return '<div class="card back" aria-label="Face-down card"><span class="kh">K♥</span></div>';
+  return '<div class="card' + (c.s === 1 || c.s === 2 ? ' r' : '') + '" aria-label="' + RANKS[c.r] + ' of ' + ['spades','hearts','diamonds','clubs'][c.s] + '"><span>' + RANKS[c.r] + '</span><span class="s">' + SUITS[c.s] + '</span></div>';
+}
 function casino(a, done) {
-  var SUITS = ['♠', '♥', '♦', '♣'], RANKS = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
-  var deck = [], hand = [], held = [false,false,false,false,false], drawn = false;
-  for (var s = 0; s < 4; s++) for (var r = 0; r < 13; r++) deck.push({ r: r, s: s });
-  for (var i = deck.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = deck[i]; deck[i] = deck[j]; deck[j] = t; }
-  hand = deck.splice(0, 5);
-  a.innerHTML = '<p class="say">Tap the cards you want to keep, then draw once. You need a pair of Jacks or better to clear the casino.</p><div class="cards" id="cards"></div><div class="row"><button class="btn btn-red" id="draw" type="button">Draw</button></div><p class="msg" id="cmsg"></p><p class="pay">Royal Flush 1,000 · Straight Flush 500 · Four of a kind 300 · Full House 200 · Flush 150 · Straight 120 · Three of a kind 80 · Two Pair 50 · Jacks or better 30</p>';
-  function render() {
-    var c = $('cards'); c.innerHTML = '';
-    hand.forEach(function (card, k) {
-      var d = document.createElement('button'); d.type = 'button';
-      d.className = 'card' + (card.s === 1 || card.s === 2 ? ' r' : '') + (held[k] ? ' hold' : '');
-      d.setAttribute('aria-pressed', held[k] ? 'true' : 'false');
-      d.setAttribute('aria-label', RANKS[card.r] + ' of ' + ['spades','hearts','diamonds','clubs'][card.s] + (held[k] ? ', held' : ''));
-      d.innerHTML = '<span>' + RANKS[card.r] + '</span><span class="s">' + SUITS[card.s] + '</span>';
-      d.onclick = function () { if (drawn) return; held[k] = !held[k]; render(); };
-      c.appendChild(d);
-    });
+  var START = 500, BLIND = 20, BET = 50, HANDS_N = 5;
+  var chips = START, handNo = 0, deck, you, house, board, pot, street, live, stopped = false, flushHit = false, timers = [];
+  a.innerHTML = '<p class="say">Speed poker against the House. Five hands of Texas Hold\'em, 500 chips to start, 20 in the blind each hand. Bet, check or fold on every street. Finish with more than 500 chips to clear the floor. Make a Royal Flush and the house pays the jackpot.</p>' +
+    '<div class="felt"><div class="seat"><small>The House</small><div class="hand" id="hh"></div><span class="hn" id="hhn"></span></div>' +
+    '<div class="seat"><small>The table</small><div class="hand five" id="cb"></div></div>' +
+    '<div class="seat"><small>You</small><div class="hand" id="yh"></div><span class="hn" id="yhn"></span></div></div>' +
+    '<div class="chipline"><span>Chips <b id="chips">500</b></span><span>Pot <b id="pot">0</b></span><span>Hand <b id="hno">1</b> / 5</span></div>' +
+    '<div class="row" id="acts"></div><p class="msg" id="cmsg"></p>';
+  function shuffle() { deck = []; for (var s = 0; s < 4; s++) for (var r = 0; r < 13; r++) deck.push({ r: r, s: s }); for (var i = deck.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = deck[i]; deck[i] = deck[j]; deck[j] = t; } }
+  function shown() { return street === 0 ? 0 : street === 1 ? 3 : street === 2 ? 4 : 5; }
+  function draw(reveal) {
+    $('hh').innerHTML = house.map(function (c) { return cardHtml(c, !reveal); }).join('');
+    $('yh').innerHTML = you.map(function (c) { return cardHtml(c); }).join('');
+    var n = shown(); $('cb').innerHTML = board.map(function (c, k) { return k < n ? cardHtml(c) : '<div class="card slot"></div>'; }).join('');
+    var mine = best(you.concat(board.slice(0, n)));
+    $('yhn').textContent = HANDS[mine[0]]; $('hhn').textContent = reveal ? HANDS[best(house.concat(board))[0]] : '';
+    $('chips').textContent = fmt(chips); $('pot').textContent = fmt(pot); $('hno').textContent = handNo;
   }
-  function score(h) {
-    var rs = h.map(function (c) { return c.r; }).sort(function (x, y) { return x - y; });
-    var flush = h.every(function (c) { return c.s === h[0].s; });
-    var uniq = rs.filter(function (v, i) { return rs.indexOf(v) === i; });
-    var straight = uniq.length === 5 && (rs[4] - rs[0] === 4 || rs.join() === '0,1,2,3,12');
-    var counts = {}; rs.forEach(function (v) { counts[v] = (counts[v] || 0) + 1; });
-    var groups = Object.keys(counts).map(function (k) { return [counts[k], +k]; }).sort(function (x, y) { return y[0] - x[0] || y[1] - x[1]; });
-    if (straight && flush && rs[0] === 8) return ['Royal Flush', 1000];
-    if (straight && flush) return ['Straight Flush', 500];
-    if (groups[0][0] === 4) return ['Four of a kind', 300];
-    if (groups[0][0] === 3 && groups[1][0] === 2) return ['Full House', 200];
-    if (flush) return ['Flush', 150];
-    if (straight) return ['Straight', 120];
-    if (groups[0][0] === 3) return ['Three of a kind', 80];
-    if (groups[0][0] === 2 && groups[1][0] === 2) return ['Two Pair', 50];
-    if (groups[0][0] === 2 && groups[0][1] >= 9) return ['Jacks or better', 30];
-    return ['No hand', 0];
+  function buttons(list) {
+    var r = $('acts'); r.innerHTML = '';
+    list.forEach(function (b) { var x = document.createElement('button'); x.type = 'button'; x.className = 'btn ' + (b[2] || 'btn-line'); x.textContent = b[0]; x.id = b[3] || ''; x.disabled = !!b[4]; x.onclick = b[1]; r.appendChild(x); });
   }
-  render();
-  $('draw').onclick = function () {
-    if (drawn) return; drawn = true;
-    hand = hand.map(function (c, k) { return held[k] ? c : deck.shift(); }); held = [false,false,false,false,false]; render();
-    var res = score(hand); $('draw').disabled = true;
-    $('cmsg').textContent = res[0] + (res[1] ? ' · ' + res[1] + ' STARKS' : '');
-    if (res[0] === 'Royal Flush') STARKS.earn('flush', 1000, 'ROYAL FLUSH');
-    setTimeout(function () { done(res[1] > 0, res[1], res[0]); }, 700);
-  };
+  function deal() {
+    if (stopped) return;
+    if (handNo >= HANDS_N || chips < BLIND) return over();
+    handNo++; shuffle(); you = deck.splice(0, 2); house = deck.splice(0, 2); board = deck.splice(0, 5);
+    chips -= BLIND; pot = BLIND * 2; street = 0; live = true;
+    draw(false); $('cmsg').textContent = 'Hand ' + handNo + '. Blinds are in. Your move.';
+    act();
+  }
+  function houseStrength() {
+    var n = shown(), h = best(house.concat(board.slice(0, n)));
+    if (street === 0) { var hi = Math.max(house[0].r, house[1].r); return house[0].r === house[1].r ? 3 : hi >= 9 || house[0].s === house[1].s ? 2 : 1; }
+    return h[0] >= 2 ? 3 : h[0] === 1 ? (h[1] >= 8 ? 2.5 : 2) : 1;
+  }
+  function act() {
+    buttons([
+      ['Bet ' + BET, function () { bet(); }, 'btn-red', 'bet', chips < BET],
+      ['Check', function () { next('You check.'); }, 'btn-line', 'check'],
+      ['Fold', function () { fold(); }, 'btn-line', 'fold']
+    ]);
+  }
+  function bet() {
+    chips -= BET; pot += BET;
+    var str = houseStrength(), calls = str >= 2 || Math.random() < (str === 1 ? 0.3 : 0.6);
+    if (!calls) { chips += pot; $('cmsg').textContent = 'You bet ' + BET + '. The House folds. You take ' + pot + '.'; pot = 0; live = false; draw(false); return endHand(); }
+    pot += BET; next('You bet ' + BET + '. The House calls.');
+  }
+  function fold() { $('cmsg').textContent = 'You fold. The House takes ' + pot + '.'; pot = 0; live = false; draw(false); endHand(); }
+  function next(msg) {
+    if (street === 3) return showdown(msg);
+    street++; draw(false); $('cmsg').textContent = msg + ' ' + ['', 'The flop.', 'The turn.', 'The river.'][street];
+  }
+  function showdown(msg) {
+    live = false; draw(true);
+    var y = best(you.concat(board)), h = best(house.concat(board)), c = cmp(y, h);
+    if (y[0] === 9 && !flushHit) { flushHit = true; STARKS.earn('flush', 1000, 'ROYAL FLUSH at the Casino'); }
+    if (c > 0) { chips += pot; $('cmsg').textContent = msg + ' Showdown: your ' + HANDS[y[0]] + ' beats the House\'s ' + HANDS[h[0]] + '. +' + pot; }
+    else if (c < 0) { $('cmsg').textContent = msg + ' Showdown: the House\'s ' + HANDS[h[0]] + ' beats your ' + HANDS[y[0]] + '.'; }
+    else { chips += pot / 2; $('cmsg').textContent = msg + ' Showdown: split pot, both ' + HANDS[y[0]] + '.'; }
+    pot = 0; draw(true); endHand();
+  }
+  function endHand() {
+    $('chips').textContent = fmt(chips); $('pot').textContent = 0;
+    if (handNo >= HANDS_N || chips < BLIND) buttons([['See the result', over, 'btn-red', 'deal']]);
+    else buttons([['Next hand →', deal, 'btn-red', 'deal']]);
+  }
+  function over() {
+    $('acts').innerHTML = '';
+    var profit = chips - START;
+    done(profit > 0, Math.min(1000, Math.max(60, profit * 2)), (profit > 0 ? '+' : '') + profit + ' chips after ' + handNo + ' hands' + (flushHit ? ' · Royal Flush' : ''));
+  }
+  buttons([['Deal', deal, 'btn-red', 'deal']]);
+  you = []; house = []; board = []; pot = 0; street = 0;
+  $('cb').innerHTML = '<div class="card slot"></div><div class="card slot"></div><div class="card slot"></div><div class="card slot"></div><div class="card slot"></div>';
+  $('hh').innerHTML = cardHtml(null, true) + cardHtml(null, true);
+  return function () { stopped = true; timers.forEach(clearTimeout); };
 }
 
-/* ---------- 02 Dome: sneak past the searchlight ---------- */
+/* ---------- 02 Mountain Dome: sneak past the snow villain's searchlights ---------- */
 function dome(a, done) {
-  a.innerHTML = '<p class="say">Hold the button (or the space bar) to move. Freeze when the searchlight is on you. Three lives.</p><div class="dome" id="dm"><div class="beam" id="beam"></div><div class="hero" id="hero"><img src="../assets/home/02-check-mate-fire.webp" alt="You"></div><img class="goal" src="../assets/studio/crown.png" alt="The crown"></div><div class="bar2"><i id="dprog"></i></div><div class="row"><button class="btn btn-red" id="move" type="button">Hold to move</button></div><p class="msg" id="dmsg">Lives: 3</p>';
-  var x = 0, lives = 3, moving = false, t0 = performance.now(), raf, over = false, beamX = 0, dir = 1, speed = 2.4;
-  var dm = $('dm'), beam = $('beam'), hero = $('hero');
+  a.innerHTML = '<p class="say">The snow villain\'s dome. Hold the button (or the space bar) to creep across the ice. Freeze whenever a searchlight is on you. A second light wakes up halfway. Three lives; checkpoints every quarter.</p><div class="dome" id="dm"><div class="snow"></div><div class="beam" id="beam"></div><div class="beam b2" id="beam2"></div><div class="flag" style="left:25%"></div><div class="flag" style="left:50%"></div><div class="flag" style="left:75%"></div><div class="hero" id="hero"><img src="../assets/home/02-check-mate-fire.webp" alt="You"></div><img class="goal" src="../assets/studio/crown.png" alt="The crown"></div><div class="bar2"><i id="dprog"></i></div><div class="row"><button class="btn btn-red" id="move" type="button">Hold to move</button></div><p class="msg" id="dmsg">Lives: 3</p>';
+  var x = 0, lives = 3, moving = false, t0 = performance.now(), raf, over = false, b = [{ x: 0, d: 1, s: 2.3 }, { x: 400, d: -1, s: 1.6 }];
+  var dm = $('dm'), beams = [$('beam'), $('beam2')], hero = $('hero');
   function down(e) { if (e) e.preventDefault(); moving = true; }
   function up() { moving = false; }
   var btn = $('move');
-  btn.addEventListener('pointerdown', down); btn.addEventListener('pointerup', up); btn.addEventListener('pointerleave', up);
+  btn.addEventListener('pointerdown', down); btn.addEventListener('pointerup', up); btn.addEventListener('pointerleave', up); btn.addEventListener('pointercancel', up);
   function kd(e) { if (e.code === 'Space') { e.preventDefault(); moving = true; } }
   function ku(e) { if (e.code === 'Space') moving = false; }
   addEventListener('keydown', kd); addEventListener('keyup', ku);
   function loop() {
     if (over) return;
-    var W = dm.clientWidth;
-    beamX += dir * speed * (1 + x / 140); if (beamX > W - 120) { beamX = W - 120; dir = -1; } if (beamX < 0) { beamX = 0; dir = 1; }
-    beam.style.left = beamX + 'px';
-    if (moving) x = Math.min(100, x + 0.28);
-    var hx = 10 + (W - 110) * x / 100; hero.style.left = hx + 'px';
-    var lit = hx + 17 > beamX + 20 && hx + 17 < beamX + 100;
-    if (lit && moving) {
+    var W = dm.clientWidth, hx = 10 + (W - 110) * x / 100, seen = false;
+    b.forEach(function (o, k) {
+      var on = k === 0 || x >= 50; beams[k].style.display = on ? 'block' : 'none'; if (!on) return;
+      o.x += o.d * o.s * (1 + x / 160); if (o.x > W - 120) { o.x = W - 120; o.d = -1; } if (o.x < 0) { o.x = 0; o.d = 1; }
+      beams[k].style.left = o.x + 'px';
+      if (hx + 17 > o.x + 22 && hx + 17 < o.x + 98) seen = true;
+    });
+    if (moving) x = Math.min(100, x + 0.26);
+    hero.style.left = (10 + (W - 110) * x / 100) + 'px';
+    if (seen && moving) {
       lives--; $('dmsg').textContent = lives > 0 ? 'Spotted! Back to the last checkpoint. Lives: ' + lives : 'Spotted!';
       x = Math.max(0, Math.floor(x / 25) * 25); moving = false;
       if (lives <= 0) return end(false);
@@ -255,7 +339,8 @@ function dome(a, done) {
   function end(won) {
     over = true; cancelAnimationFrame(raf); cleanup();
     var secs = (performance.now() - t0) / 1000;
-    var pts = won ? Math.max(60, Math.round(220 - secs * 3 + lives * 40)) : 0;
+    var pts = won ? Math.max(60, Math.round(240 - secs * 3 + lives * 40)) : 0;
+    if (won) $('dmsg').textContent = '"Darr nahin, dehshat hoon." The dome is yours.';
     done(won, pts, won ? lives + ' lives left' : 'The snow villain\'s light found you.');
   }
   function cleanup() { removeEventListener('keydown', kd); removeEventListener('keyup', ku); }
@@ -263,81 +348,123 @@ function dome(a, done) {
   return function () { over = true; cancelAnimationFrame(raf); cleanup(); };
 }
 
-/* ---------- 03 Secret City: neon code (memory) ---------- */
+/* ---------- 03 Secret City: the Archive quiz ---------- */
 function city(a, done) {
-  a.innerHTML = '<p class="say">Watch the neon code, then tap it back in order. Reach a code of six to open the gate.</p><div class="pad" id="pad"><button class="tile t0" data-i="0" aria-label="Red"></button><button class="tile t1" data-i="1" aria-label="Blue"></button><button class="tile t2" data-i="2" aria-label="Gold"></button><button class="tile t3" data-i="3" aria-label="Violet"></button></div><div class="row"><button class="btn btn-red" id="go" type="button">Show the code</button></div><p class="msg" id="cm"></p>';
-  var seq = [], input = [], busy = true, stopped = false, timers = [];
-  var tiles = a.querySelectorAll('.tile');
-  function flash(i, ms) { tiles[i].classList.add('lit'); timers.push(setTimeout(function () { tiles[i].classList.remove('lit'); }, ms)); }
-  function play() {
-    busy = true; input = []; $('cm').textContent = 'Watch… (' + seq.length + ')';
-    seq.forEach(function (v, k) { timers.push(setTimeout(function () { if (!stopped) flash(v, 420); }, 650 * k + 400)); });
-    timers.push(setTimeout(function () { busy = false; $('cm').textContent = 'Your turn'; }, 650 * seq.length + 450));
-  }
-  function next() { seq.push(Math.floor(Math.random() * 4)); play(); }
-  tiles.forEach(function (t) {
-    t.addEventListener('click', function () {
-      if (busy) return; var i = +t.dataset.i; flash(i, 200); input.push(i);
-      if (seq[input.length - 1] !== i) { busy = true; var reached = seq.length - 1; return done(false, 0, 'Wrong code at step ' + input.length + '. You reached ' + reached + '.'); }
-      if (input.length === seq.length) {
-        if (seq.length >= 6) { busy = true; return done(true, 120 + (seq.length - 6) * 20, 'Code of ' + seq.length); }
-        busy = true; timers.push(setTimeout(next, 600));
+  var Q_N = 5, LIMIT = 55;
+  a.innerHTML = '<p class="say">Under the city lies the Archive: every film he made before KING. Five questions, fifty-five seconds. Get four right to open the gate; the faster you are, the more STARKS you take.</p><div class="timebar" style="max-width:720px"><i id="qt" style="width:100%"></i></div><div class="quiz" id="qz"><p class="big" id="qq">The Archive</p><p class="say" id="qx">Press Begin when you are ready. The clock starts at once.</p></div><div class="choices" id="qc"></div><div class="row"><button class="btn btn-red" id="go" type="button">Begin</button></div><p class="msg" id="qm"></p>';
+  var films = [], qs = [], k = 0, right = 0, left = LIMIT, timer, lock = false, stopped = false;
+  var SKIP = /narrator|guest|^hero$/i;
+  fetch('../assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (d) {
+    films = d.posters.filter(function (p) { return p.kind === 'film' && p.character && !SKIP.test(p.character); });
+  }).catch(function () { $('qm').textContent = 'The Archive is locked right now. Try again in a moment.'; });
+  function pickN(arr, n, not) { var out = [], pool = arr.slice(); while (out.length < n && pool.length) { var x = pool.splice(Math.floor(Math.random() * pool.length), 1)[0]; if (out.indexOf(x) < 0 && not.indexOf(x) < 0) out.push(x); } return out; }
+  function build() {
+    var chosen = pickN(films, Q_N, []);
+    qs = chosen.map(function (f, i) {
+      if (i % 2 === 0) {
+        var wrong = pickN(films.map(function (x) { return x.character; }).filter(function (c) { return c !== f.character; }), 3, [f.character]);
+        return { f: f, q: 'Who did he play in ' + f.title + ' (' + f.year + ')?', opts: wrong.concat([f.character]), ans: f.character };
       }
+      var years = []; for (var y = f.year - 6; y <= f.year + 6; y++) if (y !== f.year && y >= 1992 && y <= 2023) years.push(String(y));
+      return { f: f, q: 'In which year did ' + f.title + ' release?', opts: pickN(years, 3, []).concat([String(f.year)]), ans: String(f.year) };
     });
-  });
-  $('go').onclick = function () { $('go').disabled = true; next(); };
-  return function () { stopped = true; timers.forEach(clearTimeout); };
+    qs.forEach(function (q) { q.opts.sort(function () { return Math.random() - 0.5; }); });
+  }
+  function show() {
+    var q = qs[k]; lock = false;
+    $('qz').innerHTML = '<img class="qposter" src="../assets/posters/' + q.f.thumb + '" alt="Poster" width="120" height="180"><div><p class="eyebrow" style="margin:0 0 6px">Question ' + (k + 1) + ' of ' + Q_N + '</p><p class="big" style="font-size:clamp(24px,3vw,34px)">' + q.q + '</p></div>';
+    $('qc').innerHTML = '';
+    q.opts.forEach(function (o) { var b = document.createElement('button'); b.type = 'button'; b.className = 'choice'; b.textContent = o; b.onclick = function () { answer(o, b); }; $('qc').appendChild(b); });
+  }
+  function answer(o, b) {
+    if (lock) return; lock = true; var q = qs[k], ok = o === q.ans; if (ok) right++;
+    [].forEach.call($('qc').children, function (x) { x.disabled = true; if (x.textContent === q.ans) x.classList.add('good'); });
+    if (!ok) b.classList.add('bad');
+    $('qm').textContent = (ok ? 'Correct. ' : 'No: it was ' + q.ans + '. ') + right + ' / ' + (k + 1);
+    setTimeout(function () { if (stopped) return; k++; if (k < Q_N && left > 0) show(); else end(); }, 900);
+  }
+  function end() {
+    clearInterval(timer); $('qc').innerHTML = '';
+    var won = right >= 4, pts = right * 40 + (won ? left * 3 : 0);
+    $('qz').innerHTML = '<p class="big">' + right + ' of ' + Q_N + '</p><p class="say">' + (won ? 'The gate opens. ' + left + ' seconds to spare.' : left <= 0 ? 'Time ran out.' : 'The gate stays shut.') + '</p>';
+    done(won, pts, right + ' of 5 · ' + left + 's left');
+  }
+  $('go').onclick = function () {
+    if (!films.length) { $('qm').textContent = 'Still opening the Archive… try again in a second.'; return; }
+    $('go').hidden = true; build(); show();
+    timer = setInterval(function () { left--; $('qt').style.width = (left / LIMIT * 100) + '%'; if (left <= 0) { clearInterval(timer); lock = true; end(); } }, 1000);
+  };
+  return function () { stopped = true; clearInterval(timer); };
 }
 
-/* ---------- 04 The Pit: quick-time fight ---------- */
+/* ---------- 04 The Pit: combo fight ---------- */
 function pit(a, done) {
   var ARROWS = [['←','ArrowLeft'],['↑','ArrowUp'],['↓','ArrowDown'],['→','ArrowRight']];
-  a.innerHTML = '<p class="say">A move flashes. Hit the same arrow (keyboard or buttons) before the bar empties. Twelve moves; land eight to win.</p><div class="prompt" id="pr">READY</div><div class="timebar"><i id="tb"></i></div><div class="keys" id="ks"></div><div class="row"><button class="btn btn-red" id="fight" type="button">Fight</button></div><p class="msg" id="pm"></p>';
+  a.innerHTML = '<p class="say">The fighting pit. A combo flashes: punch it in, in order, before the bar runs out (keyboard arrows or the buttons). Land a combo and the brute loses health; miss and you take the hit. Knock him out before he knocks you out.</p>' +
+    '<div class="fighters"><div><small>You</small><div class="hp" id="hpMe"></div></div><div><small>The brute</small><div class="hp foe" id="hpFoe"></div></div></div>' +
+    '<div class="combo" id="cmb">READY</div><div class="timebar"><i id="tb"></i></div><div class="keys" id="ks"></div><div class="row"><button class="btn btn-red" id="fight" type="button">Fight</button></div><p class="msg" id="pm"></p>';
   var ks = $('ks');
   ARROWS.forEach(function (ar, i) { var b = document.createElement('button'); b.type = 'button'; b.textContent = ar[0]; b.setAttribute('aria-label', ar[1].replace('Arrow', '')); b.onclick = function () { hit(i); }; ks.appendChild(b); });
-  var n = 0, hits = 0, cur = -1, start = 0, win = 1500, raf, live = false, stopped = false;
-  function nextMove() {
-    if (n >= 12) return finishFight();
-    cur = Math.floor(Math.random() * 4); n++; $('pr').textContent = ARROWS[cur][0];
-    start = performance.now(); win = Math.max(650, 1500 - n * 70); live = true; tick();
+  var me = 3, foe = 6, round = 0, combo = [], pos = 0, start = 0, win = 2000, raf, live = false, stopped = false, landed = 0;
+  function hp() {
+    $('hpMe').innerHTML = [0, 1, 2].map(function (k) { return '<i class="' + (k < me ? 'on' : '') + '"></i>'; }).join('');
+    $('hpFoe').innerHTML = [0, 1, 2, 3, 4, 5].map(function (k) { return '<i class="' + (k < foe ? 'on' : '') + '"></i>'; }).join('');
+  }
+  function drawCombo() { $('cmb').innerHTML = combo.map(function (c, k) { return '<span class="' + (k < pos ? 'ok' : '') + '">' + ARROWS[c][0] + '</span>'; }).join(''); }
+  function next() {
+    if (stopped) return;
+    if (foe <= 0 || me <= 0) return finishFight();
+    round++; var len = Math.min(5, 2 + Math.floor(round / 3)); combo = []; pos = 0;
+    for (var k = 0; k < len; k++) combo.push(Math.floor(Math.random() * 4));
+    win = Math.max(1100, 650 * len + 600 - round * 70); start = performance.now(); live = true; drawCombo(); tick();
   }
   function tick() {
     if (!live || stopped) return;
     var left = 1 - (performance.now() - start) / win; $('tb').style.width = Math.max(0, left * 100) + '%';
-    if (left <= 0) { live = false; $('pm').textContent = 'Too slow! ' + hits + ' / ' + n; setTimeout(nextMove, 350); return; }
+    if (left <= 0) { live = false; me--; hp(); $('pm').textContent = 'Too slow. He lands one on you.'; setTimeout(next, 600); return; }
     raf = requestAnimationFrame(tick);
   }
   function hit(i) {
-    if (!live) return; live = false; cancelAnimationFrame(raf);
-    if (i === cur) { hits++; $('pm').textContent = 'Landed! ' + hits + ' / ' + n; } else { $('pm').textContent = 'Blocked! ' + hits + ' / ' + n; }
-    setTimeout(nextMove, 300);
+    if (!live) return;
+    if (i !== combo[pos]) { live = false; cancelAnimationFrame(raf); me--; hp(); $('pm').textContent = 'Blocked, and he counters.'; setTimeout(next, 600); return; }
+    pos++; drawCombo();
+    if (pos === combo.length) { live = false; cancelAnimationFrame(raf); foe--; landed++; hp(); $('pm').textContent = combo.length + '-hit combo lands!'; setTimeout(next, 500); }
   }
   function kd(e) { var i = ARROWS.findIndex(function (x) { return x[1] === e.key; }); if (i >= 0) { e.preventDefault(); hit(i); } }
   addEventListener('keydown', kd);
-  function finishFight() { removeEventListener('keydown', kd); $('pr').textContent = hits + '/12'; done(hits >= 8, hits * 15, hits + ' of 12 moves landed'); }
-  $('fight').onclick = function () { $('fight').disabled = true; nextMove(); };
+  function finishFight() { removeEventListener('keydown', kd); var won = foe <= 0; $('cmb').textContent = won ? 'K.O.' : 'DOWN'; done(won, won ? 90 + me * 50 : landed * 10, won ? 'Knockout with ' + me + ' health left' : 'The brute wins this round.'); }
+  hp();
+  $('fight').onclick = function () { $('fight').disabled = true; next(); };
   return function () { stopped = true; cancelAnimationFrame(raf); removeEventListener('keydown', kd); };
 }
 
-/* ---------- 05 Abyssal Den: dive for crowns ---------- */
+/* ---------- 05 Abyssal Den: dive past the Noctopus ---------- */
 function den(a, done) {
-  a.innerHTML = '<p class="say">Steer with ← → (or drag / touch left and right). Collect crowns, dodge the red mines. Ten crowns in thirty seconds.</p><canvas class="den" id="cv" width="480" height="640"></canvas><div class="row"><button class="btn btn-red" id="dive" type="button">Dive</button></div><p class="msg" id="dmg2"></p>';
+  a.innerHTML = '<p class="say">The flooded den of the Noctopus. Steer with ← → (or drag / touch left and right). Collect crowns, dodge its red ink mines. Ten crowns in thirty seconds; three mines and you surface.</p><canvas class="den" id="cv" width="480" height="640"></canvas><div class="row"><button class="btn btn-red" id="dive" type="button">Dive</button></div><p class="msg" id="dmg2"></p>';
   var cv = $('cv'), ctx = cv.getContext('2d'), W = 480, H = 640, px = W / 2, keys = {}, items = [], crowns = 0, hitsTaken = 0, t0 = 0, raf, running = false, stopped = false, last = 0;
   var crownImg = new Image(); crownImg.src = '../assets/studio/crown.png';
+  var octo = new Image(); octo.src = '../assets/studio/noctopus.jpg'; octo.onload = function () { if (!running) intro(); };
   function kd(e) { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { keys[e.key] = true; e.preventDefault(); } }
   function ku(e) { keys[e.key] = false; }
   addEventListener('keydown', kd); addEventListener('keyup', ku);
   function pointer(e) { var r = cv.getBoundingClientRect(); px = Math.max(24, Math.min(W - 24, (e.clientX - r.left) / r.width * W)); }
   cv.addEventListener('pointermove', function (e) { if (e.buttons || e.pointerType === 'touch') pointer(e); });
   cv.addEventListener('pointerdown', pointer);
-  function spawn() { var mine = Math.random() < 0.38; items.push({ x: 30 + Math.random() * (W - 60), y: H + 30, v: 2.4 + Math.random() * 2.2, mine: mine }); }
+  function spawn(el) { var mine = Math.random() < 0.36 + Math.min(0.14, el / 200); items.push({ x: 30 + Math.random() * (W - 60), y: H - 60, v: 2.4 + Math.random() * 2.2 + el / 20, mine: mine }); }
+  function octopus(y) {
+    if (!octo.complete || !octo.naturalWidth) return;
+    ctx.save(); ctx.beginPath(); ctx.arc(W / 2, y, 70, 0, 7); ctx.clip(); ctx.drawImage(octo, W / 2 - 70, y - 70, 140, 140); ctx.restore();
+    ctx.strokeStyle = '#e3242b'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(W / 2, y, 70, 0, 7); ctx.stroke();
+  }
+  function intro() { ctx.clearRect(0, 0, W, H); octopus(H - 90); ctx.fillStyle = '#fff'; ctx.font = '30px Anton, Impact, sans-serif'; ctx.textAlign = 'center'; ctx.fillText('PRESS DIVE', W / 2, 300); ctx.textAlign = 'left'; }
   function draw(now) {
     if (!running || stopped) return;
     var el = (now - t0) / 1000, left = Math.max(0, 30 - el);
     if (keys.ArrowLeft) px -= 7; if (keys.ArrowRight) px += 7; px = Math.max(24, Math.min(W - 24, px));
-    if (now - last > 420) { spawn(); last = now; }
+    if (now - last > 400) { spawn(el); last = now; }
     ctx.clearRect(0, 0, W, H);
     for (var b = 0; b < 30; b++) { ctx.fillStyle = 'rgba(120,220,255,.08)'; ctx.beginPath(); ctx.arc((b * 97 + el * 30) % W, (H - (b * 53 + el * 60) % H), 3, 0, 7); ctx.fill(); }
+    octopus(H - 40 + Math.sin(el * 2) * 8);
     items.forEach(function (it) { it.y -= it.v; });
     items = items.filter(function (it) {
       var hit = Math.abs(it.x - px) < 34 && Math.abs(it.y - 120) < 34;
@@ -351,48 +478,65 @@ function den(a, done) {
     ctx.fillStyle = '#f1e9df'; ctx.beginPath(); ctx.moveTo(px, 96); ctx.lineTo(px - 22, 140); ctx.lineTo(px + 22, 140); ctx.closePath(); ctx.fill();
     ctx.fillStyle = '#00e5ff'; ctx.fillRect(px - 4, 140, 8, 14);
     ctx.fillStyle = '#fff'; ctx.font = '28px Anton, Impact, sans-serif'; ctx.fillText('CROWNS ' + crowns + '   MINES ' + hitsTaken + '   ' + Math.ceil(left) + 's', 18, 40);
-    if (hitsTaken >= 3) return end(false, 'Three mines. The abyss wins this round.');
+    if (hitsTaken >= 3) return end(false, 'Three ink mines. The Noctopus wins this round.');
     if (left <= 0) return end(crowns >= 10, crowns >= 10 ? null : 'Only ' + crowns + ' crowns. You need ten.');
     raf = requestAnimationFrame(draw);
   }
   function end(won, note) { running = false; cancelAnimationFrame(raf); cleanup(); done(won, crowns * 12 + (3 - hitsTaken) * 20, note || crowns + ' crowns'); }
   function cleanup() { removeEventListener('keydown', kd); removeEventListener('keyup', ku); }
   $('dive').onclick = function () { $('dive').disabled = true; running = true; t0 = performance.now(); last = t0; raf = requestAnimationFrame(draw); };
-  ctx.fillStyle = '#fff'; ctx.font = '30px Anton, Impact, sans-serif'; ctx.fillText('PRESS DIVE', 160, 330);
+  intro();
   return function () { stopped = true; cancelAnimationFrame(raf); cleanup(); };
 }
 
-/* ---------- 06 Throne Room: the Royal Challenge ---------- */
+/* ---------- 06 Throne Room: the Zero-to-One gate, then the Royal Challenge ---------- */
 function throne(a, done) {
-  var rounds = [
-    { title: 'The kingdom is broke', text: 'Your kingdom has one hour of power left and no treasury. What is your first move?', choices: [['Invite citizens to co-create a solution and share the reward', 25], ['Sell the crown and disappear', 5], ['Spend everything on a spectacular throne', 0]] },
-    { title: 'The crowd turns', text: 'The crowd is angry. You have one move to win them back.', choices: [['Listen publicly, own the mistake, and invite a fix', 25], ['Blame a rival kingdom', 5], ['Order everyone to applaud', 0]] },
-    { title: 'The story flips', text: 'A portal opens. Your co-star says the story has changed. Adapt fast.', choices: [['Rewrite the plan around the new reality', 25], ['Pretend the twist never happened', 0], ['Ask the team for one fast idea, then adapt', 20]] },
-    { title: 'The royal flush', text: 'You can save only one: your image, your people, or your promise. What do you protect?', choices: [['Keep the promise and protect the people, even at personal cost', 25], ['Protect the image at any cost', 0], ['Make a bold deal and explain the trade-off honestly', 18]] }
-  ];
-  a.innerHTML = '<p class="say">Four decisions in sixty seconds. Score 65 or more to take the throne.</p><div class="timebar" style="max-width:720px"><i id="tt" style="width:100%"></i></div><p class="big" id="tq">Ready, King?</p><p class="say" id="tx">The clock starts when you press Begin.</p><div class="choices" id="ch"></div><div class="row"><button class="btn btn-red" id="begin" type="button">Begin</button></div><p class="msg" id="tm"></p>';
-  var round = 0, score = 0, left = 60, timer, lock = false, stopped = false;
-  function show() {
-    var r = rounds[round]; $('tq').textContent = r.title; $('tx').textContent = r.text; $('ch').innerHTML = ''; lock = false;
-    r.choices.forEach(function (c) { var b = document.createElement('button'); b.className = 'choice'; b.type = 'button'; b.textContent = c[0]; b.onclick = function () { pick(c[1], b); }; $('ch').appendChild(b); });
-    $('tm').textContent = round === 2 ? 'Surprise twist: the rules just changed.' : '';
+  var bits = [0,0,0,0,0,0,0,0,0], taps = 0, stopped = false, timer;
+  a.innerHTML = '<p class="say">Two trials stand between you and the throne. First the gate: turn every 0 into a 1. Each tap flips a square and the squares beside it. Zero to One.</p><div class="gate" id="gate" role="group" aria-label="Zero to One gate"></div><p class="msg" id="gm">Taps: 0</p>';
+  var gate = $('gate');
+  function drawGate() {
+    gate.innerHTML = '';
+    bits.forEach(function (v, i) { var b = document.createElement('button'); b.type = 'button'; b.className = 'bit' + (v ? ' one' : ''); b.textContent = v; b.setAttribute('aria-label', 'Square ' + (i + 1) + ' is ' + v); b.onclick = function () { flip(i); }; gate.appendChild(b); });
   }
-  function pick(pts, b) {
-    if (lock) return; lock = true; score += pts; b.classList.add('picked');
-    [].forEach.call($('ch').children, function (x) { x.disabled = true; });
-    setTimeout(function () { if (stopped) return; if (round < 3 && left > 0) { round++; show(); } else end(); }, 550);
+  function flip(i) {
+    var r = i / 3 | 0, c = i % 3;
+    [[0,0],[1,0],[-1,0],[0,1],[0,-1]].forEach(function (d) { var a2 = r + d[0], e = c + d[1]; if (a2 >= 0 && a2 < 3 && e >= 0 && e < 3) bits[a2 * 3 + e] ^= 1; });
+    taps++; $('gm').textContent = 'Taps: ' + taps; drawGate();
+    if (bits.every(function (v) { return v; })) { [].forEach.call(gate.children, function (x) { x.disabled = true; }); $('gm').textContent = 'Zero to One in ' + taps + ' taps. The throne room opens.'; setTimeout(function () { if (!stopped) challenge(); }, 900); }
   }
-  function end() {
-    clearInterval(timer); $('ch').innerHTML = '';
-    var rank = score >= 90 ? 'Crown Conqueror' : score >= 65 ? 'King in the making' : score >= 35 ? 'Royal Rebel' : 'Kingdom Apprentice';
-    $('tq').textContent = rank; $('tx').textContent = 'Score: ' + score + ' / 100';
-    try { var best = JSON.parse(localStorage.getItem('amkh-best') || 'null'); if (!best || score > best.score) localStorage.setItem('amkh-best', JSON.stringify({ score: score, rank: rank, at: Date.now() })); } catch (e) {}
-    done(score >= 65, score * 3, rank + ' · ' + score + '/100');
+  drawGate();
+  var gateBonus = function () { return Math.max(0, 60 - Math.max(0, taps - 5) * 6); };
+  function challenge() {
+    var rounds = [
+      { title: 'The kingdom is broke', text: 'Your kingdom has one hour of power left and no treasury. What is your first move?', choices: [['Invite citizens to co-create a solution and share the reward', 25], ['Sell the crown and disappear', 5], ['Spend everything on a spectacular throne', 0]] },
+      { title: 'The crowd turns', text: 'The crowd is angry. You have one move to win them back.', choices: [['Listen publicly, own the mistake, and invite a fix', 25], ['Blame a rival kingdom', 5], ['Order everyone to applaud', 0]] },
+      { title: 'The story flips', text: 'A portal opens. Your co-star says the story has changed. Adapt fast.', choices: [['Rewrite the plan around the new reality', 25], ['Pretend the twist never happened', 0], ['Ask the team for one fast idea, then adapt', 20]] },
+      { title: 'The royal flush', text: 'You can save only one: your image, your people, or your promise. What do you protect?', choices: [['Keep the promise and protect the people, even at personal cost', 25], ['Protect the image at any cost', 0], ['Make a bold deal and explain the trade-off honestly', 18]] }
+    ];
+    a.innerHTML = '<p class="say">The Royal Challenge. Four decisions in sixty seconds. Score 65 or more to take the throne.</p><div class="timebar" style="max-width:720px"><i id="tt" style="width:100%"></i></div><p class="big" id="tq">Ready, King?</p><p class="say" id="tx">The clock starts when you press Begin.</p><div class="choices" id="ch"></div><div class="row"><button class="btn btn-red" id="begin" type="button">Begin</button></div><p class="msg" id="tm"></p>';
+    var round = 0, score = 0, left = 60, lock = false;
+    function show() {
+      var r = rounds[round]; $('tq').textContent = r.title; $('tx').textContent = r.text; $('ch').innerHTML = ''; lock = false;
+      r.choices.slice().sort(function () { return Math.random() - 0.5; }).forEach(function (c) { var b = document.createElement('button'); b.className = 'choice'; b.type = 'button'; b.textContent = c[0]; b.onclick = function () { pick(c[1], b); }; $('ch').appendChild(b); });
+      $('tm').textContent = round === 2 ? 'Surprise twist: the rules just changed.' : '';
+    }
+    function pick(pts, b) {
+      if (lock) return; lock = true; score += pts; b.classList.add('picked');
+      [].forEach.call($('ch').children, function (x) { x.disabled = true; });
+      setTimeout(function () { if (stopped) return; if (round < 3 && left > 0) { round++; show(); } else end(); }, 550);
+    }
+    function end() {
+      clearInterval(timer); $('ch').innerHTML = '';
+      var rank = score >= 90 ? 'Crown Conqueror' : score >= 65 ? 'King in the making' : score >= 35 ? 'Royal Rebel' : 'Kingdom Apprentice';
+      $('tq').textContent = rank; $('tx').textContent = 'Score: ' + score + ' / 100 · Gate bonus ' + gateBonus() + (score >= 65 ? ' · #FearWearsTheCrown' : '');
+      try { var bst = JSON.parse(localStorage.getItem('amkh-best') || 'null'); if (!bst || score > bst.score) localStorage.setItem('amkh-best', JSON.stringify({ score: score, rank: rank, at: Date.now() })); } catch (e) {}
+      done(score >= 65, score * 3 + gateBonus(), rank + ' · ' + score + '/100');
+    }
+    $('begin').onclick = function () {
+      $('begin').hidden = true; show();
+      timer = setInterval(function () { left--; $('tt').style.width = (left / 60 * 100) + '%'; if (left <= 0) { clearInterval(timer); lock = true; end(); } }, 1000);
+    };
   }
-  $('begin').onclick = function () {
-    $('begin').hidden = true; show();
-    timer = setInterval(function () { left--; $('tt').style.width = (left / 60 * 100) + '%'; if (left <= 0) { clearInterval(timer); end(); } }, 1000);
-  };
   return function () { stopped = true; clearInterval(timer); };
 }
 
