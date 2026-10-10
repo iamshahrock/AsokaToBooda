@@ -79,7 +79,16 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 .lessons li{font-size:17px;line-height:1.65;color:#e6dcd4;margin-bottom:14px}
 .lessons b{color:var(--ink)}
 .draft{margin:30px auto 0;max-width:620px;font-family:var(--body)!important;font-style:normal!important;font-size:14px!important;color:var(--faint)}
-@media (max-width:720px){.t td.n.na{white-space:normal}.t th,.t td{padding:9px 6px}.t td.n{white-space:normal}.toc{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:minmax(0,1fr)}.duel{grid-template-columns:minmax(0,1fr)}.vs{justify-self:center}.act p{font-size:17px}.t{font-size:13.5px}.t td.n{font-size:17px}}
+.rb{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;margin:20px 0 26px;border:1px solid var(--line)}
+.rb>div{padding:20px 18px;display:flex;flex-direction:column;gap:6px}
+.rb b{font-family:var(--display);font-weight:400;font-size:clamp(44px,7vw,84px);line-height:.9}
+.rb span{font-size:14px;color:#e6dcd4;line-height:1.45}
+.rb-r{background:linear-gradient(135deg,#5a0a0e,#1a0607)}.rb-r b{color:#ff4a4f}
+.rb-b{background:linear-gradient(225deg,#0a2a5a,#06101f);text-align:right;align-items:flex-end}.rb-b b{color:#5b9bff}
+.rb-to{display:flex;align-items:center;justify-content:center;padding:0 14px;background:#0a0707;font-family:var(--display);font-size:30px;color:var(--faint);text-transform:uppercase}
+.t.tape th.r{color:#ff4a4f}.t.tape th.b{color:#5b9bff}
+.t.tape td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+@media (max-width:720px){.rb{grid-template-columns:minmax(0,1fr)}.rb-b{text-align:left;align-items:flex-start}.rb-to{padding:8px}.t.tape td:first-child{white-space:normal}.t td.n.na{white-space:normal}.t th,.t td{padding:9px 6px}.t td.n{white-space:normal}.toc{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:minmax(0,1fr)}.duel{grid-template-columns:minmax(0,1fr)}.vs{justify-self:center}.act p{font-size:17px}.t{font-size:13.5px}.t td.n{font-size:17px}}
 </style>
 </head>
 <body class="v2">
@@ -102,7 +111,7 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
     <li><a href="#act5"><span>V</span>The resurrection</a></li>
     <li><a href="#act6"><span>VI</span>The King's court</a></li>
     <li><a href="#act7"><span>VII</span>The unreal hype of KING</a></li>
-    <li><a href="#act8"><span>VIII</span>KING vs DOOM</a></li>
+    <li><a href="#act8"><span>VIII</span>DOOM to KING</a></li>
     <li><a href="#act9"><span>IX</span>The marketing code</a></li>
     <li><a href="#act10"><span>X</span>What brands can learn</a></li>
     <li><a href="#finale"><span>XI</span>The Royal Flush</a></li>
@@ -236,24 +245,45 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 
 <section class="act" id="act8">
   <p class="k">Act VIII</p>
-  <h2>KING <em>vs</em> DOOM</h2>
-  <p class="years">The Christmas duel</p>
-  <p>Six days apart, two crowns. Avengers: Doomsday opens on 18 December, with Robert Downey Jr. returning to Marvel as Doctor Doom. KING arrives on 24 December. Some call it a clash. We call it the best Christmas cinema has had in years.</p>
-  <div class="duel">
-    <div class="side king"><h3>KING</h3><ul><li>24 December 2026</li><li>Shah Rukh Khan</li><li>Home ground: India and the diaspora</li><li>Weapon: fans who do the marketing themselves</li></ul></div>
-    <div class="vs" aria-hidden="true">vs</div>
-    <div class="side doom"><h3>DOOM</h3><ul><li>18 December 2026</li><li>Robert Downey Jr.</li><li>Home ground: the global Marvel machine</li><li>Weapon: the biggest franchise on Earth</li></ul></div>
+  <h2>DOOM <em>to</em> KING</h2>
+  <p class="years">One Christmas, two crowns: a friendly fixture, not a fight</p>
+  <p>The trade press wants a clash. Avengers: Doomsday opens on 18 December 2026, with Robert Downey Jr. returning to Marvel as Doctor Doom, a casting first revealed on stage at San Diego Comic-Con in July 2024. KING opens six days later, on 24 December. Headlines will say "versus". This thesis says "to". It is a relay: start with DOOM, finish with KING, and call it the best Christmas cinema has had in years.</p>
+
+  <div class="rb" aria-label="Red to Blue">
+    <div class="rb-r"><b>RED</b><span>Iron Man · 2008</span><span>Built his suit in a cave from a box of scraps.</span><span>Now: DOOM · 18 Dec 2026</span></div>
+    <div class="rb-to">to</div>
+    <div class="rb-b"><b>BLUE</b><span>G.One · Ra.One, 2011</span><span>Stepped out of a video game his creator built for his son.</span><span>Now: KING · 24 Dec 2026</span></div>
   </div>
-  <p>Six rounds. No referee. You decide.</p>
+
+  <h3 class="sub3">The class of '65</h3>
+  <p>Robert Downey Jr. was born on 4 April 1965. Shah Rukh Khan was born on 2 November 1965. Same year, two hemispheres, two careers that went from boy wonder to written off to the biggest comeback in their industries. Both once saved the world in a superhero suit, one red, one blue. This Christmas, at 61, both walk to the dark side of the screen: one as the villain of the Marvel universe, one as the man they call KING. Retirement plans: not found.</p>
+
+  <h3 class="sub3">Iron Man to G.One: the tale of the tape</h3>
+  <table class="t tape">
+    <thead><tr><th></th><th class="r">The red corner</th><th class="b">The blue corner</th></tr></thead>
+    <tbody>
+      <tr><td>The suit</td><td>Forged in a cave, upgraded in a mansion, numbered like software releases.</td><td>Downloaded from a game. Came with a son, a wife and a very long climax on a Mumbai train.</td></tr>
+      <tr><td>The colour</td><td>Red and gold, the colour of a sports car.</td><td>Blue, the colour of a screen at 3 a.m.</td></tr>
+      <tr><td>The villain turn</td><td>Puts on a metal mask.</td><td>Does not need a mask. Raises one eyebrow.</td></tr>
+      <tr><td>The signature move</td><td>Snaps his fingers; half the universe goes quiet.</td><td>Opens his arms; the other half comes running.</td></tr>
+      <tr><td>The fan ritual</td><td>Stays for the post-credits scene.</td><td>Stands outside his gate in Mumbai every 2 November.</td></tr>
+      <tr><td>The home ground</td><td>Every multiplex on Earth.</td><td>Every multiplex on Earth, plus the single screen, the chai stall and the family WhatsApp group.</td></tr>
+    </tbody>
+  </table>
+  <p class="src">Played for laughs, with respect to both corners. <span class="label">Interpretation</span></p>
+
+  <h3 class="sub3">The friendly fixture: six rounds, no losers</h3>
   <ol class="rounds">
-    <li><b>Star power.</b> The last of the stars, or the man who built the MCU?</li>
-    <li><b>Home crowd.</b> Who owns their own country's screens on Christmas week?</li>
-    <li><b>Reach beyond borders.</b> The diaspora, or the franchise?</li>
-    <li><b>The character.</b> A brand-new KING, or a villain fans have waited decades for?</li>
-    <li><b>The campaign.</b> A studio machine, or a fan army?</li>
-    <li><b>The street.</b> Who wins the village screen, the chai stall and the WhatsApp forward?</li>
+    <li><b>Star power.</b> The man who built the Marvel Cinematic Universe against the last of the stars. Point to both, and to the audience.</li>
+    <li><b>Home crowd.</b> DOOM owns the global multiplex; KING owns Indian screens and the diaspora at Christmas. Two home games in one week.</li>
+    <li><b>The character.</b> A villain fans have waited decades to see, against a new KING nobody has seen yet. Curiosity wins either way.</li>
+    <li><b>The campaign.</b> A studio machine with a hundred-film head start, against a fan army that makes its own posters. Both are worth studying.</li>
+    <li><b>The scheduling.</b> Six days apart is not a clash. It is enough time to watch one, argue about it, and queue for the other.</li>
+    <li><b>The street.</b> The real result is decided at the box office, in the reviews and over family dinners. We will report the numbers when they exist, and not before.</li>
   </ol>
-  <p>It is a friendly fight. Both films can win. The only loser is anyone who watches just one.</p>
+  <div class="pull">Final score: <em>Cinema 2, Boredom 0.</em></div>
+  <p>Watch DOOM on the 18th. Recover on the 19th. Queue for KING on the 24th. The only way to lose this Christmas is to watch just one.</p>
+  <p class="src">DOOM casting reveal: San Diego Comic-Con, July 2024. Release dates: The Hollywood Reporter India. Birth dates are public record.</p>
 </section>
 
 <section class="act" id="act9">
