@@ -54,6 +54,13 @@ jobs:
           done
 
           rm -f site/king-intelligence/index.backup-20261006.html
+
+          # Cache-bust the shared styles and scripts so phones and tablets never pair a new page with an old cached file.
+          V="${GITHUB_SHA:0:8}"
+          find site \( -name '*.html' -o -name '*.HTML' \) | while read -r f; do
+            sed -i -E "s#(assets/(site\.css|v2\.css|header\.js|footer\.js|starks\.js|chess81-engine\.js))([\"'])#\1?v=${V}\3#g" "$f"
+          done
+          grep -q "v2.css?v=${V}" site/index.html
           touch site/.nojekyll
           test -f site/index.html
           test -f site/CHESS81.HTML
