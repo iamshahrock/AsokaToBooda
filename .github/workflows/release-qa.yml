@@ -40,7 +40,13 @@ jobs:
       - name: Run live release QA
         env:
           SITE_BASE_URL: ${{ inputs.site_base_url || vars.SITE_BASE_URL }}
-        run: node tools/release-qa.mjs
+        run: |
+          set -o pipefail
+          node tools/release-qa.mjs 2>&1 | tee qa.log
+          code=${PIPESTATUS[0]}
+          grep -E '^FAIL' qa.log | head -20 | while read -r l; do echo "::error title=release-qa::${l:0:900}"; done
+          grep -E 'QA COMPLETE' qa.log | while read -r l; do echo "::notice title=release-qa::$l"; done
+          exit $code
 
       - name: Upload rendered QA screenshots
         if: always()
