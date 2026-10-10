@@ -13,7 +13,15 @@
   var root = new URL('..', assets).href;           // site root
   var A = function (p) { return assets + 'header/' + p; };
 
-  var LINKS = [
+  // data-nav="v2" on the script tag = the new four-door site (preview at /v2/).
+  var V2 = me.getAttribute('data-nav') === 'v2';
+  var home = V2 ? root + 'v2/' : root;
+  var LINKS = V2 ? [
+    ['v2/create/', 'Create'],
+    ['v2/play/', 'Play'],
+    ['v2/crown/', 'The Crown'],
+    ['v2/know/', 'Know']
+  ] : [
     ['game/', 'Agar Main King Hota'],
     ['CHESS81.HTML', 'Check. Mate. Fire.'],
     ['king-intelligence/', 'KING Buzz'],
@@ -136,7 +144,7 @@
   var here = location.pathname.replace(/index\.html$/, '');
   function isHere(path) { var p = new URL(path, root).pathname; return here === p || (p.length > 1 && here.indexOf(p) === 0 && p !== new URL(root).pathname); }
 
-  var banner = el('a', { class: 'sh-banner', href: root, 'aria-label': 'Agar Main King Hota — Agar Main Fan Hota. From ZERO to ONE. Home' }, [
+  var banner = el('a', { class: 'sh-banner', href: home, 'aria-label': 'Agar Main King Hota — Agar Main Fan Hota. From ZERO to ONE. Home' }, [
     el('div', { class: 'sh-frame-box' }, [
       el('div', { class: 'sh-stage' }, [
         mirror('sh-l', 'king'),
@@ -152,7 +160,7 @@
 
   var nav = el('nav', { class: 'sh-nav', 'aria-label': 'Sections' });
   var drawer = el('div', { class: 'sh-drawer', id: 'sh-drawer', role: 'dialog', 'aria-label': 'Menu' });
-  drawer.appendChild(el('a', { href: root }, [el('small', { text: '00' }), document.createTextNode('Home')]));
+  drawer.appendChild(el('a', { href: home }, [el('small', { text: '00' }), document.createTextNode('Home')]));
   LINKS.forEach(function (l, i) {
     var a1 = el('a', { href: root + l[0], text: l[1] }), a2 = el('a', { href: root + l[0] }, [el('small', { text: '0' + (i + 1) }), document.createTextNode(l[1])]);
     if (isHere(l[0])) { a1.setAttribute('aria-current', 'page'); a2.setAttribute('aria-current', 'page'); }
@@ -160,7 +168,7 @@
   });
   var burger = el('button', { class: 'sh-burger', type: 'button', 'aria-label': 'Open menu', 'aria-expanded': 'false', 'aria-controls': 'sh-drawer' });
   burger.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
-  var brand = el('a', { class: 'sh-brand', href: root, 'aria-label': 'Agar Main King Hota — home' }, [
+  var brand = el('a', { class: 'sh-brand', href: home, 'aria-label': 'Agar Main King Hota — home' }, [
     img(A('one-full.webp'), 900, 584, '', ''),
     el('span', {}, [document.createTextNode('AGAR MAIN '), el('b', { text: 'KING' }), document.createTextNode(' HOTA')])
   ]);
