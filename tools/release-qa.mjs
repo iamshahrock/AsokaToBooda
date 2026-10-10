@@ -110,10 +110,10 @@ for (const [id, path] of pages) {
         const links = hd.querySelectorAll('.sh-nav a').length;
         if (broken.length) return 'images failed: ' + broken.join(', ');
         if (bad.length) return 'distorted: ' + bad.join(', ');
-        if (links !== 6) return 'expected 6 section links, found ' + links;
+        if (links !== 4) return 'expected 4 section links, found ' + links;
         return 'ok';
       });
-      if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 6 section links`);
+      if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 4 section links`);
     }
     // tablet and phone: one header, nothing pushes the page sideways
     for (const width of [900, 390]) {
