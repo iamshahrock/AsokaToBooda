@@ -33,6 +33,9 @@ await lp.click('.lair >> nth=0'); await lp.click('#deal'); await lp.waitForTimeo
 for (let k = 0; k < 4; k++) { if (await lp.$('#check')) { await lp.click('#check'); await lp.waitForTimeout(100); } }
 log.push('lairs casino: ' + (await lp.textContent('#cmsg')));
 await lp.goto(base + '/CHESS81.HTML?t=' + Date.now(), { waitUntil: 'networkidle' });
+const hp = await browser.newPage({ viewport: { width: 390, height: 844 } }); await hp.goto(base + '/?t=' + Date.now(), { waitUntil: 'networkidle' });
+log.push('home slider (phone): ' + JSON.stringify(await hp.evaluate(() => { const sl = document.querySelector('.slide.on'), c = sl.querySelector('.copy').getBoundingClientRect(), a = sl.querySelector('.art').getBoundingClientRect(); return { slides: document.querySelectorAll('#hero .slide').length, dots: document.querySelectorAll('#dots .dot').length, arrows: document.querySelectorAll('#hero .arrow').length, sideBySide: a.left > c.left + c.width / 2 && a.top < c.bottom }; })));
+await hp.close();
 log.push('asset versions: ' + JSON.stringify(await lp.evaluate(() => [...document.querySelectorAll('link[rel=stylesheet][href*="assets/"], script[src*="assets/"]')].map(e => (e.href || e.src).split('/').pop()))));
 const sqs = await lp.evaluate(() => { const c = [...document.querySelectorAll('.sq')].map(x => x.getBoundingClientRect()); return c.length + ' squares, ' + [...new Set(c.map(r => r.width.toFixed(1) + 'x' + r.height.toFixed(1)))].join(','); });
 await lp.evaluate(() => window.CHESS81.move('O2', 'O4'));
