@@ -20,49 +20,139 @@
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/v2.css">
 <style>
-.hero{position:relative;overflow:hidden;margin-top:18px;border:1px solid var(--line);min-height:560px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;background:radial-gradient(110% 90% at 78% 45%,#3a0a0c 0%,#170607 45%,#0a0707 75%)}
-.hero .copy{position:relative;z-index:2;padding:48px 0 48px 6%;display:flex;flex-direction:column;gap:20px}
-.hero .wm{display:flex;flex-direction:column;gap:12px}
-.hero .wm img{width:min(520px,100%);height:auto}
-.hero .wm img+img{width:min(490px,94%)}
-.hero .tag{margin:0;font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(24px,2.4vw,34px);line-height:1.2}
-.hero .lede{margin:0;max-width:470px;font-size:16px;line-height:1.6;color:#c9bdb5}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
-.hero .art{position:relative;z-index:1;align-self:end;justify-self:end;width:min(100%,760px);height:auto;margin-right:-2%}
-.hero .mark{position:absolute;right:3%;top:5%;width:56%;height:auto;opacity:.08;pointer-events:none}
+.hero{position:relative;overflow:hidden;margin-top:18px;border:1px solid var(--line);display:grid;background:radial-gradient(110% 90% at 78% 45%,#3a0a0c 0%,#170607 45%,#0a0707 75%);touch-action:pan-y}
+.hero .mark{position:absolute;right:3%;top:5%;width:56%;height:auto;opacity:.08;pointer-events:none;z-index:0}
+.slide{grid-area:1/1;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,56%) minmax(0,44%);align-items:center;min-height:560px;opacity:0;visibility:hidden;transition:opacity .55s ease,visibility .55s}
+.slide.on{opacity:1;visibility:visible}
+.slide .copy{position:relative;z-index:2;padding:48px 0 84px 7%;display:flex;flex-direction:column;gap:18px}
+.slide .wm{display:flex;flex-direction:column;gap:12px;margin:0}
+.slide .wm img{width:min(520px,100%);height:auto}
+.slide .wm img+img{width:min(490px,94%)}
+.slide .tag{margin:0;font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(22px,2.3vw,32px);line-height:1.2}
+.slide .big{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(48px,5.6vw,86px);line-height:.94;text-transform:uppercase}
+.slide .big em{font-style:normal;color:var(--red-hi)}
+.slide .days{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.slide .days b{font-family:var(--display);font-weight:400;font-size:clamp(88px,10vw,150px);line-height:.85;color:var(--red-hi)}
+.slide .days span{font-family:var(--display);font-size:clamp(26px,2.6vw,38px);line-height:1;text-transform:uppercase}
+.slide .lede{margin:0;max-width:470px;font-size:16px;line-height:1.6;color:#c9bdb5}
+.slide .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.slide .art{align-self:end;justify-self:center;display:block;width:auto;height:auto;max-width:100%;max-height:520px;object-fit:contain}
+.slide .art.wide{align-self:center;max-height:none;width:100%}
+.slide .art.crown{align-self:center;max-height:380px}
+.hctl{position:absolute;z-index:3;left:0;right:0;bottom:12px;display:flex;align-items:center;justify-content:center;gap:10px;pointer-events:none}
+.hctl>*{pointer-events:auto}
+.arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(244,239,233,.45);background:rgba(10,7,7,.6);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.arrow:hover,.arrow:focus-visible{border-color:var(--red-text);background:var(--red);color:#fff}
+.dots{display:flex;gap:0}
+.dot{width:34px;height:44px;border:0;background:transparent;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.dot i{display:block;width:10px;height:6px;border-radius:3px;background:rgba(244,239,233,.45);transition:width .25s,background .25s}
+.dot:hover i{background:var(--red-text)}
+.dot[aria-current="true"] i{width:28px;background:var(--red-hi)}
 .how{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}
 .how li{background:var(--panel);padding:18px 18px 20px;border-top:3px solid var(--line)}
 .how li:first-child{border-top-color:var(--red)}
 .how b{display:block;font-family:var(--display);font-weight:400;font-size:24px;text-transform:uppercase;margin-bottom:4px}
 .how span{font-size:14px;color:var(--mute);line-height:1.45}
 @media (max-width:900px){
-  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
-  .hero .copy{padding:28px 22px 8px}
-  .hero .art{justify-self:center;width:min(100%,520px);margin:0}
+  .slide{min-height:470px;grid-template-columns:minmax(0,58%) minmax(0,42%)}
+  .slide .copy{padding:26px 6px 70px 22px;gap:14px}
+  .slide .art{max-height:400px}
   .how{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+@media (max-width:560px){
+  .slide{min-height:430px;grid-template-columns:minmax(0,60%) minmax(0,40%)}
+  .slide .copy{padding:20px 4px 64px 16px;gap:11px}
+  .slide .eyebrow{font-size:10px;letter-spacing:.14em}
+  .slide .wm{gap:7px}
+  .slide .tag{font-size:18px}
+  .slide .big{font-size:34px}
+  .slide .days b{font-size:72px}.slide .days span{font-size:20px}
+  .slide .lede{font-size:13px;line-height:1.5}
+  .slide .ctas .btn{min-height:40px;padding:0 12px;font-size:14px}
+  .slide .ctas .btn-line{display:none}
+  .slide .art{max-height:330px;margin-right:4px}
+  .slide .art.crown{max-height:190px}
+  .slide .art.wide{width:100%;height:300px;max-height:none;object-fit:cover;object-position:0 50%;align-self:center}
+  .hctl{bottom:8px;gap:4px}
+  .arrow{width:38px;height:38px}
+  .dot{width:26px}
+}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
 </style>
 </head>
 <body class="v2">
 <script src="assets/header.js" data-nav="v2"></script>
 <main class="wrap">
 
-<section class="hero" aria-labelledby="hero-h">
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="The six sections">
   <img class="mark" src="assets/home/king-wordmark.webp" width="1600" height="526" alt="">
-  <div class="copy">
-    <p class="eyebrow">The fan campaign for KING · 24 Dec 2026</p>
-    <h1 id="hero-h" class="wm">
-      <img src="assets/home/wm-agar-main.webp" width="1912" height="220" alt="Agar Main">
-      <img src="assets/home/wm-king-hota.webp" width="1839" height="220" alt="King Hota">
-    </h1>
-    <p class="tag">Step into his films. Wear the crown.</p>
-    <p class="lede">Pick any of Shah Rukh Khan's 80 films, put yourself in the role and get a KING poster nobody else has. Then play the lairs, earn STARKS and climb the Billboard.</p>
-    <div class="ctas">
-      <a class="btn btn-red" href="create/">Make your KING poster <span aria-hidden="true">→</span></a>
-      <a class="btn btn-line" href="#doors">See all six</a>
+
+  <div class="slide on" role="group" aria-roledescription="slide" aria-label="1 of 6: Make Your Poster">
+    <div class="copy">
+      <p class="eyebrow">01 · Make your poster · KING 24 Dec 2026</p>
+      <h1 class="wm"><img src="assets/home/wm-agar-main.webp" width="1912" height="220" alt="Agar Main"><img src="assets/home/wm-king-hota.webp" width="1839" height="220" alt="King Hota"></h1>
+      <p class="tag">Step into his films. Wear the crown.</p>
+      <p class="lede">Pick any of his 80 films, put yourself in the role and get a KING poster nobody else has.</p>
+      <div class="ctas"><a class="btn btn-red" href="create/">Make your poster <span aria-hidden="true">→</span></a><a class="btn btn-line" href="#films-h">Browse the 80 films</a></div>
     </div>
+    <img class="art" src="assets/home/01-agar-main-king-hota.webp" width="692" height="1400" alt="Young Shah Rock Jaan, a card between his teeth, bags on his shoulder">
   </div>
-  <img class="art" src="assets/home/04-asoka-to-booda.webp" width="1800" height="1205" alt="Young Shah Rock Jaan lying on the floor dreaming, a red crown above him, a trumpet and two bags beside him">
+
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6: King's Lairs">
+    <div class="copy">
+      <p class="eyebrow">02 · King's Lairs · Play</p>
+      <h2 class="big">Six lairs.<br><em>One throne.</em></h2>
+      <p class="lede">The casino, the snow villain's dome, the secret city, the pit, the abyss and the throne room. Clear them all and earn STARKS.</p>
+      <div class="ctas"><a class="btn btn-red" href="lairs/">Enter the lairs <span aria-hidden="true">→</span></a></div>
+    </div>
+    <img class="art crown" src="assets/home/06-fan-billboard.webp" width="900" height="985" alt="A red crown dripping like paint" loading="lazy">
+  </div>
+
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6: Chess81">
+    <div class="copy">
+      <p class="eyebrow">03 · Chess81 · Strategy</p>
+      <h2 class="big">81 squares.<br><em>One Torch.</em></h2>
+      <p class="lede">Chess on a 9×9 board where the King is the strongest piece. Light your Torch on O5 and burn your way to mate.</p>
+      <div class="ctas"><a class="btn btn-red" href="CHESS81.HTML">Play Chess81 <span aria-hidden="true">→</span></a></div>
+    </div>
+    <img class="art" src="assets/home/02-check-mate-fire.webp" width="476" height="1400" alt="Young Shah Rock Jaan wearing a red crown, standing on one leg" loading="lazy">
+  </div>
+
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6: Billboard">
+    <div class="copy">
+      <p class="eyebrow">04 · Billboard · STARKS</p>
+      <h2 class="big">The crown<br><em>is unclaimed.</em></h2>
+      <p class="lede">Every poster, every lair and every Chess81 win earns STARKS. Join with a name and climb from Fan to Royal Flush.</p>
+      <div class="ctas"><a class="btn btn-red" href="fan-billboard/">See the Billboard <span aria-hidden="true">→</span></a></div>
+    </div>
+    <img class="art" src="assets/home/05-fan-made-ai-universe.webp" width="663" height="1400" alt="Young Shah Rock Jaan in sunglasses, waving" loading="lazy">
+  </div>
+
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6: KING Buzz">
+    <div class="copy">
+      <p class="eyebrow">05 · KING Buzz · Daily</p>
+      <div class="days"><b data-until="2026-12-24T00:00:00+05:30">—</b><span>days to<br>KING</span></div>
+      <p class="lede">The daily report on KING: posts, reels, fan clubs and cities, measured against the 04 October baseline.</p>
+      <div class="ctas"><a class="btn btn-red" href="king-intelligence/">Today's Buzz <span aria-hidden="true">→</span></a></div>
+    </div>
+    <img class="art" src="assets/home/03-king-buzz.webp" width="714" height="1400" alt="The King walking forward, saxophone in one hand, bags on his shoulder" loading="lazy">
+  </div>
+
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6: Asoka to Boo-Da">
+    <div class="copy">
+      <p class="eyebrow">06 · Asoka to Boo-Da · Thesis</p>
+      <h2 class="big">Before the King,<br><em>a boy.</em></h2>
+      <p class="lede">The marketing thesis: from Chennai Express to the hype of KING. The KING is going in for the Royal Flush.</p>
+      <div class="ctas"><a class="btn btn-red" href="asoka-to-booda/">Read the thesis <span aria-hidden="true">→</span></a></div>
+    </div>
+    <img class="art wide" src="assets/home/04-asoka-to-booda.webp" width="1800" height="1205" alt="Young Shah Rock Jaan lying on the floor dreaming, a red crown above him" loading="lazy">
+  </div>
+
+  <div class="hctl">
+    <button class="arrow" type="button" data-step="-1" aria-label="Previous section"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="dots" id="dots"></div>
+    <button class="arrow" type="button" data-step="1" aria-label="Next section"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
 </section>
 
 <section class="block" aria-label="Countdowns">
@@ -146,6 +236,24 @@
     var d = Math.ceil((Date.parse(b.dataset.until) - Date.now()) / 864e5);
     b.textContent = d > 0 ? d : '0';
   });
+  // six-section slider: arrows, dots, swipe, autoplay
+  var slides = [].slice.call(document.querySelectorAll('#hero .slide')), dots = document.getElementById('dots'), hero = document.getElementById('hero');
+  var names = ['Make Your Poster', "King's Lairs", 'Chess81', 'Billboard', 'KING Buzz', 'Asoka to Boo-Da'], cur = 0, timer = null;
+  slides.forEach(function (_, k) { var d = document.createElement('button'); d.type = 'button'; d.className = 'dot'; d.setAttribute('aria-label', (k + 1) + ': ' + names[k]); d.appendChild(document.createElement('i')); d.onclick = function () { show(k); stop(); }; dots.appendChild(d); });
+  function show(n) {
+    cur = (n + slides.length) % slides.length;
+    slides.forEach(function (sl, k) { sl.classList.toggle('on', k === cur); sl.setAttribute('aria-hidden', k === cur ? 'false' : 'true'); sl.querySelectorAll('a').forEach(function (a) { a.tabIndex = k === cur ? 0 : -1; }); });
+    [].forEach.call(dots.children, function (d, k) { d.setAttribute('aria-current', k === cur ? 'true' : 'false'); });
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  document.querySelectorAll('#hero .arrow').forEach(function (b) { b.onclick = function () { show(cur + Number(b.dataset.step)); stop(); }; });
+  var x0 = null;
+  hero.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  hero.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 40) { show(cur + (dx < 0 ? 1 : -1)); stop(); } });
+  hero.addEventListener('focusin', stop); hero.addEventListener('mouseenter', stop);
+  show(0);
+  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) timer = setInterval(function () { show(cur + 1); }, 7000);
+
   fetch('assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (data) {
     var strip = document.getElementById('strip');
     var pick = data.posters.slice().reverse();
