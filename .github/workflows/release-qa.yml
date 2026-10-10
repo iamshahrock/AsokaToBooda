@@ -44,7 +44,8 @@ jobs:
           set +e
           node tools/release-qa.mjs 2>&1 | tee qa.log
           code=${PIPESTATUS[0]}
-          grep -E '^FAIL' qa.log | head -20 | while read -r l; do echo "::error title=release-qa::${l:0:900}"; done
+          fails=$(grep -E '^FAIL' qa.log | sed -E 's#https://agarmainkinghota.com##' | cut -c1-220 | paste -sd '|')
+          [ -n "$fails" ] && echo "::error title=release-qa failures::${fails:0:3800}"
           grep -E 'QA COMPLETE' qa.log | while read -r l; do echo "::notice title=release-qa::$l"; done
           exit $code
 
