@@ -1,0 +1,27 @@
+name: v2 live site test
+on:
+  workflow_dispatch:
+  push:
+    branches: ["test/v2-live"]
+permissions:
+  contents: write
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - name: Test the live v2 pages and make one real poster
+        run: node tools/v2-live-e2e.mjs
+      - name: Save screenshots to a results branch
+        if: always()
+        run: |
+          stamp=$(date -u +%Y%m%dT%H%M%S)
+          mkdir -p /tmp/out && cp -r e2e-out/. /tmp/out/ || true
+          git config user.name "v2-live-e2e"; git config user.email "v2-live-e2e@users.noreply.github.com"
+          git switch --orphan "r-$stamp" && mkdir -p "runs/$stamp" && cp -r /tmp/out/. "runs/$stamp/"
+          git add "runs/$stamp" && git commit -qm "v2 live $stamp" && git push -f origin "HEAD:refs/heads/test/v2-live-$stamp"
+          echo "::notice title=results-branch::test/v2-live-$stamp"

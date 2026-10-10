@@ -1,0 +1,35 @@
+name: Poster generation end-to-end test
+on:
+  workflow_dispatch:
+  push:
+    branches: ["test/poster-e2e"]
+permissions:
+  contents: write
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Generate test posters through the live Worker
+        run: node tools/poster-e2e.mjs
+      - name: Save result images to the results branch
+        if: always()
+        run: |
+          set -x
+          stamp=$(date -u +%Y%m%dT%H%M%S)
+          mkdir -p /tmp/out && cp -r e2e-out/. /tmp/out/ || true
+          git config user.name "poster-e2e"; git config user.email "poster-e2e@users.noreply.github.com"
+          git switch --orphan "r-$stamp"
+          mkdir -p "runs/$stamp" && cp -r /tmp/out/. "runs/$stamp/"
+          git add "runs/$stamp" && git commit -qm "poster e2e $stamp"
+          git push -f origin "HEAD:refs/heads/test/e2e-$stamp"
+          echo "::notice title=results-branch::test/e2e-$stamp"
+      - name: Keep the result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: poster-e2e
+          path: e2e-out/
