@@ -1,0 +1,23 @@
+desktop / HTTP 200
+desktop /lairs/ HTTP 200
+desktop /CHESS81.HTML HTTP 200
+desktop /fan-billboard/ HTTP 200
+desktop /about/ HTTP 200
+desktop /contact/ HTTP 200
+desktop /faq/ HTTP 200
+desktop /asoka-to-booda/ HTTP 200
+phone / HTTP 200
+phone /lairs/ HTTP 200
+phone /CHESS81.HTML HTTP 200
+phone /fan-billboard/ HTTP 200
+phone /about/ HTTP 200
+phone /contact/ HTTP 200
+phone /faq/ HTTP 200
+phone /asoka-to-booda/ HTTP 200
+billboard GET 200 (0 entries), invalid POST rejected with 400
+lairs casino: You check. Showdown: your Two pair beats the House's Two pair. +40
+home slider (phone): {"slides":6,"dots":6,"arrows":2,"sideBySide":true}
+asset versions: ["site.css?v=e78d1d75","v2.css?v=e78d1d75","header.js?v=e78d1d75","starks.js?v=e78d1d75","chess81-engine.js?v=e78d1d75","footer.js?v=e78d1d75"]
+chess81: 81 squares, 60.0x60.0 · moves ["Red O2–O4","Blue O8–O6"]
+studio HTTP 200
+studio poster OK in 29.0 s
