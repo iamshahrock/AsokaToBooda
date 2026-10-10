@@ -1,3 +1,40 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KING Intelligence — Platform</title><style>:root{--r:#e10600;--bg:#070707;--panel:#111;--line:#2a2a2a;--muted:#9a9a9a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#eee;font-family:Arial,Helvetica,sans-serif}.wrap{max-width:1180px;margin:auto;padding:34px 28px 70px}.eyebrow{color:var(--r);font-size:12px;font-weight:800;letter-spacing:2px}.title{font-size:42px;line-height:1.05;margin:9px 0 12px;font-weight:900}.title span{color:var(--r)}.intro{max-width:850px;color:#bbb;line-height:1.55}.home{display:inline-block;margin:24px 0;color:#fff;background:var(--r);padding:11px 16px;text-decoration:none;font-weight:800}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.stat{background:var(--panel);border:1px solid var(--line);padding:18px}.stat b{display:block;font-size:25px}.stat small{color:#999}.rule{border-left:3px solid var(--r);padding:12px 15px;background:#0e0e0e;color:#aaa;margin:18px 0 22px}.tablebox{overflow:auto;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;min-width:900px}th{background:var(--r);text-align:left;padding:12px;font-size:12px;letter-spacing:.8px}td{padding:11px 12px;border-bottom:1px solid var(--line);font-size:13px}tr:nth-child(even){background:#101010}.np{color:#777}.nav{margin-top:25px}.nav a{color:#fff;text-decoration:none;margin-right:18px;font-size:13px}.nav a:hover{color:var(--r)}@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.title{font-size:32px}}</style></head><body>
-<script src="../assets/header.js"></script><main class="wrap"><div class="eyebrow" id="eyebrow"></div><h1 class="title"><span id="title"></span></h1><p class="intro" id="intro"></p><a class="home" href="../king-intelligence/">← INTELLIGENCE HOME</a><section class="stats" id="stats"></section><div class="rule"><b>DATA RULE</b><br>Only publicly observable, attributable platform data is entered. N/P means the platform does not expose a reliable public counter or it has not yet been independently verified. No inferred, rounded or fabricated figures are presented as fact.</div><div class="tablebox"><table><thead><tr><th>RANK</th><th>ENTITY</th><th>AUDIENCE</th><th>ACTIVITY</th><th>STATUS</th><th>SOURCE</th></tr></thead><tbody id="rows"></tbody></table></div><div class="nav"><a href="../king-intelligence-2/">FAN CENTER</a><a href="../king-intelligence-3/">INSTAGRAM</a><a href="../king-intelligence-4/">X</a><a href="../king-intelligence-5/">SNAPCHAT</a></div></main><script>(async()=>{const n=location.pathname.match(/king-intelligence-(\d+)/)?.[1];const d=await fetch('../data/platform-pages.json').then(r=>r.json());const p=d.pages.find(x=>x.path.endsWith('king-intelligence-'+n+'/index.html'));if(!p)return;document.title='KING Intelligence — '+p.h1;document.getElementById('eyebrow').textContent='KING INTELLIGENCE · PLATFORM '+n;document.getElementById('title').textContent=p.h1;document.getElementById('intro').textContent=p.intro;document.getElementById('stats').innerHTML=p.stats.map(x=>'<div class="stat"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>').join('');document.getElementById('rows').innerHTML=p.rows.map(r=>'<tr>'+r.map(x=>'<td class="'+(x==='N/P'?'np':'')+'">'+x+'</td>').join('')+'</tr>').join('')})().catch(()=>{});</script><script src="../assets/footer.js" defer></script>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KING Intelligence — Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../king-intelligence/assets/intel.css">
+</head><body class="ki">
+<script src="../assets/header.js"></script><main class="ki-wrap">
+<nav class="ki-crumbs" aria-label="KING Intelligence pages">
+  <a class="ki-crumbs-home" href="../king-intelligence/">KING Intelligence</a><span class="sep" aria-hidden="true">/</span>
+  <a href="../king-intelligence/#platforms">All platforms</a>
+  <a href="../king-intelligence-2/">Command centre</a>
+  <a href="../king-intelligence-3/">Instagram</a>
+  <a href="../king-intelligence-4/">X</a>
+  <a href="../king-intelligence-5/">Snapchat</a>
+  <a href="../king-intelligence/daily.html">Daily ledger</a>
+</nav>
+<header class="ki-head">
+  <div>
+    <p class="ki-eyebrow" id="eyebrow">KING INTELLIGENCE · PLATFORM</p>
+    <h1 class="ki-h1" id="title">Platform</h1>
+    <p class="ki-lede" id="intro"></p>
+  </div>
+  <dl class="ki-meta" aria-label="Data stamps">
+    <dt>Surface</dt><dd class="hl" id="meta-surface">N/A</dd>
+    <dt>Records</dt><dd id="meta-rows">N/A</dd>
+    <dt>Data</dt><dd>platform-pages.json</dd>
+    <dt>Time zone</dt><dd>Asia/Kolkata</dd>
+  </dl>
+</header>
+<section aria-label="Platform summary"><div class="ki-kpis c4" id="stats"></div></section>
+<div class="ki-callout" style="margin:12px 0"><b>DATA RULE</b> · Only publicly observable, attributable platform data is entered. N/P means the platform does not expose a reliable public counter or it has not yet been independently verified. No inferred, rounded or fabricated figures are presented as fact.</div>
+<section class="ki-card flush" aria-labelledby="h-rows">
+  <h2 class="ki-h3" id="h-rows">Entity register</h2>
+  <div style="padding:0 16px 10px"><label class="ki-sr" for="q">Filter entities</label><input class="ki-input" id="q" placeholder="Filter by entity, audience, status or source"></div>
+  <div class="ki-tablewrap"><table class="ki-table"><thead><tr><th scope="col">Rank</th><th scope="col">Entity</th><th scope="col">Audience</th><th scope="col">Activity</th><th scope="col">Status</th><th scope="col">Source</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <p class="ki-note" style="padding:0 16px 14px">Each platform is a dedicated measurement surface; its metrics are not mixed with Instagram, X or other networks. Audience figures are platform counters as published by the cited source, not unique fans.</p>
+</section>
+<footer class="ki-pagefoot" id="foot">KING Intelligence · platform page · values preserved exactly as extracted from production pages 6–18 · <a href="../king-intelligence/">Intelligence home</a></footer>
+</main><script>(async()=>{const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));const cell=x=>{const v=String(x??"").trim();if(!v||v==="—"||v==="-")return'<span class="ki-na">N/A</span>';if(v==="N/P")return'<span class="ki-na" title="Not publicly exposed or not yet independently verified">N/P</span>';return esc(v)};const n=location.pathname.match(/king-intelligence-(\d+)/)?.[1];const d=await fetch('../data/platform-pages.json').then(r=>r.json());const p=d.pages.find(x=>x.path.endsWith('king-intelligence-'+n+'/index.html'));if(!p)return;const t=p.title||p.h1;document.title='KING Intelligence — '+t;document.getElementById('eyebrow').textContent='KING INTELLIGENCE · PLATFORM '+n;document.getElementById('title').textContent=t;document.getElementById('intro').textContent=p.intro;document.getElementById('meta-surface').textContent='Platform '+n;document.getElementById('meta-rows').textContent=p.rows.length.toLocaleString('en-US')+' rows';document.getElementById('stats').innerHTML=p.stats.map(x=>'<div class="ki-kpi"><span class="l">'+esc(x[1])+'</span><span class="v">'+cell(x[0])+'</span></div>').join('');document.getElementById('rows').innerHTML=p.rows.map(r=>'<tr>'+r.map((x,i)=>i===0?'<td class="rk">'+esc(x)+'</td>':i===1?'<th scope="row">'+cell(x)+'</th>':i===4?'<td><span class="ki-chip">'+cell(x)+'</span></td>':'<td>'+cell(x)+'</td>').join('')+'</tr>').join('');const q=document.getElementById('q'),all=[...document.querySelectorAll('#rows tr')];q.oninput=()=>{const v=q.value.toLowerCase();all.forEach(r=>r.hidden=!r.innerText.toLowerCase().includes(v))}})().catch(()=>{});</script><script src="../assets/footer.js" defer></script>
 </body></html>

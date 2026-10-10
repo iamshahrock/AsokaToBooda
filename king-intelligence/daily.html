@@ -1,59 +1,133 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KING Intelligence — Daily Data Ledger</title>
-<style>
-:root{--bg:#050505;--panel:#0d0d0f;--line:#29292d;--text:#f4f1ea;--muted:#929098;--red:#d71920;--gold:#d9ae58;--green:#7bd69a;--blue:#8ea9e5}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#171216 0,#070707 38%,#040404 100%);color:var(--text);font:13px Inter,Arial,sans-serif}.wrap{max-width:1500px;margin:auto;padding:20px}.ey{font:9px monospace;letter-spacing:.18em;color:var(--red)}h1{font-size:clamp(34px,5vw,64px);letter-spacing:-.07em;line-height:.95;margin:8px 0}.sub{color:var(--muted);max-width:900px;line-height:1.5}.top{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px}.date{font:9px monospace;color:var(--muted);text-align:right}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;margin-top:10px}.card{background:linear-gradient(145deg,#101012,#090909);border:1px solid var(--line);border-radius:10px;padding:14px}.full{grid-column:1/-1}.half{grid-column:span 6}.third{grid-column:span 4}h2{margin:-14px -14px 12px;padding:9px 13px 8px;background:#f4f2ec;color:var(--red);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-radius:9px 9px 0 0}.metric{font-size:30px;font-weight:900}.muted,.source{color:var(--muted);font-size:10px;line-height:1.45}.archive{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.day{border:1px solid var(--line);border-radius:8px;padding:12px;background:#090909;text-decoration:none;color:inherit}.day.active{border-color:var(--red)}.day b{font-size:22px}.day small{display:block;margin-top:5px;color:var(--muted);font:9px monospace}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.kpi{border:1px solid var(--line);border-radius:8px;padding:12px}.kpi .label{font:8px monospace;color:var(--muted);letter-spacing:.08em}.kpi .value{font-size:24px;font-weight:900;margin-top:5px}.delta{color:var(--green);font:9px monospace;margin-top:4px}table{width:100%;border-collapse:collapse;font-size:10px}th,td{padding:7px;border-bottom:1px solid #242426;text-align:left;vertical-align:top}th{font:8px monospace;color:var(--muted)}.num{text-align:right;white-space:nowrap}.badge{display:inline-block;border:1px solid #343438;border-radius:99px;padding:3px 7px;font:8px monospace;color:#bbb}.missing{color:var(--gold)}.geo{display:flex;flex-wrap:wrap;gap:6px}.geo span{padding:6px 8px;border:1px solid var(--line);border-radius:7px;font-size:9px}.footer{border-top:1px solid var(--line);margin-top:15px;padding-top:12px;font:8px monospace;color:#666;line-height:1.6}
-@media(max-width:800px){.half,.third{grid-column:1/-1}.top{display:block}.date{text-align:left;margin-top:10px}.archive,.kpis{grid-template-columns:1fr}}@media(max-width:500px){.wrap{padding:10px}}
-</style></head><body>
-<script src="../assets/header.js"></script><main class="wrap">
-<header class="top"><div><div class="ey">KING INTELLIGENCE · DATA LAYER</div><h1>DAILY DATA LEDGER</h1><div class="sub">Append-only daily records. 04 OCT is immutable. Every metric carries a series ID, value, unit, provenance and status. Missing values remain missing.</div></div><div class="date">ASIA/KOLKATA<br>BASELINE LOCKED · 04 OCT 2026</div></header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/intel.css">
+</head><body class="ki">
+<script src="../assets/header.js"></script><main class="ki-wrap">
 
-<section class="grid">
-<div class="card full"><h2>DAILY ARCHIVE</h2><div class="archive">
-<a class="day" href="?date=2026-10-04"><b>04</b><small>OCT · BASELINE · LOCKED</small></a>
-<a class="day" href="?date=2026-10-05"><b>05</b><small>OCT · DAILY UPDATE</small></a>
-<a class="day active" href="?date=2026-10-06"><b>06</b><small>OCT · DAILY UPDATE</small></a>
-</div></div>
+<nav class="ki-crumbs" aria-label="KING Intelligence pages">
+  <a class="ki-crumbs-home" href="./">KING Intelligence</a><span class="sep" aria-hidden="true">/</span>
+  <a href="daily.html" aria-current="page">Daily ledger</a>
+  <a href="engine.html">Intelligence engine</a>
+  <a href="2026-10-04.html">04 Oct baseline</a>
+  <a href="2026-10-05.html">05 Oct record</a>
+  <a href="top-100-fan-clubs.html">Top 100 fan clubs</a>
+</nav>
 
-<div class="card full"><h2>06 OCT 2026 · CURRENT RECORD</h2><div class="kpis"><div class="kpi"><div class="label">#SRK-KING PUBLIC POSTS</div><div class="value">699,000</div><div class="delta">PIKORY · VERIFIED PUBLIC HASHTAG SNAPSHOT</div></div>
-<div class="kpi"><div class="label">#SRK INDEXED POSTS</div><div class="value">2,933,427</div><div class="delta">PUBLIC INDEX SIGNAL · NOT KING-SPECIFIC</div></div>
-<div class="kpi"><div class="label">SAMPLED #SRKKing REELS</div><div class="value">31.176M</div><div class="delta">VERIFIED / TRACKED TOTAL</div></div>
-<div class="kpi"><div class="label">PEAK SAMPLED REEL</div><div class="value">12.973M</div><div class="delta">VERIFIED / TRACKED</div></div>
-</div></div>
+<header class="ki-head">
+  <div>
+    <p class="ki-eyebrow">KING Intelligence · Data layer</p>
+    <h1 class="ki-h1">Daily data ledger</h1>
+    <p class="ki-lede">Append-only daily records. 04 Oct is immutable. Every metric carries a series ID, value, unit, provenance and status. Missing values remain missing.</p>
+  </div>
+  <dl class="ki-meta" aria-label="Data stamps">
+    <dt>Current record</dt><dd class="hl">06 Oct 2026, IST</dd>
+    <dt>Baseline</dt><dd>04 Oct 2026 · locked</dd>
+    <dt>Time zone</dt><dd>Asia/Kolkata</dd>
+    <dt>Source file</dt><dd>king-intelligence-daily.json</dd>
+  </dl>
+</header>
 
-<div class="card half"><h2>04 → 05 · CONTINUITY</h2><table><tr><th>SERIES ID</th><th>04 OCT</th><th>05 OCT</th><th>CHANGE</th></tr>
-<tr><td>king_public_observable_posts</td><td>699,000</td><td>742,400</td><td class="delta">+43,400 · +6.2%</td></tr>
-<tr><td>king_video_views_tracked</td><td>31.18M</td><td>38.72M</td><td class="delta">+7.54M · +24.2%</td></tr>
-<tr><td>king_top_video_views_tracked</td><td>12.97M</td><td>16.21M</td><td class="delta">+3.24M · +25.0%</td></tr>
-</table><div class="source">These are the established 04/05 daily series. They are not overwritten by the different 06 Oct Reel series.</div></div>
-
-<div class="card half"><h2>06 OCT · SERIES DISCIPLINE</h2><table><tr><th>METRIC</th><th>VALUE</th><th>STATUS</th></tr>
-<tr><td>#srk-king public posts</td><td>699,000</td><td><span class="badge">PIKORY · VERIFIED</span></td></tr>
-<tr><td>#SRK indexed posts</td><td>2,933,427</td><td><span class="badge">PUBLIC INDEX</span></td></tr>
-<tr><td>#srkking Reel total</td><td>31.176M</td><td><span class="badge">TRACKED</span></td></tr>
-<tr><td>#srkking Reel average</td><td>2.598M</td><td><span class="badge">TRACKED</span></td></tr>
-</table><div class="source">06 Oct now carries the verified named-series value: 699,000 public <b>#srk-king</b> posts from Pikory. It is not merged with the separate 04/05 observable-post series.</div></div>
-
-<div class="card half"><h2>GEOGRAPHIC SIGNALS · 06 OCT</h2><div class="geo">
-<span>01 · India</span><span>02 · Pakistan</span><span>03 · USA</span><span>04 · UAE</span><span>05 · Bangladesh</span><span>06 · UK</span><span>07 · Iran</span><span>08 · Australia</span><span>09 · Germany</span><span>10 · Japan</span><span>Indonesia · 12-city KING activation</span>
-</div><div class="source" style="margin-top:10px">These are ranked geographic signals. They are not country-level KING post counts and do not represent unique people.</div></div>
-
-<div class="card half"><h2>COMPETITIVE CONTEXT · DOOMSDAY</h2><table><tr><th>SERIES ID</th><th>06 OCT</th><th>CLASS</th></tr>
-<tr><td>doomsday_youtube_views</td><td>77.349M</td><td>tracked cumulative</td></tr>
-<tr><td>doomsday_first_24h_views</td><td>503M</td><td>reported launch-window</td></tr></table><div class="source">The 503M first-24-hour figure is not substituted for or compared directly with the 77.349M cumulative YouTube figure.</div></div>
-
-<div class="card full"><h2>RELEASE 3 · INTELLIGENCE ENGINE</h2><div class="source">Top 50 country board, sample-size discipline, sentiment, viral data and KING/RDJ comparison are now generated from the Release 3 engine. <a href="../king-intelligence/engine.html" style="color:#f4f1ea">OPEN INTELLIGENCE ENGINE →</a></div></div><div class="card full"><h2>PROVENANCE RULES</h2><table><tr><th>FIELD</th><th>RULE</th><th>WHY</th></tr>
-<tr><td>series_id</td><td>Required for every metric</td><td>Prevents unrelated counters being merged.</td></tr>
-<tr><td>value</td><td>Absolute value or null</td><td>Never invent a missing number.</td></tr>
-<tr><td>source</td><td>Required</td><td>Every number needs provenance.</td></tr>
-<tr><td>method</td><td>Required</td><td>Explains what was actually counted.</td></tr>
-<tr><td>confidence / status</td><td>Required</td><td>Separates verified, tracked, reported and unavailable data.</td></tr>
-<tr><td>append_only</td><td>True</td><td>Daily records accumulate; prior dates remain immutable.</td></tr>
-</table></div>
-
-<div class="card full"><h2>DATA INTEGRITY</h2><div class="source"><b>699K vs 32,455:</b> separate series; not a decline. <b>Posts ≠ people.</b> <b>Followers ≠ unique fans.</b> <b>Country signals ≠ country-level KING volume.</b> <b>06 Oct missing KING-post total:</b> intentionally shown as —. This page is the presentation layer for <code>data/king-intelligence-daily.json</code>.</div></div>
+<section aria-labelledby="h-archive">
+  <h2 class="ki-sr" id="h-archive">Daily archive</h2>
+  <div class="ki-tiles" style="margin-bottom:12px">
+    <a class="ki-tile" href="?date=2026-10-04"><span class="no">04</span><b>04 Oct 2026</b><small>Baseline · locked</small></a>
+    <a class="ki-tile" href="?date=2026-10-05"><span class="no">05</span><b>05 Oct 2026</b><small>Daily update</small></a>
+    <a class="ki-tile" href="?date=2026-10-06" aria-current="page"><span class="no">06</span><b>06 Oct 2026</b><small>Daily update</small></a>
+  </div>
 </section>
-<footer class="footer">KING × SHAH RUKH KHAN GLOBAL DAILY INTELLIGENCE · Data ledger · Baseline locked 04 OCT 2026 · Daily records append-only</footer>
+
+<section aria-labelledby="h-current">
+  <div class="ki-sec-head"><h2 class="ki-h2" id="h-current">06 Oct 2026 · current record</h2><span class="ki-stamp">Record KING-2026-10-06</span></div>
+  <div class="ki-kpis c4">
+    <div class="ki-kpi"><span class="l">#srk-king public posts</span><span class="v">699,000</span><span class="s">Pikory · verified public hashtag snapshot</span></div>
+    <div class="ki-kpi"><span class="l">#SRK indexed posts</span><span class="v">2,933,427</span><span class="s">Public index signal · not KING-specific</span></div>
+    <div class="ki-kpi"><span class="l">Sampled #srkking Reels</span><span class="v">31.176M</span><span class="s">Verified / tracked total views</span></div>
+    <div class="ki-kpi"><span class="l">Peak sampled Reel</span><span class="v">12.973M</span><span class="s">Verified / tracked views</span></div>
+  </div>
+</section>
+
+<div class="ki-grid" style="margin-top:12px">
+  <div class="ki-card s-6">
+    <h2 class="ki-h3">04 → 05 Oct · continuity</h2>
+    <div class="ki-tablewrap"><table class="ki-table compact">
+      <thead><tr><th scope="col">Series ID</th><th scope="col" class="n">04 Oct</th><th scope="col" class="n">05 Oct</th><th scope="col" class="n">Change</th></tr></thead>
+      <tbody>
+        <tr><td class="ki-num">king_public_observable_posts</td><td class="n">699,000</td><td class="n">742,400</td><td class="n up">+43,400 · +6.2%</td></tr>
+        <tr><td class="ki-num">king_video_views_tracked</td><td class="n">31.18M</td><td class="n">38.72M</td><td class="n up">+7.54M · +24.2%</td></tr>
+        <tr><td class="ki-num">king_top_video_views_tracked</td><td class="n">12.97M</td><td class="n">16.21M</td><td class="n up">+3.24M · +25.0%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ki-note">These are the established 04/05 daily series. They are not overwritten by the different 06 Oct Reel series. 06 Oct value for king_public_observable_posts: <span class="ki-na">Not captured</span> (no verified total located).</p>
+  </div>
+  <div class="ki-card s-6">
+    <h2 class="ki-h3">06 Oct · series discipline</h2>
+    <div class="ki-tablewrap"><table class="ki-table compact">
+      <thead><tr><th scope="col">Metric</th><th scope="col" class="n">Value</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">#srk-king public posts</th><td class="n">699,000</td><td><span class="ki-chip pos">Pikory · verified</span></td></tr>
+        <tr><th scope="row">#SRK indexed posts</th><td class="n">2,933,427</td><td><span class="ki-chip">Public index</span></td></tr>
+        <tr><th scope="row">#srkking Reel total</th><td class="n">31.176M</td><td><span class="ki-chip">Tracked</span></td></tr>
+        <tr><th scope="row">#srkking Reel average</th><td class="n">2.598M</td><td><span class="ki-chip">Tracked</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="ki-note">06 Oct carries the verified named-series value: 699,000 public <b>#srk-king</b> posts from Pikory. It is not merged with the separate 04/05 observable-post series.</p>
+  </div>
+  <div class="ki-card s-6">
+    <h2 class="ki-h3">Geographic signals · 06 Oct</h2>
+    <div class="ki-tablewrap"><table class="ki-table compact">
+      <thead><tr><th scope="col">Rank</th><th scope="col">Signal</th><th scope="col">Rank</th><th scope="col">Signal</th></tr></thead>
+      <tbody>
+        <tr><td class="rk">01</td><td>India</td><td class="rk">06</td><td>UK</td></tr>
+        <tr><td class="rk">02</td><td>Pakistan</td><td class="rk">07</td><td>Iran</td></tr>
+        <tr><td class="rk">03</td><td>USA</td><td class="rk">08</td><td>Australia</td></tr>
+        <tr><td class="rk">04</td><td>UAE</td><td class="rk">09</td><td>Germany</td></tr>
+        <tr><td class="rk">05</td><td>Bangladesh</td><td class="rk">10</td><td>Japan</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ki-note"><b>Direct KING activation:</b> Indonesia, 12-city activation. These are ranked geographic signals. They are not country-level KING post counts and do not represent unique people.</p>
+  </div>
+  <div class="ki-card s-6">
+    <h2 class="ki-h3">Competitive context · Doomsday</h2>
+    <div class="ki-tablewrap"><table class="ki-table compact">
+      <thead><tr><th scope="col">Series ID</th><th scope="col" class="n">06 Oct</th><th scope="col">Class</th></tr></thead>
+      <tbody>
+        <tr><td class="ki-num">doomsday_youtube_views</td><td class="n">77.349M</td><td>Tracked cumulative</td></tr>
+        <tr><td class="ki-num">doomsday_first_24h_views</td><td class="n">503M</td><td>Reported launch-window</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ki-note">The 503M first-24-hour figure is not substituted for, or compared directly with, the 77.349M cumulative YouTube figure.</p>
+  </div>
+  <div class="ki-card s-8">
+    <h2 class="ki-h3">Provenance rules</h2>
+    <div class="ki-tablewrap"><table class="ki-table compact">
+      <thead><tr><th scope="col">Field</th><th scope="col">Rule</th><th scope="col">Why</th></tr></thead>
+      <tbody>
+        <tr><td class="ki-num">series_id</td><td>Required for every metric</td><td>Prevents unrelated counters being merged.</td></tr>
+        <tr><td class="ki-num">value</td><td>Absolute value or null</td><td>Never invent a missing number.</td></tr>
+        <tr><td class="ki-num">source</td><td>Required</td><td>Every number needs provenance.</td></tr>
+        <tr><td class="ki-num">method</td><td>Required</td><td>Explains what was actually counted.</td></tr>
+        <tr><td class="ki-num">confidence / status</td><td>Required</td><td>Separates verified, tracked, reported and unavailable data.</td></tr>
+        <tr><td class="ki-num">append_only</td><td>True</td><td>Daily records accumulate; prior dates remain immutable.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="ki-card s-4">
+    <h2 class="ki-h3">Data integrity</h2>
+    <ol class="ki-list">
+      <li><span class="ix">01</span><span><b>699K vs 32,455:</b> separate series; not a decline.</span></li>
+      <li><span class="ix">02</span><span><b>Posts are not people.</b> Followers are not unique fans.</span></li>
+      <li><span class="ix">03</span><span><b>Country signals are not country-level KING volume.</b></span></li>
+      <li><span class="ix">04</span><span><b>06 Oct KING-post total:</b> intentionally shown as Not captured.</span></li>
+    </ol>
+    <p class="ki-note">This page is the presentation layer for <a class="ki-src" href="../data/king-intelligence-daily.json">data/king-intelligence-daily.json</a>.</p>
+    <div class="ki-links"><a class="ki-btn primary" href="engine.html">Open intelligence engine</a></div>
+  </div>
+</div>
+
+<footer class="ki-pagefoot">KING × Shah Rukh Khan global daily intelligence · Daily data ledger · Baseline locked 04 Oct 2026 · Daily records append-only · Top 50 country board, sample size, sentiment, viral data and KING / RDJ comparison are generated by the <a href="engine.html">intelligence engine</a>.</footer>
 </main><script src="../assets/footer.js" defer></script>
 </body></html>
