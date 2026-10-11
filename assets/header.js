@@ -76,6 +76,10 @@
     '#site-header .sh-brand span{font-family:Anton,Impact,sans-serif;font-size:19px;letter-spacing:.03em;white-space:nowrap}',
     '#site-header .sh-brand b{color:var(--sh-red);font-weight:400}',
     '#site-header.sh-stuck .sh-brand{display:flex}',
+    '#site-header .sh-home{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid #4a2c2c;color:#f4efe9;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;cursor:pointer}',
+    '#site-header .sh-home:hover,#site-header .sh-home:focus-visible{border-color:var(--sh-red);background:var(--sh-red);color:#fff}',
+    '#site-header .sh-home svg{flex:0 0 auto}',
+    'a[href],button:not(:disabled),[role=button],summary,select,label.btn,label[for],input[type=checkbox],input[type=radio],input[type=file],input[type=range],input[type=submit],input[type=button],[onclick],[data-step]{cursor:pointer}',
     '#site-header .sh-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 26px}',
     '#site-header .sh-nav a{position:relative;display:inline-block;padding:16px 2px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#f4efe9;cursor:pointer}',
     '#site-header .sh-nav a:hover,#site-header .sh-nav a:focus-visible,#site-header .sh-nav a[aria-current="page"]{color:var(--sh-redtext)}',
@@ -98,6 +102,7 @@
     '@media (max-width:1280px) and (min-width:761px){#site-header .sh-nav{gap:2px 14px}#site-header .sh-nav a{font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 10px;padding-left:12px}#site-header .sh-util a{font-size:11px}}',
     '@media (max-width:1040px) and (min-width:761px){#site-header .sh-util{display:none}}',
     '@media (max-width:1640px) and (min-width:761px){#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-nav{gap:2px 18px}}',
+    '@media (max-width:1280px){#site-header .sh-home span{display:none}#site-header .sh-home{padding:7px 9px}}',
     '@media (max-width:920px) and (min-width:761px){#site-header .sh-bar-in{gap:8px 14px;padding:0 12px}#site-header .sh-nav{gap:2px 10px}#site-header .sh-nav a{font-size:11px;letter-spacing:.03em}}',
     '@media (max-width:760px){',
     '  #site-header .sh-frame-box{aspect-ratio:1040/240}',
@@ -114,7 +119,10 @@
     '  #site-header .sh-burger{display:inline-flex}',
     '  #site-header .sh-brand{display:flex}',
     '  #site-header .sh-brand span{font-size:17px}',
+    '  #site-header .sh-home{padding:6px 8px}',
     '}',
+    '@media (max-width:430px){#site-header .sh-brand span{font-size:14px}#site-header .sh-brand img{height:28px}#site-header .sh-bar-in{gap:6px;padding:0 10px}#site-header .sh-burger{width:42px;height:42px}}',
+    '@media (max-width:380px){#site-header .sh-brand span{display:none}}',
     /* first-visit intro: ~3 seconds, once per session */
     '@media (prefers-reduced-motion:no-preference){',
     '  #site-header.sh-intro .sh-boy{animation:sh-in-l .7s cubic-bezier(.2,.8,.2,1) both}',
@@ -201,7 +209,12 @@
     img(A('one-full.webp'), 900, 584, '', ''),
     el('span', {}, [document.createTextNode('AGAR MAIN '), el('b', { text: 'KING' }), document.createTextNode(' HOTA')])
   ]);
-  var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, [brand, nav, util, burger])]);
+  // a plain Home button on every page except the home page itself
+  var atHome = here === new URL(root).pathname || /\/agarmainkinghota\.html$/i.test(here);
+  var homeBtn = el('a', { class: 'sh-home', href: home, 'aria-label': 'Home' });
+  homeBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Home</span>';
+  var barKids = atHome ? [brand, nav, util, burger] : [brand, homeBtn, nav, util, burger];
+  var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, barKids)]);
 
   var header = el('header', { id: 'site-header' }, [banner, bar, drawer]);
   me.parentNode.insertBefore(header, me);
