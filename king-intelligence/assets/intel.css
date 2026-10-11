@@ -466,7 +466,7 @@ body.ki *{box-sizing:border-box}
 .ki-cc b{font:700 16px/1.3 var(--ki-font);flex:1}
 .ki-cc i{font-style:normal;font-size:22px;color:var(--ki-red-hi)}
 .ki-cc:hover{background:#26090b}
-.ki-tile .no img{width:20px;height:20px;display:block}
+.ki-tile .no img,.ki-tile .no svg{width:20px;height:20px;display:block}
 .ki-mom{margin-bottom:12px}
 .ki-mom-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:6px 0 10px}
 .ki-mom-row>div{border:1px solid var(--ki-line);border-radius:var(--ki-radius);padding:10px 12px;background:var(--ki-bg-2,#111)}
