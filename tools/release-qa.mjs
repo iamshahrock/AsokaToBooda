@@ -12,7 +12,7 @@ const pages = [
   ['16','/king-intelligence-16/'], ['17','/king-intelligence-17/'], ['18','/king-intelligence-18/'],
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
   ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'], ['P','/preview/'],
-  ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'], ['CR','/create/'], ['LA','/lairs/'], ['AB','/about/'], ['CT','/contact/'], ['FQ','/faq/'],
+  ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'], ['CR','/create/'], ['LA','/lairs/'], ['AB','/about/'], ['CT','/contact/'], ['FQ','/faq/'], ['DK','/doom-to-king/'],
   ['R4','/king-intelligence/2026-10-04.html'], ['R5','/king-intelligence/2026-10-05.html'], ['T','/king-intelligence/top-100-fan-clubs.html'],
 ];
 
@@ -31,7 +31,7 @@ const required = {
   'G': ['AGAR MAIN KING HOTA', 'CREATE YOUR KING POSTER', 'PLAY FOR 60 SECONDS', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
   'H': ['MAKE YOUR KING POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
   'A': ['MAKE YOUR KING POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'CR': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'LA': ['THE CASINO FLOOR', 'THE MOUNTAIN DOME', 'THE THRONE ROOM'], 'C': ['CHESS81', 'HOW A WINNER IS DECLARED', 'VS THE MACHINE'], 'F': ['STARKS BILLBOARD', 'HOW TO EARN'], 'AB': ['ABOUT'], 'CT': ['CONTACT'], 'FQ': ['FREQUENTLY ASKED'],
+  'CR': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'LA': ['THE CASINO FLOOR', 'THE MOUNTAIN DOME', 'THE THRONE ROOM'], 'C': ['CHESS81', 'HOW A WINNER IS DECLARED', 'VS THE MACHINE'], 'F': ['STARKS BILLBOARD', 'HOW TO EARN'], 'AB': ['ABOUT'], 'CT': ['CONTACT'], 'FQ': ['FREQUENTLY ASKED'], 'DK': ['DOOM', 'ONE CHRISTMAS, TWO CROWNS', 'THE FRIENDLY FIXTURE', "I'M WATCHING BOTH"],
 };
 
 const legacyPaths = [
@@ -110,7 +110,7 @@ for (const [id, path] of pages) {
         const links = hd.querySelectorAll('.sh-nav a').length;
         if (broken.length) return 'images failed: ' + broken.join(', ');
         if (bad.length) return 'distorted: ' + bad.join(', ');
-        if (links !== 6) return 'expected 6 section links, found ' + links;
+        if (links !== 7) return 'expected 7 section links, found ' + links;
         return 'ok';
       });
       if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 6 section links`);

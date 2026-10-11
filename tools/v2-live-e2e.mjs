@@ -43,7 +43,15 @@ await hp.goto(base + '/king-intelligence/?t=' + Date.now(), { waitUntil: 'networ
 log.push('KING Buzz: ' + JSON.stringify(await hp.evaluate(() => ({ sectionsVisible: [...document.querySelectorAll('.ki-panel')].filter(x => x.offsetHeight > 0).length, platformTiles: document.querySelectorAll('#platforms .ki-tile').length, icons: document.querySelectorAll('#platforms .ki-tile svg').length, commandCentre: !!document.querySelector('#platforms .ki-cc') }))));
 await hp.goto(base + '/lairs/?t=' + Date.now(), { waitUntil: 'networkidle' });
 log.push('Lairs chapters open: ' + await hp.evaluate(() => [...document.querySelectorAll('.lair')].filter(x => !x.disabled).length) + ' of 6');
-const dk = await browser.newPage(); const r2 = await dk.goto(base + '/doom-to-king/'); await dk.waitForTimeout(1500); log.push('doom-to-king link -> ' + dk.url().replace(base, '')); await dk.close();
+const dk = await browser.newPage({ viewport: { width: 390, height: 844 } }); dk.on('pageerror', e => log.push('d2k pageerror ' + e.message));
+const r2 = await dk.goto(base + '/doom-to-king/?t=' + Date.now(), { waitUntil: 'networkidle' }); await dk.waitForTimeout(1500);
+log.push('DOOM to KING page: HTTP ' + r2.status() + ' ' + JSON.stringify(await dk.evaluate(() => ({ rounds: document.querySelectorAll('.round').length, pledgeCounter: document.getElementById('pn').textContent, doomThumb: (document.querySelector('.yt img') || {}).naturalWidth || 0, overflow: document.documentElement.scrollWidth - innerWidth }))));
+log.push('d2k API: ' + JSON.stringify(await dk.evaluate(async () => { const r = await fetch('https://asokatobooda.iamshahrock.workers.dev/d2k', { cache: 'no-store' }); return { status: r.status, keys: Object.keys(await r.json()) }; })));
+await dk.screenshot({ path: 'e2e-out/d2k-phone.png', fullPage: false });
+await dk.close();
+const hm = await browser.newPage({ viewport: { width: 1440, height: 900 } }); await hm.goto(base + '/?t=' + Date.now(), { waitUntil: 'networkidle' });
+log.push('home: ' + JSON.stringify(await hm.evaluate(() => ({ slides: document.querySelectorAll('#hero .slide').length, banner: !!document.querySelector('.doors .d2k-banner'), headerLinks: document.querySelectorAll('#site-header .sh-nav a').length }))));
+await hm.evaluate(() => document.querySelector('.d2k-banner').scrollIntoView({ block: 'center' })); await hm.waitForTimeout(800); await hm.screenshot({ path: 'e2e-out/home-banner-desktop.png' }); await hm.close();
 log.push('asset versions: ' + JSON.stringify(await lp.evaluate(() => [...document.querySelectorAll('link[rel=stylesheet][href*="assets/"], script[src*="assets/"]')].map(e => (e.href || e.src).split('/').pop()))));
 const sqs = await lp.evaluate(() => { const c = [...document.querySelectorAll('.sq')].map(x => x.getBoundingClientRect()); return c.length + ' squares, ' + [...new Set(c.map(r => r.width.toFixed(1) + 'x' + r.height.toFixed(1)))].join(','); });
 await lp.evaluate(() => window.CHESS81.move('O2', 'O4'));

@@ -19,7 +19,9 @@
     allsix: ['All six lairs cleared', 1],
     chess: ['Beat the Machine at Chess81', 5],
     chapter: ['Finished a story chapter', 12],
-    verdict: ['Finished THE CONTRACT', 2]
+    verdict: ['Finished THE CONTRACT', 2],
+    pledge: ['Pledged to watch DOOM and KING', 1],
+    vote: ['Voted in DOOM to KING', 6]
   };
   var TIERS = [[0, 'Fan'], [500, 'Rebel'], [1500, 'Prince'], [4000, 'King'], [10000, 'Royal Flush']];
 

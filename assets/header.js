@@ -21,7 +21,8 @@
     ['CHESS81.HTML', 'Chess81'],
     ['fan-billboard/', 'Billboard'],
     ['king-intelligence/', 'KING Buzz'],
-    ['asoka-to-booda/', 'Asoka to Boo-Da']
+    ['asoka-to-booda/', 'Asoka to Boo-Da'],
+    ['doom-to-king/', 'DOOM to KING']
   ];
   var UTIL = [['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']];
 
@@ -96,6 +97,7 @@
     '@media (max-width:1280px) and (min-width:761px){#site-header .sh-nav{gap:2px 14px}#site-header .sh-nav a{font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 10px;padding-left:12px}#site-header .sh-util a{font-size:11px}}',
     '@media (max-width:1040px) and (min-width:761px){#site-header .sh-util{display:none}}',
     '@media (max-width:1640px) and (min-width:761px){#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-nav{gap:2px 18px}}',
+    '@media (max-width:920px) and (min-width:761px){#site-header .sh-bar-in{gap:8px 14px;padding:0 12px}#site-header .sh-nav{gap:2px 10px}#site-header .sh-nav a{font-size:11px;letter-spacing:.03em}}',
     '@media (max-width:760px){',
     '  #site-header .sh-frame-box{aspect-ratio:1040/240}',
     '  #site-header .sh-stage{width:192.3%;left:-45.6%}',

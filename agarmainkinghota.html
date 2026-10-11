@@ -60,6 +60,26 @@
 .d2k-mid b i{font-style:normal;color:var(--faint)}
 .d2k-mid small{margin:0;letter-spacing:0;text-transform:none;font-size:14px;color:var(--mute);line-height:1.4}
 @media (max-width:560px){.d2k{grid-template-columns:1fr 1fr}.d2k-mid{grid-column:1/-1;grid-row:1}.d2k-r,.d2k-b{font-size:30px;padding:12px 16px}}
+.d2k-banner{grid-column:1/-1;position:relative;display:grid;grid-template-columns:1fr minmax(0,1.3fr) 1fr;min-height:230px;border:1px solid var(--line);overflow:hidden;text-decoration:none;color:var(--ink);background:#0a0707}
+.d2k-banner:hover{border-color:var(--red-hi)}
+.d2k-banner .bn-side{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 22px;overflow:hidden}
+.d2k-banner .bn-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.d2k-banner .bn-doom img{object-position:50% 40%}.d2k-banner .bn-king img{object-position:50% 25%}
+.d2k-banner .bn-doom::after,.d2k-banner .bn-king::after{content:"";position:absolute;inset:0}
+.d2k-banner .bn-doom::after{background:linear-gradient(135deg,rgba(90,10,14,.85),rgba(26,6,7,.55))}
+.d2k-banner .bn-king::after{background:linear-gradient(225deg,rgba(10,42,90,.85),rgba(6,16,31,.55))}
+.d2k-banner .bn-side b,.d2k-banner .bn-side small{position:relative;z-index:1}
+.d2k-banner .bn-side b{font-family:var(--display);font-weight:400;font-size:clamp(46px,5.4vw,84px);line-height:.9}
+.d2k-banner .bn-doom b{color:#ff4a4f}.d2k-banner .bn-king{text-align:right;align-items:flex-end}.d2k-banner .bn-king b{color:#7fb0ff}
+.d2k-banner .bn-side small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e6dcd4;margin-top:6px}
+.d2k-banner .bn-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px 16px;background:radial-gradient(80% 90% at 50% 50%,#1c0f10,#0a0707)}
+.d2k-banner .bn-mid em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
+.d2k-banner .bn-mid strong{font-family:var(--display);font-weight:400;font-size:clamp(36px,4.2vw,64px);line-height:1;text-transform:uppercase}
+.d2k-banner .bn-mid strong i{font-style:normal;color:var(--faint)}
+.d2k-banner .bn-mid>span{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,28px)}
+.d2k-banner .bn-mid u{text-decoration:none;font-size:13px;color:var(--mute);margin-top:4px}
+@media (max-width:1080px) and (min-width:561px){.d2k-banner{order:1}.v2 .doors .door[href="king-intelligence/"],.v2 .doors .door[href="asoka-to-booda/"]{order:2}}
+@media (max-width:560px){.d2k-banner{grid-template-columns:1fr 1fr;min-height:0}.d2k-banner .bn-mid{grid-column:1/-1;grid-row:1}.d2k-banner .bn-side{min-height:130px}.d2k-banner .bn-side b{font-size:44px}}
 .how{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}
 .how li{background:var(--panel);padding:18px 18px 20px;border-top:3px solid var(--line)}
 .how li:first-child{border-top-color:var(--red)}
@@ -96,10 +116,10 @@
 <script src="assets/header.js" data-nav="v2"></script>
 <main class="wrap">
 
-<section class="hero" id="hero" aria-roledescription="carousel" aria-label="The six sections">
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="The sections">
   <img class="mark" src="assets/home/king-wordmark.webp" width="1600" height="526" alt="">
 
-  <div class="slide on" role="group" aria-roledescription="slide" aria-label="1 of 6: Make Your Poster">
+  <div class="slide on" role="group" aria-roledescription="slide" aria-label="1 of 7: Make Your Poster">
     <div class="copy">
       <p class="eyebrow">01 · Make your poster · KING 24 Dec 2026</p>
       <h1 class="wm"><img src="assets/home/wm-agar-main.webp" width="1912" height="220" alt="Agar Main"><img src="assets/home/wm-king-hota.webp" width="1839" height="220" alt="King Hota"></h1>
@@ -110,7 +130,7 @@
     <img class="art" src="assets/home/01-agar-main-king-hota.webp" width="692" height="1400" alt="Young Shah Rock Jaan, a card between his teeth, bags on his shoulder">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6: King's Lairs">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 7: King's Lairs">
     <div class="copy">
       <p class="eyebrow">02 · King's Lairs · Play</p>
       <h2 class="big">Six lairs.<br><em>One throne.</em></h2>
@@ -120,7 +140,7 @@
     <img class="art crown" src="assets/home/06-fan-billboard.webp" width="900" height="985" alt="A red crown dripping like paint" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6: Chess81">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 7: Chess81">
     <div class="copy">
       <p class="eyebrow">03 · Chess81 · Strategy</p>
       <h2 class="big">81 squares.<br><em>One Torch.</em></h2>
@@ -130,7 +150,7 @@
     <img class="art" src="assets/home/02-check-mate-fire.webp" width="476" height="1400" alt="Young Shah Rock Jaan wearing a red crown, standing on one leg" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6: Billboard">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 7: Billboard">
     <div class="copy">
       <p class="eyebrow">04 · Billboard · STARKS</p>
       <h2 class="big">The crown<br><em>is unclaimed.</em></h2>
@@ -140,7 +160,7 @@
     <img class="art" src="assets/home/05-fan-made-ai-universe.webp" width="663" height="1400" alt="Young Shah Rock Jaan in sunglasses, waving" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6: KING Buzz">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 7: KING Buzz">
     <div class="copy">
       <p class="eyebrow">05 · KING Buzz · Daily</p>
       <div class="days"><b data-until="2026-12-24T00:00:00+05:30">—</b><span>days to<br>KING</span></div>
@@ -150,7 +170,7 @@
     <img class="art" src="assets/home/03-king-buzz.webp" width="714" height="1400" alt="The King walking forward, saxophone in one hand, bags on his shoulder" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6: Asoka to Boo-Da">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 7: Asoka to Boo-Da">
     <div class="copy">
       <p class="eyebrow">06 · Asoka to Boo-Da · Thesis</p>
       <h2 class="big">Before the King,<br><em>a boy.</em></h2>
@@ -160,6 +180,17 @@
     <img class="art wide" src="assets/home/04-asoka-to-booda.webp" width="1800" height="1205" alt="Young Shah Rock Jaan lying on the floor dreaming, a red crown above him" loading="lazy">
   </div>
 
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="7 of 7: DOOM to KING">
+    <div class="copy">
+      <p class="eyebrow">07 · DOOM to KING · The Christmas fixture</p>
+      <h2 class="big"><span style="color:#ff4a4f">DOOM</span> <span style="color:var(--faint)">to</span><br><span style="color:#5b9bff">KING</span></h2>
+      <p class="tag">One Christmas, two crowns.</p>
+      <p class="lede">Not a clash. A relay. DOOM on 18 December, KING on 24 December. Vote the six friendly rounds and pledge to watch both.</p>
+      <div class="ctas"><a class="btn btn-red" href="doom-to-king/">Enter the fixture <span aria-hidden="true">→</span></a></div>
+    </div>
+    <img class="art" src="assets/lairs/cover.webp" width="800" height="1200" alt="A silhouetted King holding the King of Hearts over a red city" loading="lazy">
+  </div>
+
   <div class="hctl">
     <button class="arrow" type="button" data-step="-1" aria-label="Previous section"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
     <div class="dots" id="dots"></div>
@@ -167,11 +198,7 @@
   </div>
 </section>
 
-<a class="d2k" href="asoka-to-booda/#act8" aria-label="DOOM to KING: one Christmas, two crowns">
-  <span class="d2k-r">DOOM<small>18 Dec</small></span>
-  <span class="d2k-mid"><em>New in the thesis</em><b>DOOM <i>to</i> KING</b><small>Not a clash. A relay. One Christmas, two crowns. Watch the official DOOM trailer and the friendly fixture →</small></span>
-  <span class="d2k-b">KING<small>24 Dec</small></span>
-</a>
+
 
 <section class="block" aria-label="Countdowns">
   <div class="clocks">
@@ -200,6 +227,11 @@
       <div class="head"><span class="num">03</span><h3>Chess81</h3><p>Check. Fire. Mate. Chess on 81 squares where the King is the strongest piece.</p></div>
       <div class="pic"><img src="assets/home/02-check-mate-fire.webp" width="476" height="1400" alt="" loading="lazy"></div>
       <div class="foot"><span class="go">Play Chess81 →</span><span class="what">Strategy</span></div>
+    </a>
+    <a class="d2k-banner" href="doom-to-king/" aria-label="DOOM to KING: One Christmas, Two Crowns">
+      <span class="bn-side bn-doom"><img src="https://i.ytimg.com/vi/irVNGjRFZGk/hqdefault.jpg" alt="" loading="lazy"><b>DOOM</b><small>18 Dec 2026</small></span>
+      <span class="bn-mid"><em>07 · New section</em><strong>DOOM <i>to</i> KING</strong><span>One Christmas, Two Crowns</span><u>Vote the friendly fixture · pledge to watch both →</u></span>
+      <span class="bn-side bn-king"><img src="assets/lairs/cover.webp" alt="" loading="lazy"><b>KING</b><small>24 Dec 2026</small></span>
     </a>
     <a class="door" href="fan-billboard/">
       <div class="head"><span class="num">04</span><h3>Billboard</h3><p>Your STARKS, your rank, the top fans and the fan-made AI universe.</p></div>
@@ -256,7 +288,7 @@
   });
   // six-section slider: arrows, dots, swipe, autoplay
   var slides = [].slice.call(document.querySelectorAll('#hero .slide')), dots = document.getElementById('dots'), hero = document.getElementById('hero');
-  var names = ['Make Your Poster', "King's Lairs", 'Chess81', 'Billboard', 'KING Buzz', 'Asoka to Boo-Da'], cur = 0, timer = null;
+  var names = ['Make Your Poster', "King's Lairs", 'Chess81', 'Billboard', 'KING Buzz', 'Asoka to Boo-Da', 'DOOM to KING'], cur = 0, timer = null;
   slides.forEach(function (_, k) { var d = document.createElement('button'); d.type = 'button'; d.className = 'dot'; d.setAttribute('aria-label', (k + 1) + ': ' + names[k]); d.appendChild(document.createElement('i')); d.onclick = function () { show(k); stop(); }; dots.appendChild(d); });
   function show(n) {
     cur = (n + slides.length) % slides.length;
