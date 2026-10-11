@@ -1,0 +1,5 @@
+{
+  "about": "Lairs Cinema: fan clips made from the King's Lairs scenes. A clip appears here only after review. The Worker (/lairs/claim) pays 500 STARKS once per approved clip and 2,000 for a Scene of the week. Fields: sub_id (ai_submissions id), url, platform, handle, lair (casino|dome|city|pit|den|throne), title, tool, approved (YYYY-MM-DD), sotw (true for Scene of the week).",
+  "updated": "2026-10-11",
+  "clips": []
+}
