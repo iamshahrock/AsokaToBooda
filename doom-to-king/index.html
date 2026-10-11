@@ -1,10 +1,252 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>DOOM to KING — one Christmas, two crowns</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Not KING vs DOOM. DOOM to KING: a friendly Christmas fixture. Watch DOOM on 18 December, queue for KING on 24 December.">
-<meta property="og:title" content="DOOM to KING — one Christmas, two crowns">
+<title>DOOM to KING — One Christmas, Two Crowns · Agar Main King Hota</title>
+<meta name="description" content="Not KING vs DOOM. DOOM to KING: a friendly Christmas fixture. Watch DOOM on 18 December, queue for KING on 24 December. Vote the six rounds and pledge to watch both.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/doom-to-king/">
+<meta property="og:title" content="DOOM to KING — One Christmas, Two Crowns">
 <meta property="og:description" content="Not a clash. A relay. Watch DOOM on the 18th, recover on the 19th, queue for KING on the 24th.">
 <meta property="og:image" content="https://agarmainkinghota.com/assets/lairs/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://agarmainkinghota.com/asoka-to-booda/#act8">
-<meta http-equiv="refresh" content="0; url=/asoka-to-booda/#act8">
-<script>location.replace("/asoka-to-booda/#act8")</script></head><body><a href="/asoka-to-booda/#act8">DOOM to KING</a></body></html>
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+:root{--doom:#ff4a4f;--king:#5b9bff}
+.hero2{position:relative;display:grid;grid-template-columns:1fr auto 1fr;margin-top:18px;border:1px solid var(--line);overflow:hidden;min-height:340px}
+.hero2 .side{display:flex;flex-direction:column;justify-content:center;padding:28px clamp(16px,3vw,40px);gap:8px}
+.hero2 .l{background:linear-gradient(135deg,#5a0a0e,#1a0607)}
+.hero2 .r{background:linear-gradient(225deg,#0a2a5a,#06101f);text-align:right;align-items:flex-end}
+.hero2 .side b{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,128px);line-height:.85}
+.hero2 .l b{color:var(--doom)}.hero2 .r b{color:var(--king)}
+.hero2 .side small{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#e6dcd4}
+.hero2 .cd{font-family:var(--display);font-size:clamp(34px,4vw,54px);line-height:1;color:#fff}
+.hero2 .cd span+span{display:block;font-family:var(--body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cfc4bb;margin-top:4px}
+.hero2 .mid{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px clamp(12px,2.5vw,34px);background:#0a0707;text-align:center;gap:8px;max-width:380px}
+.hero2 .mid .to{font-family:var(--display);font-size:clamp(30px,4vw,48px);color:var(--faint)}
+.hero2 .mid h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(28px,3.2vw,44px);line-height:1;text-transform:uppercase}
+.hero2 .mid p.eyebrow{font-family:var(--body);font-style:normal;font-size:12px;color:var(--red-text)}
+.hero2 .mid p{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(18px,1.8vw,24px);color:#e6dcd4}
+.intro{max-width:860px;font-size:18px;line-height:1.7;color:#e6dcd4;margin:26px 0 0}
+.sec{margin-top:46px}
+.sec h2{margin:0 0 6px;font-family:var(--display);font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1;text-transform:uppercase}
+.sec h2 em{font-style:normal;color:var(--doom)}.sec h2 i{font-style:normal;color:var(--king)}
+.sec .lede{margin:0 0 18px;color:var(--mute);font-size:16px;line-height:1.55;max-width:760px}
+.dk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+.dk figure{margin:0;background:var(--panel);border:1px solid var(--line)}
+.dk .fd{border-top:3px solid var(--doom)}.dk .fk{border-top:3px solid var(--king)}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#000;cursor:pointer;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block}
+.yt .play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(195,18,26,.92);box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.yt .play::after{content:"";position:absolute;left:29px;top:22px;border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.dk .fk a{display:block}.dk .fk img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 22%;display:block}
+.dk figcaption{padding:12px 14px;font-size:14px;color:#e6dcd4}
+.dk figcaption b{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:.04em}
+.dk figcaption small{display:block;margin-top:4px;font-size:12px;color:var(--faint)}
+.rb{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);border:1px solid var(--line)}
+.rb>div{padding:20px 18px;display:flex;flex-direction:column;gap:6px}
+.rb b{font-family:var(--display);font-weight:400;font-size:clamp(44px,7vw,84px);line-height:.9}
+.rb span{font-size:14px;color:#e6dcd4;line-height:1.45}
+.rb .r1{background:linear-gradient(135deg,#5a0a0e,#1a0607)}.rb .r1 b{color:var(--doom)}
+.rb .b1{background:linear-gradient(225deg,#0a2a5a,#06101f);text-align:right;align-items:flex-end}.rb .b1 b{color:var(--king)}
+.rb .t{display:flex;align-items:center;justify-content:center;padding:0 14px;background:#0a0707;font-family:var(--display);font-size:30px;color:var(--faint);text-transform:uppercase}
+.prose p{font-size:18px;line-height:1.7;color:#e6dcd4;max-width:860px;margin:0 0 16px}
+table.tape{width:100%;border-collapse:collapse;font-size:15px}
+.tape th,.tape td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top;color:#e6dcd4}
+.tape th{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.tape th.r{color:var(--doom)}.tape th.b{color:var(--king)}
+.tape td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+.fix{display:grid;gap:12px;counter-reset:r}
+.round{background:var(--panel);border:1px solid var(--line);padding:16px 18px}
+.round h3{margin:0 0 4px;font-family:var(--display);font-weight:400;font-size:24px;text-transform:uppercase}
+.round h3 span{color:var(--faint);margin-right:8px}
+.round p{margin:0 0 12px;color:var(--mute);font-size:15px;line-height:1.5}
+.picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.picks button{min-height:46px;border:1px solid var(--field-line);background:var(--field);color:var(--ink);font:600 14px var(--body);cursor:pointer}
+.picks button[data-p=doom]{border-color:#6a1a1d}.picks button[data-p=king]{border-color:#1d3a6a}
+.picks button[aria-pressed=true][data-p=doom]{background:#7a0d12;border-color:var(--doom)}
+.picks button[aria-pressed=true][data-p=king]{background:#0d2f6e;border-color:var(--king)}
+.picks button[aria-pressed=true][data-p=both]{background:#3a3030;border-color:#bbb}
+.bar{display:flex;height:10px;margin-top:10px;background:#1a1212;overflow:hidden}
+.bar i{display:block;height:100%}.bar .d{background:var(--doom)}.bar .o{background:#8a8080}.bar .k{background:var(--king)}
+.counts{display:flex;justify-content:space-between;font-size:12px;color:var(--faint);margin-top:6px;gap:8px}
+.score{margin-top:18px;text-align:center;font-family:var(--display);font-size:clamp(28px,3.6vw,46px);text-transform:uppercase}
+.score em{font-style:normal;color:var(--doom)}
+.pledge{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:22px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:22px}
+.pledge .num{font-family:var(--display);font-size:clamp(52px,6vw,84px);line-height:1;color:#fff}
+.pledge .num small{display:block;font-family:var(--body);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:6px}
+.pledge .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pledge canvas{width:100%;height:auto;border:1px solid var(--line);display:block}
+.msg{min-height:22px;color:var(--red-text);font-size:14px;margin:10px 0 0}
+.credits{margin-top:40px;font-size:13px;color:var(--faint);line-height:1.7}
+.credits a{color:var(--mute);text-decoration:underline}
+@media (max-width:820px){.hero2{grid-template-columns:1fr 1fr}.hero2 .mid{grid-column:1/-1;grid-row:1;max-width:none}.dk{grid-template-columns:minmax(0,1fr)}.pledge{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.rb{grid-template-columns:minmax(0,1fr)}.rb .b1{text-align:left;align-items:flex-start}.rb .t{padding:8px}.tape td:first-child{white-space:normal}.tape{font-size:13.5px}.tape th,.tape td{padding:9px 6px}.hero2 .side{padding:18px 14px}.intro,.prose p{font-size:17px}}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+
+<section class="hero2" aria-labelledby="h1">
+  <div class="side l"><small>Avengers: Doomsday</small><b>DOOM</b><div class="cd"><span data-until="2026-12-18T00:00:00+05:30">—</span><span>days · 18 Dec 2026</span></div></div>
+  <div class="mid"><p class="eyebrow" style="margin:0">07 · The Christmas fixture</p><h1 id="h1">DOOM <span class="to">to</span> KING</h1><p>One Christmas, two crowns.</p></div>
+  <div class="side r"><small>Shah Rukh Khan</small><b>KING</b><div class="cd"><span data-until="2026-12-24T00:00:00+05:30">—</span><span>days · 24 Dec 2026</span></div></div>
+</section>
+
+<p class="intro">The trade press wants a clash. Avengers: Doomsday opens on 18 December 2026, with Robert Downey Jr. returning to Marvel as Doctor Doom. KING opens six days later, on 24 December. Headlines will say "versus". We say "to". It is a relay, not a fight: start with DOOM, finish with KING, and call it the best Christmas cinema has had in years.</p>
+
+<section class="sec" aria-labelledby="t-h">
+  <h2 id="t-h">Two <em>trailers</em>, one <i>Christmas</i></h2>
+  <div class="dk">
+    <figure class="fd">
+      <button class="yt" type="button" data-yt="irVNGjRFZGk" aria-label="Play the official Avengers: Doomsday trailer"><img src="https://i.ytimg.com/vi/irVNGjRFZGk/hqdefault.jpg" alt="Avengers: Doomsday official trailer" width="480" height="360"><span class="play" aria-hidden="true"></span></button>
+      <figcaption><b>DOOM</b> · in cinemas 18 December 2026<small>Official trailer: Marvel Entertainment on YouTube. © Marvel Studios. Shown for commentary.</small></figcaption>
+    </figure>
+    <figure class="fk">
+      <a href="../lairs/"><img src="../assets/lairs/cover.webp" alt="Fan art: a silhouetted King holding the King of Hearts over a red city" width="800" height="1200"></a>
+      <figcaption><b>KING</b> · in cinemas 24 December 2026<small>Fan art from THE CONTRACT, this site's story game. The official KING teaser will sit here.</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="rb-h">
+  <h2 id="rb-h"><em>Red</em> to <i>Blue</i></h2>
+  <div class="rb">
+    <div class="r1"><b>RED</b><span>Iron Man · 2008</span><span>Built his suit in a cave from a box of scraps.</span><span>Now: DOOM · 18 Dec 2026</span></div>
+    <div class="t">to</div>
+    <div class="b1"><b>BLUE</b><span>G.One · Ra.One, 2011</span><span>Stepped out of a video game his creator built for his son.</span><span>Now: KING · 24 Dec 2026</span></div>
+  </div>
+</section>
+
+<section class="sec prose" aria-labelledby="c-h">
+  <h2 id="c-h">The class of <em>'65</em></h2>
+  <p>Robert Downey Jr. was born on 4 April 1965. Shah Rukh Khan was born on 2 November 1965. Same year, two hemispheres, two careers that went from boy wonder to written off to the biggest comebacks in their industries. Both once saved the world in a superhero suit, one red, one blue. This Christmas, at 61, both walk to the dark side of the screen: one as the villain of the Marvel universe, one as the man they call KING.</p>
+  <p>Retirement plans: not found.</p>
+</section>
+
+<section class="sec" aria-labelledby="tt-h">
+  <h2 id="tt-h">Iron Man to G.One: <em>the tale of the tape</em></h2>
+  <p class="lede">Played for laughs, with respect to both corners.</p>
+  <table class="tape">
+    <thead><tr><th></th><th class="r">The red corner</th><th class="b">The blue corner</th></tr></thead>
+    <tbody>
+      <tr><td>The suit</td><td>Forged in a cave, upgraded in a mansion, numbered like software releases.</td><td>Downloaded from a game. Came with a son, a wife and a very long climax on a Mumbai train.</td></tr>
+      <tr><td>The colour</td><td>Red and gold, the colour of a sports car.</td><td>Blue, the colour of a screen at 3 a.m.</td></tr>
+      <tr><td>The villain turn</td><td>Puts on a metal mask.</td><td>Does not need a mask. Raises one eyebrow.</td></tr>
+      <tr><td>The signature move</td><td>Snaps his fingers; half the universe goes quiet.</td><td>Opens his arms; the other half comes running.</td></tr>
+      <tr><td>The entrance</td><td>Arrives by air, with an armoured landing.</td><td>Arrives by balcony, with a wave.</td></tr>
+      <tr><td>The fan ritual</td><td>Stays for the post-credits scene.</td><td>Stands outside his gate in Mumbai every 2 November.</td></tr>
+      <tr><td>The home ground</td><td>Every multiplex on Earth.</td><td>Every multiplex on Earth, plus the single screen, the chai stall and the family WhatsApp group.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="sec" aria-labelledby="fx-h">
+  <h2 id="fx-h">The friendly <em>fixture</em></h2>
+  <p class="lede">Six rounds, no losers. Pick a side or call it a draw; the scoreboard shows real fan votes, updated live. You can change your vote any time.</p>
+  <div class="fix" id="fix"></div>
+  <p class="score" id="score">Final score: <em>Cinema 2</em>, Boredom 0</p>
+</section>
+
+<section class="sec" aria-labelledby="pl-h">
+  <h2 id="pl-h">I'm watching <em>both</em></h2>
+  <div class="pledge">
+    <div>
+      <div class="num"><span id="pn">—</span><small>fans have pledged to watch DOOM and KING</small></div>
+      <p class="intro" style="margin-top:12px;font-size:16px">Watch DOOM on the 18th. Recover on the 19th. Queue for KING on the 24th. The only way to lose this Christmas is to watch just one.</p>
+      <div class="row"><button class="btn btn-red" id="pledge" type="button">I'm watching both · +50 STARKS</button><button class="btn btn-line" id="shareCard" type="button">Share my card</button></div>
+      <p class="msg" id="pm" role="status"></p>
+    </div>
+    <canvas id="card" width="1080" height="1350" aria-label="Your 'watching both' card"></canvas>
+  </div>
+</section>
+
+<p class="credits">Avengers: Doomsday and Doctor Doom are © Marvel Studios; the trailer is embedded from Marvel Entertainment's YouTube channel for commentary. KING © its makers; KING art on this page is fan-made. Release dates: <a href="https://www.hollywoodreporterindia.com/features/insight/shah-rukh-khans-king-locks-december-24-release-set-to-arrive-a-week-after-avengers-doomsday-and-dune-part-three">The Hollywood Reporter India</a>. DOOM casting reveal: San Diego Comic-Con, July 2024. Read the essay version in <a href="../asoka-to-booda/#act8">Asoka to Boo-Da, Act VIII</a>.</p>
+</main>
+
+<script src="../assets/starks.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var API = 'https://asokatobooda.iamshahrock.workers.dev/d2k';
+  var ROUNDS = [
+    ['Star power', 'The man who built the Marvel Cinematic Universe, or the last of the stars?'],
+    ['Home crowd', 'DOOM owns the global multiplex; KING owns Indian screens and the diaspora at Christmas. Whose home game is bigger?'],
+    ['The character', 'A villain fans have waited decades to see, or a new KING nobody has seen yet?'],
+    ['The campaign', 'A studio machine with a hundred-film head start, or a fan army that makes its own posters?'],
+    ['The look', 'A metal mask and a green cloak, or silver hair and a black suit?'],
+    ['The street', 'Who wins the single screen, the chai stall and the WhatsApp forward?']
+  ];
+  document.querySelectorAll('[data-until]').forEach(function (el) { var d = Math.ceil((Date.parse(el.dataset.until) - Date.now()) / 864e5); el.textContent = d > 0 ? d : 'Now showing'; });
+  document.querySelectorAll('.yt').forEach(function (b) { b.addEventListener('click', function () { var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0'; f.title = b.getAttribute('aria-label'); f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true; b.innerHTML = ''; b.appendChild(f); }, { once: true }); });
+  var KEY = 'amkh-d2k', mine = {}; try { mine = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  function saveMine() { try { localStorage.setItem(KEY, JSON.stringify(mine)); } catch (e) {} }
+  var state = null;
+  function fmt(n) { return Number(n || 0).toLocaleString('en-IN'); }
+  function draw() {
+    var fx = $('fix'); fx.innerHTML = '';
+    ROUNDS.forEach(function (r, i) {
+      var n = i + 1, c = (state && state.rounds[n]) || { doom: 0, both: 0, king: 0 }, t = c.doom + c.both + c.king, pick = (mine.votes || {})[n];
+      var d = document.createElement('div'); d.className = 'round';
+      d.innerHTML = '<h3><span>R' + n + '</span>' + r[0] + '</h3><p>' + r[1] + '</p><div class="picks"><button type="button" data-p="doom">DOOM</button><button type="button" data-p="both">Both win</button><button type="button" data-p="king">KING</button></div>' +
+        '<div class="bar" aria-hidden="true"><i class="d" style="width:' + (t ? c.doom / t * 100 : 0) + '%"></i><i class="o" style="width:' + (t ? c.both / t * 100 : 0) + '%"></i><i class="k" style="width:' + (t ? c.king / t * 100 : 0) + '%"></i></div>' +
+        '<div class="counts"><span>DOOM ' + fmt(c.doom) + '</span><span>Both ' + fmt(c.both) + '</span><span>KING ' + fmt(c.king) + '</span></div>';
+      d.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.p === pick ? 'true' : 'false'); b.onclick = function () { vote(n, b.dataset.p); }; });
+      fx.appendChild(d);
+    });
+    if (state) $('pn').textContent = fmt(state.pledges);
+    $('pledge').textContent = mine.pledged ? "You're watching both ✓" : "I'm watching both · +50 STARKS";
+  }
+  function post(body) {
+    body.device = window.STARKS ? STARKS.get().device : '';
+    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'Could not save that.'); return j; }); });
+  }
+  function vote(n, p) {
+    var first = !(mine.votes || {})[n];
+    mine.votes = mine.votes || {}; mine.votes[n] = p; saveMine(); draw();
+    post({ round: n, pick: p }).then(function (j) { state = j; draw(); }).catch(function (e) { $('pm').textContent = e.message; });
+    if (first && window.STARKS) STARKS.earn('vote', 10, 'Voted round ' + n + ' · DOOM to KING', 'd2k-vote-' + n);
+  }
+  $('pledge').onclick = function () {
+    if (mine.pledged) { $('pm').textContent = 'You have already pledged. Share your card!'; return; }
+    mine.pledged = true; saveMine(); draw(); card();
+    post({ pledge: true }).then(function (j) { state = j; draw(); $('pm').textContent = 'Pledged. See you at both.'; }).catch(function (e) { $('pm').textContent = e.message; });
+    if (window.STARKS) STARKS.earn('pledge', 50, 'Watching both · DOOM to KING', 'd2k-pledge');
+  };
+  function card() {
+    var c = $('card'), x = c.getContext('2d'), W = 1080, H = 1350;
+    var g = x.createLinearGradient(0, 0, W, 0); g.addColorStop(0, '#5a0a0e'); g.addColorStop(.5, '#0a0707'); g.addColorStop(1, '#0a2a5a');
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.textAlign = 'center'; x.fillStyle = '#fff';
+    x.font = '600 40px Archivo, Arial, sans-serif'; x.fillText(mine.pledged ? "I'M WATCHING BOTH" : 'ONE CHRISTMAS, TWO CROWNS', W / 2, 150);
+    x.font = '230px Anton, Impact, sans-serif'; x.fillStyle = '#ff4a4f'; x.fillText('DOOM', W / 2, 480);
+    x.fillStyle = '#9a8f88'; x.font = '90px Anton, Impact, sans-serif'; x.fillText('TO', W / 2, 620);
+    x.fillStyle = '#5b9bff'; x.font = '230px Anton, Impact, sans-serif'; x.fillText('KING', W / 2, 860);
+    x.fillStyle = '#fff'; x.font = '600 44px Archivo, Arial, sans-serif'; x.fillText('18 DEC  →  24 DEC 2026', W / 2, 990);
+    x.fillStyle = '#d8cfc8'; x.font = 'italic 44px "Cormorant Garamond", Georgia, serif'; x.fillText('The only way to lose is to watch just one.', W / 2, 1090);
+    x.fillStyle = '#ff4a4f'; x.font = '52px Anton, Impact, sans-serif'; x.fillText('AGARMAINKINGHOTA.COM/DOOM-TO-KING', W / 2, 1250);
+  }
+  $('shareCard').onclick = function () {
+    card();
+    $('card').toBlob(function (blob) {
+      var file = new File([blob], 'doom-to-king.jpg', { type: 'image/jpeg' }), text = "DOOM on the 18th. KING on the 24th. I'm watching both. https://agarmainkinghota.com/doom-to-king/ #DoomToKing #KING #AgarMainKingHota";
+      if (navigator.canShare && navigator.canShare({ files: [file] })) navigator.share({ files: [file], text: text }).then(function () { if (window.STARKS) STARKS.earn('share', 50, 'Shared DOOM to KING'); }).catch(function () {});
+      else { var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click(); $('pm').textContent = 'Card downloaded. Post it with #DoomToKing.'; }
+    }, 'image/jpeg', 0.92);
+  };
+  draw(); card();
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(card);
+  fetch(API, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) { state = j; draw(); }).catch(function () { $('pn').textContent = 'N/A'; });
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

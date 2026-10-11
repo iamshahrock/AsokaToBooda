@@ -61,6 +61,7 @@ export default {
     if (path === "/starks/earn" || path === "/starks/me") return starks(request, env, reply, origin, path);
     if (path === "/track") return track(request, env, reply, origin);
     if (path === "/stats") return stats(request, env, reply);
+    if (path === "/d2k") return d2k(request, env, reply, origin);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -158,7 +159,7 @@ export default {
 const RULES = {
   visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
   throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
-  chapter: [250, 12], verdict: [750, 2]
+  chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6]
 };
 const CARRY_MAX = 3000;
 const BB_TIERS = [[0, "Fan"], [500, "Rebel"], [1500, "Prince"], [4000, "King"], [10000, "Royal Flush"]];
@@ -323,4 +324,39 @@ async function stats(request, env, reply) {
     days: Object.values(byDay),
     topPages: pages.results || []
   }, { "Cache-Control": "public, max-age=60" });
+}
+
+// ---------------- DOOM to KING: fan votes and the "watching both" pledge ----------------
+// GET  /d2k -> { rounds: { "1": {doom, both, king}, ... }, pledges }
+// POST /d2k {device, round (1-6), pick: doom|both|king}  or  {device, pledge: true}
+async function d2kState(env) {
+  const [v, p] = await env.DB.batch([
+    env.DB.prepare("SELECT round, pick, COUNT(*) AS n FROM d2k_votes GROUP BY round, pick"),
+    env.DB.prepare("SELECT COUNT(*) AS n FROM d2k_pledges")
+  ]);
+  const rounds = {};
+  for (let r = 1; r <= 6; r++) rounds[r] = { doom: 0, both: 0, king: 0 };
+  for (const row of v.results || []) if (rounds[row.round] && row.pick in rounds[row.round]) rounds[row.round][row.pick] = row.n;
+  return { rounds, pledges: ((p.results || [])[0] || {}).n || 0 };
+}
+async function d2k(request, env, reply, origin) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  if (request.method === "GET") return reply(200, await d2kState(env), { "Cache-Control": "no-store" });
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "d2k:" + ip))) return reply(429, { error: "Too many votes at once. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const now = Date.now(), day = istDay();
+  if (body.pledge === true) {
+    const r = await env.DB.prepare("INSERT OR IGNORE INTO d2k_pledges(device, ts) VALUES(?1, ?2)").bind(body.device, now).run();
+    if (r.meta && r.meta.changes) await bump(env, day, "d2k_pledge");
+  } else {
+    const round = Number(body.round), pick = String(body.pick || "");
+    if (!(round >= 1 && round <= 6) || !["doom", "both", "king"].includes(pick)) return reply(400, { error: "Choose a round and a side." });
+    await env.DB.prepare("INSERT INTO d2k_votes(device, round, pick, ts) VALUES(?1, ?2, ?3, ?4) ON CONFLICT(device, round) DO UPDATE SET pick=?3, ts=?4").bind(body.device, round, pick, now).run();
+    await bump(env, day, "d2k_vote");
+  }
+  return reply(200, await d2kState(env));
 }
