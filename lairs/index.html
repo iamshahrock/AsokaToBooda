@@ -136,7 +136,7 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
       <p class="eyebrow">02 · King's Lairs · The story game</p>
       <h1>The <em>Contract</em></h1>
       <p class="c-lede">They call him KING. Not because he was born to a throne, but because nobody who stood against him kept theirs.</p>
-      <p class="say">Tonight a sealed envelope arrives: six names, one client, no face. Every name hides in a lair. Play each chapter, make the calls a King would make, win the job, and star in the scene with your own face. Clear all six and the throne room opens.</p>
+      <p class="say">Tonight a sealed envelope arrives: six names, one client, no face. Every name hides in a lair. Play each chapter, make the calls a King would make, win the job, and star in the scene with your own face. All six chapters are open: play them in order for the full story.</p>
       <p class="c-line">Darr nahin, dehshat hoon.</p>
       <div class="meters" id="meters"></div>
     </div>
@@ -185,9 +185,9 @@ try { var mine = JSON.parse(localStorage.getItem('amkh-posters') || '[]'); if (m
 function drawMap() {
   var p = prog(); var map = $('map'); map.innerHTML = '';
   LAIRS.forEach(function (l, i) {
-    var open = i === 0 || (p[LAIRS[i - 1].id] && p[LAIRS[i - 1].id].cleared);
+    var open = true; // every chapter is playable; the story reads best in order
     var b = document.createElement('button'); b.type = 'button'; b.className = 'lair'; b.style.setProperty('--bg', l.bg); b.disabled = !open;
-    var st = p[l.id] && p[l.id].cleared ? 'Cleared · best ' + fmt(p[l.id].best) + ' STARKS' : open ? 'Open · tap to enter' : 'Clear the chapter before it to unlock';
+    var st = p[l.id] && p[l.id].cleared ? 'Cleared · best ' + fmt(p[l.id].best) + ' STARKS' : 'Play this chapter →';
     b.innerHTML = '<img class="lair-art" src="' + artFor(l.id) + '" alt="" loading="lazy" onerror="this.remove()"><span class="no">' + STORY[l.id].chapter + '</span><h3>' + l.name + '</h3><p>' + l.blurb + '</p><span class="st' + (p[l.id] && p[l.id].cleared ? ' done' : '') + '">' + st + '</span>';
     b.addEventListener('click', function () { enter(l); });
     map.appendChild(b);
@@ -775,7 +775,7 @@ function throne(a, done) {
 drawMap(); drawMeters();
 var want = new URLSearchParams(location.search).get('lair');
 var l = LAIRS.find(function (x) { return x.id === want; });
-if (l) { var p = prog(), i = LAIRS.indexOf(l); if (i === 0 || (p[LAIRS[i - 1].id] && p[LAIRS[i - 1].id].cleared)) enter(l); }
+if (l) enter(l);
 })();
 </script>
 <script src="../assets/footer.js" defer></script>

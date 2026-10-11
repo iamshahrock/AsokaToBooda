@@ -69,6 +69,12 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 .sources{font-size:13px;color:var(--faint);line-height:1.7;padding:24px 0 0}
 .sources a{color:var(--mute);text-decoration:underline}
 .label{display:inline-block;font-size:11px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;padding:2px 8px;border:1px solid var(--field-line);color:var(--faint);margin-left:8px;vertical-align:middle}
+.new-act{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;margin:26px 0 0;padding:16px 18px;text-align:left;border:1px solid var(--line);background:linear-gradient(90deg,#3a0a0e 0%,#170607 48%,#0a1a35 100%);text-decoration:none;color:var(--ink)}
+.new-act span{grid-row:span 2;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--red);color:#fff;padding:6px 9px}
+.new-act b{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1;text-transform:uppercase}
+.new-act b em{font-style:normal;color:#5b9bff}
+.new-act i{font-style:normal;font-size:14px;color:#d8cfc8}
+.new-act:hover{border-color:var(--red-hi)}
 .sub3{margin:30px 0 10px;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,32px);text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
 .code{display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,28px);margin:18px 0 28px;padding:22px 10px;border:1px solid var(--line);background:var(--panel)}
 .code span{display:flex;flex-direction:column;align-items:center;font-family:var(--display);font-size:clamp(56px,9vw,104px);line-height:1}
@@ -90,7 +96,7 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 .t.tape td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
 .dk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin:6px 0 30px;align-items:start}
 .dk figure{margin:0;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
-.dk-doom{border-top:3px solid #5b9bff!important}.dk-king{border-top:3px solid var(--red-hi)!important}
+.dk-doom{border-top:3px solid #ff4a4f!important}.dk-king{border-top:3px solid #5b9bff!important}
 .yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#000;cursor:pointer;overflow:hidden}
 .yt img{width:100%;height:100%;object-fit:cover;display:block}
 .yt .play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(195,18,26,.92);box-shadow:0 8px 30px rgba(0,0,0,.6)}
@@ -129,6 +135,7 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
     <li><a href="#act10"><span>X</span>What brands can learn</a></li>
     <li><a href="#finale"><span>XI</span>The Royal Flush</a></li>
   </ol>
+  <a class="new-act" href="#act8"><span>New</span><b>DOOM <em>to</em> KING</b><i>One Christmas, two crowns: the friendly fixture, with the official DOOM trailer →</i></a>
 </header>
 
 <section class="act" id="prologue">

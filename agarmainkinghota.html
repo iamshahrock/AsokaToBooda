@@ -48,6 +48,18 @@
 .dot i{display:block;width:10px;height:6px;border-radius:3px;background:rgba(244,239,233,.45);transition:width .25s,background .25s}
 .dot:hover i{background:var(--red-text)}
 .dot[aria-current="true"] i{width:28px;background:var(--red-hi)}
+.d2k{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:stretch;margin:18px 0 0;border:1px solid var(--line);text-decoration:none;color:var(--ink);overflow:hidden}
+.d2k:hover{border-color:var(--red-hi)}
+.d2k-r,.d2k-b{display:flex;flex-direction:column;justify-content:center;padding:14px 22px;font-family:var(--display);font-size:clamp(30px,4vw,52px);line-height:1}
+.d2k-r{background:linear-gradient(135deg,#5a0a0e,#1a0607);color:#ff4a4f}
+.d2k-b{background:linear-gradient(225deg,#0a2a5a,#06101f);color:#7fb0ff;text-align:right}
+.d2k small{font-family:var(--body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d8cfc8;margin-top:6px}
+.d2k-mid{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:14px 20px;background:#0d0909}
+.d2k-mid em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
+.d2k-mid b{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,40px);line-height:1;text-transform:uppercase}
+.d2k-mid b i{font-style:normal;color:var(--faint)}
+.d2k-mid small{margin:0;letter-spacing:0;text-transform:none;font-size:14px;color:var(--mute);line-height:1.4}
+@media (max-width:560px){.d2k{grid-template-columns:1fr 1fr}.d2k-mid{grid-column:1/-1;grid-row:1}.d2k-r,.d2k-b{font-size:30px;padding:12px 16px}}
 .how{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}
 .how li{background:var(--panel);padding:18px 18px 20px;border-top:3px solid var(--line)}
 .how li:first-child{border-top-color:var(--red)}
@@ -154,6 +166,12 @@
     <button class="arrow" type="button" data-step="1" aria-label="Next section"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
   </div>
 </section>
+
+<a class="d2k" href="asoka-to-booda/#act8" aria-label="DOOM to KING: one Christmas, two crowns">
+  <span class="d2k-r">DOOM<small>18 Dec</small></span>
+  <span class="d2k-mid"><em>New in the thesis</em><b>DOOM <i>to</i> KING</b><small>Not a clash. A relay. One Christmas, two crowns. Watch the official DOOM trailer and the friendly fixture →</small></span>
+  <span class="d2k-b">KING<small>24 Dec</small></span>
+</a>
 
 <section class="block" aria-label="Countdowns">
   <div class="clocks">
