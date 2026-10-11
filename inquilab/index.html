@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/inquilab/">
 <meta property="og:title" content="INQUILAB — The Fan Revolt Against Face Theft">
-<meta property="og:description" content="Inquilab King ke saath? Aa jaao leke apna haath. #FreeTheFace">
+<meta property="og:description" content="Inquilab King ke saath? Aao aao leke apna haath. #FreeTheFace">
 <meta property="og:image" content="https://agarmainkinghota.com/assets/lairs/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
@@ -91,7 +91,7 @@
     <p class="eyebrow">08 · The fan revolt</p>
     <h1 id="h1">INQUILAB</h1>
     <p class="sub">The fan revolt against face theft</p>
-    <p class="couplet">Inquilab King ke saath?<br>Aa jaao leke apna haath.</p>
+    <p class="couplet">Inquilab King ke saath?<br>Aao aao leke apna haath.</p>
     <span class="tag">#FreeTheFace</span>
   </div>
   <div class="art"><img src="../assets/lairs/cover.webp" alt="A silhouetted King holding the King of Hearts over a red city" width="800" height="1200"></div>
@@ -126,14 +126,16 @@
   <!-- POEM: replace the stanzas below with the final version -->
   <div class="poem" id="poem">
     <h3>INQUILAB KING KE SAATH</h3>
-    <p class="st">Inquilab King ke saath,<br>Aa jaao leke apna haath.</p>
-    <p class="st">Chehra uska, kala humari,<br>Kisne likh di chori tumhari?</p>
-    <p class="st">Machine ne seekha, humse na poocha,<br>Na naam diya, na haq hi socha.</p>
-    <p class="st">Ek fan, do fan, crore fan saath,<br>Ab na chalegi chori ki baat.</p>
-    <p class="st">Na lathi, na goli, na koi aaghaat,<br>Bas kalam, camera, aur jazbaat.</p>
-    <p class="st">Tech ke raja, sun lo baat,<br>Taj se pehle janta ka saath.</p>
+    <p class="st">Inquilab King ke saath,<br>Aao aao leke apna haath.</p>
+    <p class="st">Chehra Shah ka, kala humari,<br>AI se karli dacoiti saari.</p>
+    <p class="st">Machine ne taan ke ki seena-zori,<br>Silicon Valley ki pakdi gayi chori.</p>
+    <p class="st">Na niyam banaya, na haq samjhaya,<br>Humari kala ko apna bataya.</p>
+    <p class="st">Na fans se poocha, na hero ka socha,<br>Sabka kaam dabocha aur maal banaya.</p>
+    <p class="st">Tech ke shasak, sun lo baat,<br>Is taj ke peeche janta ka saath.</p>
+    <p class="st">Na lathi, na goli, na koi aaghaat,<br>Ab chalenge kalam, dimaag aur jazbaat.</p>
+    <p class="st">Kone kone se fan ka saath,<br>Denge tum luteron ko maat.</p>
     <p class="st loud">Chehre ki chori band karo!<br>Fan ka haq fan ko do!</p>
-    <p class="note">First draft. A peaceful revolt: pen, camera and passion only.</p>
+    <p class="note">A peaceful revolt: pen, mind and passion only.</p>
   </div>
   <!-- /POEM -->
   <div class="chant" id="chant" aria-label="The chant, call and response">
@@ -141,6 +143,7 @@
     <div class="call">Kiski kala?</div><div class="resp">Fans ki kala!</div>
     <div class="call">Kiska haq?</div><div class="resp">Hum sab ka haq!</div>
     <div class="call">Inquilab?</div><div class="resp">King ke saath!</div>
+    <div class="call">Inquilab King ke saath,</div><div class="resp">Aao aao leke apna haath!</div>
   </div>
   <div class="chant-ctl"><button class="btn btn-line" id="chantBtn" type="button">▶ Start the chant</button></div>
 </section>
@@ -227,9 +230,9 @@
     var c = $('card'), x = c.getContext('2d'), W = 1080, H = 1350;
     var g = x.createRadialGradient(W / 2, 380, 60, W / 2, 600, 1000); g.addColorStop(0, '#5a0a0e'); g.addColorStop(.6, '#160606'); g.addColorStop(1, '#070404');
     x.fillStyle = g; x.fillRect(0, 0, W, H); x.textAlign = 'center';
-    x.fillStyle = '#e3242b'; x.font = '250px Anton, Impact, sans-serif'; x.fillText('INQUILAB', W / 2, 360);
+    x.fillStyle = '#e3242b'; var fs = 250; do { x.font = fs + 'px Anton, Impact, sans-serif'; fs -= 6; } while (x.measureText('INQUILAB').width > 980 && fs > 80); x.fillText('INQUILAB', W / 2, 360);
     x.fillStyle = '#fff'; x.font = '96px Anton, Impact, sans-serif'; x.fillText('KING KE SAATH', W / 2, 500);
-    x.fillStyle = '#f4efe9'; x.font = 'italic 54px "Cormorant Garamond", Georgia, serif'; x.fillText('Aa jaao leke apna haath.', W / 2, 620);
+    x.fillStyle = '#f4efe9'; x.font = 'italic 54px "Cormorant Garamond", Georgia, serif'; x.fillText('Aao aao leke apna haath.', W / 2, 620);
     x.strokeStyle = '#c3121a'; x.lineWidth = 4; x.beginPath(); x.moveTo(240, 700); x.lineTo(840, 700); x.stroke();
     x.fillStyle = '#d8cfc8'; x.font = '600 44px Archivo, Arial, sans-serif'; x.fillText(joined ? "I'VE JOINED THE FAN REVOLT" : 'THE FAN REVOLT', W / 2, 800); x.fillText('AGAINST FACE THEFT', W / 2, 860);
     x.fillStyle = '#c3121a'; x.fillRect(W / 2 - 290, 950, 580, 110); x.fillStyle = '#fff'; x.font = '64px Anton, Impact, sans-serif'; x.fillText('#FREETHEFACE', W / 2, 1030);
@@ -245,7 +248,7 @@
   $('shareCard').onclick = function () {
     card();
     $('card').toBlob(function (blob) {
-      var file = new File([blob], 'inquilab-free-the-face.jpg', { type: 'image/jpeg' }), text = 'Inquilab King ke saath! Aa jaao leke apna haath. Join the fan revolt against face theft: https://agarmainkinghota.com/inquilab/ #FreeTheFace #Inquilab #KING';
+      var file = new File([blob], 'inquilab-free-the-face.jpg', { type: 'image/jpeg' }), text = 'Inquilab King ke saath! Aao aao leke apna haath. Join the fan revolt against face theft: https://agarmainkinghota.com/inquilab/ #FreeTheFace #Inquilab #KING';
       if (navigator.canShare && navigator.canShare({ files: [file] })) navigator.share({ files: [file], text: text }).then(function () { if (window.STARKS) STARKS.earn('share', 50, 'Shared the Inquilab card'); }).catch(function () {});
       else { var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click(); $('j-msg').textContent = 'Card downloaded. Post it with #FreeTheFace.'; }
     }, 'image/jpeg', 0.92);
