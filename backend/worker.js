@@ -62,6 +62,7 @@ export default {
     if (path === "/track") return track(request, env, reply, origin);
     if (path === "/stats") return stats(request, env, reply);
     if (path === "/d2k") return d2k(request, env, reply, origin);
+    if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -359,4 +360,31 @@ async function d2k(request, env, reply, origin) {
     await bump(env, day, "d2k_vote");
   }
   return reply(200, await d2kState(env));
+}
+
+// ---------------- Fan AI work submissions (reviewed by the daily scan) ----------------
+// POST /ai-submit {url, handle, note, device} -> stored as pending
+// GET  /ai-submit -> { pending: [{id, url, platform, handle, note, ts}] }  (public links only)
+const AI_HOSTS = [["youtube", /(^|\.)youtube\.com$|(^|\.)youtu\.be$/], ["instagram", /(^|\.)instagram\.com$/], ["x", /(^|\.)x\.com$|(^|\.)twitter\.com$/], ["facebook", /(^|\.)facebook\.com$|(^|\.)fb\.watch$/]];
+async function aiSubmit(request, env, reply, origin) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  if (request.method === "GET") {
+    const r = await env.DB.prepare("SELECT id, url, platform, handle, note, ts FROM ai_submissions WHERE status='pending' ORDER BY ts ASC LIMIT 200").all();
+    return reply(200, { pending: r.results || [] }, { "Cache-Control": "no-store" });
+  }
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "ai:" + ip))) return reply(429, { error: "Too many submissions. Try again in a minute." });
+  const body = await readBody(request);
+  let u; try { u = new URL(String(body && body.url || "")); } catch (e) { return reply(400, { error: "Paste the full link to your post." }); }
+  if (u.protocol !== "https:") return reply(400, { error: "Paste the full https:// link to your post." });
+  const host = u.hostname.toLowerCase(), plat = AI_HOSTS.find(h => h[1].test(host));
+  if (!plat) return reply(400, { error: "Links from YouTube, Instagram, X or Facebook only." });
+  const url = u.origin + u.pathname + (plat[0] === "youtube" && u.searchParams.get("v") ? "?v=" + u.searchParams.get("v") : "");
+  const handle = String(body.handle || "").replace(/[<>]/g, "").trim().slice(0, 40);
+  const note = String(body.note || "").replace(/[<>]/g, "").trim().slice(0, 140);
+  const r = await env.DB.prepare("INSERT OR IGNORE INTO ai_submissions(url, platform, handle, note, device, ts, status) VALUES(?1, ?2, ?3, ?4, ?5, ?6, 'pending')").bind(url, plat[0], handle, note, okDevice(body.device) ? body.device : "", Date.now()).run();
+  if (r.meta && r.meta.changes) await bump(env, istDay(), "ai_submission");
+  return reply(200, { ok: true, duplicate: !(r.meta && r.meta.changes), platform: plat[0] });
 }

@@ -16,6 +16,20 @@
 .pl-chart .c b{font:500 10px var(--ki-mono,monospace);color:var(--ki-muted);margin-bottom:3px}
 .pl-axis{display:flex;justify-content:space-between;font:500 10px var(--ki-mono,monospace);color:var(--ki-muted);margin-top:6px}
 </style>
+<style>
+.ao-chain{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.ao-chain i{font-style:normal;align-self:center;color:var(--ki-red-hi,#ef3b41);font-size:20px}
+.ao-step{flex:1 1 150px;border:1px solid var(--ki-line);border-radius:var(--ki-radius);padding:12px;background:var(--ki-bg-2,#111);display:flex;flex-direction:column;gap:6px}
+.ao-step.w{border-color:var(--ki-red,#d71920);background:linear-gradient(135deg,#2a0b0d,#111)}
+.ao-step b{font:700 13px var(--ki-font);letter-spacing:.04em;text-transform:uppercase;color:var(--ki-text)}
+.ao-step span{font-size:12.5px;line-height:1.45;color:var(--ki-muted)}
+.ao-back{margin-top:10px;padding:10px 12px;border:1px dashed var(--ki-red,#d71920);border-radius:var(--ki-radius);font-size:13px;color:var(--ki-text)}
+.ao-back span{color:var(--ki-red-hi,#ef3b41);font-weight:700;margin-right:6px}
+.ki-pill{display:inline-block;margin-left:8px;padding:1px 7px;border:1px solid var(--ki-line);border-radius:10px;font:600 10px var(--ki-mono);letter-spacing:.06em;color:var(--ki-muted);vertical-align:middle;text-transform:uppercase}
+.ki-p{font-size:14px;line-height:1.6;color:var(--ki-text);margin:0 0 10px}
+.ao-rules{counter-reset:r;margin:0 0 10px}.ao-rules p{position:relative;margin:0 0 8px;padding-left:26px;font-size:14px;line-height:1.55;color:var(--ki-text)}.ao-rules p::before{counter-increment:r;content:counter(r);position:absolute;left:0;top:1px;font:600 12px var(--ki-mono);color:var(--ki-red-hi,#ef3b41)}.ao-rules b{margin-right:4px}
+@media(max-width:700px){.ao-chain{flex-direction:column}.ao-chain i{transform:rotate(90deg)}}
+</style>
 </head>
 <body class="ki">
 <script src="../assets/header.js"></script>
@@ -141,8 +155,9 @@
     <li><a href="#activation"><span class="n">07</span>Fan activation</a></li>
     <li><a href="#engine"><span class="n">08</span>Hype engine</a></li>
     <li><a href="#competition"><span class="n">09</span>Competition</a></li>
-    <li><a href="#platform-live"><span class="n">10</span>Our platform · live</a></li>
-    <li><a href="#methodology"><span class="n">11</span>Methodology</a></li>
+    <li><a href="#ai-oil"><span class="n">10</span>AI creator signal</a></li>
+    <li><a href="#platform-live"><span class="n">11</span>Our platform · live</a></li>
+    <li><a href="#methodology"><span class="n">12</span>Methodology</a></li>
   </ul>
 </nav>
 
@@ -863,6 +878,58 @@
 </section>
 
 <!-- ============ 10 METHODOLOGY ============ -->
+<!-- ============ 10 AI CREATOR SIGNAL ============ -->
+<section class="ki-panel" id="ai-oil" aria-labelledby="h-ai-oil">
+  <div class="ki-sec-head">
+    <h2 class="ki-h2" id="h-ai-oil">The AI creator signal · discovery of the new oil</h2>
+    <span class="ki-stamp" id="ao-stamp">Daily scan</span>
+    <p>KING is one of the first major films where fan creation with AI is visible at scale: concept trailers, songs, posters and first looks made by fans before the studio has released its own. This section logs that work every day across YouTube, Instagram, X and Facebook, and asks what it would take to turn it into a real creative economy.</p>
+  </div>
+  <div class="ki-kpis" id="ao-kpis">
+    <div class="ki-kpi"><span class="l">Fan AI works logged</span><span class="v" data-k="items">N/A</span><span class="s">Individually linked, credited works</span></div>
+    <div class="ki-kpi"><span class="l">Views on logged works</span><span class="v" data-k="views">N/A</span><span class="s" data-k="viewsnote">Where the platform publishes views</span></div>
+    <div class="ki-kpi"><span class="l">Most-viewed work</span><span class="v" data-k="top">N/A</span><span class="s" data-k="topnote">N/A</span></div>
+    <div class="ki-kpi"><span class="l">YouTube</span><span class="v" data-k="youtube">N/A</span><span class="s">works logged</span></div>
+    <div class="ki-kpi"><span class="l">Instagram · X · Facebook</span><span class="v" data-k="social">N/A</span><span class="s">works logged</span></div>
+    <div class="ki-kpi"><span class="l">Last scan</span><span class="v" data-k="last">N/A</span><span class="s" data-k="lastnote">new works found</span></div>
+  </div>
+  <p class="ki-note">These are works our daily scan has found and linked, not the total size of fan AI activity, which no platform publishes. Counts grow as the scan and fan submissions add works. <a class="ki-src" href="../fan-made-ai-universe/">See every work in the Fan Made AI Universe →</a></p>
+
+  <div class="ki-grid" style="margin-top:14px">
+    <div class="ki-card s-12">
+      <h3 class="ki-h3">The model · from crude to cars <span class="ki-pill">Interpretation</span></h3>
+      <div class="ao-chain" role="img" aria-label="The oil model: the reserve feeds the refineries, which build the cars, which the drivers take onto the roads, and a royalty flows back to the reserve">
+        <div class="ao-step w"><b>The well</b><span>An official, licensed reserve of the star: likeness, voice, looks, characters, archive. Given with consent.</span></div><i aria-hidden="true">→</i>
+        <div class="ao-step"><b>The refineries</b><span>AI companies turn the reserve into licensed models and tools.</span></div><i aria-hidden="true">→</i>
+        <div class="ao-step"><b>The cars</b><span>Creator tools: poster makers, trailer kits, story engines, games.</span></div><i aria-hidden="true">→</i>
+        <div class="ao-step"><b>The drivers</b><span>Fans and storytellers, in every language and city.</span></div><i aria-hidden="true">→</i>
+        <div class="ao-step"><b>The roads</b><span>The platforms where the work travels: YouTube, Instagram, X, Facebook.</span></div>
+      </div>
+      <div class="ao-back"><span>↺</span> Every use pays a share back to the well: the star and the IP owner earn from the fans' creativity instead of fighting it.</div>
+    </div>
+    <div class="ki-card s-6">
+      <h3 class="ki-h3">The question <span class="ki-pill">Interpretation</span></h3>
+      <p class="ki-p">When oil was discovered, it did not just fuel lamps. It created cars, roads, mechanics, inventors and a whole new playground. Fans are already drilling for this new oil, in the dark: unlicensed, legally grey, with nothing flowing back to the people whose faces and stories they use, and with lawsuits waiting for the companies whose tools they use.</p>
+      <p class="ki-p">So why are the AI generators, the billion-dollar tech companies and the IP owners not building the reserve together, officially, with the stars on board? A licensed reserve turns a grey market into a real one, and gives millions of storytellers a legal place to create.</p>
+    </div>
+    <div class="ki-card s-6">
+      <h3 class="ki-h3">What makes a reserve safe to open</h3>
+      <div class="ao-rules">
+        <p><b>Consent.</b> The star decides what is in the reserve and what is not.</p>
+        <p><b>Revenue share.</b> Every licensed use pays the star and the IP owner.</p>
+        <p><b>Labels.</b> Official and fan-made work are clearly marked, so nobody is fooled.</p>
+        <p><b>Limits.</b> No misuse: no deceptive deepfakes, no harmful or explicit use.</p>
+        <p><b>Credit.</b> Fan creators are named and can earn from their work too.</p>
+      </div>
+      <p class="ki-note">A framework like this is what fans can ask for together: an AI law for fans, written with the stars rather than around them.</p>
+    </div>
+    <div class="ki-card s-12 flush">
+      <div class="ki-tablewrap"><table class="ki-table"><caption class="ki-sr">Most-viewed fan AI works logged</caption><thead><tr><th scope="col">Most-viewed fan AI works logged</th><th scope="col">Creator</th><th scope="col">Platform</th><th scope="col" class="n">Views</th><th scope="col" class="n">Read on</th></tr></thead><tbody id="ao-top"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>
+    </div>
+  </div>
+  <p class="ki-note">Related: the thesis calls Alam Ara (1931) the first oil strike of Indian cinema. <a class="ki-src" href="../asoka-to-booda/#act9">Read Act IX · The marketing code →</a></p>
+</section>
+
 <!-- ============ 10 OUR PLATFORM (live) ============ -->
 <section class="ki-panel" id="platform-live" aria-labelledby="h-platform-live">
   <div class="ki-sec-head">
@@ -989,6 +1056,26 @@
     links.forEach(function(a,i){ if(i===cur){a.setAttribute('aria-current','true');} else a.removeAttribute('aria-current'); });
   }
   window.addEventListener('scroll',mark,{passive:true}); mark();
+})();
+</script>
+<script>
+/* AI creator signal: reads the daily log */
+(function(){
+  var $=function(q){return document.querySelector(q);}, fmt=function(n){return Number(n).toLocaleString('en-US');}, esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var N={youtube:'YouTube',instagram:'Instagram',x:'X',facebook:'Facebook'};
+  fetch('../data/ai-creator-log.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    var by={},views=0,wv=0; d.items.forEach(function(i){by[i.platform]=(by[i.platform]||0)+1; if(i.views!=null){views+=i.views;wv++;}});
+    var top=d.items.filter(function(i){return i.views!=null;}).sort(function(a,b){return b.views-a.views;});
+    var last=(d.scans||[]).slice(-1)[0]||{};
+    var set=function(k,v){var e=$('#ao-kpis [data-k="'+k+'"]'); if(e) e.textContent=v;};
+    set('items',fmt(d.items.length)); set('views',fmt(views)); set('viewsnote','Across '+wv+' of '+d.items.length+' works that publish views');
+    if(top[0]){set('top',fmt(top[0].views)); set('topnote',top[0].title+' · '+top[0].creator);}
+    set('youtube',fmt(by.youtube||0)); set('social',fmt((by.instagram||0)+(by.x||0)+(by.facebook||0)));
+    var dd=last.day?new Date(last.day+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short'}):'N/A';
+    set('last',dd); set('lastnote',(last.new!=null?fmt(last.new):'N/A')+' new works found');
+    $('#ao-stamp').textContent='Daily scan · last '+dd+(last.day?' '+last.day.slice(0,4):'');
+    $('#ao-top').innerHTML=top.slice(0,8).map(function(i){return '<tr><th scope="row"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.title)+'</a></th><td>'+esc(i.creator)+'</td><td>'+esc(N[i.platform]||i.platform)+'</td><td class="n">'+fmt(i.views)+'</td><td class="n">'+esc(i.views_asof||'N/A')+'</td></tr>';}).join('')||'<tr><td colspan="5">N/A</td></tr>';
+  }).catch(function(){var t=$('#ao-top'); if(t) t.innerHTML='<tr><td colspan="5">N/A · the daily log could not load</td></tr>';});
 })();
 </script>
 <script>

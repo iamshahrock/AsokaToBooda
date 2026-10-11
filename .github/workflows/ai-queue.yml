@@ -1,0 +1,28 @@
+name: Fan AI submission queue snapshot
+# Copies the public queue of fan-submitted AI work links (from the Worker) to the
+# branch data/ai-queue, so the daily scan can review them. Runs before the scan.
+on:
+  schedule:
+    - cron: "15 3 * * *"   # 08:45 IST
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch the queue
+        run: |
+          set -e
+          mkdir -p out
+          curl -sS --max-time 30 https://asokatobooda.iamshahrock.workers.dev/ai-submit -o out/ai-submissions-pending.json
+          python3 -c "import json;d=json.load(open('out/ai-submissions-pending.json'));print('pending:',len(d.get('pending',[])))"
+          date -u +%Y-%m-%dT%H:%M:%SZ > out/fetched-at.txt
+      - name: Save to branch data/ai-queue
+        run: |
+          cd out
+          git init -q && git checkout -q -b data/ai-queue
+          git config user.name "ai-queue"; git config user.email "ai-queue@users.noreply.github.com"
+          git add . && git commit -qm "Fan AI submission queue $(cat fetched-at.txt)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:refs/heads/data/ai-queue
+          echo "::notice::Queue snapshot saved: $(python3 -c "import json;print(len(json.load(open('ai-submissions-pending.json')).get('pending',[])))") pending"
