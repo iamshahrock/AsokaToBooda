@@ -88,7 +88,20 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 .rb-to{display:flex;align-items:center;justify-content:center;padding:0 14px;background:#0a0707;font-family:var(--display);font-size:30px;color:var(--faint);text-transform:uppercase}
 .t.tape th.r{color:#ff4a4f}.t.tape th.b{color:#5b9bff}
 .t.tape td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
-@media (max-width:720px){.rb{grid-template-columns:minmax(0,1fr)}.rb-b{text-align:left;align-items:flex-start}.rb-to{padding:8px}.t.tape td:first-child{white-space:normal}.t td.n.na{white-space:normal}.t th,.t td{padding:9px 6px}.t td.n{white-space:normal}.toc{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:minmax(0,1fr)}.duel{grid-template-columns:minmax(0,1fr)}.vs{justify-self:center}.act p{font-size:17px}.t{font-size:13.5px}.t td.n{font-size:17px}}
+.dk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin:6px 0 30px;align-items:start}
+.dk figure{margin:0;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
+.dk-doom{border-top:3px solid #5b9bff!important}.dk-king{border-top:3px solid var(--red-hi)!important}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#000;cursor:pointer;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block}
+.yt .play{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(195,18,26,.92);box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.yt .play::after{content:"";position:absolute;left:29px;top:22px;border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.dk-king a{display:block}
+.dk-king img{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;object-position:50% 22%;display:block}
+.dk figcaption{padding:12px 14px;font-size:14px;color:#e6dcd4}
+.dk figcaption b{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:.04em}
+.dk figcaption small{display:block;margin-top:4px;font-size:12px;color:var(--faint)}
+@media (max-width:720px){.dk{grid-template-columns:minmax(0,1fr)}.rb{grid-template-columns:minmax(0,1fr)}.rb-b{text-align:left;align-items:flex-start}.rb-to{padding:8px}.t.tape td:first-child{white-space:normal}.t td.n.na{white-space:normal}.t th,.t td{padding:9px 6px}.t td.n{white-space:normal}.toc{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:minmax(0,1fr)}.duel{grid-template-columns:minmax(0,1fr)}.vs{justify-self:center}.act p{font-size:17px}.t{font-size:13.5px}.t td.n{font-size:17px}}
 </style>
 </head>
 <body class="v2">
@@ -255,6 +268,20 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
     <div class="rb-b"><b>BLUE</b><span>G.One · Ra.One, 2011</span><span>Stepped out of a video game his creator built for his son.</span><span>Now: KING · 24 Dec 2026</span></div>
   </div>
 
+  <div class="dk" aria-label="DOOM and KING">
+    <figure class="dk-doom">
+      <button class="yt" type="button" data-yt="irVNGjRFZGk" aria-label="Play the official Avengers: Doomsday trailer">
+        <img src="https://i.ytimg.com/vi/irVNGjRFZGk/hqdefault.jpg" alt="Avengers: Doomsday official trailer" loading="lazy" width="480" height="360">
+        <span class="play" aria-hidden="true"></span>
+      </button>
+      <figcaption><b>DOOM</b> · in cinemas 18 December 2026<small>Official trailer: Marvel Entertainment on YouTube. © Marvel Studios. Shown for commentary.</small></figcaption>
+    </figure>
+    <figure class="dk-king">
+      <a href="../lairs/"><img src="../assets/lairs/cover.webp" alt="Fan art: a silhouetted King holding the King of Hearts over a red city" width="800" height="1200"></a>
+      <figcaption><b>KING</b> · in cinemas 24 December 2026<small>Fan art from THE CONTRACT, this site's story game.</small></figcaption>
+    </figure>
+  </div>
+
   <h3 class="sub3">The class of '65</h3>
   <p>Robert Downey Jr. was born on 4 April 1965. Shah Rukh Khan was born on 2 November 1965. Same year, two hemispheres, two careers that went from boy wonder to written off to the biggest comeback in their industries. Both once saved the world in a superhero suit, one red, one blue. This Christmas, at 61, both walk to the dark side of the screen: one as the villain of the Marvel universe, one as the man they call KING. Retirement plans: not found.</p>
 
@@ -283,7 +310,7 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
   </ol>
   <div class="pull">Final score: <em>Cinema 2, Boredom 0.</em></div>
   <p>Watch DOOM on the 18th. Recover on the 19th. Queue for KING on the 24th. The only way to lose this Christmas is to watch just one.</p>
-  <p class="src">DOOM casting reveal: San Diego Comic-Con, July 2024. Release dates: The Hollywood Reporter India. Birth dates are public record.</p>
+  <p class="src">DOOM casting reveal: San Diego Comic-Con, July 2024. Trailer: <a href="https://www.youtube.com/watch?v=irVNGjRFZGk">Marvel Entertainment</a>. Release dates: The Hollywood Reporter India. Birth dates are public record.</p>
 </section>
 
 <section class="act" id="act9">
@@ -337,6 +364,16 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 
 </article>
 </main>
+<script>
+document.querySelectorAll('.yt').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
+    f.title = b.getAttribute('aria-label'); f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+    b.innerHTML = ''; b.appendChild(f); b.style.cursor = 'default';
+  }, { once: true });
+});
+</script>
 <script src="../assets/footer.js" defer></script>
 </body>
 </html>
