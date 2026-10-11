@@ -40,7 +40,7 @@ await hp.evaluate(() => document.getElementById('act8').scrollIntoView()); await
 log.push('thesis DOOM to KING (phone): ' + JSON.stringify(await hp.evaluate(() => ({ doomThumb: (document.querySelector('.yt img') || {}).naturalWidth || 0, kingArt: (document.querySelector('.dk-king img') || {}).naturalWidth || 0, overflow: document.documentElement.scrollWidth - innerWidth }))));
 await hp.screenshot({ path: 'e2e-out/thesis-doom-phone.png' });
 await hp.goto(base + '/king-intelligence/?t=' + Date.now(), { waitUntil: 'networkidle' });
-log.push('KING Buzz: ' + JSON.stringify(await hp.evaluate(() => ({ sectionsVisible: [...document.querySelectorAll('.ki-panel')].filter(x => x.offsetHeight > 0).length, platformTiles: document.querySelectorAll('#platforms .ki-tile').length, icons: [...document.querySelectorAll('#platforms .ki-tile img')].filter(i => i.naturalWidth > 0).length, commandCentre: !!document.querySelector('#platforms .ki-cc') }))));
+log.push('KING Buzz: ' + JSON.stringify(await hp.evaluate(() => ({ sectionsVisible: [...document.querySelectorAll('.ki-panel')].filter(x => x.offsetHeight > 0).length, platformTiles: document.querySelectorAll('#platforms .ki-tile').length, icons: document.querySelectorAll('#platforms .ki-tile svg').length, commandCentre: !!document.querySelector('#platforms .ki-cc') }))));
 await hp.goto(base + '/lairs/?t=' + Date.now(), { waitUntil: 'networkidle' });
 log.push('Lairs chapters open: ' + await hp.evaluate(() => [...document.querySelectorAll('.lair')].filter(x => !x.disabled).length) + ' of 6');
 const dk = await browser.newPage(); const r2 = await dk.goto(base + '/doom-to-king/'); await dk.waitForTimeout(1500); log.push('doom-to-king link -> ' + dk.url().replace(base, '')); await dk.close();
