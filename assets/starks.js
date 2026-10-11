@@ -22,7 +22,8 @@
     verdict: ['Finished THE CONTRACT', 2],
     pledge: ['Pledged to watch DOOM and KING', 1],
     vote: ['Voted in DOOM to KING', 6],
-    inquilab: ['Joined the Inquilab · #FreeTheFace', 1]
+    inquilab: ['Joined the Inquilab · #FreeTheFace', 1],
+    clipsubmit: ['Submitted a Lairs Cinema clip', 3]
   };
   var TIERS = [[0, 'Fan'], [500, 'Rebel'], [1500, 'Prince'], [4000, 'King'], [10000, 'Royal Flush']];
 
@@ -100,6 +101,14 @@
     sync: function () {
       var s = load();
       return fetch(BASE + '/starks/me?device=' + s.device, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) { if (j && typeof j.balance === 'number') adopt(j); return j; });
+    },
+    // Lairs Cinema: the Worker pays for clips approved in data/lairs-cinema.json
+    claim: function () {
+      var s = load();
+      return post('/lairs/claim', { device: s.device }).then(function (j) {
+        if (j && typeof j.balance === 'number') { adopt(j); if (j.awarded > 0) toast('+' + j.awarded.toLocaleString('en-IN') + ' STARKS · Lairs Cinema clip approved'); }
+        return j;
+      });
     },
     board: function () { return fetch(API, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('Billboard error ' + r.status); return r.json(); }); }
   };

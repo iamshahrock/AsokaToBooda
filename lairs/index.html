@@ -123,6 +123,44 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 .choice:hover:not(:disabled){border-color:var(--red-text)}
 .choice.picked{background:var(--red);border-color:var(--red)}
 .big{font-family:var(--display);font-size:clamp(30px,4vw,48px);text-transform:uppercase;line-height:1;margin:0 0 8px}
+/* cinema */
+.cinema{margin:44px 0 10px;padding-top:30px;border-top:1px solid var(--line)}
+.cinema h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,60px);line-height:.95;text-transform:uppercase;margin:4px 0 12px}
+.cinema h2 em{font-style:normal;color:var(--red-hi)}
+.cinema h3{font-family:var(--display);font-weight:400;font-size:26px;text-transform:uppercase;margin:0 0 12px}
+.csteps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0;margin:18px 0}
+.csteps li{counter-increment:s;padding:14px;background:var(--panel);border:1px solid var(--line);font-size:14px;line-height:1.4}
+.csteps li::before{content:"0" counter(s);display:block;font-family:var(--display);color:var(--red-hi);font-size:22px}
+.csteps span b{display:inline;letter-spacing:0;text-transform:none}
+.csteps li>b{display:block;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}.csteps span{color:#d9cfc7}
+.ctabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.ctabs button{padding:9px 14px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.ctabs button[aria-pressed=true]{background:var(--red);border-color:var(--red)}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}
+.cshot{margin:0;border:1px solid var(--line);background:#0d0909}.cshot img{display:block;width:100%;height:auto}
+.cshot figcaption{padding:8px 12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.cthumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:12px}
+.cthumb{padding:0;background:#0d0909;border:1px solid var(--line);color:var(--ink);text-align:left}
+.cthumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.cthumb span{display:block;padding:5px 7px;font-size:11px;line-height:1.25}
+.cthumb[aria-pressed=true]{border-color:var(--red-hi);box-shadow:0 0 0 1px var(--red-hi)}
+.clab{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+#cPrompt{width:100%;box-sizing:border-box;background:var(--field);border:1px solid var(--field-line);color:var(--ink);padding:10px;font:inherit;font-size:14px;line-height:1.45;resize:vertical}
+.ctools{display:grid;gap:8px;margin-top:12px}
+.ctool{display:block;padding:10px 12px;border:1px solid var(--line);background:#0d0909;color:var(--ink);text-decoration:none}
+.ctool:hover{border-color:var(--red-hi)}.ctool b{display:block;font-size:15px}.ctool small{color:var(--faint);font-size:12px}
+.cnote{font-size:13px;line-height:1.45;color:#d9cfc7;margin-top:12px;padding:10px 12px;border-left:3px solid var(--red)}
+.csub{margin:26px 0;padding:18px;background:var(--panel);border:1px solid var(--line)}
+.cform{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.cform label{display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.cform input,.cform select{background:var(--field);border:1px solid var(--field-line);color:var(--ink);padding:10px;font:inherit;font-size:14px;letter-spacing:0;text-transform:none;min-width:0}
+.chead{display:flex;justify-content:space-between;align-items:baseline}.chead span{color:var(--faint);font-size:13px}
+.cgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.cclip{position:relative;display:block;background:#0d0909;border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.cclip img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.cclip b{display:block;padding:8px 10px 2px;font-size:14px}.cclip small{display:block;padding:0 10px 10px;color:var(--faint);font-size:12px}
+.cclip.sotw{border-color:var(--red-hi)}.cclip i{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px}
+.cempty{grid-column:1/-1;padding:24px;border:1px dashed var(--line);text-align:center}
+@media (max-width:900px){.cgrid{grid-template-columns:minmax(0,1fr)}.csteps{grid-template-columns:repeat(2,minmax(0,1fr))}.cform{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.csteps{grid-template-columns:minmax(0,1fr)}.cform{grid-template-columns:minmax(0,1fr)}.ctabs button{flex:1 1 44%}}
 @media (max-width:900px){.map{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.map{grid-template-columns:minmax(0,1fr)}.lair{min-height:170px}.keys{grid-template-columns:repeat(4,64px)}.quiz{flex-direction:column;align-items:flex-start}.card{width:44px;font-size:17px;padding:4px}.hand{gap:6px}.felt{padding:12px}.card.back .kh{width:28px;height:28px;font-size:13px}.gate{grid-template-columns:repeat(3,72px)}.bit{width:72px;height:72px}}
 </style>
@@ -147,6 +185,7 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
     <div class="me"><img id="avatar" src="../assets/studio/crown.png" alt=""><div><small>Your STARKS</small><b id="bal">0</b></div></div>
     <div><small>Rank</small><b id="tier" style="font-size:22px;color:var(--ink)">Fan</b></div>
     <div><small>Chapters cleared</small><b id="cleared" style="font-size:22px;color:var(--ink)">0 / 6</b></div>
+    <a class="btn btn-red" href="#cinema">Lairs Cinema: make the film →</a>
     <a class="btn btn-line" href="../fan-billboard/">Billboard →</a>
   </div>
 
@@ -155,6 +194,44 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
   <section class="stage" id="stage" aria-live="polite">
     <div class="stage-top"><h2 id="sTitle">Lair</h2><span class="meta" id="sMeta"></span><button class="btn btn-line" id="back" type="button">← All lairs</button></div>
     <div class="arena" id="arena"></div>
+  </section>
+
+  <section class="cinema" id="cinema" aria-labelledby="cineH">
+    <p class="eyebrow">Lairs Cinema · Make the film</p>
+    <h2 id="cineH">Direct your own <em>KING</em> scene</h2>
+    <p class="say">These are the lairs: the snow-capped glass dome and the secret city under the prison. Take a set, bring it to life with the AI video tool you already use, star in it with your own face, and post it. The best clips play here, and every approved clip earns STARKS.</p>
+    <ol class="csteps">
+      <li><b>Pick a scene</b><span>Choose a lair and a set below.</span></li>
+      <li><b>Make it move</b><span>Download the scene, copy the prompt, open Kling, Gemini or Wan on your own account.</span></li>
+      <li><b>Post it</b><span>On Instagram, YouTube, X or Facebook with <b>#KingsLairs #FreeTheFace</b>.</span></li>
+      <li><b>Submit the link</b><span>+50 STARKS now. +500 when approved. Scene of the week: +2,000 and the Billboard.</span></li>
+    </ol>
+    <div class="ctabs" id="cTabs" role="group" aria-label="Choose a lair"></div>
+    <div class="cgrid">
+      <figure class="cshot"><img id="cImg" src="../assets/lairs/scenes/casino-grand.webp" alt=""><figcaption id="cCap"></figcaption></figure>
+      <div class="cside">
+        <div class="cthumbs" id="cThumbs"></div>
+        <label class="clab" for="cPrompt">Video prompt (edit it, make it yours)</label>
+        <textarea id="cPrompt" rows="6"></textarea>
+        <div class="row"><a class="btn btn-red" id="cDl" href="#" download>Download scene</a><button class="btn btn-line" id="cCopy" type="button">Copy prompt</button></div>
+        <div class="ctools" id="cTools"></div>
+        <p class="cnote">Use <b>your own face</b>: add your selfie as the reference, or first paint yourself into the chapter with “Star in this scene” and animate that still. Never upload someone else's face. That is the face theft #FreeTheFace is fighting.</p>
+      </div>
+    </div>
+    <form class="csub" id="subForm">
+      <h3>Submit your clip</h3>
+      <div class="cform">
+        <label>Link to your post<input id="subUrl" type="url" required placeholder="https://www.instagram.com/reel/…"></label>
+        <label>Your handle<input id="subHandle" type="text" maxlength="40" placeholder="@yourname"></label>
+        <label>Lair<select id="subLair"></select></label>
+        <label>Made with<select id="subTool"><option>Kling</option><option>Gemini / Veo</option><option>Wan</option><option>Other</option></select></label>
+      </div>
+      <label class="still-ok"><input type="checkbox" id="subOk"> This clip is mine and uses my own face (or one I have permission to use).</label>
+      <div class="row"><button class="btn btn-red" id="subGo" type="submit">Submit clip · +50 STARKS</button><button class="btn btn-line" id="claimGo" type="button">Check my approvals</button></div>
+      <p class="msg" id="subMsg"></p><p class="msg" id="claimMsg"></p>
+    </form>
+    <div class="chead"><h3>Now showing</h3><span id="cCount"></span></div>
+    <div class="cgal" id="cGal"></div>
   </section>
 </main>
 
@@ -222,7 +299,7 @@ var STORY = {
     action: 'Five hands. Bleed his stack.',
     win: 'Ace pushes away from the table, broke and sweating. On his way out he gives you the second name: the Snowman, who keeps the client\'s ledger in a dome above the snowline.',
     lose: 'Ace rakes in the pot and laughs. The House wins tonight. The list is still in your pocket.',
-    scene: 'a grand private casino at midnight, green baize poker table under a low lamp, stacks of chips, crystal chandeliers; they sit at the table holding a King of Hearts'
+    scene: 'a vast underground casino carved into rock under a prison, gothic stained-glass windows, golden pillars, red patterned carpet, green baize tables and slot machines; they stand at the high-roller table holding a King of Hearts'
   },
   dome: {
     chapter: 'Chapter 2 · Cold Open',
@@ -236,7 +313,7 @@ var STORY = {
     action: 'Freeze when the light is on you.',
     win: 'The ledger is yours. One page has been torn out, and the missing name is hidden somewhere in the Archive under the city.',
     lose: 'The searchlight finds you on the bridge. You go over the edge into the snow, and live to try again.',
-    scene: 'a futuristic glass dome fortress on a snowy Himalayan peak at night, searchlights sweeping the snow; they stand on an ice ridge in a long black coat'
+    scene: 'a giant geodesic glass dome fortress on a frozen lake between snow-capped mountains, a helicopter on its rooftop helipad; they stand on a snowy ridge in a long black coat, facing the dome'
   },
   city: {
     chapter: 'Chapter 3 · The Archive',
@@ -250,7 +327,7 @@ var STORY = {
     action: 'Five questions. Fifty-five seconds.',
     win: 'The vault slides open. Inside is the torn page: the Broker, the man who runs the fighting Pit.',
     lose: 'The vault stays shut and the neon flickers out. The Archivist shrugs: come back when you remember.',
-    scene: 'a secret underground city of red neon signs reflected in rain, towering shelves of old film reels glowing; they walk down the aisle in a black suit'
+    scene: 'the Archive inside the dome: a towering atrium library of collectible hero figures on carved balconies under a moonlit glass ceiling, a glowing holographic pyramid overhead; they walk down the centre aisle in a black suit'
   },
   pit: {
     chapter: 'Chapter 4 · Blood Money',
@@ -264,7 +341,7 @@ var STORY = {
     action: 'Land the combos. Knock him down.',
     win: 'The champion stays down. The Broker pays his debt in a single word: the Noctopus, under the sea, guarding the client\'s crown.',
     lose: 'You hit the sand. The crowd roars for the other man tonight.',
-    scene: 'an underground fighting pit carved in rock with a ring of fire torches; they stand in the ring wrapping their knuckles, a shadowed crowd above'
+    scene: 'The Pit, an underground dance bar in a rock cavern, red neon skull signs, hanging cages, red and green club lights, card tables, sea windows; they stand on the stairs above the dance floor in a black suit'
   },
   den: {
     chapter: 'Chapter 5 · Deep Water',
@@ -278,7 +355,7 @@ var STORY = {
     action: 'Ten crowns in thirty seconds.',
     win: 'Inside the last crown is a photograph of the client. You know the face. You have always known the face.',
     lose: 'Your lungs burn and you kick for the surface. The Noctopus keeps its treasure for now.',
-    scene: 'a flooded underwater lair lit by red emergency light, a colossal octopus silhouette in the dark; they swim toward a golden crown on the sea floor'
+    scene: 'The Abyssal Den, an underground lounge with giant aquarium windows full of sharks and a colossal octopus, poker tables under chandeliers; they sit at the poker table with their back to the glass'
   },
   throne: {
     chapter: 'Chapter 6 · The Royal Flush',
@@ -292,7 +369,7 @@ var STORY = {
     action: 'Open the Zero-to-One gate, then make the four decisions that make a King.',
     win: '',
     lose: 'The throne room doors close in your face. The client is still waiting.',
-    scene: 'a vast throne room with a blood-red throne under a single spotlight, playing cards of a royal flush scattered on black marble; they sit on the throne in a black suit'
+    scene: 'the heart of the snow dome: an armoury of blades on one side, a waterfall and pool on the other, a lone throne on a raised platform under the glass dome and helipad; they sit on the throne in a black suit'
   }
 };
 var ENDINGS = {
@@ -308,6 +385,7 @@ function drawMeters() {
   el.innerHTML = '<span><small>Dehshat (fear)</small><b>' + m.fear + '</b></span><span><small>Izzat (honour)</small><b>' + m.honour + '</b></span>';
 }
 function artFor(id) { return '../assets/lairs/' + id + '.webp'; }
+function plateFor(id) { return '../assets/lairs/scenes/' + CINEMA[id].plates[0][0] + '.webp'; }
 
 /* Story intro shown before each lair's game */
 function story(l, start) {
@@ -354,7 +432,9 @@ function stillBox(l) {
     '<div class="still-row">' + (face ? '<img class="face" src="' + face + '" alt="Your photo">' : '') +
     '<label class="btn btn-line still-up">' + (face ? 'Change photo' : 'Add your photo') + '<input type="file" accept="image/jpeg,image/png,image/webp" hidden></label>' +
     '<button class="btn btn-red still-go" type="button"' + (face ? '' : ' disabled') + '>Paint my scene</button></div>' +
-    '<label class="still-ok"><input type="checkbox"> This is my photo, or I have permission to use it.</label><p class="msg still-msg"></p><div class="still-out"></div>';
+    '<label class="still-ok"><input type="checkbox"> This is my photo, or I have permission to use it.</label><p class="msg still-msg"></p><div class="still-out"></div>' +
+    '<p class="still-p" style="margin-top:12px">Want it moving? <a href="#cinema" data-cine="' + l.id + '">Turn this chapter into a video in Lairs Cinema →</a></p>';
+  d.querySelector('[data-cine]').onclick = function (e) { e.preventDefault(); cinePick(l.id); $('cinema').scrollIntoView({ behavior: 'smooth' }); };
   var up = d.querySelector('input[type=file]'), go = d.querySelector('.still-go'), msg = d.querySelector('.still-msg'), ok = d.querySelector('.still-ok input');
   up.onchange = function () {
     var f = up.files && up.files[0]; if (!f) return;
@@ -371,9 +451,9 @@ function stillBox(l) {
     if (!ok.checked) { msg.textContent = 'Please confirm the photo is yours or that you have permission.'; return; }
     go.disabled = true; msg.textContent = 'Painting your scene. About a minute; keep this page open.';
     var faceData = localStorage.getItem(FACE);
-    Promise.all([fetch(faceData).then(function (r) { return r.blob(); }), fetch(artFor(l.id)).then(function (r) { return r.ok ? r.blob() : fetch('../assets/studio/crown.png').then(function (x) { return x.blob(); }); })]).then(function (b) {
+    Promise.all([fetch(faceData).then(function (r) { return r.blob(); }), fetch(plateFor(l.id)).then(function (r) { return r.ok ? r.blob() : fetch('../assets/studio/crown.png').then(function (x) { return x.blob(); }); })]).then(function (b) {
       var form = new FormData();
-      form.append('prompt', 'Design a brand-new, original cinematic film still starring the person in the first photo as the lone hero of a stylish action-thriller called KING. Keep their face, skin tone and likeness clearly recognisable. They wear a sharp black suit and look calm and dangerous. Scene: ' + STORY[l.id].scene + '. Use the second image as the reference for the setting, lighting and red-and-black colour grade. Dramatic cinematic lighting, shallow depth of field, film grain, premium movie-poster quality. No text, no letters, no logos, no watermark. Vertical 2:3 frame.');
+      form.append('prompt', 'Design a brand-new, original cinematic film still starring the person in the first photo as the lone hero of a stylish action-thriller called KING. Keep their face, skin tone and likeness clearly recognisable. They wear a sharp black suit and look calm and dangerous. Scene: ' + STORY[l.id].scene + '. Use the second image as the reference for the setting, architecture and lighting, with a red-and-black cinematic grade. Dramatic cinematic lighting, shallow depth of field, film grain, premium movie-poster quality. No text, no letters, no logos, no watermark. Vertical 2:3 frame.');
       form.append('image', b[0], 'fan.jpg'); form.append('image', b[1], 'scene.' + (b[1].type === 'image/png' ? 'png' : 'webp'));
       return fetch('https://asokatobooda.iamshahrock.workers.dev', { method: 'POST', body: form }).then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.image) throw new Error(j.error || 'The scene could not be painted.'); return j.image; }); });
     }).then(function (img) {
@@ -771,6 +851,110 @@ function throne(a, done) {
   }
   return function () { stopped = true; clearInterval(timer); };
 }
+
+/* ---------- LAIRS CINEMA: fans turn the lairs into their own AI films ---------- */
+// Plates are the official King's Lairs set designs. Fans animate them on their own
+// Kling / Gemini / Wan account, post with #KingsLairs, and submit the link here.
+var HERO = 'a lone assassin in a sharp black suit (the person in my reference photo, same face)';
+var CINEMA = {
+  casino: { plates: [
+    ['casino-grand', 'The Grand Casino', 'Slow crane shot descending from the stained-glass arches over the red carpet of an underground casino. Dealers freeze mid-deal as ' + HERO + ' walks between the golden pillars to the high-roller table, lays down a King of Hearts and looks straight into the lens. Cinematic lighting, film grain, 8 seconds.'],
+    ['city-floorplan', 'The master floor plan', 'Camera pushes into this blueprint of an underground city beneath a storm-lashed island prison. Lightning flashes, the casino, dance pit and abyssal den light up one by one, and a red route traces the path to the villain\'s trophy vault. Thriller title-sequence style, 6 seconds.']
+  ] },
+  dome: { plates: [
+    ['dome-aerial', 'The dome from the air', 'Sweeping drone shot over snow-capped peaks toward a giant glass dome on a frozen lake. A black helicopter lifts off the rooftop helipad as searchlights snap on and snow blows across the ice. Epic scale, cold blue light, 8 seconds.'],
+    ['dome-arrival', 'The arrival', 'Locked-off wide shot: ' + HERO + ' stands on the snowy ridge facing the glass dome. Wind whips the coat, the doors of the dome slide open, guards inside turn toward the camera. Slow push-in, tense score, 8 seconds.'],
+    ['dome-lab', 'The lab wing', 'Tracking shot across the dome\'s lab atrium: scientists at holographic tables, armoured guards, flying cars outside the glass. Every screen flickers to a red warning as ' + HERO + ' walks calmly through the centre. 8 seconds.'],
+    ['dome-waterfall', 'The waterfall hall', 'Slow dolly toward the indoor waterfall and pool beneath a giant world map. The map zooms to Mumbai and pulses red; the scientists look up as ' + HERO + ' steps out of the mist. 8 seconds.'],
+    ['dome-hive', 'The hive beneath', 'Camera tilts down from the helipad window through ribs of a biomechanical hive lined with frozen pods. Drones skitter across the glass, the pods begin to glow, and ' + HERO + ' stands alone at the central console. Horror-thriller mood, 8 seconds.']
+  ] },
+  city: { plates: [
+    ['dome-archive', 'The Archive', 'Slow upward crane through a towering library of collectible hero figures under a moonlit glass roof. A holographic pyramid rotates overhead and every figure turns its head as ' + HERO + ' walks down the centre aisle. 8 seconds.'],
+    ['city-floorplan', 'The master floor plan', 'Camera glides over this blueprint of the underground secret city. Rooms light up one at a time and a red line traces the route from the service tunnel to the trophy vault. 6 seconds.']
+  ] },
+  pit: { plates: [
+    ['pit-dance', 'The Pit dance bar', 'Handheld shot from the top of the stairs into The Pit: neon skulls flicker, the cages sway, the crowd parts on the dance floor as ' + HERO + ' walks down the steps. The music cuts out; everyone turns. 8 seconds.']
+  ] },
+  den: { plates: [
+    ['den-abyssal', 'The Abyssal Den', 'Slow push across the poker tables of the Abyssal Den toward the giant aquarium. The octopus uncoils behind the glass and sharks circle as ' + HERO + ' turns over a royal flush. Blue and violet light, 8 seconds.']
+  ] },
+  throne: { plates: [
+    ['dome-panorama', 'The heart of the dome', 'Wide crane shot over the heart of the dome: the armoury, the conveyor lines, the waterfall, the empty throne on its platform under the helipad. Guards kneel in a ring as ' + HERO + ' climbs the steps and sits. 8 seconds.'],
+    ['dome-residence', 'The residence', 'Slow pull-back from the stone fireplace through the glass-walled residence: music room above, art studio, observatory telescope against the galaxy. ' + HERO + ' stands by the fire and turns to camera. 8 seconds.']
+  ] }
+};
+var TOOLS = [
+  ['Kling', 'https://kling.ai/app', 'Image to Video. Add your selfie as a reference (Elements) for your face.'],
+  ['Gemini', 'https://gemini.google.com/', 'Ask for a video and attach the scene (photo-to-video needs a Google AI plan).'],
+  ['Wan', 'https://wan.video/', 'Image to Video. Upload the scene as the first frame.']
+];
+var cineLair = 'casino', cinePlate = 0;
+var CN = { casino: '01', dome: '02', city: '03', pit: '04', den: '05', throne: '06' };
+function cinePick(id, k) {
+  if (!CINEMA[id]) return; cineLair = id; cinePlate = k || 0;
+  var c = CINEMA[id], pl = c.plates[cinePlate], L = LAIRS.find(function (x) { return x.id === id; });
+  [].forEach.call($('cTabs').children, function (b) { b.setAttribute('aria-pressed', b.dataset.id === id ? 'true' : 'false'); });
+  $('cImg').src = '../assets/lairs/scenes/' + pl[0] + '.webp'; $('cImg').alt = pl[1] + ' · ' + L.name;
+  $('cCap').textContent = 'Chapter ' + CN[id] + ' · ' + L.name + ' · ' + pl[1];
+  $('cThumbs').innerHTML = c.plates.map(function (p, j) { return '<button type="button" class="cthumb" aria-pressed="' + (j === cinePlate) + '" data-k="' + j + '"><img src="../assets/lairs/scenes/' + p[0] + '-t.webp" alt="" loading="lazy"><span>' + p[1] + '</span></button>'; }).join('');
+  [].forEach.call($('cThumbs').children, function (b) { b.onclick = function () { cinePick(id, +b.dataset.k); }; });
+  $('cPrompt').value = pl[2];
+  $('cDl').href = '../assets/lairs/scenes/' + pl[0] + '.webp'; $('cDl').setAttribute('download', 'kings-lairs-' + pl[0] + '.webp');
+  $('subLair').value = id;
+}
+function cineInit() {
+  $('cTabs').innerHTML = LAIRS.map(function (l) { return '<button type="button" data-id="' + l.id + '">' + CN[l.id] + ' ' + l.name.replace(/^The /, '') + '</button>'; }).join('');
+  [].forEach.call($('cTabs').children, function (b) { b.onclick = function () { cinePick(b.dataset.id); }; });
+  $('cTools').innerHTML = TOOLS.map(function (t) { return '<a class="ctool" href="' + t[1] + '" target="_blank" rel="noopener"><b>Open ' + t[0] + ' ↗</b><small>' + t[2] + '</small></a>'; }).join('');
+  $('subLair').innerHTML = LAIRS.map(function (l) { return '<option value="' + l.id + '">' + CN[l.id] + ' · ' + l.name + '</option>'; }).join('');
+  $('cCopy').onclick = function () {
+    var t = $('cPrompt').value + '\n\n#KingsLairs #FreeTheFace #AgarMainKingHota';
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { $('cCopy').textContent = 'Copied ✓'; setTimeout(function () { $('cCopy').textContent = 'Copy prompt'; }, 1800); })
+      .catch(function () { $('cPrompt').select(); document.execCommand && document.execCommand('copy'); });
+  };
+  $('subForm').onsubmit = function (e) {
+    e.preventDefault();
+    var url = $('subUrl').value.trim(), m = $('subMsg'), btn = $('subGo');
+    if (!$('subOk').checked) { m.textContent = 'Please confirm the clip is yours and uses your own face (or a face you have permission to use).'; return; }
+    btn.disabled = true; m.textContent = 'Sending…';
+    var s = STARKS.get();
+    fetch('https://asokatobooda.iamshahrock.workers.dev/ai-submit', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: url, handle: $('subHandle').value.trim(), note: '#lair:' + $('subLair').value + ' · Lairs Cinema · ' + $('subTool').value, device: s.device }) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'Could not send.'); return j; }); })
+      .then(function (j) {
+        if (j.duplicate) { m.textContent = 'This link is already in the queue. You will get your STARKS when it is approved.'; }
+        else { var got = STARKS.earn('clipsubmit', 50, 'Lairs Cinema clip submitted', 'clip-' + url.slice(-40)); m.textContent = 'Submitted' + (got ? ' · +50 STARKS' : '') + '. Approved clips earn 500 STARKS and go into the Lairs Cinema; check back tomorrow.'; $('subUrl').value = ''; }
+        try { localStorage.setItem('amkh-cinema-sub', '1'); } catch (x) {}
+        btn.disabled = false;
+      }).catch(function (x) { m.textContent = x.message; btn.disabled = false; });
+  };
+  $('claimGo').onclick = function () { claim(true); };
+  cinePick('casino');
+  fetch('../data/lairs-cinema.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(drawCinema).catch(function () { drawCinema({ clips: [] }); });
+  var mine = null; try { mine = localStorage.getItem('amkh-cinema-sub'); } catch (e) {}
+  if (mine) setTimeout(function () { claim(false); }, 1500);
+}
+function claim(loud) {
+  var m = $('claimMsg'); if (loud) m.textContent = 'Checking…';
+  STARKS.claim().then(function (j) {
+    if (!j.submitted) m.textContent = loud ? 'No clips submitted from this device yet.' : '';
+    else m.textContent = j.submitted + ' submitted · ' + j.approved + ' approved' + (j.awarded ? ' · +' + fmt(j.awarded) + ' STARKS just now' : '') + '.';
+  }).catch(function (e) { if (loud) m.textContent = /test browser/.test(e.message) ? 'Checking is off in test browsers.' : e.message; });
+}
+function ytId(u) { var m = String(u).match(/(?:v=|youtu\.be\/|shorts\/)([\w-]{11})/); return m ? m[1] : null; }
+function esc(t) { return String(t || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function drawCinema(j) {
+  var list = (j && j.clips || []).slice().sort(function (a, b) { return (b.sotw ? 1 : 0) - (a.sotw ? 1 : 0) || String(b.approved).localeCompare(String(a.approved)); });
+  $('cCount').textContent = list.length ? list.length + ' approved clip' + (list.length > 1 ? 's' : '') : '';
+  if (!list.length) { $('cGal').innerHTML = '<p class="say cempty">The screen is dark. Be the first fan in the Lairs Cinema: pick a lair above, make your clip, and submit it.</p>'; return; }
+  $('cGal').innerHTML = list.map(function (c) {
+    var y = ytId(c.url), pl = CINEMA[c.lair] ? CINEMA[c.lair].plates[0][0] : 'casino-grand';
+    var th = y ? 'https://i.ytimg.com/vi/' + y + '/hqdefault.jpg' : '../assets/lairs/scenes/' + pl + '-t.webp';
+    return '<a class="cclip' + (c.sotw ? ' sotw' : '') + '" href="' + esc(c.url) + '" target="_blank" rel="noopener"><img src="' + th + '" alt="" loading="lazy">' + (c.sotw ? '<i>Scene of the week</i>' : '') +
+      '<b>' + esc(c.title || 'Fan clip') + '</b><small>' + esc(c.handle || '') + ' · ' + esc(c.platform || '') + (CN[c.lair] ? ' · Ch ' + CN[c.lair] : '') + '</small></a>';
+  }).join('');
+}
+cineInit();
 
 drawMap(); drawMeters();
 var want = new URLSearchParams(location.search).get('lair');

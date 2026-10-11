@@ -64,6 +64,7 @@ export default {
     if (path === "/d2k") return d2k(request, env, reply, origin);
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
+    if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -161,8 +162,11 @@ export default {
 const RULES = {
   visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
   throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
-  chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6], inquilab: [50, 1]
+  chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6], inquilab: [50, 1],
+  clipsubmit: [50, 3]
 };
+// Awarded only by the Worker itself, after a clip is approved in data/lairs-cinema.json
+const SERVER_RULES = { clip: [500, 3], sotw: [2000, 1] };
 const CARRY_MAX = 3000;
 const BB_TIERS = [[0, "Fan"], [500, "Rebel"], [1500, "Prince"], [4000, "King"], [10000, "Royal Flush"]];
 const BB_BLOCK = /(fuck|shit|bitch|chut|madarch|bhench|behench|randi|gaand|lund|porn|sex|nazi)/i;
@@ -406,4 +410,58 @@ async function inquilab(request, env, reply, origin) {
   const added = !!(r.meta && r.meta.changes);
   if (added) await bump(env, istDay(), "inquilab_join");
   return reply(200, { joined: await count(), added });
+}
+
+
+// ---------------- Lairs Cinema: STARKS for approved fan clips ----------------
+// Fans make a clip on their own Kling / Gemini / Wan account, post it, and submit the link
+// (/ai-submit, note starts "#lair:<chapter>"). The daily review approves clips by adding them
+// to data/lairs-cinema.json on the site. POST /lairs/claim {device} pays 500 STARKS once per
+// approved clip (3 a day) and 2,000 once for a Scene of the week.
+const CINEMA_URL = "https://agarmainkinghota.com/data/lairs-cinema.json";
+async function grant(env, device, reason, amount, note, once) {
+  const rule = SERVER_RULES[reason]; if (!rule) return 0;
+  amount = Math.max(0, Math.min(rule[0], Math.round(amount)));
+  const day = istDay(), now = Date.now();
+  const used = await env.DB.prepare("SELECT n FROM earn_day WHERE device=?1 AND day=?2 AND reason=?3").bind(device, day, reason).first();
+  if (used && used.n >= rule[1]) return 0;
+  if (await env.DB.prepare("SELECT 1 AS x FROM once_awards WHERE device=?1 AND once_id=?2").bind(device, once).first()) return 0;
+  await env.DB.batch([
+    env.DB.prepare("INSERT INTO earn_day(device,day,reason,n,pts) VALUES(?1,?2,?3,1,?4) ON CONFLICT(device,day,reason) DO UPDATE SET n=n+1, pts=pts+?4").bind(device, day, reason, amount),
+    env.DB.prepare("UPDATE players SET balance=balance+?2, updated=?3 WHERE device=?1").bind(device, amount, now),
+    env.DB.prepare("INSERT INTO ledger(device,reason,amount,note,ts) VALUES(?1,?2,?3,?4,?5)").bind(device, reason, amount, String(note).slice(0, 80), now),
+    env.DB.prepare("INSERT INTO daily(day,metric,n) VALUES(?1,?2,1) ON CONFLICT(day,metric) DO UPDATE SET n=n+1").bind(day, "earn:" + reason),
+    env.DB.prepare("INSERT INTO daily(day,metric,n) VALUES(?1,'starks',?2) ON CONFLICT(day,metric) DO UPDATE SET n=n+?2").bind(day, amount),
+    env.DB.prepare("INSERT OR IGNORE INTO once_awards(device,once_id,ts) VALUES(?1,?2,?3)").bind(device, once, now)
+  ]);
+  return amount;
+}
+async function lairsClaim(request, env, reply, origin) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  if (request.method !== "POST") return reply(405, { error: "Use POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "claim:" + ip))) return reply(429, { error: "Too many checks. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const mine = (await env.DB.prepare("SELECT id, url FROM ai_submissions WHERE device=?1 ORDER BY ts DESC LIMIT 100").bind(body.device).all()).results || [];
+  const pending = mine.length;
+  if (!pending) return reply(200, { awarded: 0, approved: 0, submitted: 0 });
+  let list = [];
+  try {
+    const r = await fetch(CINEMA_URL, { cf: { cacheTtl: 300, cacheEverything: true } });
+    if (r.ok) { const j = await r.json(); list = Array.isArray(j.clips) ? j.clips : []; }
+  } catch (e) {}
+  const byId = new Map(mine.map(m => [Number(m.id), m.url]));
+  const urls = new Set(mine.map(m => m.url));
+  const ok = list.filter(c => c && (byId.has(Number(c.sub_id)) || urls.has(c.url)));
+  await ensurePlayer(env, body.device);
+  let awarded = 0;
+  for (const c of ok) {
+    const key = String(c.sub_id || c.url).slice(0, 50);
+    awarded += await grant(env, body.device, "clip", 500, "Lairs Cinema clip approved", "clip:" + key);
+    if (c.sotw) awarded += await grant(env, body.device, "sotw", 2000, "Lairs Cinema · Scene of the week", "sotw:" + key);
+  }
+  const p = await player(env, body.device);
+  return reply(200, { awarded, approved: ok.length, submitted: pending, balance: p ? p.balance : 0, tier: bbTier(p ? p.balance : 0) }, { "Cache-Control": "no-store" });
 }
