@@ -50,12 +50,15 @@ log.push('d2k API: ' + JSON.stringify(await dk.evaluate(async () => { const r = 
 await dk.screenshot({ path: 'e2e-out/d2k-phone.png', fullPage: false });
 await dk.close();
 const hm = await browser.newPage({ viewport: { width: 1440, height: 900 } }); await hm.goto(base + '/?t=' + Date.now(), { waitUntil: 'networkidle' });
-log.push('home: ' + JSON.stringify(await hm.evaluate(() => ({ slides: document.querySelectorAll('#hero .slide').length, banner: !!document.querySelector('.doors .d2k-banner'), headerLinks: document.querySelectorAll('#site-header .sh-nav a').length }))));
+log.push('home: ' + JSON.stringify(await hm.evaluate(() => ({ slides: document.querySelectorAll('#hero .slide').length, banner: !!document.querySelector('.doors .d2k-banner'), inquilabBanner: !!document.querySelector('.doors .iq-banner'), headerLinks: document.querySelectorAll('#site-header .sh-nav a').length }))));
 await hm.evaluate(() => document.querySelector('.d2k-banner').scrollIntoView({ block: 'center' })); await hm.waitForTimeout(800); await hm.screenshot({ path: 'e2e-out/home-banner-desktop.png' }); await hm.close();
 await hp.goto(base + '/king-intelligence/?t=' + Date.now(), { waitUntil: 'networkidle' }); await hp.waitForTimeout(800);
 log.push('AI creator signal: ' + JSON.stringify(await hp.evaluate(() => ({ works: document.querySelector('#ao-kpis [data-k=items]').textContent, views: document.querySelector('#ao-kpis [data-k=views]').textContent, topRows: document.querySelectorAll('#ao-top tr').length }))));
 await hp.goto(base + '/fan-made-ai-universe/?t=' + Date.now(), { waitUntil: 'networkidle' }); await hp.waitForTimeout(800);
 log.push('Fan AI gallery: ' + JSON.stringify(await hp.evaluate(() => ({ cards: document.querySelectorAll('#dd-grid .ai-card').length, thumbsLoaded: [...document.querySelectorAll('#dd-grid img')].filter(i => i.naturalWidth > 0).length, overflow: document.documentElement.scrollWidth - innerWidth }))));
+await hp.goto(base + '/inquilab/?t=' + Date.now(), { waitUntil: 'networkidle' }); await hp.waitForTimeout(1200);
+log.push('INQUILAB (phone): ' + JSON.stringify(await hp.evaluate(() => ({ joinedCounter: document.getElementById('j-num').textContent, works: document.getElementById('c-works').textContent, recent: document.querySelectorAll('#recent a').length, headlineFits: document.getElementById('h1').scrollWidth <= document.getElementById('h1').clientWidth, overflow: document.documentElement.scrollWidth - innerWidth }))));
+await hp.screenshot({ path: 'e2e-out/inquilab-phone.png' });
 log.push('asset versions: ' + JSON.stringify(await lp.evaluate(() => [...document.querySelectorAll('link[rel=stylesheet][href*="assets/"], script[src*="assets/"]')].map(e => (e.href || e.src).split('/').pop()))));
 const sqs = await lp.evaluate(() => { const c = [...document.querySelectorAll('.sq')].map(x => x.getBoundingClientRect()); return c.length + ' squares, ' + [...new Set(c.map(r => r.width.toFixed(1) + 'x' + r.height.toFixed(1)))].join(','); });
 await lp.evaluate(() => window.CHESS81.move('O2', 'O4'));
