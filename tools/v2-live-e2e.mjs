@@ -39,6 +39,11 @@ await hp.goto(base + '/asoka-to-booda/?t=' + Date.now(), { waitUntil: 'networkid
 await hp.evaluate(() => document.getElementById('act8').scrollIntoView()); await hp.waitForTimeout(1500);
 log.push('thesis DOOM to KING (phone): ' + JSON.stringify(await hp.evaluate(() => ({ doomThumb: (document.querySelector('.yt img') || {}).naturalWidth || 0, kingArt: (document.querySelector('.dk-king img') || {}).naturalWidth || 0, overflow: document.documentElement.scrollWidth - innerWidth }))));
 await hp.screenshot({ path: 'e2e-out/thesis-doom-phone.png' });
+await hp.goto(base + '/king-intelligence/?t=' + Date.now(), { waitUntil: 'networkidle' });
+log.push('KING Buzz: ' + JSON.stringify(await hp.evaluate(() => ({ sectionsVisible: [...document.querySelectorAll('.ki-panel')].filter(x => x.offsetHeight > 0).length, platformTiles: document.querySelectorAll('#platforms .ki-tile').length, icons: [...document.querySelectorAll('#platforms .ki-tile img')].filter(i => i.naturalWidth > 0).length, commandCentre: !!document.querySelector('#platforms .ki-cc') }))));
+await hp.goto(base + '/lairs/?t=' + Date.now(), { waitUntil: 'networkidle' });
+log.push('Lairs chapters open: ' + await hp.evaluate(() => [...document.querySelectorAll('.lair')].filter(x => !x.disabled).length) + ' of 6');
+const dk = await browser.newPage(); const r2 = await dk.goto(base + '/doom-to-king/'); await dk.waitForTimeout(1500); log.push('doom-to-king link -> ' + dk.url().replace(base, '')); await dk.close();
 log.push('asset versions: ' + JSON.stringify(await lp.evaluate(() => [...document.querySelectorAll('link[rel=stylesheet][href*="assets/"], script[src*="assets/"]')].map(e => (e.href || e.src).split('/').pop()))));
 const sqs = await lp.evaluate(() => { const c = [...document.querySelectorAll('.sq')].map(x => x.getBoundingClientRect()); return c.length + ' squares, ' + [...new Set(c.map(r => r.width.toFixed(1) + 'x' + r.height.toFixed(1)))].join(','); });
 await lp.evaluate(() => window.CHESS81.move('O2', 'O4'));
