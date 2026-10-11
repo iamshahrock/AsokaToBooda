@@ -22,7 +22,8 @@
     ['fan-billboard/', 'Billboard'],
     ['king-intelligence/', 'KING Buzz'],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
-    ['doom-to-king/', 'DOOM to KING']
+    ['doom-to-king/', 'DOOM to KING'],
+    ['inquilab/', 'Inquilab']
   ];
   var UTIL = [['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']];
 

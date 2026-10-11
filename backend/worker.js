@@ -63,6 +63,7 @@ export default {
     if (path === "/stats") return stats(request, env, reply);
     if (path === "/d2k") return d2k(request, env, reply, origin);
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
+    if (path === "/inquilab") return inquilab(request, env, reply, origin);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -160,7 +161,7 @@ export default {
 const RULES = {
   visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
   throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
-  chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6]
+  chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6], inquilab: [50, 1]
 };
 const CARRY_MAX = 3000;
 const BB_TIERS = [[0, "Fan"], [500, "Rebel"], [1500, "Prince"], [4000, "King"], [10000, "Royal Flush"]];
@@ -387,4 +388,22 @@ async function aiSubmit(request, env, reply, origin) {
   const r = await env.DB.prepare("INSERT OR IGNORE INTO ai_submissions(url, platform, handle, note, device, ts, status) VALUES(?1, ?2, ?3, ?4, ?5, ?6, 'pending')").bind(url, plat[0], handle, note, okDevice(body.device) ? body.device : "", Date.now()).run();
   if (r.meta && r.meta.changes) await bump(env, istDay(), "ai_submission");
   return reply(200, { ok: true, duplicate: !(r.meta && r.meta.changes), platform: plat[0] });
+}
+
+// ---------------- INQUILAB: fans joining the revolt (#FreeTheFace) ----------------
+// GET /inquilab -> { joined }   POST /inquilab {device} -> { joined, added }
+async function inquilab(request, env, reply, origin) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  const count = async () => ((await env.DB.prepare("SELECT COUNT(*) AS n FROM inquilab_joins").first()) || {}).n || 0;
+  if (request.method === "GET") return reply(200, { joined: await count() }, { "Cache-Control": "no-store" });
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "inq:" + ip))) return reply(429, { error: "Too many requests. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const r = await env.DB.prepare("INSERT OR IGNORE INTO inquilab_joins(device, ts) VALUES(?1, ?2)").bind(body.device, Date.now()).run();
+  const added = !!(r.meta && r.meta.changes);
+  if (added) await bump(env, istDay(), "inquilab_join");
+  return reply(200, { joined: await count(), added });
 }
