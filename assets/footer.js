@@ -40,4 +40,8 @@
   ].forEach(function (l) { var p = document.createElement('p'); p.className = l[0]; p.textContent = l[1]; inner.appendChild(p); });
   f.appendChild(inner);
   document.body.appendChild(f);
+
+  // Fan Wall on the section pages (fanwall.js decides which); same version stamp as this file
+  var q = me && me.src.indexOf('?') > 0 ? me.src.slice(me.src.indexOf('?')) : '';
+  var fw = document.createElement('script'); fw.src = base + 'fanwall.js' + q; fw.defer = true; document.body.appendChild(fw);
 })();
