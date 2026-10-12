@@ -42,6 +42,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Hero line "Your face. Not his." links to /inquilab/.
 - Live test 12 Oct: one poster (Shah Rock Jaan art as the "fan photo"), 200 OK in 37 s, no star faces, label and metadata present. A real human photo is NOT yet tested.
 - Limits: 100 site posters a day, 5 per connection a day.
+- Cast picker (12 Oct): for the 71 posters with detected faces, step 02 shows numbered characters (assets/posters/faces.json: positions only, no identities). Fans choose You / Friend 1 / Friend 2 / A new face per character; the prompt keeps the poster's cast layout and every original cast member becomes a fan or an invented face. Posters with fewer than 2 faces, and KING, use the single-hero mode.
 
 ## Open work
 - Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
