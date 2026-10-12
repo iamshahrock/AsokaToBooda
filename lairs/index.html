@@ -124,6 +124,19 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 .choice:hover:not(:disabled){border-color:var(--red-text)}
 .choice.picked{background:var(--red);border-color:var(--red)}
 .big{font-family:var(--display);font-size:clamp(30px,4vw,48px);text-transform:uppercase;line-height:1;margin:0 0 8px}
+/* reel */
+.reel{position:relative;display:block;height:clamp(220px,34vw,420px);margin:0 0 18px;border:1px solid var(--line);overflow:hidden;background:#000;color:var(--ink);text-decoration:none}
+.reel-frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease;transform:scale(1.04)}
+.reel-frames img.on{opacity:1;animation:kb 9s ease-out forwards}
+@keyframes kb{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.16) translate(-2%,-2%)}}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,3,3,.9) 0%,rgba(6,3,3,.55) 38%,rgba(6,3,3,0) 70%)}
+.reel-copy{position:absolute;z-index:1;left:clamp(16px,3vw,36px);bottom:clamp(16px,3vw,32px);display:flex;flex-direction:column;align-items:flex-start;gap:8px;max-width:520px}
+.reel-copy em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
+.reel-copy strong{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.6vw,64px);line-height:.95;text-transform:uppercase}
+.reel-copy strong i{font-style:normal;color:var(--red-hi)}
+.reel-copy span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d9cfc7}
+.reel:hover{border-color:var(--red-hi)}
+@media (prefers-reduced-motion:reduce){.reel-frames img.on{animation:none}}
 /* cinema */
 .cinema{margin:44px 0 10px;padding-top:30px;border-top:1px solid var(--line)}
 .cinema h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,60px);line-height:.95;text-transform:uppercase;margin:4px 0 12px}
@@ -190,6 +203,11 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
     <a class="btn btn-line" href="../fan-billboard/">Billboard →</a>
   </div>
 
+  <a class="reel" id="reel" href="#cinema" aria-label="Lairs Cinema: direct your own KING scene">
+    <div class="reel-frames" id="reelFrames"></div>
+    <div class="reel-copy"><em>Lairs Cinema · Now casting</em><strong>Direct your own <i>KING</i> scene</strong><span id="reelCap">The Grand Casino</span><b class="btn btn-red">Make the film →</b></div>
+  </a>
+
   <div class="map" id="map"></div>
 
   <section class="stage" id="stage" aria-live="polite">
@@ -237,6 +255,7 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 </main>
 
 <script src="../assets/starks.js"></script>
+<script src="../assets/cinema.js"></script>
 <script>
 (function () {
 var $ = function (id) { return document.getElementById(id); };
@@ -952,11 +971,29 @@ function drawCinema(j) {
   $('cGal').innerHTML = list.map(function (c) {
     var y = ytId(c.url), pl = CINEMA[c.lair] ? CINEMA[c.lair].plates[0][0] : 'casino-grand';
     var th = y ? 'https://i.ytimg.com/vi/' + y + '/hqdefault.jpg' : '../assets/lairs/scenes/' + pl + '-t.webp';
-    return '<a class="cclip' + (c.sotw ? ' sotw' : '') + '" href="' + esc(c.url) + '" target="_blank" rel="noopener"><img src="' + th + '" alt="" loading="lazy">' + (c.sotw ? '<i>Scene of the week</i>' : '') +
+    return '<a class="cclip' + (c.sotw ? ' sotw' : '') + '" href="' + esc(c.url) + '" target="_blank" rel="noopener" data-i="' + list.indexOf(c) + '"><img src="' + th + '" alt="" loading="lazy">' + (c.sotw ? '<i>Scene of the week</i>' : '') +
       '<b>' + esc(c.title || 'Fan clip') + '</b><small>' + esc(c.handle || '') + ' · ' + esc(c.platform || '') + (CN[c.lair] ? ' · Ch ' + CN[c.lair] : '') + '</small></a>';
   }).join('');
+  [].forEach.call($('cGal').querySelectorAll('.cclip'), function (a) { a.onclick = function (e) { if (!window.AMKH_CINEMA || !AMKH_CINEMA.embed(list[+a.dataset.i])) return; e.preventDefault(); AMKH_CINEMA.play(list[+a.dataset.i], '../'); }; });
 }
-cineInit();
+/* the cinema screen at the top: every lair set, slowly panning */
+function reelInit() {
+  var plates = []; Object.keys(CINEMA).forEach(function (k) { CINEMA[k].plates.forEach(function (p) { if (!plates.some(function (q) { return q[0] === p[0]; })) plates.push([p[0], p[1], k]); }); });
+  var box = $('reelFrames'); if (!box) return;
+  box.innerHTML = plates.map(function (p, i) { return '<img ' + (i < 2 ? 'src' : 'data-src') + '="../assets/lairs/scenes/' + p[0] + '-m.webp" alt="" ' + (i ? '' : 'class="on"') + '>'; }).join('');
+  var imgs = box.querySelectorAll('img'), i = 0;
+  $('reelCap').textContent = plates[0][1];
+  setInterval(function () {
+    if (document.hidden) return;
+    var nx = (i + 1) % imgs.length, n2 = imgs[(nx + 1) % imgs.length];
+    if (n2.dataset.src) { n2.src = n2.dataset.src; n2.removeAttribute('data-src'); }
+    if (imgs[nx].dataset.src) { imgs[nx].src = imgs[nx].dataset.src; imgs[nx].removeAttribute('data-src'); }
+    imgs[i].classList.remove('on'); imgs[nx].classList.add('on'); i = nx;
+    $('reelCap').textContent = plates[i][1] + ' \u00b7 ' + (LAIRS.find(function (l) { return l.id === plates[i][2]; }) || {}).name;
+  }, 6500);
+}
+cineInit(); reelInit();
+(function () { var q = new URLSearchParams(location.search).get('scene'); if (q && CINEMA[q]) { cinePick(q); setTimeout(function () { $('cinema').scrollIntoView(); }, 300); } })();
 
 drawMap(); drawMeters();
 var want = new URLSearchParams(location.search).get('lair');
