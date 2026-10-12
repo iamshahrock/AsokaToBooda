@@ -48,10 +48,10 @@
 .v2 .strip-wrap::before{left:0;background:linear-gradient(90deg,var(--ground),transparent)}
 .v2 .strip-wrap::after{right:0;background:linear-gradient(270deg,var(--ground),transparent)}
 .v2 .strip-wrap.at-start::before,.v2 .strip-wrap.at-end::after{opacity:0}
-.v2 .strip{display:grid;grid-auto-flow:column;grid-auto-columns:96px;gap:8px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity;scrollbar-color:var(--red) #1a1010}
+.v2 .strip{display:grid;grid-auto-flow:column;grid-auto-columns:82px;gap:8px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity;scrollbar-color:var(--red) #1a1010}
 .v2 .strip a{position:relative;scroll-snap-align:start;display:block;background:#0d0909;border:2px solid transparent}
 .v2 .strip a:hover,.v2 .strip a:focus-visible{border-color:var(--red-hi)}
-.v2 .strip img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+.v2 .strip img{width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;background:#050303}
 .v2 .strip .play{position:absolute;left:0;right:0;top:calc(96px * 1.5 - 30px);margin:0 auto;width:max-content;max-width:90%;padding:4px 7px;background:var(--red);color:#fff;font:600 10px var(--body);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;opacity:0;transition:opacity .15s}
 .v2 .strip a:hover .play,.v2 .strip a:focus-visible .play,.v2 .strip a.king .play{opacity:1}
 .v2 .strip span{display:block;padding:5px 5px 7px;font-size:11px;line-height:1.25}
