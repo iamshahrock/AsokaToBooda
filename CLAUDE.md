@@ -57,6 +57,13 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Avoid "built to break records" unless a named, measurable record.
 - Pending from owner: backer bios (Dr. Prasla, Mr. Mohomed Morani, Ganesh), quote approval, date, media contact, proof for Wharton/IO/Shorty awards and Singham Returns. Zee award: Jan 2012 ceremony for Ra.One (2011).
 
+## Portal direction (decided 12-13 Oct 2026)
+- The site is becoming a portal, not one site. Make Your Poster becomes a category landing page (early-2000s game-portal style): a grid of named poster games, each with its own creator credit, cover, play count and badges (NEW, HOT, KING'S PICK). Our studio gets its own game name (proposed: Kingmaker; owner to confirm).
+- A fellow fan developer is building a second poster game: "The Ultimate King Fan Challenge" (4 tasks: Know the King 81-second quiz, Make the King's 81st poster, One Minute for the King, Make Your King Famous; Top 5 prize). Owner approved; STARKS will be integrated into his game. Landing page work starts 13 Oct.
+- Shared across all creators: one fan identity + STARKS, one creator charter (#FreeTheFace, AI-made label, consent), one card format.
+- Review notes given on his deck: lock the Top 5 prize before launch; cap social likes (deck gives them 350/1,000); one currency (STARKS) not three; start Task 3 as a voice note; define "80 films" (our 80 posters vs 98 film credits); quiz bank can come from the thesis appendices.
+- Sponsor: Phenomenal AI (phenomenalai.in, text-to-video), owner's former client; free account for campaign videos. First test (15 s, crowned kid in "The Abyssal Den" pool hall) reviewed: fix crown continuity, duplicate pool ball, missing break payoff, empty opening, audio level. Credit line and logo pending from the owner.
+
 ## Working across chats
 Chats cannot read each other. At the end of any chat that changes the site, update this file in the same PR.
 - About Us + owner's blog (after the site is done).
