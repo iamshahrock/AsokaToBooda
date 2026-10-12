@@ -65,6 +65,7 @@ export default {
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
     if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
+    if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -163,7 +164,7 @@ const RULES = {
   visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
   throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
   chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6], inquilab: [50, 1],
-  clipsubmit: [50, 3]
+  clipsubmit: [50, 3], comment: [10, 3]
 };
 // Awarded only by the Worker itself, after a clip is approved in data/lairs-cinema.json
 const SERVER_RULES = { clip: [500, 3], sotw: [2000, 1] };
@@ -464,4 +465,106 @@ async function lairsClaim(request, env, reply, origin) {
   }
   const p = await player(env, body.device);
   return reply(200, { awarded, approved: ok.length, submitted: pending, balance: p ? p.balance : 0, tier: bbTier(p ? p.balance : 0) }, { "Cache-Control": "no-store" });
+}
+
+
+// ---------------- Fan Wall: comments and reactions on every section page ----------------
+// No word filter, by the owner's choice. Safeguards: per-visitor rate limits, a daily cap per
+// device, links held for review, and community reports (3 reports hide a comment for review).
+// GET  /comments?page=/lairs/&sort=new|top        -> { comments, reactions, mine }
+// POST /comments          {device, page, body, name, parent?}
+// POST /comments/react    {device, page, kind}     kind: crown | fire | heart (toggle)
+// POST /comments/crown    {device, id}             toggle a crown on a comment
+// POST /comments/report   {device, id}
+const WALL_PAGES = new Set(["/create/", "/lairs/", "/CHESS81.HTML", "/fan-billboard/", "/king-intelligence/", "/asoka-to-booda/", "/doom-to-king/", "/inquilab/", "/fan-made-ai-universe/"]);
+const WALL_REACT = ["crown", "fire", "heart"];
+function wallPage(raw) {
+  let p = String(raw || "").split("?")[0].split("#")[0].replace(/index\.html$/i, "");
+  if (!p.startsWith("/")) p = "/" + p;
+  return WALL_PAGES.has(p) ? p : null;
+}
+function wallName(raw) {
+  const n = String(raw || "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim().slice(0, 24);
+  return n.length >= 2 ? n : null;
+}
+async function wallState(env, page, device, sort) {
+  const order = sort === "top" ? "crowns DESC, ts DESC" : "ts DESC";
+  const [c, r, mineR, mineC] = await Promise.all([
+    env.DB.prepare(`SELECT id, parent, name, body, ts, crowns FROM comments WHERE page=?1 AND status='live' ORDER BY ${order} LIMIT 300`).bind(page).all(),
+    env.DB.prepare("SELECT kind, COUNT(*) AS n FROM page_reactions WHERE page=?1 GROUP BY kind").bind(page).all(),
+    device ? env.DB.prepare("SELECT kind FROM page_reactions WHERE page=?1 AND device=?2").bind(page, device).all() : { results: [] },
+    device ? env.DB.prepare("SELECT v.comment_id AS id FROM comment_votes v JOIN comments c ON c.id=v.comment_id WHERE c.page=?1 AND v.device=?2 AND v.kind='crown'").bind(page, device).all() : { results: [] }
+  ]);
+  const reactions = { crown: 0, fire: 0, heart: 0 };
+  for (const x of r.results || []) reactions[x.kind] = x.n;
+  return { comments: c.results || [], reactions, mine: { reactions: (mineR.results || []).map(x => x.kind), crowns: (mineC.results || []).map(x => x.id) } };
+}
+async function comments(request, env, reply, origin, path) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  const url = new URL(request.url);
+  if (request.method === "GET" && path === "/comments") {
+    const page = wallPage(url.searchParams.get("page"));
+    if (!page) return reply(400, { error: "Unknown page." });
+    const device = okDevice(url.searchParams.get("device")) ? url.searchParams.get("device") : null;
+    return reply(200, await wallState(env, page, device, url.searchParams.get("sort")), { "Cache-Control": "no-store" });
+  }
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "wall:" + ip))) return reply(429, { error: "Slow down a little. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const now = Date.now(), day = istDay();
+  if (path === "/comments") {
+    const page = wallPage(body.page);
+    if (!page) return reply(400, { error: "Unknown page." });
+    const text = String(body.body || "").replace(/\r/g, "").trim();
+    if (text.length < 2) return reply(400, { error: "Write something first." });
+    if (text.length > 555) return reply(400, { error: "Keep it to 555 characters." });
+    const name = wallName(body.name);
+    if (!name) return reply(400, { error: "Add a name of at least 2 characters." });
+    const today = await env.DB.prepare("SELECT COUNT(*) AS n FROM comments WHERE device=?1 AND ts>?2").bind(body.device, now - 864e5).first();
+    if (today && today.n >= 30) return reply(429, { error: "That's 30 comments today. Come back tomorrow." });
+    const dup = await env.DB.prepare("SELECT 1 AS x FROM comments WHERE device=?1 AND body=?2 AND ts>?3").bind(body.device, text, now - 36e5).first();
+    if (dup) return reply(400, { error: "You just posted that." });
+    let parent = null;
+    if (body.parent) {
+      const pr = await env.DB.prepare("SELECT id, parent FROM comments WHERE id=?1 AND page=?2 AND status='live'").bind(Number(body.parent), page).first();
+      if (!pr) return reply(400, { error: "That comment is gone." });
+      parent = pr.parent || pr.id;
+    }
+    const held = /(https?:\/\/|www\.|\b[a-z0-9-]+\.(com|in|net|org|io|ly|co|me|gg|xyz)\b)/i.test(text);
+    await env.DB.prepare("INSERT INTO comments(page,parent,device,name,body,ts,status) VALUES(?1,?2,?3,?4,?5,?6,?7)").bind(page, parent, body.device, name, text, now, held ? "held" : "live").run();
+    await bump(env, day, "comment");
+    return reply(200, { ok: true, held, ...(await wallState(env, page, body.device, body.sort)) });
+  }
+  if (path === "/comments/react") {
+    const page = wallPage(body.page), kind = String(body.kind);
+    if (!page || !WALL_REACT.includes(kind)) return reply(400, { error: "Unknown reaction." });
+    const had = await env.DB.prepare("SELECT 1 AS x FROM page_reactions WHERE page=?1 AND device=?2 AND kind=?3").bind(page, body.device, kind).first();
+    if (had) await env.DB.prepare("DELETE FROM page_reactions WHERE page=?1 AND device=?2 AND kind=?3").bind(page, body.device, kind).run();
+    else await env.DB.prepare("INSERT INTO page_reactions(page,device,kind,ts) VALUES(?1,?2,?3,?4)").bind(page, body.device, kind, now).run();
+    return reply(200, await wallState(env, page, body.device, body.sort));
+  }
+  if (path === "/comments/crown" || path === "/comments/report") {
+    const c = await env.DB.prepare("SELECT id, page, status FROM comments WHERE id=?1").bind(Number(body.id)).first();
+    if (!c || c.status !== "live") return reply(400, { error: "That comment is gone." });
+    const kind = path === "/comments/crown" ? "crown" : "report";
+    const had = await env.DB.prepare("SELECT 1 AS x FROM comment_votes WHERE comment_id=?1 AND device=?2 AND kind=?3").bind(c.id, body.device, kind).first();
+    if (kind === "crown") {
+      if (had) await env.DB.batch([
+        env.DB.prepare("DELETE FROM comment_votes WHERE comment_id=?1 AND device=?2 AND kind='crown'").bind(c.id, body.device),
+        env.DB.prepare("UPDATE comments SET crowns=MAX(0,crowns-1) WHERE id=?1").bind(c.id)]);
+      else await env.DB.batch([
+        env.DB.prepare("INSERT INTO comment_votes(comment_id,device,kind,ts) VALUES(?1,?2,'crown',?3)").bind(c.id, body.device, now),
+        env.DB.prepare("UPDATE comments SET crowns=crowns+1 WHERE id=?1").bind(c.id)]);
+    } else if (!had) {
+      await env.DB.batch([
+        env.DB.prepare("INSERT INTO comment_votes(comment_id,device,kind,ts) VALUES(?1,?2,'report',?3)").bind(c.id, body.device, now),
+        env.DB.prepare("UPDATE comments SET reports=reports+1, status=CASE WHEN reports+1>=3 THEN 'hidden' ELSE status END WHERE id=?1").bind(c.id)]);
+      await bump(env, day, "comment_report");
+    }
+    return reply(200, { ok: true, ...(await wallState(env, c.page, body.device, body.sort)) });
+  }
+  return reply(404, { error: "Unknown." });
 }

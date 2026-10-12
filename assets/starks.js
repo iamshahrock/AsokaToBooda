@@ -23,7 +23,8 @@
     pledge: ['Pledged to watch DOOM and KING', 1],
     vote: ['Voted in DOOM to KING', 6],
     inquilab: ['Joined the Inquilab · #FreeTheFace', 1],
-    clipsubmit: ['Submitted a Lairs Cinema clip', 3]
+    clipsubmit: ['Submitted a Lairs Cinema clip', 3],
+    comment: ['Posted on a Fan Wall', 3]
   };
   var TIERS = [[0, 'Fan'], [500, 'Rebel'], [1500, 'Prince'], [4000, 'King'], [10000, 'Royal Flush']];
 
