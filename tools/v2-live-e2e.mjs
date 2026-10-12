@@ -86,6 +86,8 @@ const p = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 p.on('pageerror', e => log.push(`studio pageerror ${e.message}`));
 const r = await p.goto(base + '/create/?film=21&t=' + Date.now(), { waitUntil: 'networkidle' });
 log.push(`studio HTTP ${r.status()}`);
+await p.waitForTimeout(1200);
+log.push('CAST picker: ' + JSON.stringify(await p.evaluate(() => ({ shown: !document.getElementById('cast').hidden, label: document.getElementById('castN').textContent, slots: [...document.querySelectorAll('#castList select')].map(s => s.selectedOptions[0].textContent) }))));
 await p.setInputFiles('#photoInput', 'assets/studio/shahrock-dreaming.jpg');
 await p.fill('#name', 'Shah Rock');
 await p.fill('#line', 'Picture abhi baaki hai, mere dost');
