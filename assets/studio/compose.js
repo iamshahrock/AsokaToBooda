@@ -127,9 +127,46 @@ export async function renderPoster(canvas, o) {
   ctx.fillText(`PICTURE ABHI BAAKI HAI  ·  ${o.date || ''}  ·  AGARMAINKINGHOTA.COM`, W / 2, H * 0.962);
   ctx.restore();
 
+  if (!o.preview) {                                    // AI label on every finished poster (IT Rules, Feb 2026)
+    ctx.save(); const tw = W * 0.3, th = H * 0.034, tx = W * 0.03, ty = H * 0.885;
+    ctx.fillStyle = 'rgba(7,5,5,.85)'; ctx.fillRect(tx, ty, tw, th);
+    ctx.strokeStyle = '#c3121a'; ctx.lineWidth = Math.max(1, W * 0.002); ctx.strokeRect(tx, ty, tw, th);
+    ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center'; ctx.font = `700 ${Math.round(H * 0.0125)}px Archivo, Arial, sans-serif`;
+    ctx.letterSpacing = `${Math.round(W * 0.002)}px`; ctx.fillText('AI-MADE FAN POSTER', tx + tw / 2, ty + th * 0.68); ctx.restore();
+  }
+
   if (o.preview) {                                     // corner tag so nobody mistakes the preview for the result
     ctx.save(); ctx.fillStyle = 'rgba(7,5,5,.8)'; ctx.fillRect(W - W * 0.3, H * 0.15, W * 0.27, H * 0.04);
     ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center'; ctx.font = `600 ${Math.round(H * 0.013)}px Archivo, Arial, sans-serif`;
     ctx.fillText('PREVIEW · FRAME ONLY', W - W * 0.165, H * 0.176); ctx.restore();
   }
+}
+
+// Embed provenance in a JPEG: an XMP packet (IPTC DigitalSourceType = AI-generated) and a plain comment,
+// so the poster still says it is AI-made if the visible label is cropped. Returns the original blob on any error.
+const XMP = '<?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>'
+  + '<x:xmpmeta xmlns:x="adobe:ns:meta/"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">'
+  + '<rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xmp="http://ns.adobe.com/xap/1.0/"'
+  + ' xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/"'
+  + ' Iptc4xmpExt:DigitalSourceType="http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia"'
+  + ' xmp:CreatorTool="agarmainkinghota.com poster studio">'
+  + '<dc:description><rdf:Alt><rdf:li xml:lang="x-default">AI-made fan poster, created at agarmainkinghota.com</rdf:li></rdf:Alt></dc:description>'
+  + '</rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="r"?>';
+const COMMENT = 'AI-made fan poster, created at agarmainkinghota.com';
+function segment(marker, payload) {
+  const len = payload.length + 2, seg = new Uint8Array(len + 2);
+  seg.set([0xFF, marker, len >> 8, len & 0xFF]); seg.set(payload, 4); return seg;
+}
+export async function tagJpeg(blob) {
+  try {
+    if (!blob) return blob;
+    const b = new Uint8Array(await blob.arrayBuffer());
+    if (b[0] !== 0xFF || b[1] !== 0xD8) return blob;
+    let at = 2;                                                          // keep a JFIF APP0 first, if present
+    if (b[2] === 0xFF && b[3] === 0xE0) at = 4 + ((b[4] << 8) | b[5]);
+    const enc = new TextEncoder();
+    const xmp = segment(0xE1, new Uint8Array([...enc.encode('http://ns.adobe.com/xap/1.0/'), 0, ...enc.encode(XMP)]));
+    const com = segment(0xFE, enc.encode(COMMENT));
+    return new Blob([b.slice(0, at), xmp, com, b.slice(at)], { type: 'image/jpeg' });
+  } catch (e) { return blob; }
 }

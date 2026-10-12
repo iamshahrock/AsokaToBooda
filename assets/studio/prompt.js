@@ -2,6 +2,7 @@
 // Image order sent to the Worker: fan photo(s) first, then the film's original poster (not for KING), then the KING crown.
 // Wording note (tested 10 Oct 2026): neutral "design a new poster starring the person in the first photo" passes the
 // image model's safety review; wording about replacing or removing an actor's face was rejected.
+// #FreeTheFace (12 Oct 2026): the film poster is sent blurred, and the prompt forbids any real star's likeness.
 export const LOOKS = {
   cinematic: 'hyper-real cinematic photography, dramatic rim light, fine film grain',
   retro: 'hand-painted 1990s Bollywood billboard, bold brush strokes, saturated colour',
@@ -19,7 +20,7 @@ export const ROLES = {
 export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true }) {
   const who = squad > 1 ? `the ${squad} people in the first ${squad} photos, together as the cast,` : 'the person in the first photo';
   const ref = hasFilmRef
-    ? `The next image is a vintage film poster of "${film}" (${year}), used only as a reference for its era, composition and colour mood.`
+    ? `The next image is a blurred vintage film poster of "${film}" (${year}), used only as a reference for its era, composition and colour mood.`
     : `The film is KING (2026), a dark, stylish action thriller.`;
   const crown = 'The last image is a painted red crown: it floats just above the lead\'s head.';
   return [
@@ -28,6 +29,7 @@ export function buildPrompt({ film, year, character, role = 'king', look = 'cine
     crown,
     world ? `Setting: ${world}.` : '',
     `Any other people in the scene are newly invented characters.`,
+    `Do not depict or resemble any real actor, celebrity or public figure: the only real faces in the poster are the uploaded people.`,
     `Palette: deep black and crimson with one electric-blue rim light.`,
     `Style: ${LOOKS[look] || LOOKS.cinematic}.`,
     `Leave the top 15% and the bottom 25% as clean dark space. Portrait 2:3, no text, no letters, no logos, no watermark.`

@@ -77,6 +77,9 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .status.ok{color:#d9cfc7}
 .next{margin-top:18px;border-top:3px solid var(--red);padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
 .next p{margin:0;font-size:14px;color:var(--mute)}
+.own-face{grid-column:1/-1;margin:6px 0 0;font-size:14.5px;line-height:1.5;color:var(--mute)}
+.own-face b{color:#fff}.own-face a{color:var(--red-hi)}
+.privacy{margin:8px 0 0 28px;font-size:12.5px;color:var(--faint);line-height:1.45}
 .note{font-size:12.5px;color:var(--faint);line-height:1.5;margin-top:10px}
 @media (max-width:980px){.studio{grid-template-columns:minmax(0,1fr)}.stage{position:static}.opts{grid-template-columns:minmax(0,1fr)}.grid{max-height:400px;grid-template-columns:repeat(auto-fill,minmax(58px,1fr))}}
 @media (prefers-reduced-motion:reduce){.frame .busy img{animation:none}}
@@ -101,6 +104,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
       <h1>Make your <em>KING</em> poster</h1>
     </div>
     <p>Pick one of his 80 films, step into the role and get a poster nobody else has: your face, his film's world, the KING crown and your own line.</p>
+    <p class="own-face"><b>Your face. Not his.</b> The only real face on this poster is yours: no star's face goes into the AI. That's our <a href="../inquilab/">#FreeTheFace</a> pledge.</p>
   </div>
 
   <ol class="steps" id="steps" aria-label="Progress">
@@ -149,7 +153,8 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
         <div class="photos" id="photos">
           <label class="ph upload" id="addPhoto"><input type="file" accept="image/jpeg,image/png,image/webp" id="photoInput"><span>+ Add photo</span></label>
         </div>
-        <label class="consent"><input type="checkbox" id="consent"> <span>These photos are of me, or I have permission from everyone in them.</span></label>
+        <label class="consent"><input type="checkbox" id="consent"> <span>These are photos of me, or of people who agreed to be in my poster. Anyone under 18 has a parent's OK. No photos of film stars or other celebrities.</span></label>
+        <p class="privacy">Your photo is sent to OpenAI only to paint your poster. This site does not keep it.</p>
       </section>
 
       <section class="panel" aria-labelledby="h4">
@@ -212,14 +217,14 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 
 <script type="module">
 import { buildPrompt } from '../assets/studio/prompt.js';
-import { renderPoster, loadImage, preloadKit } from '../assets/studio/compose.js';
+import { renderPoster, loadImage, preloadKit, tagJpeg } from '../assets/studio/compose.js';
 
 const $ = id => document.getElementById(id);
 const POSTER_API_URL = 'https://asokatobooda.iamshahrock.workers.dev';
 const BASE = new URL('../assets/posters/', location.href).href;
 // How the original poster is shared with the image model. 'original' sends it as-is;
 // 'blur' sends a softened copy (layout and colour only). Set from the end-to-end test results.
-const FILM_REF_MODE = 'original';
+const FILM_REF_MODE = 'blur';   // faces on the original posters must never reach the AI (#FreeTheFace)
 
 const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null };
 let catalogue = [];
@@ -400,7 +405,7 @@ function saveToCrown(p) {
 const SITE = 'https://agarmainkinghota.com/';
 const TAGS = '#AgarMainKingHota #KING #SRK';
 function shareText() { const p = state.film; return `Agar main King hota… Here's my KING poster${p && !p.king ? ' as ' + p.character + ' in ' + p.title : ''}. Make yours: ${SITE} ${TAGS}`; }
-function posterBlob() { return new Promise(r => $('canvas').toBlob(r, 'image/jpeg', 0.92)); }
+function posterBlob() { return new Promise(r => $('canvas').toBlob(r, 'image/jpeg', 0.92)).then(tagJpeg); }
 function fileName(kind) { const n = ($('name').value.trim() || 'my').replace(/[^\w-]+/g, '-').toLowerCase(); return `king-poster-${n}${kind ? '-' + kind : ''}.jpg`; }
 function saveBlob(b, name) { const u = URL.createObjectURL(b); const a = document.createElement('a'); a.href = u; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 4000); }
 function shared(where) { if (window.STARKS) STARKS.earn('share', 50, 'Shared your poster' + (where ? ' · ' + where : '')); }
@@ -416,7 +421,7 @@ async function storyBlob() {
   x.textAlign = 'center'; x.fillStyle = '#fff'; x.font = '600 46px Archivo, Arial, sans-serif'; x.fillText('Make yours at', W / 2, py + ph + 92);
   x.fillStyle = '#ff4a4f'; x.font = '64px Anton, Impact, sans-serif'; x.fillText('AGARMAINKINGHOTA.COM', W / 2, py + ph + 168);
   x.fillStyle = '#b8aca4'; x.font = '500 34px Archivo, Arial, sans-serif'; x.fillText('KING · in cinemas 24 December 2026', W / 2, py + ph + 222);
-  return new Promise(r => c.toBlob(r, 'image/jpeg', 0.92));
+  return new Promise(r => c.toBlob(r, 'image/jpeg', 0.92)).then(tagJpeg);
 }
 async function shareFile(blob, name, where) {
   const file = new File([blob], name, { type: 'image/jpeg' });
