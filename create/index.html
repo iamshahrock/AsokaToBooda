@@ -92,6 +92,22 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .sb-icons a,.sb-icons button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:64px;padding:8px 2px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:600 11px var(--body);text-decoration:none;cursor:pointer}
 .sb-icons a:hover,.sb-icons button:hover,.sb-icons a:focus-visible,.sb-icons button:focus-visible{border-color:var(--red-hi);color:#fff}
 .sb-icons svg{width:24px;height:24px}
+.cast{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.cast-h{margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.cast-wrap{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:start}
+.cast-art{position:relative;background:#050303;border:1px solid var(--line)}
+.cast-art img{display:block;width:100%;height:auto;filter:blur(2px) brightness(.75)}
+.cast-art button{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;border:2px solid #fff;background:rgba(10,6,6,.85);color:#fff;font:700 12px var(--body);padding:0}
+.cast-art button.me{background:var(--red);border-color:var(--red-hi)}
+.cast-art button.fr{background:#123a6b;border-color:#5aa0ff}
+.cast-art button[aria-pressed="true"]{box-shadow:0 0 0 3px #ffcf6b}
+.cast-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.cast-list li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;align-items:center}
+.cast-list .num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 13px var(--body);border:2px solid var(--field-line)}
+.cast-list .num.me{background:var(--red);border-color:var(--red-hi)}.cast-list .num.fr{background:#123a6b;border-color:#5aa0ff}
+.cast-list select{height:40px;font-size:14px}
+.cast-list small{grid-column:2;color:var(--faint);font-size:12px;margin-top:-4px}
+@media (max-width:430px){.cast-wrap{grid-template-columns:96px minmax(0,1fr)}}
 .sb-tip{margin:12px 0 0;font-size:13px;line-height:1.5;color:var(--mute)}
 </style>
 </head>
@@ -145,6 +161,14 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
           <option>The Pit, a fighting arena carved into rock</option>
           <option>the Abyssal Den, a flooded underwater lair</option>
         </select>
+        <div class="cast" id="cast" hidden>
+          <p class="cast-h">The cast · <span id="castN"></span></p>
+          <p class="hint" id="castHint">Pick who plays each character. You, up to two friends, or a brand-new face. Nobody from the original cast stays on the poster.</p>
+          <div class="cast-wrap">
+            <div class="cast-art" id="castArt"><img id="castImg" alt="Where each character stands on this poster"></div>
+            <ol class="cast-list" id="castList"></ol>
+          </div>
+        </div>
       </section>
 
       <section class="panel" aria-labelledby="h3">
@@ -226,8 +250,9 @@ const BASE = new URL('../assets/posters/', location.href).href;
 // 'blur' sends a softened copy (layout and colour only). Set from the end-to-end test results.
 const FILM_REF_MODE = 'blur';   // faces on the original posters must never reach the AI (#FreeTheFace)
 
-const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null };
+const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null, cast: [] };
 let catalogue = [];
+let FACES = {};
 
 // ---------- films ----------
 const KING = { id: '81', title: 'KING', year: 2026, kind: 'film', character: 'The King', king: true };
@@ -235,6 +260,7 @@ async function loadCatalogue() {
   const res = await fetch(BASE + 'catalogue.json');
   const data = await res.json();
   catalogue = [...data.posters, KING];
+  try { FACES = (await (await fetch(BASE + 'faces.json')).json()).faces || {}; } catch (e) { FACES = {}; }
   drawGrid();
 }
 function eraOf(p) { return p.year < 1990 || p.kind === 'tv' ? '1980' : String(Math.floor(p.year / 10) * 10); }
@@ -275,7 +301,50 @@ function chooseFilm(p) {
   t.append(s, document.createTextNode(p.king ? 'The 81st poster. KING releases 24 Dec 2026; this one is yours to write.' : `You step in as ${p.character}.`));
   c.append(im, t);
   $('roleHint').textContent = p.king ? 'Who are you in KING?' : `In ${p.title}, who are you?`;
+  setupCast(p);
   mark(2); refresh();
+}
+
+// ---------- cast: one slot per character on the poster (positions only, no identities) ----------
+const WHO = ['A new face', 'You', 'Friend 1', 'Friend 2'];
+const PLACE = ([cx, cy]) => `${cy < .36 ? 'Top' : cy > .64 ? 'Lower' : 'Middle'} ${cx < .36 ? 'left' : cx > .64 ? 'right' : 'centre'}`;
+function setupCast(p) {
+  const at = (!p.king && FACES[p.id]) || [];
+  state.cast = at.map((a, i) => ({ at: a, photo: i === 0 ? 1 : null }));
+  $('cast').hidden = state.cast.length < 2;
+  if (!state.cast.length) return;
+  $('castImg').src = BASE + p.thumb;
+  $('castN').textContent = `${state.cast.length} characters on this poster`;
+  drawCast();
+}
+function castPhoto(i, photo) {
+  if (photo) state.cast.forEach(c => { if (c.photo === photo) c.photo = null; });
+  state.cast[i].photo = photo || null;
+  drawCast();
+}
+function drawCast() {
+  const art = $('castArt'); art.querySelectorAll('button').forEach(b => b.remove());
+  state.cast.forEach((c, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = i + 1;
+    b.className = c.photo === 1 ? 'me' : c.photo ? 'fr' : '';
+    b.style.left = (c.at[0] * 100) + '%'; b.style.top = (c.at[1] * 100) + '%';
+    b.setAttribute('aria-label', `Character ${i + 1}: ${WHO[c.photo || 0]}. Tap to make it you.`);
+    b.addEventListener('click', () => castPhoto(i, 1));
+    art.append(b);
+  });
+  $('castList').replaceChildren(...state.cast.map((c, i) => {
+    const li = document.createElement('li');
+    const n = document.createElement('span'); n.className = 'num' + (c.photo === 1 ? ' me' : c.photo ? ' fr' : ''); n.textContent = i + 1;
+    const s = document.createElement('select'); s.className = 'text'; s.setAttribute('aria-label', `Who plays character ${i + 1}`);
+    WHO.forEach((w, k) => { const o = document.createElement('option'); o.value = k; o.textContent = w; o.selected = (c.photo || 0) === k; s.append(o); });
+    s.addEventListener('change', () => castPhoto(i, Number(s.value)));
+    const sm = document.createElement('small'); sm.textContent = PLACE(c.at) + (i === 0 ? ' · the biggest figure' : '');
+    li.append(n, s, sm); return li;
+  }));
+  const need = Math.max(0, ...state.cast.map(c => c.photo || 0));
+  $('castHint').textContent = need > state.photos.length
+    ? `Add ${need - state.photos.length === 1 ? 'one more photo' : (need - state.photos.length) + ' more photos'} in step 03 for the friends you cast. Nobody from the original cast stays on the poster.`
+    : 'Pick who plays each character. You, up to two friends, or a brand-new face. Nobody from the original cast stays on the poster.';
 }
 
 // ---------- role, look, world ----------
@@ -308,6 +377,10 @@ $('photoInput').addEventListener('change', async e => {
   try {
     const blob = await downscale(f);
     state.photos.push({ blob, url: URL.createObjectURL(blob) }); drawPhotos(); mark(4);
+    if (state.cast.length > 1 && !state.cast.some(c => c.photo === state.photos.length)) {
+      const free = state.cast.find(c => !c.photo); if (free) free.photo = state.photos.length;
+    }
+    if (state.cast.length > 1) drawCast();
     say('Photo added.', true);
   } catch (err) { say(err.message); }
 });
@@ -317,7 +390,11 @@ function drawPhotos() {
     const d = document.createElement('div'); d.className = 'ph';
     const im = document.createElement('img'); im.src = p.url; im.alt = 'Photo ' + (i + 1);
     const x = document.createElement('button'); x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label', 'Remove photo ' + (i + 1));
-    x.addEventListener('click', () => { URL.revokeObjectURL(p.url); state.photos.splice(i, 1); drawPhotos(); });
+    x.addEventListener('click', () => {
+      URL.revokeObjectURL(p.url); state.photos.splice(i, 1);
+      state.cast.forEach(c => { if (c.photo === i + 1) c.photo = null; else if (c.photo > i + 1) c.photo--; });
+      drawPhotos(); if (state.cast.length > 1) drawCast();
+    });
     d.append(im, x); return d;
   }), add);
   add.hidden = state.photos.length >= 3;
@@ -365,13 +442,24 @@ $('make').addEventListener('click', async () => {
   if (!p) { say('Choose a film first.'); $('grid').scrollIntoView({ behavior: 'smooth' }); return; }
   if (!state.photos.length) { say('Add your photo: you are the hero of this poster.'); return; }
   if (!$('consent').checked) { say('Please confirm the photos are yours or that you have permission.'); return; }
+  const useCast = state.cast.length > 1;
+  if (useCast) {
+    const need = Math.max(0, ...state.cast.map(c => c.photo || 0));
+    if (need > state.photos.length) { say(`You cast ${need - 1} friend${need > 2 ? 's' : ''}: add their photo in step 03, or set that character to "A new face".`); return; }
+    if (!state.cast.some(c => c.photo === 1)) { say('Cast yourself as one of the characters (set one to "You").'); $('cast').scrollIntoView({ behavior: 'smooth' }); return; }
+    state.photos.forEach((ph, i) => { if (!state.cast.some(c => c.photo === i + 1)) { const free = state.cast.find(c => !c.photo); if (free) free.photo = i + 1; } });
+    drawCast();
+    const idle = state.photos.findIndex((ph, i) => !state.cast.some(c => c.photo === i + 1));
+    if (idle >= 0) { say(`Photo ${idle + 1} isn't playing anyone. Cast it in step 02 or remove it.`); return; }
+  }
   $('make').disabled = true; $('busy').hidden = false; say('Sending your photo, the film and the crown…', true);
   try {
     const form = new FormData();
     form.append('prompt', buildPrompt({
       film: p.king ? 'KING' : p.title, year: p.year, character: p.king ? '' : p.character,
       role: state.role, look: state.look, squad: state.photos.length, world: $('world').value,
-      hasFilmRef: !p.king
+      hasFilmRef: !p.king,
+      cast: useCast ? state.cast.map(c => ({ photo: c.photo, at: c.at })) : null
     }));
     state.photos.forEach((ph, i) => form.append('image', ph.blob, `fan-${i + 1}.jpg`));
     if (!p.king) form.append('image', await filmReference(p), 'film.jpg');

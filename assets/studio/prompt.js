@@ -17,15 +17,38 @@ export const ROLES = {
   rival: 'the rival, intense and dangerous',
   sidekick: 'the loyal sidekick, playful and full of charm'
 };
-export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true }) {
+const CAST_ROLES = { king: 'the hero', rival: 'the intense, dangerous rival', sidekick: 'the playful, loyal sidekick' };
+// Where a character sits on the reference poster, in words: [cx, cy, w] fractions, largest first.
+export function placeOf([cx, cy, w], rank) {
+  const h = cx < 0.36 ? 'left' : cx > 0.64 ? 'right' : 'centre';
+  const v = cy < 0.36 ? 'top' : cy > 0.64 ? 'lower' : 'middle';
+  const size = rank === 0 ? 'the largest figure' : w >= 0.2 ? 'a large figure' : 'a smaller figure';
+  return `${size}, ${v === 'middle' && h === 'centre' ? 'in the centre' : `at the ${v} ${h}`}`;
+}
+// cast: [{ photo: 1..3 | null, at: [cx, cy, w] }] in the reference poster's layout, largest first.
+function castLines(cast, role) {
+  const n = cast.length;
+  const parts = cast.map((c, i) => {
+    const where = placeOf(c.at, i);
+    if (!c.photo) return `character ${i + 1}, ${where}, is a newly invented person`;
+    const lead = c.photo === 1 ? ` as ${CAST_ROLES[role] || CAST_ROLES.king}` : '';
+    return `character ${i + 1}, ${where}, is played by the person in photo ${c.photo}${lead}`;
+  });
+  return `Keep the reference poster's cast layout of ${n} character${n > 1 ? 's' : ''}: ${parts.join('; ')}.`;
+}
+export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true, cast = null }) {
+  const useCast = Array.isArray(cast) && cast.length && hasFilmRef;
   const who = squad > 1 ? `the ${squad} people in the first ${squad} photos, together as the cast,` : 'the person in the first photo';
   const ref = hasFilmRef
     ? `The next image is a blurred vintage film poster of "${film}" (${year}), used only as a reference for its era, composition and colour mood.`
     : `The film is KING (2026), a dark, stylish action thriller.`;
-  const crown = 'The last image is a painted red crown: it floats just above the lead\'s head.';
+  const crown = `The last image is a painted red crown: it floats just above the head of ${useCast ? 'the person in photo 1' : 'the lead'}.`;
   return [
-    `Design a brand-new, original theatrical movie poster starring ${who} as ${ROLES[role] || ROLES.king}${character ? `, playing the role of ${character}` : ''}.`,
+    useCast
+      ? `Design a brand-new, original theatrical movie poster starring ${squad > 1 ? `the ${squad} people in the first ${squad} photos` : 'the person in the first photo'}${character ? `, with photo 1 playing the role of ${character}` : ''}.`
+      : `Design a brand-new, original theatrical movie poster starring ${who} as ${ROLES[role] || ROLES.king}${character ? `, playing the role of ${character}` : ''}.`,
     ref,
+    useCast ? castLines(cast, role) : '',
     crown,
     world ? `Setting: ${world}.` : '',
     `Any other people in the scene are newly invented characters.`,
