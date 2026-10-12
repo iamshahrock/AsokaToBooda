@@ -34,8 +34,22 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Thesis working map (fact ledger): https://claude.ai/code/artifact/3b60d235-6bcc-40a8-afc2-bfaa42188979
 - Press release "KING by FANS": https://claude.ai/code/artifact/a9a602c3-ffbf-474c-82a3-02575c665e32
 
+## Make Your Poster — current policy (#FreeTheFace, PR #61, chat "Set II", 12 Oct 2026)
+- No star's face goes into the AI: the film poster is sent BLURRED (`FILM_REF_MODE = 'blur'` in create/index.html), colour and layout only.
+- Prompt (assets/studio/prompt.js) forbids depicting or resembling any real actor, celebrity or public figure. The only real faces are the uploaded fans.
+- Every finished poster carries a visible "AI-MADE FAN POSTER" label plus XMP/JPEG-comment AI provenance (`tagJpeg()` in assets/studio/compose.js).
+- Consent covers people in the photo, under-18s and celebrity photos. Photos go to OpenAI only to paint the poster and are not kept.
+- Hero line "Your face. Not his." links to /inquilab/.
+- Live test 12 Oct: one poster (Shah Rock Jaan art as the "fan photo"), 200 OK in 37 s, no star faces, label and metadata present. A real human photo is NOT yet tested.
+- Limits: 100 site posters a day, 5 per connection a day.
+
 ## Open work
-- Make Your Poster "replace a face" mode: AI edit with mask, then composite only the chosen face onto the untouched original. Needs a consenting adult test selfie.
-- Inquilab sub-page "The Revolution Starts Now": original vs raw AI vs our fix, with % of pixels changed outside the chosen face.
+- Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
+- 80 face-free "mood plates" to replace the star-face reference posters. Owner to choose: auto-made from the existing posters (show 6 first) or designed by her team. Face boxes for all 80 posters exist (face-api run, 12 Oct) and can drive automatic face removal.
+- PARKED, conflicts with #FreeTheFace: the "replace a face" remake mode (masked AI edit composited onto the untouched original poster). It would keep real stars' faces in the output. Owner to decide before any work.
+- Inquilab sub-page "The Revolution Starts Now": evidence of what visual AI changes vs our fix (examples need explicit fan consent).
+
+## Working across chats
+Chats cannot read each other. At the end of any chat that changes the site, update this file in the same PR.
 - About Us + owner's blog (after the site is done).
 - Daily scheduled scan: add Fan Wall held/reported comment review.
