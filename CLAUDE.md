@@ -33,6 +33,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Thesis manuscript "SRK: The Man, The Myth, The King" (renamed 13 Oct 2026; was "The Man, The Brand, The Myth"): https://claude.ai/code/artifact/2d67e4c6-cb25-4947-827b-3feb291f1d35
 - Thesis working map (fact ledger): https://claude.ai/code/artifact/3b60d235-6bcc-40a8-afc2-bfaa42188979
 - Press release "KING by FANS": https://claude.ai/code/artifact/a9a602c3-ffbf-474c-82a3-02575c665e32
+- Creator Kit (charter, STARKS integration, card spec; shared with the fan developer 13 Oct): https://claude.ai/code/artifact/d07b71e8-b28e-4b7e-8988-f90e9777bd45
 
 ## Make Your Poster — current policy (#FreeTheFace, PR #61, chat "Set II", 12 Oct 2026)
 - No star's face goes into the AI: the film poster is sent BLURRED (`FILM_REF_MODE = 'blur'` in create/index.html), colour and layout only.
