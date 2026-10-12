@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11",
+ "updated": "2026-10-12",
  "note": "Fan-made AI works about KING / Shah Rukh Khan, discovered daily across YouTube, Instagram, X and Facebook. Each item links to the creator's original post; nothing is re-hosted. Views are as reported on the date in views_asof.",
  "items": [
   {
@@ -479,6 +479,17 @@
     "youtube": 39
    },
    "method": "Seed corpus carried over from the KING Intelligence 2.0 command centre (snapshot captured by 10 Oct 2026)"
+  },
+  {
+   "day": "2026-10-12",
+   "new": 0,
+   "platforms": {
+    "youtube": 0,
+    "instagram": 0,
+    "x": 0,
+    "facebook": 0
+   },
+   "method": "daily web scan + fan submissions"
   }
  ],
  "reviewed": []
