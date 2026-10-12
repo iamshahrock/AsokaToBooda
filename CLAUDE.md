@@ -30,7 +30,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Style: compact red/black, direct, evidence-led.
 
 ## Docs (claude.ai)
-- Thesis manuscript "SRK: The Man, The Brand, The Myth": https://claude.ai/code/artifact/2d67e4c6-cb25-4947-827b-3feb291f1d35
+- Thesis manuscript "SRK: The Man, The Myth, The King" (renamed 13 Oct 2026; was "The Man, The Brand, The Myth"): https://claude.ai/code/artifact/2d67e4c6-cb25-4947-827b-3feb291f1d35
 - Thesis working map (fact ledger): https://claude.ai/code/artifact/3b60d235-6bcc-40a8-afc2-bfaa42188979
 - Press release "KING by FANS": https://claude.ai/code/artifact/a9a602c3-ffbf-474c-82a3-02575c665e32
 
