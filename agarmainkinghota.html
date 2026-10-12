@@ -60,6 +60,14 @@
 .d2k-mid b i{font-style:normal;color:var(--faint)}
 .d2k-mid small{margin:0;letter-spacing:0;text-transform:none;font-size:14px;color:var(--mute);line-height:1.4}
 @media (max-width:560px){.d2k{grid-template-columns:1fr 1fr}.d2k-mid{grid-column:1/-1;grid-row:1}.d2k-r,.d2k-b{font-size:30px;padding:12px 16px}}
+.cine-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,260px);gap:10px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity;scrollbar-color:var(--red) #1a1010}
+.cine-card{position:relative;display:block;scroll-snap-align:start;background:#0d0909;border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.cine-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.cine-card b{display:block;padding:8px 10px 2px;font-size:14px;line-height:1.3}
+.cine-card small{display:block;padding:0 10px 10px;color:var(--faint);font-size:12px}
+.cine-card i{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px}
+.cine-card:hover{border-color:var(--red-hi)}
+.cine-card.play::after{content:"\25B6";position:absolute;top:calc(28% - 4px);left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(195,18,26,.9);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
 .d2k-banner{grid-column:1/-1;position:relative;display:grid;grid-template-columns:1fr minmax(0,1.3fr) 1fr;min-height:230px;border:1px solid var(--line);overflow:hidden;text-decoration:none;color:var(--ink);background:#0a0707}
 .d2k-banner:hover{border-color:var(--red-hi)}
 .d2k-banner .bn-side{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 22px;overflow:hidden}
@@ -294,6 +302,22 @@
   <p class="strip-hint">Swipe or scroll sideways for all 80 →</p>
 </section>
 
+<section class="block" aria-labelledby="cine-h" id="now-showing">
+  <div class="block-head">
+    <div>
+      <p class="eyebrow">Lairs Cinema · Fan films</p>
+      <h2 id="cine-h">Now <em>showing</em></h2>
+    </div>
+    <p id="cineLede">Fans animate the King's Lairs with their own AI tools and their own faces. Approved clips play here and earn STARKS.</p>
+  </div>
+  <div class="strip-bar">
+    <span class="strip-cue"><b id="cineCue">▶ Coming attractions</b> · <span id="cineCue2">the sets are open: be the first fan on screen</span></span>
+    <span class="strip-nav"><button type="button" class="sn" id="cinePrev" aria-label="Scroll left">←</button><button type="button" class="sn" id="cineNext" aria-label="Scroll right">→</button></span>
+  </div>
+  <div class="cine-strip" id="cineStrip"></div>
+  <p style="margin-top:12px"><a class="btn btn-red" href="lairs/#cinema">Make your scene →</a></p>
+</section>
+
 <section class="block" aria-labelledby="how-h">
   <div class="block-head"><h2 id="how-h">How it works</h2></div>
   <ol class="how">
@@ -360,5 +384,30 @@
 </script>
 <script src="assets/starks.js"></script>
 <script src="assets/footer.js" defer></script>
+<script src="assets/cinema.js"></script>
+<script>
+(function () {
+  var strip = document.getElementById('cineStrip'); if (!strip) return;
+  var PLATES = [['casino-grand','The Grand Casino','casino'],['dome-aerial','The dome from the air','dome'],['dome-archive','The Archive','city'],['pit-dance','The Pit dance bar','pit'],['den-abyssal','The Abyssal Den','den'],['dome-panorama','The heart of the dome','throne'],['dome-arrival','The arrival','dome'],['dome-hive','The hive beneath','dome'],['dome-lab','The lab wing','dome'],['dome-waterfall','The waterfall hall','dome'],['dome-residence','The residence','throne'],['city-floorplan','The master floor plan','city']];
+  var C = window.AMKH_CINEMA;
+  function coming() {
+    strip.innerHTML = PLATES.map(function (p) { return '<a class="cine-card" href="lairs/?scene=' + p[2] + '#cinema"><i>Coming attraction</i><img src="assets/lairs/scenes/' + p[0] + '-t.webp" alt="" loading="lazy"><b>' + p[1] + '</b><small>' + C.LAIR[p[2]] + ' \u00b7 make the first film</small></a>'; }).join('');
+  }
+  function showing(list) {
+    document.getElementById('cineCue').textContent = '\u25B6 Tap a clip to play';
+    document.getElementById('cineCue2').textContent = list.length + ' fan film' + (list.length > 1 ? 's' : '') + ' from the King\u2019s Lairs';
+    strip.innerHTML = list.map(function (c, i) { return '<a class="cine-card play" href="' + C.esc(c.url) + '" target="_blank" rel="noopener" data-i="' + i + '">' + (c.sotw ? '<i>Scene of the week</i>' : '') + '<img src="' + C.thumb(c, '') + '" alt="" loading="lazy"><b>' + C.esc(c.title || 'Fan clip') + '</b><small>' + C.esc(c.handle || '') + (C.LAIR[c.lair] ? ' \u00b7 ' + C.LAIR[c.lair] : '') + '</small></a>'; }).join('');
+    [].forEach.call(strip.querySelectorAll('.cine-card'), function (a) { a.onclick = function (e) { var c = list[+a.dataset.i]; if (!C.embed(c)) return; e.preventDefault(); C.play(c, ''); }; });
+  }
+  coming();
+  fetch('data/lairs-cinema.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+    var list = (j.clips || []).slice().sort(function (a, b) { return (b.sotw ? 1 : 0) - (a.sotw ? 1 : 0) || String(b.approved).localeCompare(String(a.approved)); });
+    if (list.length) showing(list);
+  }).catch(function () {});
+  function page(d) { strip.scrollBy({ left: d * strip.clientWidth * 0.9, behavior: 'smooth' }); }
+  document.getElementById('cinePrev').onclick = function () { page(-1); };
+  document.getElementById('cineNext').onclick = function () { page(1); };
+})();
+</script>
 </body>
 </html>
