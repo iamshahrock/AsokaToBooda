@@ -49,6 +49,13 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - PARKED, conflicts with #FreeTheFace: the "replace a face" remake mode (masked AI edit composited onto the untouched original poster). It would keep real stars' faces in the output. Owner to decide before any work.
 - Inquilab sub-page "The Revolution Starts Now": evidence of what visual AI changes vs our fix (examples need explicit fan consent).
 
+## Press release "KING by FANS" (doc linked above)
+- Headline: "RA.ONE. CHENNAI EXPRESS. KING." then "KING by FANS." / "The Digital Revolution Returns."
+- "World's first" wording: only the combination, hedged once with "to our knowledge": the world's first fan-built 360° film campaign ecosystem = (1) fan-built, studio-independent, (2) AI fan creation, (3) original games, (4) fan rankings (STARKS), (5) public daily intelligence dashboard (KING Buzz), (6) Inquilab, the fan movement for a star's likeness rights (#FreeTheFace).
+- Never claim "world's first AI fan campaign" or "first fan campaign" alone: Barbie (2023), Spider-Verse (2023), Cadbury/SRK (2021), Zero's Bauua Ki Toli (2018) and her own Ra.One contests (2011) came first.
+- Avoid "built to break records" unless a named, measurable record.
+- Pending from owner: backer bios (Dr. Prasla, Mr. Mohomed Morani, Ganesh), quote approval, date, media contact, proof for Wharton/IO/Shorty awards and Singham Returns. Zee award: Jan 2012 ceremony for Ra.One (2011).
+
 ## Working across chats
 Chats cannot read each other. At the end of any chat that changes the site, update this file in the same PR.
 - About Us + owner's blog (after the site is done).
