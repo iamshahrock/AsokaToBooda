@@ -25,7 +25,7 @@
     ['doom-to-king/', 'DOOM to KING'],
     ['inquilab/', 'Inquilab']
   ];
-  var UTIL = [['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']];
+  var UTIL = [['merch/', 'Merch'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']];
 
   if (!document.querySelector('link[href*="fonts.googleapis.com"][href*="Anton"]')) {
     var fl = document.createElement('link'); fl.rel = 'stylesheet';
