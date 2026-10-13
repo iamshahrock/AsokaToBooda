@@ -66,6 +66,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Review notes given on his deck: lock the Top 5 prize before launch; cap social likes (deck gives them 350/1,000); one currency (STARKS) not three; start Task 3 as a voice note; define "80 films" (our 80 posters vs 98 film credits); quiz bank can come from the thesis appendices.
 - Sponsor: Phenomenal AI (phenomenalai.in, text-to-video), owner's former client; free account for campaign videos. First test (15 s, crowned kid in "The Abyssal Den" pool hall) reviewed: fix crown continuity, duplicate pool ball, missing break payoff, empty opening, audio level. Credit line and logo pending from the owner.
 
+## DOOM to KING banner
+- DOOM to KING banner (13 Oct 2026): the owner's layered art in assets/dk/ (bg.webp, beams.webp, figures.webp, all 2400x1000, stacked). The beams layer flickers in CSS (off for reduced motion). Shown above the countdown hero on /doom-to-king/ and as a linked block above the Countdowns on the home page (agarmainkinghota.html).
+
 ## Merch (/merch/, 13 Oct 2026)
 - King Fan Merch page: 15 T-shirt mockups (assets/merch/*.webp, 900x1000 web previews only; print files stay off the repo). Brand on stores: Shah Rock Jaan.
 - Buy buttons read the STORES list and each design's links object in merch/index.html; an empty link shows "<Store> · soon". Paste product URLs there once the stores are live.
