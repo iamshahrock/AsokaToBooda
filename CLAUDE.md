@@ -67,7 +67,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Sponsor: Phenomenal AI (phenomenalai.in, text-to-video), owner's former client; free account for campaign videos. First test (15 s, crowned kid in "The Abyssal Den" pool hall) reviewed: fix crown continuity, duplicate pool ball, missing break payoff, empty opening, audio level. Credit line and logo pending from the owner.
 
 ## DOOM to KING banner
-- DOOM to KING banner (13 Oct 2026): the owner's layered art in assets/dk/ (bg.webp, beams.webp, figures.webp, all 2400x1000, stacked). The beams layer flickers in CSS (off for reduced motion). Shown above the countdown hero on /doom-to-king/ and as a linked block above the Countdowns on the home page (agarmainkinghota.html).
+- DOOM to KING banner (13 Oct 2026): the owner's layered art in assets/dk/ (bg.webp, beams.webp, figures.webp, all 2400x1000, stacked). The beams layer flickers in CSS (off for reduced motion). Shown above the countdown hero on /doom-to-king/, and as slide 1 of the home slider (agarmainkinghota.html): it holds for 2.5 s, then rotates to Agar Main King Hota and continues every 7 s. The banner replaced the old text DOOM to KING slide; whole banner fits every width over a blurred copy of the background; phones get an 'Enter the fixture' button.
 
 ## Merch (/merch/, 13 Oct 2026)
 - King Fan Merch page: 15 T-shirt mockups (assets/merch/*.webp, 900x1000 web previews only; print files stay off the repo). Brand on stores: Shah Rock Jaan.
