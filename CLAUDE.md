@@ -26,7 +26,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Don't alter the original ijOO / Shah Rock Jaan art. Cartoon G.One art is the owner's; live-action G.ONE belongs to Red Chillies.
 - No "not affiliated" disclaimer. No privacy/terms page.
 - Fan Wall: 555-character limit, NO profanity filter (owner's explicit decision).
-- The project is not anonymous: the owner is named; backers Mr. Mohomed Morani, Dr. Prasla and Ganesh appear in About Us with logos (details pending).
+- The project is not anonymous: the owner is named. About Us (/about/, 13 Oct 2026) lists the backers, two per row, with photo, role, short bio and logos: Dr. R.K. Prasla (Presenter & Sponsor; ZeeFX Studio, Innovator), Mr. Ganesh Vulidra (Creator, The Ultimate King Fan Challenge), Mr. Mohomed Morani (Patron; CMD, DOME Entertainment), Mr. Mazhar Nadiadwala (Patron; MD, DOME Entertainment), Mr. Sanjay Rodrigues (Tech Sponsor; Founder & CEO, Phenomenal AI). The 6th slot is left empty for the next backer; the owner's own section sits below a red rule. Never publish backers' phone numbers or addresses (Ganesh's CV has them).
 - Style: compact red/black, direct, evidence-led.
 
 ## Docs (claude.ai)
