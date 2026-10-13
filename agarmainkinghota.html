@@ -137,6 +137,12 @@
 @keyframes dkglow{from{filter:brightness(.96) saturate(1)}to{filter:brightness(1.06) saturate(1.08)}}
 @media (prefers-reduced-motion:reduce){.dkb .fx,.dkb .bg{animation:none}}
 a.dkb:hover{border-color:var(--red)}
+.slide.dk{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 0 56px;gap:14px;overflow:hidden}
+.slide.dk .fill{position:absolute;inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);object-fit:cover;filter:blur(22px) brightness(.45);z-index:0}
+.slide.dk .dkb{position:relative;z-index:1;margin:0;border:0;width:100%;aspect-ratio:12/5}
+.slide.dk .dkcta{position:relative;z-index:1;display:none}
+@media (min-width:1300px){.slide.dk{padding:0}}
+@media (max-width:760px){.slide.dk .dkcta{display:inline-flex}}
 </style>
 </head>
 <body class="v2">
@@ -146,7 +152,9 @@ a.dkb:hover{border-color:var(--red)}
 <section class="hero" id="hero" aria-roledescription="carousel" aria-label="The sections">
   <img class="mark" src="assets/home/king-wordmark.webp" width="1600" height="526" alt="">
 
-  <div class="slide on" role="group" aria-roledescription="slide" aria-label="1 of 8: Make Your Poster">
+  <div class="slide dk on" role="group" aria-roledescription="slide" aria-label="1 of 8: DOOM to KING"><img class="fill" src="assets/dk/bg.webp" alt="" width="2400" height="1000"><a href="doom-to-king/" class="dkb" aria-label="DOOM to KING: one Christmas, two crowns. DOOM on 18 December 2026, KING on 24 December 2026."><img class="bg" src="assets/dk/bg.webp" alt="" width="2400" height="1000" fetchpriority="high"><img class="fx" src="assets/dk/beams.webp" alt="" width="2400" height="1000"><img class="fg" src="assets/dk/figures.webp" alt="" width="2400" height="1000"></a><a class="btn btn-red dkcta" href="doom-to-king/">Enter the fixture <span aria-hidden="true">→</span></a></div>
+
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 8: Make Your Poster">
     <div class="copy">
       <p class="eyebrow">01 · Make your poster · KING 24 Dec 2026</p>
       <h1 class="wm"><img src="assets/home/wm-agar-main.webp" width="1912" height="220" alt="Agar Main"><img src="assets/home/wm-king-hota.webp" width="1839" height="220" alt="King Hota"></h1>
@@ -157,7 +165,7 @@ a.dkb:hover{border-color:var(--red)}
     <img class="art" src="assets/home/01-agar-main-king-hota.webp" width="692" height="1400" alt="Young Shah Rock Jaan, a card between his teeth, bags on his shoulder">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 8: King's Lairs">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 8: King's Lairs">
     <div class="copy">
       <p class="eyebrow">02 · King's Lairs · Play</p>
       <h2 class="big">Six lairs.<br><em>One throne.</em></h2>
@@ -167,7 +175,7 @@ a.dkb:hover{border-color:var(--red)}
     <img class="art crown" src="assets/home/06-fan-billboard.webp" width="900" height="985" alt="A red crown dripping like paint" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 8: Chess81">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 8: Chess81">
     <div class="copy">
       <p class="eyebrow">03 · Chess81 · Strategy</p>
       <h2 class="big">81 squares.<br><em>One Torch.</em></h2>
@@ -177,7 +185,7 @@ a.dkb:hover{border-color:var(--red)}
     <img class="art" src="assets/home/02-check-mate-fire.webp" width="476" height="1400" alt="Young Shah Rock Jaan wearing a red crown, standing on one leg" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 8: Billboard">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 8: Billboard">
     <div class="copy">
       <p class="eyebrow">04 · Billboard · STARKS</p>
       <h2 class="big">The crown<br><em>is unclaimed.</em></h2>
@@ -187,7 +195,7 @@ a.dkb:hover{border-color:var(--red)}
     <img class="art" src="assets/home/05-fan-made-ai-universe.webp" width="663" height="1400" alt="Young Shah Rock Jaan in sunglasses, waving" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 8: KING Buzz">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 8: KING Buzz">
     <div class="copy">
       <p class="eyebrow">05 · KING Buzz · Daily</p>
       <div class="days"><b data-until="2026-12-24T00:00:00+05:30">—</b><span>days to<br>KING</span></div>
@@ -197,7 +205,7 @@ a.dkb:hover{border-color:var(--red)}
     <img class="art" src="assets/home/03-king-buzz.webp" width="714" height="1400" alt="The King walking forward, saxophone in one hand, bags on his shoulder" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 8: Asoka to Boo-Da">
+  <div class="slide" role="group" aria-roledescription="slide" aria-label="7 of 8: Asoka to Boo-Da">
     <div class="copy">
       <p class="eyebrow">06 · Asoka to Boo-Da · Thesis</p>
       <h2 class="big">Before the King,<br><em>a boy.</em></h2>
@@ -207,16 +215,6 @@ a.dkb:hover{border-color:var(--red)}
     <img class="art wide" src="assets/home/04-asoka-to-booda.webp" width="1800" height="1205" alt="Young Shah Rock Jaan lying on the floor dreaming, a red crown above him" loading="lazy">
   </div>
 
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="7 of 8: DOOM to KING">
-    <div class="copy">
-      <p class="eyebrow">07 · DOOM to KING · The Christmas fixture</p>
-      <h2 class="big"><span style="color:#ff4a4f">DOOM</span> <span style="color:var(--faint)">to</span><br><span style="color:#5b9bff">KING</span></h2>
-      <p class="tag">One Christmas, two crowns.</p>
-      <p class="lede">Not a clash. A relay. DOOM on 18 December, KING on 24 December. Vote the six friendly rounds and pledge to watch both.</p>
-      <div class="ctas"><a class="btn btn-red" href="doom-to-king/">Enter the fixture <span aria-hidden="true">→</span></a></div>
-    </div>
-    <img class="art" src="assets/lairs/cover.webp" width="800" height="1200" alt="A silhouetted King holding the King of Hearts over a red city" loading="lazy">
-  </div>
 
   <div class="slide" role="group" aria-roledescription="slide" aria-label="8 of 8: Inquilab">
     <div class="copy">
@@ -238,7 +236,6 @@ a.dkb:hover{border-color:var(--red)}
 
 
 
-<section class="block" aria-label="DOOM to KING"><a href="doom-to-king/" class="dkb" aria-label="DOOM to KING: one Christmas, two crowns. DOOM on 18 December 2026, KING on 24 December 2026."><img class="bg" src="assets/dk/bg.webp" alt="" width="2400" height="1000" decoding="async"><img class="fx" src="assets/dk/beams.webp" alt="" width="2400" height="1000" decoding="async"><img class="fg" src="assets/dk/figures.webp" alt="" width="2400" height="1000" decoding="async"></a></section>
 <section class="block" aria-label="Countdowns">
   <div class="clocks">
     <div class="clock"><b data-until="2026-11-02T00:00:00+05:30">—</b><div><strong>Days to his birthday</strong><span>2 November 2026, Mumbai time</span></div></div>
@@ -348,21 +345,21 @@ a.dkb:hover{border-color:var(--red)}
   });
   // six-section slider: arrows, dots, swipe, autoplay
   var slides = [].slice.call(document.querySelectorAll('#hero .slide')), dots = document.getElementById('dots'), hero = document.getElementById('hero');
-  var names = ['Make Your Poster', "King's Lairs", 'Chess81', 'Billboard', 'KING Buzz', 'Asoka to Boo-Da', 'DOOM to KING', 'Inquilab'], cur = 0, timer = null;
+  var names = ['DOOM to KING', 'Make Your Poster', "King's Lairs", 'Chess81', 'Billboard', 'KING Buzz', 'Asoka to Boo-Da', 'Inquilab'], cur = 0, timer = null;
   slides.forEach(function (_, k) { var d = document.createElement('button'); d.type = 'button'; d.className = 'dot'; d.setAttribute('aria-label', (k + 1) + ': ' + names[k]); d.appendChild(document.createElement('i')); d.onclick = function () { show(k); stop(); }; dots.appendChild(d); });
   function show(n) {
     cur = (n + slides.length) % slides.length;
     slides.forEach(function (sl, k) { sl.classList.toggle('on', k === cur); sl.setAttribute('aria-hidden', k === cur ? 'false' : 'true'); sl.querySelectorAll('a').forEach(function (a) { a.tabIndex = k === cur ? 0 : -1; }); });
     [].forEach.call(dots.children, function (d, k) { d.setAttribute('aria-current', k === cur ? 'true' : 'false'); });
   }
-  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function stop() { if (timer) { clearInterval(timer); clearTimeout(timer); timer = null; } }
   document.querySelectorAll('#hero .arrow').forEach(function (b) { b.onclick = function () { show(cur + Number(b.dataset.step)); stop(); }; });
   var x0 = null;
   hero.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
   hero.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 40) { show(cur + (dx < 0 ? 1 : -1)); stop(); } });
   hero.addEventListener('focusin', stop); hero.addEventListener('mouseenter', stop);
   show(0);
-  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) timer = setInterval(function () { show(cur + 1); }, 7000);
+  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) timer = setTimeout(function () { if (!timer) return; show(1); timer = setInterval(function () { show(cur + 1); }, 7000); }, 2500);
 
   fetch('assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (data) {
     var strip = document.getElementById('strip');
