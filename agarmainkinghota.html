@@ -128,6 +128,16 @@
 }
 @media (prefers-reduced-motion:reduce){.slide{transition:none}}
 </style>
+<style>
+.dkb{position:relative;display:block;width:100%;aspect-ratio:12/5;overflow:hidden;border:1px solid var(--line);background:#1a0a05;margin:18px 0 0}
+.dkb img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.dkb .fx{animation:dkzap 2.6s ease-in-out infinite}
+.dkb .bg{animation:dkglow 7s ease-in-out infinite alternate}
+@keyframes dkzap{0%,100%{opacity:1;filter:brightness(1)}8%{opacity:.55}12%{opacity:1;filter:brightness(1.6)}46%{opacity:.85}50%{opacity:1;filter:brightness(1.25)}}
+@keyframes dkglow{from{filter:brightness(.96) saturate(1)}to{filter:brightness(1.06) saturate(1.08)}}
+@media (prefers-reduced-motion:reduce){.dkb .fx,.dkb .bg{animation:none}}
+a.dkb:hover{border-color:var(--red)}
+</style>
 </head>
 <body class="v2">
 <script src="assets/header.js" data-nav="v2"></script>
@@ -228,6 +238,7 @@
 
 
 
+<section class="block" aria-label="DOOM to KING"><a href="doom-to-king/" class="dkb" aria-label="DOOM to KING: one Christmas, two crowns. DOOM on 18 December 2026, KING on 24 December 2026."><img class="bg" src="assets/dk/bg.webp" alt="" width="2400" height="1000" decoding="async"><img class="fx" src="assets/dk/beams.webp" alt="" width="2400" height="1000" decoding="async"><img class="fg" src="assets/dk/figures.webp" alt="" width="2400" height="1000" decoding="async"></a></section>
 <section class="block" aria-label="Countdowns">
   <div class="clocks">
     <div class="clock"><b data-until="2026-11-02T00:00:00+05:30">—</b><div><strong>Days to his birthday</strong><span>2 November 2026, Mumbai time</span></div></div>
