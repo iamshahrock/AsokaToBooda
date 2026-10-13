@@ -138,6 +138,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
           <button class="chip" type="button" data-era="1990">'90s</button>
           <button class="chip" type="button" data-era="2000">2000s</button>
           <button class="chip" type="button" data-era="2010">2010s</button>
+          <button class="chip" type="button" data-era="2020">2020s &amp; KING</button>
           <input class="find" id="find" type="search" placeholder="Search a film or character" aria-label="Search a film or character">
         </div>
         <div class="grid" id="grid" aria-label="Films"></div>
@@ -267,7 +268,7 @@ function eraOf(p) { return p.year < 1990 || p.kind === 'tv' ? '1980' : String(Ma
 function drawGrid() {
   const era = document.querySelector('[data-era][aria-pressed="true"]').dataset.era;
   const q = $('find').value.trim().toLowerCase();
-  const list = catalogue.filter(p => (era === 'all' || eraOf(p) === era || (p.king && era === '2010')) &&
+  const list = catalogue.filter(p => (era === 'all' || eraOf(p) === era || (p.king && era === '2020')) &&
     (!q || (p.title + ' ' + p.character + ' ' + p.year).toLowerCase().includes(q)));
   $('grid').replaceChildren(...list.map(p => {
     const b = document.createElement('button');
