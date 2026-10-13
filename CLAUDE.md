@@ -66,6 +66,12 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Review notes given on his deck: lock the Top 5 prize before launch; cap social likes (deck gives them 350/1,000); one currency (STARKS) not three; start Task 3 as a voice note; define "80 films" (our 80 posters vs 98 film credits); quiz bank can come from the thesis appendices.
 - Sponsor: Phenomenal AI (phenomenalai.in, text-to-video), owner's former client; free account for campaign videos. First test (15 s, crowned kid in "The Abyssal Den" pool hall) reviewed: fix crown continuity, duplicate pool ball, missing break payoff, empty opening, audio level. Credit line and logo pending from the owner.
 
+## Merch (/merch/, 13 Oct 2026)
+- King Fan Merch page: 15 T-shirt mockups (assets/merch/*.webp, 900x1000 web previews only; print files stay off the repo). Brand on stores: Shah Rock Jaan.
+- Buy buttons read the STORES list and each design's links object in merch/index.html; an empty link shows "<Store> · soon". Paste product URLs there once the stores are live.
+- Stores: Amazon Merch on Demand (owner applying, US account), Redbubble, Spreadshirt (Spreadshop can be embedded with its JavaScript integration). Marketplaces block iframes, so we link out.
+- Merch is in the header's utility links (Merch, About Us, Contact, FAQ), not the 8 main links.
+
 ## Working across chats
 Chats cannot read each other. At the end of any chat that changes the site, update this file in the same PR.
 - About Us + owner's blog (after the site is done).
