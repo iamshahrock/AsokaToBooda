@@ -24,21 +24,6 @@ body{font-size:15px}
 .v2 .clock strong{font-size:17px}
 .v2 .clock span{font-size:13px}
 
-/* cards ("doors") */
-.v2 .door{min-height:0}
-.v2 .door .head{padding:16px 18px 0;gap:6px}
-.v2 .door .num{font-size:12px}
-.v2 .door h3{font-size:24px}
-.v2 .door p{font-size:14px}
-.v2 .door .pic{min-height:150px}
-.v2 .door .pic img{max-height:170px}
-.v2 .door .foot{padding:11px 18px 13px}
-.v2 .door .go{font-size:13px}
-.v2 .door .what{font-size:11px}
-.v2 .feature{padding:20px;min-height:0}
-.v2 .feature h3{font-size:28px}
-.v2 .panel{padding:20px}
-
 /* portal shelves */
 .shelf .game h3{font-size:22px}
 
@@ -56,23 +41,9 @@ body{font-size:15px}
 /* big numbers */
 .wallet .bal{font-size:clamp(48px,5vw,68px)}
 .pledge .num,.join .num{font-size:clamp(40px,4.4vw,60px)}
-.hero2 .side b{font-size:clamp(44px,6vw,92px)}
 .rb b{font-size:clamp(34px,4.6vw,60px)}
 .code span{font-size:clamp(44px,6vw,76px)}
-.slide .big{font-size:clamp(38px,4.4vw,64px)}
-.slide .days b{font-size:clamp(64px,7vw,110px)}
 header.top h1{font-size:clamp(30px,3.4vw,48px)!important}
 /* the book */
 .chhead h1{font-size:clamp(28px,3.4vw,44px)}
 .bookhead h1{font-size:clamp(34px,4.4vw,60px)}
-/* phones: compact two-up cards */
-@media (max-width:560px){
-  .v2 .door h3{font-size:18px}
-  .v2 .door p{font-size:13px}
-  .v2 .door .head{padding:12px 12px 0}
-  .v2 .door .pic{min-height:100px}
-  .v2 .door .pic img{max-height:120px}
-  .v2 .door .foot{padding:9px 12px 10px}
-  .v2 .door .foot .what{display:none}
-  .v2 .clock b{font-size:40px}
-}

@@ -91,7 +91,7 @@
     '#site-header .sh-brand span{font-family:Anton,Impact,sans-serif;font-size:16px;letter-spacing:.04em;white-space:nowrap}',
     '#site-header .sh-brand b{color:var(--sh-red);font-weight:400}',
     '#site-header.sh-stuck .sh-brand{display:flex}',
-    '#site-header .sh-home{display:none;align-items:center;justify-content:center;flex:0 0 auto;width:34px;height:34px;padding:0;border:1px solid #4a2c2c;color:#f4efe9;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;cursor:pointer}',
+    '#site-header .sh-home{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:36px;height:36px;padding:0;border:1px solid #4a2c2c;color:#f4efe9;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;cursor:pointer}',
     '#site-header .sh-home:hover,#site-header .sh-home:focus-visible{border-color:var(--sh-red);background:var(--sh-red);color:#fff}',
     '#site-header .sh-home svg{flex:0 0 auto}',
     'a[href],button:not(:disabled),[role=button],summary,select,label.btn,label[for],input[type=checkbox],input[type=radio],input[type=file],input[type=range],input[type=submit],input[type=button],[onclick],[data-step]{cursor:pointer}',
@@ -116,7 +116,6 @@
     /* phone: show the middle of the story, burger menu */
     /* desktop: everything on one line */
     '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}}',
-    '@media (min-width:1200px) and (max-width:1679px){#site-header .sh-brand span{display:none}}',
     '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-nav{gap:2px 16px}#site-header .sh-nav a{font-size:12px;letter-spacing:.06em}#site-header .sh-util{gap:2px 12px;padding-left:14px}#site-header .sh-util a{font-size:11px;letter-spacing:.06em}#site-header .sh-sw{display:none}}',
     '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 18px}#site-header .sh-nav a{font-size:12px;letter-spacing:.08em}#site-header .sh-util{gap:2px 14px}}',
     '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 12px}#site-header .sh-nav a{font-size:11px;letter-spacing:.04em}#site-header .sh-util{gap:2px 10px;padding-left:10px}#site-header .sh-bar-in{gap:10px 14px;padding:0 14px}}',
@@ -248,7 +247,7 @@
   var atHome = here === new URL(root).pathname || /\/agarmainkinghota\.html$/i.test(here);
   var homeBtn = el('a', { class: 'sh-home', href: home, 'aria-label': 'Home' });
   homeBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>';
-  var barKids = [brand, nav, util, burger];
+  var barKids = atHome ? [brand, nav, util, burger] : [brand, homeBtn, nav, util, burger];
   var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, barKids)]);
 
   // section tabs: the sub-pages of the section you are in
@@ -269,8 +268,8 @@
     sub = el('nav', { class: 'sh-sub', 'aria-label': section[1] + ' pages' }, [subIn]);
   }
 
-  // the ZERO to ONE story banner opens the home page; inner pages start with the bar
-  var header = el('header', { id: 'site-header', class: atHome ? '' : 'sh-inner' }, atHome ? [banner, bar, sub, drawer] : [bar, sub, drawer]);
+  // the ZERO to ONE story banner tops every page (it links home); the bar pins under it
+  var header = el('header', { id: 'site-header' }, [banner, bar, sub, drawer]);
   me.parentNode.insertBefore(header, me);
 
   // burger menu
@@ -298,7 +297,7 @@
   if (document.body) addTop(); else document.addEventListener('DOMContentLoaded', addTop);
 
   // compact brand in the bar once the banner scrolls away
-  if (atHome && 'IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { header.classList.toggle('sh-stuck', !es[0].isIntersecting); }).observe(banner);
   }
 
@@ -312,7 +311,7 @@
   // first view of the session plays the intro; later pages appear still
   var seen = false;
   try { seen = sessionStorage.getItem('amkh-intro') === '1'; sessionStorage.setItem('amkh-intro', '1'); } catch (e) { }
-  if (!seen && !reduce && atHome) {
+  if (!seen && !reduce) {
     header.classList.add('sh-intro');
   }
 })();
