@@ -72,6 +72,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - /asoka-to-booda/silence/: the owner's case study from her ChatGPT chat "Asoka to Booda Rewrite" (share 6ac930bf…), Parts I-III, pages 1-19, one web page per thesis page, WORD FOR WORD (owner, 18 Oct: do not shorten or rewrite her thesis). Built by tools/build-silence-web.py from /tmp text; only citation markers dropped, tables rebuilt, one bracketed note on 18 vs 30 brands.
 - Linked from the Asoka to Boo-Da cover ("Read the case study") and the section tabs. Pages 20-66 of the 66-page index are not written yet (index in the owner's ChatGPT chat "Math Game Scoring Rules").
 
+## The drafts (18 Oct 2026)
+- /asoka-to-booda/drafts/: the owner's three full thesis drafts from her ChatGPT chat "Math Game Scoring Rules" (archived 9 Oct in /home/claude/handover/04d-math-game-thesis-drafts.txt), WORD FOR WORD: The Silence Before the King (long form, Prologue + Parts I-VII + Epilogue), Asoka to Booda · Be Da Boo-Da (Prologue, Ch 1-9, Epilogue) + the revised 'ALL IN' chapter and The Royal Flush, and From Zero to King (official first draft, Ch 1-9). 18,874 words. Built by tools/build-drafts-web.py. Owner, 18 Oct: never shorten, summarise or rewrite her thesis text; add, don't edit.
+- Owner says she shared 30+ ChatGPT chats; /home/claude/handover/chat-log.md holds the 9 Oct summaries, but only 5 chats were saved in full. Share links that still work can be read through the built-in browser on her desktop app.
+
 ## KING Buzz daily report (18 Oct 2026)
 - /king-intelligence/report.html renders any day from data/king-intelligence-daily.json (?date=YYYY-MM-DD; default latest) and shows unrecorded gaps. Linked first in the KING Intelligence crumbs and as "Today's daily report" on the dashboard.
 - Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.
