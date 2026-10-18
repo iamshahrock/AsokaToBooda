@@ -1,0 +1,8 @@
+{
+  "about": "Poster style editions for the studio. Each style folder holds <id>.jpg (full poster, same id as assets/posters/ref) and thumb/<id>.webp (about 320 px wide). Set ready to true once the files are in.",
+  "styles": [
+    { "id": "original", "name": "Original", "ready": true },
+    { "id": "pop", "name": "3D Pop", "look": "shahrock", "ready": false },
+    { "id": "anime", "name": "Anime", "look": "anime", "ready": false }
+  ]
+}

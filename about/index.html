@@ -19,7 +19,8 @@
 .sec-title{font-family:var(--display);font-weight:400;font-size:34px;text-transform:uppercase;letter-spacing:.01em;margin:44px 0 6px}
 .sec-sub{color:var(--mute);font-size:16px;margin:0 0 22px}
 .backers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media (max-width:760px){.backers{grid-template-columns:1fr}.backer.empty{display:none}}
+@media (max-width:760px){.backers{grid-template-columns:1fr}.backer .mono-face{width:120px;height:120px;border-radius:50%;border:2px solid var(--red);background:#1c1212;display:flex;align-items:center;justify-content:center;font-size:52px;color:var(--red-text)}
+.backer.empty{display:none}}
 .backer{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red);padding:22px;display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start}
 .backer img.face{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid var(--red);background:#1c1212}
 .backer .tag{display:inline-block;background:var(--red);color:#fff;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;margin:0 0 10px}
@@ -109,7 +110,15 @@
       </div>
     </article>
 
-    <article class="backer empty" aria-hidden="true"></article>
+    <article class="backer">
+      <div class="face mono-face" aria-hidden="true">&#9835;</div>
+      <div>
+        <span class="tag">Music Producer · KING FEVER</span>
+        <h3>Mr. Ssubhro Ganguly</h3>
+        <p class="role">Music Producer</p>
+        <p class="bio">Producer of KING FEVER, the original songs celebrating KING made by professional musicians for the fans. Full profile coming soon.</p>
+      </div>
+    </article>
   </section>
 
   <hr class="rule">

@@ -52,6 +52,10 @@
 .opt small{color:var(--mute);font-size:12.5px;line-height:1.4}
 .opt[aria-pressed="true"]{border-color:var(--red-hi);background:#2a0b0d}
 .looks{display:flex;flex-wrap:wrap;gap:8px}
+.styles{margin-bottom:10px;align-items:center}
+.styles .lbl{font:700 11px var(--body,inherit);letter-spacing:.14em;text-transform:uppercase;color:var(--mute,#a8968c);margin-right:4px}
+.styles .chip[disabled]{opacity:.45;cursor:default}
+.styles .chip small{font-size:10px;letter-spacing:.08em;margin-left:6px;color:var(--faint,#8a7a72)}
 label.field{display:block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:14px 0 6px}
 input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:500 15px var(--body)}
 .photos{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -132,6 +136,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
       <section class="panel" aria-labelledby="h1">
         <h2 id="h1"><span class="n">01</span>Choose the film</h2>
         <p class="hint">Every original poster from 1988 to 2018, plus the 81st, KING, still unwritten. Tap one.</p>
+        <div class="filters styles" id="styles" role="group" aria-label="Poster style"><span class="lbl">Poster style</span></div>
         <div class="filters" role="group" aria-label="Filter by decade">
           <button class="chip" type="button" data-era="all" aria-pressed="true">All</button>
           <button class="chip" type="button" data-era="1980">TV &amp; '80s</button>
@@ -251,7 +256,8 @@ const BASE = new URL('../assets/posters/', location.href).href;
 // 'blur' sends a softened copy (layout and colour only). Set from the end-to-end test results.
 const FILM_REF_MODE = 'blur';   // faces on the original posters must never reach the AI (#FreeMyFace)
 
-const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null, cast: [] };
+const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null, cast: [], style: 'original' };
+let STYLES = [{ id: 'original', name: 'Original', ready: true }];
 let catalogue = [];
 let FACES = {};
 
@@ -262,7 +268,26 @@ async function loadCatalogue() {
   const data = await res.json();
   catalogue = [...data.posters, KING];
   try { FACES = (await (await fetch(BASE + 'faces.json')).json()).faces || {}; } catch (e) { FACES = {}; }
+  try { STYLES = (await (await fetch(BASE + 'styles/styles.json')).json()).styles || STYLES; } catch (e) {}
+  drawStyles();
   drawGrid();
+}
+function styleOf() { return STYLES.find(x => x.id === state.style) || STYLES[0]; }
+function thumbOf(p) { return p.king ? '../assets/studio/crown.png' : state.style !== 'original' ? BASE + 'styles/' + state.style + '/thumb/' + p.id + '.webp' : BASE + p.thumb; }
+function fallback(im, p) { im.onerror = () => { im.onerror = null; im.src = p.king ? '../assets/studio/crown.png' : BASE + p.thumb; }; }
+function drawStyles() {
+  const row = $('styles'); row.querySelectorAll('.chip').forEach(c => c.remove());
+  STYLES.forEach(st => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
+    b.setAttribute('aria-pressed', String(st.id === state.style)); b.textContent = st.name;
+    if (!st.ready) { b.disabled = true; const sm = document.createElement('small'); sm.textContent = 'soon'; b.append(sm); }
+    b.addEventListener('click', () => {
+      state.style = st.id; state.aiArt = null; drawStyles(); drawGrid();
+      if (st.look) { const lb = document.querySelector('[data-look="' + st.look + '"]'); if (lb) lb.click(); }
+      if (state.film) chooseFilm(state.film);
+    });
+    row.append(b);
+  });
 }
 function eraOf(p) { return p.year < 1990 || p.kind === 'tv' ? '1980' : String(Math.floor(p.year / 10) * 10); }
 function drawGrid() {
@@ -276,7 +301,7 @@ function drawGrid() {
     b.setAttribute('aria-pressed', String(state.film && state.film.id === p.id));
     const im = document.createElement('img');
     im.loading = 'lazy'; im.alt = ''; im.width = 160; im.height = 240;
-    im.src = p.king ? '../assets/studio/crown.png' : BASE + p.thumb;
+    fallback(im, p); im.src = thumbOf(p);
     const s = document.createElement('span');
     const t = document.createElement('b'); t.textContent = p.title;
     const i = document.createElement('i'); i.textContent = p.year + (p.kind === 'tv' ? ' · TV' : '') + ' · ' + p.character;
@@ -296,7 +321,7 @@ function chooseFilm(p) {
   state.film = p; state.aiArt = null;
   drawGrid();
   const c = $('chosen'); c.hidden = false; c.replaceChildren();
-  const im = document.createElement('img'); im.alt = ''; im.src = p.king ? '../assets/studio/crown.png' : BASE + p.thumb;
+  const im = document.createElement('img'); im.alt = ''; fallback(im, p); im.src = thumbOf(p);
   const t = document.createElement('p'); const s = document.createElement('strong');
   s.textContent = `${p.title} (${p.year})`;
   t.append(s, document.createTextNode(p.king ? 'The 81st poster. KING releases 24 Dec 2026; this one is yours to write.' : `You step in as ${p.character}.`));
@@ -430,12 +455,21 @@ async function refresh() {
 
 // ---------- make ----------
 async function filmReference(p) {
-  const im = await loadImage(BASE + p.ref);
+  const styled = state.style !== 'original';
+  let im = null;
+  if (styled) { try { im = await loadImage(BASE + 'styles/' + state.style + '/' + p.id + '.jpg'); } catch (e) { im = null; } }
+  const useStyle = !!im;
+  if (!im) im = await loadImage(BASE + p.ref);
   const c = document.createElement('canvas'); const s = Math.min(1, 768 / Math.max(im.width, im.height));
   c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
   const ctx = c.getContext('2d');
-  if (FILM_REF_MODE === 'blur') ctx.filter = 'blur(12px)';
+  if (!useStyle && FILM_REF_MODE === 'blur') ctx.filter = 'blur(12px)';
   ctx.drawImage(im, 0, 0, c.width, c.height);
+  if (useStyle) { // style editions keep their art, but every face is masked: no star's face reaches the AI (#FreeMyFace)
+    ctx.filter = 'blur(6px)'; ctx.fillStyle = '#1a1414';
+    (FACES[p.id] || []).forEach(([cx, cy, w]) => { ctx.beginPath(); ctx.ellipse(cx * c.width, cy * c.height, w * c.width * 0.62, w * c.width * 0.8, 0, 0, Math.PI * 2); ctx.fill(); });
+    ctx.filter = 'none';
+  }
   return new Promise(r => c.toBlob(r, 'image/jpeg', 0.88));
 }
 $('make').addEventListener('click', async () => {
@@ -459,7 +493,7 @@ $('make').addEventListener('click', async () => {
     form.append('prompt', buildPrompt({
       film: p.king ? 'KING' : p.title, year: p.year, character: p.king ? '' : p.character,
       role: state.role, look: state.look, squad: state.photos.length, world: $('world').value,
-      hasFilmRef: !p.king,
+      hasFilmRef: !p.king, styleName: state.style !== 'original' ? styleOf().name : '',
       cast: useCast ? state.cast.map(c => ({ photo: c.photo, at: c.at })) : null
     }));
     state.photos.forEach((ph, i) => form.append('image', ph.blob, `fan-${i + 1}.jpg`));

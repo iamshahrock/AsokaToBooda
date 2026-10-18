@@ -5,9 +5,10 @@ This repo is PUBLIC: never write private or legal material here.
 
 ## What it is
 Fan platform for Shah Rukh Khan's KING (release 24 Dec 2026), live at https://agarmainkinghota.com.
-Header sections (one line on desktop ≥1200px, burger below): Make Your Poster (/create/), King's Lairs (/lairs/),
-Chess81 (/CHESS81.HTML), Billboard (/fan-billboard/), KING Buzz (/king-intelligence/), Asoka to Boo-Da (/asoka-to-booda/),
-DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/). Plus About Us, Contact, FAQ, STARKS points badge.
+Header sections (9 since 18 Oct 2026; one line on desktop ≥1200px, burger below): Make Your Poster (/make-your-poster/, a game shelf: Kingmaker = the studio at /create/, Be King = Ganesh's game, coming), King's Lairs (/lairs/),
+Chess81 (/chess81/, a shelf: the full game /CHESS81.HTML + Rapid Fire by Ganesh, coming), Billboard (/fan-billboard/), KING Buzz (/king-intelligence/), Asoka to Boo-Da (/asoka-to-booda/),
+DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/, 7 original song slots, music produced by Ssubhro Ganguly). Plus Merch, About Us, Contact, FAQ, STARKS points badge.
+- Every new top-level folder must be added to the cp line in .github/workflows/pages.yml or it is not deployed (merch was missing until 18 Oct). Release QA expects 9 header links.
 
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
@@ -18,7 +19,7 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/). Plus About Us, Contact, F
 
 ## How to ship
 Branch → PR via `gh api repos/iamshahrock/AsokaToBooda/pulls -X POST` → squash merge via `gh api .../pulls/N/merge -X PUT`.
-Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/release-qa.mjs (expects 8 header links).
+Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/release-qa.mjs (expects 9 header links).
 
 ## Standing rules
 - Real absolute numbers or N/A. No invented figures. No blank cells.
@@ -26,7 +27,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Don't alter the original ijOO / Shah Rock Jaan art. Cartoon G.One art is the owner's; live-action G.ONE belongs to Red Chillies.
 - No "not affiliated" disclaimer. No privacy/terms page.
 - Fan Wall: 555-character limit, NO profanity filter (owner's explicit decision).
-- The project is not anonymous: the owner is named. About Us (/about/, 13 Oct 2026) lists the backers, two per row, with photo, role, short bio and logos: Dr. R.K. Prasla (Presenter & Sponsor; ZeeFX Studio, Innovator), Mr. Ganesh Vulidra (Creator, The Ultimate King Fan Challenge), Mr. Mohomed Morani (Patron; CMD, DOME Entertainment), Mr. Mazhar Nadiadwala (Patron; MD, DOME Entertainment), Mr. Sanjay Rodrigues (Tech Sponsor; Founder & CEO, Phenomenal AI). The 6th slot is left empty for the next backer; the owner's own section sits below a red rule. Never publish backers' phone numbers or addresses (Ganesh's CV has them).
+- The project is not anonymous: the owner is named. About Us (/about/, 13 Oct 2026) lists the backers, two per row, with photo, role, short bio and logos: Dr. R.K. Prasla (Presenter & Sponsor; ZeeFX Studio, Innovator), Mr. Ganesh Vulidra (Creator, The Ultimate King Fan Challenge), Mr. Mohomed Morani (Patron; CMD, DOME Entertainment), Mr. Mazhar Nadiadwala (Patron; MD, DOME Entertainment), Mr. Sanjay Rodrigues (Tech Sponsor; Founder & CEO, Phenomenal AI), Mr. Ssubhro Ganguly (Music Producer, KING FEVER; 6th slot, photo and profile pending from the owner); the owner's own section sits below a red rule. Never publish backers' phone numbers or addresses (Ganesh's CV has them).
 - Style: compact red/black, direct, evidence-led.
 - Naming (owner's decision 18 Oct 2026): the movement is spelt INQUILAAB (nod to Amitabh Bachchan's film Inquilaab) and the hashtag is #FreeMyFace (was Inquilab / #FreeTheFace). URL stays /inquilab/ and the STARKS key stays `inquilab` so old links and points keep working.
 
@@ -46,6 +47,11 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Limits: 100 site posters a day, 5 per connection a day.
 - Posters: 83 in assets/posters (80 from the owner's archive + Pathaan, Jawan, Dunki added 13 Oct; their face boxes were placed by hand). Studio filter has a '2020s & KING' chip.
 - Cast picker (12 Oct): for the 74 posters with detected faces, step 02 shows numbered characters (assets/posters/faces.json: positions only, no identities). Fans choose You / Friend 1 / Friend 2 / A new face per character; the prompt keeps the poster's cast layout and every original cast member becomes a fan or an invented face. Posters with fewer than 2 faces, and KING, use the single-hero mode.
+
+## Poster style editions (18 Oct 2026)
+- The owner is rendering all 83 posters as style editions (3D Pop, Anime, 2-3 more coming). Files go in assets/posters/styles/<style>/<id>.jpg plus thumb/<id>.webp; switch a style on with "ready": true in assets/posters/styles/styles.json.
+- Studio step 01 has a Poster style row. With a style chosen, the grid shows that edition and its poster is the AI reference: sharp, not blurred, but every face box from faces.json is masked first (#FreeMyFace). Without the file it falls back to the blurred original. The style also sets the matching look.
+- Studio name "Kingmaker" is a working title until the owner picks one.
 
 ## Open work
 - Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
