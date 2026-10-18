@@ -76,6 +76,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - /asoka-to-booda/drafts/: the owner's three full thesis drafts from her ChatGPT chat "Math Game Scoring Rules" (archived 9 Oct in /home/claude/handover/04d-math-game-thesis-drafts.txt), WORD FOR WORD: The Silence Before the King (long form, Prologue + Parts I-VII + Epilogue), Asoka to Booda · Be Da Boo-Da (Prologue, Ch 1-9, Epilogue) + the revised 'ALL IN' chapter and The Royal Flush, and From Zero to King (official first draft, Ch 1-9). 18,874 words. Built by tools/build-drafts-web.py. Owner, 18 Oct: never shorten, summarise or rewrite her thesis text; add, don't edit.
 - Owner says she shared 30+ ChatGPT chats; /home/claude/handover/chat-log.md holds the 9 Oct summaries, but only 5 chats were saved in full. Share links that still work can be read through the built-in browser on her desktop app.
 
+## The Final Thesis (18 Oct 2026)
+- /asoka-to-booda/final-thesis/: ASOKA_TO_BOODA_FINAL_THESIS.docx (384 pages; recovered from the owner's ChatGPT library, uploaded 18 Oct) published WORD FOR WORD with all 151 images in place: 92 sections, 44,674 words. Built by tools/build-final-thesis-web.py from a pandoc markdown export (images to webp, max 1400 px). First CTA on the Asoka to Boo-Da cover and a section tab.
+- Owner's audit brief (Section A) and ChatGPT's gap report (Section B) came with it: a full completeness audit (gap register, 7-film Part III matrix, chart register, source register) is the next job. Open questions for the owner: authorship credit (name in or out), Chennai Express credit wording with Siddhesh Bhobe.
+
 ## KING Buzz daily report (18 Oct 2026)
 - /king-intelligence/report.html renders any day from data/king-intelligence-daily.json (?date=YYYY-MM-DD; default latest) and shows unrecorded gaps. Linked first in the KING Intelligence crumbs and as "Today's daily report" on the dashboard.
 - Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.
