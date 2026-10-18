@@ -177,6 +177,75 @@
         "Posts are not people.",
         "06 Oct verified KING-specific absolute: 699,000 public #srk-king posts from Pikory; this is a named series and is not merged with the 04/05 observable-post series."
       ]
+    },
+    {
+      "date": "2026-10-18",
+      "record_id": "KING-2026-10-18",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "srk_indexed_posts",
+          "value": 2933427,
+          "unit": "indexed posts",
+          "source": "Display Purposes #srk hashtag report, page last updated 2026-10-18 (https://displaypurposes.com/hashtags/hashtag/srk)",
+          "method": "indexed #SRK footprint; not KING-specific",
+          "confidence": "tracked/public-index",
+          "status": "usable"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": 32455,
+          "unit": "indexed #srkking posts",
+          "source": "Display Purposes #srk report, similar-hashtags table, last updated 2026-10-18",
+          "method": "public index count; same index as the 06 Oct 32,455 figure",
+          "confidence": "tracked/public-index",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 40,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json, daily fan AI scan, 2026-10-18",
+          "method": "public posts found and linked by the daily scan (YouTube, Instagram, X, Facebook)",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 2883120,
+          "unit": "views",
+          "source": "data/ai-creator-log.json, 2026-10-18",
+          "method": "sum of public view counts on the 21 logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 18 Oct total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_video_views_tracked",
+          "value": null,
+          "unit": "views",
+          "source": "No verified 18 Oct aggregate located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "Teaser expected on his birthday, 2 November 2026: Sacnilk, 13 Oct 2026, citing Bollywood Hungama (https://www.sacnilk.com/news/shah-rukh-khans-birthday-to-witness-king-sized-blast-siddharth-anand-gears-up-to-drop-explosive-teaser-on-november-2)"
+      ],
+      "notes": [
+        "Both public-index counts are unchanged from 06 Oct: the index did not move in 12 days, or it has not re-crawled. Read as flat, not as growth.",
+        "No record was filed between 07 and 17 Oct; those dates stay empty rather than back-filled.",
+        "Posts are not people."
+      ]
     }
   ],
   "source_rules": {
