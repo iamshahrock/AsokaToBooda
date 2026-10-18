@@ -22,7 +22,7 @@
     verdict: ['Finished THE CONTRACT', 2],
     pledge: ['Pledged to watch DOOM and KING', 1],
     vote: ['Voted in DOOM to KING', 6],
-    inquilab: ['Joined the Inquilab · #FreeTheFace', 1],
+    inquilab: ['Joined the Inquilaab · #FreeMyFace', 1],
     clipsubmit: ['Submitted a Lairs Cinema clip', 3],
     comment: ['Posted on a Fan Wall', 3]
   };

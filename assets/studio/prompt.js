@@ -2,7 +2,7 @@
 // Image order sent to the Worker: fan photo(s) first, then the film's original poster (not for KING), then the KING crown.
 // Wording note (tested 10 Oct 2026): neutral "design a new poster starring the person in the first photo" passes the
 // image model's safety review; wording about replacing or removing an actor's face was rejected.
-// #FreeTheFace (12 Oct 2026): the film poster is sent blurred, and the prompt forbids any real star's likeness.
+// #FreeMyFace (12 Oct 2026): the film poster is sent blurred, and the prompt forbids any real star's likeness.
 export const LOOKS = {
   cinematic: 'hyper-real cinematic photography, dramatic rim light, fine film grain',
   retro: 'hand-painted 1990s Bollywood billboard, bold brush strokes, saturated colour',

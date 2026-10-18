@@ -395,7 +395,7 @@ async function aiSubmit(request, env, reply, origin) {
   return reply(200, { ok: true, duplicate: !(r.meta && r.meta.changes), platform: plat[0] });
 }
 
-// ---------------- INQUILAB: fans joining the revolt (#FreeTheFace) ----------------
+// ---------------- INQUILAAB: fans joining the revolt (#FreeMyFace) ----------------
 // GET /inquilab -> { joined }   POST /inquilab {device} -> { joined, added }
 async function inquilab(request, env, reply, origin) {
   if (!env.DB) return reply(503, { error: "Not configured yet." });
