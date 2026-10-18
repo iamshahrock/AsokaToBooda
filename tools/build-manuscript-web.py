@@ -173,13 +173,13 @@ for i, p in enumerate(pages):
     prev = pages[i - 1] if i else None; nxt = pages[i + 1] if i + 1 < len(pages) else None
     kick = (p['part'] or 'Asoka to Boo-Da') + f' · {i + 1} of {len(pages)}'
     o = HEAD.format(t=html.escape(f'{p["title"]} — {T}'), d=html.escape(f'{T}: {p["title"]}'), u=p['slug'] + '.html').replace('</head>', EXTRA + '</head>')
-    o += f'<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Asoka to Boo-Da</a> / <a href="./">The Master Manuscript</a> / <span>{html.escape(p["title"].split(" · ")[0])}</span></nav>\n<article class="ch">\n'
+    o += f'<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Asoka to Boo-Da · Contents</a> / <span>{html.escape(p["title"].split(" · ")[0])}</span></nav>\n<article class="ch">\n'
     o += f'<header class="chhead"><p class="kick">{html.escape(kick)}</p><h1>{html.escape(p["title"])}</h1></header>\n'
     if p.get('intro'):
         o += '<div class="partintro">' + pandoc(p['intro']) + '</div>\n'
     o += '<div class="prose">' + pandoc('\n'.join(p['body'])) + '</div>\n</article>\n'
     o += '<nav class="pager" aria-label="Sections">' + (f'<a class="prev" href="{prev["slug"]}.html"><small>Previous</small><b>{html.escape(prev["title"])}</b></a>' if prev else '<span></span>')
-    o += '<a class="toc" href="./">Contents</a>' + (f'<a class="next" href="{nxt["slug"]}.html"><small>Next</small><b>{html.escape(nxt["title"])}</b></a>' if nxt else '<span></span>') + '</nav>\n' + FOOT
+    o += '<a class="toc" href="../">Contents</a>' + (f'<a class="next" href="{nxt["slug"]}.html"><small>Next</small><b>{html.escape(nxt["title"])}</b></a>' if nxt else '<span></span>') + '</nav>\n' + FOOT
     open(f'{OUT}/{p["slug"]}.html', 'w').write(o)
 
 # contents: a book's table of contents. One relevant picture per Part, a numbered list of its chapters.
@@ -194,6 +194,13 @@ for p in pages:
     if not groups or groups[-1][0] != key: groups.append((key, []))
     groups[-1][1].append(p)
 total = sum(words(p) for p in pages); nimg = len(os.listdir(f'{OUT}/img'))
+SOURCES = ('<section class="toc-part"><div></div><div><h3 class="toc-h" style="font-size:20px">The source versions</h3>'
+           '<p class="toc-in">This book integrates every earlier version of the thesis. They stay online exactly as written, for the record.</p><ol class="toc-list">'
+           '<li><a href="../final-thesis/"><span class="n">Source</span><span class="t">The Final Thesis, word for word</span><span class="w">92 sections</span></a></li>'
+           '<li><a href="../book/"><span class="n">Source</span><span class="t">SRK: The Man, The Myth, The King, first web edition</span><span class="w">38 sections</span></a></li>'
+           '<li><a href="../silence/"><span class="n">Source</span><span class="t">The Silence Before the King, case study, pages 1 to 19</span><span class="w">19 pages</span></a></li>'
+           '<li><a href="../drafts/"><span class="n">Source</span><span class="t">The three full drafts, word for word</span><span class="w">3 drafts</span></a></li>'
+           '</ol></div></section>\n')
 TOCCSS = ('<style>.toc-part{display:grid;grid-template-columns:260px 1fr;gap:26px;padding:26px 0;border-top:1px solid var(--line)}'
           '.toc-fig{margin:0}.toc-fig img{width:100%;height:170px;object-fit:cover;border:1px solid var(--line);display:block}.toc-fig figcaption{font-size:12px;color:var(--mute);margin-top:6px}'
           '.toc-h{margin:0 0 4px;font-family:var(--display);font-size:clamp(24px,2.6vw,34px);letter-spacing:.01em;text-transform:uppercase;line-height:1}'
@@ -224,6 +231,13 @@ for key, ps in groups:
         if not n: k, n = '', k
         idx += f'<li><a href="{p["slug"]}.html"><span class="n">{html.escape(k)}</span><span class="t">{html.escape(n)}</span><span class="w">{max(1, round(words(p) / 230))} min</span></a></li>'
     idx += '</ol></div></section>\n'
-idx += FOOT
-open(f'{OUT}/index.html', 'w').write(idx)
+idx += SOURCES + FOOT
+idx = idx.replace('href="../../assets/', 'href="../assets/').replace('src="../../assets/', 'src="../assets/')
+idx = re.sub(r'(href|src)="(?!https?:|#|\.\./|/)([^"]+)"', lambda m: f'{m.group(1)}="manuscript/{m.group(2)}"', idx)
+idx = idx.replace('href="manuscript/../book/book.css"', 'href="book/book.css"').replace('/asoka-to-booda/manuscript/"', '/asoka-to-booda/"')
+for d in ('book/book.css', 'final-thesis/', 'book/', 'silence/', 'drafts/'):
+    idx = idx.replace(f'href="../{d}"', f'href="{d}"')
+idx = idx.replace('<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Asoka to Boo-Da</a> / <span>The Master Manuscript</span></nav>\n', '')
+open(f'{OUT}/../index.html', 'w').write(idx)
+open(f'{OUT}/index.html', 'w').write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Asoka to Boo-Da</title><link rel="canonical" href="https://agarmainkinghota.com/asoka-to-booda/"><meta http-equiv="refresh" content="0; url=../"></head><body><a href="../">Asoka to Boo-Da: contents</a></body></html>\n')
 print(len(pages), total, nimg)
