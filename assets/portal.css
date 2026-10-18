@@ -1,0 +1,25 @@
+/* Shared game-portal shelf (early-2000s arcade style) for Make Your Poster, Chess81 and KING FEVER */
+.shelf-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:26px 0 16px}
+.shelf-head p{margin:0;color:var(--mute);max-width:620px;line-height:1.6}
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.game{position:relative;display:flex;flex-direction:column;background:linear-gradient(180deg,#1d1212,#110b0b);border:2px solid #3a2626;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 0 0 4px #0a0707,0 0 0 5px #2a1a1a;min-width:0}
+.game:hover{border-color:var(--red)}
+.game .cover{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0d0909;border-bottom:2px solid #3a2626}
+.game .cover img{width:100%;height:100%;object-fit:cover;display:block}
+.game .cover.duo{display:grid;grid-template-columns:1fr 1fr}
+.game .badges{position:absolute;top:10px;left:10px;display:flex;gap:6px;flex-wrap:wrap;z-index:2}
+.badge{font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;transform:rotate(-2deg);box-shadow:2px 2px 0 #000}
+.badge.new{background:#f2cf6b;color:#1a1205}.badge.hot{background:var(--red);color:#fff}.badge.soon{background:#2b3a55;color:#dfe8ff}.badge.pick{background:#fff;color:#c8102e}
+.game .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.game h3{margin:0;font-family:var(--display);font-weight:400;font-size:30px;line-height:1;text-transform:uppercase}
+.game .by{margin:0;font-size:13px;color:var(--red-text);font-weight:600}
+.game .what{margin:0;color:#d8ccc4;font-size:15px;line-height:1.55}
+.game .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+.game .play{margin-top:auto;padding-top:10px}
+.game .play a,.game .play span{display:inline-flex;align-items:center;gap:8px;font:700 14px var(--body);letter-spacing:.1em;text-transform:uppercase;padding:12px 18px;text-decoration:none;border:2px solid var(--red)}
+.game .play a{background:var(--red);color:#fff;box-shadow:3px 3px 0 #000}
+.game .play a:hover{background:var(--red-hi)}
+.game .play span{color:var(--mute);border-color:#3a2626}
+.ph-cover{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;height:100%;background:radial-gradient(80% 80% at 50% 40%,#3a0a0e,#0d0707);font-family:var(--display);text-transform:uppercase;color:#fff;text-align:center;padding:16px}
+.ph-cover b{font-size:56px;line-height:.9;font-weight:400}
+.ph-cover small{font:700 12px var(--body);letter-spacing:.2em;color:var(--red-text)}

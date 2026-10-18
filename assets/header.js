@@ -16,14 +16,15 @@
   // Six sections (remapped 10 Oct 2026) + utility links.
   var home = root;
   var LINKS = [
-    ['create/', 'Make Your Poster'],
+    ['make-your-poster/', 'Make Your Poster', ['create/']],
     ['lairs/', "King's Lairs"],
-    ['CHESS81.HTML', 'Chess81'],
+    ['chess81/', 'Chess81', ['CHESS81.HTML']],
     ['fan-billboard/', 'Billboard'],
     ['king-intelligence/', 'KING Buzz'],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
     ['doom-to-king/', 'DOOM to KING'],
-    ['inquilab/', 'Inquilaab']
+    ['inquilab/', 'Inquilaab'],
+    ['king-fever/', 'KING Fever']
   ];
   var UTIL = [['merch/', 'Merch'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']];
 
@@ -102,6 +103,7 @@
     /* desktop: everything on one line */
     '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}}',
     '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-nav{gap:2px 16px}#site-header .sh-nav a{font-size:12px;letter-spacing:.06em}#site-header .sh-util{gap:2px 12px;padding-left:14px}#site-header .sh-util a{font-size:11px;letter-spacing:.06em}#site-header .sh-sw{display:none}}',
+    '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 18px}#site-header .sh-nav a{font-size:12px;letter-spacing:.08em}#site-header .sh-util{gap:2px 14px}}',
     '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 12px}#site-header .sh-nav a{font-size:11px;letter-spacing:.04em}#site-header .sh-util{gap:2px 10px;padding-left:10px}#site-header .sh-bar-in{gap:10px 14px;padding:0 14px}}',
     /* tablet and phone: the menu button holds every link, Home included */
     '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
@@ -185,7 +187,7 @@
   drawer.appendChild(el('a', { href: home }, [el('small', { text: '00' }), document.createTextNode('Home')]));
   LINKS.forEach(function (l, i) {
     var a1 = el('a', { href: root + l[0], text: l[1] }), a2 = el('a', { href: root + l[0] }, [el('small', { text: '0' + (i + 1) }), document.createTextNode(l[1])]);
-    if (isHere(l[0])) { a1.setAttribute('aria-current', 'page'); a2.setAttribute('aria-current', 'page'); }
+    if (isHere(l[0]) || (l[2] || []).some(isHere)) { a1.setAttribute('aria-current', 'page'); a2.setAttribute('aria-current', 'page'); }
     nav.appendChild(a1); drawer.appendChild(a2);
   });
   var util = el('div', { class: 'sh-util' });

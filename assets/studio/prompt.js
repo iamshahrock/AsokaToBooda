@@ -36,10 +36,12 @@ function castLines(cast, role) {
   });
   return `Keep the reference poster's cast layout of ${n} character${n > 1 ? 's' : ''}: ${parts.join('; ')}.`;
 }
-export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true, cast = null }) {
+export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true, cast = null, styleName = '' }) {
   const useCast = Array.isArray(cast) && cast.length && hasFilmRef;
   const who = squad > 1 ? `the ${squad} people in the first ${squad} photos, together as the cast,` : 'the person in the first photo';
-  const ref = hasFilmRef
+  const ref = hasFilmRef && styleName
+    ? `The next image is the film poster "${film}" (${year}) redrawn in the ${styleName} style, with every face masked out: match its art style, composition and colour exactly, and fill the masked faces with the uploaded people or newly invented faces.`
+    : hasFilmRef
     ? `The next image is a blurred vintage film poster of "${film}" (${year}), used only as a reference for its era, composition and colour mood.`
     : `The film is KING (2026), a dark, stylish action thriller.`;
   const crown = `The last image is a painted red crown: it floats just above the head of ${useCast ? 'the person in photo 1' : 'the lead'}.`;
