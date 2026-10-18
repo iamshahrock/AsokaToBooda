@@ -67,6 +67,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Owner's note 18 Oct: '38 pages is too little, we talked about a 100-page manuscript'. The 38 are web sections; the manuscript itself is 112 A4 pages. Keep deepening thin chapters (the scheduled 'Thesis chapter build' adds one section per run).
 - Linked from the Asoka to Boo-Da cover ("Read the full book") and the home slider's thesis slide.
 
+## KING Buzz daily report (18 Oct 2026)
+- /king-intelligence/report.html renders any day from data/king-intelligence-daily.json (?date=YYYY-MM-DD; default latest) and shows unrecorded gaps. Linked first in the KING Intelligence crumbs and as "Today's daily report" on the dashboard.
+- Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.
+
 ## Open work
 - Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
 - 80 face-free "mood plates" to replace the star-face reference posters. Owner to choose: auto-made from the existing posters (show 6 first) or designed by her team. Face boxes for all 80 posters exist (face-api run, 12 Oct) and can drive automatic face removal.
