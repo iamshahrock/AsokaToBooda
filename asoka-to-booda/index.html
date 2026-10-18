@@ -116,6 +116,23 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
 .finale .fullch{margin-left:auto;margin-right:auto;text-align:left}
 </style>
 <style>.bookcta{margin:18px 0 6px}.bookcta a{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 18px;border:1px solid var(--red);background:rgba(200,16,46,.12);color:#fff;text-decoration:none}.bookcta a:hover{background:var(--red)}.bookcta b{font:700 14px var(--body);letter-spacing:.12em;text-transform:uppercase}.bookcta span{font-size:14px;color:#e6dcd4}.bookcta i{font-style:normal}</style>
+<style>.lib{margin:26px auto 30px;text-align:left;max-width:1000px}
+.lib-k{font:700 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--red-text,#e3242b);margin:0 0 10px;text-align:center}
+.lib a{color:#fff;text-decoration:none}
+.lib-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);border:1px solid var(--red);background:#140b0b;margin:0 0 14px;overflow:hidden}
+.lib-main img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block}
+.lib-tx{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:22px 26px}
+.lib-tx small,.lib-card small{font:700 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--red-text,#e3242b)}
+.lib-tx b{font-family:var(--display);font-size:clamp(26px,3vw,38px);line-height:1;text-transform:uppercase}
+.lib-tx span{font-size:15px;line-height:1.5;color:#e6dcd4}.lib-tx i{font-style:normal;font-weight:600;color:var(--red-text,#e3242b)}
+.lib-main:hover{background:#230d0f}
+.lib-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.lib-card{display:flex;flex-direction:column;gap:5px;border:1px solid #3a2222;background:#120c0c;padding:0 0 14px}
+.lib-card img{width:100%;height:130px;object-fit:cover;display:block;margin:0 0 8px}
+.lib-card small,.lib-card b,.lib-card span{padding:0 14px}.lib-card b{font-size:16px;line-height:1.25}.lib-card span{font-size:13px;color:#b8aca4;line-height:1.4}
+.lib-card:hover{border-color:var(--red);background:#1c0d0e}
+@media (max-width:900px){.lib-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.lib-main{grid-template-columns:minmax(0,1fr)}.lib-main img{min-height:0;height:170px}.lib-tx{padding:16px}.lib-grid{gap:10px}.lib-card img{height:96px}.lib-card b{font-size:14px}}</style>
 </head>
 <body class="v2">
 <script src="../assets/header.js"></script>
@@ -128,11 +145,16 @@ table.t{width:100%;border-collapse:collapse;margin:10px 0 26px;font-size:15px}
   <h1>Asoka to <em>Boo-Da</em></h1>
   <p class="sub">The Silence Before the King</p>
   <p class="by">Facts are sourced · Interpretation is labelled · Questions are left open on purpose</p>
-  <p class="bookcta"><a href="manuscript/"><b>Read the Master Manuscript</b><span>SRK: The Man, The Myth, The King · every version in one book · 46 chapters</span><i aria-hidden="true">→</i></a></p>
-  <p class="bookcta"><a href="final-thesis/"><b>Read the Final Thesis</b><span>The complete illustrated manuscript · 92 sections · 44,674 words · 151 images · word for word</span><i aria-hidden="true">→</i></a></p>
-  <p class="bookcta"><a href="book/"><b>Read the full book</b><span>SRK: The Man, The Myth, The King · every chapter, online</span><i aria-hidden="true">→</i></a></p>
-  <p class="bookcta"><a href="silence/"><b>Read the case study</b><span>The Silence Before the King · Parts I to III, pages 1 to 19</span><i aria-hidden="true">→</i></a></p>
-  <p class="bookcta"><a href="drafts/"><b>Read the full drafts</b><span>The Silence Before the King (long form) · Asoka to Booda · From Zero to King · word for word</span><i aria-hidden="true">→</i></a></p>
+  <section class="lib" aria-label="Read the thesis">
+    <p class="lib-k">The library · five ways to read the thesis</p>
+    <a class="lib-main" href="manuscript/"><img src="manuscript/img/e09.webp" alt="" loading="lazy"><span class="lib-tx"><small>New · the complete book</small><b>The Master Manuscript</b><span>Asoka to Boo-Da · SRK: The Man, The Myth, The King. Every version in one book: Prologue, 10 Parts, 46 chapters, the Academic Addendum and the Final Frame.</span><i>Start reading →</i></span></a>
+    <div class="lib-grid">
+      <a class="lib-card" href="final-thesis/"><img src="final-thesis/img/image169.webp" alt="" loading="lazy"><small>Word for word</small><b>The Final Thesis</b><span>92 sections · 44,674 words · 151 images</span></a>
+      <a class="lib-card" href="book/"><img src="book/img/e06.webp" alt="" loading="lazy"><small>The first book</small><b>SRK: The Man, The Myth, The King</b><span>Every chapter, online</span></a>
+      <a class="lib-card" href="silence/"><img src="../assets/home/04-asoka-to-booda.webp" alt="" loading="lazy"><small>The case study</small><b>The Silence Before the King</b><span>Parts I to III, pages 1 to 19</span></a>
+      <a class="lib-card" href="drafts/"><img src="book/img/e14.webp" alt="" loading="lazy"><small>Word for word</small><b>The full drafts</b><span>The Silence Before the King · Asoka to Booda · From Zero to King</span></a>
+    </div>
+  </section>
   <ol class="toc">
     <li><a href="#summary"><span>—</span>The argument in one page</a></li>
     <li><a href="#prologue"><span>00</span>The Showman</a></li>
