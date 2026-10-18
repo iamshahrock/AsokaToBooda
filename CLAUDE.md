@@ -80,6 +80,13 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - /asoka-to-booda/final-thesis/: ASOKA_TO_BOODA_FINAL_THESIS.docx (384 pages; recovered from the owner's ChatGPT library, uploaded 18 Oct) published WORD FOR WORD with all 151 images in place: 92 sections, 44,674 words. Built by tools/build-final-thesis-web.py from a pandoc markdown export (images to webp, max 1400 px). First CTA on the Asoka to Boo-Da cover and a section tab.
 - Owner's audit brief (Section A) and ChatGPT's gap report (Section B) came with it: a full completeness audit (gap register, 7-film Part III matrix, chart register, source register) is the next job. Open questions for the owner: authorship credit (name in or out), Chennai Express credit wording with Siddhesh Bhobe.
 
+## The Master Manuscript (18 Oct 2026)
+- /asoka-to-booda/manuscript/: "Asoka to Boo-Da - SRK: The Man, The Myth, The King", every version of the thesis integrated into one book (Prologue, Parts I-X, 46 chapters, Academic Addendum A-H, Final Frame; 57 pages, 19 images, box-office chart drawn as SVG). Owner: no author byline; her name only where testimony needs it.
+- Source of truth: Claude Doc https://claude.ai/code/artifact/46d4ff43-76ed-4224-a4a4-70a91338a16f. Rebuild: export the tab as markdown to SRC/ms.md, images in SRC/img, then python3 tools/build-manuscript-web.py SRC asoka-to-booda/manuscript (the export drops images/charts; the script puts them back by caption).
+- First CTA on the Asoka to Boo-Da cover and a section tab. The four originals (Final Thesis, book, case study, drafts) stay untouched alongside it.
+- Chennai Express case study PDF (ce_digitalcasestudy.pdf, eMee/Persistent 2013): owner wants it linked after Chapter 12 "as is". NOT uploaded yet: page 2 carries phone numbers and emails (Siddhesh Bhobe's and the owner's); waiting for her answer (as is, or contacts blacked out). This PDF is allowed; the no-PDF rule is only for the book.
+- Owner, 18 Oct 2026: work on the live site for everything unless she asks for a backup; don't park finished work off-site.
+
 ## KING Buzz daily report (18 Oct 2026)
 - /king-intelligence/report.html renders any day from data/king-intelligence-daily.json (?date=YYYY-MM-DD; default latest) and shows unrecorded gaps. Linked first in the KING Intelligence crumbs and as "Today's daily report" on the dashboard.
 - Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.

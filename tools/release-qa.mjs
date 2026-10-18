@@ -13,7 +13,7 @@ const pages = [
   ['D','/king-intelligence/daily.html'], ['E','/king-intelligence/engine.html'],
   ['H','/'], ['A','/agarmainkinghota.html'], ['G','/game/'], ['P','/preview/'],
   ['C','/CHESS81.HTML'], ['B','/asoka-to-booda/'], ['U','/fan-made-ai-universe/'], ['F','/fan-billboard/'], ['CR','/create/'], ['LA','/lairs/'], ['AB','/about/'], ['CT','/contact/'], ['FQ','/faq/'], ['DK','/doom-to-king/'], ['IQ','/inquilab/'],
-  ['MP','/make-your-poster/'], ['C8','/chess81/'], ['KF','/king-fever/'], ['ME','/merch/'], ['BK','/asoka-to-booda/book/'], ['B6','/asoka-to-booda/book/chapter-06-going-digital.html'],
+  ['MP','/make-your-poster/'], ['C8','/chess81/'], ['KF','/king-fever/'], ['ME','/merch/'], ['BK','/asoka-to-booda/book/'], ['B6','/asoka-to-booda/book/chapter-06-going-digital.html'], ['MS','/asoka-to-booda/manuscript/'], ['M2','/asoka-to-booda/manuscript/chapter-12.html'],
   ['R4','/king-intelligence/2026-10-04.html'], ['R5','/king-intelligence/2026-10-05.html'], ['T','/king-intelligence/top-100-fan-clubs.html'],
 ];
 
@@ -32,7 +32,7 @@ const required = {
   'G': ['AGAR MAIN KING HOTA', 'CREATE YOUR KING POSTER', 'PLAY FOR 60 SECONDS', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
   'H': ['MAKE YOUR POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
   'A': ['MAKE YOUR POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'MP': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'BK': ['SRK: THE MAN', 'PART ONE'], 'B6': ['GOING DIGITAL', 'NEXT'], 'C8': ['TWO WAYS TO PLAY', 'RAPID FIRE'], 'KF': ['KING FEVER', 'SSUBHRO GANGULY'], 'ME': ['KING FAN MERCH', 'ONE BEFORE ZERO'],
+  'MP': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'BK': ['SRK: THE MAN', 'PART ONE'], 'B6': ['GOING DIGITAL', 'NEXT'], 'MS': ['THE MAN, THE MYTH', 'PART X'], 'M2': ['CHENNAI EXPRESS', 'CASE STUDY'], 'C8': ['TWO WAYS TO PLAY', 'RAPID FIRE'], 'KF': ['KING FEVER', 'SSUBHRO GANGULY'], 'ME': ['KING FAN MERCH', 'ONE BEFORE ZERO'],
   'CR': ['MAKE YOUR KING POSTER', 'CHOOSE THE FILM'], 'LA': ['THE CASINO FLOOR', 'THE MOUNTAIN DOME', 'THE THRONE ROOM'], 'C': ['CHESS81', 'HOW A WINNER IS DECLARED', 'VS THE MACHINE'], 'F': ['STARKS BILLBOARD', 'HOW TO EARN'], 'AB': ['ABOUT'], 'CT': ['CONTACT'], 'FQ': ['FREQUENTLY ASKED'], 'IQ': ['INQUILAAB', 'THE FAN REVOLT AGAINST FACE THEFT', 'INQUILAAB KING KE SAATH', '#FREEMYFACE'], 'DK': ['DOOM', 'ONE CHRISTMAS, TWO CROWNS', 'THE FRIENDLY FIXTURE', "I'M WATCHING BOTH"],
 };
 
