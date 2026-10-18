@@ -68,6 +68,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Contents page (owner, 18 Oct: 'both'): a picture band per Part (cover art in COVER in tools/build-book-web.py) and a picture card per chapter. Every act of the Asoka to Boo-Da essay ends with a 'Read the full chapter' link to its book chapter (map in asoka-to-booda/index.html, .fullch).
 - Linked from the Asoka to Boo-Da cover ("Read the full book") and the home slider's thesis slide.
 
+## The Silence Before the King (18 Oct 2026)
+- /asoka-to-booda/silence/: the owner's case study from her ChatGPT chat "Asoka to Booda Rewrite" (share 6ac930bf…), Parts I-III, pages 1-19, one web page per thesis page, WORD FOR WORD (owner, 18 Oct: do not shorten or rewrite her thesis). Built by tools/build-silence-web.py from /tmp text; only citation markers dropped, tables rebuilt, one bracketed note on 18 vs 30 brands.
+- Linked from the Asoka to Boo-Da cover ("Read the case study") and the section tabs. Pages 20-66 of the 66-page index are not written yet (index in the owner's ChatGPT chat "Math Game Scoring Rules").
+
 ## KING Buzz daily report (18 Oct 2026)
 - /king-intelligence/report.html renders any day from data/king-intelligence-daily.json (?date=YYYY-MM-DD; default latest) and shows unrecorded gaps. Linked first in the KING Intelligence crumbs and as "Today's daily report" on the dashboard.
 - Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.
