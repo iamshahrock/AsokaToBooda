@@ -63,6 +63,8 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 ## The book online (18 Oct 2026)
 - /asoka-to-booda/book/: the web edition of the manuscript "SRK: The Man, The Myth, The King", one page per section (38: front matter, 22 chapters, 6 rooms, epilogue, appendices A-D, sources) with Part intros, prev/next and a contents page. Images in book/img (SRKWorld 2000 pages and two event photos).
 - Built from the Claude Doc by an export + pandoc script (not in the repo). To refresh after new chapters: export the manuscript tab as markdown and rebuild; the build switches Inquilab/#FreeTheFace to Inquilaab/#FreeMyFace.
+- Print edition: book/srk-the-man-the-myth-the-king.pdf (A4 PDF export of the manuscript; 112 pages on 18 Oct 2026). Refresh it with the web pages: export the tab as pdf (a4) and save it there before running the build; the contents line counts its pages.
+- Owner's note 18 Oct: '38 pages is too little, we talked about a 100-page manuscript'. The 38 are web sections; the manuscript itself is 112 A4 pages. Keep deepening thin chapters (the scheduled 'Thesis chapter build' adds one section per run).
 - Linked from the Asoka to Boo-Da cover ("Read the full book") and the home slider's thesis slide.
 
 ## Open work

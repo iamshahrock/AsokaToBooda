@@ -117,7 +117,17 @@ def li(p):
     return f'<li><a href="{p["slug"]}.html"><span class="k">{html.escape(t[0])}</span><span class="n">{html.escape(" · ".join(t[1:]) if len(t)>1 else "")}</span><span class="w">{max(1,round(w/230))} min</span></a></li>'
 idx=HEAD.format(t=html.escape(BT),d=html.escape(f'{BT}: the thesis on Shah Rukh Khan by Shailja Gupta, chapter by chapter.'),u='')
 idx+='<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Asoka to Boo-Da</a> / <span>The book</span></nav>\n'
-idx+=f'<header class="bookhead"><p class="kick">The thesis · by Shailja Gupta</p><h1>SRK: The Man, <em>The Myth</em>, The King</h1><div class="prose lead">{intro}</div><p class="meta">{len(pages)} sections · {total:,} words · <a href="{pages[0]["slug"]}.html">Start reading →</a></p></header>\n<div class="contents">\n'
+# the print edition: a PDF export of the manuscript, saved beside the pages (count its pages for the contents line)
+_pdf=os.path.join(OUT,'srk-the-man-the-myth-the-king.pdf')
+pdf_pages, pdf_link = '', ''
+try:
+    import pypdf
+    if _pdf and os.path.exists(_pdf):
+        n=len(pypdf.PdfReader(_pdf).pages); pdf_pages=f'{n} pages in print (A4)'
+        pdf_link=f' · <a href="srk-the-man-the-myth-the-king.pdf" download>Download the PDF ({os.path.getsize(_pdf)/1e6:.1f} MB)</a>'
+except Exception as e:
+    print('pdf skipped', e)
+idx+=f'<header class="bookhead"><p class="kick">The thesis · by Shailja Gupta</p><h1>SRK: The Man, <em>The Myth</em>, The King</h1><div class="prose lead">{intro}</div><p class="meta">{pdf_pages + " · " if pdf_pages else ""}{len(pages)} sections · {total:,} words · <a href="{pages[0]["slug"]}.html">Start reading →</a>{pdf_link}</p></header>\n<div class="contents">\n'
 seen=set()
 groups=[];cur=None
 for p in pages:
