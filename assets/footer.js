@@ -18,6 +18,12 @@
     '#site-footer .sf-line2{margin:0;font-size:clamp(15px,1.8vw,18px);line-height:1.5;color:#e6dcd4}',
     '#site-footer .sf-line3{margin:6px 0 0;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:none;color:#ff4a4f}',
     '#site-footer .sf-line4{margin:0;font-size:14px;line-height:1.5;color:#b8aca4}',
+    '#site-footer .sf-map{max-width:1100px;margin:0 auto 34px;padding-bottom:30px;border-bottom:1px solid #2a1c1c;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 28px;text-align:left}',
+    '#site-footer .sf-map h4{margin:0 0 10px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff4a4f}',
+    '#site-footer .sf-map a{display:block;padding:4px 0;font-size:14px;color:#cfc4bb;text-decoration:none}',
+    '#site-footer .sf-map a:hover{color:#fff}',
+    '@media (max-width:700px){#site-footer .sf-map{grid-template-columns:repeat(2,minmax(0,1fr))}}',
+    '#site-footer .sf-mark{width:64px!important;height:64px!important}',
     '#site-footer .sf-disc{margin:18px 0 0;font-size:12px;line-height:1.6;color:#8f837c;max-width:640px}'
   ].join('\n');
   var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
@@ -28,6 +34,20 @@
   }
 
   var f = document.createElement('footer'); f.id = 'site-footer';
+  // site map: every section in four plain groups
+  var root = new URL('..', base).href;
+  var map = document.createElement('nav'); map.className = 'sf-map'; map.setAttribute('aria-label', 'Site map');
+  [
+    ['Play', [['create/', 'Make Your Poster'], ["lairs/", "King's Lairs"], ['chess81/', 'Chess81'], ['fan-billboard/', 'Billboard & STARKS']]],
+    ['Read & follow', [['king-intelligence/', 'KING Buzz'], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['asoka-to-booda/book/', 'The book'], ['doom-to-king/', 'DOOM to KING']]],
+    ['Join in', [['inquilab/', 'Inquilaab'], ['king-fever/', 'KING Fever'], ['fan-made-ai-universe/', 'Fan-made AI Universe'], ['merch/', 'Merch']]],
+    ['About', [['', 'Home'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
+  ].forEach(function (g) {
+    var col = document.createElement('div'), h = document.createElement('h4'); h.textContent = g[0]; col.appendChild(h);
+    g[1].forEach(function (l) { var a = document.createElement('a'); a.href = root + l[0]; a.textContent = l[1]; col.appendChild(a); });
+    map.appendChild(col);
+  });
+  f.appendChild(map);
   var inner = document.createElement('div'); inner.className = 'sf-in';
   var img = document.createElement('img');
   img.className = 'sf-mark'; img.src = base + 'fan-emblem.png'; img.width = 160; img.height = 160; img.alt = 'Shah Rock Jaan fan emblem'; img.loading = 'lazy';

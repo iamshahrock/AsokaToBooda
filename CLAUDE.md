@@ -5,10 +5,17 @@ This repo is PUBLIC: never write private or legal material here.
 
 ## What it is
 Fan platform for Shah Rukh Khan's KING (release 24 Dec 2026), live at https://agarmainkinghota.com.
-Header sections (9 since 18 Oct 2026; one line on desktop ≥1200px, burger below): Make Your Poster (/make-your-poster/, a game shelf: Kingmaker = the studio at /create/, Be King = Ganesh's game, coming), King's Lairs (/lairs/),
+Header sections (9 since 18 Oct 2026; one line on desktop ≥1200px, burger below): Make Your Poster (/create/, the studio with all poster thumbnails; owner's rule 18 Oct: 'add' means alongside, never replace. /make-your-poster/ redirects to /create/; Be King shows as 'coming soon' in the section tabs), King's Lairs (/lairs/),
 Chess81 (/chess81/, a shelf: the full game /CHESS81.HTML + Rapid Fire by Ganesh, coming), Billboard (/fan-billboard/), KING Buzz (/king-intelligence/), Asoka to Boo-Da (/asoka-to-booda/),
 DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/, 7 original song slots, music produced by Ssubhro Ganguly). Plus Merch, About Us, Contact, FAQ, STARKS points badge.
 - Every new top-level folder must be added to the cp line in .github/workflows/pages.yml or it is not deployed (merch was missing until 18 Oct). Release QA expects 9 header links.
+
+## Site design (polish pass, 18 Oct 2026)
+- ZERO to ONE story banner shows on the home page only; inner pages open with the slim sticky bar (brand + 9 links + Merch, About Us, STARKS). Contact/FAQ live in the burger menu and the footer.
+- Section tabs under the bar (SUB in assets/header.js) for Make Your Poster, King's Lairs, Chess81, Billboard, Asoka to Boo-Da.
+- Back-to-top arrow on every page (header.js). Footer has a 4-column site map (footer.js).
+- assets/polish.css (loaded by header.js after page styles) holds the calmer type scale; change sizes there, not page by page.
+- Home cards are grouped: Play (4) / Read & follow (4) / Listen & wear (2).
 
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
