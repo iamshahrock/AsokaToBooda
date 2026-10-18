@@ -127,18 +127,37 @@ try:
         pdf_link=f' · <a href="srk-the-man-the-myth-the-king.pdf" download>Download the PDF ({os.path.getsize(_pdf)/1e6:.1f} MB)</a>'
 except Exception as e:
     print('pdf skipped', e)
-idx+=f'<header class="bookhead"><p class="kick">The thesis · by Shailja Gupta</p><h1>SRK: The Man, <em>The Myth</em>, The King</h1><div class="prose lead">{intro}</div><p class="meta">{pdf_pages + " · " if pdf_pages else ""}{len(pages)} sections · {total:,} words · <a href="{pages[0]["slug"]}.html">Start reading →</a>{pdf_link}</p></header>\n<div class="contents">\n'
-seen=set()
-groups=[];cur=None
+idx+=f'<header class="bookhead"><p class="kick">The thesis · by Shailja Gupta</p><h1>SRK: The Man, <em>The Myth</em>, The King</h1><div class="prose lead">{intro}</div><p class="meta">{pdf_pages + " · " if pdf_pages else ""}{len(pages)} sections · {total:,} words · <a href="{pages[0]["slug"]}.html">Start reading →</a>{pdf_link}</p></header>\n<div class="parts">\n'
+# designed contents: one picture band per Part, then a card for every chapter
+COVER={'_front':'img/e00.webp','Part One':'img/e06.webp','Part Two':'img/e13.webp','Part Three':'../../assets/home/04-asoka-to-booda.webp',
+       'Part Four':'../../assets/home/03-king-buzz.webp','Part Five':'../../assets/dk/bg.webp','Part Six':'../../assets/home/crown.webp','_back':'img/galleria.webp'}
+def first_img(p):
+    m=re.search(r'src="(img/[^"]+)"',open(f'{OUT}/{p["slug"]}.html').read()); return m.group(1) if m else None
+groups=[]
 for p in pages:
     key=p['part'] or ('_front' if pages.index(p)<4 else '_back')
     if not groups or groups[-1][0]!=key: groups.append((key,[]))
     groups[-1][1].append(p)
 for key,ps in groups:
-    if key=='_front': h='Opening'
-    elif key=='_back': h='Closing, appendices and sources'
-    else: h=key
-    idx+=f'<section class="grp"><h2>{html.escape(h)}</h2><ol>'+''.join(li(p) for p in ps)+'</ol></section>\n'
+    if key=='_front': h,sub='Opening','The map, the method and the prologue'
+    elif key=='_back': h,sub='Closing','Epilogue, appendices and sources'
+    else:
+        bits=key.split(' · '); h=' · '.join(bits[:2]); sub=' · '.join(bits[2:])
+    cov=COVER.get(key) or COVER.get(key.split(' · ')[0],'img/e00.webp')
+    intro_txt=''
+    for q in ps:
+        if q.get('partintro'):
+            t=re.sub(r'[*_\[\]()]','',re.sub(r'\(https?://[^)]+\)','',q['partintro'])).strip(); sents=re.split(r'(?<=[.!?])\s+',t); acc=''
+            for x in sents:
+                acc=(acc+' '+x).strip()
+                if len(acc)>=60: break
+            intro_txt=acc if len(acc)<=220 else acc[:217].rsplit(' ',1)[0]+'…'; break
+    mins=sum(max(1,round(words(q['md'])/230)) for q in ps)
+    idx+=f'<section class="part"><a class="part-band" href="{ps[0]["slug"]}.html"><img src="{cov}" alt="" loading="lazy"><span class="part-tx"><span class="part-k">{len(ps)} sections · {mins} min</span><b>{html.escape(h)}</b>'+(f'<i>{html.escape(sub)}</i>' if sub else '')+(f'<span class="part-in">{html.escape(intro_txt)}</span>' if intro_txt else '')+'<span class="part-go">Start this part →</span></span></a><div class="cards">'
+    for q in ps:
+        t=q['title'].split(' · ');im=first_img(q) or cov
+        idx+=f'<a class="card" href="{q["slug"]}.html"><span class="ci"><img src="{im}" alt="" loading="lazy"></span><span class="ct"><span class="k">{html.escape(t[0])}</span><span class="n">{html.escape(" · ".join(t[1:]) if len(t)>1 else t[0])}</span><span class="w">{max(1,round(words(q["md"])/230))} min read</span></span></a>'
+    idx+='</div></section>\n'
 idx+='</div>\n'+FOOT
 open(f'{OUT}/index.html','w').write(idx)
 json.dump([{'slug':p['slug'],'title':p['title'],'part':p['part']} for p in pages],open(f'{OUT}/contents.json','w'),indent=1)

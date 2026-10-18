@@ -65,6 +65,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Built from the Claude Doc by an export + pandoc script (not in the repo). To refresh after new chapters: export the manuscript tab as markdown and rebuild; the build switches Inquilab/#FreeTheFace to Inquilaab/#FreeMyFace.
 - No PDF on the site (owner, 18 Oct 2026): a PDF will come later behind a request form that people fill in before downloading. Do not publish the PDF until then.
 - Owner's note 18 Oct: '38 pages is too little, we talked about a 100-page manuscript'. The 38 are web sections; the manuscript itself is 112 A4 pages. Keep deepening thin chapters (the scheduled 'Thesis chapter build' adds one section per run).
+- Contents page (owner, 18 Oct: 'both'): a picture band per Part (cover art in COVER in tools/build-book-web.py) and a picture card per chapter. Every act of the Asoka to Boo-Da essay ends with a 'Read the full chapter' link to its book chapter (map in asoka-to-booda/index.html, .fullch).
 - Linked from the Asoka to Boo-Da cover ("Read the full book") and the home slider's thesis slide.
 
 ## KING Buzz daily report (18 Oct 2026)
