@@ -27,7 +27,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          files="$(git diff --name-only "$GITHUB_EVENT_BEFORE" "$GITHUB_SHA" | grep -E '^data/daily-input/[^/]+\.json$' || true)"
+          files="$(git diff --name-only "${{ github.event.before }}" "$GITHUB_SHA" | grep -E '^data/daily-input/[^/]+\.json$' || true)"
           if [ -z "$files" ]; then
             echo "No changed daily input JSON files in this push."
             echo "has_files=false" >> "$GITHUB_OUTPUT"
