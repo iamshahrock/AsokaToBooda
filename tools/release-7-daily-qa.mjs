@@ -7,14 +7,17 @@ import { execFileSync } from "node:child_process";
 const root = process.cwd();
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "king-daily-qa-"));
 const ledger = path.join(tmp, "ledger.json");
-const input = path.join(tmp, "2026-10-07.json");
+// the synthetic record is dated the day after the ledger's latest record, so the test keeps working as days are added
+const LATEST = JSON.parse(fs.readFileSync(path.join(root, "data/king-intelligence-daily.json"), "utf8")).records.map(r => r.date).sort().at(-1);
+const NEXT = new Date(Date.parse(LATEST + "T00:00:00Z") + 864e5).toISOString().slice(0, 10);
+const input = path.join(tmp, NEXT + ".json");
 
 try {
   fs.copyFileSync(path.join(root, "data/king-intelligence-daily.json"), ledger);
 
   fs.writeFileSync(input, JSON.stringify({
-    date: "2026-10-07",
-    record_id: "KING-2026-10-07",
+    date: NEXT,
+    record_id: "KING-" + NEXT,
     role: "DAILY UPDATE",
     metrics: [{
       series_id: "qa_test_series",
@@ -33,7 +36,7 @@ try {
   const updated = JSON.parse(fs.readFileSync(ledger, "utf8"));
   const last = updated.records.at(-1);
 
-  if (last?.record_id !== "KING-2026-10-07") {
+  if (last?.record_id !== "KING-" + NEXT) {
     throw new Error("QA append did not produce the expected final record");
   }
   if (last?.metrics?.[0]?.value !== null) {
