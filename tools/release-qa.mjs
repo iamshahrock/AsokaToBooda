@@ -142,12 +142,12 @@ for (const [id, path] of pages) {
       if (broken.length) issues.push('image(s) failed to load: ' + broken.join(', '));
       else console.log(`PASS [${id}] all ${await page.evaluate(() => document.images.length)} images loaded`);
     }
-    // home: exactly four doors, each pointing at its section
+    // home: ten cards in three groups, each pointing at its section
     if (['H', 'A'].includes(id)) {
       const doors = await page.evaluate(() => [...document.querySelectorAll('.doors .door')].map(a => new URL(a.getAttribute('href'), location.href).pathname));
-      const want = ['/create/', '/lairs/', '/CHESS81.HTML', '/fan-billboard/', '/king-intelligence/', '/asoka-to-booda/'];
-      if (JSON.stringify(doors) !== JSON.stringify(want)) issues.push('six sections wrong: ' + doors.join(', '));
-      else console.log(`PASS [${id}] six sections in order`);
+      const want = ['/create/', '/lairs/', '/chess81/', '/fan-billboard/', '/king-intelligence/', '/asoka-to-booda/', '/doom-to-king/', '/inquilab/', '/king-fever/', '/merch/'];
+      if (JSON.stringify(doors) !== JSON.stringify(want)) issues.push('home cards wrong: ' + doors.join(', '));
+      else console.log(`PASS [${id}] ten home cards in order`);
     }
     // game: playable on arrival, and the ZERO artwork pack the poster needs is reachable
     if (id === 'G') {
