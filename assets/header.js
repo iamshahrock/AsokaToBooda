@@ -34,7 +34,7 @@
     'lairs/': [['lairs/', 'The Contract'], ['lairs/#cinema', 'Lairs Cinema']],
     'chess81/': [['chess81/', 'Overview'], ['CHESS81.HTML', 'Play the full game'], ['', 'Rapid Fire · coming soon']],
     'fan-billboard/': [['fan-billboard/', 'STARKS Billboard'], ['fan-made-ai-universe/', 'Fan-made AI Universe']],
-    'asoka-to-booda/': [['asoka-to-booda/', 'The thesis'], ['asoka-to-booda/manuscript/', 'The Master Manuscript'], ['asoka-to-booda/book/', 'Read the book'], ['asoka-to-booda/silence/', 'The Silence Before the King'], ['asoka-to-booda/drafts/', 'The drafts'], ['asoka-to-booda/final-thesis/', 'The Final Thesis']]
+    'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
   };
   // the shared polish layer (sizes, spacing, one type scale) loads after each page's own styles
   if (!document.querySelector('link[href*="assets/polish.css"]')) {

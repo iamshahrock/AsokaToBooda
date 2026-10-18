@@ -66,7 +66,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - No PDF on the site (owner, 18 Oct 2026): a PDF will come later behind a request form that people fill in before downloading. Do not publish the PDF until then.
 - Owner's note 18 Oct: '38 pages is too little, we talked about a 100-page manuscript'. The 38 are web sections; the manuscript itself is 112 A4 pages. Keep deepening thin chapters (the scheduled 'Thesis chapter build' adds one section per run).
 - Contents page (owner, 18 Oct: 'both'): a picture band per Part (cover art in COVER in tools/build-book-web.py) and a picture card per chapter. Every act of the Asoka to Boo-Da essay ends with a 'Read the full chapter' link to its book chapter (map in asoka-to-booda/index.html, .fullch).
-- Linked from the Asoka to Boo-Da cover ("Read the full book") and the home slider's thesis slide.
+- Now a source version: linked only from 'The source versions' on /asoka-to-booda/.
 
 ## The Silence Before the King (18 Oct 2026)
 - /asoka-to-booda/silence/: the owner's case study from her ChatGPT chat "Asoka to Booda Rewrite" (share 6ac930bf…), Parts I-III, pages 1-19, one web page per thesis page, WORD FOR WORD (owner, 18 Oct: do not shorten or rewrite her thesis). Built by tools/build-silence-web.py from /tmp text; only citation markers dropped, tables rebuilt, one bracketed note on 18 vs 30 brands.
@@ -84,7 +84,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - /asoka-to-booda/manuscript/: "Asoka to Boo-Da - SRK: The Man, The Myth, The King", every version of the thesis integrated into one book (Prologue, Parts I-X, 46 chapters, Academic Addendum A-H, Final Frame; 57 pages, 19 images, box-office chart drawn as SVG). Owner: no author byline; her name only where testimony needs it.
 - Source of truth: Claude Doc https://claude.ai/code/artifact/46d4ff43-76ed-4224-a4a4-70a91338a16f. Rebuild: export the tab as markdown to SRC/ms.md, images in SRC/img, then python3 tools/build-manuscript-web.py SRC asoka-to-booda/manuscript (the export drops images/charts; the script puts them back by caption).
 - Contents page = a book's table of contents (owner, 18 Oct: no repeated thumbnails): per Part one relevant picture (COVER) and a numbered chapter list. Chapters carry relevant pictures from PICS in the build script (Final Thesis images + site art, each captioned).
-- First CTA on the Asoka to Boo-Da cover and a section tab. The four originals (Final Thesis, book, case study, drafts) stay untouched alongside it.
+- ONE BOOK (owner, 18 Oct 2026: 'why 4 separate same things'): /asoka-to-booda/ IS the book's contents page (written by the build script; manuscript/index.html forwards to it). The old essay cover and the 4 version buttons are gone. The four originals (Final Thesis, first web book, case study, drafts) stay online untouched, linked only under 'The source versions' at the end of the contents. Section tabs: Contents, Prologue, Part I, The Royal Flush, Academic Addendum, The Final Frame. Home slider 'Read the book' goes to the Prologue.
 - Chennai Express case study PDF (ce_digitalcasestudy.pdf, eMee/Persistent 2013): owner wants it linked after Chapter 12 "as is". NOT uploaded yet: page 2 carries phone numbers and emails (Siddhesh Bhobe's and the owner's); waiting for her answer (as is, or contacts blacked out). This PDF is allowed; the no-PDF rule is only for the book.
 - Owner, 18 Oct 2026: work on the live site for everything unless she asks for a backup; don't park finished work off-site.
 

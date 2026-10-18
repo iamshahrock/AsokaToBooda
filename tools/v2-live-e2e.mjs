@@ -51,8 +51,7 @@ log.push('LAIRS CLAIM api: ' + cl.status() + ' ' + (await cl.text()).slice(0, 12
 await lp.goto(base + '/CHESS81.HTML?t=' + Date.now(), { waitUntil: 'networkidle' });
 const hp = await browser.newPage({ viewport: { width: 390, height: 844 } }); await hp.goto(base + '/?t=' + Date.now(), { waitUntil: 'networkidle' });
 log.push('home slider (phone): ' + JSON.stringify(await hp.evaluate(() => { const sl = document.querySelector('.slide.on'), c = sl.querySelector('.copy').getBoundingClientRect(), a = sl.querySelector('.art').getBoundingClientRect(); return { slides: document.querySelectorAll('#hero .slide').length, dots: document.querySelectorAll('#dots .dot').length, arrows: document.querySelectorAll('#hero .arrow').length, sideBySide: a.left > c.left + c.width / 2 && a.top < c.bottom }; })));
-await hp.goto(base + '/asoka-to-booda/?t=' + Date.now(), { waitUntil: 'networkidle' });
-await hp.evaluate(() => document.getElementById('act8').scrollIntoView()); await hp.waitForTimeout(1500);
+await hp.goto(base + '/asoka-to-booda/manuscript/chapter-38.html?t=' + Date.now(), { waitUntil: 'networkidle' }); await hp.waitForTimeout(1500);
 log.push('thesis DOOM to KING (phone): ' + JSON.stringify(await hp.evaluate(() => ({ doomThumb: (document.querySelector('.yt img') || {}).naturalWidth || 0, kingArt: (document.querySelector('.dk-king img') || {}).naturalWidth || 0, overflow: document.documentElement.scrollWidth - innerWidth }))));
 await hp.screenshot({ path: 'e2e-out/thesis-doom-phone.png' });
 await hp.goto(base + '/king-intelligence/?t=' + Date.now(), { waitUntil: 'networkidle' });

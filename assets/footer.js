@@ -39,7 +39,7 @@
   var map = document.createElement('nav'); map.className = 'sf-map'; map.setAttribute('aria-label', 'Site map');
   [
     ['Play', [['create/', 'Make Your Poster'], ["lairs/", "King's Lairs"], ['chess81/', 'Chess81'], ['fan-billboard/', 'Billboard & STARKS']]],
-    ['Read & follow', [['king-intelligence/', 'KING Buzz'], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['asoka-to-booda/book/', 'The book'], ['doom-to-king/', 'DOOM to KING']]],
+    ['Read & follow', [['king-intelligence/', 'KING Buzz'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['doom-to-king/', 'DOOM to KING']]],
     ['Join in', [['inquilab/', 'Inquilaab'], ['king-fever/', 'KING Fever'], ['fan-made-ai-universe/', 'Fan-made AI Universe'], ['merch/', 'Merch']]],
     ['About', [['', 'Home'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
   ].forEach(function (g) {
