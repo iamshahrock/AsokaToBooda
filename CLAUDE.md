@@ -85,7 +85,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Source of truth: Claude Doc https://claude.ai/code/artifact/46d4ff43-76ed-4224-a4a4-70a91338a16f. Rebuild: export the tab as markdown to SRC/ms.md, images in SRC/img, then python3 tools/build-manuscript-web.py SRC asoka-to-booda/manuscript (the export drops images/charts; the script puts them back by caption).
 - Contents page = a book's table of contents (owner, 18 Oct: no repeated thumbnails): per Part one relevant picture (COVER) and a numbered chapter list. Chapters carry relevant pictures from PICS in the build script (Final Thesis images + site art, each captioned).
 - ONE BOOK (owner, 18 Oct 2026: 'why 4 separate same things'): /asoka-to-booda/ IS the book's contents page (written by the build script; manuscript/index.html forwards to it). The old essay cover and the 4 version buttons are gone. The four originals (Final Thesis, first web book, case study, drafts) stay online untouched, linked only under 'The source versions' at the end of the contents. Section tabs: Contents, Prologue, Part I, The Royal Flush, Academic Addendum, The Final Frame. Home slider 'Read the book' goes to the Prologue.
-- Chennai Express case study PDF (ce_digitalcasestudy.pdf, eMee/Persistent 2013): owner wants it linked after Chapter 12 "as is". NOT uploaded yet: page 2 carries phone numbers and emails (Siddhesh Bhobe's and the owner's); waiting for her answer (as is, or contacts blacked out). This PDF is allowed; the no-PDF rule is only for the book.
+- Chennai Express case study PDF: live at /asoka-to-booda/files/ce_digitalcasestudy.pdf (19 Oct 2026, owner: phone numbers and emails on page 2 removed by true redaction), linked at the end of Chapter 12. This PDF is allowed; the no-PDF rule is only for the book.
+- Final Thesis audit (19 Oct 2026, Claude Doc): https://claude.ai/code/artifact/2a359cf9-f290-4a9e-b075-52e029539d24 (gap register, 7-film matrix, chart register, 26 open [Unverified] items split owner/public record, 169-source register). The pie-chart correction session was NOT found in any available file.
+- The scheduled task 'Master Manuscript chapter build (twice daily)' (was 'Thesis chapter build') now deepens the Master Manuscript doc only and rebuilds the live book itself (owner, 19 Oct: one Master Manuscript with everything).
 - Owner, 18 Oct 2026: work on the live site for everything unless she asks for a backup; don't park finished work off-site.
 - 19 Oct 2026 (PR #98): 8 [Unverified] items closed from public records (register G now 27 open); thin chapters 2, 7, 13, 17, 21, 42-46 deepened with sourced material; rebuilt at 57 pages, 27,956 words. Third Wheel and O TO X additions come from her ChatGPT chats 04a/04b (handover), labelled Proposal; the 'Adultish Noir' reality-show idea in 04b is left out of the book.
 
@@ -95,9 +97,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 
 ## Open work
 - Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
-- 80 face-free "mood plates" to replace the star-face reference posters. Owner to choose: auto-made from the existing posters (show 6 first) or designed by her team. Face boxes for all 80 posters exist (face-api run, 12 Oct) and can drive automatic face removal.
+- Mood plates CANCELLED (owner, 19 Oct 2026): keep the original posters; fans choose a style edition (3D Pop, Anime, more coming) as their style. No face-free plate set.
+- King's Lairs (owner, 19 Oct: 'no connection with my images'): redesign as a story game played on her 12 lair pictures, map = Master Floor Plan, hotspots inside each picture, mini-games only at their spot. Design doc: https://claude.ai/code/artifact/3c61e22b-ae17-4838-a53d-31e48b0c57d1 (story 'Chehre ki Chori' proposed). Waiting on her 5 decisions before building.
 - PARKED, conflicts with #FreeMyFace: the "replace a face" remake mode (masked AI edit composited onto the untouched original poster). It would keep real stars' faces in the output. Owner to decide before any work.
-- Inquilaab sub-page "The Revolution Starts Now": evidence of what visual AI changes vs our fix (examples need explicit fan consent).
+- Inquilaab sub-page /inquilab/revolution/ 'The Revolution Starts Now' LIVE (19 Oct 2026): AI-vs-our-studio comparison, 3 empty consented-example slots, the master INQUILAAB #FreeMyFace design (assets/merch/inquilaab-master.webp); more designs coming from the owner. Inquilaab now has section tabs (SUB in header.js).
 
 ## Press release "KING by FANS" (doc linked above)
 - Headline: "RA.ONE. CHENNAI EXPRESS. KING." then "KING by FANS." / "The Digital Revolution Returns."
