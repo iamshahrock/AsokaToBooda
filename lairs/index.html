@@ -222,7 +222,7 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
     <ol class="csteps">
       <li><b>Pick a scene</b><span>Choose a lair and a set below.</span></li>
       <li><b>Make it move</b><span>Download the scene, copy the prompt, open Kling, Gemini or Wan on your own account.</span></li>
-      <li><b>Post it</b><span>On Instagram, YouTube, X or Facebook with <b>#KingsLairs #FreeTheFace</b>.</span></li>
+      <li><b>Post it</b><span>On Instagram, YouTube, X or Facebook with <b>#KingsLairs #FreeMyFace</b>.</span></li>
       <li><b>Submit the link</b><span>+50 STARKS now. +500 when approved. Scene of the week: +2,000 and the Billboard.</span></li>
     </ol>
     <div class="ctabs" id="cTabs" role="group" aria-label="Choose a lair"></div>
@@ -234,7 +234,7 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
         <textarea id="cPrompt" rows="6"></textarea>
         <div class="row"><a class="btn btn-red" id="cDl" href="#" download>Download scene</a><button class="btn btn-line" id="cCopy" type="button">Copy prompt</button></div>
         <div class="ctools" id="cTools"></div>
-        <p class="cnote">Use <b>your own face</b>: add your selfie as the reference, or first paint yourself into the chapter with “Star in this scene” and animate that still. Never upload someone else's face. That is the face theft #FreeTheFace is fighting.</p>
+        <p class="cnote">Use <b>your own face</b>: add your selfie as the reference, or first paint yourself into the chapter with “Star in this scene” and animate that still. Never upload someone else's face. That is the face theft #FreeMyFace is fighting.</p>
       </div>
     </div>
     <form class="csub" id="subForm">
@@ -929,7 +929,7 @@ function cineInit() {
   $('cTools').innerHTML = TOOLS.map(function (t) { return '<a class="ctool" href="' + t[1] + '" target="_blank" rel="noopener"><b>Open ' + t[0] + ' ↗</b><small>' + t[2] + '</small></a>'; }).join('');
   $('subLair').innerHTML = LAIRS.map(function (l) { return '<option value="' + l.id + '">' + CN[l.id] + ' · ' + l.name + '</option>'; }).join('');
   $('cCopy').onclick = function () {
-    var t = $('cPrompt').value + '\n\n#KingsLairs #FreeTheFace #AgarMainKingHota';
+    var t = $('cPrompt').value + '\n\n#KingsLairs #FreeMyFace #AgarMainKingHota';
     (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { $('cCopy').textContent = 'Copied ✓'; setTimeout(function () { $('cCopy').textContent = 'Copy prompt'; }, 1800); })
       .catch(function () { $('cPrompt').select(); document.execCommand && document.execCommand('copy'); });
   };

@@ -120,7 +120,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
       <h1>Make your <em>KING</em> poster</h1>
     </div>
     <p>Pick one of his 80 films, step into the role and get a poster nobody else has: your face, his film's world, the KING crown and your own line.</p>
-    <p class="own-face"><b>Your face. Not his.</b> The only real face on this poster is yours: no star's face goes into the AI. That's our <a href="../inquilab/">#FreeTheFace</a> pledge.</p>
+    <p class="own-face"><b>Your face. Not his.</b> The only real face on this poster is yours: no star's face goes into the AI. That's our <a href="../inquilab/">#FreeMyFace</a> pledge.</p>
   </div>
 
   <ol class="steps" id="steps" aria-label="Progress">
@@ -249,7 +249,7 @@ const POSTER_API_URL = 'https://asokatobooda.iamshahrock.workers.dev';
 const BASE = new URL('../assets/posters/', location.href).href;
 // How the original poster is shared with the image model. 'original' sends it as-is;
 // 'blur' sends a softened copy (layout and colour only). Set from the end-to-end test results.
-const FILM_REF_MODE = 'blur';   // faces on the original posters must never reach the AI (#FreeTheFace)
+const FILM_REF_MODE = 'blur';   // faces on the original posters must never reach the AI (#FreeMyFace)
 
 const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null, cast: [] };
 let catalogue = [];
