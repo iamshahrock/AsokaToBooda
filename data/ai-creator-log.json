@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-18",
   "note": "Fan-made AI works about KING / Shah Rukh Khan, discovered daily across YouTube, Instagram, X and Facebook. Each item links to the creator's original post; nothing is re-hosted. Views are as reported on the date in views_asof.",
   "items": [
     {
@@ -469,6 +469,18 @@
       "views_asof": "2026-10-10",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=4z2O-5AN5-E",
+      "id": "4z2O-5AN5-E",
+      "title": "KING IS HERE: 🔥 (Full Video Song) | Shah Rukh Khan | King Movie Song SRK | Anirudh Ravichander Song",
+      "creator": "DJ SRK Dipak",
+      "kind": "song",
+      "views": null,
+      "views_asof": null,
+      "found": "2026-10-18",
+      "source": "daily scan"
     }
   ],
   "scans": [
@@ -496,6 +508,17 @@
       "new": 0,
       "platforms": {
         "youtube": 0,
+        "instagram": 0,
+        "x": 0,
+        "facebook": 0
+      },
+      "method": "daily web scan + fan submissions"
+    },
+    {
+      "day": "2026-10-18",
+      "new": 1,
+      "platforms": {
+        "youtube": 1,
         "instagram": 0,
         "x": 0,
         "facebook": 0
