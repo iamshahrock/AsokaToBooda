@@ -53,6 +53,11 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Studio step 01 has a Poster style row. With a style chosen, the grid shows that edition and its poster is the AI reference: sharp, not blurred, but every face box from faces.json is masked first (#FreeMyFace). Without the file it falls back to the blurred original. The style also sets the matching look.
 - Studio name "Kingmaker" is a working title until the owner picks one.
 
+## The book online (18 Oct 2026)
+- /asoka-to-booda/book/: the web edition of the manuscript "SRK: The Man, The Myth, The King", one page per section (38: front matter, 22 chapters, 6 rooms, epilogue, appendices A-D, sources) with Part intros, prev/next and a contents page. Images in book/img (SRKWorld 2000 pages and two event photos).
+- Built from the Claude Doc by an export + pandoc script (not in the repo). To refresh after new chapters: export the manuscript tab as markdown and rebuild; the build switches Inquilab/#FreeTheFace to Inquilaab/#FreeMyFace.
+- Linked from the Asoka to Boo-Da cover ("Read the full book") and the home slider's thesis slide.
+
 ## Open work
 - Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
 - 80 face-free "mood plates" to replace the star-face reference posters. Owner to choose: auto-made from the existing posters (show 6 first) or designed by her team. Face boxes for all 80 posters exist (face-api run, 12 Oct) and can drive automatic face removal.

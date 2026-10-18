@@ -1,0 +1,67 @@
+/* Web edition of "SRK: The Man, The Myth, The King": a calm reading layout. */
+.book{--serif-read:"Source Serif 4",Georgia,"Times New Roman",serif}
+.book .crumbs{margin:22px 0 0;font-size:13px;letter-spacing:.04em;color:var(--mute)}
+.book .crumbs a{color:var(--mute);text-decoration:none;border-bottom:1px solid transparent}
+.book .crumbs a:hover{color:#fff;border-bottom-color:var(--red)}
+.book .crumbs span{color:#cfc4bb}
+.book .kick{margin:0 0 10px;font:700 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--red-text)}
+.book .meta{margin:12px 0 0;font-size:13px;letter-spacing:.04em;color:var(--mute)}
+.book .meta a{color:#fff}
+
+/* book home */
+.bookhead{max-width:760px;margin:34px 0 34px}
+.bookhead h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,84px);line-height:.95;text-transform:uppercase}
+.bookhead h1 em{font-style:normal;color:var(--red-hi)}
+.bookhead .lead p{font-family:var(--serif-read);font-size:19px;line-height:1.6;color:#e6dcd4;margin:16px 0 0}
+.contents{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px 34px;margin-bottom:60px}
+.grp h2{margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--red);font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.grp ol{list-style:none;margin:0;padding:0}
+.grp li a{display:grid;grid-template-columns:96px 1fr auto;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line);text-decoration:none;color:#e6dcd4}
+.grp li a:hover{color:#fff}
+.grp li a:hover .n{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px}
+.grp .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.grp .n{font-family:var(--serif-read);font-size:17px;line-height:1.35;min-width:0}
+.grp .w{font-size:12px;color:var(--mute);white-space:nowrap}
+
+/* chapter */
+.ch{max-width:720px;margin:28px auto 0}
+.partintro{border-left:3px solid var(--red);padding:4px 0 4px 18px;margin:0 0 34px}
+.partintro p{font-family:var(--serif-read);font-style:italic;color:#cfc4bb;font-size:17px;line-height:1.6;margin:0}
+.chhead{margin:0 0 26px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.chhead h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(36px,5vw,62px);line-height:1;text-transform:uppercase;text-wrap:balance}
+.prose{font-family:var(--serif-read);font-size:19px;line-height:1.72;color:#e9e0d9}
+.prose p{margin:0 0 1.1em}
+.prose h3,.prose h4{font-family:var(--body);font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin:2em 0 .7em}
+.prose a{color:#ffd9d4;text-decoration:underline;text-decoration-color:rgba(227,36,63,.6);text-underline-offset:3px}
+.prose a:hover{color:#fff}
+.prose em{color:#f4ece6}
+.prose strong{color:#fff}
+.prose blockquote{margin:1.4em 0;padding:4px 0 4px 20px;border-left:3px solid var(--red);color:#d8ccc4;font-style:italic}
+.prose ul,.prose ol{padding-left:1.3em;margin:0 0 1.1em}
+.prose li{margin:.3em 0}
+.prose .voice{font-family:var(--body);font-size:12px;letter-spacing:.06em;color:var(--mute);white-space:normal}
+.prose .voice::before{content:"(";}.prose .voice::after{content:")"}
+.prose .unv{font-family:var(--body);font-weight:600;font-size:14px;color:#f2cf6b;background:rgba(242,207,107,.08);padding:1px 4px}
+.prose .pic{margin:1.4em 0 .6em}
+.prose .pic img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.prose .pic + p em:only-child,.prose .pic + p > em{font-family:var(--body);font-size:14px;line-height:1.5;color:var(--mute)}
+.prose .tbl{overflow-x:auto;margin:1.2em 0;border:1px solid var(--line)}
+.prose table{border-collapse:collapse;width:100%;font-family:var(--body);font-size:14px;line-height:1.45}
+.prose th,.prose td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.prose th{color:#fff;background:#1a1111;font-weight:700;letter-spacing:.04em}
+.prose hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+
+/* pager */
+.pager{max-width:720px;margin:44px auto 70px;display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch}
+.pager a{text-decoration:none;color:#e6dcd4;border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.pager a:hover{border-color:var(--red);color:#fff}
+.pager small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.pager b{font-weight:600;font-size:14px;line-height:1.35}
+.pager .next{text-align:right}
+.pager .toc{align-items:center;justify-content:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:640px){
+  .prose{font-size:18px}
+  .pager{grid-template-columns:1fr 1fr}
+  .pager .toc{grid-column:1/-1;grid-row:1}
+  .grp li a{grid-template-columns:78px 1fr auto}
+}
