@@ -34,7 +34,7 @@
   </div>
   <section class="vg" id="grid" aria-label="Video interviews"><p class="note">Loading…</p></section>
   <p class="sec-k">Written interviews and other sites</p>
-  <div class="vg-bar"><div class="vg-tools"><input type="search" id="tq" placeholder="Search outlet or title" aria-label="Search written interviews"></div><span class="note" id="tn"></span></div>
+  <div class="vg-bar"><div class="vg-tools"><select id="tk" aria-label="Type"><option value="">Articles and videos</option><option value="article">Articles only</option><option value="video">Other video sites</option></select><select id="ty" aria-label="Decade"><option value="">All years</option><option value="2020">2020s</option><option value="2010">2010s</option><option value="2000">2000s</option><option value="1990">1990s</option><option value="na">Year not shown</option></select><input type="search" id="tq" placeholder="Search outlet or title" aria-label="Search written interviews"></div><span class="note" id="tn"></span></div>
   <ul class="tl" id="text"></ul>
   <p class="note vg-src" id="src"></p>
 </main>
@@ -44,10 +44,10 @@
 function kind(t){t=t.toLowerCase();if(/press conference|press meet/.test(t))return 'press';if(/\bted\b|speech|talk at|talks at|address|conclave|summit|masterclass|lecture|yale|oxford|edinburgh|davos|forum|fellow/.test(t))return 'talk';return 'interview';}
 VGrid({data:'../../data/srk-interviews.json', grid:'#grid', stats:'#stats', chips:'#chips', q:'#q', sort:'#sort', src:'#src',
   filter:function(it,f){return f==='all'||kind(it.title)===f;},
-  statsFn:function(items,fmt){var ch={},v=0;items.forEach(function(i){ch[i.channel]=1;v+=i.views||0;});return [[fmt(items.length),'videos'],[fmt(Object.keys(ch).length),'channels'],[fmt(v),'views in total'],['<span id="tcount">'+(window.__T!=null?window.__T:'N/A')+'</span>','written interviews']];}});
+  statsFn:function(items,fmt){var ch={},v=0;items.forEach(function(i){ch[i.channel]=1;v+=i.views||0;});return [[fmt(items.length),'videos'],[fmt(Object.keys(ch).length),'channels'],[fmt(v),'views in total'],['<span id="tcount">'+(window.__T!=null?window.__T:'N/A')+'</span>','written interviews and other sites']];}});
 fetch('../../data/srk-interviews.json').then(function(r){return r.json();}).then(function(d){var e=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};var T=d.text||[];
 window.__T=T.length;var tc=document.getElementById('tcount'); if(tc) tc.textContent=T.length;
-T.sort(function(a,b){return (b.year==='N/A'?0:+b.year)-(a.year==='N/A'?0:+a.year);});var tq=document.getElementById('tq');function tdraw(){var q=(tq.value||'').toLowerCase();var M=T.filter(function(p){return !q||(p.outlet+' '+p.title).toLowerCase().indexOf(q)>=0;});document.getElementById('tn').textContent=M.length+' of '+T.length;document.getElementById('text').innerHTML=M.map(function(p){return '<li><a href="'+e(p.url)+'" target="_blank" rel="noopener"><small>'+e(p.outlet)+(p.year&&p.year!=='N/A'?' · '+e(p.year):'')+'</small><b>'+e(p.title)+'</b></a></li>';}).join('');}tq.addEventListener('input',tdraw);tdraw();});
+T.sort(function(a,b){return (b.year==='N/A'?0:+b.year)-(a.year==='N/A'?0:+a.year);});var tq=document.getElementById('tq');function tdraw(){var q=(tq.value||'').toLowerCase();var k=document.getElementById('tk').value,y=document.getElementById('ty').value;var M=T.filter(function(p){var yy=p.year==='N/A'?'na':String(p.year).slice(0,3)+'0';return (!q||(p.outlet+' '+p.title).toLowerCase().indexOf(q)>=0)&&(!k||p.kind===k)&&(!y||yy===y);});document.getElementById('tn').textContent=M.length+' of '+T.length;document.getElementById('text').innerHTML=M.map(function(p){return '<li><a href="'+e(p.url)+'" target="_blank" rel="noopener"><small>'+e(p.outlet)+(p.year&&p.year!=='N/A'?' · '+e(p.year):'')+(p.kind==='video'?' · video':'')+'</small><b>'+e(p.title)+'</b></a></li>';}).join('');}tq.addEventListener('input',tdraw);document.getElementById('tk').addEventListener('change',tdraw);document.getElementById('ty').addEventListener('change',tdraw);tdraw();});
 </script>
 <script src="../../assets/footer.js" defer></script>
 </body>
