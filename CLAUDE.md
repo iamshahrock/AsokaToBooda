@@ -96,7 +96,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 ## KING Buzz daily report (18 Oct 2026)
 - /king-intelligence/report.html renders any day from data/king-intelligence-daily.json (?date=YYYY-MM-DD; default latest) and shows unrecorded gaps. Linked first in the KING Intelligence crumbs and as "Today's daily report" on the dashboard.
 - 'Today at a glance' (19 Oct 2026, owner: 'more user friendly') tops /king-intelligence/: days to KING and Doomsday, one card per metric of the latest ledger record with change since that series' previous reading, What's new (topics) and Read this carefully (notes). It reads the ledger, so filing the daily input updates it. Competition section opens with a KING vs DOOM head-to-head (19 Oct: KING 2 uploads 81,603,892 vs Doomsday trailer 80,596,964). Owner's Instagram session in the browser is suspended: @iamsrk followers N/A.
-- Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.
+- Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it; Pages redeploys after that workflow finishes (workflow_run trigger, 19 Oct 2026), so the appended record goes live. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.
 
 ## Open work
 - Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
