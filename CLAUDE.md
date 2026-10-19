@@ -125,6 +125,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - King Fan Merch page: 15 T-shirt mockups (assets/merch/*.webp, 900x1000 web previews only; print files stay off the repo). Brand on stores: Shah Rock Jaan.
 - Buy buttons read the STORES list and each design's links object in merch/index.html; an empty link shows "<Store> · soon". Paste product URLs there once the stores are live.
 - Stores: Amazon Merch on Demand (owner applying, US account), Redbubble, Spreadshirt (Spreadshop can be embedded with its JavaScript integration). Marketplaces block iframes, so we link out.
+- Merch page rebuilt 19 Oct 2026 (owner: showcase of all designs, store names and logos, 'Buy from' under each design, bulk-order form at the end): 16 designs (15 shirts + INQUILAAB #FreeMyFace master). Store logos are simple-icons SVGs in assets/merch/stores/ (amazon, redbubble, spreadshirt). Bulk form POSTs to Worker /merch-bulk -> D1 table merch_bulk (POST only, no public read; personal data, read by the owner via D1). Store cards show 'N of 16 designs live' from the links objects.
 - Merch is in the header's utility links (Merch, About Us, Contact, FAQ), not the 8 main links.
 
 ## Working across chats
