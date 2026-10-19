@@ -575,6 +575,9 @@ links();
 // deep link: ?film=21
 (async () => {
   await Promise.all([loadCatalogue(), preloadKit(), document.fonts && document.fonts.ready]);
+  if (new URLSearchParams(location.search).get('from') === 'lairs') {
+    try { const f = localStorage.getItem('amkh-face'); if (f) fetch(f).then(r => r.blob()).then(blob => { state.photos.push({ blob, url: URL.createObjectURL(blob) }); drawPhotos(); say('Your rescued face is loaded. Choose a film and paint your poster.', true); }); } catch (e) {}
+  }
   const want = new URLSearchParams(location.search).get('film');
   const p = want && catalogue.find(x => x.id === want.padStart(2, '0'));
   if (p) chooseFilm(p); else refresh();

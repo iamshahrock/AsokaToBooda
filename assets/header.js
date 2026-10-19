@@ -31,7 +31,7 @@
   // Sub-pages: a slim tab row under the bar on every page of that section, so fans always know where they are.
   var SUB = {
     'create/': [['create/', 'Kingmaker studio'], ['', 'Be King · coming soon']],
-    'lairs/': [['lairs/', 'Chehre ki Chori'], ['lairs/#cinema', 'Lairs Cinema']],
+    'lairs/': [['lairs/', 'Rescue Your Face'], ['lairs/#cinema', 'Lairs Cinema']],
     'chess81/': [['chess81/', 'Overview'], ['CHESS81.HTML', 'Play the full game'], ['', 'Rapid Fire · coming soon']],
     'fan-billboard/': [['fan-billboard/', 'STARKS Billboard'], ['fan-made-ai-universe/', 'Fan-made AI Universe']],
     'inquilab/': [['inquilab/', 'The movement'], ['inquilab/revolution/', 'The Revolution Starts Now']],
