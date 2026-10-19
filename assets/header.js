@@ -24,9 +24,10 @@
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
     ['doom-to-king/', 'DOOM to KING'],
     ['inquilab/', 'Inquilaab'],
-    ['king-fever/', 'KING Fever']
+    ['king-fever/', 'KING Fever'],
+    ['merch/', 'Merch']
   ];
-  var UTIL = [['fans-king/', "FAN'S KING"], ['gallery/', 'Gallery'], ['merch/', 'Merch'], ['about/', 'About Us']];
+  var UTIL = [['fans-king/', "FAN'S KING"], ['gallery/', 'Gallery'], ['about/', 'About Us']];
   var MORE = [['contact/', 'Contact'], ['faq/', 'FAQ']];
   // Sub-pages: a slim tab row under the bar on every page of that section, so fans always know where they are.
   var SUB = {
@@ -219,7 +220,7 @@
   drawer.appendChild(el('a', { href: home }, [el('small', { text: '00' }), document.createTextNode('Home')]));
   var section = null;
   LINKS.forEach(function (l, i) {
-    var a1 = el('a', { href: root + l[0], text: l[1] }), a2 = el('a', { href: root + l[0] }, [el('small', { text: '0' + (i + 1) }), document.createTextNode(l[1])]);
+    var a1 = el('a', { href: root + l[0], text: l[1] }), a2 = el('a', { href: root + l[0] }, [el('small', { text: (i < 9 ? '0' : '') + (i + 1) }), document.createTextNode(l[1])]);
     if (isHere(l[0]) || (l[2] || []).some(isHere)) { a1.setAttribute('aria-current', 'page'); a2.setAttribute('aria-current', 'page'); section = l; }
     nav.appendChild(a1); drawer.appendChild(a2);
   });
