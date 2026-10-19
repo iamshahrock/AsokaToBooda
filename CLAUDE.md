@@ -95,6 +95,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 
 ## KING Buzz daily report (18 Oct 2026)
 - /king-intelligence/report.html renders any day from data/king-intelligence-daily.json (?date=YYYY-MM-DD; default latest) and shows unrecorded gaps. Linked first in the KING Intelligence crumbs and as "Today's daily report" on the dashboard.
+- 'Today at a glance' (19 Oct 2026, owner: 'more user friendly') tops /king-intelligence/: days to KING and Doomsday, one card per metric of the latest ledger record with change since that series' previous reading, What's new (topics) and Read this carefully (notes). It reads the ledger, so filing the daily input updates it. Competition section opens with a KING vs DOOM head-to-head (19 Oct: KING 2 uploads 81,603,892 vs Doomsday trailer 80,596,964). Owner's Instagram session in the browser is suspended: @iamsrk followers N/A.
 - Daily input: commit data/daily-input/YYYY-MM-DD.json; the king-daily-update workflow validates and appends it. No records were filed 07-17 Oct (owner noticed 18 Oct); the scheduled task "KING Buzz daily report" now files one every day.
 
 ## Open work
@@ -132,3 +133,4 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 Chats cannot read each other. At the end of any chat that changes the site, update this file in the same PR.
 - About Us + owner's blog (after the site is done).
 - Daily scheduled scan: add Fan Wall held/reported comment review.
+- Next (owner, 19 Oct 2026): FAN'S KING section (all fan-made KING YouTube videos, linked/embedded, never re-uploaded) and Gallery (Brand Endorsements and Interviews linked; Images: owner wants photos hosted on the site at one size. Claude declined to collect and re-host other photographers' photos from the web; offered the same-size gallery page and folder for images the owner adds).

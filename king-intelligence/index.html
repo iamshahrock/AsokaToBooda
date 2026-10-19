@@ -30,6 +30,45 @@
 .ao-rules{counter-reset:r;margin:0 0 10px}.ao-rules p{position:relative;margin:0 0 8px;padding-left:26px;font-size:14px;line-height:1.55;color:var(--ki-text)}.ao-rules p::before{counter-increment:r;content:counter(r);position:absolute;left:0;top:1px;font:600 12px var(--ki-mono);color:var(--ki-red-hi,#ef3b41)}.ao-rules b{margin-right:4px}
 @media(max-width:700px){.ao-chain{flex-direction:column}.ao-chain i{transform:rotate(90deg)}}
 </style>
+<style>
+.gl{border:1px solid var(--ki-red);border-radius:var(--ki-radius);background:linear-gradient(160deg,#1c0a0b,var(--ki-bg-1) 55%);padding:18px 18px 14px;margin:0 0 22px}
+.gl-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px}
+.gl-head h2{margin:0;font:700 22px/1.2 var(--ki-font);letter-spacing:.01em;color:var(--ki-text)}
+.gl-date{font:600 11px var(--ki-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ki-red-hi)}
+.gl-lede{margin:8px 0 14px;font-size:14px;line-height:1.55;color:var(--ki-text-2);max-width:760px}
+.gl-count{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.gl-count div{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}
+.gl-count b{font:700 34px/1 var(--ki-font);color:var(--ki-red-hi);font-variant-numeric:tabular-nums}
+.gl-count span{font-size:13px;line-height:1.3;color:var(--ki-text)}.gl-count small{color:var(--ki-muted)}
+.gl-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.gl-card{display:flex;flex-direction:column;gap:3px;padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius);min-width:0}
+.gl-card .t{font:600 11px/1.3 var(--ki-font);letter-spacing:.06em;text-transform:uppercase;color:var(--ki-muted)}
+.gl-card b{font:700 24px/1.15 var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.gl-card .m{font:500 12px/1.35 var(--ki-mono);color:var(--ki-text-2)}
+.gl-card .m.up{color:var(--ki-pos)}.gl-card .m.down{color:var(--ki-red-hi)}.gl-card .m.flat{color:var(--ki-warn)}
+.gl-card .w{font-size:11.5px;line-height:1.4;color:var(--ki-muted);margin-top:auto;padding-top:4px}
+.gl-card .w a{color:var(--ki-text-2)}
+.gl-two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.gl-box{padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}
+.gl-box h3{margin:0 0 6px;font:700 13px var(--ki-font);letter-spacing:.06em;text-transform:uppercase;color:var(--ki-red-hi)}
+.gl-box ul{margin:0;padding-left:18px}.gl-box li{font-size:13.5px;line-height:1.5;color:var(--ki-text);margin:0 0 6px}
+.gl-box li a{color:var(--ki-text-2)}
+.gl-foot{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px;font:600 12px var(--ki-mono)}
+.gl-foot a{color:var(--ki-red-hi);text-decoration:none}
+.hh{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin:0 0 14px}
+.hh-side{padding:14px;border:1px solid var(--ki-line);border-radius:var(--ki-radius);background:var(--ki-bg-2)}
+.hh-side.k{border-color:var(--ki-red)}
+.hh-side h3{margin:0 0 8px;font:700 18px var(--ki-font);color:var(--ki-text)}
+.hh-side dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.hh-side dt{color:var(--ki-muted)}.hh-side dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;color:var(--ki-text)}
+.hh-vs{align-self:center;font:800 22px var(--ki-font);color:var(--ki-red-hi)}
+.hh-bars{margin:0 0 14px}
+.hh-bar{display:grid;grid-template-columns:150px 1fr 110px;gap:10px;align-items:center;font-size:13px;margin:0 0 6px}
+.hh-bar i{display:block;height:14px;border-radius:2px;background:var(--ki-grey-bar)}.hh-bar.k i{background:var(--ki-red)}
+.hh-bar span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+@media(max-width:900px){.gl-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.gl-two,.gl-count{grid-template-columns:1fr}.hh{grid-template-columns:1fr}.hh-vs{text-align:center}.hh-bar{grid-template-columns:100px 1fr 84px}.gl-card b{font-size:21px}}
+</style>
 </head>
 <body class="ki">
 <script src="../assets/header.js"></script>
@@ -53,15 +92,39 @@
     <p class="ki-lede">Source-dated public attention, hashtag, fan-network and competitive signals for <b>KING</b> (Shah Rukh Khan, release 24 December 2026). Every figure is measured against the immutable 04 October 2026 baseline. Values that were not captured are labelled, never estimated.</p>
   </div>
   <dl class="ki-meta" aria-label="Data stamps">
-    <dt>As of</dt><dd class="hl">09 Oct 2026, IST</dd>
+    <dt>As of</dt><dd class="hl">19 Oct 2026, IST</dd>
     <dt>Baseline</dt><dd>04 Oct 2026 · locked</dd>
     <dt>Release</dt><dd>24 Dec 2026</dd>
     <dt>Time zone</dt><dd>Asia/Kolkata (Mumbai)</dd>
   </dl>
 </header>
 
+<!-- ============ TODAY AT A GLANCE (reads data/king-intelligence-daily.json) ============ -->
+<section class="gl" id="glance" aria-labelledby="h-glance">
+  <div class="gl-head">
+    <h2 id="h-glance">Today at a glance</h2>
+    <span class="gl-date" id="gl-date">Latest record: 19 Oct 2026</span>
+  </div>
+  <p class="gl-lede">The short version, in plain words. Each card shows the latest number and how it moved since we last measured the same thing. Nothing is estimated: if we could not read a number, it says N/A.</p>
+  <div class="gl-count">
+    <div><b id="gl-dk">N/A</b><span>days to KING<br><small>24 Dec 2026</small></span></div>
+    <div><b id="gl-dd">N/A</b><span>days to Avengers: Doomsday<br><small>18 Dec 2026</small></span></div>
+  </div>
+  <div class="gl-cards" id="gl-cards">
+    <div class="gl-card"><span class="t">KING title reveal</span><b>49,195,058</b><span class="m">YouTube views · first reading</span><span class="w">Official Red Chillies upload</span></div>
+    <div class="gl-card"><span class="t">KING date announcement</span><b>32,408,834</b><span class="m">YouTube views · first reading</span><span class="w">Official upload</span></div>
+    <div class="gl-card"><span class="t">Doomsday trailer</span><b>80,596,964</b><span class="m">YouTube views · first reading</span><span class="w">Marvel Entertainment</span></div>
+    <div class="gl-card"><span class="t">Fan-made AI works</span><b>40</b><span class="m">works found and linked</span><span class="w">Daily fan AI scan</span></div>
+  </div>
+  <div class="gl-two">
+    <div class="gl-box"><h3>What's new</h3><ul id="gl-topics"><li>Loading…</li></ul></div>
+    <div class="gl-box"><h3>Read this carefully</h3><ul id="gl-notes"><li>Loading…</li></ul></div>
+  </div>
+  <p class="gl-foot"><a href="report.html">Full daily report →</a> <a href="#competition">DOOM vs KING →</a> <a href="#overview">Detailed dashboard below →</a></p>
+</section>
+
 <section aria-labelledby="kpi-title">
-  <h2 id="kpi-title" class="ki-sr">Headline indicators</h2>
+  <h2 id="kpi-title" class="ki-h3" style="margin:0 0 8px">Earlier tracked series · 04 to 08 Oct</h2>
   <div class="ki-kpis">
     <div class="ki-kpi">
       <span class="l">#srkking posts</span>
@@ -497,7 +560,7 @@
         <div class="ki-bar hl"><span class="bl">Title reveal</span><span class="bt"><i style="width:100%"></i></span><span class="bv">47,877,968</span></div>
         <div class="ki-bar"><span class="bl">Date announcement</span><span class="bt"><i style="width:66.1%"></i></span><span class="bv">31,645,251</span></div>
       </div>
-      <div class="ki-stats" style="margin-top:12px"><div class="ki-stat"><div class="l">Combined official YouTube views</div><div class="v">79,523,219</div><div class="s">Two anchor assets only</div></div></div>
+      <div class="ki-stats" style="margin-top:12px"><div class="ki-stat"><div class="l">Combined official YouTube views</div><div class="v">81,603,892</div><div class="s">Two anchor assets only · read 19 Oct 2026 (was 79,523,219)</div></div></div>
       <p class="ki-note">Date announcement: 31,645,251 views and 209K likes (current public YouTube observation, 07 Oct). Title reveal 47.878M is retained from the 06 Oct snapshot; a current public refresh was unavailable, so it is retained rather than estimated. These are not total KING video consumption.</p>
     </div>
     <div class="ki-card s-4">
@@ -814,11 +877,31 @@
 <section class="ki-panel" id="competition" aria-labelledby="h-competition">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-competition">Competition · KING vs Avengers: Doomsday</h2>
-    <span class="ki-stamp">Directional anchors</span>
+    <span class="ki-stamp">Updated 19 Oct 2026</span>
     <p>Directional anchors, not like-for-like campaign totals. Where datasets are not comparable, the table says so.</p>
   </div>
   <a class="ki-cc" href="../doom-to-king/"><span>Section 07</span><b>DOOM to KING · One Christmas, Two Crowns: official DOOM trailer, fan votes and the watch-both pledge</b><i aria-hidden="true">→</i></a>
 
+  <div class="hh">
+    <div class="hh-side k"><h3>KING</h3><dl>
+      <dt>Release</dt><dd>24 Dec 2026</dd>
+      <dt>Title reveal</dt><dd>49,195,058</dd>
+      <dt>Date announcement</dt><dd>32,408,834</dd>
+      <dt>Two official uploads</dt><dd><b>81,603,892</b></dd>
+      <dt>Trailer</dt><dd>Not out yet</dd></dl></div>
+    <div class="hh-vs">VS</div>
+    <div class="hh-side"><h3>Avengers: Doomsday</h3><dl>
+      <dt>Release</dt><dd>18 Dec 2026</dd>
+      <dt>Official trailer</dt><dd>80,596,964</dd>
+      <dt>Trailer published</dt><dd>20 Jul 2026</dd>
+      <dt>Opens</dt><dd>6 days before KING</dd>
+      <dt>Studio</dt><dd>Marvel</dd></dl></div>
+  </div>
+  <div class="hh-bars" aria-label="YouTube views, 19 Oct 2026">
+    <div class="hh-bar k"><span>KING · 2 uploads</span><i style="width:100%"></i><span>81.6M</span></div>
+    <div class="hh-bar"><span>Doomsday · trailer</span><i style="width:98.8%"></i><span>80.6M</span></div>
+  </div>
+  <p class="ki-note" style="margin:0 0 14px">YouTube view counts read on the official uploads on 19 Oct 2026. In plain words: KING's two teasers together have about as many views as Doomsday's one trailer, and KING has not released a trailer yet. Not like-for-like: KING's number adds two videos; Doomsday's is one.</p>
   <div class="ki-grid">
     <div class="ki-card s-6">
       <h3 class="ki-h3">KING vs Doomsday</h3>
@@ -826,13 +909,13 @@
         <thead><tr><th scope="col">Metric</th><th scope="col" class="n">KING</th><th scope="col" class="n">Doomsday</th></tr></thead>
         <tbody>
           <tr><th scope="row">Release</th><td class="n">24 Dec 2026</td><td class="n">18 Dec 2026</td></tr>
-          <tr><th scope="row">Official / tracked YouTube footprint</th><td class="n">79,523,219*</td><td class="n">77,349,000†</td></tr>
+          <tr><th scope="row">Official / tracked YouTube footprint</th><td class="n">81,603,892*</td><td class="n">80,596,964†</td></tr>
           <tr><th scope="row">Launch-window report</th><td class="n"><span class="ki-na">N/A</span></td><td class="n">503M views / first 24h‡</td></tr>
-          <tr><th scope="row">Lead star Instagram</th><td class="n">SRK 48.38M</td><td class="n">RDJ ~58.90M</td></tr>
+          <tr><th scope="row">Lead star Instagram (08 Oct)</th><td class="n">SRK 48.38M</td><td class="n">RDJ ~58.90M</td></tr>
           <tr><th scope="row">Owned Instagram impressions</th><td class="n"><span class="ki-na">Not captured</span></td><td class="n">145M · 131M§</td></tr>
         </tbody>
       </table></div>
-      <p class="ki-note">* KING = title reveal + date announcement (two official assets). † Doomsday = tracked trailer YouTube cumulative views, 06 Oct ledger (shown as ~77.3M on earlier boards). ‡ 503M is a reported launch-window metric and must not be compared with cumulative YouTube views. § Marvel Studios Instagram: 145M impressions on “Doom does not knock”; 131M on “December 18, 2026. #AvengersDoomsday” (SocialPruf; benchmark refreshed about one month before capture).</p>
+      <p class="ki-note">* KING = title reveal 49,195,058 + date announcement 32,408,834 (two official uploads, read 19 Oct; was 79,523,219). † Doomsday = official trailer irVNGjRFZGk, Marvel Entertainment, read 19 Oct (the 06 Oct ledger had 77,349,000; probably the same video [Unverified]). ‡ 503M is a reported launch-window metric and must not be compared with cumulative YouTube views. § Marvel Studios Instagram: 145M impressions on “Doom does not knock”; 131M on “December 18, 2026. #AvengersDoomsday” (SocialPruf; benchmark refreshed about one month before capture).</p>
     </div>
     <div class="ki-card s-6">
       <h3 class="ki-h3">SRK vs RDJ · longitudinal lens</h3>
@@ -857,7 +940,7 @@
       <div class="ki-tablewrap"><table class="ki-table compact">
         <thead><tr><th scope="col">Dimension</th><th scope="col" class="n">KING</th><th scope="col" class="n">Doomsday</th><th scope="col">Daily input</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Video anchor</th><td class="n">79,523,219</td><td class="n">77,300,000</td><td>Refresh views</td></tr>
+          <tr><th scope="row">Video anchor (19 Oct)</th><td class="n">81,603,892</td><td class="n">80,596,964</td><td>Refresh views</td></tr>
           <tr><th scope="row">Lead-star Instagram</th><td class="n">48,375,471</td><td class="n">58,900,000</td><td>Refresh followers</td></tr>
           <tr><th scope="row">Social volume</th><td class="n"><span class="ki-na">Not captured</span></td><td class="n"><span class="ki-na">Not captured</span></td><td>Daily listening</td></tr>
           <tr><th scope="row">Search</th><td class="n"><span class="ki-na">Not captured</span></td><td class="n"><span class="ki-na">Not captured</span></td><td>Daily search</td></tr>
@@ -1105,6 +1188,37 @@
     var pages=d.topPages||[], tot=pages.reduce(function(a,b){return a+b.n;},0)||1;
     $('#pl-pages').innerHTML=pages.length?pages.map(function(p){return '<tr><th scope="row">'+p.path.replace(/[<>&]/g,'')+'</th><td class="n">'+fmt(p.n)+'</td><td class="n">'+(p.n/tot*100).toFixed(1)+'%</td></tr>';}).join(''):'<tr><td colspan="3">No page views recorded yet.</td></tr>';
   }).catch(function(){var s=$('#pl-stamp'); if(s) s.textContent='Live numbers are unavailable right now'; ['#pl-eng','#pl-pages'].forEach(function(q){var e=$(q); if(e) e.innerHTML='<tr><td colspan="3">N/A · live service unreachable</td></tr>';}); var c=$('#pl-chart'); if(c) c.innerHTML='<p class="ki-note">N/A · live service unreachable</p>';});
+})();
+</script>
+<script>
+/* Today at a glance: latest ledger record, each series compared with its previous reading. */
+(function(){
+  var $=function(q){return document.querySelector(q);};
+  function ist(){var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).split('-');return Date.UTC(+p[0],+p[1]-1,+p[2]);}
+  function left(y,m,d){var n=Math.round((Date.UTC(y,m,d)-ist())/864e5);return n>0?String(n):(n===0?'Today':'Out');}
+  $('#gl-dk').textContent=left(2026,11,24); $('#gl-dd').textContent=left(2026,11,18);
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var fmt=function(n){return Number(n).toLocaleString('en-US');};
+  var day=function(s){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short'});};
+  var LABEL={king_title_reveal_views:'KING title reveal',king_date_announcement_views:'KING date announcement',doomsday_official_trailer_views:'Doomsday trailer',fan_ai_works_logged:'Fan-made AI works',fan_ai_works_views:'Views on fan AI works',srk_indexed_posts:'#srk posts (index)',srkking_indexed_posts:'#srkking posts (index)',iamsrk_instagram_followers:'@iamsrk followers',king_public_observable_posts:'KING posts (all platforms)',king_video_views_tracked:'KING video views (tracked)',doomsday_youtube_views:'Doomsday YouTube views'};
+  var link=function(s){var m=String(s||'').match(/https?:\/\/[^\s)]+/);var name=String(s||'').split(/[,(]/)[0];return m?'<a href="'+esc(m[0])+'" target="_blank" rel="noopener">'+esc(name)+'</a>':esc(name);};
+  var linkify=function(t){return esc(t).replace(/\(?(https?:\/\/[^\s)]+)\)?/g,function(_,u){return '(<a href="'+u+'" target="_blank" rel="noopener">source</a>)';});};
+  fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
+    var R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;}), last=R[R.length-1];
+    $('#gl-date').textContent='Latest record: '+new Date(last.date+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+    var prev=function(id){for(var i=R.length-2;i>=0;i--){var m=(R[i].metrics||[]).filter(function(x){return x.series_id===id&&x.value!=null;})[0];if(m)return {v:m.value,d:R[i].date};}return null;};
+    var cards=(last.metrics||[]).filter(function(m){return m.value!=null;}).map(function(m){
+      var p=prev(m.series_id),cls='',txt;
+      if(!p) txt=esc(m.unit)+' · first reading';
+      else{var dv=m.value-p.v;cls=dv>0?'up':(dv<0?'down':'flat');txt=(dv===0?'No change':(dv>0?'+':'')+fmt(dv)+(p.v?' ('+(dv>0?'+':'')+(dv/p.v*100).toFixed(1)+'%)':''))+' since '+day(p.d);}
+      return '<div class="gl-card"><span class="t">'+esc(LABEL[m.series_id]||m.series_id.replace(/_/g,' '))+'</span><b>'+fmt(m.value)+'</b><span class="m '+cls+'">'+txt+'</span><span class="w">'+link(m.source)+'</span></div>';
+    });
+    var miss=(last.metrics||[]).filter(function(m){return m.value==null;}).map(function(m){return LABEL[m.series_id]||m.series_id;});
+    if(miss.length) cards.push('<div class="gl-card"><span class="t">Not measured today</span><b>N/A</b><span class="m">'+esc(miss.join(' · '))+'</span><span class="w">Left empty, never estimated</span></div>');
+    $('#gl-cards').innerHTML=cards.join('');
+    $('#gl-topics').innerHTML=(last.topics||[]).map(function(t){return '<li>'+linkify(t)+'</li>';}).join('')||'<li>No new topics filed.</li>';
+    $('#gl-notes').innerHTML=(last.notes||[]).map(function(t){return '<li>'+linkify(t)+'</li>';}).join('')||'<li>N/A</li>';
+  }).catch(function(){$('#gl-topics').innerHTML='<li>The ledger could not load right now.</li>';$('#gl-notes').innerHTML='<li>N/A</li>';});
 })();
 </script>
 <script src="../assets/footer.js" defer></script>
