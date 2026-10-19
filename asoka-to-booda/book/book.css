@@ -32,6 +32,7 @@
 .prose{font-family:var(--serif-read);font-size:19px;line-height:1.72;color:#e9e0d9}
 .prose p{margin:0 0 1.1em}
 .prose h3,.prose h4{font-family:var(--body);font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin:2em 0 .7em}
+.prose h5{font-family:var(--body);font-weight:700;font-size:16px;line-height:1.35;color:#f2e8e0;margin:1.9em 0 .6em}
 .prose a{color:#ffd9d4;text-decoration:underline;text-decoration-color:rgba(227,36,63,.6);text-underline-offset:3px}
 .prose a:hover{color:#fff}
 .prose em{color:#f4ece6}

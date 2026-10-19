@@ -155,7 +155,7 @@ for p in pages:
 
 def pandoc(text):
     h = subprocess.run(['pandoc', '-f', 'markdown-auto_identifiers-implicit_figures', '-t', 'html'], input=text, capture_output=True, text=True).stdout
-    h = h.replace('<table>', '<div class="tbl"><table>').replace('</table>', '</table></div>').replace('<img ', '<img loading="lazy" ')
+    h = re.sub(r'<table[^>]*>', '<div class="tbl"><table>', h).replace('</table>', '</table></div>').replace('<img ', '<img loading="lazy" ')
     h = re.sub(r'<a href="(https?://[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', h)
     return h.replace('<p>CHARTMARK</p>', chart())
 
