@@ -233,6 +233,29 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 .ck-line{font-family:var(--display);font-size:clamp(26px,3vw,40px);text-transform:uppercase;color:var(--red-hi);margin:6px 0}
 @media (max-width:900px){.ck-dome{grid-template-columns:repeat(4,minmax(0,1fr))}.ck-pic{width:max(100%,calc(330px * var(--r)))}.hs i{width:32px;height:32px;font-size:16px}.ck-head{padding:22px 18px}}
 @media (hover:none){.hs span{display:none}}
+.hs .play{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);white-space:nowrap;font-style:normal;font-family:var(--body);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#111;background:#ffd34d;padding:2px 6px}
+.hs i{width:46px;height:46px;font-size:22px}
+.hs.seen i{background:#c99a16;border-color:#fff;color:#111}
+.ck-goal{padding:10px 16px;background:#1a0b0c;border-bottom:1px solid var(--line);font-size:16px;color:#fff}
+.ck-goal b{display:inline-block;margin-right:10px;padding:2px 8px;background:var(--red);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.ck-goal .tally{margin-left:10px;color:#ffd34d;font-weight:600}
+#ckPlayT small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.16em;color:var(--red-text)}
+#ckPlayT em{font-style:normal;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.12em;color:#111;background:#ffd34d;padding:2px 8px;vertical-align:middle}
+.ck.playing .ck-view,.ck.playing .ck-strip,.ck.playing .ck-goal,.ck.playing .ck-panel{display:none}
+.ck-back{float:right}
+.ck-lead{margin:0 0 12px;font-family:var(--serif);font-style:italic;font-size:22px;color:#fff}
+.ck-open{font-family:var(--display);font-size:26px;text-transform:uppercase;color:#7fd38a;margin:4px 0}
+.reels{display:flex;gap:10px;margin:8px 0}.reels b{width:90px;height:110px;display:flex;align-items:center;justify-content:center;background:#f4efe9;color:#111;font-family:var(--display);font-size:40px;border-radius:8px;border:3px solid #c99a16}.reels b.r{color:#c3121a}
+.mem{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;max-width:760px;margin-top:10px}
+.mc{aspect-ratio:1;padding:0;border:2px solid var(--line);background:repeating-linear-gradient(45deg,#7a0a10 0 6px,#4a0609 6px 12px);cursor:pointer;overflow:hidden}
+.mc img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .15s}.mc.up img{opacity:1}.mc.ok{border-color:#7fd38a}
+.catch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:520px;margin-top:10px}
+.cc{aspect-ratio:5/7;border:1px solid var(--line);background:#120b0b;border-radius:8px;font-family:var(--display);font-size:28px;color:#111;cursor:pointer}
+.cc.on{background:#f4efe9}.cc.r{color:#c3121a}.cc.hit{background:#7fd38a}.cc.miss{background:var(--red);color:#fff}
+.code-in{display:flex;gap:10px;margin:10px 0}.code-in b{width:64px;height:76px;display:flex;align-items:center;justify-content:center;border:2px solid #c99a16;background:#0d0909;font-family:var(--display);font-size:40px;color:#fff}
+.pad{display:grid;grid-template-columns:repeat(7,64px);gap:8px}.pad .choice{text-align:center;font-family:var(--display);font-size:26px;padding:12px 0}
+.code-log{margin-top:12px;display:grid;gap:4px;max-width:320px}.code-log div{display:flex;justify-content:space-between;padding:6px 10px;background:#0d0909;border:1px solid var(--line);font-family:var(--display);font-size:22px;color:#fff}.code-log .pegs{color:#ffd34d;letter-spacing:.2em}
+@media (max-width:600px){.mem{grid-template-columns:repeat(4,minmax(0,1fr))}.pad{grid-template-columns:repeat(4,56px)}.reels b{width:72px;height:90px;font-size:32px}.hs i{width:38px;height:38px;font-size:18px}}
 </style>
 </head>
 <body class="v2">
@@ -242,9 +265,9 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
     <div>
       <p class="eyebrow">02 · King's Lairs · The story game</p>
       <h1>Chehre ki <em>Chori</em></h1>
-      <p class="c-lede">Fans' faces are vanishing from their own photos. Follow the money under the prison, climb to the glass dome, and set every face free.</p>
-      <p class="say">Three acts, fourteen rooms, all in the lairs' own pictures. Tap the glowing spots, collect what you find, win the games where they happen, and star in the scene with your own face. Your progress is saved on this device.</p>
-      <p class="ck-games"><b>Six games inside the story</b> Poker at the casino table · Knockout in The Pit · Dive with the Noctopus · Searchlights on the frozen lake · The Archive quiz · The final switch at the world map</p>
+      <p class="c-lede">Every number in the lairs is a game. Win, score, pick the next number.</p>
+      <p class="say">Fans' faces are being stolen. Fight your way from the casino under the prison to the glass dome above the snowline: 14 rooms, 50 numbers, 10 kinds of game. Win two games in a room to open the next. Your points are saved on this device.</p>
+      <p class="ck-games"><b>The games</b> Poker · Slots · Crack the code · Catch the King · Memory · Knockout · Deep dive · Searchlights · Film quiz · The final switch</p>
       <div class="row"><button class="btn btn-red" id="ckStart" type="button">Start the story →</button><a class="btn btn-line" href="#cinema">Lairs Cinema →</a></div>
     </div>
   </section>
@@ -253,20 +276,20 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
   <div class="hud" aria-live="polite">
     <div class="me"><img id="avatar" src="../assets/studio/crown.png" alt=""><div><small>Your STARKS</small><b id="bal">0</b></div></div>
     <div><small>Rank</small><b id="tier" style="font-size:22px;color:var(--ink)">Fan</b></div>
-    <div><small>Spots explored</small><b id="cleared" style="font-size:22px;color:var(--ink)">0</b></div>
-    <div><small>Now playing</small><b id="actNow" style="font-size:22px;color:var(--ink)">Act I</b></div>
+    <div><small>Games won</small><b id="cleared" style="font-size:22px;color:var(--ink)">0</b></div>
+    <div><small>Points</small><b id="actNow" style="font-size:22px;color:var(--ink)">0</b></div>
     <a class="btn btn-line" href="../fan-billboard/">Billboard →</a>
   </div>
 
   <section class="ck" id="ckGame" aria-label="Chehre ki Chori">
     <div class="ck-bar"><div><small id="ckAct">Act I · Follow the money</small><h2 id="ckName">The way in</h2></div>
-      <div class="ck-tools"><button class="btn btn-line" id="ckMapBtn" type="button">Map</button><button class="btn btn-line" id="ckDosBtn" type="button">Dossier</button><button class="btn btn-line ck-sm" id="ckRestart" type="button">Start over</button></div></div>
+      <div class="ck-tools"><button class="btn btn-line" id="ckMapBtn" type="button">Map</button><button class="btn btn-line" id="ckDosBtn" type="button">Scores</button><button class="btn btn-line ck-sm" id="ckRestart" type="button">Start over</button></div></div>
     <div class="ck-goal" id="ckGoal"></div>
     <div class="ck-panel" id="ckMap"><div id="ckMapBody"></div></div>
-    <div class="ck-panel" id="ckDos"><p class="eyebrow">Your dossier</p><div id="ckDosBody"></div></div>
+    <div class="ck-panel" id="ckDos"><p class="eyebrow">Your scores</p><div id="ckDosBody"></div></div>
     <div class="ck-view" id="ckView"></div>
     <div class="ck-strip" id="ckStrip" aria-live="polite"></div>
-    <div class="ck-play" id="ckPlay"><div class="stage-top"><h2 id="ckPlayT">Encounter</h2></div><div class="arena" id="arena"></div></div>
+    <div class="ck-play" id="ckPlay"><div class="stage-top"><h2 id="ckPlayT">Encounter</h2><button class="btn btn-line" id="ckBack" type="button">← Back to the room</button></div><div class="arena" id="arena"></div></div>
   </section>
 
   <a class="reel" id="reel" href="#cinema" aria-label="Lairs Cinema: direct your own KING scene">
@@ -331,170 +354,133 @@ function prog() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } 
 function setProg(p) { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {} }
 function fmt(n) { return Number(n).toLocaleString('en-IN'); }
 
-/* ---------- CHEHRE KI CHORI: the story game played on the owner's lair pictures ---------- */
-var CK_KEY = 'amkh-chehre';
+/* ---------- CHEHRE KI CHORI: every number in the owner's lair pictures is a game ---------- */
+var CK_KEY = 'amkh-chehre2';
 var SC = '../assets/lairs/scenes/';
-var ACTS = { 1: 'Act I · Follow the money', 2: 'Act II · Find the faces', 3: 'Act III · Free the faces' };
-var ITEMS = {
-  marker: ['High Roller marker', 'Black and gold. Opens the golden door in the casino.'],
-  cagekey: ['Cage key', 'Taken from the brute in The Pit.'],
-  vrcode: ['VR Suite code', 'Engraved on the Noctopus\'s last crown.'],
-  vaultmap: ['Vault map', 'Seen inside a VR headset: how the Trophy Vault opens.'],
-  keycard: ['Dome keycard', 'Marked DOME. Opens the glass door above the snowline.'],
-  buyerlist: ['The buyers\' list', 'Every buyer of a stolen face, with a date and a price.'],
-  archivepass: ['Archive pass', 'Given by the pyramid to someone who knows his films.'],
-  copycode: ['Copy machine code', 'The code that turns a fan\'s photo into a stolen face.'],
-  release: ['Pod release', 'One command: RELEASE ALL.']
-};
-var GAMES = { casino: casino, pit: pit, den: den, dome: dome, city: city, throne: throne };
-var GC = 'Ground Control';
-/* Every scene is one of the owner's pictures. Hotspots are placed in % of the picture. */
+var ACTS = { 1: 'Act I · The Underground City', 2: 'Act II · The Mountain Dome', 3: 'Act III · Free the faces' };
+var GAMES = { poker: casino, sneak: dome, quiz: city, fight: pit, dive: den, final: throne, slots: slots, memory: memory, catcher: catcher, code: code };
+var KIND = { poker: 'Poker', sneak: 'Searchlights', quiz: 'Film quiz', fight: 'Knockout', dive: 'Deep dive', final: 'The final switch', slots: 'Slots', memory: 'Memory', catcher: 'Catch the King', code: 'Crack the code' };
+var NEED = 2; // games to win in a room to open the next one
+function S_(id, x, y, label, game, say, win) { return { id: id, x: x, y: y, label: label, game: game, say: say, win: win }; }
 var SCENES = {
-  gate: { act: 1, name: 'The way in', img: 'city-floorplan', pin: [51, 13], spots: [
-    { id: 'g1', x: 51, y: 13, label: 'The surface prison', who: GC, say: ['Ground Control to fan. Do you copy?', 'Fans\' faces are vanishing from their own photos. Somebody copies them and sells them. The money runs through a casino under this prison.', 'Go in with your own face. It is the one thing they cannot copy while you hold on to it.'] },
-    { id: 'g2', x: 23, y: 7, label: 'The lightning', say: ['Every time the lightning strikes, the lights below flicker. Somebody down there is running a very big machine.'] },
-    { id: 'g3', x: 39, y: 25, label: 'Service tunnel', say: ['A service tunnel runs from the prison yard down into the rock. Music comes up it, and the smell of money.'], unlock: 'casino', go: 'casino', goLabel: 'Take the tunnel to the Casino Floor' }
-  ] },
-  casino: { act: 1, name: 'Casino Floor', img: 'casino-grand', pin: [28, 54], spots: [
-    { id: 'c1', x: 50.5, y: 24, label: 'The golden door', need: 'marker', needSay: ['A doorman in a gold collar blocks the door. "High Rollers only. Show me a marker."'], who: 'The doorman', say: ['The doorman sees the marker and steps aside.', 'Behind the gold door: a corridor of cages, and music that shakes the floor. The Pit.'], unlock: 'pit', go: 'pit', goLabel: 'Go down to The Pit' },
-    { id: 'c2', x: 9, y: 70, label: 'The poker table', who: 'The House', say: ['"Win at my table," says the House, "and you get a High Roller\'s marker."'], game: 'casino', give: 'marker', win: 'The House slides a black-and-gold marker across the felt. "Spend it well."', lose: 'The House rakes in your chips. "Sit again when you are ready."' },
-    { id: 'c3', x: 57.5, y: 51, label: 'The stage', who: 'The croupier', say: ['The croupier spins the wheel without looking at it.'], choices: [
-      ['Who is the house\'s biggest buyer?', '"Nobody here buys chips. They buy faces. New ones, thousands a night."'],
-      ['What pays for all of this?', '"Faces, darling. A famous face sells once. A fan\'s face sells forever."'] ] },
-    { id: 'c4', x: 91.5, y: 83, label: 'The bar', who: 'The barman', say: ['"You want The Pit? Through the High Rollers\' door.', 'Ask about the cages. The people in them never go home."'] }
-  ] },
-  pit: { act: 1, name: 'The Pit', img: 'pit-dance', pin: [52, 36], spots: [
-    { id: 'p1', x: 79, y: 30, label: 'CAGES OPEN', say: ['The neon says CAGES OPEN. They never do.', 'The brute at the card table wears the keys on his belt.'] },
-    { id: 'p2', x: 50.5, y: 22, label: 'The hanging cages', need: 'cagekey', needSay: ['The cages hang over the dance floor, locked. Someone inside is calling for help.'], who: 'The woman in the cage', say: ['Inside: a fan. Where her face should be, there is only a blank, like an unfinished drawing.', '"They copied me," she whispers. "Then they took the original. The Noctopus keeps the buyer\'s code. Go through the sea window."'], unlock: 'den' },
-    { id: 'p3', x: 11, y: 85, label: 'The brute\'s table', who: 'The brute', say: ['The brute stands up. "You want my keys? Come and take them."'], game: 'pit', give: 'cagekey', win: 'The brute stays down. The cage key is yours.', lose: 'You hit the floor. The crowd cheers for the other man tonight.' },
-    { id: 'p4', x: 92, y: 59, label: 'The sea window', say: ['Through the glass: dark water, and a blue room full of sharks.'], go: 'den', goLabel: 'Swim through to the Abyssal Den', needUnlock: 'den', lockedSay: ['The window is sealed. Somebody in the cages knows how to open it.'] }
-  ] },
-  den: { act: 1, name: 'The Abyssal Den', img: 'den-abyssal', pin: [70, 30], spots: [
-    { id: 'd1', x: 71, y: 46, label: 'The Noctopus', who: 'The Noctopus', say: ['"Every face that passes through here, I taste first," says the Noctopus.', '"Bring me ten crowns from the deep and I will tell you who buys them."'], game: 'den', give: 'vrcode', win: 'The Noctopus counts the crowns. "The buyer lives above the snowline, in a dome of glass. The code to the VR Suite is on the last crown."', lose: 'The ink clouds the water. You surface with nothing.' },
-    { id: 'd2', x: 68, y: 84, label: 'The red pool table', who: 'A stranger with a cue', say: ['"One shot," says the stranger. "Break, and the table talks."'], choices: [
-      ['Take the shot', 'The balls scatter. Under the felt, a stamp: PROPERTY OF THE DOME.'],
-      ['Hand the cue to the stranger', 'He breaks clean and smiles. "The dome sends its cars down here every night. Watch the arcade."'] ] },
-    { id: 'd3', x: 7, y: 78, label: 'The arcade cabinets', need: 'vrcode', needSay: ['One cabinet has no coin slot, only a keypad. Through the wall: the hum of the VR Suite.'], say: ['You key in the code from the crown. The cabinet swings open like a door.'], unlock: 'vr', go: 'vr', goLabel: 'Step into the VR Suite' },
-    { id: 'd4', x: 34, y: 25, label: 'The DJ booth', who: 'The DJ', say: ['"Requests? Tonight there is only one track on repeat."', '"Picture abhi baaki hai."'] }
-  ] },
-  vr: { act: 1, name: 'VR Suite', img: 'city-vr', pin: [79.5, 56.5], plan: true, spots: [
-    { id: 'v1', x: 78, y: 60, label: 'The headsets', say: ['You put one on. A snow-covered dome, a helipad, rows of pods.', 'Then the vault under the residence, and how its lock turns. You memorise it.'], give: 'vaultmap', unlock: 'vault', go: 'vault', goLabel: 'Go to the Trophy Vault' },
-    { id: 'v2', x: 35, y: 48, label: 'The green tables', say: ['Players in headsets, faces lit blue. None of them blinks. None of them is playing; they are being scanned.'] },
-    { id: 'v3', x: 40, y: 14, label: 'The aquarium', say: ['The Noctopus watches through the glass. It knows where you are going.'] }
-  ] },
-  vault: { act: 1, name: 'The Trophy Vault', img: 'city-vault', pin: [59.5, 84], plan: true, spots: [
-    { id: 't1', x: 82, y: 57, label: 'The vault', need: 'vaultmap', needSay: ['A steel door with no handle and no keyhole.'], say: ['The lock turns the way the headset showed you.', 'Inside: trophies. Hundreds of framed faces. On the desk, a keycard marked DOME and a list of buyers.'], give: ['keycard', 'buyerlist'], endAct: 1 },
-    { id: 't2', x: 41, y: 55, label: 'The long table', say: ['A dinner table set for twelve. The place cards carry no names, only face sizes.'] },
-    { id: 't3', x: 61, y: 55, label: 'The round table', say: ['A chessboard, nine squares a side. Somebody has been playing the King against himself.'] }
-  ] },
-  aerial: { act: 2, name: 'The approach', img: 'dome-aerial', spots: [
-    { id: 'a1', x: 54.4, y: 22, label: 'The helicopter', who: 'The pilot', say: ['The pilot reads the DOME keycard and takes you for a buyer.', '"Landing in two minutes. Don\'t look down."'], unlock: 'arrival', go: 'arrival', goLabel: 'Land at the dome' },
-    { id: 'a2', x: 17, y: 79, label: 'The frozen lake', say: ['Or you walk. Two searchlights sweep the ice.'], game: 'dome', win: 'You reach the dome\'s shadow. Nobody saw you.', lose: 'The light found you. Back to the rock.', unlock: 'arrival', go: 'arrival', goLabel: 'Go to the door' },
-    { id: 'a3', x: 47, y: 92, label: 'The rock', say: ['From the rock you count them: twelve guards, two searchlights, one helipad.'] }
-  ] },
-  arrival: { act: 2, name: 'The door', img: 'dome-arrival', spots: [
-    { id: 'r1', x: 50, y: 83, label: 'The door', need: 'keycard', needSay: ['The glass door does not even have a handle.'], who: 'The guard', say: ['The guard scans the keycard. Green.', '"Welcome back, sir."'], unlock: 'panorama', go: 'panorama', goLabel: 'Walk in' },
-    { id: 'r2', x: 50.5, y: 34, label: 'The big screen', say: ['A world map, every country blinking with a number. Faces, counted like shares on a stock exchange.'] },
-    { id: 'r3', x: 33, y: 63, label: 'The upper deck', say: ['Men in suits look down at a fan on the ice. Nobody here expects a fan.'] }
-  ] },
-  panorama: { act: 2, name: 'Inside the dome', img: 'dome-panorama', spots: [
-    { id: 'h1', x: 9, y: 63, label: 'SIDE 1: the library', say: ['Ladders, ledgers, and a door marked ARCHIVE.'], unlock: 'archive', go: 'archive', goLabel: 'Enter the Archive' },
-    { id: 'h2', x: 33, y: 41, label: 'The lab screens', need: 'archivepass', needSay: ['A glass lab. The door opens for Archive staff only.'], say: ['The pass works. The lab door slides open.'], unlock: 'lab', go: 'lab', goLabel: 'Enter the Lab' },
-    { id: 'h3', x: 60.5, y: 40, label: 'The waterfall', say: ['Behind the water, a control room. Locked from inside. Not yet.'] },
-    { id: 'h4', x: 49, y: 87, label: 'The crates', say: ['Crates roll past on the line, each stamped with a barcode and a face size.'] },
-    { id: 'h5', x: 87, y: 77, label: 'SIDE 3: the residence', need: 'copycode', needSay: ['The residence. A guard on the stairs: "The owner sees nobody."'], say: ['You show the guard the copy machine code on your screen. He thinks you are staff and lets you up.'], unlock: 'residence', go: 'residence', goLabel: 'Go up to the Residence' }
-  ] },
-  archive: { act: 2, name: 'The Archive', img: 'dome-archive', spots: [
-    { id: 'k1', x: 50, y: 32, label: 'The pyramid', who: 'The pyramid', say: ['"Only someone who truly knows his films may pass."'], game: 'city', give: 'archivepass', win: 'The pyramid turns gold. An Archive pass drops into your hand.', lose: 'The pyramid goes dark. "Come back when you remember."' },
-    { id: 'k2', x: 50, y: 12, label: 'The moon', say: ['A fake moon. Even the night sky here is a copy.'] },
-    { id: 'k3', x: 10, y: 47, label: 'The empty shelf', say: ['Rows of hero figures, every one a famous face. One shelf is empty.', 'Its label reads: NEXT: THE FANS.'] },
-    { id: 'k4', x: 90, y: 86, label: 'The figures', say: ['Copies. Every one of them. None of them asked to be made.'] }
-  ] },
-  lab: { act: 2, name: 'The Lab', img: 'dome-lab', spots: [
-    { id: 'l1', x: 50, y: 83, label: 'The holo-tables', say: ['On the table: a fan\'s holiday photo turns into a 3D face in eleven seconds.', 'The machine\'s code glows on the screen. You copy it.'], give: 'copycode' },
-    { id: 'l2', x: 93, y: 55, label: 'The server racks', say: ['Every rack is labelled with a city. Mumbai\'s runs hottest.'] },
-    { id: 'l3', x: 22, y: 65, label: 'The drone', say: ['A drone with a lens the size of a fist. It photographs crowds outside cinemas.'] },
-    { id: 'l4', x: 50, y: 46, label: 'The window', say: ['A city that does not exist, painted on the glass.'] }
-  ] },
-  residence: { act: 2, name: 'The Residence', img: 'dome-residence', spots: [
-    { id: 'e1', x: 88, y: 60, label: 'The telescope', say: ['It is not pointed at the stars. It points down, at a broadcast tower on the next peak.', 'From there, the stolen faces go out to the world.'] },
-    { id: 'e2', x: 50, y: 76, label: 'The fireplace', say: ['You hold the buyers\' list over the fire.'], choices: [
-      ['Burn it', 'The paper curls. Nobody will buy from that list again.'],
-      ['Keep it as evidence', 'You fold it away. The Inquilaab will want to read every name.'] ] },
-    { id: 'e3', x: 6, y: 7, label: 'The guitars', say: ['Three guitars, never played. The owner collects what he cannot do.'] },
-    { id: 'e4', x: 50, y: 38, label: 'The glass lift', need: 'copycode', needSay: ['The lift has one button below zero, and it asks for a code.'], say: ['You enter the copy machine\'s code. The lift drops.'], endAct: 2 }
-  ] },
-  hive: { act: 3, name: 'The Hive', img: 'dome-hive', spots: [
-    { id: 'x1', x: 50.5, y: 83, label: 'The console', say: ['The console lists every face in the pods, with the fan\'s name beside it.', 'You type the copy code backwards. The screen asks: RELEASE ALL?'], give: 'release' },
-    { id: 'x2', x: 15, y: 60, label: 'The pods', need: 'release', needSay: ['Pod after pod, each holding a face. Sealed.'], say: ['RELEASE ALL. The pods hiss open.', 'Faces, thousands of them, lift out and fly back to the photos they were taken from.'], unlock: 'control', go: 'control', goLabel: 'Go to the control room' },
-    { id: 'x3', x: 50, y: 7.5, label: 'The skylight', say: ['The helicopter waits on the pad above. Your way out, when this is done.'] },
-    { id: 'x4', x: 75, y: 70, label: 'The guards', say: ['Two guards turn. You raise the DOME keycard. They look at it, then at your face, and wave you on.'] }
-  ] },
-  control: { act: 3, name: 'The control room', img: 'dome-waterfall', spots: [
-    { id: 'w1', x: 54, y: 44, label: 'The world map', say: ['The broadcast is still running, sending copies out to every country on the map.', 'Two trials stand between you and the switch.'], game: 'throne', win: 'The map goes dark, country by country. The broadcast is off.', lose: 'The map keeps blinking. Try again.', finale: true },
-    { id: 'w2', x: 31, y: 57.5, label: 'The waterfall', say: ['The water is the cooling for the machine. It has never been this loud.'] },
-    { id: 'w3', x: 77, y: 62.5, label: 'The tanks', say: ['Not specimens. Faces, grown like plants in green light.'] },
-    { id: 'w4', x: 53, y: 92, label: 'The scientists', who: 'The scientists', say: ['"We only ran the machine. We never asked whose faces they were."'], choices: [
-      ['Tell them to switch off and go home', 'They put down their tablets, one by one.'],
-      ['Tell them to join the Inquilaab', '"Your face. Not his. Not theirs." One of them writes it on the glass.'] ] }
-  ] }
+  gate: { act: 1, name: 'The way in', img: 'city-floorplan', pin: [51, 13], intro: 'Fans\' faces are vanishing from their own photos. The money runs through a casino under this prison. Win your way in.', spots: [
+    S_('g1', 51, 13, 'The prison gate', 'code', 'The gate has a three-digit lock. Crack it.', 'The gate clicks open.'),
+    S_('g2', 23, 7, 'The lightning', 'catcher', 'Every flash shows a card. Catch the King of Hearts before the lights die.', 'You caught the King in the storm.'),
+    S_('g3', 39, 25, 'The service tunnel', 'sneak', 'Creep down the tunnel while the searchlights sweep.', 'You are under the prison.') ] },
+  casino: { act: 1, name: 'Casino Floor', img: 'casino-grand', pin: [28, 54], intro: 'The house buys faces, thousands a night. Beat the house.', spots: [
+    S_('c1', 50.5, 24, 'The golden door', 'code', 'High Rollers only. Crack the door\'s code.', 'The gold door swings open.'),
+    S_('c2', 9, 70, 'The poker table', 'poker', 'Five hands against the House.', 'The House pays you a High Roller\'s marker.'),
+    S_('c3', 57.5, 51, 'The stage', 'slots', 'The croupier\'s machine. Five spins.', 'The machine pays out.'),
+    S_('c4', 91.5, 83, 'The bar', 'memory', 'The barman lines up the glasses. Match the pairs.', 'The barman whispers: "Ask about the cages in The Pit."') ] },
+  pit: { act: 1, name: 'The Pit', img: 'pit-dance', pin: [52, 36], intro: 'Three hundred people in the dark, all betting against you.', spots: [
+    S_('p1', 79, 30, 'CAGES OPEN', 'code', 'The cage lock. Three digits.', 'The neon flickers: the cages are open.'),
+    S_('p2', 50.5, 22, 'The hanging cages', 'catcher', 'Fans with blank faces in the cages. Catch the King of Hearts to free them.', 'The cage doors drop open.'),
+    S_('p3', 11, 85, 'The brute\'s table', 'fight', 'The brute stands up. Knock him down.', 'The brute stays down.'),
+    S_('p4', 92, 59, 'The sea window', 'memory', 'Shapes in the water. Match them.', 'Through the glass: the Abyssal Den.') ] },
+  den: { act: 1, name: 'The Abyssal Den', img: 'den-abyssal', pin: [70, 30], intro: 'The Noctopus tastes every face that passes through.', spots: [
+    S_('d1', 71, 46, 'The Noctopus', 'dive', 'Dive for crowns. Dodge the ink.', 'The Noctopus names the buyer: a dome above the snowline.'),
+    S_('d2', 68, 84, 'The red pool table', 'catcher', 'Balls everywhere. Catch the King of Hearts.', 'Clean break.'),
+    S_('d3', 7, 78, 'The arcade cabinets', 'slots', 'An old cabinet. Five spins.', 'Jackpot lights.'),
+    S_('d4', 34, 25, 'The DJ booth', 'memory', 'Match the records.', 'The DJ plays: Picture abhi baaki hai.') ] },
+  vr: { act: 1, name: 'VR Suite', img: 'city-vr', pin: [79.5, 56.5], intro: 'Players in headsets. None of them blinks: they are being scanned.', spots: [
+    S_('v1', 78, 60, 'The headsets', 'memory', 'Inside the headset, scenes flash. Match them.', 'The headset shows you the vault.'),
+    S_('v2', 35, 48, 'The green tables', 'quiz', 'The tables quiz you on his films.', 'The players look up.'),
+    S_('v3', 40, 14, 'The aquarium', 'dive', 'The tank runs behind the suite. Dive.', 'Crowns from the deep.') ] },
+  vault: { act: 1, name: 'The Trophy Vault', img: 'city-vault', pin: [59.5, 84], intro: 'Hundreds of stolen faces, framed like trophies.', spots: [
+    S_('t1', 82, 57, 'The vault', 'code', 'The vault\'s lock.', 'Inside: a keycard marked DOME.'),
+    S_('t2', 41, 55, 'The long table', 'memory', 'Twelve place cards. Match them.', 'The buyers\' list is under the plates.'),
+    S_('t3', 61, 55, 'The round table', 'quiz', 'A chessboard and a film quiz.', 'Checkmate.') ] },
+  aerial: { act: 2, name: 'The approach', img: 'dome-aerial', intro: 'A glass dome above the snowline. The faces are kept here.', spots: [
+    S_('a1', 54.4, 22, 'The helicopter', 'catcher', 'The helicopter is leaving. Catch the King to get on.', 'You land on the helipad.'),
+    S_('a2', 17, 79, 'The frozen lake', 'sneak', 'Cross the ice under the searchlights.', 'You reach the dome\'s shadow.'),
+    S_('a3', 47, 92, 'The rock', 'quiz', 'Wait on the rock. Pass the time with his films.', 'You count the guards: twelve.') ] },
+  arrival: { act: 2, name: 'The door', img: 'dome-arrival', intro: 'One glass door. One guard.', spots: [
+    S_('r1', 50, 83, 'The door', 'code', 'The keypad on the glass door.', '"Welcome back, sir."'),
+    S_('r2', 50.5, 34, 'The big screen', 'quiz', 'The screen counts faces like shares. Answer to switch it off.', 'The screen goes dark.'),
+    S_('r3', 33, 63, 'The upper deck', 'sneak', 'Slip past the deck lights.', 'Nobody saw you.') ] },
+  panorama: { act: 2, name: 'Inside the dome', img: 'dome-panorama', intro: 'Library, lab, waterfall, residence. All of it built on stolen faces.', spots: [
+    S_('h1', 9, 63, 'The library', 'quiz', 'The librarian quizzes you on his films.', 'The Archive door opens.'),
+    S_('h2', 33, 41, 'The lab screens', 'memory', 'Match the screens.', 'The lab door slides open.'),
+    S_('h3', 60.5, 40, 'The waterfall', 'dive', 'Dive under the waterfall.', 'Behind the water: the control room.'),
+    S_('h4', 49, 87, 'The crates', 'catcher', 'Crates of faces roll past. Catch the King.', 'You pulled one crate off the line.'),
+    S_('h5', 87, 77, 'The residence stairs', 'sneak', 'The stairs are lit. Creep up.', 'You are on the residence floor.') ] },
+  archive: { act: 2, name: 'The Archive', img: 'dome-archive', intro: 'Every famous face, copied into a figure. One shelf is empty: NEXT, THE FANS.', spots: [
+    S_('k1', 50, 32, 'The pyramid', 'quiz', 'The pyramid asks about his films.', 'The pyramid turns gold.'),
+    S_('k2', 50, 12, 'The moon', 'slots', 'A fake moon with a slot machine in it. Five spins.', 'The moon lights up.'),
+    S_('k3', 10, 47, 'The empty shelf', 'memory', 'Match the figures.', 'The shelf stays empty. Not you.'),
+    S_('k4', 90, 86, 'The figures', 'catcher', 'The figures come alive. Catch the King.', 'The figures freeze.') ] },
+  lab: { act: 2, name: 'The Lab', img: 'dome-lab', intro: 'A fan\'s holiday photo becomes a stolen face in eleven seconds.', spots: [
+    S_('l1', 50, 83, 'The holo-tables', 'code', 'The copy machine\'s code.', 'You have the machine\'s code.'),
+    S_('l2', 93, 55, 'The server racks', 'memory', 'Match the city racks.', 'Mumbai\'s rack goes cold.'),
+    S_('l3', 22, 65, 'The drone', 'catcher', 'The drone photographs crowds. Catch the King before it does.', 'The drone falls.'),
+    S_('l4', 50, 46, 'The window', 'quiz', 'A painted city. A film quiz.', 'The paint peels.') ] },
+  residence: { act: 2, name: 'The Residence', img: 'dome-residence', intro: 'The owner collects what he cannot do.', spots: [
+    S_('e1', 88, 60, 'The telescope', 'memory', 'The telescope shows the broadcast tower. Match what you see.', 'You found the tower.'),
+    S_('e2', 50, 76, 'The fireplace', 'slots', 'Five spins by the fire.', 'The buyers\' list burns.'),
+    S_('e3', 6, 7, 'The guitars', 'catcher', 'Strings snap. Catch the King.', 'The music stops.'),
+    S_('e4', 50, 38, 'The glass lift', 'code', 'The lift goes below zero. It wants a code.', 'The lift drops to the Hive.') ] },
+  hive: { act: 3, name: 'The Hive', img: 'dome-hive', intro: 'Pods, thousands of them, each holding a fan\'s face.', spots: [
+    S_('x1', 50.5, 83, 'The console', 'code', 'RELEASE ALL needs a code.', 'The console accepts.'),
+    S_('x2', 15, 60, 'The pods', 'catcher', 'Tap the King of Hearts to open the pods.', 'Faces fly home.'),
+    S_('x3', 50, 7.5, 'The skylight', 'sneak', 'Creep across the skylight.', 'The helicopter waits.'),
+    S_('x4', 75, 70, 'The guards', 'fight', 'Two guards. Knock them down.', 'The guards stay down.') ] },
+  control: { act: 3, name: 'The control room', img: 'dome-waterfall', intro: 'The broadcast sends copies to every country on the map.', spots: [
+    S_('w1', 54, 44, 'The world map', 'final', 'Two trials to switch off the broadcast.', 'The map goes dark, country by country.'),
+    S_('w2', 31, 57.5, 'The waterfall', 'dive', 'The machine\'s cooling water. Dive.', 'The machine overheats.'),
+    S_('w3', 77, 62.5, 'The tanks', 'memory', 'Faces grown like plants. Match them.', 'The tanks drain.'),
+    S_('w4', 53, 92, 'The scientists', 'quiz', 'The scientists only ever asked one question. You ask five.', 'They put down their tablets.') ] }
 };
 var ORDER = ['gate', 'casino', 'pit', 'den', 'vr', 'vault', 'aerial', 'arrival', 'panorama', 'archive', 'lab', 'residence', 'hive', 'control'];
+var ACT_LAST = { vault: 1, residence: 2, control: 3 };
 var ACT_END = {
-  1: ['Act I complete', 'You have the keycard and the buyers\' list. Every name points to one place: a glass dome above the snowline.', 'aerial', 'casino'],
+  1: ['Act I complete', 'You have the keycard and the buyers\' list. Every name points to a glass dome above the snowline.', 'aerial', 'casino'],
   2: ['Act II complete', 'The lift goes down below zero, into the Hive where the stolen faces are kept.', 'hive', 'dome'],
   3: ['Every face goes home', 'The pods are empty, the broadcast is off, and the fans\' faces are back where they belong. Including yours.', null, 'throne']
 };
-function ck() { try { var s = JSON.parse(localStorage.getItem(CK_KEY) || 'null'); if (s && s.v === 1) return s; } catch (e) {} return { v: 1, scene: 'gate', open: ['gate'], items: [], seen: {}, games: {}, acts: {} }; }
+function ck() { try { var s = JSON.parse(localStorage.getItem(CK_KEY) || 'null'); if (s && s.v === 2) return s; } catch (e) {} return fresh(); }
+function fresh() { return { v: 2, scene: 'gate', open: ['gate'], won: {}, acts: {}, points: 0 }; }
 function ckSave(s) { try { localStorage.setItem(CK_KEY, JSON.stringify(s)); } catch (e) {} }
 var S = ck(), stopGame = null;
-function has(i) { return S.items.indexOf(i) >= 0; }
-function totalSpots() { return ORDER.reduce(function (n, k) { return n + SCENES[k].spots.length; }, 0); }
-function seenCount() { return Object.keys(S.seen).length; }
+function allSpots() { return ORDER.reduce(function (n, k) { return n + SCENES[k].spots.length; }, 0); }
+function wonCount(k) { return k ? SCENES[k].spots.filter(function (sp) { return S.won[sp.id]; }).length : Object.keys(S.won).length; }
 function hud() {
   var s = STARKS.get(); $('bal').textContent = fmt(s.balance); $('tier').textContent = STARKS.tier(s.balance);
-  $('cleared').textContent = seenCount() + ' / ' + totalSpots();
-  $('actNow').textContent = ACTS[SCENES[S.scene].act].split(' · ')[0];
+  $('cleared').textContent = wonCount() + ' / ' + allSpots();
+  $('actNow').textContent = fmt(S.points);
 }
 document.addEventListener('starks', hud);
 try { var mine = JSON.parse(localStorage.getItem('amkh-posters') || '[]'); if (mine.length) $('avatar').src = mine[0].img; } catch (e) {}
+function nextOf(k) { var i = ORDER.indexOf(k); return ORDER[i + 1] || null; }
 
 function show(id, quiet) {
   if (stopGame) { stopGame(); stopGame = null; }
-  closePanels();
+  closePanels(); $('ckPlay').classList.remove('on'); $('ckGame').classList.remove('playing');
   var sc = SCENES[id]; S.scene = id; if (S.open.indexOf(id) < 0) S.open.push(id); ckSave(S);
   $('ckAct').textContent = ACTS[sc.act]; $('ckName').textContent = sc.name;
-  var v = $('ckView'); v.classList.toggle('plan', !!sc.plan);
+  var v = $('ckView');
   v.innerHTML = '<div class="ck-pic" id="ckPic"><img src="' + SC + sc.img + '.webp" alt="' + sc.name + '" id="ckImg"></div>';
   var pic = $('ckPic');
   $('ckImg').onload = function () { pic.style.setProperty('--r', this.naturalWidth / this.naturalHeight); v.scrollLeft = Math.max(0, (pic.offsetWidth - v.clientWidth) / 2); };
   sc.spots.forEach(function (sp, i) {
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'hs' + (S.seen[sp.id] ? ' seen' : '') + (sp.need && !has(sp.need) ? ' locked' : '');
-    b.style.left = sp.x + '%'; b.style.top = sp.y + '%'; b.setAttribute('aria-label', sp.label);
-    b.innerHTML = '<i>' + (i + 1) + '</i><span>' + sp.label + '</span>' + (sp.game ? '<em class="play">PLAY</em>' : '');
-    if (sp === nextSpot(sc)) b.classList.add('next');
-    b.onclick = function () { spot(sc, sp); };
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'hs' + (S.won[sp.id] ? ' seen' : '');
+    b.style.left = sp.x + '%'; b.style.top = sp.y + '%'; b.setAttribute('aria-label', (i + 1) + ': ' + sp.label + ', ' + KIND[sp.game]);
+    b.innerHTML = '<i>' + (S.won[sp.id] ? '★' : i + 1) + '</i><em class="play">' + KIND[sp.game] + '</em><span>' + sp.label + '</span>';
+    b.onclick = function () { play(sc, sp); };
     pic.appendChild(b);
   });
-  strip({ say: [(quiet && seenCount() ? 'Welcome back. ' : '') + 'You are in ' + sc.name + '. Tap the numbered spots in the picture. The one that pulses moves the story on; spots marked PLAY open a game.'] });
-  hud(); goal();
+  status(); hud();
   if (!quiet) $('ckGame').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-function key(sp) { return !!(sp.give || sp.unlock || sp.game || sp.endAct || sp.go); }
-function done(sp) { if (sp.game) return !!S.games[sp.game] && (!sp.give || [].concat(sp.give).every(has)); return !!S.seen[sp.id]; }
-function nextSpot(sc) {
-  var open = sc.spots.filter(function (sp) { return key(sp) && !done(sp) && (!sp.need || has(sp.need)) && (!sp.needUnlock || S.open.indexOf(sp.needUnlock) >= 0); });
-  return open[0] || null;
-}
-function goal() {
-  var sc = SCENES[S.scene], n = nextSpot(sc), el = $('ckGoal');
-  if (!el) return;
-  if (n) el.innerHTML = '<b>Your move</b> Tap <i>' + (sc.spots.indexOf(n) + 1) + '</i> ' + n.label + (n.game ? ' · a game starts there' : '');
-  else {
-    var nx = ORDER.filter(function (k) { return S.open.indexOf(k) >= 0 && k !== S.scene && nextSpot(SCENES[k]); })[0];
-    el.innerHTML = nx ? '<b>Your move</b> Open the Map and go to ' + SCENES[nx].name : '<b>Your move</b> Explore the other spots, or open the Map';
+function status() {
+  var sc = SCENES[S.scene], w = wonCount(S.scene), n = sc.spots.length, nx = nextOf(S.scene), el = $('ckGoal');
+  var cleared = w >= Math.min(NEED, n);
+  el.innerHTML = '<b>Pick a number</b> Every number is a game. Win ' + Math.min(NEED, n) + ' here to open ' + (ACT_LAST[S.scene] ? 'the next act' : nx ? SCENES[nx].name : 'the end') + '. <span class="tally">Won here: ' + w + ' / ' + n + '</span>';
+  var btns = [];
+  if (cleared) {
+    if (ACT_LAST[S.scene]) btns.push([S.acts[ACT_LAST[S.scene]] ? 'Act complete · see the ending' : 'Finish the act →', function () { actEnd(ACT_LAST[S.scene]); }]);
+    else if (nx) btns.push(['Next room: ' + SCENES[nx].name + ' →', function () { show(nx); }]);
   }
-  [].forEach.call($('ckView').querySelectorAll('.hs'), function (b, i) { b.classList.toggle('next', sc.spots[i] === n); });
+  strip({ who: sc.name, say: [sc.intro], buttons: btns });
 }
 function strip(o) {
   var el = $('ckStrip');
@@ -503,78 +489,57 @@ function strip(o) {
     var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ' + (bt[2] || 'btn-red'); b.textContent = bt[0]; b.onclick = bt[1]; $('ckBtns').appendChild(b);
   });
 }
-function giveItems(sp) {
-  var got = [].concat(sp.give || []).filter(function (i) { return !has(i); });
-  got.forEach(function (i) { S.items.push(i); STARKS.earn('chapter', 50, 'Chehre ki Chori · ' + ITEMS[i][0], 'chehre-item-' + i); });
-  return got;
-}
-function after(sc, sp, lines) {
-  var got = giveItems(sp);
-  if (sp.unlock && S.open.indexOf(sp.unlock) < 0) S.open.push(sp.unlock);
-  S.seen[sp.id] = 1; ckSave(S); markSeen(sp);
-  var say = lines.slice();
-  got.forEach(function (i) { say.push('<span class="got">In your dossier: ' + ITEMS[i][0] + '</span>'); });
-  var btns = [];
-  if (sp.endAct) { btns.push(['Continue', function () { actEnd(sp.endAct); }]); }
-  else if (sp.go) btns.push([sp.goLabel + ' →', function () { show(sp.go); }]);
-  strip({ who: sp.who || sp.label, say: say, buttons: btns });
-  hud(); goal();
-}
-function markSeen(sp) { [].forEach.call($('ckView').querySelectorAll('.hs'), function (b) { if (b.getAttribute('aria-label') === sp.label) { b.classList.add('seen'); b.classList.toggle('locked', !!(sp.need && !has(sp.need))); } }); }
-function spot(sc, sp) {
-  if (sp.need && !has(sp.need)) { strip({ who: sp.label, say: sp.needSay.concat(['<span class="need">Needs: ' + ITEMS[sp.need][0] + '</span>']) }); return; }
-  if (sp.needUnlock && S.open.indexOf(sp.needUnlock) < 0) { strip({ who: sp.label, say: sp.lockedSay }); return; }
-  if (sp.choices) {
-    strip({ who: sp.who || sp.label, say: sp.say, buttons: sp.choices.map(function (c) { return [c[0], function () { after(sc, sp, [c[1]]); }, 'btn-line']; }) });
-    return;
-  }
-  if (sp.game) {
-    var done = S.games[sp.game] && (sp.give ? [].concat(sp.give).every(has) : true);
-    var btns = [[(done ? 'Play again' : 'Play') + ' →', function () { encounter(sc, sp); }]];
-    if (done && sp.go) btns.push([sp.goLabel + ' →', function () { show(sp.go); }, 'btn-line']);
-    strip({ who: sp.who || sp.label, say: sp.say, buttons: btns });
-    return;
-  }
-  after(sc, sp, sp.say);
-}
-function encounter(sc, sp) {
-  var ov = $('ckPlay'); ov.classList.add('on'); $('ckPlayT').textContent = sp.label + ' · ' + sc.name;
+function play(sc, sp) {
+  if (stopGame) { stopGame(); stopGame = null; }
+  closePanels();
+  var ov = $('ckPlay'); ov.classList.add('on'); $('ckGame').classList.add('playing');
+  $('ckPlayT').innerHTML = '<small>' + sc.name + ' · ' + (sc.spots.indexOf(sp) + 1) + '</small>' + sp.label + ' <em>' + KIND[sp.game] + '</em>';
   var a = $('arena'); a.innerHTML = '';
+  var lead = document.createElement('p'); lead.className = 'ck-lead'; lead.textContent = sp.say;
+  var box = document.createElement('div'); a.appendChild(lead); a.appendChild(box);
   ov.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  stopGame = GAMES[sp.game](a, function (won, starks, note) {
+  stopGame = GAMES[sp.game](box, function (won, pts, note) {
     stopGame = null;
-    var box = document.createElement('div'); box.className = 'ck-res';
+    var res = document.createElement('div'); res.className = 'ck-res';
+    var r = document.createElement('div'); r.className = 'row';
+    function btn(t, f, c) { var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ' + (c || 'btn-red'); b.textContent = t; b.onclick = f; r.appendChild(b); }
     if (won) {
-      var first = !S.games[sp.game]; S.games[sp.game] = 1; ckSave(S);
-      var gotS = STARKS.earn('lair', starks, 'Chehre ki Chori · ' + sp.label + (note ? ' · ' + note : ''));
-      if (first) STARKS.earn('firstclear', 100, 'First win · ' + sp.label, 'chehre-game-' + sp.game);
-      goal(); box.innerHTML = '<p class="big">' + (sp.win || 'You win.') + '</p><p class="say">' + (gotS ? '+' + fmt(gotS) + ' STARKS' : 'Today\'s STARKS for wins are used up; the story goes on.') + (first ? ' · +100 first win' : '') + '</p>';
-      var r = document.createElement('div'); r.className = 'row';
-      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn btn-red'; b.textContent = 'Back to ' + sc.name + ' →';
-      b.onclick = function () { ov.classList.remove('on'); a.innerHTML = ''; if (sp.finale) { S.seen[sp.id] = 1; ckSave(S); actEnd(3); } else { after(sc, sp, [sp.win]); } };
-      r.appendChild(b); box.appendChild(r);
+      var first = !S.won[sp.id]; var best = Math.max(S.won[sp.id] || 0, pts);
+      S.points += first ? pts : Math.max(0, pts - (S.won[sp.id] || 0)); S.won[sp.id] = best; ckSave(S);
+      var got = STARKS.earn('lair', pts, 'King\'s Lairs · ' + sp.label + ' · ' + KIND[sp.game]);
+      res.innerHTML = '<p class="big">+' + fmt(pts) + ' points</p><p class="say">' + sp.win + (note ? ' · ' + note : '') + '</p><p class="say">' + (got ? '+' + fmt(got) + ' STARKS' : 'Today\'s STARKS for games are used up; your points still count.') + '</p>';
+      var key = ORDER.filter(function (k) { return SCENES[k] === sc; })[0], nx = nextOf(key), w = wonCount(key);
+      if (first && w === Math.min(NEED, sc.spots.length)) {
+        if (nx && !ACT_LAST[key] && S.open.indexOf(nx) < 0) { S.open.push(nx); ckSave(S); }
+        res.innerHTML += '<p class="ck-open">' + (ACT_LAST[key] ? 'Act cleared!' : 'Room cleared! ' + (nx ? SCENES[nx].name + ' is open.' : '')) + '</p>';
+      }
+      btn('Pick another number', function () { back(); });
+      if (w >= Math.min(NEED, sc.spots.length)) {
+        if (ACT_LAST[key]) btn('Finish the act →', function () { actEnd(ACT_LAST[key]); }, 'btn-line');
+        else if (nx) btn('Next room: ' + SCENES[nx].name + ' →', function () { show(nx); }, 'btn-line');
+      }
     } else {
-      box.innerHTML = '<p class="big">Not this time</p><p class="say">' + (sp.lose || note || 'Try again.') + '</p>';
-      var r2 = document.createElement('div'); r2.className = 'row';
-      var t = document.createElement('button'); t.type = 'button'; t.className = 'btn btn-red'; t.textContent = 'Try again'; t.onclick = function () { encounter(sc, sp); }; r2.appendChild(t);
-      var bk = document.createElement('button'); bk.type = 'button'; bk.className = 'btn btn-line'; bk.textContent = 'Back to the room'; bk.onclick = function () { ov.classList.remove('on'); a.innerHTML = ''; }; r2.appendChild(bk);
-      box.appendChild(r2);
+      res.innerHTML = '<p class="big">Not this time</p><p class="say">' + (note || 'Try again.') + '</p>';
+      btn('Try again', function () { play(sc, sp); });
+      btn('Pick another number', function () { back(); }, 'btn-line');
     }
-    a.appendChild(box); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    res.appendChild(r); a.appendChild(res); res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    hud();
   }) || null;
 }
+function back() { if (stopGame) { stopGame(); stopGame = null; } $('ckPlay').classList.remove('on'); $('ckGame').classList.remove('playing'); $('arena').innerHTML = ''; show(S.scene); }
 function actEnd(n) {
   var e = ACT_END[n]; var first = !S.acts[n]; S.acts[n] = 1;
   if (e[2] && S.open.indexOf(e[2]) < 0) S.open.push(e[2]);
   ckSave(S);
-  var got = first ? STARKS.earn(n === 3 ? 'verdict' : 'throne', n === 3 ? 750 : 300, 'Chehre ki Chori · ' + e[0], 'chehre-act-' + n) : 0;
-  var ov = $('ckPlay'); ov.classList.add('on'); $('ckPlayT').textContent = ACTS[n];
+  var got = first ? STARKS.earn(n === 3 ? 'verdict' : 'throne', n === 3 ? 750 : 300, 'King\'s Lairs · ' + e[0], 'chehre-act-' + n) : 0;
+  var ov = $('ckPlay'); ov.classList.add('on'); $('ckGame').classList.add('playing'); $('ckPlayT').innerHTML = '<small>' + ACTS[n] + '</small>' + e[0];
   var a = $('arena');
-  a.innerHTML = '<div class="ck-end"><p class="eyebrow">' + ACTS[n] + '</p><p class="big">' + e[0] + '</p><p class="say">' + e[1] + '</p>' + (got ? '<p class="say">+' + fmt(got) + ' STARKS</p>' : '') +
+  a.innerHTML = '<div class="ck-end"><p class="big">' + e[0] + '</p><p class="say">' + e[1] + '</p><p class="say">Your points so far: ' + fmt(S.points) + (got ? ' · +' + fmt(got) + ' STARKS' : '') + '</p>' +
     (n === 3 ? '<p class="ck-line">Your face. Not his. Not theirs.</p>' : '') + '<div class="row" id="ckEndRow"></div></div>';
   var row = $('ckEndRow');
   function btn(t, f, c) { var b = document.createElement(typeof f === 'string' ? 'a' : 'button'); b.className = 'btn ' + (c || 'btn-red'); b.textContent = t; if (typeof f === 'string') b.href = f; else { b.type = 'button'; b.onclick = f; } row.appendChild(b); }
-  if (e[2]) btn('Next: ' + ACTS[n + 1] + ' →', function () { ov.classList.remove('on'); a.innerHTML = ''; show(e[2]); });
+  if (e[2]) btn('Next: ' + ACTS[n + 1] + ' →', function () { show(e[2]); });
   else { btn('Join the Inquilaab →', '../inquilab/'); btn('Make a poster with your face', '../create/', 'btn-line'); btn('Billboard →', '../fan-billboard/', 'btn-line'); }
   a.firstChild.appendChild(stillBox({ id: e[3] }));
   ov.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -583,29 +548,105 @@ function actEnd(n) {
 function closePanels() { ['ckMap', 'ckDos'].forEach(function (k) { $(k).classList.remove('on'); }); }
 function drawMapPanel() {
   var p = $('ckMapBody'), act1 = ORDER.filter(function (k) { return SCENES[k].act === 1; });
+  function lab(k) { return SCENES[k].name + ' · ' + wonCount(k) + '/' + SCENES[k].spots.length; }
   p.innerHTML = '<p class="eyebrow">Act I · The Underground Secret City</p><div class="ck-plan"><img src="' + SC + 'city-floorplan.webp" alt="Master Floor Plan">' +
-    act1.map(function (k) { var sc = SCENES[k], open = S.open.indexOf(k) >= 0; return '<button type="button" class="pin' + (open ? '' : ' shut') + (S.scene === k ? ' here' : '') + '" style="left:' + sc.pin[0] + '%;top:' + sc.pin[1] + '%" data-k="' + k + '"' + (open ? '' : ' disabled') + '><i>' + (act1.indexOf(k) + 1) + '</i><span>' + sc.name + '</span></button>'; }).join('') + '</div>' +
+    act1.map(function (k) { var sc = SCENES[k], open = S.open.indexOf(k) >= 0; return '<button type="button" class="pin' + (open ? '' : ' shut') + (S.scene === k ? ' here' : '') + '" style="left:' + sc.pin[0] + '%;top:' + sc.pin[1] + '%" data-k="' + k + '"' + (open ? '' : ' disabled') + '><i>' + (act1.indexOf(k) + 1) + '</i><span>' + (open ? lab(k) : sc.name + ' · locked') + '</span></button>'; }).join('') + '</div>' +
     '<p class="eyebrow" style="margin-top:16px">Acts II and III · The Mountain Dome</p><div class="ck-dome">' +
-    ORDER.filter(function (k) { return SCENES[k].act > 1; }).map(function (k) { var sc = SCENES[k], open = S.open.indexOf(k) >= 0; return '<button type="button" class="dt' + (open ? '' : ' shut') + (S.scene === k ? ' here' : '') + '" data-k="' + k + '"' + (open ? '' : ' disabled') + '><img src="' + SC + sc.img + '-t.webp" alt="" loading="lazy"><span>' + (open ? sc.name : 'Locked') + '</span></button>'; }).join('') + '</div>';
+    ORDER.filter(function (k) { return SCENES[k].act > 1; }).map(function (k) { var sc = SCENES[k], open = S.open.indexOf(k) >= 0; return '<button type="button" class="dt' + (open ? '' : ' shut') + (S.scene === k ? ' here' : '') + '" data-k="' + k + '"' + (open ? '' : ' disabled') + '><img src="' + SC + sc.img + '-t.webp" alt="" loading="lazy"><span>' + (open ? lab(k) : 'Locked') + '</span></button>'; }).join('') + '</div>';
   [].forEach.call(p.querySelectorAll('[data-k]'), function (b) { b.onclick = function () { show(b.dataset.k); }; });
 }
-function drawDossier() {
+function drawScores() {
   var b = $('ckDosBody');
-  b.innerHTML = S.items.length ? '<ul class="dos">' + S.items.map(function (i) { return '<li><b>' + ITEMS[i][0] + '</b><span>' + ITEMS[i][1] + '</span></li>'; }).join('') + '</ul>' : '<p class="say">Nothing yet. Things you find in the rooms land here.</p>';
-  b.innerHTML += '<p class="say" style="margin-top:12px">Spots explored: ' + seenCount() + ' of ' + totalSpots() + '.</p>';
+  b.innerHTML = '<p class="say">Points: <b>' + fmt(S.points) + '</b> · games won: ' + wonCount() + ' of ' + allSpots() + '</p><ul class="dos">' +
+    ORDER.filter(function (k) { return S.open.indexOf(k) >= 0; }).map(function (k) { return '<li><b>' + SCENES[k].name + '</b><span>' + SCENES[k].spots.map(function (sp, i) { return (i + 1) + ' ' + KIND[sp.game] + (S.won[sp.id] ? ' ★ ' + fmt(S.won[sp.id]) : ''); }).join(' · ') + '</span></li>'; }).join('') + '</ul>';
 }
 function ckInit() {
   $('ckMapBtn').onclick = function () { var on = !$('ckMap').classList.contains('on'); closePanels(); if (on) { drawMapPanel(); $('ckMap').classList.add('on'); } };
-  $('ckDosBtn').onclick = function () { var on = !$('ckDos').classList.contains('on'); closePanels(); if (on) { drawDossier(); $('ckDos').classList.add('on'); } };
+  $('ckDosBtn').onclick = function () { var on = !$('ckDos').classList.contains('on'); closePanels(); if (on) { drawScores(); $('ckDos').classList.add('on'); } };
   var armed = 0;
   $('ckRestart').onclick = function () {
     if (!armed) { armed = 1; $('ckRestart').textContent = 'Tap again to start over'; setTimeout(function () { armed = 0; $('ckRestart').textContent = 'Start over'; }, 4000); return; }
-    armed = 0; $('ckRestart').textContent = 'Start over';
-    S = { v: 1, scene: 'gate', open: ['gate'], items: [], seen: {}, games: {}, acts: {} }; ckSave(S); show('gate');
+    armed = 0; $('ckRestart').textContent = 'Start over'; S = fresh(); ckSave(S); show('gate');
   };
   $('ckStart').onclick = function () { show(S.scene || 'gate'); };
-  $('ckStart').textContent = seenCount() ? 'Continue: ' + SCENES[S.scene].name + ' →' : 'Start the story →';
+  $('ckBack').onclick = function () { back(); };
+  $('ckStart').textContent = wonCount() ? 'Continue: ' + SCENES[S.scene].name + ' →' : 'Play now →';
   show(S.scene || 'gate', true);
+}
+
+/* ---- quick games for the numbers ---- */
+function slots(a, done) {
+  var SYM = ['K♥', '♛', '★', '7', 'Q♠'], spins = 5, total = 0, n = 0, stopped = false;
+  a.innerHTML = '<p class="say">Five spins. Three of a kind pays 150, a pair pays 30. Reach 90 to win.</p><div class="reels" id="rl"><b>?</b><b>?</b><b>?</b></div><p class="big" id="sl">0</p><div class="row"><button class="btn btn-red" id="spin" type="button">Spin (5 left)</button></div>';
+  $('spin').onclick = function () {
+    if (stopped || n >= spins) return; n++; $('spin').disabled = true;
+    var r = $('rl').children, t = 0, roll = setInterval(function () { [].forEach.call(r, function (x) { x.textContent = SYM[Math.floor(Math.random() * 5)]; }); if (++t > 9) { clearInterval(roll); land(); } }, 70);
+    function land() {
+      if (stopped) return;
+      var v = [0, 1, 2].map(function () { return SYM[Math.floor(Math.random() * 5)]; });
+      [].forEach.call(r, function (x, i) { x.textContent = v[i]; x.className = v[i] === 'K♥' ? 'r' : ''; });
+      var pay = v[0] === v[1] && v[1] === v[2] ? 150 : (v[0] === v[1] || v[1] === v[2] || v[0] === v[2]) ? 30 : 0;
+      total += pay; $('sl').textContent = total + (pay ? '  (+' + pay + ')' : '');
+      if (n >= spins || total >= 90) { stopped = true; done(total >= 90, total + (spins - n) * 20, total + ' on the reels'); }
+      else { $('spin').disabled = false; $('spin').textContent = 'Spin (' + (spins - n) + ' left)'; }
+    }
+  };
+  return function () { stopped = true; };
+}
+function memory(a, done) {
+  var pics = ORDER.map(function (k) { return SCENES[k].img; }).filter(function (v, i, x) { return x.indexOf(v) === i; }).sort(function () { return Math.random() - 0.5; }).slice(0, 6);
+  var deck = pics.concat(pics).sort(function () { return Math.random() - 0.5; }), open = [], matched = 0, moves = 0, left = 60, stopped = false, lock = false;
+  a.innerHTML = '<p class="say">Find the six pairs in 60 seconds.</p><div class="timebar"><i id="mt" style="width:100%"></i></div><div class="mem" id="mm"></div><p class="msg" id="mg">Moves: 0</p>';
+  deck.forEach(function (p, i) {
+    var c = document.createElement('button'); c.type = 'button'; c.className = 'mc'; c.innerHTML = '<img src="' + SC + p + '-t.webp" alt="">';
+    c.onclick = function () {
+      if (stopped || lock || c.classList.contains('up')) return; c.classList.add('up'); open.push([c, p]);
+      if (open.length === 2) { moves++; $('mg').textContent = 'Moves: ' + moves; lock = true;
+        if (open[0][1] === open[1][1]) { open.forEach(function (x) { x[0].classList.add('ok'); }); open = []; lock = false; matched++; if (matched === 6) end(true); }
+        else setTimeout(function () { open.forEach(function (x) { x[0].classList.remove('up'); }); open = []; lock = false; }, 650); }
+    };
+    $('mm').appendChild(c);
+  });
+  var tm = setInterval(function () { if (stopped) return; left--; $('mt').style.width = (left / 60 * 100) + '%'; if (left <= 0) end(false); }, 1000);
+  function end(won) { if (stopped) return; stopped = true; clearInterval(tm); done(won, won ? 60 + left * 6 : matched * 10, won ? moves + ' moves, ' + left + 's left' : 'Time ran out with ' + matched + ' of 6 pairs.'); }
+  return function () { stopped = true; clearInterval(tm); };
+}
+function catcher(a, done) {
+  var left = 25, score = 0, stopped = false, timers = [];
+  a.innerHTML = '<p class="say">Tap only the King of Hearts. +1 for each King, −1 for any other card. Reach 10 in 25 seconds.</p><div class="timebar"><i id="ct" style="width:100%"></i></div><div class="catch" id="cg"></div><p class="big" id="cs">0</p><div class="row"><button class="btn btn-red" id="cgo" type="button">Start</button></div>';
+  for (var i = 0; i < 12; i++) { var c = document.createElement('button'); c.type = 'button'; c.className = 'cc'; $('cg').appendChild(c); }
+  var cells = $('cg').children;
+  [].forEach.call(cells, function (c) { c.onclick = function () { if (stopped || !c.dataset.card) return; var king = c.dataset.card === 'K♥'; score += king ? 1 : -1; c.classList.add(king ? 'hit' : 'miss'); c.dataset.card = ''; setTimeout(function () { c.textContent = ''; c.className = 'cc'; }, 160); $('cs').textContent = score; }; });
+  $('cgo').onclick = function () {
+    $('cgo').remove();
+    timers.push(setInterval(function () {
+      if (stopped) return;
+      var c = cells[Math.floor(Math.random() * 12)]; if (c.dataset.card) return;
+      var card = Math.random() < 0.45 ? 'K♥' : ['Q♠', 'J♣', '10♦', 'A♠', 'K♣'][Math.floor(Math.random() * 5)];
+      c.dataset.card = card; c.textContent = card; c.className = 'cc on' + (card.indexOf('♥') >= 0 || card.indexOf('♦') >= 0 ? ' r' : '');
+      setTimeout(function () { if (c.dataset.card === card) { c.dataset.card = ''; c.textContent = ''; c.className = 'cc'; } }, 950);
+    }, 420));
+    timers.push(setInterval(function () { if (stopped) return; left--; $('ct').style.width = (left / 25 * 100) + '%'; if (left <= 0) { stopped = true; timers.forEach(clearInterval); done(score >= 10, Math.max(0, score) * 12, score + ' Kings caught'); } }, 1000));
+  };
+  return function () { stopped = true; timers.forEach(clearInterval); };
+}
+function code(a, done) {
+  var secret = [0, 1, 2].map(function () { return 1 + Math.floor(Math.random() * 6); }), guess = [], tries = 0, MAX = 7, stopped = false;
+  a.innerHTML = '<p class="say">Three digits, each from 1 to 6. After each guess: ● = right digit, right place; ○ = right digit, wrong place. Seven tries.</p><div class="code-in" id="ci"><b></b><b></b><b></b></div><div class="pad" id="pd"></div><div class="code-log" id="cl"></div>';
+  for (var d = 1; d <= 6; d++) (function (d) { var b = document.createElement('button'); b.type = 'button'; b.className = 'choice'; b.textContent = d; b.onclick = function () { if (stopped || guess.length >= 3) return; guess.push(d); paint(); if (guess.length === 3) setTimeout(check, 200); }; $('pd').appendChild(b); })(d);
+  var del = document.createElement('button'); del.type = 'button'; del.className = 'choice'; del.textContent = '⌫'; del.onclick = function () { guess.pop(); paint(); }; $('pd').appendChild(del);
+  function paint() { [].forEach.call($('ci').children, function (x, i) { x.textContent = guess[i] || ''; }); }
+  function check() {
+    if (stopped) return; tries++;
+    var exact = 0, near = 0, s = secret.slice(), g = guess.slice();
+    for (var i = 0; i < 3; i++) if (g[i] === s[i]) { exact++; s[i] = g[i] = 0; }
+    for (var j = 0; j < 3; j++) if (g[j]) { var k = s.indexOf(g[j]); if (k >= 0) { near++; s[k] = 0; } }
+    var row = document.createElement('div'); row.innerHTML = '<span>' + guess.join(' ') + '</span><span class="pegs">' + '●'.repeat(exact) + '○'.repeat(near) + '</span>'; $('cl').prepend(row);
+    guess = []; paint();
+    if (exact === 3) { stopped = true; done(true, (MAX + 1 - tries) * 40, 'Cracked in ' + tries + (tries === 1 ? ' try' : ' tries')); }
+    else if (tries >= MAX) { stopped = true; done(false, 0, 'The code was ' + secret.join(' ') + '.'); }
+  }
+  return function () { stopped = true; };
 }
 
 /* ---------- THE CONTRACT: the story that runs through the six lairs ---------- */
@@ -867,7 +908,7 @@ function casino(a, done) {
 
 /* ---------- 02 Mountain Dome: sneak past the snow villain's searchlights ---------- */
 function dome(a, done) {
-  a.innerHTML = '<p class="say">The ice in front of the dome. Hold the button (or the space bar) to creep across the ice. Freeze whenever a searchlight is on you. A second light wakes up halfway. Three lives; checkpoints every quarter.</p><div class="dome" id="dm"><div class="snow"></div><div class="beam" id="beam"></div><div class="beam b2" id="beam2"></div><div class="flag" style="left:25%"></div><div class="flag" style="left:50%"></div><div class="flag" style="left:75%"></div><div class="hero" id="hero"><img src="../assets/home/02-check-mate-fire.webp" alt="You"></div><img class="goal" src="../assets/studio/crown.png" alt="The crown"></div><div class="bar2"><i id="dprog"></i></div><div class="row"><button class="btn btn-red" id="move" type="button">Hold to move</button></div><p class="msg" id="dmsg">Lives: 3</p>';
+  a.innerHTML = '<p class="say">Hold the button (or the space bar) to creep across the ice. Freeze whenever a searchlight is on you. A second light wakes up halfway. Three lives; checkpoints every quarter.</p><div class="dome" id="dm"><div class="snow"></div><div class="beam" id="beam"></div><div class="beam b2" id="beam2"></div><div class="flag" style="left:25%"></div><div class="flag" style="left:50%"></div><div class="flag" style="left:75%"></div><div class="hero" id="hero"><img src="../assets/home/02-check-mate-fire.webp" alt="You"></div><img class="goal" src="../assets/studio/crown.png" alt="The crown"></div><div class="bar2"><i id="dprog"></i></div><div class="row"><button class="btn btn-red" id="move" type="button">Hold to move</button></div><p class="msg" id="dmsg">Lives: 3</p>';
   var x = 0, lives = 3, moving = false, t0 = performance.now(), raf, over = false, b = [{ x: 0, d: 1, s: 2.3 }, { x: 400, d: -1, s: 1.6 }];
   var dm = $('dm'), beams = [$('beam'), $('beam2')], hero = $('hero');
   function down(e) { if (e) e.preventDefault(); moving = true; }
@@ -912,7 +953,7 @@ function dome(a, done) {
 /* ---------- 03 Secret City: the Archive quiz ---------- */
 function city(a, done) {
   var Q_N = 5, LIMIT = 55;
-  a.innerHTML = '<p class="say">Under the moonlit glass, the Archive keeps every film he made before KING. Five questions, fifty-five seconds. Get four right to open the gate; the faster you are, the more STARKS you take.</p><div class="timebar" style="max-width:720px"><i id="qt" style="width:100%"></i></div><div class="quiz" id="qz"><p class="big" id="qq">The Archive</p><p class="say" id="qx">Press Begin when you are ready. The clock starts at once.</p></div><div class="choices" id="qc"></div><div class="row"><button class="btn btn-red" id="go" type="button">Begin</button></div><p class="msg" id="qm"></p>';
+  a.innerHTML = '<p class="say">Five questions on his films, fifty-five seconds. Get four right to win; the faster you are, the more points.</p><div class="timebar" style="max-width:720px"><i id="qt" style="width:100%"></i></div><div class="quiz" id="qz"><p class="big" id="qq">The Archive</p><p class="say" id="qx">Press Begin when you are ready. The clock starts at once.</p></div><div class="choices" id="qc"></div><div class="row"><button class="btn btn-red" id="go" type="button">Begin</button></div><p class="msg" id="qm"></p>';
   var films = [], qs = [], k = 0, right = 0, left = LIMIT, timer, lock = false, stopped = false;
   var SKIP = /narrator|guest|^hero$/i;
   fetch('../assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (d) {
@@ -961,7 +1002,7 @@ function city(a, done) {
 /* ---------- 04 The Pit: combo fight ---------- */
 function pit(a, done) {
   var ARROWS = [['←','ArrowLeft'],['↑','ArrowUp'],['↓','ArrowDown'],['→','ArrowRight']];
-  a.innerHTML = '<p class="say">The fighting pit. A combo flashes: punch it in, in order, before the bar runs out (keyboard arrows or the buttons). Land a combo and the brute loses health; miss and you take the hit. Knock him out before he knocks you out.</p>' +
+  a.innerHTML = '<p class="say">A combo flashes: punch it in, in order, before the bar runs out (keyboard arrows or the buttons). Land a combo and the brute loses health; miss and you take the hit. Knock him out before he knocks you out.</p>' +
     '<div class="fighters"><div><small>You</small><div class="hp" id="hpMe"></div></div><div><small>The brute</small><div class="hp foe" id="hpFoe"></div></div></div>' +
     '<div class="combo" id="cmb">READY</div><div class="timebar"><i id="tb"></i></div><div class="keys" id="ks"></div><div class="row"><button class="btn btn-red" id="fight" type="button">Fight</button></div><p class="msg" id="pm"></p>';
   var ks = $('ks');
@@ -1001,7 +1042,7 @@ function pit(a, done) {
 
 /* ---------- 05 Abyssal Den: dive past the Noctopus ---------- */
 function den(a, done) {
-  a.innerHTML = '<p class="say">The flooded den of the Noctopus. Steer with ← → (or drag / touch left and right). Collect crowns, dodge its red ink mines. Ten crowns in thirty seconds; three mines and you surface.</p><canvas class="den" id="cv" width="480" height="640"></canvas><div class="row"><button class="btn btn-red" id="dive" type="button">Dive</button></div><p class="msg" id="dmg2"></p>';
+  a.innerHTML = '<p class="say">Steer with ← → (or drag / touch left and right). Collect crowns, dodge its red ink mines. Ten crowns in thirty seconds; three mines and you surface.</p><canvas class="den" id="cv" width="480" height="640"></canvas><div class="row"><button class="btn btn-red" id="dive" type="button">Dive</button></div><p class="msg" id="dmg2"></p>';
   var cv = $('cv'), ctx = cv.getContext('2d'), W = 480, H = 640, px = W / 2, keys = {}, items = [], crowns = 0, hitsTaken = 0, t0 = 0, raf, running = false, stopped = false, last = 0;
   var crownImg = new Image(); crownImg.src = '../assets/studio/crown.png';
   var octo = new Image(); octo.src = '../assets/studio/noctopus.jpg'; octo.onload = function () { if (!running) intro(); };
