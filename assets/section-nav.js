@@ -2,7 +2,7 @@
 (function(){
   var me=document.currentScript, base=new URL('..',me.src).href;
   var GROUPS={
-    gallery:['The Gallery',[['gallery/','Images','Photos of him, one frame each','img'],['gallery/videos/','Videos','Songs, trailers, movie clips','vids']]],
+    gallery:['The Gallery',[['gallery/videos/','Videos','Songs, trailers, scenes, shows, awards','vids'],['gallery/','Images','Photos of him, one frame each','img']]],
     record:['On The Record',[['on-the-record/branded/','Branded','TV ads by brand + print ads','ads'],['on-the-record/video-interviews/','Video Interviews','TV, talks, speeches, press meets','vid'],['on-the-record/king-in-print/','King In Print','Interviews, articles, opinions, his words','txt']]]
   };
   var here=location.pathname.replace(/index\.html$/,'');
@@ -18,7 +18,7 @@
   var get=function(f){return fetch(base+'data/'+f,{cache:'no-store'}).then(function(r){return r.json();});};
   if(g==='gallery'){
     get('gallery.json').then(function(d){var n=(d.items||[]).length;set('img',n?fmt(n)+' photos':'Coming soon');}).catch(function(){});
-    set('vids','Coming next');
+    get('srk-videos.json').then(function(d){set('vids',fmt((d.items||[]).length)+' videos');}).catch(function(){});
   } else {
     get('srk-ads.json').then(function(d){set('ads',fmt((d.items||[]).length)+' ads · '+fmt((d.print_images||[]).length)+' print');}).catch(function(){});
     get('srk-interviews.json').then(function(d){set('vid',fmt((d.items||[]).length)+' videos');set('txt',fmt((d.text||[]).length)+' pieces');}).catch(function(){});
