@@ -61,7 +61,7 @@ VGrid({data:'../../data/srk-ads.json', grid:'#grid', stats:'#stats', chips:'#chi
     Object.keys(b).sort().forEach(function(k){var op=document.createElement('option');op.value=k;op.textContent=k+' ('+b[k]+')';bsel.appendChild(op);});
     return [[fmt(items.length),'ad videos'],[fmt(Object.keys(b).length),'brands'],[fmt(v),'views in total'],[fmt(o),'on brand channels']];}});
 bsel.addEventListener('change',function(){document.getElementById('q').dispatchEvent(new Event('input'));});
-fetch('../../data/srk-ads.json').then(function(r){return r.json();}).then(function(d){var e=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+fetch('../../data/srk-ads.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){var e=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
 document.getElementById('print').innerHTML=(d.print||[]).map(function(p){return '<li><a href="'+e(p.url)+'" target="_blank" rel="noopener"><small>'+e(p.kind)+' · '+e(p.outlet)+'</small><b>'+e(p.title)+'</b></a></li>';}).join('');});
 
 (function(){var e=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
@@ -69,7 +69,7 @@ var g=document.getElementById('pgrid'),sel=document.getElementById('pbrand'),L=[
 function draw(){var M=L.filter(function(p){return !sel.value||p.brand===sel.value;});document.getElementById('pcount').textContent=M.length+' print ads';
 g.innerHTML=M.map(function(p){return '<a href="'+e(p.src)+'" target="_blank" rel="noopener"><div class="fr"><img loading="lazy" referrerpolicy="no-referrer" src="'+e(p.img)+'" data-th="'+e(p.th||'')+'" alt="'+e(p.title)+'"></div><div class="b"><b>'+e(p.brand)+'</b><span>'+e(p.title)+'</span><small>'+e(p.host)+'</small></div></a>';}).join('')||'<p class="vg-empty">No print ads listed yet.</p>';
 [].forEach.call(g.querySelectorAll('img'),function(i){i.onerror=function(){if(i.dataset.th&&i.src!==i.dataset.th){i.src=i.dataset.th;}else{i.closest('a').style.display='none';}};});}
-fetch('../../data/srk-ads.json').then(function(r){return r.json();}).then(function(d){L=d.print_images||[];var b={};L.forEach(function(p){b[p.brand]=(b[p.brand]||0)+1;});Object.keys(b).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k+' ('+b[k]+')';sel.appendChild(o);});draw();});
+fetch('../../data/srk-ads.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){L=d.print_images||[];var b={};L.forEach(function(p){b[p.brand]=(b[p.brand]||0)+1;});Object.keys(b).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k+' ('+b[k]+')';sel.appendChild(o);});draw();});
 sel.addEventListener('change',draw);})();
 </script>
 <script src="../../assets/footer.js" defer></script>
