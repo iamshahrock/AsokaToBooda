@@ -199,6 +199,14 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 .hs.locked i{background:rgba(20,20,20,.85);border-color:var(--red-hi)}
 @keyframes hsPulse{0%{box-shadow:0 0 0 0 rgba(227,36,43,.7)}70%{box-shadow:0 0 0 16px rgba(227,36,43,0)}100%{box-shadow:0 0 0 0 rgba(227,36,43,0)}}
 @media (prefers-reduced-motion:reduce){.hs i{animation:none}}
+.ck-goal{padding:10px 16px;background:#1a0b0c;border-bottom:1px solid var(--line);font-size:16px;color:#fff}
+.ck-goal b{display:inline-block;margin-right:10px;padding:2px 8px;background:var(--red);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.ck-goal i{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:0 4px;border-radius:50%;background:var(--red);border:2px solid #fff;font-style:normal;font-family:var(--display);font-size:14px}
+.hs .play{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);font-style:normal;font-family:var(--body);font-size:10px;font-weight:700;letter-spacing:.14em;color:#111;background:#ffd34d;padding:2px 6px}
+.hs.next i{width:48px;height:48px;font-size:23px;background:#e3242b;box-shadow:0 0 0 0 rgba(255,211,77,.9);animation:hsNext 1.2s infinite}
+@keyframes hsNext{0%{box-shadow:0 0 0 0 rgba(255,211,77,.9)}70%{box-shadow:0 0 0 22px rgba(255,211,77,0)}100%{box-shadow:0 0 0 0 rgba(255,211,77,0)}}
+.hs:not(.next):not(.seen) i{animation:none;opacity:.92}
+.ck-games{margin:6px 0 0;font-size:15px;line-height:1.6;color:#e6dcd4;max-width:720px}.ck-games b{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red-text)}
 .ck-strip{padding:16px 20px 18px;border-top:1px solid var(--line);min-height:120px}
 .ck-strip p{margin:0 0 8px;font-size:17px;line-height:1.55;color:#ece4dc;max-width:900px}
 .ck-strip .who{display:block;margin-bottom:6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-text)}
@@ -236,6 +244,7 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
       <h1>Chehre ki <em>Chori</em></h1>
       <p class="c-lede">Fans' faces are vanishing from their own photos. Follow the money under the prison, climb to the glass dome, and set every face free.</p>
       <p class="say">Three acts, fourteen rooms, all in the lairs' own pictures. Tap the glowing spots, collect what you find, win the games where they happen, and star in the scene with your own face. Your progress is saved on this device.</p>
+      <p class="ck-games"><b>Six games inside the story</b> Poker at the casino table · Knockout in The Pit · Dive with the Noctopus · Searchlights on the frozen lake · The Archive quiz · The final switch at the world map</p>
       <div class="row"><button class="btn btn-red" id="ckStart" type="button">Start the story →</button><a class="btn btn-line" href="#cinema">Lairs Cinema →</a></div>
     </div>
   </section>
@@ -252,6 +261,7 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
   <section class="ck" id="ckGame" aria-label="Chehre ki Chori">
     <div class="ck-bar"><div><small id="ckAct">Act I · Follow the money</small><h2 id="ckName">The way in</h2></div>
       <div class="ck-tools"><button class="btn btn-line" id="ckMapBtn" type="button">Map</button><button class="btn btn-line" id="ckDosBtn" type="button">Dossier</button><button class="btn btn-line ck-sm" id="ckRestart" type="button">Start over</button></div></div>
+    <div class="ck-goal" id="ckGoal"></div>
     <div class="ck-panel" id="ckMap"><div id="ckMapBody"></div></div>
     <div class="ck-panel" id="ckDos"><p class="eyebrow">Your dossier</p><div id="ckDosBody"></div></div>
     <div class="ck-view" id="ckView"></div>
@@ -461,13 +471,30 @@ function show(id, quiet) {
   sc.spots.forEach(function (sp, i) {
     var b = document.createElement('button'); b.type = 'button'; b.className = 'hs' + (S.seen[sp.id] ? ' seen' : '') + (sp.need && !has(sp.need) ? ' locked' : '');
     b.style.left = sp.x + '%'; b.style.top = sp.y + '%'; b.setAttribute('aria-label', sp.label);
-    b.innerHTML = '<i>' + (i + 1) + '</i><span>' + sp.label + '</span>';
+    b.innerHTML = '<i>' + (i + 1) + '</i><span>' + sp.label + '</span>' + (sp.game ? '<em class="play">PLAY</em>' : '');
+    if (sp === nextSpot(sc)) b.classList.add('next');
     b.onclick = function () { spot(sc, sp); };
     pic.appendChild(b);
   });
-  strip({ say: [(quiet && seenCount() ? 'Welcome back. ' : '') + 'You are in ' + sc.name + '. Look around: tap a glowing spot.'] });
-  hud();
+  strip({ say: [(quiet && seenCount() ? 'Welcome back. ' : '') + 'You are in ' + sc.name + '. Tap the numbered spots in the picture. The one that pulses moves the story on; spots marked PLAY open a game.'] });
+  hud(); goal();
   if (!quiet) $('ckGame').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function key(sp) { return !!(sp.give || sp.unlock || sp.game || sp.endAct || sp.go); }
+function done(sp) { if (sp.game) return !!S.games[sp.game] && (!sp.give || [].concat(sp.give).every(has)); return !!S.seen[sp.id]; }
+function nextSpot(sc) {
+  var open = sc.spots.filter(function (sp) { return key(sp) && !done(sp) && (!sp.need || has(sp.need)) && (!sp.needUnlock || S.open.indexOf(sp.needUnlock) >= 0); });
+  return open[0] || null;
+}
+function goal() {
+  var sc = SCENES[S.scene], n = nextSpot(sc), el = $('ckGoal');
+  if (!el) return;
+  if (n) el.innerHTML = '<b>Your move</b> Tap <i>' + (sc.spots.indexOf(n) + 1) + '</i> ' + n.label + (n.game ? ' · a game starts there' : '');
+  else {
+    var nx = ORDER.filter(function (k) { return S.open.indexOf(k) >= 0 && k !== S.scene && nextSpot(SCENES[k]); })[0];
+    el.innerHTML = nx ? '<b>Your move</b> Open the Map and go to ' + SCENES[nx].name : '<b>Your move</b> Explore the other spots, or open the Map';
+  }
+  [].forEach.call($('ckView').querySelectorAll('.hs'), function (b, i) { b.classList.toggle('next', sc.spots[i] === n); });
 }
 function strip(o) {
   var el = $('ckStrip');
@@ -491,7 +518,7 @@ function after(sc, sp, lines) {
   if (sp.endAct) { btns.push(['Continue', function () { actEnd(sp.endAct); }]); }
   else if (sp.go) btns.push([sp.goLabel + ' →', function () { show(sp.go); }]);
   strip({ who: sp.who || sp.label, say: say, buttons: btns });
-  hud();
+  hud(); goal();
 }
 function markSeen(sp) { [].forEach.call($('ckView').querySelectorAll('.hs'), function (b) { if (b.getAttribute('aria-label') === sp.label) { b.classList.add('seen'); b.classList.toggle('locked', !!(sp.need && !has(sp.need))); } }); }
 function spot(sc, sp) {
@@ -521,7 +548,7 @@ function encounter(sc, sp) {
       var first = !S.games[sp.game]; S.games[sp.game] = 1; ckSave(S);
       var gotS = STARKS.earn('lair', starks, 'Chehre ki Chori · ' + sp.label + (note ? ' · ' + note : ''));
       if (first) STARKS.earn('firstclear', 100, 'First win · ' + sp.label, 'chehre-game-' + sp.game);
-      box.innerHTML = '<p class="big">' + (sp.win || 'You win.') + '</p><p class="say">' + (gotS ? '+' + fmt(gotS) + ' STARKS' : 'Today\'s STARKS for wins are used up; the story goes on.') + (first ? ' · +100 first win' : '') + '</p>';
+      goal(); box.innerHTML = '<p class="big">' + (sp.win || 'You win.') + '</p><p class="say">' + (gotS ? '+' + fmt(gotS) + ' STARKS' : 'Today\'s STARKS for wins are used up; the story goes on.') + (first ? ' · +100 first win' : '') + '</p>';
       var r = document.createElement('div'); r.className = 'row';
       var b = document.createElement('button'); b.type = 'button'; b.className = 'btn btn-red'; b.textContent = 'Back to ' + sc.name + ' →';
       b.onclick = function () { ov.classList.remove('on'); a.innerHTML = ''; if (sp.finale) { S.seen[sp.id] = 1; ckSave(S); actEnd(3); } else { after(sc, sp, [sp.win]); } };
