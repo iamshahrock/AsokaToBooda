@@ -25,7 +25,7 @@
     ['inquilab/', 'Inquilaab'],
     ['king-fever/', 'KING Fever'],
     ['merch/', 'Merch'],
-    ['gallery/', 'Gallery'],
+    ['gallery/videos/', 'Gallery', ['gallery/']],
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
     ['fans-king/', "FAN'S KING"]
   ];
@@ -37,7 +37,7 @@
     'lairs/': [['lairs/', 'Rescue Your Face'], ['lairs/#cinema', 'Lairs Cinema']],
     'chess81/': [['chess81/', 'Overview'], ['CHESS81.HTML', 'Play the full game'], ['', 'Rapid Fire · coming soon']],
     'fan-billboard/': [['fan-billboard/', 'STARKS Billboard'], ['fan-made-ai-universe/', 'Fan-made AI Universe']],
-    'gallery/': [['gallery/', 'Images'], ['gallery/videos/', 'Videos']],
+    'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
     'inquilab/': [['inquilab/', 'The movement'], ['inquilab/revolution/', 'The Revolution Starts Now']],
     'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
