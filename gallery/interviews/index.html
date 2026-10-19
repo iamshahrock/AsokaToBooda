@@ -33,7 +33,8 @@
     </div>
   </div>
   <section class="vg" id="grid" aria-label="Video interviews"><p class="note">Loading…</p></section>
-  <p class="sec-k">Written interviews</p>
+  <p class="sec-k">Written interviews and other sites</p>
+  <div class="vg-bar"><div class="vg-tools"><input type="search" id="tq" placeholder="Search outlet or title" aria-label="Search written interviews"></div><span class="note" id="tn"></span></div>
   <ul class="tl" id="text"></ul>
   <p class="note vg-src" id="src"></p>
 </main>
@@ -46,7 +47,7 @@ VGrid({data:'../../data/srk-interviews.json', grid:'#grid', stats:'#stats', chip
   statsFn:function(items,fmt){var ch={},v=0;items.forEach(function(i){ch[i.channel]=1;v+=i.views||0;});return [[fmt(items.length),'videos'],[fmt(Object.keys(ch).length),'channels'],[fmt(v),'views in total'],['<span id="tcount">'+(window.__T!=null?window.__T:'N/A')+'</span>','written interviews']];}});
 fetch('../../data/srk-interviews.json').then(function(r){return r.json();}).then(function(d){var e=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};var T=d.text||[];
 window.__T=T.length;var tc=document.getElementById('tcount'); if(tc) tc.textContent=T.length;
-document.getElementById('text').innerHTML=T.map(function(p){return '<li><a href="'+e(p.url)+'" target="_blank" rel="noopener"><small>'+e(p.outlet)+(p.year&&p.year!=='N/A'?' · '+e(p.year):'')+'</small><b>'+e(p.title)+'</b></a></li>';}).join('');});
+T.sort(function(a,b){return (b.year==='N/A'?0:+b.year)-(a.year==='N/A'?0:+a.year);});var tq=document.getElementById('tq');function tdraw(){var q=(tq.value||'').toLowerCase();var M=T.filter(function(p){return !q||(p.outlet+' '+p.title).toLowerCase().indexOf(q)>=0;});document.getElementById('tn').textContent=M.length+' of '+T.length;document.getElementById('text').innerHTML=M.map(function(p){return '<li><a href="'+e(p.url)+'" target="_blank" rel="noopener"><small>'+e(p.outlet)+(p.year&&p.year!=='N/A'?' · '+e(p.year):'')+'</small><b>'+e(p.title)+'</b></a></li>';}).join('');}tq.addEventListener('input',tdraw);tdraw();});
 </script>
 <script src="../../assets/footer.js" defer></script>
 </body>
