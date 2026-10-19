@@ -19,15 +19,16 @@
     ['create/', 'Make Your Poster', ['make-your-poster/']],
     ['lairs/', "King's Lairs"],
     ['chess81/', 'Chess81', ['CHESS81.HTML']],
-    ['fan-billboard/', 'Billboard', ['fan-made-ai-universe/']],
     ['king-intelligence/', 'KING Buzz'],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
     ['doom-to-king/', 'DOOM to KING'],
     ['inquilab/', 'Inquilaab'],
     ['king-fever/', 'KING Fever'],
-    ['merch/', 'Merch']
+    ['merch/', 'Merch'],
+    ['gallery/', 'Gallery'],
+    ['fans-king/', "FAN'S KING"]
   ];
-  var UTIL = [['fans-king/', "FAN'S KING"], ['gallery/', 'Gallery'], ['about/', 'About Us']];
+  var UTIL = [['about/', 'About Us'], ['fan-billboard/', 'Billboard', ['fan-made-ai-universe/']]];
   var MORE = [['contact/', 'Contact'], ['faq/', 'FAQ']];
   // Sub-pages: a slim tab row under the bar on every page of that section, so fans always know where they are.
   var SUB = {
@@ -119,7 +120,7 @@
     /* phone: show the middle of the story, burger menu */
     /* desktop: everything on one line */
     '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}}',
-    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-nav{gap:2px 16px}#site-header .sh-nav a{font-size:12px;letter-spacing:.06em}#site-header .sh-util{gap:2px 12px;padding-left:14px}#site-header .sh-util a{font-size:11px;letter-spacing:.06em}#site-header .sh-sw{display:none}}',
+    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-nav{gap:2px 13px}#site-header .sh-nav a{font-size:12px;letter-spacing:.06em}#site-header .sh-util{gap:2px 12px;padding-left:14px}#site-header .sh-util a{font-size:11px;letter-spacing:.06em}#site-header .sh-sw{display:none}}',
     '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 18px}#site-header .sh-nav a{font-size:12px;letter-spacing:.08em}#site-header .sh-util{gap:2px 14px}}',
     '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 12px}#site-header .sh-nav a{font-size:11px;letter-spacing:.04em}#site-header .sh-util{gap:2px 8px;padding-left:8px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.03em}#site-header .sh-bar-in{gap:10px 12px;padding:0 12px}}',
     /* tablet and phone: the menu button holds every link, Home included */
@@ -228,7 +229,7 @@
   var dutil = el('div', { class: 'sh-dutil' });
   UTIL.forEach(function (l) {
     var u1 = el('a', { href: root + l[0], text: l[1] }), u2 = el('a', { href: root + l[0], text: l[1] });
-    if (isHere(l[0])) { u1.setAttribute('aria-current', 'page'); u2.setAttribute('aria-current', 'page'); if (!section) section = l; }
+    if (isHere(l[0]) || (l[2] || []).some(isHere)) { u1.setAttribute('aria-current', 'page'); u2.setAttribute('aria-current', 'page'); if (!section) section = l; }
     util.appendChild(u1); dutil.appendChild(u2);
   });
   MORE.forEach(function (l) { dutil.appendChild(el('a', { href: root + l[0], text: l[1] })); });
