@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAN'S KING — Agar Main King Hota</title>
+<meta name="description" content="FAN'S KING: every fan-made AI and concept video of Shah Rukh Khan's KING on YouTube, with thumbnails and links to the creators' own uploads.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/fans-king/">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<link rel="stylesheet" href="../assets/vgrid.css">
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+  <div class="page-head"><div><p class="eyebrow">Made by fans</p><h1>FAN'S <em>KING</em></h1></div><p>Every fan-made KING video we could find on YouTube: AI trailers, concept teasers and songs. Tap a card to watch it on the creator's own channel.</p></div>
+  <div class="vg-stats" id="stats"></div>
+  <div class="vg-bar">
+    <div class="chips" id="chips" role="group" aria-label="Filter videos">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="ai" aria-pressed="false">Labelled AI</button>
+      <button type="button" data-f="Trailer" aria-pressed="false">Trailers</button>
+      <button type="button" data-f="Teaser" aria-pressed="false">Teasers</button>
+      <button type="button" data-f="Song" aria-pressed="false">Songs</button>
+    </div>
+    <div class="vg-tools">
+      <input type="search" id="q" placeholder="Search title or channel" aria-label="Search videos">
+      <select id="sort" aria-label="Sort"><option value="views">Most viewed</option><option value="new">Newest</option></select>
+    </div>
+  </div>
+  <section class="vg" id="grid" aria-label="Fan-made KING videos"><p class="note">Loading…</p></section>
+  <p class="note vg-src" id="src"></p>
+</main>
+<script src="../assets/vgrid.js"></script>
+<script>
+VGrid({data:'../data/fans-king.json', grid:'#grid', stats:'#stats', chips:'#chips', q:'#q', sort:'#sort', src:'#src',
+  filter:function(it,f){return f==='all'||(f==='ai'?it.ai:it.type===f);},
+  statsFn:function(items,fmt){var ch={},v=0,ai=0;items.forEach(function(i){ch[i.channel]=1;v+=i.views||0;if(i.ai)ai++;});
+    return [[fmt(items.length),'fan videos'],[fmt(v),'views in total'],[fmt(Object.keys(ch).length),'fan channels'],[fmt(ai),'say "AI" in the title']];}});
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

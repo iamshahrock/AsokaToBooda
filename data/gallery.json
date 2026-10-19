@@ -1,0 +1,5 @@
+{
+ "updated": "2026-10-19",
+ "note": "Gallery images. Put each photo in assets/gallery/ and add a row: {\"file\": \"name.webp\", \"caption\": \"...\", \"year\": \"...\", \"credit\": \"...\"}. The page crops every photo to the same 4:5 frame.",
+ "items": []
+}

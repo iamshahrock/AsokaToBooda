@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery — Agar Main King Hota</title>
+<meta name="description" content="Gallery: Shah Rukh Khan in pictures, every photo in the same frame.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/gallery/">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<link rel="stylesheet" href="../assets/vgrid.css">
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>SRK in <em>pictures</em></h1></div><p>Every photo in the same frame. Branded and Interviews are in the tabs above.</p></div>
+  <section class="pg" id="grid" aria-label="Photos"><p class="note">Loading…</p></section>
+</main>
+<style>
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.pg figure{margin:0;background:var(--panel);border:1px solid var(--line)}
+.pg .fr{aspect-ratio:4/5;overflow:hidden;background:#0d0909}
+.pg img{width:100%;height:100%;object-fit:cover;display:block}
+.pg figcaption{padding:8px 10px;font-size:12.5px;line-height:1.4;color:#cfc4bb}
+.pg figcaption small{display:block;color:var(--mute);font-size:11px}
+.pg-empty{grid-column:1/-1;border:1px dashed var(--line);padding:40px 20px;text-align:center;color:var(--mute)}
+@media(max-width:700px){.pg{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+</style>
+<script>
+(function(){var g=document.getElementById('grid'),esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+fetch('../data/gallery.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){var L=d.items||[];
+g.innerHTML=L.length?L.map(function(i){return '<figure><div class="fr"><img loading="lazy" src="../assets/gallery/'+esc(i.file)+'" alt="'+esc(i.caption||'Shah Rukh Khan')+'"></div><figcaption>'+esc(i.caption||'')+(i.year||i.credit?'<small>'+esc([i.year,i.credit].filter(Boolean).join(' · '))+'</small>':'')+'</figcaption></figure>';}).join(''):'<p class="pg-empty">Photos are coming soon.</p>';
+}).catch(function(){g.innerHTML='<p class="pg-empty">The gallery could not load right now.</p>';});})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>
