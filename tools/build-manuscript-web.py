@@ -3,7 +3,7 @@
 # https://claude.ai/code/artifact/46d4ff43-76ed-4224-a4a4-70a91338a16f exported as markdown (ms.md) + images in img/.
 # The doc export drops pictures and charts, so they are put back here by their caption lines.
 # Usage: python3 tools/build-manuscript-web.py SRC asoka-to-booda/manuscript
-import re, sys, os, shutil, subprocess, html
+import json, re, sys, os, shutil, subprocess, html
 SRC, OUT = sys.argv[1], sys.argv[2]
 os.makedirs(f'{OUT}/img', exist_ok=True)
 for f in os.listdir(f'{SRC}/img'):
@@ -209,13 +209,32 @@ TOCCSS = ('<style>.toc-part{display:grid;grid-template-columns:260px 1fr;gap:26p
           '.toc-list{list-style:none;margin:0;padding:0}.toc-list li a{display:flex;align-items:baseline;gap:12px;padding:7px 0;color:#efe6df;text-decoration:none;border-bottom:1px dotted #3a2a2a}'
           '.toc-list li a:hover{color:#fff}.toc-list li a:hover .t{color:var(--red-hi)}.toc-list .n{flex:0 0 112px;white-space:nowrap;color:var(--red-hi);font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase}'
           '.toc-list .t{flex:1;font:16px/1.4 var(--serif,Georgia,serif)}.toc-list .w{flex:0 0 auto;color:var(--mute);font-size:12px}'
-          '@media (max-width:760px){.toc-part{grid-template-columns:1fr}.toc-fig img{height:150px}}</style>\n')
+          '.bix{margin:18px 0 0}.bix-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 34px;margin-top:10px}'
+          '.bix-part{grid-column:1/-1;margin:22px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--red);color:var(--red-hi);font:700 12px var(--body);letter-spacing:.16em;text-transform:uppercase}'
+          '.bix-it{display:flex;gap:12px;padding:10px 0;border-bottom:1px dotted #3a2a2a;color:#efe6df;text-decoration:none;min-width:0}'
+          '.bix-it:hover b{color:var(--red-hi)}.bix-n{flex:0 0 74px;color:var(--red-hi);font:600 12px/1.6 var(--body);letter-spacing:.1em;text-transform:uppercase}'
+          '.bix-b{min-width:0}.bix-b b{display:block;font:600 16px/1.3 var(--serif,Georgia,serif);color:#fff;margin-bottom:3px}'
+          '.bix-b span{display:block;font:14px/1.5 var(--body);color:var(--mute)}'
+          '@media (max-width:760px){.toc-part{grid-template-columns:1fr}.toc-fig img{height:150px}.bix-grid{grid-template-columns:minmax(0,1fr)}}</style>\n')
 idx = HEAD.format(t=html.escape(T), d='The master manuscript: every version of the Asoka to Boo-Da thesis integrated into one book, Prologue to Final Frame, with sources, images and the research record.', u='').replace('</head>', TOCCSS + '</head>')
 idx += '<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Asoka to Boo-Da</a> / <span>The Master Manuscript</span></nav>\n'
 idx += ('<header class="bookhead"><p class="kick">The Master Manuscript · October 2026</p><h1>Asoka to Boo-Da <em>SRK: The Man, The Myth, The King</em></h1>'
         '<div class="prose lead"><p>This King is not renouncing. He is doubling down with the Royal Flush. Every version of the thesis, integrated into one book: a Prologue, ten Parts, 46 chapters, the Academic Addendum and the Final Frame. Facts are sourced, recollection is labelled, questions are left open on purpose.</p></div>'
         f'<p class="meta">{len(pages)} sections · {total:,} words · {nimg} images · <a href="{pages[0]["slug"]}.html">Start reading →</a></p></header>\n'
         '<h2 class="toc-h" style="margin:10px 0 0">Contents</h2>\n')
+# index on top (owner, 19 Oct 2026): every section numbered, a two-line summary, clickable, in two columns
+SUMM = json.load(open('tools/manuscript-index.json'))
+ix = '<section class="bix" id="index" aria-labelledby="ix-h"><h2 class="toc-h" id="ix-h">Index</h2><div class="bix-grid">'
+for key, ps in groups:
+    ix += f'<p class="bix-part">{html.escape(key)}</p>'
+    for p in ps:
+        k, _, n = p['title'].partition(' · ')
+        if not n: k, n = '', k
+        k = k.replace('Chapter ', 'Ch ') or ('Front' if p['slug'] == 'front-matter' else '')
+        ix += (f'<a class="bix-it" href="{p["slug"]}.html"><span class="bix-n">{html.escape(k)}</span><span class="bix-b"><b>{html.escape(n)}</b>'
+               f'<span>{html.escape(SUMM.get(p["slug"], ""))}</span></span></a>')
+ix += '</div></section>\n'
+idx = idx.replace('<h2 class="toc-h" style="margin:10px 0 0">Contents</h2>\n', ix + '<h2 class="toc-h" style="margin:34px 0 0">Contents</h2>\n')
 for key, ps in groups:
     head, _, sub = key.partition(' · ')
     img, alt = COVER.get(head, COVER['Opening'])
