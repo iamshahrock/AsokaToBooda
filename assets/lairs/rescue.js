@@ -24,7 +24,21 @@
         { id: 'archery', name: 'Shoot the Crown', where: 'The Trophy Vault', img: 'city-vault', style: 'Bow and arrow', pin: [60, 84], boss: true,
           how: 'The crown swings above the vault. Drag back to aim, let go to shoot. Watch the wind. Seven arrows. Hit the crown and it becomes the key.' }
       ] },
-    lab: { name: 'The AI Lab', sub: 'The glass dome: the Lab, the Archive and the Hive', img: 'dome-panorama', open: false, levels: [] }
+    lab: { name: 'The AI Lab', sub: 'The glass dome: the Lab, the Archive and the Hive', img: 'dome-panorama', open: true,
+      levels: [
+        { id: 'stealth', name: 'Searchlights', where: 'The frozen lake', img: 'dome-aerial', style: 'Stealth', pin: [14, 28],
+          how: 'Cross the ice to the dome. Hold the screen (or the space bar) to creep forward; let go when a searchlight comes. Spotted three times and the alarm goes off.' },
+        { id: 'invaders', name: 'Drone Attack', where: 'The Lab', img: 'dome-lab', style: 'Space Invaders', pin: [33, 42],
+          how: 'The face-copying drones are coming down. Move with your finger, mouse or arrows; you fire on your own. Destroy all 30 drones. Their lasers cost you a shield.' },
+        { id: 'slicer', name: 'Fake Slicer', where: 'The Archive', img: 'dome-archive', style: 'Fruit Ninja', pin: [10, 72],
+          how: 'Fake faces fly out of the Archive. Swipe to slice them. Never slice a real fan (the gold ones). Slice 30 fakes to win.' },
+        { id: 'maze', name: 'Hive Chase', where: 'The Hive', img: 'dome-hive', style: 'Pac-Man', pin: [50, 64],
+          how: 'Run the Hive and touch every pod to free the face inside. Guards hunt you: swipe or use the arrow keys to turn. Free 80% of the pods to win.' },
+        { id: 'flyer', name: 'Tower Flight', where: 'Above the dome', img: 'dome-arrival', style: 'Flappy Bird', pin: [52, 12],
+          how: 'Fly the helicopter between the broadcast towers. Tap (or space) to rise. Pass 15 towers to win.' },
+        { id: 'archery', name: 'Shoot the Crown', where: 'The control room', img: 'dome-waterfall', style: 'Bow and arrow', pin: [61, 45], boss: true,
+          how: 'The second crown swings above the world map. Drag back to aim, let go to shoot. Watch the wind. Seven arrows. Hit the crown and it becomes the key.' }
+      ] }
   };
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; } }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
@@ -53,7 +67,7 @@
         var w = WORLDS[k], st = W(k), lv = w.levels.length;
         return '<button type="button" class="rs-world' + (w.open ? '' : ' soon') + '" data-w="' + k + '"' + (w.open ? '' : ' disabled') + '><img src="' + SC + w.img + '-m.webp" alt=""><span class="rs-wn">' + w.name + '</span><span class="rs-ws">' + w.sub + '</span><span class="rs-wp">' +
           (w.open ? (st.rescued ? 'Face rescued · ' + fmt(st.score) + ' points' : 'Level ' + (Math.min(st.level, lv - 1) + 1) + ' of ' + lv + ' · ' + st.lives + ' lives') : 'Opens next') + '</span></button>';
-      }).join('') + '<p class="say rs-games">Underground City: Shooting Gallery · Chip Breaker · Knockout · Deep Dive · Tunnel Run · Shoot the Crown. Every level is 55 seconds.</p></div></div>');
+      }).join('') + '<p class="say rs-games">Underground City: Shooting Gallery · Chip Breaker · Knockout · Deep Dive · Tunnel Run · Shoot the Crown.<br>The AI Lab: Searchlights · Drone Attack · Fake Slicer · Hive Chase · Tower Flight · Shoot the Crown.<br>Every level is 55 seconds.</p></div></div>');
     $('rsFile').onchange = function () {
       var file = this.files && this.files[0]; if (!file) return;
       if (!$('rsOk').checked) { $('rsMsg').textContent = 'Please tick the box first: the photo must be yours, or one you have permission to use.'; this.value = ''; return; }
@@ -135,9 +149,10 @@
       $('rsAfter').innerHTML = '<p class="big">' + fmt(st.score) + ' points</p><p class="say">' + (first ? '+750 STARKS for the rescue. ' : '') + 'Your face. Not his. Not theirs.</p>' +
         '<div class="row" style="justify-content:center">' + (f ? '<a class="btn btn-red" href="../create/?from=lairs">Make your poster with your face →</a>' : '<button type="button" class="btn btn-red" id="rsAdd">Add your photo</button>') +
         '<button type="button" class="btn btn-line" id="rsReplay">Play the world again</button><a class="btn btn-line" href="../inquilab/">Join the Inquilaab</a></div>' +
-        '<p class="say rs-next">The AI Lab opens next: Stealth, Space shooter, Slicer, Maze chase, Flyer and the second crown.</p>';
+        (wid === 'city' && !W('lab').rescued ? '<p class="say rs-next"><button type="button" class="btn btn-line" id="rsOther">Now rescue it again in The AI Lab →</button></p>' : wid === 'lab' && !W('city').rescued ? '<p class="say rs-next"><button type="button" class="btn btn-line" id="rsOther">Play The Underground City →</button></p>' : '');
       $('rsReplay').onclick = function () { st.level = 0; st.lives = 3; save(); map(wid); };
       if ($('rsAdd')) $('rsAdd').onclick = intro;
+      if ($('rsOther')) $('rsOther').onclick = function () { map(wid === 'city' ? 'lab' : 'city'); };
     }
   }
 
@@ -396,6 +411,150 @@
         ctx.strokeStyle = '#fff'; ctx.lineWidth = 3; flying.forEach(function (f) { var a = Math.atan2(f.vy, f.vx); ctx.beginPath(); ctx.moveTo(f.x, f.y); ctx.lineTo(f.x - Math.cos(a) * 36, f.y - Math.sin(a) * 36); ctx.stroke(); });
         G.text('Arrows ' + arrows, 20, 40, 26, '#fff', 'left'); G.text('Wind ' + (wind < 0 ? '◀ ' : '') + Math.abs(Math.round(wind / 10)) + (wind >= 0 ? ' ▶' : ''), G.W - 20, 40, 24, '#ffd34d', 'right');
         if (!flying.length && !aim && arrows === 7) G.text('Drag back from the bow, let go to shoot', G.W / 2, G.H - 120, 24, '#ffd34d');
+      };
+    });
+  };
+
+  /* 2-1 Searchlights (stealth): hold to creep, freeze in the light */
+  GAMES.stealth = function (cv, bg, ui, done) {
+    return loop(cv, bg, ui, done, function (G) {
+      var ctx = G.ctx, x = 60, hold = false, spotted = 0, cool = 0, beams = [{ x: 300, v: 160 }, { x: 700, v: -120 }];
+      G.button('Hold to creep ▶', 'Space');
+      G.on('pointerdown', function () { hold = true; }); G.on('pointerup', function () { hold = false; }); G.on('touchstart', function () { hold = true; }); G.on('touchend', function () { hold = false; });
+      G.timeup = function () { G.end(false, 'Day broke before you reached the dome.'); };
+      return function (dt) {
+        var moving = hold || G.keys.Space || G.keys.ArrowRight;
+        if (moving) { x += 95 * dt; G.add(dt * 4); }
+        var lvl = 1 + G.t / 30; if (G.t > 18 && beams.length < 3) beams.push({ x: 100, v: 210 });
+        beams.forEach(function (b) { b.x += b.v * lvl * dt; if (b.x < 40 || b.x > G.W - 40) b.v *= -1; });
+        cool -= dt;
+        var lit = beams.some(function (b) { return Math.abs(b.x - x) < 55; });
+        if (lit && moving && cool <= 0) { spotted++; cool = 1.2; x = Math.max(60, x - 140); if (spotted >= 3) { G.end(false, 'The alarm went off.'); return; } }
+        if (x >= G.W - 90) { G.add(200 + Math.round(G.left) * 6 + (3 - spotted) * 60); G.end(true, 'You reached the dome, spotted ' + spotted + (spotted === 1 ? ' time' : ' times')); return; }
+        G.bg(0.35);
+        ctx.fillStyle = 'rgba(220,235,250,.25)'; ctx.fillRect(0, G.H - 120, G.W, 120);
+        beams.forEach(function (b) { var gr = ctx.createLinearGradient(0, 0, 0, G.H); gr.addColorStop(0, 'rgba(255,255,210,.0)'); gr.addColorStop(1, 'rgba(255,255,210,.45)'); ctx.fillStyle = gr; ctx.beginPath(); ctx.moveTo(b.x - 10, 0); ctx.lineTo(b.x + 10, 0); ctx.lineTo(b.x + 60, G.H); ctx.lineTo(b.x - 60, G.H); ctx.fill(); });
+        G.text('⛫', G.W - 50, G.H - 70, 64, '#bfe3ff');
+        ctx.fillStyle = cool > 0 ? '#ff4a4f' : '#111'; ctx.fillRect(x - 12, G.H - 110, 24, 46); ctx.fillStyle = '#ffd34d'; ctx.beginPath(); ctx.arc(x, G.H - 122, 13, 0, 7); ctx.fill();
+        ctx.fillStyle = '#2a1c1c'; ctx.fillRect(20, 60, G.W - 40, 8); ctx.fillStyle = '#ffd34d'; ctx.fillRect(20, 60, (G.W - 40) * Math.min(1, (x - 60) / (G.W - 150)), 8);
+        G.text('Spotted ' + spotted + ' / 3', 20, 40, 24, '#ff4a4f', 'left'); G.text(moving ? 'creeping…' : 'frozen', G.W - 20, 40, 22, moving ? '#ffd34d' : '#bfe3ff', 'right');
+        if (lit && moving) G.text('IN THE LIGHT — LET GO!', G.W / 2, 120, 34, '#ff4a4f');
+      };
+    });
+  };
+  /* 2-2 Drone Attack (Space Invaders) */
+  GAMES.invaders = function (cv, bg, ui, done) {
+    return loop(cv, bg, ui, done, function (G) {
+      var ctx = G.ctx, px = G.W / 2, shots = [], lasers = [], drones = [], dir = 1, fire = 0, shield = 3, inv = 0, killed = 0, NEED = 30;
+      for (var r = 0; r < 3; r++) for (var c = 0; c < 10; c++) drones.push({ x: 120 + c * 72, y: 90 + r * 56 });
+      G.on('pointermove', function (p) { px = p.x; }); G.on('pointerdown', function (p) { px = p.x; }); G.on('touchmove', function (p) { px = p.x; });
+      G.timeup = function () { G.end(false, killed + ' of ' + NEED + ' drones down.'); };
+      return function (dt) {
+        if (G.keys.ArrowLeft) px -= 520 * dt; if (G.keys.ArrowRight) px += 520 * dt; px = Math.max(30, Math.min(G.W - 30, px));
+        fire -= dt; if (fire <= 0) { fire = 0.32; shots.push({ x: px, y: G.H - 60 }); }
+        var spd = (40 + (NEED - drones.length) * 4) * dt, edge = false;
+        drones.forEach(function (d) { d.x += dir * spd; if (d.x < 30 || d.x > G.W - 30) edge = true; });
+        if (edge) { dir *= -1; drones.forEach(function (d) { d.y += 22; }); }
+        if (drones.some(function (d) { return d.y > G.H - 90; })) { G.end(false, 'The drones reached the lab floor.'); return; }
+        if (Math.random() < dt * (0.9 + G.t / 30) && drones.length) { var s = drones[Math.floor(Math.random() * drones.length)]; lasers.push({ x: s.x, y: s.y + 14 }); }
+        shots.forEach(function (s) { s.y -= 700 * dt; }); lasers.forEach(function (l) { l.y += 300 * dt; });
+        shots = shots.filter(function (s) {
+          for (var k = 0; k < drones.length; k++) { var d = drones[k]; if (Math.abs(s.x - d.x) < 24 && Math.abs(s.y - d.y) < 18) { drones.splice(k, 1); killed++; G.add(25); if (!drones.length) { G.add(Math.round(G.left) * 6 + shield * 60); G.end(true, 'All 30 drones down with ' + shield + ' shields'); } return false; } }
+          return s.y > -10;
+        });
+        inv -= dt;
+        lasers = lasers.filter(function (l) { if (inv <= 0 && Math.abs(l.x - px) < 26 && l.y > G.H - 70 && l.y < G.H - 30) { shield--; inv = 1; if (shield <= 0) G.end(false, 'Shields gone. ' + killed + ' drones down.'); return false; } return l.y < G.H + 10; });
+        G.bg(0.5);
+        drones.forEach(function (d) { ctx.fillStyle = '#7fd3ff'; ctx.beginPath(); ctx.ellipse(d.x, d.y, 22, 10, 0, 0, 7); ctx.fill(); ctx.fillStyle = '#e3242b'; ctx.beginPath(); ctx.arc(d.x, d.y + 2, 6, 0, 7); ctx.fill(); ctx.strokeStyle = '#7fd3ff'; ctx.beginPath(); ctx.moveTo(d.x - 26, d.y - 8); ctx.lineTo(d.x - 14, d.y - 2); ctx.moveTo(d.x + 26, d.y - 8); ctx.lineTo(d.x + 14, d.y - 2); ctx.stroke(); });
+        ctx.fillStyle = '#ffd34d'; shots.forEach(function (s) { ctx.fillRect(s.x - 2, s.y - 10, 4, 14); });
+        ctx.fillStyle = '#ff4a4f'; lasers.forEach(function (l) { ctx.fillRect(l.x - 2, l.y - 8, 4, 16); });
+        ctx.globalAlpha = inv > 0 ? 0.5 + 0.5 * Math.sin(G.t * 30) : 1; ctx.fillStyle = '#f4efe9'; ctx.beginPath(); ctx.moveTo(px, G.H - 74); ctx.lineTo(px + 26, G.H - 34); ctx.lineTo(px - 26, G.H - 34); ctx.fill(); ctx.globalAlpha = 1;
+        G.text('Drones ' + killed + ' / ' + NEED, 20, 40, 24, '#fff', 'left'); G.text('Shields ' + shield, G.W - 20, 40, 24, '#7fd3ff', 'right');
+      };
+    });
+  };
+  /* 2-3 Fake Slicer (Fruit Ninja) */
+  GAMES.slicer = function (cv, bg, ui, done) {
+    return loop(cv, bg, ui, done, function (G) {
+      var ctx = G.ctx, items = [], halves = [], trail = [], spawn = 0.5, cut = 0, down = false, NEED = 30, last = null;
+      function slice(p) {
+        if (last) { trail.push({ a: last, b: p, t: 0.2 });
+          items.forEach(function (it) { if (it.dead) return; var mx = (last.x + p.x) / 2, my = (last.y + p.y) / 2; if (Math.hypot(it.x - p.x, it.y - p.y) < 40 || Math.hypot(it.x - mx, it.y - my) < 40) { it.dead = true;
+            if (it.real) { G.add(-100); G.end(false, 'You sliced a real fan. Only fakes!'); return; }
+            cut++; G.add(30); halves.push({ x: it.x - 10, y: it.y, vx: -120, vy: -80, r: 0 }, { x: it.x + 10, y: it.y, vx: 120, vy: -80, r: 0 }); if (cut >= NEED) { G.add(Math.round(G.left) * 6); G.end(true, cut + ' fakes sliced'); } } }); }
+        last = p;
+      }
+      G.on('pointerdown', function (p) { down = true; last = p; }); G.on('pointermove', function (p) { if (down) slice(p); }); G.on('pointerup', function () { down = false; last = null; });
+      G.on('touchstart', function (p) { down = true; last = p; }); G.on('touchmove', function (p) { slice(p); }); G.on('touchend', function () { down = false; last = null; });
+      G.timeup = function () { G.end(cut >= NEED, cut + ' of ' + NEED + ' fakes'); };
+      return function (dt) {
+        spawn -= dt; var lvl = 1 + G.t / 30;
+        if (spawn <= 0) { spawn = rnd(0.35, 0.7) / lvl; var n = Math.random() < 0.3 ? 2 : 1; for (var k = 0; k < n; k++) items.push({ x: rnd(120, G.W - 120), y: G.H + 40, vx: rnd(-160, 160), vy: -rnd(620, 760), real: Math.random() < 0.15 }); }
+        items.forEach(function (it) { it.vy += 600 * dt; it.x += it.vx * dt; it.y += it.vy * dt; });
+        items = items.filter(function (it) { return !it.dead && it.y < G.H + 80; });
+        halves.forEach(function (h) { h.vy += 900 * dt; h.x += h.vx * dt; h.y += h.vy * dt; h.r += dt * 6; }); halves = halves.filter(function (h) { return h.y < G.H + 60; });
+        G.bg(0.45);
+        items.forEach(function (it) { ctx.fillStyle = it.real ? '#ffd34d' : '#cfd6df'; ctx.beginPath(); ctx.arc(it.x, it.y, 32, 0, 7); ctx.fill(); ctx.fillStyle = it.real ? '#6b4f06' : '#4a5560'; ctx.beginPath(); ctx.arc(it.x - 11, it.y - 6, 5, 0, 7); ctx.arc(it.x + 11, it.y - 6, 5, 0, 7); ctx.fill(); if (!it.real) { ctx.strokeStyle = '#4a5560'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(it.x - 30, it.y - 14); ctx.lineTo(it.x + 30, it.y - 14); ctx.stroke(); G.text('FAKE', it.x, it.y + 20, 12, '#4a5560'); } else G.text('FAN', it.x, it.y + 20, 12, '#6b4f06'); });
+        halves.forEach(function (h) { ctx.save(); ctx.translate(h.x, h.y); ctx.rotate(h.r); ctx.fillStyle = '#cfd6df'; ctx.beginPath(); ctx.arc(0, 0, 30, -1.4, 1.4); ctx.fill(); ctx.restore(); });
+        trail.forEach(function (s) { s.t -= dt; ctx.strokeStyle = 'rgba(255,255,255,' + Math.max(0, s.t * 4) + ')'; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(s.a.x, s.a.y); ctx.lineTo(s.b.x, s.b.y); ctx.stroke(); }); trail = trail.filter(function (s) { return s.t > 0; });
+        G.text('Fakes ' + cut + ' / ' + NEED, 20, 40, 24, '#fff', 'left'); G.text('Never slice the gold FANS', G.W - 20, 40, 20, '#ffd34d', 'right');
+      };
+    });
+  };
+  /* 2-4 Hive Chase (Pac-Man) */
+  GAMES.maze = function (cv, bg, ui, done) {
+    return loop(cv, bg, ui, done, function (G) {
+      var ctx = G.ctx, M = ['###############', '#.............#', '#.##.#.#.#.##.#', '#.#..#...#..#.#', '#.#.##.#.##.#.#', '#.....#.#.....#', '###.#.....#.###', '#...#.###.#...#', '#.#.........#.#', '#.#.##.#.##.#.#', '#.............#', '###############'];
+      var C = 15, R = 12, cs = Math.min(G.W / C, G.H / R), ox = (G.W - C * cs) / 2, oy = (G.H - R * cs) / 2, dots = 0, eaten = 0, sx, sy, sw = null;
+      var grid = M.map(function (row) { return row.split(''); }); grid.forEach(function (row) { row.forEach(function (c) { if (c === '.') dots++; }); });
+      var me = { x: 7, y: 8, dx: 0, dy: 0, nx: -1, ny: 0, p: 0 }, guards = [{ x: 1, y: 1, dx: 1, dy: 0, p: 0 }, { x: 13, y: 1, dx: -1, dy: 0, p: 0 }, { x: 13, y: 10, dx: -1, dy: 0, p: 0 }];
+      grid[8][7] = ' '; dots--;
+      function free(x, y) { return grid[y] && grid[y][x] && grid[y][x] !== '#'; }
+      G.onkey = function (k) { if (k === 'ArrowLeft') { me.nx = -1; me.ny = 0; } if (k === 'ArrowRight') { me.nx = 1; me.ny = 0; } if (k === 'ArrowUp') { me.nx = 0; me.ny = -1; } if (k === 'ArrowDown') { me.nx = 0; me.ny = 1; } };
+      G.button('◀', 'ArrowLeft'); G.button('▲', 'ArrowUp'); G.button('▼', 'ArrowDown'); G.button('▶', 'ArrowRight');
+      G.on('touchstart', function (p) { sx = p.x; sy = p.y; }); G.on('touchend', function (p) { if (sx == null) return; var dx = p.x - sx, dy = p.y - sy; if (Math.max(Math.abs(dx), Math.abs(dy)) > 20) G.onkey(Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 'ArrowLeft' : 'ArrowRight') : (dy < 0 ? 'ArrowUp' : 'ArrowDown')); sx = null; });
+      G.timeup = function () { var pct = eaten / dots; G.end(pct >= 0.8, Math.round(pct * 100) + '% of the pods freed'); };
+      function step(o, spd, dt, think) {
+        o.p += spd * dt;
+        while (o.p >= 1) { o.p -= 1; o.x += o.dx; o.y += o.dy; think(o); if (!free(o.x + o.dx, o.y + o.dy)) { o.dx = 0; o.dy = 0; } }
+        if (o.dx === 0 && o.dy === 0) { o.p = 0; think(o); }
+      }
+      return function (dt) {
+        step(me, 6.5, dt, function (o) { if ((o.nx || o.ny) && free(o.x + o.nx, o.y + o.ny)) { o.dx = o.nx; o.dy = o.ny; } if (grid[o.y][o.x] === '.') { grid[o.y][o.x] = ' '; eaten++; G.add(10); if (eaten / dots >= 0.8 && !o.won) { o.won = true; G.add(Math.round(G.left) * 6); G.end(true, Math.round(eaten / dots * 100) + '% of the pods freed'); } } });
+        if (G.t > 2.5) guards.forEach(function (g) { step(g, 3.4 + G.t / 25, dt, function (o) { var opts = [[1, 0], [-1, 0], [0, 1], [0, -1]].filter(function (d) { return free(o.x + d[0], o.y + d[1]) && !(d[0] === -o.dx && d[1] === -o.dy); }); if (!opts.length) opts = [[-o.dx, -o.dy]]; opts.sort(function (a, b) { return (Math.hypot(o.x + a[0] - me.x, o.y + a[1] - me.y) - Math.hypot(o.x + b[0] - me.x, o.y + b[1] - me.y)) + rnd(-2.5, 2.5); }); o.dx = opts[0][0]; o.dy = opts[0][1]; }); });
+        function pos(o) { return { x: ox + (o.x + o.dx * o.p + 0.5) * cs, y: oy + (o.y + o.dy * o.p + 0.5) * cs }; }
+        var mp = pos(me);
+        if (guards.some(function (g) { var gp = pos(g); return Math.hypot(gp.x - mp.x, gp.y - mp.y) < cs * 0.7; })) { G.end(eaten / dots >= 0.8, 'A guard caught you · ' + Math.round(eaten / dots * 100) + '% freed'); return; }
+        G.bg(0.6);
+        grid.forEach(function (row, y) { row.forEach(function (c, x) { if (c === '#') { ctx.fillStyle = 'rgba(30,40,70,.85)'; ctx.fillRect(ox + x * cs + 2, oy + y * cs + 2, cs - 4, cs - 4); } else if (c === '.') { ctx.fillStyle = '#bfe3ff'; ctx.beginPath(); ctx.ellipse(ox + (x + 0.5) * cs, oy + (y + 0.5) * cs, cs * 0.12, cs * 0.18, 0, 0, 7); ctx.fill(); } }); });
+        ctx.fillStyle = '#ffd34d'; ctx.beginPath(); ctx.arc(mp.x, mp.y, cs * 0.36, 0.3, Math.PI * 2 - 0.3); ctx.lineTo(mp.x, mp.y); ctx.fill();
+        guards.forEach(function (g) { var gp = pos(g); ctx.fillStyle = '#e3242b'; ctx.beginPath(); ctx.arc(gp.x, gp.y - 2, cs * 0.34, Math.PI, 0); ctx.lineTo(gp.x + cs * 0.34, gp.y + cs * 0.32); ctx.lineTo(gp.x - cs * 0.34, gp.y + cs * 0.32); ctx.fill(); ctx.fillStyle = '#fff'; ctx.fillRect(gp.x - 9, gp.y - 6, 6, 6); ctx.fillRect(gp.x + 3, gp.y - 6, 6, 6); });
+        if (G.t < 2.5) G.text('Guards wake in ' + Math.ceil(2.5 - G.t) + '…', G.W / 2, G.H / 2, 34, '#ffd34d'); G.text('Pods freed ' + Math.round(eaten / dots * 100) + '% (need 80%)', 20, 30, 20, '#fff', 'left');
+      };
+    });
+  };
+  /* 2-5 Tower Flight (Flappy Bird) */
+  GAMES.flyer = function (cv, bg, ui, done) {
+    return loop(cv, bg, ui, done, function (G) {
+      var ctx = G.ctx, y = G.H / 2, vy = 0, towers = [], spawn = 0.4, passed = 0, NEED = 15, started = false;
+      function flap() { started = true; vy = -330; }
+      G.onkey = function (k) { if (k === 'Space' || k === 'ArrowUp') flap(); };
+      G.on('pointerdown', flap);
+      G.timeup = function () { G.end(passed >= NEED, passed + ' towers'); };
+      return function (dt) {
+        if (started) { vy += 900 * dt; y += vy * dt; }
+        var sp = 230 + G.t * 2;
+        spawn -= dt; if (spawn <= 0 && started) { spawn = 1.55; var gap = Math.max(150, 200 - G.t); towers.push({ x: G.W + 40, gy: rnd(130, G.H - 130), gap: gap }); }
+        towers.forEach(function (t) { t.x -= sp * dt; if (!t.passed && t.x < 150) { t.passed = true; passed++; G.add(40); if (passed >= NEED) { G.add(Math.round(G.left) * 6); G.end(true, passed + ' towers passed'); } } });
+        towers = towers.filter(function (t) { return t.x > -100; });
+        if (y > G.H - 20 || y < 10) { G.end(false, 'Crashed after ' + passed + ' towers.'); return; }
+        for (var k = 0; k < towers.length; k++) { var t = towers[k]; if (Math.abs(t.x - 180) < 50 && (y < t.gy - t.gap / 2 + 14 || y > t.gy + t.gap / 2 - 14)) { G.end(false, 'Hit a tower after ' + passed + '.'); return; } }
+        G.bg(0.4);
+        towers.forEach(function (t) { ctx.fillStyle = '#3a3f4a'; ctx.fillRect(t.x - 40, 0, 80, t.gy - t.gap / 2); ctx.fillRect(t.x - 40, t.gy + t.gap / 2, 80, G.H); ctx.fillStyle = '#e3242b'; ctx.fillRect(t.x - 46, t.gy - t.gap / 2 - 14, 92, 14); ctx.fillRect(t.x - 46, t.gy + t.gap / 2, 92, 14); ctx.fillStyle = '#ffd34d'; ctx.beginPath(); ctx.arc(t.x, t.gy + t.gap / 2 + 30, 5, 0, 7); ctx.fill(); });
+        ctx.save(); ctx.translate(180, y); ctx.rotate(Math.max(-0.4, Math.min(0.6, vy / 700)));
+        ctx.fillStyle = '#111'; ctx.beginPath(); ctx.ellipse(0, 0, 30, 14, 0, 0, 7); ctx.fill(); ctx.fillRect(-48, -4, 22, 6); ctx.fillStyle = '#7fd3ff'; ctx.fillRect(4, -10, 16, 8); ctx.strokeStyle = '#ccc'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(-34, -20); ctx.lineTo(34, -20); ctx.stroke(); ctx.restore();
+        G.text('Towers ' + passed + ' / ' + NEED, 20, 40, 24, '#fff', 'left');
+        if (!started) G.text('Tap or press space to fly', G.W / 2, G.H / 2 + 80, 28, '#ffd34d');
       };
     });
   };
