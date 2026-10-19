@@ -64,6 +64,7 @@ export default {
     if (path === "/d2k") return d2k(request, env, reply, origin);
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
+    if (path === "/merch-bulk") return merchBulk(request, env, reply, origin);
     if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
     if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
@@ -393,6 +394,30 @@ async function aiSubmit(request, env, reply, origin) {
   const r = await env.DB.prepare("INSERT OR IGNORE INTO ai_submissions(url, platform, handle, note, device, ts, status) VALUES(?1, ?2, ?3, ?4, ?5, ?6, 'pending')").bind(url, plat[0], handle, note, okDevice(body.device) ? body.device : "", Date.now()).run();
   if (r.meta && r.meta.changes) await bump(env, istDay(), "ai_submission");
   return reply(200, { ok: true, duplicate: !(r.meta && r.meta.changes), platform: plat[0] });
+}
+
+// ---------------- MERCH: bulk order requests (POST only; read by the owner in D1) ----------------
+// POST /merch-bulk {name, org, email, phone, place, by, qty, sizes, notes, designs[]} -> { ok, id }
+async function merchBulk(request, env, reply, origin) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  if (request.method !== "POST") return reply(405, { error: "Use POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "bulk:" + ip))) return reply(429, { error: "Too many requests. Try again in a minute." });
+  const b = await readBody(request);
+  if (!b) return reply(400, { error: "Could not read the form." });
+  const t = (v, n) => String(v == null ? "" : v).replace(/[<>]/g, "").trim().slice(0, n);
+  const name = t(b.name, 80), email = t(b.email, 120), place = t(b.place, 80), qty = Number.parseInt(b.qty, 10);
+  if (!name || !place) return reply(400, { error: "Please add your name and city." });
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(400, { error: "Please check your email address." });
+  if (!Number.isFinite(qty) || qty < 10 || qty > 100000) return reply(400, { error: "Bulk orders start at 10 pieces." });
+  const designs = Array.isArray(b.designs) ? b.designs.map(d => t(d, 60)).filter(Boolean).slice(0, 40) : [];
+  if (!designs.length) return reply(400, { error: "Please choose at least one design." });
+  const by = /^\d{4}-\d{2}-\d{2}$/.test(String(b.by || "")) ? b.by : "";
+  const r = await env.DB.prepare("INSERT INTO merch_bulk(ts, name, org, email, phone, place, needed_by, qty, sizes, designs, notes, status) VALUES(?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, 'new')")
+    .bind(Date.now(), name, t(b.org, 120), email, t(b.phone, 30), place, by, qty, t(b.sizes, 200), JSON.stringify(designs), t(b.notes, 600)).run();
+  await bump(env, istDay(), "merch_bulk");
+  return reply(200, { ok: true, id: r.meta && r.meta.last_row_id });
 }
 
 // ---------------- INQUILAAB: fans joining the revolt (#FreeMyFace) ----------------

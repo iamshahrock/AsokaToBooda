@@ -15,7 +15,14 @@
 <link rel="stylesheet" href="../assets/v2.css">
 <style>
 .lead{max-width:760px;font-size:18px;line-height:1.7;color:#e6dcd4;margin:6px 0 22px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+.sec-k{margin:34px 0 10px;font:700 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
+.stores{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0 0 8px}
+.store{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:14px 16px;color:#efe6df;text-decoration:none}
+.store .lg{flex:0 0 46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.store .lg img{width:26px;height:26px;filter:brightness(0) invert(1)}
+.store b{display:block;font:700 16px var(--body)}.store small{display:block;color:var(--mute);font-size:13px;line-height:1.4}
+.store .st{font:700 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--red-text)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
 .chips button{background:transparent;border:1px solid var(--line);color:var(--mute);font:700 12px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;cursor:pointer}
 .chips button[aria-pressed="true"]{border-color:var(--red);background:var(--red);color:#fff}
 .shop{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
@@ -26,19 +33,41 @@
 .item h3{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.05;text-transform:uppercase;margin:0}
 .item p{margin:0;color:var(--mute);font-size:14px;line-height:1.5}
 .item .tag{font:700 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--red-text)}
-.buy{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:10px}
-.buy a,.buy span{font:700 12px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:9px 11px;text-decoration:none;border:1px solid var(--line)}
-.buy a{background:var(--red);border-color:var(--red);color:#fff}
-.buy a:hover{background:var(--red-hi)}
-.buy span{color:var(--mute)}
-.note{color:var(--mute);font-size:14px;margin:26px 0 0;max-width:760px}
+.buy-h{margin-top:auto;padding-top:10px;font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:#cfc4bb}
+.buy{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.buy a,.buy span{display:flex;align-items:center;gap:10px;font:600 13px var(--body);padding:8px 10px;text-decoration:none;border:1px solid var(--line)}
+.buy img{width:18px;height:18px;filter:brightness(0) invert(1)}
+.buy .ic{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex:0 0 28px}
+.buy a{color:#fff;background:#1a1010}.buy a:hover{border-color:var(--red-hi)}
+.buy a em{margin-left:auto;font-style:normal;color:var(--red-hi);font-weight:700}
+.buy span{color:var(--mute)}.buy span .ic{opacity:.45}.buy span em{margin-left:auto;font-style:normal;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.note{color:var(--mute);font-size:14px;margin:18px 0 0;max-width:760px}
+.bulk{margin-top:40px;border:1px solid var(--line);background:radial-gradient(90% 120% at 100% 0%,#2a0b0d,#0a0707 65%);padding:26px clamp(16px,3vw,34px)}
+.bulk h2{margin:0 0 6px;font-family:var(--display);font-weight:400;font-size:clamp(30px,4vw,48px);text-transform:uppercase;line-height:1}
+.bulk h2 em{font-style:normal;color:var(--red-hi)}
+.bulk p.in{margin:0 0 18px;color:#e6dcd4;max-width:720px;line-height:1.6}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+.fgrid label{display:flex;flex-direction:column;gap:6px;font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:#cfc4bb}
+.fgrid input,.fgrid select,.fgrid textarea{font:15px var(--body);color:#fff;background:#120b0b;border:1px solid var(--field-line,#3a2a2a);padding:10px 12px;text-transform:none;letter-spacing:0}
+.fgrid .full{grid-column:1/-1}
+.dz{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px 14px;font:500 14px var(--body);text-transform:none;letter-spacing:0;color:#efe6df}
+.dz label{flex-direction:row;align-items:center;gap:8px;font:500 14px var(--body);text-transform:none;letter-spacing:0;color:#efe6df}
+.ok{display:flex;gap:10px;align-items:flex-start;font:14px var(--body);color:#e6dcd4;margin:14px 0}
+.bulk .msg{min-height:1.4em;margin:10px 0 0;font-weight:600}
+@media (max-width:640px){.fgrid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body class="v2">
 <script src="../assets/header.js"></script>
 <main class="wrap">
   <div class="page-head"><div><p class="eyebrow">Shah Rock Jaan</p><h1>King Fan <em>Merch</em></h1></div><p>Wear the campaign. Made by fans, printed when you order, shipped to your door.</p></div>
-  <p class="lead">Shirts and hoodies from the King by Fans campaign: the ijOO King, the Inquilaab poem and the lines fans shout on release day. Every design is an original by Shah Rock Jaan.</p>
+  <p class="lead">Shirts from the King by Fans campaign: the ijOO King, the Inquilaab poem and the lines fans shout on release day. Every design is an original by Shah Rock Jaan.</p>
+
+  <p class="sec-k">Where to buy</p>
+  <div class="stores" id="stores"></div>
+  <p class="note" style="margin-top:8px">Our store partners print each shirt when you order and handle payment, shipping and returns. Links open their store in a new tab.</p>
+
+  <p class="sec-k">The designs</p>
   <div class="chips" id="chips" role="group" aria-label="Filter designs">
     <button type="button" data-f="all" aria-pressed="true">All</button>
     <button type="button" data-f="ijoo" aria-pressed="false">ijOO King</button>
@@ -46,13 +75,40 @@
     <button type="button" data-f="lines" aria-pressed="false">Fan lines</button>
   </div>
   <section class="shop" id="shop" aria-label="Designs"></section>
-  <p class="note">Printed on demand by our store partners, who handle payment, printing, shipping and returns. Links open the partner's store in a new tab.</p>
+
+  <section class="bulk" id="bulk" aria-labelledby="bulk-h">
+    <h2 id="bulk-h">Bulk orders for <em>fan clubs</em></h2>
+    <p class="in">Ordering for a fan club, a screening, a college or an office on release day? Tell us what you need and we will come back to you with a quote and a delivery date.</p>
+    <form id="bulkForm" novalidate>
+      <div class="fgrid">
+        <label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>
+        <label>Fan club or organisation<input name="org" maxlength="120"></label>
+        <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label>Phone or WhatsApp<input name="phone" type="tel" maxlength="30" autocomplete="tel"></label>
+        <label>City and country<input name="place" required maxlength="80"></label>
+        <label>Needed by<input name="by" type="date"></label>
+        <label>Total quantity<input name="qty" type="number" min="10" max="100000" required placeholder="Minimum 10"></label>
+        <label>Sizes and colours<input name="sizes" maxlength="200" placeholder="e.g. 20 M black, 30 L white"></label>
+        <div class="full"><span style="font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:#cfc4bb">Designs</span><div class="dz" id="dz"></div></div>
+        <label class="full">Anything else<textarea name="notes" rows="3" maxlength="600" placeholder="Custom print, club name on the back, event date…"></textarea></label>
+      </div>
+      <label class="ok"><input type="checkbox" name="ok" required> I agree to be contacted about this order by email or phone.</label>
+      <button class="btn btn-red" type="submit">Send bulk order request</button>
+      <p class="msg" id="bulkMsg" role="status"></p>
+    </form>
+  </section>
 </main>
 <script>
 (function(){
-  // Store links: paste each design's product URL here once it is live. Empty = "Coming soon".
-  var STORES = [['amazon','Amazon'],['redbubble','Redbubble'],['spreadshirt','Spreadshirt']];
+  // Stores: [key, name, brand colour, logo file, one-line note]. Add a store here and it appears everywhere.
+  var STORES = [
+    ['amazon','Amazon','#FF9900','amazon','Merch on Demand, amazon.com'],
+    ['redbubble','Redbubble','#E41321','redbubble','Ships worldwide'],
+    ['spreadshirt','Spreadshirt','#00B2A5','spreadshirt','Shops in Europe and the US']
+  ];
+  // Designs: [file, group, name, line, {store: product URL}]. Empty = "Coming soon" under that store.
   var D = [
+    ['inquilaab-master','inquilab','INQUILAAB · #FreeMyFace','The master design of the movement.',{}],
     ['one-before-zero','ijoo','One Before Zero','Phata poster nikla hero. Zero, the King and the kid with the card.',{}],
     ['picture-abhi-baaki-hai','ijoo','Picture Abhi Baaki Hai','King akela kaafi hai.',{}],
     ['inquilab-poem-statue','inquilab','Inquilaab: The Poem','The whole anthem with the ijOO King statue.',{}],
@@ -71,13 +127,19 @@
   ];
   var TAG = {ijoo:'ijOO King', inquilab:'Inquilaab', lines:'Fan lines'};
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function ic(s){return '<i class="ic" style="background:'+s[2]+'"><img src="../assets/merch/stores/'+s[3]+'.svg" alt=""></i>';}
+  function live(d){return STORES.filter(function(s){return d[4][s[0]];}).length;}
+  document.getElementById('stores').innerHTML = STORES.map(function(s){
+    var n = D.filter(function(d){return d[4][s[0]];}).length;
+    return '<div class="store"><span class="lg" style="background:'+s[2]+'"><img src="../assets/merch/stores/'+s[3]+'.svg" alt=""></span><span><b>'+s[1]+'</b><small>'+esc(s[4])+'</small><span class="st">'+(n ? n+' of '+D.length+' designs live' : 'Listings coming soon')+'</span></span></div>';
+  }).join('');
   function card(d){
     var buy = STORES.map(function(s){
       var u = d[4][s[0]];
-      return u ? '<a href="'+esc(u)+'" target="_blank" rel="noopener">'+s[1]+'</a>' : '<span>'+s[1]+' · soon</span>';
+      return u ? '<a href="'+esc(u)+'" target="_blank" rel="noopener">'+ic(s)+s[1]+'<em>Buy →</em></a>' : '<span>'+ic(s)+s[1]+'<em>Soon</em></span>';
     }).join('');
-    return '<article class="item" data-f="'+d[1]+'"><div class="pic"><img src="../assets/merch/'+d[0]+'.webp" alt="'+esc(d[2])+' T-shirt" width="900" height="1000" loading="lazy"></div>'+
-      '<div class="body"><span class="tag">'+TAG[d[1]]+'</span><h3>'+esc(d[2])+'</h3><p>'+esc(d[3])+'</p><div class="buy">'+buy+'</div></div></article>';
+    return '<article class="item" data-f="'+d[1]+'"><div class="pic"><img src="../assets/merch/'+d[0]+'.webp" alt="'+esc(d[2])+' design" loading="lazy"></div>'+
+      '<div class="body"><span class="tag">'+TAG[d[1]]+'</span><h3>'+esc(d[2])+'</h3><p>'+esc(d[3])+'</p><p class="buy-h">'+(live(d)?'Buy from':'Available soon from')+'</p><div class="buy">'+buy+'</div></div></article>';
   }
   var shop = document.getElementById('shop');
   shop.innerHTML = D.map(card).join('');
@@ -86,6 +148,22 @@
     var f = b.getAttribute('data-f');
     Array.prototype.forEach.call(this.querySelectorAll('button'), function(x){ x.setAttribute('aria-pressed', x===b); });
     Array.prototype.forEach.call(shop.children, function(el){ el.hidden = !(f==='all' || el.getAttribute('data-f')===f); });
+  });
+  // bulk order form -> Worker /merch-bulk (stored in D1, read by the owner only)
+  document.getElementById('dz').innerHTML = D.map(function(d){return '<label><input type="checkbox" name="designs" value="'+esc(d[0])+'"> '+esc(d[2])+'</label>';}).join('');
+  var API = 'https://asokatobooda.iamshahrock.workers.dev';
+  var f = document.getElementById('bulkForm'), msg = document.getElementById('bulkMsg');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fd = new FormData(f), designs = fd.getAll('designs');
+    if (!f.checkValidity()) { msg.textContent = 'Please fill in your name, email, city, quantity (10 or more) and tick the box.'; f.reportValidity(); return; }
+    if (!designs.length) { msg.textContent = 'Please choose at least one design.'; return; }
+    var body = {name:fd.get('name'),org:fd.get('org'),email:fd.get('email'),phone:fd.get('phone'),place:fd.get('place'),by:fd.get('by'),qty:+fd.get('qty'),sizes:fd.get('sizes'),notes:fd.get('notes'),designs:designs};
+    msg.textContent = 'Sending…';
+    fetch(API + '/merch-bulk', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
+      .then(function(x){ if (x.ok && x.j.ok) { f.reset(); msg.textContent = 'Thank you. Your request is in (number ' + x.j.id + '). We will reply by email.'; } else msg.textContent = (x.j && x.j.error) || 'Something went wrong. Please try again.'; })
+      .catch(function(){ msg.textContent = 'Could not send. Please check your connection and try again.'; });
   });
 })();
 </script>
