@@ -246,6 +246,106 @@
         "No record was filed between 07 and 17 Oct; those dates stay empty rather than back-filled.",
         "Posts are not people."
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "record_id": "KING-2026-10-19",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": 49195058,
+          "unit": "YouTube views",
+          "source": "YouTube, KING title reveal, Red Chillies Entertainment (https://www.youtube.com/watch?v=Uu2QK9Z9X5E), read 2026-10-19",
+          "method": "public view count on the official upload, read in the browser",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": 32408834,
+          "unit": "YouTube views",
+          "source": "YouTube, KING release-date announcement (https://www.youtube.com/watch?v=M3mfut2RdHk), read 2026-10-19",
+          "method": "public view count on the official upload, read in the browser",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": 80596964,
+          "unit": "YouTube views",
+          "source": "YouTube, Avengers: Doomsday official trailer, Marvel Entertainment, published 2026-07-20 (https://www.youtube.com/watch?v=irVNGjRFZGk), read 2026-10-19",
+          "method": "public view count on the official upload; kept as its own series, not merged with the 06 Oct doomsday_youtube_views figure",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": 2933427,
+          "unit": "indexed posts",
+          "source": "Display Purposes #srk hashtag report, page updated 2026-10-19 (https://displaypurposes.com/hashtags/hashtag/srk)",
+          "method": "indexed #SRK footprint; not KING-specific",
+          "confidence": "tracked/public-index",
+          "status": "usable"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": 32455,
+          "unit": "indexed #srkking posts",
+          "source": "Display Purposes #srk report, similar-hashtags table, updated 2026-10-19",
+          "method": "public index count",
+          "confidence": "tracked/public-index",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 40,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json, daily fan AI scan, 2026-10-19 (0 new)",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 2883120,
+          "unit": "views",
+          "source": "data/ai-creator-log.json, 2026-10-19",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": null,
+          "unit": "followers",
+          "source": "Not read: the Instagram session in the browser is suspended",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 19 Oct total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "CBFC cleared a 45-second KING promo: BizAsiaLive, 18 Oct 2026, citing Mid-Day; not confirmed by the makers [Unverified]",
+        "Promo reported to run with Ramayana Part 1 on 9,000+ screens from 5 Nov: newscontinuous.com, 17 Oct 2026 [Unverified]",
+        "Kareena Kapoor reported for a special number: Bollywood Hungama via Wikipedia, 6 Oct 2026 [Unverified]",
+        "Teaser expected on his birthday, 2 November 2026 (trade report, not announced)"
+      ],
+      "notes": [
+        "First day the official KING uploads are tracked by their own view counts: title reveal 49.2M, date announcement 32.4M.",
+        "Doomsday trailer 80.6M today vs 77.3M recorded on 06 Oct. It is probably the same video, but the 06 Oct source did not name it, so the two series are kept apart [Unverified].",
+        "#srk and #srkking index counts are unchanged since 06 Oct: flat, or the index has not re-crawled.",
+        "Posts are not people."
+      ]
     }
   ],
   "source_rules": {
