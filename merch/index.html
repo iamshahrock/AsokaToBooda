@@ -16,10 +16,11 @@
 <style>
 .lead{max-width:760px;font-size:18px;line-height:1.7;color:#e6dcd4;margin:6px 0 22px}
 .sec-k{margin:34px 0 10px;font:700 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
-.stores{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0 0 8px}
+.stores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 8px}
 .store{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:14px 16px;color:#efe6df;text-decoration:none}
 .store .lg{flex:0 0 46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center}
 .store .lg img{width:26px;height:26px;filter:brightness(0) invert(1)}
+.store .lg .ph,.buy .ic .ph{font:700 20px var(--body);color:#fff}.buy .ic .ph{font-size:14px}.store .lg{border:1px dashed #5a4040}
 .store b{display:block;font:700 16px var(--body)}.store small{display:block;color:var(--mute);font-size:13px;line-height:1.4}
 .store .st{font:700 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--red-text)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
@@ -34,8 +35,8 @@
 .item p{margin:0;color:var(--mute);font-size:14px;line-height:1.5}
 .item .tag{font:700 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--red-text)}
 .buy-h{margin-top:auto;padding-top:10px;font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:#cfc4bb}
-.buy{display:flex;flex-direction:column;gap:6px;margin-top:6px}
-.buy a,.buy span{display:flex;align-items:center;gap:10px;font:600 13px var(--body);padding:8px 10px;text-decoration:none;border:1px solid var(--line)}
+.buy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:6px}
+.buy a,.buy span{white-space:nowrap;display:flex;align-items:center;gap:10px;font:600 13px var(--body);padding:8px 10px;text-decoration:none;border:1px solid var(--line)}
 .buy img{width:18px;height:18px;filter:brightness(0) invert(1)}
 .buy .ic{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex:0 0 28px}
 .buy a{color:#fff;background:#1a1010}.buy a:hover{border-color:var(--red-hi)}
@@ -54,7 +55,8 @@
 .dz label{flex-direction:row;align-items:center;gap:8px;font:500 14px var(--body);text-transform:none;letter-spacing:0;color:#efe6df}
 .ok{display:flex;gap:10px;align-items:flex-start;font:14px var(--body);color:#e6dcd4;margin:14px 0}
 .bulk .msg{min-height:1.4em;margin:10px 0 0;font-weight:600}
-@media (max-width:640px){.fgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.stores{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.fgrid{grid-template-columns:minmax(0,1fr)}.stores{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body class="v2">
@@ -102,10 +104,15 @@
 (function(){
   // Stores: [key, name, brand colour, logo file, one-line note]. Add a store here and it appears everywhere.
   var STORES = [
-    ['amazon','Amazon','#FF9900','amazon','Merch on Demand, amazon.com'],
-    ['redbubble','Redbubble','#E41321','redbubble','Ships worldwide'],
-    ['spreadshirt','Spreadshirt','#00B2A5','spreadshirt','Shops in Europe and the US']
+    ['s1','Store 1','#2a1c1c','','Store to be confirmed'],
+    ['s2','Store 2','#2a1c1c','','Store to be confirmed'],
+    ['s3','Store 3','#2a1c1c','','Store to be confirmed'],
+    ['s4','Store 4','#2a1c1c','','Store to be confirmed'],
+    ['s5','Store 5','#2a1c1c','','Store to be confirmed'],
+    ['s6','Store 6','#2a1c1c','','Store to be confirmed']
   ];
+  // Placeholder stores until the owner picks the six marketplaces. Real logos already in assets/merch/stores/ (amazon, redbubble, spreadshirt):
+  // e.g. ['amazon','Amazon','#FF9900','amazon','Merch on Demand, amazon.com']
   // Designs: [file, group, name, line, {store: product URL}]. Empty = "Coming soon" under that store.
   var D = [
     ['inquilaab-master','inquilab','INQUILAAB · #FreeMyFace','The master design of the movement.',{}],
@@ -127,16 +134,17 @@
   ];
   var TAG = {ijoo:'ijOO King', inquilab:'Inquilaab', lines:'Fan lines'};
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function ic(s){return '<i class="ic" style="background:'+s[2]+'"><img src="../assets/merch/stores/'+s[3]+'.svg" alt=""></i>';}
+  function logo(s,cls){return s[3] ? '<img src="../assets/merch/stores/'+s[3]+'.svg" alt="">' : '<b class="ph">'+s[1].replace(/\D/g,'')+'</b>';}
+  function ic(s){return '<i class="ic" style="background:'+s[2]+'">'+logo(s)+'</i>';}
   function live(d){return STORES.filter(function(s){return d[4][s[0]];}).length;}
   document.getElementById('stores').innerHTML = STORES.map(function(s){
     var n = D.filter(function(d){return d[4][s[0]];}).length;
-    return '<div class="store"><span class="lg" style="background:'+s[2]+'"><img src="../assets/merch/stores/'+s[3]+'.svg" alt=""></span><span><b>'+s[1]+'</b><small>'+esc(s[4])+'</small><span class="st">'+(n ? n+' of '+D.length+' designs live' : 'Listings coming soon')+'</span></span></div>';
+    return '<div class="store"><span class="lg" style="background:'+s[2]+'">'+logo(s)+'</span><span><b>'+s[1]+'</b><small>'+esc(s[4])+'</small><span class="st">'+(n ? n+' of '+D.length+' designs live' : 'Listings coming soon')+'</span></span></div>';
   }).join('');
   function card(d){
     var buy = STORES.map(function(s){
       var u = d[4][s[0]];
-      return u ? '<a href="'+esc(u)+'" target="_blank" rel="noopener">'+ic(s)+s[1]+'<em>Buy →</em></a>' : '<span>'+ic(s)+s[1]+'<em>Soon</em></span>';
+      return u ? '<a href="'+esc(u)+'" target="_blank" rel="noopener">'+ic(s)+s[1]+'<em>Buy →</em></a>' : '<span title="'+esc(s[1])+': soon">'+ic(s)+s[1]+'</span>';
     }).join('');
     return '<article class="item" data-f="'+d[1]+'"><div class="pic"><img src="../assets/merch/'+d[0]+'.webp" alt="'+esc(d[2])+' design" loading="lazy"></div>'+
       '<div class="body"><span class="tag">'+TAG[d[1]]+'</span><h3>'+esc(d[2])+'</h3><p>'+esc(d[3])+'</p><p class="buy-h">'+(live(d)?'Buy from':'Available soon from')+'</p><div class="buy">'+buy+'</div></div></article>';
