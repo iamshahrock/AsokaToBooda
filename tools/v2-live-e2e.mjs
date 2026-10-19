@@ -29,7 +29,7 @@ await bbp.close();
 const lp = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 lp.on('pageerror', e => log.push(`lairs pageerror ${e.message}`));
 await lp.goto(base + '/lairs/?t=' + Date.now(), { waitUntil: 'networkidle' });
-await lp.click('#ckStart'); await lp.click('#ckView .hs >> nth=2'); await lp.click('#ckBtns .btn'); await lp.click('#ckView .hs >> nth=1'); await lp.click('#ckBtns .btn'); await lp.click('#deal'); await lp.waitForTimeout(300);
+await lp.evaluate(() => localStorage.setItem('amkh-chehre2', JSON.stringify({ v: 2, scene: 'casino', open: ['gate', 'casino'], won: {}, acts: {}, points: 0 }))); await lp.reload({ waitUntil: 'networkidle' }); await lp.click('#ckView .hs >> nth=1'); await lp.click('#deal'); await lp.waitForTimeout(300);
 for (let k = 0; k < 4; k++) { if (await lp.$('#check')) { await lp.click('#check'); await lp.waitForTimeout(100); } }
 log.push('lairs casino: ' + (await lp.textContent('#cmsg')) + ' · story art: ' + (await lp.evaluate(() => [...document.querySelectorAll('img')].filter(i => i.src.includes('/lairs/') && i.naturalWidth > 0).length)) + ' images loaded');
 await lp.click('#cTabs button[data-id=den]'); await lp.waitForTimeout(800);
