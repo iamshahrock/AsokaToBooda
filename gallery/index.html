@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gallery — Agar Main King Hota</title>
-<meta name="description" content="Gallery: Shah Rukh Khan in pictures, every photo in the same frame.">
+<meta name="description" content="Shah Rukh Khan in pictures: film stills, magazine covers, photoshoots, events, awards, cricket and throwbacks, all in one frame size. Search by film, year and genre.">
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/gallery/">
 <link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
@@ -19,24 +19,83 @@
 <script src="../assets/header.js"></script>
 <script src="../assets/section-nav.js"></script>
 <main class="wrap">
-  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>SRK in <em>pictures</em></h1></div><p>Every photo in the same frame.</p></div>
+  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>SRK in <em>pictures</em></h1></div><p>Every picture in the same frame. Pick a section, then search by film, year or genre. Tap a picture to open the page it came from.</p></div>
+  <div class="vtabs" id="tabs" role="group" aria-label="Picture sections"></div>
+  <div class="vbar">
+    <input type="search" id="q" placeholder="Search pictures" aria-label="Search">
+    <select id="film" aria-label="Film"></select>
+    <select id="year" aria-label="Year"></select>
+    <select id="genre" aria-label="Genre"></select>
+    <select id="sort" aria-label="Sort"><option value="">Mixed</option><option value="yr">Newest film first</option><option value="yrold">Oldest film first</option></select>
+  </div>
+  <p class="vcount" id="vcount"></p>
   <section class="pg" id="grid" aria-label="Photos"><p class="note">Loading…</p></section>
+  <p class="note vg-src" id="src"></p>
 </main>
 <style>
+.vtabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:6px 0 14px}
+.vtabs button{font:400 18px/1.1 var(--display,Anton),sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:16px 10px;background:var(--panel);border:1px solid var(--line);color:#efe6df;cursor:pointer;text-align:left}
+.vtabs button span{display:block;font:600 11.5px var(--body);letter-spacing:.12em;color:var(--mute);margin-top:6px}
+.vtabs button[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+.vtabs button[aria-pressed=true] span{color:#ffe1dc}
+.vbar{display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr 1.2fr;gap:8px;margin-bottom:8px}
+.vbar input,.vbar select{min-width:0;width:100%;background:#0d0909;border:1px solid var(--line);color:#efe6df;font:500 14px var(--body);padding:10px 12px}
+.vbar input:focus,.vbar select:focus{outline:none;border-color:var(--red)}
+.vcount{margin:4px 0 12px;color:var(--mute);font-size:13px}
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.pg figure{margin:0;background:var(--panel);border:1px solid var(--line)}
+.pg a{display:block;margin:0;background:var(--panel);border:1px solid var(--line);color:#efe6df;text-decoration:none}
+.pg a:hover{border-color:var(--red)}
 .pg .fr{aspect-ratio:4/5;overflow:hidden;background:#0d0909}
-.pg img{width:100%;height:100%;object-fit:cover;display:block}
-.pg figcaption{padding:8px 10px;font-size:12.5px;line-height:1.4;color:#cfc4bb}
-.pg figcaption small{display:block;color:var(--mute);font-size:11px}
+.pg img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.pg .cp{padding:8px 10px;font-size:12.5px;line-height:1.35}
+.pg .cp b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pg .cp small{display:block;color:var(--mute);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pg-empty{grid-column:1/-1;border:1px dashed var(--line);padding:40px 20px;text-align:center;color:var(--mute)}
+.vg-more{grid-column:1/-1}
+@media(max-width:1100px){.vtabs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:900px){.vtabs{grid-template-columns:repeat(3,minmax(0,1fr))}.vbar{grid-template-columns:1fr 1fr}.vbar input{grid-column:1/-1}}
 @media(max-width:700px){.pg{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+@media(max-width:480px){.vtabs button{font-size:14px;padding:12px 8px;min-width:0}.vtabs button span{font-size:10.5px;letter-spacing:.06em}}
 </style>
 <script>
-(function(){var g=document.getElementById('grid'),esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
-fetch('../data/gallery.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){var L=d.items||[];
-g.innerHTML=L.length?L.map(function(i){return '<figure><div class="fr"><img loading="lazy" src="../assets/gallery/'+esc(i.file)+'" alt="'+esc(i.caption||'Shah Rukh Khan')+'"></div><figcaption>'+esc(i.caption||'')+(i.year||i.credit?'<small>'+esc([i.year,i.credit].filter(Boolean).join(' · '))+'</small>':'')+'</figcaption></figure>';}).join(''):'<p class="pg-empty">Photos are coming soon.</p>';
-}).catch(function(){g.innerHTML='<p class="pg-empty">The gallery could not load right now.</p>';});})();
+(function(){
+var $=function(i){return document.getElementById(i);}, g=$('grid'), fs=$('film'), ys=$('year'), gs=$('genre'), q=$('q'), so=$('sort'), all=[], cur='', shown=60;
+var CATS=['Films','Magazine Covers','Photoshoots','Events','Awards','Cricket','Throwback'];
+var slug=function(c){return c.toLowerCase().replace(/[^a-z]+/g,'-');};
+var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+function count(L,f){var c={};L.forEach(function(i){var k=f(i);if(k)c[k]=(c[k]||0)+1;});return c;}
+function opts(sel,label,vals){sel.innerHTML='<option value="">'+label+'</option>'+vals.map(function(x){return '<option value="'+esc(x[0])+'">'+esc(x[0])+' ('+x[1]+')</option>';}).join('');}
+function fill(){var L=all.filter(function(i){return i.cat===cur;});
+  var fc=count(L,function(i){return i.film||'';}), yc=count(L,function(i){return i.year?String(i.year):'';}), gc=count(L,function(i){return i.genre||'';}), fy={};
+  L.forEach(function(i){if(i.film&&i.year)fy[i.film]=i.year;});
+  opts(fs,'All films',Object.keys(fc).sort(function(a,b){return (fy[a]||0)-(fy[b]||0);}).map(function(k){return [k,fc[k]];}));
+  opts(ys,'All years',Object.keys(yc).sort().reverse().map(function(k){return [k,yc[k]];}));
+  opts(gs,'All genres',Object.keys(gc).sort().map(function(k){return [k,gc[k]];}));
+  var hasF=Object.keys(fc).length>0; fs.style.display=hasF?'':'none'; gs.style.display=Object.keys(gc).length?'':'none'; ys.style.display=Object.keys(yc).length?'':'none';
+  q.placeholder='Search '+cur.toLowerCase();}
+function list(){var w=(q.value||'').toLowerCase().trim().split(/\s+/).filter(Boolean);
+  var L=all.filter(function(it){return it.cat===cur&&(!fs.value||it.film===fs.value)&&(!ys.value||String(it.year)===ys.value)&&(!gs.value||it.genre===gs.value)&&w.every(function(x){return ((it.title||'')+' '+(it.film||'')+' '+(it.year||'')+' '+(it.genre||'')+' '+(it.host||'')).toLowerCase().indexOf(x)>=0;});});
+  if(so.value==='yr')L.sort(function(a,b){return (b.year||0)-(a.year||0);});else if(so.value==='yrold')L.sort(function(a,b){return (a.year||9999)-(b.year||9999);});
+  return L;}
+function tile(i){var cap=[i.film,i.year].filter(Boolean).join(' · ')||i.title||'';
+  var src=i.img?i.img:'../assets/gallery/'+i.file;
+  return '<a href="'+esc(i.src||src)+'" target="_blank" rel="noopener"><div class="fr"><img loading="lazy" referrerpolicy="no-referrer" src="'+esc(src)+'"'+(i.th?' data-th="https://tse2.mm.bing.net/th/id/'+esc(i.th)+'"':'')+' alt="'+esc(i.title||'Shah Rukh Khan')+'"></div><div class="cp"><b>'+esc(cap)+'</b><small>'+esc(i.host||i.credit||'')+'</small></div></a>';}
+function render(){var L=list();$('vcount').textContent=L.length.toLocaleString('en-US')+' pictures'+(fs.value?' · '+fs.value:'')+(ys.value?' · '+ys.value:'')+(gs.value?' · '+gs.value:'');
+  g.innerHTML=L.length?L.slice(0,shown).map(tile).join(''):'<p class="pg-empty">'+(all.length?'Nothing matches.':'Photos are coming soon.')+'</p>';
+  if(L.length>shown){var b=document.createElement('button');b.className='vg-more';b.type='button';b.textContent='Show more ('+(L.length-shown).toLocaleString('en-US')+' left)';b.onclick=function(){shown+=60;render();};g.appendChild(b);}
+  [].forEach.call(g.querySelectorAll('img'),function(im){im.onerror=function(){var t=im.getAttribute('data-th');if(t&&im.src!==t){im.src=t;}else{im.closest('a').style.display='none';}};});}
+function pick(c){cur=c;shown=60;q.value='';[].forEach.call($('tabs').children,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-c')===c?'true':'false');});fill();render();try{history.replaceState(null,'','#'+slug(c));}catch(e){}}
+fetch('../data/gallery.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){all=d.items||[];all.forEach(function(i){if(!i.cat)i.cat='Films';});
+  var c=count(all,function(i){return i.cat;}), cats=CATS.filter(function(k){return c[k];}); if(!cats.length)cats=['Films'];
+  $('tabs').innerHTML=cats.map(function(k){return '<button type="button" data-c="'+esc(k)+'">'+esc(k)+' <span>'+(c[k]||0).toLocaleString('en-US')+' pictures</span></button>';}).join('');
+  [].forEach.call($('tabs').children,function(b){b.onclick=function(){pick(b.getAttribute('data-c'));};});
+  var h=(location.hash||'').slice(1), start=cats.filter(function(k){return slug(k)===h;})[0]||cats[0];
+  if(d.source)$('src').textContent='Source: '+d.source+(d.updated?' Updated '+d.updated+'.':'');
+  pick(start);
+}).catch(function(){g.innerHTML='<p class="pg-empty">The gallery could not load right now.</p>';});
+[fs,ys,gs,so].forEach(function(s){s.addEventListener('change',function(){shown=60;render();});});
+q.addEventListener('input',function(){shown=60;render();});
+})();
 </script>
 <script src="../assets/footer.js" defer></script>
 </body>
