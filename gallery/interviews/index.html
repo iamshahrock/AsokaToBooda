@@ -19,7 +19,7 @@
 <script src="../../assets/header.js"></script>
 <script src="../../assets/gallery-nav.js"></script>
 <main class="wrap">
-  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>Video <em>Interviews</em></h1></div><p>Shah Rukh Khan on camera: TV interviews, talks, speeches and press conferences on YouTube. Written interviews have their own section.</p></div>
+  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>Video <em>Interviews</em></h1></div><p>Shah Rukh Khan on camera: TV interviews, talks, speeches and press conferences on YouTube. Interviews, articles and his words in print are in King In Print.</p></div>
   <div class="vg-stats" id="stats"></div>
   <div class="vg-bar">
     <div class="chips" id="chips" role="group" aria-label="Interview type">
@@ -42,7 +42,7 @@
 function kind(t){t=t.toLowerCase();if(/press conference|press meet/.test(t))return 'press';if(/\bted\b|speech|talk at|talks at|address|conclave|summit|masterclass|lecture|yale|oxford|edinburgh|davos|forum|fellow/.test(t))return 'talk';return 'interview';}
 VGrid({data:'../../data/srk-interviews.json', grid:'#grid', stats:'#stats', chips:'#chips', q:'#q', sort:'#sort', src:'#src',
   filter:function(it,f){return f==='all'||kind(it.title)===f;},
-  statsFn:function(items,fmt){var ch={},v=0;items.forEach(function(i){ch[i.channel]=1;v+=i.views||0;});return [[fmt(items.length),'videos'],[fmt(Object.keys(ch).length),'channels'],[fmt(v),'views in total'],['<a href="../written-interviews/" style="color:inherit">Written →</a>','interviews in print']];}});
+  statsFn:function(items,fmt){var ch={},v=0;items.forEach(function(i){ch[i.channel]=1;v+=i.views||0;});return [[fmt(items.length),'videos'],[fmt(Object.keys(ch).length),'channels'],[fmt(v),'views in total'],['<a href="../written-interviews/" style="color:inherit">King In Print →</a>','interviews, articles, his words']];}});
 </script>
 <script src="../../assets/footer.js" defer></script>
 </body>
