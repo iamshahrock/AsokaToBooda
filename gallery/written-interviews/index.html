@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Written Interviews — Agar Main King Hota</title>
+<meta name="description" content="Written interviews with Shah Rukh Khan and his own words in print, dated, with the writer, searchable and linked to the original.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/gallery/written-interviews/">
+<link rel="icon" type="image/png" href="../../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/v2.css">
+<link rel="stylesheet" href="../../assets/vgrid.css">
+</head>
+<body class="v2">
+<script src="../../assets/header.js"></script>
+<script src="../../assets/gallery-nav.js"></script>
+<main class="wrap">
+  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>Written <em>Interviews</em></h1></div><p>Interviews with Shah Rukh Khan in newspapers, magazines and websites, and his own words in print. Each one is dated, names the writer where the site shows it, and links to the original.</p></div>
+  <div class="vg-stats" id="tstats"></div>
+  
+  <div class="vg-bar"><div class="vg-tools"><select id="tk" aria-label="Type"><option value="">Everything</option><option value="Interview">Interviews</option><option value="In his words">In his words (quotes, AskSRK, speeches)</option><option value="article">Articles only</option><option value="video">Other video sites</option></select><select id="ty" aria-label="Decade"><option value="">All years</option><option value="2020">2020s</option><option value="2010">2010s</option><option value="2000">2000s</option><option value="1990">1990s</option><option value="na">Year not shown</option></select><input type="search" id="tq" placeholder="Search words, film, interviewer, outlet, year" aria-label="Search written interviews"></div><span class="note" id="tn"></span></div>
+  <ul class="tl" id="text"></ul>
+  <button type="button" class="vg-more" id="tmore" style="display:none">Show more</button>
+  <p class="sec-k" id="unread">Times of India, Filmfare and Times Now · links only</p>
+  <p class="note" style="margin:-4px 0 12px;max-width:820px">These three news sites could not be opened by the tools we use to read article pages, so the date, the writer and the summary are not shown yet. Every link below opens the original article on the site.</p>
+  <ul class="tl" id="blocked"></ul>
+  <p class="note vg-src" id="tsrc"></p>
+</main>
+<style>.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.tl li a{display:block;padding:12px 14px;background:var(--panel);border:1px solid var(--line);color:#efe6df;text-decoration:none}.tl li a:hover{border-color:var(--red)}.tl b{display:block;font:600 14.5px/1.4 var(--body)}.tl small{color:var(--mute);font-size:12px;letter-spacing:.04em}.tl small em{font-style:normal;color:var(--red-text);font-weight:700}.tl .by{display:block;margin-top:4px;font-size:12.5px;color:#cfc4bb}.tl .ds{display:block;margin-top:4px;font-size:12.5px;line-height:1.45;color:var(--mute);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.sec-k{margin:34px 0 10px;font:700 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}@media(max-width:700px){.tl{grid-template-columns:1fr}}</style>
+<script>
+fetch('../../data/srk-interviews.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){var e=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};var T=d.text||[];
+var BL=/(^|\.)(timesofindia\.indiatimes\.com|filmfare\.com|timesnownews\.com)$/;var B=T.filter(function(p){try{return BL.test(new URL(p.url).hostname);}catch(x){return false;}});document.getElementById('blocked').innerHTML=B.map(function(p){return '<li><a href="'+e(p.url)+'" target="_blank" rel="noopener"><small>'+e(p.outlet)+(p.year&&p.year!=='N/A'?' · '+e(p.year):'')+'</small><b>'+e(p.title)+'</b></a></li>';}).join('');var by=T.filter(function(p){return p.by;}).length,dt=T.filter(function(p){return p.date;}).length,iv=T.filter(function(p){return p.tag==='Interview';}).length;var oc={};T.forEach(function(p){oc[p.outlet]=1;});document.getElementById('tstats').innerHTML=[[T.length,'pieces'],[iv,'interviews'],[Object.keys(oc).length,'outlets'],[dt,'with exact date']].map(function(x){return '<div><b>'+Number(x[0]).toLocaleString('en-US')+'</b><span>'+x[1]+'</span></div>';}).join('');document.getElementById('tsrc').textContent='Source: '+(d.source||'');
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];function fd(p){if(p.date&&/^\d{4}-\d{2}-\d{2}/.test(p.date)){var x=p.date.slice(0,10).split('-');return (+x[2])+' '+MON[+x[1]-1]+' '+x[0];}return p.year&&p.year!=='N/A'?p.year:'Date not shown';}function key(p){return p.date?p.date.slice(0,10):(p.year&&p.year!=='N/A'?p.year+'-00-00':'0000');}T.forEach(function(p){p._s=(p.outlet+' '+p.title+' '+(p.by||'')+' '+(p.desc||'')+' '+fd(p)).toLowerCase();p._y=p.date?p.date.slice(0,4):p.year;});T.sort(function(a,b){return key(b)<key(a)?-1:(key(b)>key(a)?1:0);});var tq=document.getElementById('tq'),lim=200;function tdraw(more){if(!more)lim=200;var q=(tq.value||'').toLowerCase().trim().split(/\s+/).filter(Boolean);var k=document.getElementById('tk').value,y=document.getElementById('ty').value;var M=T.filter(function(p){var yy=(!p._y||p._y==='N/A')?'na':String(p._y).slice(0,3)+'0';return q.every(function(w){return p._s.indexOf(w)>=0;})&&(!k||p.kind===k||p.tag===k)&&(!y||yy===y);});document.getElementById('tn').textContent=M.length+' of '+T.length;document.getElementById('text').innerHTML=M.slice(0,lim).map(function(p){return '<li><a href="'+e(p.url)+'" target="_blank" rel="noopener"><small><em>'+e(fd(p))+'</em> · '+e(p.outlet)+(p.kind==='video'?' · video':'')+(p.tag?' · '+e(p.tag):'')+'</small><b>'+e(p.title)+'</b>'+(p.by?'<span class="by">By '+e(p.by)+'</span>':'')+(p.desc?'<span class="ds">'+e(p.desc)+'</span>':'')+'</a></li>';}).join('');var mb=document.getElementById('tmore');mb.style.display=M.length>lim?'block':'none';mb.textContent='Show more ('+(M.length-lim)+' left)';}document.getElementById('tmore').onclick=function(){lim+=200;tdraw(true);};tq.addEventListener('input',function(){tdraw();});document.getElementById('tk').addEventListener('change',function(){tdraw();});document.getElementById('ty').addEventListener('change',function(){tdraw();});tdraw();});
+</script>
+<script src="../../assets/footer.js" defer></script>
+</body>
+</html>
