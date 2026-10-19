@@ -19,7 +19,7 @@
 <script src="../../assets/header.js"></script>
 <script src="../../assets/section-nav.js"></script>
 <main class="wrap">
-  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>SRK <em>Videos</em></h1></div><p>Songs, trailers, scenes, making-of, TV shows, awards and stage. Pick a section, then search by film, year or genre.</p></div>
+  <div class="page-head"><div><p class="eyebrow">Gallery</p><h1>SRK <em>Videos</em></h1></div><p>Songs, trailers, scenes, making-of, TV shows, awards and stage, and full movies free on YouTube. Pick a section, then search by film, year or genre.</p></div>
   <div class="vtabs" id="chips" role="group" aria-label="Video sections">
     <button type="button" data-f="Songs" aria-pressed="true">Songs <span></span></button>
     <button type="button" data-f="Trailers" aria-pressed="false">Trailers <span></span></button>
@@ -27,6 +27,7 @@
     <button type="button" data-f="Making Of" aria-pressed="false">Making Of <span></span></button>
     <button type="button" data-f="Shows" aria-pressed="false">Shows <span></span></button>
     <button type="button" data-f="Awards & Stage" aria-pressed="false">Awards &amp; Stage <span></span></button>
+    <button type="button" data-f="Full Movies" aria-pressed="false">Full Movies <span></span></button>
   </div>
   <div class="vg-bar vbar">
     <input type="search" id="q" placeholder="Search songs" aria-label="Search">
@@ -40,8 +41,8 @@
   <p class="note vg-src" id="src"></p>
 </main>
 <style>
-.vtabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:6px 0 14px}
-.vtabs button{font:400 19px/1.1 var(--display,Anton),sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:16px 10px;background:var(--panel);border:1px solid var(--line);color:#efe6df;cursor:pointer;text-align:left}
+.vtabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:6px 0 14px}
+.vtabs button{font:400 18px/1.1 var(--display,Anton),sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:16px 10px;background:var(--panel);border:1px solid var(--line);color:#efe6df;cursor:pointer;text-align:left}
 .vtabs button span{display:block;font:600 11.5px var(--body);letter-spacing:.12em;color:var(--mute);margin-top:6px}
 .vtabs button[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
 .vtabs button[aria-pressed=true] span{color:#ffe1dc}
@@ -49,7 +50,7 @@
 .vbar input,.vbar select{min-width:0;width:100%;background:#0d0909;border:1px solid var(--line);color:#efe6df;font:500 14px var(--body);padding:10px 12px}
 .vbar input:focus,.vbar select:focus{outline:none;border-color:var(--red)}
 .vcount{margin:4px 0 12px;color:var(--mute);font-size:13px}
-@media(max-width:900px){.vtabs{grid-template-columns:repeat(3,minmax(0,1fr))}.vbar{grid-template-columns:1fr 1fr}.vbar input{grid-column:1/-1}}
+@media(max-width:1100px){.vtabs{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:900px){.vtabs{grid-template-columns:repeat(3,minmax(0,1fr))}.vbar{grid-template-columns:1fr 1fr}.vbar input{grid-column:1/-1}}
 @media(max-width:480px){.vtabs button{font-size:16px;padding:12px 8px}}
 </style>
 <script src="../../assets/vgrid.js"></script>
@@ -57,7 +58,7 @@
 (function(){
 var $=function(i){return document.getElementById(i);}, fs=$('film'), ys=$('year'), gs=$('genre'), q=$('q'), all=[], cur='Songs';
 var SHOWCAT={'Shows':1,'Awards & Stage':1};
-var H={'songs':'Songs','trailers':'Trailers','scenes':'Scenes','making-of':'Making Of','shows':'Shows','awards-stage':'Awards & Stage'};
+var H={'songs':'Songs','trailers':'Trailers','scenes':'Scenes','making-of':'Making Of','shows':'Shows','awards-stage':'Awards & Stage','full-movies':'Full Movies'};
 var h=(location.hash||'').slice(1); if(H[h]) cur=H[h];
 function key(it){return SHOWCAT[it.cat]?(it.show||''):(it.film||'');}
 function opts(sel,label,vals,keep){var v=keep?sel.value:'';sel.innerHTML='<option value="">'+label+'</option>'+vals.map(function(x){return '<option value="'+x[0].replace(/"/g,'&quot;')+'">'+x[0]+' ('+x[1]+')</option>';}).join('');if(vals.some(function(x){return x[0]===v;}))sel.value=v;}
