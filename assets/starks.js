@@ -19,7 +19,7 @@
     allsix: ['All six lairs cleared', 1],
     chess: ['Beat the Machine at Chess81', 5],
     chapter: ['Finished a story chapter', 12],
-    verdict: ['Finished THE CONTRACT', 2],
+    verdict: ['Finished the King\'s Lairs story', 2],
     pledge: ['Pledged to watch DOOM and KING', 1],
     vote: ['Voted in DOOM to KING', 6],
     inquilab: ['Joined the Inquilaab · #FreeMyFace', 1],
