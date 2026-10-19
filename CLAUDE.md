@@ -12,7 +12,7 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 
 ## Site design (polish pass, 18 Oct 2026)
 - The ZERO to ONE story banner tops EVERY page (owner, 18 Oct: never remove it) and links home; inner pages also keep the Home button in the bar. Contact/FAQ live in the burger menu and the footer.
-- Section tabs under the bar (SUB in assets/header.js) for Make Your Poster, King's Lairs, Chess81, Billboard, Asoka to Boo-Da.
+- Section tabs under the bar (SUB in assets/header.js) for Make Your Poster, King's Lairs (Chehre ki Chori, Lairs Cinema), Chess81, Billboard, Asoka to Boo-Da, Inquilaab.
 - Back-to-top arrow on every page (header.js). Footer has a 4-column site map (footer.js).
 - assets/polish.css (loaded by header.js after page styles) holds the calmer type scale; change sizes there, not page by page.
 - Home keeps the original six doors with the characters, the DOOM to KING banner band and the INQUILAAB band (owner, 18 Oct: put back; do not regroup the home page).
@@ -98,7 +98,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 ## Open work
 - Owner runs real-photo poster tests; afterwards check D1 posters for failed/declined requests and spot-check results for celebrity faces.
 - Mood plates CANCELLED (owner, 19 Oct 2026): keep the original posters; fans choose a style edition (3D Pop, Anime, more coming) as their style. No face-free plate set.
-- King's Lairs (owner, 19 Oct: 'no connection with my images'): redesign as a story game played on her 12 lair pictures, map = Master Floor Plan, hotspots inside each picture, mini-games only at their spot. Design doc: https://claude.ai/code/artifact/3c61e22b-ae17-4838-a53d-31e48b0c57d1 (story 'Chehre ki Chori' proposed). Waiting on her 5 decisions before building.
+- King's Lairs = 'Chehre ki Chori' (LIVE 19 Oct 2026; owner: 'go ahead and make the game'): a story game played on her own lair pictures. 14 scenes (SCENES in lairs/index.html; hotspots in % of each picture), 3 acts: I Underground City (Master Floor Plan as map; casino, pit, den, plus VR Suite and Trophy Vault as floor-plan crops city-vr/city-vault.webp), II Mountain Dome, III Hive + control room. Items in a Dossier unlock rooms; the old mini-games run only at their spot (poker=casino table, combos=Pit brute, dive=Noctopus, searchlights=frozen lake, quiz=Archive pyramid, gate+challenge=world map). Progress in localStorage 'amkh-chehre'. STARKS: item +50 ('chapter'), game wins ('lair' + 'firstclear'), act +300 ('throne'), end +750 ('verdict'). Lairs Cinema unchanged (#lair: ids casino/dome/city/pit/den/throne kept). Design doc: https://claude.ai/code/artifact/3c61e22b-ae17-4838-a53d-31e48b0c57d1. Defaults taken: villain unnamed, guide = 'Ground Control' (text only), no new art needed. Open: a daily clue (owner undecided).
 - PARKED, conflicts with #FreeMyFace: the "replace a face" remake mode (masked AI edit composited onto the untouched original poster). It would keep real stars' faces in the output. Owner to decide before any work.
 - Inquilaab sub-page /inquilab/revolution/ 'The Revolution Starts Now' LIVE (19 Oct 2026): AI-vs-our-studio comparison, 3 empty consented-example slots, the master INQUILAAB #FreeMyFace design (assets/merch/inquilaab-master.webp); more designs coming from the owner. Inquilaab now has section tabs (SUB in header.js).
 

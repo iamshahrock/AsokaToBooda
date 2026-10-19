@@ -177,20 +177,66 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
 @media (max-width:560px){.csteps{grid-template-columns:minmax(0,1fr)}.cform{grid-template-columns:minmax(0,1fr)}.ctabs button{flex:1 1 44%}}
 @media (max-width:900px){.map{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.map{grid-template-columns:minmax(0,1fr)}.lair{min-height:300px}.keys{grid-template-columns:repeat(4,64px)}.quiz{flex-direction:column;align-items:flex-start}.card{width:44px;font-size:17px;padding:4px}.hand{gap:6px}.felt{padding:12px}.card.back .kh{width:28px;height:28px;font-size:13px}.gate{grid-template-columns:repeat(3,72px)}.bit{width:72px;height:72px}}
+.ck-head{margin-top:18px;padding:28px 30px;border:1px solid var(--line);background:linear-gradient(90deg,rgba(8,4,4,.97) 35%,rgba(8,4,4,.55)),url(../assets/lairs/scenes/dome-hive-m.webp) center/cover}
+.ck-head h1{margin:4px 0 8px;font-family:var(--display);font-weight:400;font-size:clamp(48px,6vw,88px);line-height:.9;text-transform:uppercase}
+.ck-head h1 em{font-style:normal;color:var(--red-hi)}
+.ck-head .say{max-width:640px}
+.ck{margin-top:14px;border:1px solid var(--line);background:#070505;scroll-margin-top:70px}
+.ck-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.ck-bar small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-text)}
+.ck-bar h2{margin:2px 0 0;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,34px);text-transform:uppercase;line-height:1}
+.ck-tools{display:flex;flex-wrap:wrap;gap:8px}.ck-tools .btn{min-height:40px;padding:0 16px;font-size:15px}
+.ck-sm{opacity:.75}
+.ck-view{overflow-x:auto;line-height:0;background:#000;-webkit-overflow-scrolling:touch}
+.ck-pic{position:relative;--r:2.4;width:min(100%,calc(74vh * var(--r)));margin:0 auto}
+.ck-view img{display:block;width:100%;height:auto}
+.ck-view.plan img{image-rendering:auto}
+.hs{position:absolute;transform:translate(-50%,-50%);border:0;background:none;padding:0;cursor:pointer;line-height:1;z-index:2}
+.hs i{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;font-style:normal;font-family:var(--display);font-size:19px;color:#fff;background:rgba(227,36,43,.9);border:3px solid #fff;box-shadow:0 0 0 0 rgba(227,36,43,.7);animation:hsPulse 1.8s infinite}
+.hs span{position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);white-space:nowrap;font-family:var(--body);font-size:13px;font-weight:600;color:#fff;background:rgba(0,0,0,.82);padding:4px 8px;opacity:0;pointer-events:none;transition:opacity .15s}
+.hs:hover span,.hs:focus-visible span{opacity:1}
+.hs.seen i{background:rgba(20,20,20,.85);border-color:#7fd38a;animation:none}
+.hs.locked i{background:rgba(20,20,20,.85);border-color:var(--red-hi)}
+@keyframes hsPulse{0%{box-shadow:0 0 0 0 rgba(227,36,43,.7)}70%{box-shadow:0 0 0 16px rgba(227,36,43,0)}100%{box-shadow:0 0 0 0 rgba(227,36,43,0)}}
+@media (prefers-reduced-motion:reduce){.hs i{animation:none}}
+.ck-strip{padding:16px 20px 18px;border-top:1px solid var(--line);min-height:120px}
+.ck-strip p{margin:0 0 8px;font-size:17px;line-height:1.55;color:#ece4dc;max-width:900px}
+.ck-strip .who{display:block;margin-bottom:6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-text)}
+.ck-strip .got{display:inline-block;margin-top:4px;padding:4px 10px;border:1px solid #7fd38a;color:#7fd38a;font-size:14px}
+.ck-strip .need{display:inline-block;margin-top:4px;padding:4px 10px;border:1px solid var(--red-hi);color:var(--red-text);font-size:14px}
+.ck-strip .row{margin-top:10px}
+.ck-panel{display:none;padding:16px 18px;border-bottom:1px solid var(--line);background:#0b0707}.ck-panel.on{display:block}
+.ck-plan{position:relative;line-height:0}.ck-plan img{width:100%;height:auto;display:block}
+.pin{position:absolute;transform:translate(-50%,-50%);border:0;background:none;padding:0;cursor:pointer;line-height:1}
+.pin i{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;font-style:normal;font-family:var(--display);font-size:18px;color:#fff;background:var(--red);border:3px solid #fff}
+.pin span{position:absolute;left:calc(100% + 6px);top:50%;transform:translateY(-50%);white-space:nowrap;font-size:13px;font-weight:600;color:#fff;background:rgba(0,0,0,.8);padding:3px 7px}
+.pin.shut{cursor:not-allowed}.pin.shut i{background:#222;border-color:#555;color:#888}.pin.shut span{color:#888}
+.pin.here i{box-shadow:0 0 0 5px rgba(255,255,255,.35)}
+.ck-dome{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+.dt{border:1px solid var(--line);background:#0d0909;padding:0;cursor:pointer;color:var(--ink);text-align:left}
+.dt img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.dt span{display:block;padding:6px 8px;font-size:12px;line-height:1.3}
+.dt.shut{cursor:not-allowed}.dt.shut img{filter:grayscale(1) brightness(.35)}
+.dt.here{border-color:var(--red-hi)}
+.dos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.dos li{border:1px solid var(--line);background:#0d0909;padding:10px 12px}.dos b{display:block;font-family:var(--display);font-weight:400;font-size:20px;text-transform:uppercase;color:var(--red-hi)}.dos span{font-size:14px;color:var(--mute)}
+.ck-play{display:none;border-top:1px solid var(--line);scroll-margin-top:70px}.ck-play.on{display:block}
+.ck-res{margin-top:18px}
+.ck-line{font-family:var(--display);font-size:clamp(26px,3vw,40px);text-transform:uppercase;color:var(--red-hi);margin:6px 0}
+@media (max-width:900px){.ck-dome{grid-template-columns:repeat(4,minmax(0,1fr))}.ck-pic{width:max(100%,calc(330px * var(--r)))}.hs i{width:32px;height:32px;font-size:16px}.ck-head{padding:22px 18px}}
+@media (hover:none){.hs span{display:none}}
 </style>
 </head>
 <body class="v2">
 <script src="../assets/header.js"></script>
 <main class="wrap">
-  <section class="contract">
-    <img class="c-art" src="../assets/lairs/cover.webp" alt="" onerror="this.remove()">
-    <div class="c-copy">
+  <section class="ck-head">
+    <div>
       <p class="eyebrow">02 · King's Lairs · The story game</p>
-      <h1>The <em>Contract</em></h1>
-      <p class="c-lede">They call him KING. Not because he was born to a throne, but because nobody who stood against him kept theirs.</p>
-      <p class="say">Tonight a sealed envelope arrives: six names, one client, no face. Every name hides in a lair. Play each chapter, make the calls a King would make, win the job, and star in the scene with your own face. All six chapters are open: play them in order for the full story.</p>
-      <p class="c-line">Darr nahin, dehshat hoon.</p>
-      <div class="meters" id="meters"></div>
+      <h1>Chehre ki <em>Chori</em></h1>
+      <p class="c-lede">Fans' faces are vanishing from their own photos. Follow the money under the prison, climb to the glass dome, and set every face free.</p>
+      <p class="say">Three acts, fourteen rooms, all in the lairs' own pictures. Tap the glowing spots, collect what you find, win the games where they happen, and star in the scene with your own face. Your progress is saved on this device.</p>
+      <div class="row"><button class="btn btn-red" id="ckStart" type="button">Start the story →</button><a class="btn btn-line" href="#cinema">Lairs Cinema →</a></div>
     </div>
   </section>
   <h1 class="sr">King's Lairs</h1>
@@ -198,22 +244,25 @@ canvas.den{display:block;width:100%;max-width:520px;aspect-ratio:3/4;background:
   <div class="hud" aria-live="polite">
     <div class="me"><img id="avatar" src="../assets/studio/crown.png" alt=""><div><small>Your STARKS</small><b id="bal">0</b></div></div>
     <div><small>Rank</small><b id="tier" style="font-size:22px;color:var(--ink)">Fan</b></div>
-    <div><small>Chapters cleared</small><b id="cleared" style="font-size:22px;color:var(--ink)">0 / 6</b></div>
-    <a class="btn btn-red" href="#cinema">Lairs Cinema: make the film →</a>
+    <div><small>Spots explored</small><b id="cleared" style="font-size:22px;color:var(--ink)">0</b></div>
+    <div><small>Now playing</small><b id="actNow" style="font-size:22px;color:var(--ink)">Act I</b></div>
     <a class="btn btn-line" href="../fan-billboard/">Billboard →</a>
   </div>
+
+  <section class="ck" id="ckGame" aria-label="Chehre ki Chori">
+    <div class="ck-bar"><div><small id="ckAct">Act I · Follow the money</small><h2 id="ckName">The way in</h2></div>
+      <div class="ck-tools"><button class="btn btn-line" id="ckMapBtn" type="button">Map</button><button class="btn btn-line" id="ckDosBtn" type="button">Dossier</button><button class="btn btn-line ck-sm" id="ckRestart" type="button">Start over</button></div></div>
+    <div class="ck-panel" id="ckMap"><div id="ckMapBody"></div></div>
+    <div class="ck-panel" id="ckDos"><p class="eyebrow">Your dossier</p><div id="ckDosBody"></div></div>
+    <div class="ck-view" id="ckView"></div>
+    <div class="ck-strip" id="ckStrip" aria-live="polite"></div>
+    <div class="ck-play" id="ckPlay"><div class="stage-top"><h2 id="ckPlayT">Encounter</h2></div><div class="arena" id="arena"></div></div>
+  </section>
 
   <a class="reel" id="reel" href="#cinema" aria-label="Lairs Cinema: direct your own KING scene">
     <div class="reel-frames" id="reelFrames"></div>
     <div class="reel-copy"><em>Lairs Cinema · Now casting</em><strong>Direct your own <i>KING</i> scene</strong><span id="reelCap">The Grand Casino</span><b class="btn btn-red">Make the film →</b></div>
   </a>
-
-  <div class="map" id="map"></div>
-
-  <section class="stage" id="stage" aria-live="polite">
-    <div class="stage-top"><h2 id="sTitle">Lair</h2><span class="meta" id="sMeta"></span><button class="btn btn-line" id="back" type="button">← All lairs</button></div>
-    <div class="arena" id="arena"></div>
-  </section>
 
   <section class="cinema" id="cinema" aria-labelledby="cineH">
     <p class="eyebrow">Lairs Cinema · Make the film</p>
@@ -272,37 +321,265 @@ function prog() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } 
 function setProg(p) { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {} }
 function fmt(n) { return Number(n).toLocaleString('en-IN'); }
 
+/* ---------- CHEHRE KI CHORI: the story game played on the owner's lair pictures ---------- */
+var CK_KEY = 'amkh-chehre';
+var SC = '../assets/lairs/scenes/';
+var ACTS = { 1: 'Act I · Follow the money', 2: 'Act II · Find the faces', 3: 'Act III · Free the faces' };
+var ITEMS = {
+  marker: ['High Roller marker', 'Black and gold. Opens the golden door in the casino.'],
+  cagekey: ['Cage key', 'Taken from the brute in The Pit.'],
+  vrcode: ['VR Suite code', 'Engraved on the Noctopus\'s last crown.'],
+  vaultmap: ['Vault map', 'Seen inside a VR headset: how the Trophy Vault opens.'],
+  keycard: ['Dome keycard', 'Marked DOME. Opens the glass door above the snowline.'],
+  buyerlist: ['The buyers\' list', 'Every buyer of a stolen face, with a date and a price.'],
+  archivepass: ['Archive pass', 'Given by the pyramid to someone who knows his films.'],
+  copycode: ['Copy machine code', 'The code that turns a fan\'s photo into a stolen face.'],
+  release: ['Pod release', 'One command: RELEASE ALL.']
+};
+var GAMES = { casino: casino, pit: pit, den: den, dome: dome, city: city, throne: throne };
+var GC = 'Ground Control';
+/* Every scene is one of the owner's pictures. Hotspots are placed in % of the picture. */
+var SCENES = {
+  gate: { act: 1, name: 'The way in', img: 'city-floorplan', pin: [51, 13], spots: [
+    { id: 'g1', x: 51, y: 13, label: 'The surface prison', who: GC, say: ['Ground Control to fan. Do you copy?', 'Fans\' faces are vanishing from their own photos. Somebody copies them and sells them. The money runs through a casino under this prison.', 'Go in with your own face. It is the one thing they cannot copy while you hold on to it.'] },
+    { id: 'g2', x: 23, y: 7, label: 'The lightning', say: ['Every time the lightning strikes, the lights below flicker. Somebody down there is running a very big machine.'] },
+    { id: 'g3', x: 39, y: 25, label: 'Service tunnel', say: ['A service tunnel runs from the prison yard down into the rock. Music comes up it, and the smell of money.'], unlock: 'casino', go: 'casino', goLabel: 'Take the tunnel to the Casino Floor' }
+  ] },
+  casino: { act: 1, name: 'Casino Floor', img: 'casino-grand', pin: [28, 54], spots: [
+    { id: 'c1', x: 50.5, y: 24, label: 'The golden door', need: 'marker', needSay: ['A doorman in a gold collar blocks the door. "High Rollers only. Show me a marker."'], who: 'The doorman', say: ['The doorman sees the marker and steps aside.', 'Behind the gold door: a corridor of cages, and music that shakes the floor. The Pit.'], unlock: 'pit', go: 'pit', goLabel: 'Go down to The Pit' },
+    { id: 'c2', x: 9, y: 70, label: 'The poker table', who: 'The House', say: ['"Win at my table," says the House, "and you get a High Roller\'s marker."'], game: 'casino', give: 'marker', win: 'The House slides a black-and-gold marker across the felt. "Spend it well."', lose: 'The House rakes in your chips. "Sit again when you are ready."' },
+    { id: 'c3', x: 57.5, y: 51, label: 'The stage', who: 'The croupier', say: ['The croupier spins the wheel without looking at it.'], choices: [
+      ['Who is the house\'s biggest buyer?', '"Nobody here buys chips. They buy faces. New ones, thousands a night."'],
+      ['What pays for all of this?', '"Faces, darling. A famous face sells once. A fan\'s face sells forever."'] ] },
+    { id: 'c4', x: 91.5, y: 83, label: 'The bar', who: 'The barman', say: ['"You want The Pit? Through the High Rollers\' door.', 'Ask about the cages. The people in them never go home."'] }
+  ] },
+  pit: { act: 1, name: 'The Pit', img: 'pit-dance', pin: [52, 36], spots: [
+    { id: 'p1', x: 79, y: 30, label: 'CAGES OPEN', say: ['The neon says CAGES OPEN. They never do.', 'The brute at the card table wears the keys on his belt.'] },
+    { id: 'p2', x: 50.5, y: 22, label: 'The hanging cages', need: 'cagekey', needSay: ['The cages hang over the dance floor, locked. Someone inside is calling for help.'], who: 'The woman in the cage', say: ['Inside: a fan. Where her face should be, there is only a blank, like an unfinished drawing.', '"They copied me," she whispers. "Then they took the original. The Noctopus keeps the buyer\'s code. Go through the sea window."'], unlock: 'den' },
+    { id: 'p3', x: 11, y: 85, label: 'The brute\'s table', who: 'The brute', say: ['The brute stands up. "You want my keys? Come and take them."'], game: 'pit', give: 'cagekey', win: 'The brute stays down. The cage key is yours.', lose: 'You hit the floor. The crowd cheers for the other man tonight.' },
+    { id: 'p4', x: 92, y: 59, label: 'The sea window', say: ['Through the glass: dark water, and a blue room full of sharks.'], go: 'den', goLabel: 'Swim through to the Abyssal Den', needUnlock: 'den', lockedSay: ['The window is sealed. Somebody in the cages knows how to open it.'] }
+  ] },
+  den: { act: 1, name: 'The Abyssal Den', img: 'den-abyssal', pin: [70, 30], spots: [
+    { id: 'd1', x: 71, y: 46, label: 'The Noctopus', who: 'The Noctopus', say: ['"Every face that passes through here, I taste first," says the Noctopus.', '"Bring me ten crowns from the deep and I will tell you who buys them."'], game: 'den', give: 'vrcode', win: 'The Noctopus counts the crowns. "The buyer lives above the snowline, in a dome of glass. The code to the VR Suite is on the last crown."', lose: 'The ink clouds the water. You surface with nothing.' },
+    { id: 'd2', x: 68, y: 84, label: 'The red pool table', who: 'A stranger with a cue', say: ['"One shot," says the stranger. "Break, and the table talks."'], choices: [
+      ['Take the shot', 'The balls scatter. Under the felt, a stamp: PROPERTY OF THE DOME.'],
+      ['Hand the cue to the stranger', 'He breaks clean and smiles. "The dome sends its cars down here every night. Watch the arcade."'] ] },
+    { id: 'd3', x: 7, y: 78, label: 'The arcade cabinets', need: 'vrcode', needSay: ['One cabinet has no coin slot, only a keypad. Through the wall: the hum of the VR Suite.'], say: ['You key in the code from the crown. The cabinet swings open like a door.'], unlock: 'vr', go: 'vr', goLabel: 'Step into the VR Suite' },
+    { id: 'd4', x: 34, y: 25, label: 'The DJ booth', who: 'The DJ', say: ['"Requests? Tonight there is only one track on repeat."', '"Picture abhi baaki hai."'] }
+  ] },
+  vr: { act: 1, name: 'VR Suite', img: 'city-vr', pin: [79.5, 56.5], plan: true, spots: [
+    { id: 'v1', x: 78, y: 60, label: 'The headsets', say: ['You put one on. A snow-covered dome, a helipad, rows of pods.', 'Then the vault under the residence, and how its lock turns. You memorise it.'], give: 'vaultmap', unlock: 'vault', go: 'vault', goLabel: 'Go to the Trophy Vault' },
+    { id: 'v2', x: 35, y: 48, label: 'The green tables', say: ['Players in headsets, faces lit blue. None of them blinks. None of them is playing; they are being scanned.'] },
+    { id: 'v3', x: 40, y: 14, label: 'The aquarium', say: ['The Noctopus watches through the glass. It knows where you are going.'] }
+  ] },
+  vault: { act: 1, name: 'The Trophy Vault', img: 'city-vault', pin: [59.5, 84], plan: true, spots: [
+    { id: 't1', x: 82, y: 57, label: 'The vault', need: 'vaultmap', needSay: ['A steel door with no handle and no keyhole.'], say: ['The lock turns the way the headset showed you.', 'Inside: trophies. Hundreds of framed faces. On the desk, a keycard marked DOME and a list of buyers.'], give: ['keycard', 'buyerlist'], endAct: 1 },
+    { id: 't2', x: 41, y: 55, label: 'The long table', say: ['A dinner table set for twelve. The place cards carry no names, only face sizes.'] },
+    { id: 't3', x: 61, y: 55, label: 'The round table', say: ['A chessboard, nine squares a side. Somebody has been playing the King against himself.'] }
+  ] },
+  aerial: { act: 2, name: 'The approach', img: 'dome-aerial', spots: [
+    { id: 'a1', x: 54.4, y: 22, label: 'The helicopter', who: 'The pilot', say: ['The pilot reads the DOME keycard and takes you for a buyer.', '"Landing in two minutes. Don\'t look down."'], unlock: 'arrival', go: 'arrival', goLabel: 'Land at the dome' },
+    { id: 'a2', x: 17, y: 79, label: 'The frozen lake', say: ['Or you walk. Two searchlights sweep the ice.'], game: 'dome', win: 'You reach the dome\'s shadow. Nobody saw you.', lose: 'The light found you. Back to the rock.', unlock: 'arrival', go: 'arrival', goLabel: 'Go to the door' },
+    { id: 'a3', x: 47, y: 92, label: 'The rock', say: ['From the rock you count them: twelve guards, two searchlights, one helipad.'] }
+  ] },
+  arrival: { act: 2, name: 'The door', img: 'dome-arrival', spots: [
+    { id: 'r1', x: 50, y: 83, label: 'The door', need: 'keycard', needSay: ['The glass door does not even have a handle.'], who: 'The guard', say: ['The guard scans the keycard. Green.', '"Welcome back, sir."'], unlock: 'panorama', go: 'panorama', goLabel: 'Walk in' },
+    { id: 'r2', x: 50.5, y: 34, label: 'The big screen', say: ['A world map, every country blinking with a number. Faces, counted like shares on a stock exchange.'] },
+    { id: 'r3', x: 33, y: 63, label: 'The upper deck', say: ['Men in suits look down at a fan on the ice. Nobody here expects a fan.'] }
+  ] },
+  panorama: { act: 2, name: 'Inside the dome', img: 'dome-panorama', spots: [
+    { id: 'h1', x: 9, y: 63, label: 'SIDE 1: the library', say: ['Ladders, ledgers, and a door marked ARCHIVE.'], unlock: 'archive', go: 'archive', goLabel: 'Enter the Archive' },
+    { id: 'h2', x: 33, y: 41, label: 'The lab screens', need: 'archivepass', needSay: ['A glass lab. The door opens for Archive staff only.'], say: ['The pass works. The lab door slides open.'], unlock: 'lab', go: 'lab', goLabel: 'Enter the Lab' },
+    { id: 'h3', x: 60.5, y: 40, label: 'The waterfall', say: ['Behind the water, a control room. Locked from inside. Not yet.'] },
+    { id: 'h4', x: 49, y: 87, label: 'The crates', say: ['Crates roll past on the line, each stamped with a barcode and a face size.'] },
+    { id: 'h5', x: 87, y: 77, label: 'SIDE 3: the residence', need: 'copycode', needSay: ['The residence. A guard on the stairs: "The owner sees nobody."'], say: ['You show the guard the copy machine code on your screen. He thinks you are staff and lets you up.'], unlock: 'residence', go: 'residence', goLabel: 'Go up to the Residence' }
+  ] },
+  archive: { act: 2, name: 'The Archive', img: 'dome-archive', spots: [
+    { id: 'k1', x: 50, y: 32, label: 'The pyramid', who: 'The pyramid', say: ['"Only someone who truly knows his films may pass."'], game: 'city', give: 'archivepass', win: 'The pyramid turns gold. An Archive pass drops into your hand.', lose: 'The pyramid goes dark. "Come back when you remember."' },
+    { id: 'k2', x: 50, y: 12, label: 'The moon', say: ['A fake moon. Even the night sky here is a copy.'] },
+    { id: 'k3', x: 10, y: 47, label: 'The empty shelf', say: ['Rows of hero figures, every one a famous face. One shelf is empty.', 'Its label reads: NEXT: THE FANS.'] },
+    { id: 'k4', x: 90, y: 86, label: 'The figures', say: ['Copies. Every one of them. None of them asked to be made.'] }
+  ] },
+  lab: { act: 2, name: 'The Lab', img: 'dome-lab', spots: [
+    { id: 'l1', x: 50, y: 83, label: 'The holo-tables', say: ['On the table: a fan\'s holiday photo turns into a 3D face in eleven seconds.', 'The machine\'s code glows on the screen. You copy it.'], give: 'copycode' },
+    { id: 'l2', x: 93, y: 55, label: 'The server racks', say: ['Every rack is labelled with a city. Mumbai\'s runs hottest.'] },
+    { id: 'l3', x: 22, y: 65, label: 'The drone', say: ['A drone with a lens the size of a fist. It photographs crowds outside cinemas.'] },
+    { id: 'l4', x: 50, y: 46, label: 'The window', say: ['A city that does not exist, painted on the glass.'] }
+  ] },
+  residence: { act: 2, name: 'The Residence', img: 'dome-residence', spots: [
+    { id: 'e1', x: 88, y: 60, label: 'The telescope', say: ['It is not pointed at the stars. It points down, at a broadcast tower on the next peak.', 'From there, the stolen faces go out to the world.'] },
+    { id: 'e2', x: 50, y: 76, label: 'The fireplace', say: ['You hold the buyers\' list over the fire.'], choices: [
+      ['Burn it', 'The paper curls. Nobody will buy from that list again.'],
+      ['Keep it as evidence', 'You fold it away. The Inquilaab will want to read every name.'] ] },
+    { id: 'e3', x: 6, y: 7, label: 'The guitars', say: ['Three guitars, never played. The owner collects what he cannot do.'] },
+    { id: 'e4', x: 50, y: 38, label: 'The glass lift', need: 'copycode', needSay: ['The lift has one button below zero, and it asks for a code.'], say: ['You enter the copy machine\'s code. The lift drops.'], endAct: 2 }
+  ] },
+  hive: { act: 3, name: 'The Hive', img: 'dome-hive', spots: [
+    { id: 'x1', x: 50.5, y: 83, label: 'The console', say: ['The console lists every face in the pods, with the fan\'s name beside it.', 'You type the copy code backwards. The screen asks: RELEASE ALL?'], give: 'release' },
+    { id: 'x2', x: 15, y: 60, label: 'The pods', need: 'release', needSay: ['Pod after pod, each holding a face. Sealed.'], say: ['RELEASE ALL. The pods hiss open.', 'Faces, thousands of them, lift out and fly back to the photos they were taken from.'], unlock: 'control', go: 'control', goLabel: 'Go to the control room' },
+    { id: 'x3', x: 50, y: 7.5, label: 'The skylight', say: ['The helicopter waits on the pad above. Your way out, when this is done.'] },
+    { id: 'x4', x: 75, y: 70, label: 'The guards', say: ['Two guards turn. You raise the DOME keycard. They look at it, then at your face, and wave you on.'] }
+  ] },
+  control: { act: 3, name: 'The control room', img: 'dome-waterfall', spots: [
+    { id: 'w1', x: 54, y: 44, label: 'The world map', say: ['The broadcast is still running, sending copies out to every country on the map.', 'Two trials stand between you and the switch.'], game: 'throne', win: 'The map goes dark, country by country. The broadcast is off.', lose: 'The map keeps blinking. Try again.', finale: true },
+    { id: 'w2', x: 31, y: 57.5, label: 'The waterfall', say: ['The water is the cooling for the machine. It has never been this loud.'] },
+    { id: 'w3', x: 77, y: 62.5, label: 'The tanks', say: ['Not specimens. Faces, grown like plants in green light.'] },
+    { id: 'w4', x: 53, y: 92, label: 'The scientists', who: 'The scientists', say: ['"We only ran the machine. We never asked whose faces they were."'], choices: [
+      ['Tell them to switch off and go home', 'They put down their tablets, one by one.'],
+      ['Tell them to join the Inquilaab', '"Your face. Not his. Not theirs." One of them writes it on the glass.'] ] }
+  ] }
+};
+var ORDER = ['gate', 'casino', 'pit', 'den', 'vr', 'vault', 'aerial', 'arrival', 'panorama', 'archive', 'lab', 'residence', 'hive', 'control'];
+var ACT_END = {
+  1: ['Act I complete', 'You have the keycard and the buyers\' list. Every name points to one place: a glass dome above the snowline.', 'aerial', 'casino'],
+  2: ['Act II complete', 'The lift goes down below zero, into the Hive where the stolen faces are kept.', 'hive', 'dome'],
+  3: ['Every face goes home', 'The pods are empty, the broadcast is off, and the fans\' faces are back where they belong. Including yours.', null, 'throne']
+};
+function ck() { try { var s = JSON.parse(localStorage.getItem(CK_KEY) || 'null'); if (s && s.v === 1) return s; } catch (e) {} return { v: 1, scene: 'gate', open: ['gate'], items: [], seen: {}, games: {}, acts: {} }; }
+function ckSave(s) { try { localStorage.setItem(CK_KEY, JSON.stringify(s)); } catch (e) {} }
+var S = ck(), stopGame = null;
+function has(i) { return S.items.indexOf(i) >= 0; }
+function totalSpots() { return ORDER.reduce(function (n, k) { return n + SCENES[k].spots.length; }, 0); }
+function seenCount() { return Object.keys(S.seen).length; }
 function hud() {
   var s = STARKS.get(); $('bal').textContent = fmt(s.balance); $('tier').textContent = STARKS.tier(s.balance);
-  var p = prog(); $('cleared').textContent = LAIRS.filter(function (l) { return p[l.id] && p[l.id].cleared; }).length + ' / 6';
+  $('cleared').textContent = seenCount() + ' / ' + totalSpots();
+  $('actNow').textContent = ACTS[SCENES[S.scene].act].split(' · ')[0];
 }
 document.addEventListener('starks', hud);
 try { var mine = JSON.parse(localStorage.getItem('amkh-posters') || '[]'); if (mine.length) $('avatar').src = mine[0].img; } catch (e) {}
 
-function drawMap() {
-  var p = prog(); var map = $('map'); map.innerHTML = '';
-  LAIRS.forEach(function (l, i) {
-    var open = true; // every chapter is playable; the story reads best in order
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'lair'; b.style.setProperty('--bg', l.bg); b.disabled = !open;
-    var st = p[l.id] && p[l.id].cleared ? 'Cleared · best ' + fmt(p[l.id].best) + ' STARKS' : 'Play this chapter →';
-    b.innerHTML = '<img class="lair-art" src="../assets/lairs/scenes/' + CARD[l.id] + '-m.webp" alt="" loading="lazy" onerror="this.remove()"><span class="no">' + STORY[l.id].chapter + '</span><h3>' + l.name + '</h3><p>' + l.blurb + '</p><span class="st' + (p[l.id] && p[l.id].cleared ? ' done' : '') + '">' + st + '</span>';
-    b.addEventListener('click', function () { enter(l); });
-    map.appendChild(b);
+function show(id, quiet) {
+  if (stopGame) { stopGame(); stopGame = null; }
+  closePanels();
+  var sc = SCENES[id]; S.scene = id; if (S.open.indexOf(id) < 0) S.open.push(id); ckSave(S);
+  $('ckAct').textContent = ACTS[sc.act]; $('ckName').textContent = sc.name;
+  var v = $('ckView'); v.classList.toggle('plan', !!sc.plan);
+  v.innerHTML = '<div class="ck-pic" id="ckPic"><img src="' + SC + sc.img + '.webp" alt="' + sc.name + '" id="ckImg"></div>';
+  var pic = $('ckPic');
+  $('ckImg').onload = function () { pic.style.setProperty('--r', this.naturalWidth / this.naturalHeight); v.scrollLeft = Math.max(0, (pic.offsetWidth - v.clientWidth) / 2); };
+  sc.spots.forEach(function (sp, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'hs' + (S.seen[sp.id] ? ' seen' : '') + (sp.need && !has(sp.need) ? ' locked' : '');
+    b.style.left = sp.x + '%'; b.style.top = sp.y + '%'; b.setAttribute('aria-label', sp.label);
+    b.innerHTML = '<i>' + (i + 1) + '</i><span>' + sp.label + '</span>';
+    b.onclick = function () { spot(sc, sp); };
+    pic.appendChild(b);
   });
+  strip({ say: [(quiet && seenCount() ? 'Welcome back. ' : '') + 'You are in ' + sc.name + '. Look around: tap a glowing spot.'] });
+  hud();
+  if (!quiet) $('ckGame').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function strip(o) {
+  var el = $('ckStrip');
+  el.innerHTML = (o.who ? '<b class="who">' + o.who + '</b>' : '') + o.say.map(function (t) { return '<p>' + t + '</p>'; }).join('') + '<div class="row" id="ckBtns"></div>';
+  (o.buttons || []).forEach(function (bt) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ' + (bt[2] || 'btn-red'); b.textContent = bt[0]; b.onclick = bt[1]; $('ckBtns').appendChild(b);
+  });
+}
+function giveItems(sp) {
+  var got = [].concat(sp.give || []).filter(function (i) { return !has(i); });
+  got.forEach(function (i) { S.items.push(i); STARKS.earn('chapter', 50, 'Chehre ki Chori · ' + ITEMS[i][0], 'chehre-item-' + i); });
+  return got;
+}
+function after(sc, sp, lines) {
+  var got = giveItems(sp);
+  if (sp.unlock && S.open.indexOf(sp.unlock) < 0) S.open.push(sp.unlock);
+  S.seen[sp.id] = 1; ckSave(S); markSeen(sp);
+  var say = lines.slice();
+  got.forEach(function (i) { say.push('<span class="got">In your dossier: ' + ITEMS[i][0] + '</span>'); });
+  var btns = [];
+  if (sp.endAct) { btns.push(['Continue', function () { actEnd(sp.endAct); }]); }
+  else if (sp.go) btns.push([sp.goLabel + ' →', function () { show(sp.go); }]);
+  strip({ who: sp.who || sp.label, say: say, buttons: btns });
   hud();
 }
-var stopCurrent = null;
-function enter(l) {
-  if (stopCurrent) stopCurrent(); stopCurrent = null;
-  $('sTitle').textContent = l.name; $('sMeta').textContent = '';
-  $('stage').classList.add('on'); $('arena').innerHTML = '';
-  $('stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  story(l, function () {
-    $('arena').innerHTML = '';
-    stopCurrent = l.play($('arena'), function (won, starks, note) { finish(l, won, starks, note); }) || null;
-  });
+function markSeen(sp) { [].forEach.call($('ckView').querySelectorAll('.hs'), function (b) { if (b.getAttribute('aria-label') === sp.label) { b.classList.add('seen'); b.classList.toggle('locked', !!(sp.need && !has(sp.need))); } }); }
+function spot(sc, sp) {
+  if (sp.need && !has(sp.need)) { strip({ who: sp.label, say: sp.needSay.concat(['<span class="need">Needs: ' + ITEMS[sp.need][0] + '</span>']) }); return; }
+  if (sp.needUnlock && S.open.indexOf(sp.needUnlock) < 0) { strip({ who: sp.label, say: sp.lockedSay }); return; }
+  if (sp.choices) {
+    strip({ who: sp.who || sp.label, say: sp.say, buttons: sp.choices.map(function (c) { return [c[0], function () { after(sc, sp, [c[1]]); }, 'btn-line']; }) });
+    return;
+  }
+  if (sp.game) {
+    var done = S.games[sp.game] && (sp.give ? [].concat(sp.give).every(has) : true);
+    var btns = [[(done ? 'Play again' : 'Play') + ' →', function () { encounter(sc, sp); }]];
+    if (done && sp.go) btns.push([sp.goLabel + ' →', function () { show(sp.go); }, 'btn-line']);
+    strip({ who: sp.who || sp.label, say: sp.say, buttons: btns });
+    return;
+  }
+  after(sc, sp, sp.say);
 }
-$('back').addEventListener('click', function () { if (stopCurrent) stopCurrent(); stopCurrent = null; $('stage').classList.remove('on'); drawMap(); $('map').scrollIntoView({ behavior: 'smooth' }); });
+function encounter(sc, sp) {
+  var ov = $('ckPlay'); ov.classList.add('on'); $('ckPlayT').textContent = sp.label + ' · ' + sc.name;
+  var a = $('arena'); a.innerHTML = '';
+  ov.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  stopGame = GAMES[sp.game](a, function (won, starks, note) {
+    stopGame = null;
+    var box = document.createElement('div'); box.className = 'ck-res';
+    if (won) {
+      var first = !S.games[sp.game]; S.games[sp.game] = 1; ckSave(S);
+      var gotS = STARKS.earn('lair', starks, 'Chehre ki Chori · ' + sp.label + (note ? ' · ' + note : ''));
+      if (first) STARKS.earn('firstclear', 100, 'First win · ' + sp.label, 'chehre-game-' + sp.game);
+      box.innerHTML = '<p class="big">' + (sp.win || 'You win.') + '</p><p class="say">' + (gotS ? '+' + fmt(gotS) + ' STARKS' : 'Today\'s STARKS for wins are used up; the story goes on.') + (first ? ' · +100 first win' : '') + '</p>';
+      var r = document.createElement('div'); r.className = 'row';
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn btn-red'; b.textContent = 'Back to ' + sc.name + ' →';
+      b.onclick = function () { ov.classList.remove('on'); a.innerHTML = ''; if (sp.finale) { S.seen[sp.id] = 1; ckSave(S); actEnd(3); } else { after(sc, sp, [sp.win]); } };
+      r.appendChild(b); box.appendChild(r);
+    } else {
+      box.innerHTML = '<p class="big">Not this time</p><p class="say">' + (sp.lose || note || 'Try again.') + '</p>';
+      var r2 = document.createElement('div'); r2.className = 'row';
+      var t = document.createElement('button'); t.type = 'button'; t.className = 'btn btn-red'; t.textContent = 'Try again'; t.onclick = function () { encounter(sc, sp); }; r2.appendChild(t);
+      var bk = document.createElement('button'); bk.type = 'button'; bk.className = 'btn btn-line'; bk.textContent = 'Back to the room'; bk.onclick = function () { ov.classList.remove('on'); a.innerHTML = ''; }; r2.appendChild(bk);
+      box.appendChild(r2);
+    }
+    a.appendChild(box); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }) || null;
+}
+function actEnd(n) {
+  var e = ACT_END[n]; var first = !S.acts[n]; S.acts[n] = 1;
+  if (e[2] && S.open.indexOf(e[2]) < 0) S.open.push(e[2]);
+  ckSave(S);
+  var got = first ? STARKS.earn(n === 3 ? 'verdict' : 'throne', n === 3 ? 750 : 300, 'Chehre ki Chori · ' + e[0], 'chehre-act-' + n) : 0;
+  var ov = $('ckPlay'); ov.classList.add('on'); $('ckPlayT').textContent = ACTS[n];
+  var a = $('arena');
+  a.innerHTML = '<div class="ck-end"><p class="eyebrow">' + ACTS[n] + '</p><p class="big">' + e[0] + '</p><p class="say">' + e[1] + '</p>' + (got ? '<p class="say">+' + fmt(got) + ' STARKS</p>' : '') +
+    (n === 3 ? '<p class="ck-line">Your face. Not his. Not theirs.</p>' : '') + '<div class="row" id="ckEndRow"></div></div>';
+  var row = $('ckEndRow');
+  function btn(t, f, c) { var b = document.createElement(typeof f === 'string' ? 'a' : 'button'); b.className = 'btn ' + (c || 'btn-red'); b.textContent = t; if (typeof f === 'string') b.href = f; else { b.type = 'button'; b.onclick = f; } row.appendChild(b); }
+  if (e[2]) btn('Next: ' + ACTS[n + 1] + ' →', function () { ov.classList.remove('on'); a.innerHTML = ''; show(e[2]); });
+  else { btn('Join the Inquilaab →', '../inquilab/'); btn('Make a poster with your face', '../create/', 'btn-line'); btn('Billboard →', '../fan-billboard/', 'btn-line'); }
+  a.firstChild.appendChild(stillBox({ id: e[3] }));
+  ov.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  hud();
+}
+function closePanels() { ['ckMap', 'ckDos'].forEach(function (k) { $(k).classList.remove('on'); }); }
+function drawMapPanel() {
+  var p = $('ckMapBody'), act1 = ORDER.filter(function (k) { return SCENES[k].act === 1; });
+  p.innerHTML = '<p class="eyebrow">Act I · The Underground Secret City</p><div class="ck-plan"><img src="' + SC + 'city-floorplan.webp" alt="Master Floor Plan">' +
+    act1.map(function (k) { var sc = SCENES[k], open = S.open.indexOf(k) >= 0; return '<button type="button" class="pin' + (open ? '' : ' shut') + (S.scene === k ? ' here' : '') + '" style="left:' + sc.pin[0] + '%;top:' + sc.pin[1] + '%" data-k="' + k + '"' + (open ? '' : ' disabled') + '><i>' + (act1.indexOf(k) + 1) + '</i><span>' + sc.name + '</span></button>'; }).join('') + '</div>' +
+    '<p class="eyebrow" style="margin-top:16px">Acts II and III · The Mountain Dome</p><div class="ck-dome">' +
+    ORDER.filter(function (k) { return SCENES[k].act > 1; }).map(function (k) { var sc = SCENES[k], open = S.open.indexOf(k) >= 0; return '<button type="button" class="dt' + (open ? '' : ' shut') + (S.scene === k ? ' here' : '') + '" data-k="' + k + '"' + (open ? '' : ' disabled') + '><img src="' + SC + sc.img + '-t.webp" alt="" loading="lazy"><span>' + (open ? sc.name : 'Locked') + '</span></button>'; }).join('') + '</div>';
+  [].forEach.call(p.querySelectorAll('[data-k]'), function (b) { b.onclick = function () { show(b.dataset.k); }; });
+}
+function drawDossier() {
+  var b = $('ckDosBody');
+  b.innerHTML = S.items.length ? '<ul class="dos">' + S.items.map(function (i) { return '<li><b>' + ITEMS[i][0] + '</b><span>' + ITEMS[i][1] + '</span></li>'; }).join('') + '</ul>' : '<p class="say">Nothing yet. Things you find in the rooms land here.</p>';
+  b.innerHTML += '<p class="say" style="margin-top:12px">Spots explored: ' + seenCount() + ' of ' + totalSpots() + '.</p>';
+}
+function ckInit() {
+  $('ckMapBtn').onclick = function () { var on = !$('ckMap').classList.contains('on'); closePanels(); if (on) { drawMapPanel(); $('ckMap').classList.add('on'); } };
+  $('ckDosBtn').onclick = function () { var on = !$('ckDos').classList.contains('on'); closePanels(); if (on) { drawDossier(); $('ckDos').classList.add('on'); } };
+  var armed = 0;
+  $('ckRestart').onclick = function () {
+    if (!armed) { armed = 1; $('ckRestart').textContent = 'Tap again to start over'; setTimeout(function () { armed = 0; $('ckRestart').textContent = 'Start over'; }, 4000); return; }
+    armed = 0; $('ckRestart').textContent = 'Start over';
+    S = { v: 1, scene: 'gate', open: ['gate'], items: [], seen: {}, games: {}, acts: {} }; ckSave(S); show('gate');
+  };
+  $('ckStart').onclick = function () { show(S.scene || 'gate'); };
+  $('ckStart').textContent = seenCount() ? 'Continue: ' + SCENES[S.scene].name + ' →' : 'Start the story →';
+  show(S.scene || 'gate', true);
+}
 
 /* ---------- THE CONTRACT: the story that runs through the six lairs ---------- */
 var SKEY = 'amkh-contract';
@@ -389,72 +666,22 @@ var STORY = {
     action: 'Open the Zero-to-One gate, then make the four decisions that make a King.',
     win: '',
     lose: 'The throne room doors close in your face. The client is still waiting.',
-    scene: 'the heart of the snow dome: an armoury of blades on one side, a waterfall and pool on the other, a lone throne on a raised platform under the glass dome and helipad; they sit on the throne in a black suit'
+    scene: 'the control room of the snow dome: a giant world map screen above an indoor waterfall and pool, scientists around a holographic table; they stand at the centre in a black suit, having just switched the broadcast off'
   }
 };
-var ENDINGS = {
-  flush: ['The Royal Flush', 'The KING takes the throne and keeps it. Fear and honour, both in one hand.'],
-  ghost: ['The Ghost King', 'No crown, no name, no trace. Somewhere a city sleeps a little easier, and a little more afraid.'],
-  blade: ['The Executioner', 'The contract is complete. Every name crossed out. The throne is empty, and that was always the point.']
-};
-function sload() { try { return JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch (e) { return {}; } }
-function ssave(s) { try { localStorage.setItem(SKEY, JSON.stringify(s)); } catch (e) {} }
-function meters() { var s = sload(), f = 0, h = 0; Object.keys(s.picks || {}).forEach(function (k) { var o = STORY[k] && STORY[k].options[s.picks[k]]; if (o) { f += o[1]; h += o[2]; } }); return { fear: f, honour: h }; }
-function drawMeters() {
-  var m = meters(), el = $('meters'); if (!el) return;
-  el.innerHTML = '<span><small>Dehshat (fear)</small><b>' + m.fear + '</b></span><span><small>Izzat (honour)</small><b>' + m.honour + '</b></span>';
-}
 var CARD = { casino: 'casino-grand', dome: 'dome-aerial', city: 'dome-archive', pit: 'pit-dance', den: 'den-abyssal', throne: 'dome-panorama' };
-function artFor(id) { return '../assets/lairs/' + id + '.webp'; }
 function plateFor(id) { return '../assets/lairs/scenes/' + CINEMA[id].plates[0][0] + '.webp'; }
-
-/* Story intro shown before each lair's game */
-function story(l, start) {
-  var st = STORY[l.id], a = $('arena'), s = sload(); s.picks = s.picks || {};
-  a.innerHTML = '<div class="scene"><figure class="scene-art"><img src="../assets/lairs/scenes/' + CARD[l.id] + '-m.webp" alt="" onerror="this.parentNode.classList.add(\'noart\')"></figure><div class="scene-copy"><p class="eyebrow">' + st.chapter + '</p>' +
-    st.intro.map(function (p) { return '<p class="say">' + p + '</p>'; }).join('') + '<p class="q">' + st.q + '</p><div class="choices" id="sc"></div><p class="msg" id="sres"></p><div class="row" id="srow"></div></div></div>';
-  st.options.forEach(function (o, k) {
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'choice'; b.textContent = o[0];
-    b.onclick = function () {
-      s.picks[l.id] = k; ssave(s); drawMeters();
-      [].forEach.call($('sc').children, function (x, j) { x.disabled = true; if (j === k) x.classList.add('picked'); });
-      $('sres').textContent = o[3];
-      var go = document.createElement('button'); go.type = 'button'; go.className = 'btn btn-red'; go.textContent = st.action + ' →';
-      go.onclick = function () { start(); };
-      $('srow').innerHTML = ''; $('srow').appendChild(go); go.focus();
-    };
-    $('sc').appendChild(b);
-  });
-}
-
-/* Story outcome added after each game */
-function outcome(l, won, box) {
-  var st = STORY[l.id], s = sload(), pick = s.picks && s.picks[l.id], o = st.options[pick] || [0, 0, 0];
-  var p = document.createElement('div'); p.className = 'outcome';
-  if (l.id === 'throne' && won) {
-    var e = ENDINGS[o[4] || 'flush'], m = meters();
-    p.innerHTML = '<p class="eyebrow">Ending</p><p class="big">' + e[0] + '</p><p class="say">' + e[1] + '</p><p class="say">Dehshat ' + m.fear + ' · Izzat ' + m.honour + '. THE CONTRACT is complete.</p>';
-    s.ending = o[4] || 'flush'; ssave(s);
-    STARKS.earn('verdict', Math.min(750, 300 + (m.fear + m.honour) * 25), 'THE CONTRACT · ' + e[0]);
-  } else {
-    p.innerHTML = '<p class="say">' + (won ? st.win : st.lose) + '</p>';
-    if (won) STARKS.earn('chapter', 150 + (o[1] + o[2]) * 25, st.chapter);
-  }
-  if (won) p.appendChild(stillBox(l));
-  box.insertBefore(p, box.firstChild.nextSibling);
-}
-
 /* Star in this scene: the fan's own face in the chapter, painted like a poster */
 var FACE = 'amkh-face';
 function stillBox(l) {
   var d = document.createElement('div'); d.className = 'still';
   var face = null; try { face = localStorage.getItem(FACE); } catch (e) {}
-  d.innerHTML = '<p class="still-h">Star in this scene</p><p class="still-p">Put your own face into this chapter as a cinematic still, painted fresh like your poster. Uses one of your five daily posters.</p>' +
+  d.innerHTML = '<p class="still-h">Star in this scene</p><p class="still-p">Put your own face into this act as a cinematic still, painted fresh like your poster. Uses one of your five daily posters.</p>' +
     '<div class="still-row">' + (face ? '<img class="face" src="' + face + '" alt="Your photo">' : '') +
     '<label class="btn btn-line still-up">' + (face ? 'Change photo' : 'Add your photo') + '<input type="file" accept="image/jpeg,image/png,image/webp" hidden></label>' +
     '<button class="btn btn-red still-go" type="button"' + (face ? '' : ' disabled') + '>Paint my scene</button></div>' +
     '<label class="still-ok"><input type="checkbox"> This is my photo, or I have permission to use it.</label><p class="msg still-msg"></p><div class="still-out"></div>' +
-    '<p class="still-p" style="margin-top:12px">Want it moving? <a href="#cinema" data-cine="' + l.id + '">Turn this chapter into a video in Lairs Cinema →</a></p>';
+    '<p class="still-p" style="margin-top:12px">Want it moving? <a href="#cinema" data-cine="' + l.id + '">Turn this scene into a video in Lairs Cinema →</a></p>';
   d.querySelector('[data-cine]').onclick = function (e) { e.preventDefault(); cinePick(l.id); $('cinema').scrollIntoView({ behavior: 'smooth' }); };
   var up = d.querySelector('input[type=file]'), go = d.querySelector('.still-go'), msg = d.querySelector('.still-msg'), ok = d.querySelector('.still-ok input');
   up.onchange = function () {
@@ -482,7 +709,7 @@ function stillBox(l) {
       out.innerHTML = '<img class="still-img" src="' + src + '" alt="You in ' + STORY[l.id].chapter + '"><div class="row"><button class="btn btn-red" type="button" data-a="share">Share my scene</button><a class="btn btn-line" download="king-' + l.id + '-scene.png" href="' + src + '">Download</a></div>';
       out.querySelector('[data-a=share]').onclick = function () {
         fetch(src).then(function (r) { return r.blob(); }).then(function (blob) {
-          var file = new File([blob], 'king-' + l.id + '-scene.png', { type: 'image/png' }), text = 'I just starred in KING: ' + STORY[l.id].chapter + '. Play THE CONTRACT at https://agarmainkinghota.com/lairs/ #AgarMainKingHota #KING';
+          var file = new File([blob], 'king-' + l.id + '-scene.png', { type: 'image/png' }), text = 'I just starred in King\'s Lairs: Chehre ki Chori. Play it at https://agarmainkinghota.com/lairs/ #AgarMainKingHota #KING';
           if (navigator.canShare && navigator.canShare({ files: [file] })) navigator.share({ files: [file], text: text }).then(function () { STARKS.earn('share', 50, 'Shared a story scene'); }).catch(function () {});
           else { var a = document.createElement('a'); a.href = src; a.download = file.name; a.click(); STARKS.earn('share', 50, 'Shared a story scene'); }
         });
@@ -494,32 +721,6 @@ function stillBox(l) {
   return d;
 }
 
-function finish(l, won, starks, note) {
-  var p = prog(); var rec = p[l.id] || { cleared: false, best: 0 };
-  var a = $('arena');
-  var box = document.createElement('div'); box.style.marginTop = '22px';
-  if (won) {
-    var first = !rec.cleared;
-    rec.cleared = true; rec.best = Math.max(rec.best, starks); p[l.id] = rec; setProg(p);
-    var got = STARKS.earn(l.id === 'throne' ? 'throne' : 'lair', starks, l.name + (note ? ' · ' + note : ''));
-    if (first) STARKS.earn('firstclear', 100, 'First clear · ' + l.name, 'first-' + l.id);
-    var all = LAIRS.every(function (x) { return p[x.id] && p[x.id].cleared; });
-    if (all) STARKS.earn('allsix', 500, 'All six lairs cleared', 'allsix');
-    box.innerHTML = '<p class="big">' + (l.id === 'throne' ? 'Contract complete' : 'Chapter complete') + '</p><p class="say">' + (got ? '+' + fmt(got) + ' STARKS' : 'Today\'s STARKS for this lair are used up; your best still counts.') + (first ? ' · +100 for the first clear' : '') + '</p>';
-    var i = LAIRS.indexOf(l);
-    var row = document.createElement('div'); row.className = 'row';
-    if (LAIRS[i + 1]) { var nx = document.createElement('button'); nx.className = 'btn btn-red'; nx.type = 'button'; nx.textContent = 'Next: ' + LAIRS[i + 1].name + ' →'; nx.onclick = function () { enter(LAIRS[i + 1]); }; row.appendChild(nx); }
-    else { var bb = document.createElement('a'); bb.className = 'btn btn-red'; bb.href = '../fan-billboard/'; bb.textContent = 'Take your place on the Billboard →'; row.appendChild(bb); }
-    var again = document.createElement('button'); again.className = 'btn btn-line'; again.type = 'button'; again.textContent = 'Play again'; again.onclick = function () { enter(l); }; row.appendChild(again);
-    box.appendChild(row);
-  } else {
-    box.innerHTML = '<p class="big">Not this time</p><p class="say">' + (note || 'The lair holds. Try again.') + '</p>';
-    var r = document.createElement('div'); r.className = 'row';
-    var t = document.createElement('button'); t.className = 'btn btn-red'; t.type = 'button'; t.textContent = 'Try again'; t.onclick = function () { enter(l); }; r.appendChild(t); box.appendChild(r);
-  }
-  outcome(l, won, box);
-  a.appendChild(box); drawMap(); drawMeters();
-}
 
 /* ---------- 01 Casino Floor: heads-up Texas Hold'em vs the House ---------- */
 var SUITS = ['♠', '♥', '♦', '♣'], RANKS = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
@@ -639,7 +840,7 @@ function casino(a, done) {
 
 /* ---------- 02 Mountain Dome: sneak past the snow villain's searchlights ---------- */
 function dome(a, done) {
-  a.innerHTML = '<p class="say">The snow villain\'s dome. Hold the button (or the space bar) to creep across the ice. Freeze whenever a searchlight is on you. A second light wakes up halfway. Three lives; checkpoints every quarter.</p><div class="dome" id="dm"><div class="snow"></div><div class="beam" id="beam"></div><div class="beam b2" id="beam2"></div><div class="flag" style="left:25%"></div><div class="flag" style="left:50%"></div><div class="flag" style="left:75%"></div><div class="hero" id="hero"><img src="../assets/home/02-check-mate-fire.webp" alt="You"></div><img class="goal" src="../assets/studio/crown.png" alt="The crown"></div><div class="bar2"><i id="dprog"></i></div><div class="row"><button class="btn btn-red" id="move" type="button">Hold to move</button></div><p class="msg" id="dmsg">Lives: 3</p>';
+  a.innerHTML = '<p class="say">The ice in front of the dome. Hold the button (or the space bar) to creep across the ice. Freeze whenever a searchlight is on you. A second light wakes up halfway. Three lives; checkpoints every quarter.</p><div class="dome" id="dm"><div class="snow"></div><div class="beam" id="beam"></div><div class="beam b2" id="beam2"></div><div class="flag" style="left:25%"></div><div class="flag" style="left:50%"></div><div class="flag" style="left:75%"></div><div class="hero" id="hero"><img src="../assets/home/02-check-mate-fire.webp" alt="You"></div><img class="goal" src="../assets/studio/crown.png" alt="The crown"></div><div class="bar2"><i id="dprog"></i></div><div class="row"><button class="btn btn-red" id="move" type="button">Hold to move</button></div><p class="msg" id="dmsg">Lives: 3</p>';
   var x = 0, lives = 3, moving = false, t0 = performance.now(), raf, over = false, b = [{ x: 0, d: 1, s: 2.3 }, { x: 400, d: -1, s: 1.6 }];
   var dm = $('dm'), beams = [$('beam'), $('beam2')], hero = $('hero');
   function down(e) { if (e) e.preventDefault(); moving = true; }
@@ -684,7 +885,7 @@ function dome(a, done) {
 /* ---------- 03 Secret City: the Archive quiz ---------- */
 function city(a, done) {
   var Q_N = 5, LIMIT = 55;
-  a.innerHTML = '<p class="say">Under the city lies the Archive: every film he made before KING. Five questions, fifty-five seconds. Get four right to open the gate; the faster you are, the more STARKS you take.</p><div class="timebar" style="max-width:720px"><i id="qt" style="width:100%"></i></div><div class="quiz" id="qz"><p class="big" id="qq">The Archive</p><p class="say" id="qx">Press Begin when you are ready. The clock starts at once.</p></div><div class="choices" id="qc"></div><div class="row"><button class="btn btn-red" id="go" type="button">Begin</button></div><p class="msg" id="qm"></p>';
+  a.innerHTML = '<p class="say">Under the moonlit glass, the Archive keeps every film he made before KING. Five questions, fifty-five seconds. Get four right to open the gate; the faster you are, the more STARKS you take.</p><div class="timebar" style="max-width:720px"><i id="qt" style="width:100%"></i></div><div class="quiz" id="qz"><p class="big" id="qq">The Archive</p><p class="say" id="qx">Press Begin when you are ready. The clock starts at once.</p></div><div class="choices" id="qc"></div><div class="row"><button class="btn btn-red" id="go" type="button">Begin</button></div><p class="msg" id="qm"></p>';
   var films = [], qs = [], k = 0, right = 0, left = LIMIT, timer, lock = false, stopped = false;
   var SKIP = /narrator|guest|^hero$/i;
   fetch('../assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (d) {
@@ -825,7 +1026,7 @@ function den(a, done) {
 /* ---------- 06 Throne Room: the Zero-to-One gate, then the Royal Challenge ---------- */
 function throne(a, done) {
   var bits = [0,0,0,0,0,0,0,0,0], taps = 0, stopped = false, timer;
-  a.innerHTML = '<p class="say">Two trials stand between you and the throne. First the gate: turn every 0 into a 1. Each tap flips a square and the squares beside it. Zero to One.</p><div class="gate" id="gate" role="group" aria-label="Zero to One gate"></div><p class="msg" id="gm">Taps: 0</p>';
+  a.innerHTML = '<p class="say">Two trials stand between you and the broadcast switch. First the gate: turn every 0 into a 1. Each tap flips a square and the squares beside it. Zero to One.</p><div class="gate" id="gate" role="group" aria-label="Zero to One gate"></div><p class="msg" id="gm">Taps: 0</p>';
   var gate = $('gate');
   function drawGate() {
     gate.innerHTML = '';
@@ -846,7 +1047,7 @@ function throne(a, done) {
       { title: 'The story flips', text: 'A portal opens. Your co-star says the story has changed. Adapt fast.', choices: [['Rewrite the plan around the new reality', 25], ['Pretend the twist never happened', 0], ['Ask the team for one fast idea, then adapt', 20]] },
       { title: 'The royal flush', text: 'You can save only one: your image, your people, or your promise. What do you protect?', choices: [['Keep the promise and protect the people, even at personal cost', 25], ['Protect the image at any cost', 0], ['Make a bold deal and explain the trade-off honestly', 18]] }
     ];
-    a.innerHTML = '<p class="say">The Royal Challenge. Four decisions in sixty seconds. Score 65 or more to take the throne.</p><div class="timebar" style="max-width:720px"><i id="tt" style="width:100%"></i></div><p class="big" id="tq">Ready, King?</p><p class="say" id="tx">The clock starts when you press Begin.</p><div class="choices" id="ch"></div><div class="row"><button class="btn btn-red" id="begin" type="button">Begin</button></div><p class="msg" id="tm"></p>';
+    a.innerHTML = '<p class="say">The Royal Challenge. Four decisions in sixty seconds. Score 65 or more to shut the broadcast down.</p><div class="timebar" style="max-width:720px"><i id="tt" style="width:100%"></i></div><p class="big" id="tq">Ready, King?</p><p class="say" id="tx">The clock starts when you press Begin.</p><div class="choices" id="ch"></div><div class="row"><button class="btn btn-red" id="begin" type="button">Begin</button></div><p class="msg" id="tm"></p>';
     var round = 0, score = 0, left = 60, lock = false;
     function show() {
       var r = rounds[round]; $('tq').textContent = r.title; $('tx').textContent = r.text; $('ch').innerHTML = ''; lock = false;
@@ -995,10 +1196,7 @@ function reelInit() {
 cineInit(); reelInit();
 (function () { var q = new URLSearchParams(location.search).get('scene'); if (q && CINEMA[q]) { cinePick(q); setTimeout(function () { $('cinema').scrollIntoView(); }, 300); } })();
 
-drawMap(); drawMeters();
-var want = new URLSearchParams(location.search).get('lair');
-var l = LAIRS.find(function (x) { return x.id === want; });
-if (l) enter(l);
+ckInit();
 })();
 </script>
 <script src="../assets/footer.js" defer></script>
