@@ -1,40 +1,40 @@
 {
  "updated": "2026-10-20",
- "source": "DuckDuckGo image search, 1,512 searches in four sweeps (every SRK film from Deewana to KING: stills, songs, behind the scenes, first looks; events, birthdays and Eid at Mannat year by year; Filmfare and IIFA year by year; 36 magazines; co-stars; KKR season by season; photoshoots; throwbacks; Hindi, Urdu and Bengali searches; the third sweep searched 1988-2005 year by year, every 90s film 5 ways and 8 film magazines year by year). The fourth sweep read 8 result pages per search for every year 1988-2026 and every film. His name must be in the picture title. Each picture is shown from the page that published it and links back to that page; nothing is stored on this site. Pictures under 400 px, duplicates and stock-photo watermark sites left out.",
+ "source": "DuckDuckGo image search and Google Images (650 searches through the owner's Chrome, 20 Oct 2026), 1,512 searches in four sweeps (every SRK film from Deewana to KING: stills, songs, behind the scenes, first looks; events, birthdays and Eid at Mannat year by year; Filmfare and IIFA year by year; 36 magazines; co-stars; KKR season by season; photoshoots; throwbacks; Hindi, Urdu and Bengali searches; the third sweep searched 1988-2005 year by year, every 90s film 5 ways and 8 film magazines year by year). The fourth sweep read 8 result pages per search for every year 1988-2026 and every film. His name must be in the picture title. Each picture is shown from the page that published it and links back to that page; nothing is stored on this site. Pictures under 400 px, duplicates and stock-photo watermark sites left out.",
  "sections": [
   {
    "cat": "Films",
-   "count": 15869,
+   "count": 19088,
    "file": "gallery/films.json"
   },
   {
    "cat": "Magazine Covers",
-   "count": 1644,
+   "count": 1884,
    "file": "gallery/magazine-covers.json"
   },
   {
    "cat": "Photoshoots",
-   "count": 4928,
+   "count": 4954,
    "file": "gallery/photoshoots.json"
   },
   {
    "cat": "Events",
-   "count": 9797,
+   "count": 12069,
    "file": "gallery/events.json"
   },
   {
    "cat": "Awards",
-   "count": 1471,
+   "count": 2163,
    "file": "gallery/awards.json"
   },
   {
    "cat": "Cricket",
-   "count": 774,
+   "count": 905,
    "file": "gallery/cricket.json"
   },
   {
    "cat": "Throwback",
-   "count": 3111,
+   "count": 3794,
    "file": "gallery/throwback.json"
   }
  ],
@@ -42,197 +42,197 @@
  "years": [
   {
    "year": "2026",
-   "count": 740,
+   "count": 965,
    "file": "gallery/years/2026.json"
   },
   {
    "year": "2025",
-   "count": 821,
+   "count": 986,
    "file": "gallery/years/2025.json"
   },
   {
    "year": "2024",
-   "count": 841,
+   "count": 984,
    "file": "gallery/years/2024.json"
   },
   {
    "year": "2023",
-   "count": 2472,
+   "count": 3164,
    "file": "gallery/years/2023.json"
   },
   {
    "year": "2022",
-   "count": 623,
+   "count": 766,
    "file": "gallery/years/2022.json"
   },
   {
    "year": "2021",
-   "count": 283,
+   "count": 427,
    "file": "gallery/years/2021.json"
   },
   {
    "year": "2020",
-   "count": 280,
+   "count": 428,
    "file": "gallery/years/2020.json"
   },
   {
    "year": "2019",
-   "count": 300,
+   "count": 462,
    "file": "gallery/years/2019.json"
   },
   {
    "year": "2018",
-   "count": 707,
+   "count": 943,
    "file": "gallery/years/2018.json"
   },
   {
    "year": "2017",
-   "count": 1097,
+   "count": 1450,
    "file": "gallery/years/2017.json"
   },
   {
    "year": "2016",
-   "count": 725,
+   "count": 1035,
    "file": "gallery/years/2016.json"
   },
   {
    "year": "2015",
-   "count": 622,
+   "count": 830,
    "file": "gallery/years/2015.json"
   },
   {
    "year": "2014",
-   "count": 489,
+   "count": 691,
    "file": "gallery/years/2014.json"
   },
   {
    "year": "2013",
-   "count": 562,
+   "count": 781,
    "file": "gallery/years/2013.json"
   },
   {
    "year": "2012",
-   "count": 413,
+   "count": 595,
    "file": "gallery/years/2012.json"
   },
   {
    "year": "2011",
-   "count": 612,
+   "count": 815,
    "file": "gallery/years/2011.json"
   },
   {
    "year": "2010",
-   "count": 368,
+   "count": 477,
    "file": "gallery/years/2010.json"
   },
   {
    "year": "2009",
-   "count": 283,
+   "count": 384,
    "file": "gallery/years/2009.json"
   },
   {
    "year": "2008",
-   "count": 318,
+   "count": 420,
    "file": "gallery/years/2008.json"
   },
   {
    "year": "2007",
-   "count": 646,
+   "count": 813,
    "file": "gallery/years/2007.json"
   },
   {
    "year": "2006",
-   "count": 546,
+   "count": 637,
    "file": "gallery/years/2006.json"
   },
   {
    "year": "2005",
-   "count": 323,
+   "count": 406,
    "file": "gallery/years/2005.json"
   },
   {
    "year": "2004",
-   "count": 1126,
+   "count": 1351,
    "file": "gallery/years/2004.json"
   },
   {
    "year": "2003",
-   "count": 665,
+   "count": 784,
    "file": "gallery/years/2003.json"
   },
   {
    "year": "2002",
-   "count": 764,
+   "count": 931,
    "file": "gallery/years/2002.json"
   },
   {
    "year": "2001",
-   "count": 618,
+   "count": 736,
    "file": "gallery/years/2001.json"
   },
   {
    "year": "2000",
-   "count": 935,
+   "count": 1102,
    "file": "gallery/years/2000.json"
   },
   {
    "year": "1999",
-   "count": 571,
+   "count": 651,
    "file": "gallery/years/1999.json"
   },
   {
    "year": "1998",
-   "count": 958,
+   "count": 1136,
    "file": "gallery/years/1998.json"
   },
   {
    "year": "1997",
-   "count": 1258,
+   "count": 1453,
    "file": "gallery/years/1997.json"
   },
   {
    "year": "1996",
-   "count": 528,
+   "count": 641,
    "file": "gallery/years/1996.json"
   },
   {
    "year": "1995",
-   "count": 1254,
+   "count": 1555,
    "file": "gallery/years/1995.json"
   },
   {
    "year": "1994",
-   "count": 515,
+   "count": 632,
    "file": "gallery/years/1994.json"
   },
   {
    "year": "1993",
-   "count": 1186,
+   "count": 1395,
    "file": "gallery/years/1993.json"
   },
   {
    "year": "1992",
-   "count": 1088,
+   "count": 1283,
    "file": "gallery/years/1992.json"
   },
   {
    "year": "1991",
-   "count": 218,
+   "count": 260,
    "file": "gallery/years/1991.json"
   },
   {
    "year": "1990",
-   "count": 193,
+   "count": 255,
    "file": "gallery/years/1990.json"
   },
   {
    "year": "1989",
-   "count": 214,
+   "count": 289,
    "file": "gallery/years/1989.json"
   },
   {
    "year": "1988",
-   "count": 352,
+   "count": 460,
    "file": "gallery/years/1988.json"
   },
   {
@@ -257,7 +257,7 @@
   },
   {
    "year": "unknown",
-   "count": 11071,
+   "count": 11475,
    "file": "gallery/years/unknown.json"
   }
  ]
