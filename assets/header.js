@@ -148,8 +148,8 @@
     '  #site-header .sh-sw{display:none}',
     '  #site-header .sh-bar-in{gap:8px}',
     '  #site-header .sh-burger{display:inline-flex}',
-    '  #site-header .sh-brand{display:flex}',
-    '  #site-header .sh-brand span{font-size:17px}',
+    /* phones: no ONE + title in the bar (the titles already sit in the strip above); bar keeps only STARKS and the menu */
+    '  #site-header .sh-brand{display:none!important}',
     '}',
     '@media (max-width:430px){#site-header .sh-brand span{font-size:14px}#site-header .sh-brand img{height:28px}#site-header .sh-bar-in{gap:6px;padding:0 10px}#site-header .sh-burger{width:42px;height:42px}}',
     '@media (max-width:380px){#site-header .sh-brand span{display:none}}',
