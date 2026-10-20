@@ -374,7 +374,15 @@ a.dkb:hover{border-color:var(--red)}
   hero.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 40) { show(cur + (dx < 0 ? 1 : -1)); stop(); } });
   hero.addEventListener('focusin', stop); hero.addEventListener('mouseenter', stop);
   show(0);
-  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) timer = setTimeout(function () { if (!timer) return; show(1); timer = setInterval(function () { show(cur + 1); }, 7000); }, 2500);
+  // DOOM to KING holds 2.5 s, counted from when its pictures have loaded (slow phone networks missed it)
+  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    timer = 'wait';
+    var dkImgs = [].slice.call(slides[0].querySelectorAll('img')), started = false;
+    var go = function () { if (started) return; started = true; if (!timer) return; timer = setTimeout(function () { if (!timer) return; show(1); timer = setInterval(function () { show(cur + 1); }, 7000); }, 2500); };
+    var check = function () { if (dkImgs.every(function (i) { return i.complete; })) go(); };
+    dkImgs.forEach(function (i) { i.addEventListener('load', check); i.addEventListener('error', check); });
+    setTimeout(go, 8000); check();
+  }
 
   fetch('assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (data) {
     var strip = document.getElementById('strip');

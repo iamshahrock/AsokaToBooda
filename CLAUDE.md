@@ -11,7 +11,7 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - Every new top-level folder must be added to the cp line in .github/workflows/pages.yml or it is not deployed (merch was missing until 18 Oct). Release QA expects 12 header links.
 
 ## Site design (polish pass, 18 Oct 2026)
-- The ZERO to ONE story banner tops EVERY page (owner, 18 Oct: never remove it) and links home; on phones (≤760px) the two titles 'Agar Main KING Hota' and 'Agar Main FAN Hota' sit in a strip under ZERO to ONE (.sh-strip in header.js, owner 20 Oct 2026: show all elements on mobile); on phones the bar shows only the STARKS badge and the burger, no ONE logo or title (owner 20 Oct 2026: it repeated the strip); inner pages also keep the Home button in the bar. Contact/FAQ live in the burger menu and the footer.
+- The ZERO to ONE story banner tops EVERY page (owner, 18 Oct: never remove it) and links home; on phones (≤760px) the two titles 'Agar Main KING Hota' and 'Agar Main FAN Hota' sit IN the sticky bar, one row with the STARKS badge and the burger (.sh-btitles in header.js; owner 20 Oct 2026: show all desktop elements on mobile, no row wasted on just STARKS + burger, no repeated ONE logo/title in the bar); inner pages also keep the Home button in the bar. Contact/FAQ live in the burger menu and the footer.
 - Section tabs under the bar (SUB in assets/header.js) for Make Your Poster, King's Lairs (Rescue Your Face, Lairs Cinema), Chess81, Billboard, Asoka to Boo-Da, Inquilaab.
 - Back-to-top arrow on every page (header.js). Footer has a 4-column site map (footer.js).
 - assets/polish.css (loaded by header.js after page styles) holds the calmer type scale; change sizes there, not page by page.
@@ -120,7 +120,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Sponsor: Phenomenal AI (phenomenalai.in, text-to-video), owner's former client; free account for campaign videos. First test (15 s, crowned kid in "The Abyssal Den" pool hall) reviewed: fix crown continuity, duplicate pool ball, missing break payoff, empty opening, audio level. Credit line and logo pending from the owner.
 
 ## DOOM to KING banner
-- DOOM to KING banner (13 Oct 2026): the owner's layered art in assets/dk/ (bg.webp, beams.webp, figures.webp, all 2400x1000, stacked). The beams layer flickers in CSS (off for reduced motion). Shown above the countdown hero on /doom-to-king/, and as slide 1 of the home slider (agarmainkinghota.html): it holds for 2.5 s, then rotates to Agar Main King Hota and continues every 7 s. The banner replaced the old text DOOM to KING slide; whole banner fits every width over a blurred copy of the background; phones get an 'Enter the fixture' button.
+- DOOM to KING banner (13 Oct 2026): the owner's layered art in assets/dk/ (bg.webp, beams.webp, figures.webp, all 2400x1000, stacked). The beams layer flickers in CSS (off for reduced motion). Shown above the countdown hero on /doom-to-king/, and as slide 1 of the home slider (agarmainkinghota.html): it holds for 2.5 s counted from when its pictures have loaded (owner 20 Oct 2026: missing on phones), then rotates to Agar Main King Hota and continues every 7 s. The banner replaced the old text DOOM to KING slide; whole banner fits every width over a blurred copy of the background; phones get an 'Enter the fixture' button.
 
 ## Merch (/merch/, 13 Oct 2026)
 - King Fan Merch page: 15 T-shirt mockups (assets/merch/*.webp, 900x1000 web previews only; print files stay off the repo). Brand on stores: Shah Rock Jaan.
