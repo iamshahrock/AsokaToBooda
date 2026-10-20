@@ -17,7 +17,7 @@
   var set=function(k,t){var e=wrap.querySelector('[data-c="'+k+'"]'); if(e) e.textContent=t;};
   var get=function(f){return fetch(base+'data/'+f,{cache:'no-store'}).then(function(r){return r.json();});};
   if(g==='gallery'){
-    get('gallery.json').then(function(d){var n=(d.items||[]).length;set('img',n?fmt(n)+' pictures':'Coming soon');}).catch(function(){});
+    get('gallery.json').then(function(d){var n=(d.items||[]).length;(d.sections||[]).forEach(function(x){n+=x.count;});set('img',n?fmt(n)+' pictures':'Coming soon');}).catch(function(){});
     get('srk-videos.json').then(function(d){set('vids',fmt((d.items||[]).length)+' videos');}).catch(function(){});
   } else {
     get('srk-ads.json').then(function(d){set('ads',fmt((d.items||[]).length)+' ads · '+fmt((d.print_images||[]).length)+' print');}).catch(function(){});
