@@ -34,7 +34,7 @@
     <select id="film" aria-label="Film"></select>
     <select id="year" aria-label="Year"></select>
     <select id="genre" aria-label="Genre"></select>
-    <select id="sort" aria-label="Sort"><option value="views">Most viewed</option><option value="yr">Newest film first</option><option value="yrold">Oldest film first</option></select>
+    <select id="sort" aria-label="Sort"><option value="yr">Newest first</option><option value="yrold">Oldest first</option><option value="views">Most viewed</option></select>
   </div>
   <p class="vcount" id="vcount"></p>
   <section class="vg" id="grid" aria-label="Videos"><p class="note">Loading…</p></section>
@@ -73,7 +73,7 @@ function fill(){
   gs.style.display=sh?'none':''; q.placeholder='Search '+cur.toLowerCase();
 }
 function ok(it){return it.cat===cur&&(!fs.value||key(it)===fs.value)&&(!ys.value||String(it.year)===ys.value)&&(!gs.value||it.genre===gs.value);}
-var g=VGrid({data:'../../data/srk-videos.json', grid:'#grid', chips:'#chips', q:'#q', sort:'#sort', src:'#src', start:cur,
+var g=VGrid({yearHeads:true, data:'../../data/srk-videos.json', grid:'#grid', chips:'#chips', q:'#q', sort:'#sort', src:'#src', start:cur,
   filter:function(it){var r=ok(it);return r;},
   subFn:function(it){return SHOWCAT[it.cat]?[it.show,it.year].filter(Boolean).join(' · '):[it.film,it.year,it.genre].filter(Boolean).join(' · ');},
   metaFn:function(it,fmt,short){return [(it.views!=null?short(it.views)+' views':''),it.length].filter(Boolean).join(' · ');},
