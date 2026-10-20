@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-20",
+  "record_id": "KING-2026-10-20",
+  "role": "DAILY UPDATE",
+  "metrics": [
+    {
+      "series_id": "king_title_reveal_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-20: the scheduled run could not open https://www.youtube.com/watch?v=Uu2QK9Z9X5E (page fetch not permitted in this run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_date_announcement_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-20: the scheduled run could not open https://www.youtube.com/watch?v=M3mfut2RdHk (page fetch not permitted in this run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "doomsday_official_trailer_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-20: the scheduled run could not open https://www.youtube.com/watch?v=irVNGjRFZGk (page fetch not permitted in this run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "srk_indexed_posts",
+      "value": null,
+      "unit": "indexed posts",
+      "source": "Not read 2026-10-20: the scheduled run could not open https://displaypurposes.com/hashtags/hashtag/srk (page fetch not permitted in this run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "srkking_indexed_posts",
+      "value": null,
+      "unit": "indexed #srkking posts",
+      "source": "Not read 2026-10-20: Display Purposes #srk report could not be opened in this run",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "fan_ai_works_logged",
+      "value": 40,
+      "unit": "fan-made AI works about KING",
+      "source": "data/ai-creator-log.json, daily fan AI scan, 2026-10-20 (0 new)",
+      "method": "public posts found and linked by the daily scan",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "fan_ai_works_views",
+      "value": 2883120,
+      "unit": "views",
+      "source": "data/ai-creator-log.json, updated 2026-10-20",
+      "method": "sum of public view counts on the logged works that show views",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "iamsrk_instagram_followers",
+      "value": null,
+      "unit": "followers",
+      "source": "Not read: the Instagram session in the browser is suspended",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_public_observable_posts",
+      "value": null,
+      "unit": "posts",
+      "source": "No verified 20 Oct total located",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    }
+  ],
+  "topics": [
+    "45-second KING promo reportedly cleared by CBFC; may play before Ramayana; makers have not confirmed: EasternEye, 19 Oct 2026 (https://www.easterneye.biz/shah-rukh-khan-king-theatrical-preview-ramayana/), citing Moneycontrol and Mid-Day [Unverified]",
+    "Specially shot KING video may screen with Ramayana from its 5 Nov release; makers yet to confirm the promotional schedule: Sacnilk, 16 Oct 2026 (https://www.sacnilk.com/news/shah-rukh-khans-king-promo-to-play-with-ranbir-kapoors-ramayana-as-november-2-teaser-buzz-grows), citing Variety India [Unverified]",
+    "Teaser expected on his birthday, 2 November 2026; promoted line 'Darr nahi, Dehshat hoon': Sacnilk, 13 Oct 2026 (https://www.sacnilk.com/news/shah-rukh-khans-birthday-to-witness-king-sized-blast-siddharth-anand-gears-up-to-drop-explosive-teaser-on-november-2), citing Bollywood Hungama [Unverified]",
+    "Release still set for 24 December 2026 worldwide: EasternEye, 19 Oct 2026 (https://www.easterneye.biz/shah-rukh-khan-king-theatrical-preview-ramayana/)"
+  ],
+  "notes": [
+    "The YouTube and Display Purposes pages could not be opened by this unattended run, so those five series are null today, not flat. Do not read the gap as a change.",
+    "Fan AI log: 0 new works in the 20 Oct scan; count and views unchanged at 40 and 2,883,120.",
+    "No new KING news found dated 20 Oct; the topics are the latest reports from 13-19 Oct.",
+    "Posts are not people."
+  ]
+}
