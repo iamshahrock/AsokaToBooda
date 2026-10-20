@@ -1,15 +1,15 @@
 {
  "updated": "2026-10-20",
- "source": "DuckDuckGo image search, 673 searches in two sweeps (every SRK film from Deewana to KING: stills, songs, behind the scenes, first looks; events, birthdays and Eid at Mannat year by year; Filmfare and IIFA year by year; 36 magazines; co-stars; KKR season by season; photoshoots; throwbacks; Hindi, Urdu and Bengali searches). Each picture is shown from the page that published it and links back to that page; nothing is stored on this site. Pictures under 400 px, duplicates and stock-photo watermark sites left out.",
+ "source": "DuckDuckGo image search, 1,214 searches in three sweeps (every SRK film from Deewana to KING: stills, songs, behind the scenes, first looks; events, birthdays and Eid at Mannat year by year; Filmfare and IIFA year by year; 36 magazines; co-stars; KKR season by season; photoshoots; throwbacks; Hindi, Urdu and Bengali searches; the third sweep searched 1988-2005 year by year, every 90s film 5 ways and 8 film magazines year by year). Each picture is shown from the page that published it and links back to that page; nothing is stored on this site. Pictures under 400 px, duplicates and stock-photo watermark sites left out.",
  "sections": [
   {
    "cat": "Films",
-   "count": 12795,
+   "count": 14888,
    "file": "gallery/films.json"
   },
   {
    "cat": "Magazine Covers",
-   "count": 1227,
+   "count": 1649,
    "file": "gallery/magazine-covers.json"
   },
   {
@@ -19,7 +19,7 @@
   },
   {
    "cat": "Events",
-   "count": 5548,
+   "count": 7572,
    "file": "gallery/events.json"
   },
   {
@@ -34,7 +34,7 @@
   },
   {
    "cat": "Throwback",
-   "count": 1119,
+   "count": 2499,
    "file": "gallery/throwback.json"
   }
  ],
