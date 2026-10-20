@@ -26,7 +26,7 @@
     <select id="film" aria-label="Film"></select>
     <select id="year" aria-label="Year"></select>
     <select id="genre" aria-label="Genre"></select>
-    <select id="sort" aria-label="Sort"><option value="">Mixed</option><option value="yr">Newest film first</option><option value="yrold">Oldest film first</option></select>
+    <select id="sort" aria-label="Sort"><option value="yr">Newest first</option><option value="yrold">Oldest first</option><option value="">Mixed</option></select>
   </div>
   <p class="vcount" id="vcount"></p>
   <section class="pg" id="grid" aria-label="Photos"><p class="note">Loading…</p></section>
@@ -52,6 +52,8 @@
 .pg .cp small{display:block;color:var(--mute);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pg-empty{grid-column:1/-1;border:1px dashed var(--line);padding:40px 20px;text-align:center;color:var(--mute)}
 .vg-more{grid-column:1/-1}
+.vg-yr{grid-column:1/-1;margin:14px 0 -2px;padding-bottom:6px;border-bottom:1px solid var(--line);font:400 26px/1 Anton,Impact,sans-serif;letter-spacing:.04em;color:var(--red-text,#ff4a4f)}
+.vg-yr:first-child{margin-top:0}
 @media(max-width:1100px){.vtabs{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:900px){.vtabs{grid-template-columns:repeat(3,minmax(0,1fr))}.vbar{grid-template-columns:1fr 1fr}.vbar input{grid-column:1/-1}}
 @media(max-width:700px){.pg{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
@@ -81,7 +83,8 @@ function tile(i){var cap=[i.film,i.year].filter(Boolean).join(' · ')||i.title||
   var src=i.img?i.img:'../assets/gallery/'+i.file;
   return '<a href="'+esc(i.src||src)+'" target="_blank" rel="noopener"><div class="fr"><img loading="lazy" referrerpolicy="no-referrer" src="'+esc(src)+'"'+(i.th?' data-th="https://tse2.mm.bing.net/th/id/'+esc(i.th)+'"':'')+' alt="'+esc(i.title||'Shah Rukh Khan')+'"></div><div class="cp"><b>'+esc(cap)+'</b><small>'+esc(i.host||i.credit||'')+'</small></div></a>';}
 function render(){var L=list();$('vcount').textContent=L.length.toLocaleString('en-US')+' pictures'+(fs.value?' · '+fs.value:'')+(ys.value?' · '+ys.value:'')+(gs.value?' · '+gs.value:'');
-  g.innerHTML=L.length?L.slice(0,shown).map(tile).join(''):'<p class="pg-empty">'+(all.length?'Nothing matches.':'Photos are coming soon.')+'</p>';
+  var grp=so.value==='yr'||so.value==='yrold', last=null;
+  g.innerHTML=L.length?L.slice(0,shown).map(function(i){var h='';if(grp){var y=i.year||'Year not known';if(y!==last){h='<h3 class="vg-yr">'+esc(y)+'</h3>';last=y;}}return h+tile(i);}).join(''):'<p class="pg-empty">'+(all.length?'Nothing matches.':'Photos are coming soon.')+'</p>';
   if(L.length>shown){var b=document.createElement('button');b.className='vg-more';b.type='button';b.textContent='Show more ('+(L.length-shown).toLocaleString('en-US')+' left)';b.onclick=function(){shown+=60;render();};g.appendChild(b);}
   [].forEach.call(g.querySelectorAll('img'),function(im){im.onerror=function(){var t=im.getAttribute('data-th');if(t&&im.src!==t){im.src=t;}else{im.closest('a').style.display='none';}};});}
 var FILES={},LOADED={};

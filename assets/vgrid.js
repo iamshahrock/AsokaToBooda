@@ -23,7 +23,8 @@
     }
     function render(){
       var L=list();
-      grid.innerHTML=L.length?L.slice(0,shown).map(card).join(''):'<p class="vg-empty">Nothing matches.</p>';
+      var srt=($(o.sort)||{}).value, grp=o.yearHeads&&(srt==='yr'||srt==='yrold'), last=null;
+      grid.innerHTML=L.length?L.slice(0,shown).map(function(it){var h='';if(grp){var y=it.year||'Year not known';if(y!==last){h='<h3 class="vg-yr">'+esc(y)+'</h3>';last=y;}}return h+card(it);}).join(''):'<p class="vg-empty">Nothing matches.</p>';
       if(L.length>shown){var b=document.createElement('button');b.className='vg-more';b.type='button';b.textContent='Show more ('+(L.length-shown)+' left)';b.onclick=function(){shown+=60;render();};grid.appendChild(b);}
     }
     fetch(o.data,{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
