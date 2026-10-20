@@ -11,7 +11,7 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - Every new top-level folder must be added to the cp line in .github/workflows/pages.yml or it is not deployed (merch was missing until 18 Oct). Release QA expects 12 header links.
 
 ## Site design (polish pass, 18 Oct 2026)
-- The ZERO to ONE story banner tops EVERY page (owner, 18 Oct: never remove it) and links home; inner pages also keep the Home button in the bar. Contact/FAQ live in the burger menu and the footer.
+- The ZERO to ONE story banner tops EVERY page (owner, 18 Oct: never remove it) and links home; on phones (≤760px) the two titles 'Agar Main KING Hota' and 'Agar Main FAN Hota' sit in a strip under ZERO to ONE (.sh-strip in header.js, owner 20 Oct 2026: show all elements on mobile); inner pages also keep the Home button in the bar. Contact/FAQ live in the burger menu and the footer.
 - Section tabs under the bar (SUB in assets/header.js) for Make Your Poster, King's Lairs (Rescue Your Face, Lairs Cinema), Chess81, Billboard, Asoka to Boo-Da, Inquilaab.
 - Back-to-top arrow on every page (header.js). Footer has a 4-column site map (footer.js).
 - assets/polish.css (loaded by header.js after page styles) holds the calmer type scale; change sizes there, not page by page.
