@@ -64,6 +64,7 @@ export default {
     if (path === "/d2k") return d2k(request, env, reply, origin);
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
+    if (path === "/gallery-intake") return galleryIntake(request, env);
     if (path === "/merch-bulk") return merchBulk(request, env, reply, origin);
     if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
     if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
@@ -397,6 +398,23 @@ async function aiSubmit(request, env, reply, origin) {
 }
 
 // ---------------- MERCH: bulk order requests (POST only; read by the owner in D1) ----------------
+// POST /gallery-intake (temporary, owner-run image sweep; ends 22 Oct 2026). Body: text/plain JSON {k, batch, part, data}.
+// k must hash to INTAKE_HASH; rows land in D1 gallery_intake and are read by Claude, then the table is emptied.
+const INTAKE_HASH = "b3bc96578e4353f038b1c0140f3e1f7f5c94a13831dcfa44990fc790e19c4385";
+async function galleryIntake(request, env) {
+  const ok = new Response("ok", { status: 200, headers: { "Access-Control-Allow-Origin": "*" } });
+  if (request.method === "OPTIONS") return ok;
+  if (request.method !== "POST" || !env.DB || Date.now() > Date.UTC(2026, 9, 22)) return new Response("gone", { status: 410 });
+  let b; try { b = JSON.parse(await request.text()); } catch (e) { return new Response("bad", { status: 400 }); }
+  const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(String(b.k || "")));
+  const hex = [...new Uint8Array(d)].map(x => x.toString(16).padStart(2, "0")).join("");
+  if (hex !== INTAKE_HASH) return new Response("no", { status: 403 });
+  const data = String(b.data || "");
+  if (data.length > 900000) return new Response("big", { status: 413 });
+  await env.DB.prepare("INSERT INTO gallery_intake(ts, batch, part, data) VALUES(?1, ?2, ?3, ?4)").bind(Date.now(), String(b.batch || "").slice(0, 40), Number(b.part) || 0, data).run();
+  return ok;
+}
+
 // POST /merch-bulk {name, org, email, phone, place, by, qty, sizes, notes, designs[]} -> { ok, id }
 async function merchBulk(request, env, reply, origin) {
   if (!env.DB) return reply(503, { error: "Not configured yet." });
