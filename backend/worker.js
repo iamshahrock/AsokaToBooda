@@ -67,6 +67,7 @@ export default {
     if (path === "/merch-bulk") return merchBulk(request, env, reply, origin);
     if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
     if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
+    if (path === "/amfh/login" || path === "/amfh/me") return amfh(request, env, reply, origin, path);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -592,4 +593,56 @@ async function comments(request, env, reply, origin, path) {
     return reply(200, { ok: true, ...(await wallState(env, c.page, body.device, body.sort)) });
   }
   return reply(404, { error: "Unknown." });
+}
+
+
+// ---------------- Agar Main Fan Hota: SRK's private playroom ----------------
+// The login is checked here, never in the page. The password hash and the
+// sessions live only in D1 (tables amfh_auth, amfh_sessions), not in Git.
+// POST /amfh/login {u, p}  -> {token, stats}
+// POST /amfh/me    {token} -> {stats}
+async function amfhStats(env) {
+  const today = istDay();
+  const q = (sql, ...b) => env.DB.prepare(sql).bind(...b);
+  const [tot, td, cm, cmt, pl] = await env.DB.batch([
+    q("SELECT metric, SUM(n) AS n FROM daily WHERE metric IN ('posters','pageviews') GROUP BY metric"),
+    q("SELECT metric, n FROM daily WHERE day=?1 AND metric IN ('posters','pageviews')", today),
+    q("SELECT COUNT(*) AS n FROM comments"),
+    q("SELECT COUNT(*) AS n FROM comments WHERE ts >= ?1", Date.parse(today + "T00:00:00+05:30")),
+    q("SELECT COUNT(*) AS n FROM players")
+  ]);
+  const t = {}; for (const r of tot.results || []) t[r.metric] = r.n;
+  const d = {}; for (const r of td.results || []) d[r.metric] = r.n;
+  return {
+    asOf: new Date().toISOString(),
+    posters: t.posters || 0, postersToday: d.posters || 0,
+    pageviews: t.pageviews || 0, pageviewsToday: d.pageviews || 0,
+    comments: (cm.results[0] || {}).n || 0, commentsToday: (cmt.results[0] || {}).n ?? null,
+    players: (pl.results[0] || {}).n || 0
+  };
+}
+async function amfh(request, env, reply, origin, path) {
+  if (!env.DB) return reply(503, { error: "Not configured." });
+  if (request.method !== "POST") return reply(405, { error: "Use POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "Not allowed." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (env.EARN_BURST) {
+    const { success } = await env.EARN_BURST.limit({ key: "amfh:" + ip });
+    if (!success) return reply(429, { error: "Too many tries. Wait a minute." });
+  }
+  let body = {}; try { body = await request.json(); } catch (e) {}
+  if (path === "/amfh/login") {
+    const u = String(body.u || "").trim().toLowerCase(), p = String(body.p || "");
+    if (!u || !p || u.length > 100 || p.length > 200) return reply(401, { error: "That username or password is wrong." });
+    const h = [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(u + ":" + p)))].map(b => b.toString(16).padStart(2, "0")).join("");
+    const row = await env.DB.prepare("SELECT 1 AS ok FROM amfh_auth WHERE hash=?1").bind(h).first();
+    if (!row) return reply(401, { error: "That username or password is wrong." });
+    const token = [...crypto.getRandomValues(new Uint8Array(24))].map(b => b.toString(16).padStart(2, "0")).join("");
+    await env.DB.prepare("INSERT INTO amfh_sessions (token, created) VALUES (?1, ?2)").bind(token, Date.now()).run();
+    return reply(200, { token, stats: await amfhStats(env) }, { "Cache-Control": "no-store" });
+  }
+  const token = String(body.token || "");
+  const s = token && await env.DB.prepare("SELECT created FROM amfh_sessions WHERE token=?1").bind(token).first();
+  if (!s || Date.now() - s.created > 30 * 864e5) return reply(401, { error: "Please sign in again." });
+  return reply(200, { stats: await amfhStats(env) }, { "Cache-Control": "no-store" });
 }
