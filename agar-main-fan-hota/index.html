@@ -45,7 +45,8 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
 #login .spacer{margin-top:auto}
 .field{display:flex;flex-direction:column;gap:6px;text-align:left;width:100%}
 .field .flabel,.field label{font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.fixed-user{background:var(--panel);border:1px solid var(--line);color:var(--gold);padding:14px;font:400 20px var(--display);letter-spacing:.06em}
+.fixed-user{margin:0;text-align:center;color:var(--gold);font:400 28px var(--display);letter-spacing:.06em}
+.login-form .field label{text-align:center}
 .field input,.field textarea{background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:14px;font:16px/1.5 var(--body);width:100%}
 .field textarea{resize:vertical}
 .login-form{width:100%;max-width:340px;display:flex;flex-direction:column;gap:14px}
@@ -220,7 +221,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
   <h1>Agar Main <span>Fan Hota</span></h1>
   <p class="sub">King's Playroom</p>
   <form class="login-form" id="loginForm" autocomplete="off">
-    <div class="field"><span class="flabel">Username</span><div class="fixed-user" id="u">SRK THE KING</div></div>
+    <p class="fixed-user" id="u">SRK THE KING</p>
     <div class="field"><label for="p">Key</label><input id="p" name="p" type="password"></div>
     <p class="err" id="err"></p>
     <button class="btn gold-btn" type="submit">ABRACADABRA</button>
