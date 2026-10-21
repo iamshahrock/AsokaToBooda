@@ -263,7 +263,15 @@
   var homeBtn = el('a', { class: 'sh-home', href: home, 'aria-label': 'Home' });
   homeBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>';
   // phones only: both titles live in the bar, so titles + STARKS + menu share one row
-  var btitles = el('a', { class: 'sh-btitles', href: home, 'aria-label': 'Agar Main King Hota — home' }, [mirror('sh-l', 'king'), mirror('sh-r', 'fan')]);
+  // KING title -> home; FAN title -> Agar Main Fan Hota (the King's Playroom)
+  var FANHOTA = root + 'agar-main-fan-hota/';
+  var btitles = el('div', { class: 'sh-btitles' }, [
+    el('a', { href: home, 'aria-label': 'Agar Main King Hota — home', style: 'display:flex' }, [mirror('sh-l', 'king')]),
+    el('a', { href: FANHOTA, 'aria-label': 'Agar Main Fan Hota — the King\'s Playroom', style: 'display:flex' }, [mirror('sh-r', 'fan')])
+  ]);
+  // big banner (desktop): the FAN title opens the Playroom too
+  var bannerFan = banner.querySelector('.sh-r');
+  if (bannerFan) { bannerFan.style.cursor = 'pointer'; bannerFan.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); location.href = FANHOTA; }); }
   var barKids = atHome ? [brand, btitles, nav, util, burger] : [brand, btitles, homeBtn, nav, util, burger];
   var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, barKids)]);
 
