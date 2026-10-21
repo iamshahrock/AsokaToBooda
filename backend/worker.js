@@ -632,11 +632,13 @@ async function amfh(request, env, reply, origin, path) {
   }
   let body = {}; try { body = await request.json(); } catch (e) {}
   if (path === "/amfh/login") {
-    const u = String(body.u || "").trim().toLowerCase(), p = String(body.p || "");
-    if (!u || !p || u.length > 100 || p.length > 200) return reply(401, { error: "That username or password is wrong." });
+    let u = String(body.u || "").trim().toLowerCase(); const p = String(body.p || "");
+    // The page shows the fixed name "SRK THE KING"; the account name behind it is kept in D1 (amfh_user).
+    if (u === "srk the king") { const r = await env.DB.prepare("SELECT u FROM amfh_user LIMIT 1").first().catch(() => null); if (r && r.u) u = r.u; }
+    if (!u || !p || u.length > 100 || p.length > 200) return reply(401, { error: "That key is wrong. Try again." });
     const h = [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(u + ":" + p)))].map(b => b.toString(16).padStart(2, "0")).join("");
     const row = await env.DB.prepare("SELECT 1 AS ok FROM amfh_auth WHERE hash=?1").bind(h).first();
-    if (!row) return reply(401, { error: "That username or password is wrong." });
+    if (!row) return reply(401, { error: "That key is wrong. Try again." });
     const token = [...crypto.getRandomValues(new Uint8Array(24))].map(b => b.toString(16).padStart(2, "0")).join("");
     await env.DB.prepare("INSERT INTO amfh_sessions (token, created) VALUES (?1, ?2)").bind(token, Date.now()).run();
     return reply(200, { token, stats: await amfhStats(env) }, { "Cache-Control": "no-store" });
