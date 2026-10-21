@@ -20,6 +20,7 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 ## Agar Main Fan Hota (SRK's private playroom, birthday gift for 2 Nov 2026)
 - LIVE page: https://agarmainkinghota.com/agar-main-fan-hota/ (noindex, not in the header). Built 13 Oct 2026 as a draft (claude.ai artifact https://claude.ai/artifact/SARUT2m4pauofqgHEeEya5), moved onto the live site 21 Oct 2026 (owner: keep the site always live, never park work off-site).
 - Login screen (owner, 21 Oct 2026): subtitle "King's Playroom", Username shown fixed as "SRK THE KING" (he does not type it), "Key" field, button "ABRACADABRA", and a one-line summary of what he can do. The real account name behind "SRK THE KING" is stored in D1 table amfh_user. Username and key were given to the owner on 13 Oct. The login is checked by the Worker (POST /amfh/login, /amfh/me); the password hash and sessions live only in D1 (amfh_auth, amfh_sessions), never in Git or the page.
+- The "Agar Main FAN Hota" title links to this page (owner, 21 Oct 2026): in the phone bar (.sh-btitles: KING title -> home, FAN title -> playroom) and in the desktop banner (click on .sh-r), set in assets/header.js.
 - Six tabs: Gate, Crown, Studio, Chess, Line, Me. The Gate tiles show real D1 numbers (posters, Fan Wall posts, players) or N/A. Still samples (labelled Sample): fans at the gate, the crown deck, face-off votes, chess challengers. Still to wire to the backend: crowns onto the home page, his line on the home page, his video, Post to Billboard, live Chess81 matches.
 
 ## Stack
