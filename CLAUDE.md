@@ -17,6 +17,11 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - assets/polish.css (loaded by header.js after page styles) holds the calmer type scale; change sizes there, not page by page.
 - Home keeps the original six doors with the characters, the DOOM to KING banner band and the INQUILAAB band (owner, 18 Oct: put back; do not regroup the home page).
 
+## Agar Main Fan Hota (SRK's private playroom, birthday gift for 2 Nov 2026)
+- LIVE page: https://agarmainkinghota.com/agar-main-fan-hota/ (noindex, not in the header). Built 13 Oct 2026 as a draft (claude.ai artifact https://claude.ai/artifact/SARUT2m4pauofqgHEeEya5), moved onto the live site 21 Oct 2026 (owner: keep the site always live, never park work off-site).
+- Username and password were given to the owner on 13 Oct. The login is checked by the Worker (POST /amfh/login, /amfh/me); the password hash and sessions live only in D1 (amfh_auth, amfh_sessions), never in Git or the page.
+- Six tabs: Gate, Crown, Studio, Chess, Line, Me. The Gate tiles show real D1 numbers (posters, Fan Wall posts, players) or N/A. Still samples (labelled Sample): fans at the gate, the crown deck, face-off votes, chess challengers. Still to wire to the backend: crowns onto the home page, his line on the home page, his video, Post to Billboard, live Chess81 matches.
+
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
 - Backend: Cloudflare Worker `asokatobooda` (backend/worker.js), auto-deploys on backend/** changes.
