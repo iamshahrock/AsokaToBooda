@@ -538,7 +538,7 @@ async function refresh() {
   }
   if (my !== pending) return;
   await renderPoster($('canvas'), {
-    art, preview: !state.aiArt, name: $('name').value, title: p ? kingName(p) : 'KING', line: $('line').value,
+    art, preview: !state.aiArt, vivid: true, name: $('name').value, title: p ? kingName(p) : 'KING', line: $('line').value,
     film: p ? p.title : '', year: p ? p.year : '', character: p ? p.character : '', date: today()
   });
   if (!state.aiArt && p) say('This is your frame. Make the poster to paint yourself into it.', true);
