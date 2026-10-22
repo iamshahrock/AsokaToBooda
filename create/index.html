@@ -37,6 +37,16 @@
 .tile img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;background:#050303}
 .tile span{display:block;padding:4px 4px 6px;font-size:10px;line-height:1.25}
 .tile span b{display:block;font-weight:600;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile span .kn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--gold,#d9ad3c);font-family:var(--display);font-style:normal;font-size:11px;line-height:1.1;text-transform:uppercase;margin:1px 0 2px;word-break:break-word}
+#styles{display:none!important}
+.game-line{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--red);background:rgba(200,16,46,.08);font-size:15px}.game-line b{color:var(--gold,#d9ad3c);font-weight:700}
+.kstyles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.kst{padding:6px 6px 8px;border:2px solid var(--field-line);background:transparent;color:var(--ink);text-align:center;cursor:pointer}
+.kst[aria-pressed="true"]{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
+.kst b{display:block;font-family:var(--display);font-weight:400;font-size:15px;text-transform:uppercase;margin:0 0 5px;line-height:1}
+.kst .kp{aspect-ratio:2/3;background:radial-gradient(circle at 50% 35%,#3a1010,#0d0606 70%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.kst .kp img{width:78%;height:auto}.kst .kp img.full{width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.kstyles{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .tile span i{font-style:normal;color:var(--faint);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile:hover{border-color:var(--red-text)}
 .tile[aria-pressed="true"]{border-color:var(--red-hi);box-shadow:0 0 0 2px var(--red-hi)}
@@ -46,7 +56,7 @@
 .chosen img{width:56px;aspect-ratio:2/3;object-fit:contain;background:#050303}
 .chosen p{margin:0;font-size:14px;color:var(--mute)}
 .chosen strong{display:block;color:var(--ink);font-size:16px}
-.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .opt{padding:14px;border:1px solid var(--field-line);background:transparent;color:var(--ink);text-align:left;min-height:84px}
 .opt b{display:block;font-family:var(--display);font-weight:400;font-size:20px;text-transform:uppercase;margin-bottom:4px}
 .opt small{color:var(--mute);font-size:12.5px;line-height:1.4}
@@ -120,6 +130,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 <main class="wrap page">
   <div class="intro">
     <div>
+      <p class="game-line">The game: pick a style, pick a film, put yourself in it. Every film gets a <b>KING</b> name: Fauji becomes <b>Fauji King</b>.</p>
       <p class="eyebrow">01 · Make your poster</p>
       <h1>Make your <em>KING</em> poster</h1>
     </div>
@@ -133,6 +144,12 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 
   <div class="studio">
     <div>
+      <section class="panel" aria-labelledby="h0">
+        <h2 id="h0"><span class="n">00</span>Choose your style</h2>
+        <p class="hint">KING, six ways. Your poster is painted in the style you pick.</p>
+        <div class="kstyles" id="kstyles" role="group" aria-label="Poster style"></div>
+      </section>
+
       <section class="panel" aria-labelledby="h1">
         <h2 id="h1"><span class="n">01</span>Choose the film</h2>
         <p class="hint">Every original poster from 1988 to 2018, plus the 81st, KING, still unwritten. Tap one.</p>
@@ -155,6 +172,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
         <p class="hint" id="roleHint">Who are you in this story?</p>
         <div class="opts" id="roles" role="group" aria-label="Role">
           <button class="opt" type="button" data-role="king" aria-pressed="true"><b>The King</b><small>You take the lead and own the poster.</small></button>
+          <button class="opt" type="button" data-role="withking" aria-pressed="false"><b>With the King</b><small>You join the cast beside the King.</small></button>
           <button class="opt" type="button" data-role="rival" aria-pressed="false"><b>The Rival</b><small>Intense, dangerous, unforgettable.</small></button>
           <button class="opt" type="button" data-role="sidekick" aria-pressed="false"><b>The Sidekick</b><small>Loyal, playful, steals every scene.</small></button>
         </div>
@@ -290,6 +308,27 @@ function drawStyles() {
   });
 }
 function eraOf(p) { return p.year < 1990 || p.kind === 'tv' ? '1980' : String(Math.floor(p.year / 10) * 10); }
+// King names (owner's SRK_KING_Titles sheet, 22 Oct 2026) and the six KING style samples
+let KINGNAMES = {};
+const normT = t => String(t).toLowerCase().replace(/[^a-z0-9]/g, '');
+function kingName(p) { if (p.king) return 'KING'; const k = KINGNAMES[normT(p.title)] || KINGNAMES[normT(p.title).replace('barber', '')]; return k ? k.replace('{FAN}', ($('name') && $('name').value.trim()) || 'You') : ''; }
+fetch('../data/king-titles.json').then(r => r.json()).then(d => { d.films.forEach(f => { KINGNAMES[normT(f.title)] = f.king; }); drawGrid(); }).catch(() => {});
+const KSTYLES = [['pop', 'ijoo Pop'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime'], ['2d', '2D Cartoon']];
+state.kstyle = 'pop';
+function drawKStyles() {
+  $('kstyles').replaceChildren(...KSTYLES.map(([id, name]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'kst'; b.setAttribute('aria-pressed', String(state.kstyle === id));
+    const t = document.createElement('b'); t.textContent = name;
+    const box = document.createElement('div'); box.className = 'kp';
+    const im = document.createElement('img'); im.alt = 'KING in ' + name; im.src = '../assets/posters/styles/king/' + id + '.jpg';
+    im.className = 'full'; im.onerror = () => { im.onerror = null; im.className = ''; im.src = '../assets/home/king-wordmark.webp'; };
+    box.append(im); b.append(t, box);
+    b.addEventListener('click', () => { state.kstyle = id; drawKStyles(); });
+    return b;
+  }));
+}
+drawKStyles();
+
 function drawGrid() {
   const era = document.querySelector('[data-era][aria-pressed="true"]').dataset.era;
   const q = $('find').value.trim().toLowerCase();
@@ -305,7 +344,8 @@ function drawGrid() {
     const s = document.createElement('span');
     const t = document.createElement('b'); t.textContent = p.title;
     const i = document.createElement('i'); i.textContent = p.year + (p.kind === 'tv' ? ' · TV' : '') + ' · ' + p.character;
-    s.append(t, i); b.append(im, s);
+    const kn = document.createElement('em'); kn.className = 'kn'; kn.textContent = kingName(p);
+    s.append(t, kn, i); b.append(im, s);
     if (p.king) { const tag = document.createElement('em'); tag.className = 'tag'; tag.textContent = 'The 81st'; b.append(tag); }
     b.addEventListener('click', () => chooseFilm(p));
     return b;
