@@ -80,7 +80,11 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--mute);line-height:1.45}
 .consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--red-hi)}
 .count{font-size:12px;color:var(--faint);text-align:right;margin-top:4px}
-.stage{position:sticky;top:76px}
+.stage{position:static;max-width:460px;margin:28px auto 0}
+.intro{display:block!important;margin-bottom:22px}.intro p{margin-top:12px!important;max-width:none!important}
+.toppv{position:sticky;top:76px}.tp-img{aspect-ratio:2/3;background:radial-gradient(circle at 50% 35%,#3a1010,#0d0606 70%);border:2px solid var(--red);display:flex;align-items:center;justify-content:center;overflow:hidden}.tp-img img{width:100%;height:100%;object-fit:cover}.tp-img img.wm{width:70%;height:auto;object-fit:contain}
+.tp-cap{margin:10px 0 0;text-align:center;font-family:var(--display);font-size:22px;text-transform:uppercase;color:var(--gold,#d9ad3c);line-height:1.1}.tp-cap small{display:block;font-family:inherit;font-size:13px;color:var(--mute);text-transform:none;letter-spacing:0;margin-top:4px}
+@media (max-width:980px){.toppv{position:static;order:-1;max-width:260px;margin:0 auto}}
 .frame{background:#000;border:1px solid var(--line);aspect-ratio:2/3;position:relative;overflow:hidden}
 .frame canvas{width:100%;height:100%;display:block}
 .frame .busy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(7,5,5,.82);text-align:center;padding:24px}
@@ -131,12 +135,6 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 <body>
 <script src="../assets/header.js" data-nav="v2"></script>
 <main class="wrap page">
-  <div class="intro">
-    <div>
-      <h1>Make Your <em>KING</em> Poster</h1>
-    </div>
-    <p>Pick any SRK's Movie (out of 120), Choose a style, Upload your photo or with friends &amp; become the Star of your own Movie. Earn STARKS trade and win prizes.</p>
-  </div>
 
   <ol class="steps" id="steps" aria-label="Progress">
     <li data-s="1" class="on">1 · Film</li><li data-s="2">2 · Role</li><li data-s="3">3 · Photo</li><li data-s="4">4 · Look</li><li data-s="5">5 · Your line</li>
@@ -144,6 +142,12 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 
   <div class="studio">
     <div>
+      <div class="intro">
+        <div>
+          <h1>Make Your <em>KING</em> Poster</h1>
+        </div>
+        <p>Pick any SRK's Movie (out of 120), Choose a style, Upload your photo or with friends &amp; become the Star of your own Movie. Earn STARKS trade and win prizes.</p>
+      </div>
       <section class="panel" aria-labelledby="h0">
         <h2 id="h0">Choose Poster Style</h2>
         <div class="kstyles" id="kstyles" role="group" aria-label="Poster style"></div>
@@ -227,9 +231,8 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
         <input class="text" id="line" maxlength="70" placeholder="Agar main King hota…">
         <div class="count"><span id="lineCount">0</span> / 70</div>
       </section>
-    </div>
 
-    <aside class="stage" aria-label="Your poster">
+    <section class="stage" aria-label="Your poster">
       <div class="frame" id="frame">
         <canvas id="canvas" width="1024" height="1536" role="img" aria-label="Your poster preview"></canvas>
         <div class="busy" id="busy" hidden><img src="../assets/studio/crown.png" alt=""><p>Painting your poster</p><small>About a minute. Keep this page open.</small></div>
@@ -258,6 +261,12 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
         <p>Your poster is your player card. Take it into King's Lairs and earn more STARKS.</p>
         <a class="btn btn-red" href="../lairs/">Enter the lairs <span aria-hidden="true">→</span></a>
       </div>
+    </section>
+    </div>
+
+    <aside class="toppv" aria-label="Poster preview">
+      <div class="tp-img"><img id="topImg" alt=""></div>
+      <p class="tp-cap" id="topCap"></p>
     </aside>
   </div>
 </main>
@@ -322,11 +331,33 @@ function drawKStyles() {
     const im = document.createElement('img'); im.alt = 'KING in ' + name; im.src = '../assets/posters/styles/king/' + id + '.jpg';
     im.className = 'full'; im.onerror = () => { im.onerror = null; im.className = ''; im.src = '../assets/home/king-wordmark.webp'; };
     box.append(im); b.append(t, box);
-    b.addEventListener('click', () => { state.kstyle = id; drawKStyles(); });
+    b.addEventListener('click', () => { state.kstyle = id; drawKStyles(); topPreview(); refresh(); });
     return b;
   }));
 }
 drawKStyles();
+
+// Right-hand preview (owner, 22 Oct 2026): KING by default; the chosen film in the chosen style once picked.
+const KNAME = Object.fromEntries(KSTYLES);
+const SFACES = {};
+async function styleFaces(s) { if (!SFACES[s]) { try { SFACES[s] = (await (await fetch(BASE + 'styles/' + s + '/faces.json')).json()).faces || {}; } catch (e) { SFACES[s] = {}; } } return SFACES[s]; }
+function styledSrc(p) { return BASE + 'styles/' + state.kstyle + '/' + p.id + '.jpg'; }
+function topPreview() {
+  const im = $('topImg'), p = state.film, cap = $('topCap');
+  im.className = ''; im.onerror = null;
+  if (!p || p.king) {
+    im.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg';
+    im.onerror = () => { im.onerror = null; im.className = 'wm'; im.src = '../assets/home/king-wordmark.webp'; };
+    cap.innerHTML = 'KING<small>' + KNAME[state.kstyle] + '</small>';
+    return;
+  }
+  im.src = styledSrc(p);
+  im.onerror = () => { im.onerror = null; im.src = BASE + p.ref; };
+  const c = document.createElement('span'); c.textContent = kingName(p);
+  const s = document.createElement('small'); s.textContent = p.title + ' · ' + p.year + ' · ' + KNAME[state.kstyle];
+  cap.replaceChildren(c, s);
+}
+topPreview();
 
 function drawGrid() {
   const era = document.querySelector('[data-era][aria-pressed="true"]').dataset.era;
@@ -368,7 +399,7 @@ function chooseFilm(p) {
   c.append(im, t);
   $('roleHint').textContent = p.king ? 'Who are you in KING?' : `In ${p.title}, who are you?`;
   setupCast(p);
-  mark(2); refresh();
+  mark(2); refresh(); topPreview();
 }
 
 // ---------- cast: one slot per character on the poster (positions only, no identities) ----------
@@ -484,7 +515,21 @@ async function refresh() {
   const my = ++pending;
   const p = state.film;
   let art = state.aiArt;
-  if (!art && p && !p.king) { try { art = await loadImage(BASE + p.ref); } catch (e) {} }
+  if (!art && p && !p.king) {
+    // bottom frame: the chosen poster in the chosen style, stars' faces cut out (owner, 22 Oct 2026)
+    let src = null, boxes = FACES[p.id] || [];
+    try { src = await loadImage(styledSrc(p)); boxes = (await styleFaces(state.kstyle))[p.id] || []; }
+    catch (e) { try { src = await loadImage(BASE + p.ref); } catch (e2) {} }
+    if (src) {
+      const c = document.createElement('canvas'); c.width = src.width; c.height = src.height;
+      const x = c.getContext('2d'); x.drawImage(src, 0, 0);
+      boxes.forEach(([cx, cy, w]) => {
+        x.beginPath(); x.ellipse(cx * c.width, cy * c.height, w * c.width * 0.62, w * c.width * 0.8, 0, 0, Math.PI * 2);
+        x.fillStyle = '#0a0707'; x.fill(); x.setLineDash([c.width * 0.012, c.width * 0.01]); x.lineWidth = Math.max(2, c.width * 0.005); x.strokeStyle = '#d9ad3c'; x.stroke();
+      });
+      art = c;
+    }
+  }
   if (my !== pending) return;
   await renderPoster($('canvas'), {
     art, preview: !state.aiArt, name: $('name').value, title: p ? kingName(p) : 'KING', line: $('line').value,
