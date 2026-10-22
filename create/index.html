@@ -221,8 +221,8 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 
       <section class="panel" aria-labelledby="h5">
         <h2 id="h5"><span class="n">05</span>Your line</h2>
-        <p class="hint">Your name goes on the poster in the KING lettering. Your line goes underneath.</p>
-        <label class="field" for="name">Name on the poster</label>
+        <p class="hint">The film's King name is the title of your poster, in the KING lettering. Your name goes under it as the star. Your line goes underneath.</p>
+        <label class="field" for="name">Your name (the star)</label>
         <input class="text" id="name" maxlength="18" autocomplete="given-name" placeholder="e.g. Shailja">
         <label class="field" for="line">Your dialogue</label>
         <input class="text" id="line" maxlength="70" placeholder="Agar main King hota…">
@@ -488,7 +488,7 @@ async function refresh() {
   if (!art && p && !p.king) { try { art = await loadImage(BASE + p.ref); } catch (e) {} }
   if (my !== pending) return;
   await renderPoster($('canvas'), {
-    art, preview: !state.aiArt, name: $('name').value, line: $('line').value,
+    art, preview: !state.aiArt, name: $('name').value, title: p ? kingName(p) : 'KING', line: $('line').value,
     film: p ? p.title : '', year: p ? p.year : '', character: p ? p.character : '', date: today()
   });
   if (!state.aiArt && p) say('This is your frame. Make the poster to paint yourself into it.', true);
