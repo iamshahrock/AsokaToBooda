@@ -127,6 +127,28 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .sb-icons a:hover,.sb-icons button:hover,.sb-icons a:focus-visible,.sb-icons button:focus-visible{border-color:var(--red-hi);color:#fff}
 .sb-icons svg{width:24px;height:24px}
 .cast{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+/* face matching (owner, 22 Oct 2026): photo faces get letters, poster faces get numbers, the fan pairs them */
+.photos{align-items:flex-start}
+.pcard{position:relative;width:min(100%,300px);border:1px solid var(--line);background:#050303}
+.pcard .pw{position:relative;line-height:0;cursor:crosshair}
+.pcard .pw img{width:100%;height:auto;display:block}
+.pcard .x{position:absolute;top:4px;right:4px;width:28px;height:28px;border:0;background:rgba(0,0,0,.75);color:#fff;z-index:3}
+.pcard .st{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);color:#fff;font:600 12px var(--body);padding:6px 8px;line-height:1.3}
+.fbox{position:absolute;border:3px solid var(--red);border-radius:50%;background:transparent;padding:0;cursor:pointer;z-index:2}
+.fbox b{position:absolute;top:-14px;right:-14px;width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;font:700 15px var(--body);display:flex;align-items:center;justify-content:center;line-height:1}
+.fbox.off{border-color:rgba(255,255,255,.45);border-style:dashed}.fbox.off b{background:#333;font-size:12px}
+.match{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.match-wrap{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;align-items:start}
+.match-rows{display:grid;gap:10px}
+.mrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.mrow .num{width:34px;height:34px;border-radius:50%;background:var(--gold,#d9ad3c);color:#1a1205;font:700 15px var(--body);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.mrow .lbl{font:600 14px var(--body);min-width:96px}
+.pick{display:flex;align-items:center;gap:6px;border:2px solid var(--field-line);background:transparent;color:var(--ink);padding:3px 10px 3px 3px;border-radius:24px;font:700 14px var(--body);cursor:pointer;min-height:40px}
+.pick canvas{width:32px;height:32px;border-radius:50%;display:block}
+.pick.new{padding:3px 12px;font-weight:600;font-size:13px}
+.pick[aria-pressed="true"]{border-color:var(--red);background:var(--red);color:#fff}
+.cast-art button{pointer-events:none}
+@media (max-width:640px){.match-wrap{grid-template-columns:1fr}.cast-art{max-width:200px}.mrow .lbl{min-width:0;width:100%}}
 .cast-h{margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .cast-wrap{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:start}
 .cast-art{position:relative;background:#050303;border:1px solid var(--line)}
@@ -201,21 +223,21 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
           <option>The Pit, a fighting arena carved into rock</option>
           <option>the Abyssal Den, a flooded underwater lair</option>
         </select>
-        <div class="cast" id="cast" hidden>
-          <p class="cast-h">The cast · <span id="castN"></span></p>
-          <p class="hint" id="castHint">Pick who plays each character. You, up to two friends, or a brand-new face. Nobody from the original cast stays on the poster.</p>
-          <div class="cast-wrap">
-            <div class="cast-art" id="castArt"><img id="castImg" alt="Where each character stands on this poster"></div>
-            <ol class="cast-list" id="castList"></ol>
-          </div>
-        </div>
       </section>
 
       <section class="panel" aria-labelledby="h3">
         <h2 id="h3"><span class="n">03</span>Your photo</h2>
-        <p class="hint">A clear, front-facing photo works best. Add up to two friends for a squad poster.</p>
+        <p class="hint">Add up to 3 photos: a selfie, or a group photo with friends. The site finds every face and labels it A, B, C. Tap a face to leave it out, or tap a missed face to add it.</p>
         <div class="photos" id="photos">
           <label class="ph upload" id="addPhoto"><input type="file" accept="image/jpeg,image/png,image/webp" id="photoInput"><span>+ Add photo</span></label>
+        </div>
+        <div class="match" id="match" hidden>
+          <p class="cast-h" id="matchH">Who goes where</p>
+          <p class="hint" id="matchHint"></p>
+          <div class="match-wrap">
+            <div class="cast-art" id="castArt"><img id="castImg" alt="The poster's faces, numbered"></div>
+            <div class="match-rows" id="matchRows"></div>
+          </div>
         </div>
         <label class="consent"><input type="checkbox" id="consent"> <span>These are photos of me, or of people who agreed to be in my poster. Anyone under 18 has a parent's OK. No photos of film stars or other celebrities.</span></label>
         <p class="privacy">Your photo is sent to OpenAI only to paint your poster. This site does not keep it.</p>
@@ -287,6 +309,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 <script type="module">
 import { buildPrompt } from '../assets/studio/prompt.js';
 import { renderPoster, loadImage, preloadKit, tagJpeg } from '../assets/studio/compose.js';
+import { findFaces, cropFace, faceThumb } from '../assets/studio/faces.js';
 
 const $ = id => document.getElementById(id);
 const POSTER_API_URL = 'https://asokatobooda.iamshahrock.workers.dev';
@@ -295,7 +318,7 @@ const BASE = new URL('../assets/posters/', location.href).href;
 // 'blur' sends a softened copy (layout and colour only). Set from the end-to-end test results.
 const FILM_REF_MODE = 'blur';   // faces on the original posters must never reach the AI (#FreeMyFace)
 
-const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null, cast: [], style: 'original' };
+const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: null, cast: [], hero: null, style: 'original' };
 let STYLES = [{ id: 'original', name: 'Original', ready: true }];
 let catalogue = [];
 let FACES = {};
@@ -344,7 +367,7 @@ function drawKStyles() {
     const im = document.createElement('img'); im.alt = 'KING in ' + name; im.src = '../assets/posters/styles/king/' + id + '.jpg';
     im.className = 'full'; im.onerror = () => { im.onerror = null; im.className = ''; im.src = '../assets/home/king-wordmark.webp'; };
     box.append(im); b.append(t, box);
-    b.addEventListener('click', () => { state.kstyle = id; drawKStyles(); topPreview(); refresh(); });
+    b.addEventListener('click', () => { state.kstyle = id; drawKStyles(); topPreview(); if (state.film) setupCast(state.film); else refresh(); });
     return b;
   }));
 }
@@ -441,46 +464,93 @@ function chooseFilm(p) {
   mark(2); refresh(); topPreview();
 }
 
-// ---------- cast: one slot per character on the poster (positions only, no identities) ----------
-const WHO = ['A new face', 'You', 'Friend 1', 'Friend 2'];
-const PLACE = ([cx, cy]) => `${cy < .36 ? 'Top' : cy > .64 ? 'Lower' : 'Middle'} ${cx < .36 ? 'left' : cx > .64 ? 'right' : 'centre'}`;
-function setupCast(p) {
-  const at = (!p.king && FACES[p.id]) || [];
-  state.cast = at.map((a, i) => ({ at: a, photo: i === 0 ? 1 : null }));
-  $('cast').hidden = state.cast.length < 2;
-  if (!state.cast.length) return;
-  $('castImg').src = BASE + p.thumb;
-  $('castN').textContent = `${state.cast.length} characters on this poster`;
-  drawCast();
+// ---------- cast: one slot per face on the poster (positions only, no identities) ----------
+// Owner, 22 Oct 2026: faces in the fan's photos get letters (A, B, C...), poster faces get numbers (1, 2, 3...),
+// and the fan taps which letter goes on which number. Nothing is pre-filled: every poster face starts empty.
+const MAX_PEOPLE = 3;
+// the poster faces the fan sees: the chosen style's own face boxes when that style's art exists, else the original's; largest first
+async function posterFaces(p) {
+  if (p.king) return { boxes: [], img: '' };
+  try { await loadImage(styledSrc(p)); const sb = (await styleFaces(state.kstyle))[p.id]; if (sb) return { boxes: sb, img: styledSrc(p) }; } catch (e) {}
+  return { boxes: FACES[p.id] || [], img: BASE + p.thumb };
 }
-function castPhoto(i, photo) {
-  if (photo) state.cast.forEach(c => { if (c.photo === photo) c.photo = null; });
-  state.cast[i].photo = photo || null;
-  drawCast();
+let castSeq = 0;
+async function setupCast(p) {
+  const my = ++castSeq;
+  const { boxes, img } = await posterFaces(p);
+  if (my !== castSeq) return;
+  const at = [...boxes].sort((a, b) => b[2] - a[2]);
+  const keep = state.cast.length === at.length ? state.cast.map(c => c.who) : [];
+  state.cast = at.length > 1 ? at.map((a, i) => ({ at: a, who: keep[i] || null })) : [];
+  if (!state.cast.length && keep.length) state.hero = null;
+  if (state.cast.length) $('castImg').src = img;
+  drawMatch(); refresh();
 }
-function drawCast() {
-  const art = $('castArt'); art.querySelectorAll('button').forEach(b => b.remove());
-  state.cast.forEach((c, i) => {
-    const b = document.createElement('button'); b.type = 'button'; b.textContent = i + 1;
-    b.className = c.photo === 1 ? 'me' : c.photo ? 'fr' : '';
-    b.style.left = (c.at[0] * 100) + '%'; b.style.top = (c.at[1] * 100) + '%';
-    b.setAttribute('aria-label', `Character ${i + 1}: ${WHO[c.photo || 0]}. Tap to make it you.`);
-    b.addEventListener('click', () => castPhoto(i, 1));
-    art.append(b);
-  });
-  $('castList').replaceChildren(...state.cast.map((c, i) => {
-    const li = document.createElement('li');
-    const n = document.createElement('span'); n.className = 'num' + (c.photo === 1 ? ' me' : c.photo ? ' fr' : ''); n.textContent = i + 1;
-    const s = document.createElement('select'); s.className = 'text'; s.setAttribute('aria-label', `Who plays character ${i + 1}`);
-    WHO.forEach((w, k) => { const o = document.createElement('option'); o.value = k; o.textContent = w; o.selected = (c.photo || 0) === k; s.append(o); });
-    s.addEventListener('change', () => castPhoto(i, Number(s.value)));
-    const sm = document.createElement('small'); sm.textContent = PLACE(c.at) + (i === 0 ? ' · the biggest figure' : '');
-    li.append(n, s, sm); return li;
+// every face the fan has kept, with its letter: [{ key, letter, pi, fi, box, thumb }]
+function people() {
+  const out = []; let n = 0;
+  state.photos.forEach((ph, pi) => (ph.faces || []).forEach((f, fi) => {
+    f.letter = String.fromCharCode(65 + n++);          // letters stay fixed even when a face is left out
+    if (!f.off) out.push({ key: ph.id + ':' + fi, letter: f.letter, pi, fi, box: f, thumb: f.thumb });
   }));
-  const need = Math.max(0, ...state.cast.map(c => c.photo || 0));
-  $('castHint').textContent = need > state.photos.length
-    ? `Add ${need - state.photos.length === 1 ? 'one more photo' : (need - state.photos.length) + ' more photos'} in step 03 for the friends you cast. Nobody from the original cast stays on the poster.`
-    : 'Pick who plays each character. You, up to two friends, or a brand-new face. Nobody from the original cast stays on the poster.';
+  return out;
+}
+function personByKey(k) { return people().find(x => x.key === k); }
+function cleanCast() {
+  const keys = new Set(people().map(x => x.key));
+  state.cast.forEach(c => { if (c.who && c.who !== 'new' && !keys.has(c.who)) c.who = null; });
+  if (state.hero && !keys.has(state.hero)) state.hero = null;
+}
+function usedKeys() { return [...new Set(state.cast.map(c => c.who).filter(w => w && w !== 'new'))]; }
+function assign(i, who) {
+  if (who !== 'new' && who) {
+    const others = usedKeys().filter(k => k !== state.cast[i].who);
+    if (!others.includes(who) && others.length >= MAX_PEOPLE) { say(`Up to ${MAX_PEOPLE} real people per poster. Set another poster face to "New face" first.`); return; }
+    state.cast.forEach(c => { if (c.who === who) c.who = null; });
+  }
+  state.cast[i].who = who;
+  drawMatch(); refresh();
+}
+function pickBtn(person, on, fn) {
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'pick'; b.setAttribute('aria-pressed', String(on));
+  if (person) {
+    const cv = document.createElement('canvas'); cv.width = cv.height = 64; cv.getContext('2d').drawImage(person.thumb, 0, 0, 64, 64);
+    b.append(cv, document.createTextNode(person.letter)); b.setAttribute('aria-label', 'Face ' + person.letter);
+  } else { b.classList.add('new'); b.textContent = 'New face'; }
+  b.addEventListener('click', fn); return b;
+}
+function drawMatch() {
+  const box = $('match'), ppl = people(), p = state.film;
+  box.hidden = !p || !ppl.length;
+  if (box.hidden) return;
+  const art = $('castArt'); art.querySelectorAll('button').forEach(b => b.remove());
+  if (state.cast.length) {
+    art.hidden = false;
+    state.cast.forEach((c, i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = i + 1; b.tabIndex = -1;
+      b.className = c.who && c.who !== 'new' ? 'me' : '';
+      b.style.left = (c.at[0] * 100) + '%'; b.style.top = (c.at[1] * 100) + '%'; art.append(b);
+    });
+    $('matchH').textContent = 'Who goes where';
+    $('matchHint').textContent = `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. For each number, tap the letter of the face from your photo that goes there, or "New face" for someone the AI invents.`;
+    $('matchRows').replaceChildren(...state.cast.map((c, i) => {
+      const r = document.createElement('div'); r.className = 'mrow';
+      const n = document.createElement('span'); n.className = 'num'; n.textContent = i + 1;
+      const l = document.createElement('span'); l.className = 'lbl'; l.textContent = `Poster face ${i + 1} =`;
+      r.append(n, l, ...ppl.map(x => pickBtn(x, c.who === x.key, () => assign(i, x.key))), pickBtn(null, c.who === 'new', () => assign(i, 'new')));
+      return r;
+    }));
+  } else {
+    art.hidden = true;
+    $('matchH').textContent = 'Who is the star?';
+    $('matchHint').textContent = ppl.length > 1
+      ? `Tap the letter of the face that plays the lead. The other faces you keep (up to ${MAX_PEOPLE} people in all) join the poster with them.`
+      : 'Tap your face to make it the lead.';
+    const r = document.createElement('div'); r.className = 'mrow';
+    const l = document.createElement('span'); l.className = 'lbl'; l.textContent = 'The lead =';
+    r.append(l, ...ppl.map(x => pickBtn(x, state.hero === x.key, () => { state.hero = x.key; drawMatch(); refresh(); })));
+    $('matchRows').replaceChildren(r);
+  }
 }
 
 // ---------- role, look, world ----------
@@ -506,35 +576,57 @@ function downscale(file, max = 1024) {
     im.src = url;
   });
 }
+let photoSeq = 0;
+async function addPhotoBlob(blob) {
+  if (state.photos.length >= 3) { say('Up to 3 photos per poster.'); return; }
+  const ph = { id: ++photoSeq, blob, url: URL.createObjectURL(blob), faces: null, img: null };
+  state.photos.push(ph); drawPhotos(); mark(4);
+  try {
+    ph.img = await loadImage(ph.url);
+    const found = await findFaces(ph.img);
+    ph.faces = found.map(b => ({ ...b, off: false, thumb: faceThumb(ph.img, b) }));
+  } catch (e) { ph.faces = []; ph.img = ph.img || await loadImage(ph.url).catch(() => null); }
+  drawPhotos(); drawMatch(); refresh();
+  say(ph.faces.length ? `Found ${ph.faces.length} face${ph.faces.length > 1 ? 's' : ''}. Now match them to the poster below.` : 'No face found. Tap the face in the photo to mark it.', !!ph.faces.length);
+}
 $('photoInput').addEventListener('change', async e => {
   const f = e.target.files && e.target.files[0]; e.target.value = '';
   if (!f) return;
   if (!/^image\/(jpeg|png|webp)$/.test(f.type)) { say('Please choose a JPG, PNG or WebP photo.'); return; }
-  try {
-    const blob = await downscale(f);
-    state.photos.push({ blob, url: URL.createObjectURL(blob) }); drawPhotos(); mark(4);
-    if (state.cast.length > 1 && !state.cast.some(c => c.photo === state.photos.length)) {
-      const free = state.cast.find(c => !c.photo); if (free) free.photo = state.photos.length;
-    }
-    if (state.cast.length > 1) drawCast();
-    say('Photo added.', true);
-  } catch (err) { say(err.message); }
+  try { await addPhotoBlob(await downscale(f)); } catch (err) { say(err.message); }
 });
 function drawPhotos() {
   const box = $('photos'); const add = $('addPhoto');
-  box.replaceChildren(...state.photos.map((p, i) => {
-    const d = document.createElement('div'); d.className = 'ph';
-    const im = document.createElement('img'); im.src = p.url; im.alt = 'Photo ' + (i + 1);
-    const x = document.createElement('button'); x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label', 'Remove photo ' + (i + 1));
-    x.addEventListener('click', () => {
-      URL.revokeObjectURL(p.url); state.photos.splice(i, 1);
-      state.cast.forEach(c => { if (c.photo === i + 1) c.photo = null; else if (c.photo > i + 1) c.photo--; });
-      drawPhotos(); if (state.cast.length > 1) drawCast();
+  people(); // refresh letters
+  box.replaceChildren(...state.photos.map((ph, i) => {
+    const d = document.createElement('div'); d.className = 'pcard';
+    const w = document.createElement('div'); w.className = 'pw';
+    const im = document.createElement('img'); im.src = ph.url; im.alt = 'Photo ' + (i + 1); w.append(im);
+    (ph.faces || []).forEach((f, fi) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'fbox' + (f.off ? ' off' : '');
+      b.style.left = (f.x * 100) + '%'; b.style.top = (f.y * 100) + '%'; b.style.width = (f.w * 100) + '%'; b.style.height = (f.h * 100) + '%';
+      const t = document.createElement('b'); t.textContent = f.letter; b.append(t);
+      b.setAttribute('aria-label', f.off ? 'Face left out. Tap to use it.' : `Face ${f.letter}. Tap to leave it out.`);
+      b.addEventListener('click', ev => { ev.stopPropagation(); f.off = !f.off; cleanCast(); drawPhotos(); drawMatch(); refresh(); });
+      w.append(b);
     });
-    d.append(im, x); return d;
+    w.addEventListener('click', ev => {
+      if (!ph.img || ph.faces === null) return;
+      const r = im.getBoundingClientRect(), W = ph.img.naturalWidth, H = ph.img.naturalHeight;
+      const side = 0.2 * Math.min(W, H), fw = side / W, fh = side / H;
+      const fx = Math.min(1 - fw, Math.max(0, (ev.clientX - r.left) / r.width - fw / 2)), fy = Math.min(1 - fh, Math.max(0, (ev.clientY - r.top) / r.height - fh / 2));
+      const nb = { x: fx, y: fy, w: fw, h: fh, off: false, manual: true }; nb.thumb = faceThumb(ph.img, nb);
+      ph.faces.push(nb); drawPhotos(); drawMatch(); refresh(); say('Face added.', true);
+    });
+    const x = document.createElement('button'); x.type = 'button'; x.className = 'x'; x.textContent = '×'; x.setAttribute('aria-label', 'Remove photo ' + (i + 1));
+    x.addEventListener('click', ev => { ev.stopPropagation(); URL.revokeObjectURL(ph.url); state.photos.splice(i, 1); cleanCast(); drawPhotos(); drawMatch(); refresh(); });
+    w.append(x);
+    if (ph.faces === null) { const s = document.createElement('span'); s.className = 'st'; s.textContent = 'Finding faces…'; w.append(s); }
+    else if (!ph.faces.length) { const s = document.createElement('span'); s.className = 'st'; s.textContent = 'No face found: tap the face to mark it.'; w.append(s); }
+    d.append(w); return d;
   }), add);
   add.hidden = state.photos.length >= 3;
-  add.querySelector('span').textContent = state.photos.length ? '+ Add a friend' : '+ Add photo';
+  add.querySelector('span').textContent = state.photos.length ? '+ Add another photo' : '+ Add photo';
 }
 
 // ---------- name / line ----------
@@ -562,9 +654,29 @@ async function refresh() {
     if (src) {
       const c = document.createElement('canvas'); c.width = src.width; c.height = src.height;
       const x = c.getContext('2d'); x.drawImage(src, 0, 0);
-      boxes.forEach(([cx, cy, w]) => {
-        x.beginPath(); x.ellipse(cx * c.width, cy * c.height, w * c.width * 0.62, w * c.width * 0.8, 0, 0, Math.PI * 2);
-        x.fillStyle = '#0a0707'; x.fill(); x.setLineDash([c.width * 0.012, c.width * 0.01]); x.lineWidth = Math.max(2, c.width * 0.005); x.strokeStyle = '#d9ad3c'; x.stroke();
+      // pair each poster face number (state.cast, original positions) with the nearest cut-out on this art
+      const slotOf = new Array(boxes.length).fill(-1), free = boxes.map((b, i) => i);
+      state.cast.forEach((s, si) => {
+        let best = -1, bd = 1e9; free.forEach(bi => { const d = (boxes[bi][0] - s.at[0]) ** 2 + (boxes[bi][1] - s.at[1]) ** 2; if (d < bd) { bd = d; best = bi; } });
+        if (best >= 0) { slotOf[best] = si; free.splice(free.indexOf(best), 1); }
+      });
+      const big = boxes.reduce((m, b, i) => (m < 0 || b[2] > boxes[m][2] ? i : m), -1);
+      boxes.forEach(([cx, cy, w], bi) => {
+        const ex = cx * c.width, ey = cy * c.height, rx = w * c.width * 0.62, ry = w * c.width * 0.8;
+        x.save(); x.beginPath(); x.ellipse(ex, ey, rx, ry, 0, 0, Math.PI * 2);
+        x.fillStyle = '#0a0707'; x.fill();
+        const si = slotOf[bi], who = si >= 0 ? state.cast[si].who : (!state.cast.length && bi === big ? state.hero : null);
+        const person = who && who !== 'new' ? personByKey(who) : null;
+        if (person) { x.clip(); x.drawImage(person.thumb, ex - rx, ey - ry, rx * 2, ry * 2); }
+        x.restore();
+        x.save(); x.beginPath(); x.ellipse(ex, ey, rx, ry, 0, 0, Math.PI * 2);
+        x.setLineDash(person ? [] : [c.width * 0.012, c.width * 0.01]); x.lineWidth = Math.max(2, c.width * 0.005); x.strokeStyle = '#d9ad3c'; x.stroke(); x.restore();
+        if (si >= 0) {
+          const r = Math.max(14, c.width * 0.028), bx = ex + rx * 0.75, by = ey - ry * 0.85;
+          x.beginPath(); x.arc(bx, by, r, 0, Math.PI * 2); x.fillStyle = '#d9ad3c'; x.fill();
+          x.fillStyle = '#1a1205'; x.font = `700 ${Math.round(r * 1.2)}px Archivo, Arial, sans-serif`; x.textAlign = 'center'; x.textBaseline = 'middle';
+          x.fillText(String(si + 1), bx, by + 1);
+        }
       });
       art = c;
     }
@@ -599,28 +711,35 @@ async function filmReference(p) {
 $('make').addEventListener('click', async () => {
   const p = state.film;
   if (!p) { say('Choose a film first.'); $('grid').scrollIntoView({ behavior: 'smooth' }); return; }
-  if (!state.photos.length) { say('Add your photo: you are the hero of this poster.'); return; }
+  const ppl = people();
+  if (!state.photos.length) { say('Add your photo: you are the star of this poster.'); $('photos').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+  if (state.photos.some(ph => ph.faces === null)) { say('Still finding the faces in your photo. One moment.'); return; }
+  if (!ppl.length) { say('No face marked yet. Tap the face in your photo to mark it.'); $('photos').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
   if (!$('consent').checked) { say('Please confirm the photos are yours or that you have permission.'); return; }
   const useCast = state.cast.length > 1;
+  let order;
   if (useCast) {
-    const need = Math.max(0, ...state.cast.map(c => c.photo || 0));
-    if (need > state.photos.length) { say(`You cast ${need - 1} friend${need > 2 ? 's' : ''}: add their photo in step 03, or set that character to "A new face".`); return; }
-    if (!state.cast.some(c => c.photo === 1)) { say('Cast yourself as one of the characters (set one to "You").'); $('cast').scrollIntoView({ behavior: 'smooth' }); return; }
-    state.photos.forEach((ph, i) => { if (!state.cast.some(c => c.photo === i + 1)) { const free = state.cast.find(c => !c.photo); if (free) free.photo = i + 1; } });
-    drawCast();
-    const idle = state.photos.findIndex((ph, i) => !state.cast.some(c => c.photo === i + 1));
-    if (idle >= 0) { say(`Photo ${idle + 1} isn't playing anyone. Cast it in step 02 or remove it.`); return; }
+    const open = state.cast.findIndex(c => !c.who);
+    if (open >= 0) { say(`Choose who goes in poster face ${open + 1}: a letter from your photo, or "New face".`); $('match').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    order = usedKeys();
+    if (!order.length) { say('Put at least one face from your photo on the poster.'); $('match').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+  } else {
+    if (!state.hero) { say('Tap the letter of the face that plays the lead.'); $('match').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    order = [state.hero, ...ppl.map(x => x.key).filter(k => k !== state.hero)];
+    if (order.length > MAX_PEOPLE) { say(`Up to ${MAX_PEOPLE} people per poster. Tap the extra faces in your photo to leave them out.`); return; }
   }
+  const crops = await Promise.all(order.map(k => { const x = personByKey(k), ph = state.photos[x.pi]; return cropFace(ph.img, x.box); }));
+  const castPayload = useCast ? state.cast.map(c => ({ photo: c.who === 'new' ? null : order.indexOf(c.who) + 1, at: c.at })) : null;
   $('make').disabled = true; $('busy').hidden = false; say('Sending your photo, the film and the crown…', true);
   try {
     const form = new FormData();
     form.append('prompt', buildPrompt({
       film: p.king ? 'KING' : p.title, year: p.year, character: p.king ? '' : p.character,
-      role: state.role, look: state.look, squad: state.photos.length, world: $('world').value,
+      role: state.role, look: state.look, squad: order.length, world: $('world').value,
       hasFilmRef: !p.king, styleName: state.style !== 'original' ? styleOf().name : '',
-      cast: useCast ? state.cast.map(c => ({ photo: c.photo, at: c.at })) : null
+      cast: castPayload
     }));
-    state.photos.forEach((ph, i) => form.append('image', ph.blob, `fan-${i + 1}.jpg`));
+    crops.forEach((b, i) => form.append('image', b, `fan-${i + 1}.jpg`));
     if (!p.king) form.append('image', await filmReference(p), 'film.jpg');
     form.append('image', await (await fetch('../assets/studio/crown.png')).blob(), 'crown.png');
     const res = await fetch(POSTER_API_URL, { method: 'POST', body: form });
@@ -700,7 +819,7 @@ links();
 (async () => {
   await Promise.all([loadCatalogue(), preloadKit(), document.fonts && document.fonts.ready]);
   if (new URLSearchParams(location.search).get('from') === 'lairs') {
-    try { const f = localStorage.getItem('amkh-face'); if (f) fetch(f).then(r => r.blob()).then(blob => { state.photos.push({ blob, url: URL.createObjectURL(blob) }); drawPhotos(); say('Your rescued face is loaded. Choose a film and paint your poster.', true); }); } catch (e) {}
+    try { const f = localStorage.getItem('amkh-face'); if (f) fetch(f).then(r => r.blob()).then(blob => addPhotoBlob(blob)).then(() => say('Your rescued face is loaded. Choose a film and match it to the poster.', true)); } catch (e) {}
   }
   const want = new URLSearchParams(location.search).get('film');
   const p = want && catalogue.find(x => x.id === want.padStart(2, '0'));
