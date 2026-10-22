@@ -57,6 +57,14 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Press release "KING by FANS": https://claude.ai/code/artifact/a9a602c3-ffbf-474c-82a3-02575c665e32
 - Creator Kit (charter, STARKS integration, card spec; shared with the fan developer 13 Oct): https://claude.ai/code/artifact/d07b71e8-b28e-4b7e-8988-f90e9777bd45
 
+## Make Your KING Poster page (/create/, owner 22 Oct 2026, LIVE from PR below)
+- Top: heading "Make Your KING Poster" + the owner's line WORD FOR WORD ("Pick any SRK's Movie (out of 120), Choose a style, Upload your photo or with friends & become the Star of your own Movie. Earn STARKS trade and win prizes."). Nothing else above the styles. The 1-5 step tabs are hidden.
+- "Choose Poster Style": 6 KING cards (ijoo Pop, 3D Anim, Funko Pop, Chibi Pop, Anime, 2D Cartoon), red border on the chosen one; 6 in a row desktop, 3x2 on phones. KING sample art goes in assets/posters/styles/king/<pop|3d|funko|chibi|anime|2d>.jpg (wordmark until then). The old small Poster style row (#styles) is hidden.
+- "Choose SRK Film": original thumbnails with the King Name (data/king-titles.json) under each; desktop one row of decade chips + search; phone decade drop-down + search.
+- Right column (desktop): preview poster from the top: KING by default, then the chosen film in the chosen style (assets/posters/styles/<style>/<id>.jpg, falls back to the original). Below it, sticky beside the steps: the poster frame with the stars' faces cut out (style posters use their own face boxes, styles/pop/faces.json, YuNet 22 Oct), the King Name as the title in KING lettering and 'STARRING <fan name>'. Phones: preview on top, frame after step 05.
+- Roles: The King, With the King (new; card only, generation still uses the King role logic until the owner OKs keeping the styled King's face), The Rival, The Sidekick.
+- ijoo Pop set: 82 posters in assets/posters/styles/pop (Don = the owner's separate upload). Picking a style does not yet change what the AI paints (step 04 The look still does); owner to decide.
+
 ## Make Your Poster — current policy (#FreeMyFace, PR #61, chat "Set II", 12 Oct 2026)
 - No star's face goes into the AI: the film poster is sent BLURRED (`FILM_REF_MODE = 'blur'` in create/index.html), colour and layout only.
 - Prompt (assets/studio/prompt.js) forbids depicting or resembling any real actor, celebrity or public figure. The only real faces are the uploaded fans.

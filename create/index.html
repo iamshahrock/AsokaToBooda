@@ -37,6 +37,19 @@
 .tile img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;background:#050303}
 .tile span{display:block;padding:4px 4px 6px;font-size:10px;line-height:1.25}
 .tile span b{display:block;font-weight:600;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile span .kn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--gold,#d9ad3c);font-family:var(--display);font-style:normal;font-size:11px;line-height:1.1;text-transform:uppercase;margin:1px 0 2px;word-break:break-word}
+#styles{display:none!important}
+#steps{display:none!important}
+.erarow{flex-wrap:nowrap;align-items:center}.erarow .chip{padding:0 10px;white-space:nowrap}.erarow .find{flex:1;min-width:120px}.erasel{display:none;background:var(--field,#160f0f);border:1px solid var(--field-line);color:var(--ink);padding:10px;font:15px var(--body,Archivo)}
+@media (max-width:760px){.erarow .chip{display:none}.erasel{display:block;flex:0 0 42%}.erarow{gap:8px}}
+.game-line{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--red);background:rgba(200,16,46,.08);font-size:15px}.game-line b{color:var(--gold,#d9ad3c);font-weight:700}
+.kstyles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.kst{padding:6px 6px 8px;border:2px solid var(--field-line);background:transparent;color:var(--ink);text-align:center;cursor:pointer}
+.kst[aria-pressed="true"]{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
+.kst b{display:block;font-family:var(--display);font-weight:400;font-size:15px;text-transform:uppercase;margin:0 0 5px;line-height:1}
+.kst .kp{aspect-ratio:2/3;background:radial-gradient(circle at 50% 35%,#3a1010,#0d0606 70%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.kst .kp img{width:78%;height:auto}.kst .kp img.full{width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.kstyles{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .tile span i{font-style:normal;color:var(--faint);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile:hover{border-color:var(--red-text)}
 .tile[aria-pressed="true"]{border-color:var(--red-hi);box-shadow:0 0 0 2px var(--red-hi)}
@@ -46,7 +59,7 @@
 .chosen img{width:56px;aspect-ratio:2/3;object-fit:contain;background:#050303}
 .chosen p{margin:0;font-size:14px;color:var(--mute)}
 .chosen strong{display:block;color:var(--ink);font-size:16px}
-.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .opt{padding:14px;border:1px solid var(--field-line);background:transparent;color:var(--ink);text-align:left;min-height:84px}
 .opt b{display:block;font-family:var(--display);font-weight:400;font-size:20px;text-transform:uppercase;margin-bottom:4px}
 .opt small{color:var(--mute);font-size:12.5px;line-height:1.4}
@@ -67,7 +80,12 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--mute);line-height:1.45}
 .consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--red-hi)}
 .count{font-size:12px;color:var(--faint);text-align:right;margin-top:4px}
-.stage{position:sticky;top:76px}
+.stage{position:static;max-width:460px;margin:28px auto 0}
+@media (min-width:981px){.toppv{position:static!important;align-self:stretch}.toppv .stage{position:sticky;top:120px;max-width:none;margin:22px 0 0}.toppv .stage .frame canvas{max-height:calc(100vh - 260px);width:auto!important;max-width:100%;height:auto;display:block;margin:0 auto}}
+.intro{display:block!important;margin-bottom:22px}.intro p{margin-top:12px!important;max-width:none!important}
+.toppv{position:sticky;top:76px}.tp-img{aspect-ratio:2/3;background:radial-gradient(circle at 50% 35%,#3a1010,#0d0606 70%);border:2px solid var(--red);display:flex;align-items:center;justify-content:center;overflow:hidden}.tp-img img{width:100%;height:100%;object-fit:cover}.tp-img img.wm{width:70%;height:auto;object-fit:contain}
+.tp-cap{margin:10px 0 0;text-align:center;font-family:var(--display);font-size:22px;text-transform:uppercase;color:var(--gold,#d9ad3c);line-height:1.1}.tp-cap small{display:block;font-family:inherit;font-size:13px;color:var(--mute);text-transform:none;letter-spacing:0;margin-top:4px}
+@media (max-width:980px){.toppv{position:static;order:-1;max-width:260px;margin:0 auto}}
 .frame{background:#000;border:1px solid var(--line);aspect-ratio:2/3;position:relative;overflow:hidden}
 .frame canvas{width:100%;height:100%;display:block}
 .frame .busy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(7,5,5,.82);text-align:center;padding:24px}
@@ -118,14 +136,6 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 <body>
 <script src="../assets/header.js" data-nav="v2"></script>
 <main class="wrap page">
-  <div class="intro">
-    <div>
-      <p class="eyebrow">01 · Make your poster</p>
-      <h1>Make your <em>KING</em> poster</h1>
-    </div>
-    <p>Pick one of his 80 films, step into the role and get a poster nobody else has: your face, his film's world, the KING crown and your own line.</p>
-    <p class="own-face"><b>Your face. Not his.</b> The only real face on this poster is yours: no star's face goes into the AI. That's our <a href="../inquilab/">#FreeMyFace</a> pledge.</p>
-  </div>
 
   <ol class="steps" id="steps" aria-label="Progress">
     <li data-s="1" class="on">1 · Film</li><li data-s="2">2 · Role</li><li data-s="3">3 · Photo</li><li data-s="4">4 · Look</li><li data-s="5">5 · Your line</li>
@@ -133,11 +143,22 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 
   <div class="studio">
     <div>
+      <div class="intro">
+        <div>
+          <h1>Make Your <em>KING</em> Poster</h1>
+        </div>
+        <p>Pick any SRK's Movie (out of 120), Choose a style, Upload your photo or with friends &amp; become the Star of your own Movie. Earn STARKS trade and win prizes.</p>
+      </div>
+      <section class="panel" aria-labelledby="h0">
+        <h2 id="h0">Choose Poster Style</h2>
+        <div class="kstyles" id="kstyles" role="group" aria-label="Poster style"></div>
+      </section>
+
       <section class="panel" aria-labelledby="h1">
-        <h2 id="h1"><span class="n">01</span>Choose the film</h2>
-        <p class="hint">Every original poster from 1988 to 2018, plus the 81st, KING, still unwritten. Tap one.</p>
+        <h2 id="h1">Choose SRK Film</h2>
         <div class="filters styles" id="styles" role="group" aria-label="Poster style"><span class="lbl">Poster style</span></div>
-        <div class="filters" role="group" aria-label="Filter by decade">
+        <div class="filters erarow" role="group" aria-label="Filter by decade">
+          <select class="erasel" id="erasel" aria-label="Decade"><option value="all">All films</option><option value="1980">TV &amp; '80s</option><option value="1990">'90s</option><option value="2000">2000s</option><option value="2010">2010s</option><option value="2020">2020s &amp; KING</option></select>
           <button class="chip" type="button" data-era="all" aria-pressed="true">All</button>
           <button class="chip" type="button" data-era="1980">TV &amp; '80s</button>
           <button class="chip" type="button" data-era="1990">'90s</button>
@@ -155,6 +176,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
         <p class="hint" id="roleHint">Who are you in this story?</p>
         <div class="opts" id="roles" role="group" aria-label="Role">
           <button class="opt" type="button" data-role="king" aria-pressed="true"><b>The King</b><small>You take the lead and own the poster.</small></button>
+          <button class="opt" type="button" data-role="withking" aria-pressed="false"><b>With the King</b><small>You join the cast beside the King.</small></button>
           <button class="opt" type="button" data-role="rival" aria-pressed="false"><b>The Rival</b><small>Intense, dangerous, unforgettable.</small></button>
           <button class="opt" type="button" data-role="sidekick" aria-pressed="false"><b>The Sidekick</b><small>Loyal, playful, steals every scene.</small></button>
         </div>
@@ -203,16 +225,15 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 
       <section class="panel" aria-labelledby="h5">
         <h2 id="h5"><span class="n">05</span>Your line</h2>
-        <p class="hint">Your name goes on the poster in the KING lettering. Your line goes underneath.</p>
-        <label class="field" for="name">Name on the poster</label>
+        <p class="hint">The film's King name is the title of your poster, in the KING lettering. Your name goes under it as the star. Your line goes underneath.</p>
+        <label class="field" for="name">Your name (the star)</label>
         <input class="text" id="name" maxlength="18" autocomplete="given-name" placeholder="e.g. Shailja">
         <label class="field" for="line">Your dialogue</label>
         <input class="text" id="line" maxlength="70" placeholder="Agar main King hota…">
         <div class="count"><span id="lineCount">0</span> / 70</div>
       </section>
-    </div>
 
-    <aside class="stage" aria-label="Your poster">
+    <section class="stage" aria-label="Your poster">
       <div class="frame" id="frame">
         <canvas id="canvas" width="1024" height="1536" role="img" aria-label="Your poster preview"></canvas>
         <div class="busy" id="busy" hidden><img src="../assets/studio/crown.png" alt=""><p>Painting your poster</p><small>About a minute. Keep this page open.</small></div>
@@ -241,6 +262,12 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
         <p>Your poster is your player card. Take it into King's Lairs and earn more STARKS.</p>
         <a class="btn btn-red" href="../lairs/">Enter the lairs <span aria-hidden="true">→</span></a>
       </div>
+    </section>
+    </div>
+
+    <aside class="toppv" aria-label="Poster preview">
+      <div class="tp-img"><img id="topImg" alt=""></div>
+      <p class="tp-cap" id="topCap"></p>
     </aside>
   </div>
 </main>
@@ -290,6 +317,53 @@ function drawStyles() {
   });
 }
 function eraOf(p) { return p.year < 1990 || p.kind === 'tv' ? '1980' : String(Math.floor(p.year / 10) * 10); }
+// King names (owner's SRK_KING_Titles sheet, 22 Oct 2026) and the six KING style samples
+let KINGNAMES = {};
+const normT = t => String(t).toLowerCase().replace(/[^a-z0-9]/g, '');
+function kingName(p) { if (p.king) return 'KING'; const k = KINGNAMES[normT(p.title)] || KINGNAMES[normT(p.title).replace('barber', '')]; return k ? k.replace('{FAN}', ($('name') && $('name').value.trim()) || 'You') : ''; }
+fetch('../data/king-titles.json').then(r => r.json()).then(d => { d.films.forEach(f => { KINGNAMES[normT(f.title)] = f.king; }); drawGrid(); }).catch(() => {});
+const KSTYLES = [['pop', 'ijoo Pop'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime'], ['2d', '2D Cartoon']];
+state.kstyle = 'pop';
+function drawKStyles() {
+  $('kstyles').replaceChildren(...KSTYLES.map(([id, name]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'kst'; b.setAttribute('aria-pressed', String(state.kstyle === id));
+    const t = document.createElement('b'); t.textContent = name;
+    const box = document.createElement('div'); box.className = 'kp';
+    const im = document.createElement('img'); im.alt = 'KING in ' + name; im.src = '../assets/posters/styles/king/' + id + '.jpg';
+    im.className = 'full'; im.onerror = () => { im.onerror = null; im.className = ''; im.src = '../assets/home/king-wordmark.webp'; };
+    box.append(im); b.append(t, box);
+    b.addEventListener('click', () => { state.kstyle = id; drawKStyles(); topPreview(); refresh(); });
+    return b;
+  }));
+}
+drawKStyles();
+
+// Right-hand preview (owner, 22 Oct 2026): KING by default; the chosen film in the chosen style once picked.
+const KNAME = Object.fromEntries(KSTYLES);
+const SFACES = {};
+async function styleFaces(s) { if (!SFACES[s]) { try { SFACES[s] = (await (await fetch(BASE + 'styles/' + s + '/faces.json')).json()).faces || {}; } catch (e) { SFACES[s] = {}; } } return SFACES[s]; }
+function styledSrc(p) { return BASE + 'styles/' + state.kstyle + '/' + p.id + '.jpg'; }
+function topPreview() {
+  const im = $('topImg'), p = state.film, cap = $('topCap');
+  im.className = ''; im.onerror = null;
+  if (!p || p.king) {
+    im.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg';
+    im.onerror = () => { im.onerror = null; im.className = 'wm'; im.src = '../assets/home/king-wordmark.webp'; };
+    cap.innerHTML = 'KING<small>' + KNAME[state.kstyle] + '</small>';
+    return;
+  }
+  im.src = styledSrc(p);
+  im.onerror = () => { im.onerror = null; im.src = BASE + p.ref; };
+  const c = document.createElement('span'); c.textContent = kingName(p);
+  const s = document.createElement('small'); s.textContent = p.title + ' · ' + p.year + ' · ' + KNAME[state.kstyle];
+  cap.replaceChildren(c, s);
+}
+topPreview();
+// Desktop: the fan's poster frame sits in the right column under the preview and stays beside the steps; phone: after step 05.
+const stageHome = document.querySelector('.stage').previousElementSibling;
+function placeStage() { const st = document.querySelector('.stage'); if (matchMedia('(min-width:981px)').matches) document.querySelector('.toppv').append(st); else stageHome.after(st); }
+placeStage(); matchMedia('(min-width:981px)').addEventListener('change', placeStage);
+
 function drawGrid() {
   const era = document.querySelector('[data-era][aria-pressed="true"]').dataset.era;
   const q = $('find').value.trim().toLowerCase();
@@ -305,13 +379,15 @@ function drawGrid() {
     const s = document.createElement('span');
     const t = document.createElement('b'); t.textContent = p.title;
     const i = document.createElement('i'); i.textContent = p.year + (p.kind === 'tv' ? ' · TV' : '') + ' · ' + p.character;
-    s.append(t, i); b.append(im, s);
+    const kn = document.createElement('em'); kn.className = 'kn'; kn.textContent = kingName(p);
+    s.append(t, kn, i); b.append(im, s);
     if (p.king) { const tag = document.createElement('em'); tag.className = 'tag'; tag.textContent = 'The 81st'; b.append(tag); }
     b.addEventListener('click', () => chooseFilm(p));
     return b;
   }));
   if (!list.length) $('grid').textContent = 'No film matches that search.';
 }
+$('erasel').addEventListener('change', e => { document.querySelectorAll('[data-era]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.era === e.target.value))); drawGrid(); });
 document.querySelectorAll('[data-era]').forEach(c => c.addEventListener('click', () => {
   document.querySelectorAll('[data-era]').forEach(x => x.setAttribute('aria-pressed', String(x === c))); drawGrid();
 }));
@@ -328,7 +404,7 @@ function chooseFilm(p) {
   c.append(im, t);
   $('roleHint').textContent = p.king ? 'Who are you in KING?' : `In ${p.title}, who are you?`;
   setupCast(p);
-  mark(2); refresh();
+  mark(2); refresh(); topPreview();
 }
 
 // ---------- cast: one slot per character on the poster (positions only, no identities) ----------
@@ -444,10 +520,24 @@ async function refresh() {
   const my = ++pending;
   const p = state.film;
   let art = state.aiArt;
-  if (!art && p && !p.king) { try { art = await loadImage(BASE + p.ref); } catch (e) {} }
+  if (!art && p && !p.king) {
+    // bottom frame: the chosen poster in the chosen style, stars' faces cut out (owner, 22 Oct 2026)
+    let src = null, boxes = FACES[p.id] || [];
+    try { src = await loadImage(styledSrc(p)); boxes = (await styleFaces(state.kstyle))[p.id] || []; }
+    catch (e) { try { src = await loadImage(BASE + p.ref); } catch (e2) {} }
+    if (src) {
+      const c = document.createElement('canvas'); c.width = src.width; c.height = src.height;
+      const x = c.getContext('2d'); x.drawImage(src, 0, 0);
+      boxes.forEach(([cx, cy, w]) => {
+        x.beginPath(); x.ellipse(cx * c.width, cy * c.height, w * c.width * 0.62, w * c.width * 0.8, 0, 0, Math.PI * 2);
+        x.fillStyle = '#0a0707'; x.fill(); x.setLineDash([c.width * 0.012, c.width * 0.01]); x.lineWidth = Math.max(2, c.width * 0.005); x.strokeStyle = '#d9ad3c'; x.stroke();
+      });
+      art = c;
+    }
+  }
   if (my !== pending) return;
   await renderPoster($('canvas'), {
-    art, preview: !state.aiArt, name: $('name').value, line: $('line').value,
+    art, preview: !state.aiArt, name: $('name').value, title: p ? kingName(p) : 'KING', line: $('line').value,
     film: p ? p.title : '', year: p ? p.year : '', character: p ? p.character : '', date: today()
   });
   if (!state.aiArt && p) say('This is your frame. Make the poster to paint yourself into it.', true);

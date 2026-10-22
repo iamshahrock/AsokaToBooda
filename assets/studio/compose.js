@@ -106,9 +106,26 @@ export async function renderPoster(canvas, o) {
   ctx.fillText('AGAR MAIN KING HOTA', W / 2, H * 0.112);
   ctx.restore();
 
-  // the fan's name in the red KING alphabet
-  const name = (o.name || 'YOUR NAME').trim().slice(0, 18);
-  const nh = await drawRed(ctx, name, W / 2, H * 0.735, H * 0.085, W * 0.86);
+  // the film's King Name is the poster's title, in the red KING alphabet (owner, 22 Oct 2026);
+  // long names go on two lines. The fan's name sits under it as the star.
+  const title = (o.title || 'KING').trim().slice(0, 40);
+  let nh;
+  if (title.length > 14 && title.includes(' ')) {
+    const words = title.split(' '); let best = 1, diff = 1e9;
+    for (let i = 1; i < words.length; i++) { const d = Math.abs(words.slice(0, i).join(' ').length - words.slice(i).join(' ').length); if (d < diff) { diff = d; best = i; } }
+    const lh = H * 0.07;
+    const h1 = await drawRed(ctx, words.slice(0, best).join(' '), W / 2, H * 0.70, lh, W * 0.86);
+    const h2 = await drawRed(ctx, words.slice(best).join(' '), W / 2, H * 0.70 + h1 + H * 0.008, lh, W * 0.86);
+    nh = h1 + h2 + H * 0.008 - H * 0.035;
+  } else {
+    nh = await drawRed(ctx, title, W / 2, H * 0.735, H * 0.085, W * 0.86);
+  }
+  const star = (o.name || '').trim().slice(0, 18);
+  ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center';
+  ctx.font = `600 ${Math.round(H * 0.017)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.008)}px`;
+  ctx.fillText(star ? `STARRING ${star.toUpperCase()}` : 'STARRING YOU', W / 2, H * 0.735 + nh + H * 0.03);
+  ctx.restore();
+  nh += H * 0.032;
 
   // the line, in serif italic
   if (o.line) {
