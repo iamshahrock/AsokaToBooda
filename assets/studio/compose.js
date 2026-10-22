@@ -138,8 +138,7 @@ export async function renderPoster(canvas, o) {
   // credit strip
   ctx.save(); ctx.textAlign = 'center'; ctx.fillStyle = '#ff4a4f';
   ctx.font = `600 ${Math.round(H * 0.012)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.006)}px`;
-  const as = o.character ? `AS ${o.character.toUpperCase()}` : '';
-  ctx.fillText([as, o.film ? `IN ${o.film.toUpperCase()} (${o.year})` : ''].filter(Boolean).join('  ·  '), W / 2, H * 0.935);
+  // owner 22 Oct 2026: no original film name at the bottom; the King Name is the only title
   ctx.fillStyle = '#b8aca4'; ctx.letterSpacing = `${Math.round(W * 0.003)}px`;
   ctx.fillText(`PICTURE ABHI BAAKI HAI  ·  ${o.date || ''}  ·  AGARMAINKINGHOTA.COM`, W / 2, H * 0.962);
   ctx.restore();
