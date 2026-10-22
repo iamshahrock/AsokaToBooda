@@ -1,6 +1,6 @@
 {
  "source": "Shailja's 80-poster archive (KHANS AT 60/Funeral/Poster Downloads), 01–80; 81–83 (Pathaan, Jawan, Dunki) added 13 Oct 2026",
- "count": 83,
+ "count": 82,
  "posters": [
   {
    "id": "01",
@@ -949,18 +949,6 @@
    "w": 220,
    "h": 360,
    "lowres": true
-  },
-  {
-   "id": "80",
-   "title": "Koochie Koochie Hota Hai",
-   "year": 2011,
-   "kind": "animated",
-   "character": "Voice role",
-   "thumb": "thumb/80.webp",
-   "ref": "ref/80.jpg",
-   "w": 1200,
-   "h": 1681,
-   "lowres": false
   },
   {
    "id": "81",
