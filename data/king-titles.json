@@ -1,0 +1,1093 @@
+{
+ "about": "King Names from the owner (SRK_KING_Titles, 22 Oct 2026). {FAN} = the fan's name. pending = name not final.",
+ "styles_in_sheet": [
+  "3D Anim",
+  "ijoo Pop",
+  "Funko Pop",
+  "Chibi Pop",
+  "Anime",
+  "2D Cartoon"
+ ],
+ "films": [
+  {
+   "n": 1,
+   "year": "1988–1989",
+   "title": "Dil Dariya",
+   "king": "King Dariya",
+   "type": "Television series",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 2,
+   "year": "1988–1990",
+   "title": "Wagle Ki Duniya",
+   "king": "King Ki Duniya",
+   "type": "Television series",
+   "credit": "Guest appearance",
+   "pending": false
+  },
+  {
+   "n": 3,
+   "year": "1989",
+   "title": "Adhuri Zindagi",
+   "king": "Adhura King",
+   "type": "Television film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 4,
+   "year": "1989–1990",
+   "title": "Circus",
+   "king": "King’s Circus",
+   "type": "Television series",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 5,
+   "year": "1989",
+   "title": "Doosra Keval",
+   "king": "Doosra King",
+   "type": "Television series",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 6,
+   "year": "1989",
+   "title": "Fauji",
+   "king": "Fauji King",
+   "type": "Television series",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 7,
+   "year": "1989",
+   "title": "In Which Annie Gives It Those Ones",
+   "king": "In Which King Gives It Those Ones",
+   "type": "Television film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 8,
+   "year": "1989",
+   "title": "Mahan Karz",
+   "king": "Mahan King",
+   "type": "Television film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 9,
+   "year": "1989",
+   "title": "Umeed",
+   "king": "Umeed-e-King",
+   "type": "Television series",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 10,
+   "year": "1992",
+   "title": "Idiot",
+   "king": "Idiot King",
+   "type": "Television miniseries",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 11,
+   "year": "1992",
+   "title": "Chamatkar",
+   "king": "Chamatkari King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 12,
+   "year": "1992",
+   "title": "Deewana",
+   "king": "Deewana King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 13,
+   "year": "1992",
+   "title": "Dil Aashna Hai",
+   "king": "King Aashna Hai",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 14,
+   "year": "1992",
+   "title": "Raju Ban Gaya Gentleman",
+   "king": "Raju Ban Gaya King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 15,
+   "year": "1993",
+   "title": "Rajani",
+   "king": "Rajani Ka King",
+   "type": "Television series",
+   "credit": "Guest appearance",
+   "pending": false
+  },
+  {
+   "n": 16,
+   "year": "1993",
+   "title": "Baazigar",
+   "king": "King Baazigar",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 17,
+   "year": "1993",
+   "title": "Darr",
+   "king": "King Ka Darr",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 18,
+   "year": "1993",
+   "title": "King Uncle",
+   "king": "King Uncle",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 19,
+   "year": "1993",
+   "title": "Maya Memsaab",
+   "king": "King Saab’s Maya",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 20,
+   "year": "1993",
+   "title": "Pehla Nasha",
+   "king": "Pehla King",
+   "type": "Feature film",
+   "credit": "Cameo",
+   "pending": false
+  },
+  {
+   "n": 21,
+   "year": "1994",
+   "title": "Anjaam",
+   "king": "Anjaam-e-King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 22,
+   "year": "1994",
+   "title": "Kabhi Haan Kabhi Naa",
+   "king": "Kabhi King Kabhi Wing",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 23,
+   "year": "1995",
+   "title": "Dilwale Dulhania Le Jayenge",
+   "king": "King Kahaniyan Le Jayenge",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 24,
+   "year": "1995",
+   "title": "Guddu",
+   "king": "King Guddu",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 25,
+   "year": "1995",
+   "title": "Karan Arjun",
+   "king": "King Arjun",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 26,
+   "year": "1995",
+   "title": "Oh Darling! Yeh Hai India!",
+   "king": "Oh Darling Yeh Hai King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 27,
+   "year": "1995",
+   "title": "Ram Jaane",
+   "king": "King Jaane",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 28,
+   "year": "1995",
+   "title": "Trimurti",
+   "king": "Tri-King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 29,
+   "year": "1995",
+   "title": "Zamaana Deewana",
+   "king": "Zamaana King Ka Deewana",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 30,
+   "year": "1996",
+   "title": "Army",
+   "king": "King’s Army",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 31,
+   "year": "1996",
+   "title": "Chaahat",
+   "king": "King Ki Chaahat",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 32,
+   "year": "1996",
+   "title": "Dushman Duniya Ka",
+   "king": "King Duniya Ka",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 33,
+   "year": "1996",
+   "title": "English Babu Desi Mem",
+   "king": "English King Desi Mem",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 34,
+   "year": "1997",
+   "title": "Dil To Pagal Hai",
+   "king": "King Toh Pagal Hai",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 35,
+   "year": "1997",
+   "title": "Gudgudee",
+   "king": "King Gudgudee",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 36,
+   "year": "1997",
+   "title": "Koyla",
+   "king": "Koyla King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 37,
+   "year": "1997",
+   "title": "Pardes",
+   "king": "King Des",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 38,
+   "year": "1997",
+   "title": "Yes Boss",
+   "king": "Yes King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 39,
+   "year": "1998",
+   "title": "Achanak",
+   "king": "Achanak King",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 40,
+   "year": "1998",
+   "title": "Dil Se..",
+   "king": "King Se..",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 41,
+   "year": "1998",
+   "title": "Duplicate",
+   "king": "Duplicate King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 42,
+   "year": "1998",
+   "title": "Kuch Kuch Hota Hai",
+   "king": "Kuch Kuch King Hai",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 43,
+   "year": "1999",
+   "title": "Baadshah",
+   "king": "King Shah",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 44,
+   "year": "2000",
+   "title": "Gaja Gamini",
+   "king": "King Gamini",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 45,
+   "year": "2000",
+   "title": "Har Dil Jo Pyar Karega",
+   "king": "Har Dil Ko King Karega",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 46,
+   "year": "2000",
+   "title": "Hey Ram",
+   "king": "Hey King",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 47,
+   "year": "2000",
+   "title": "Josh",
+   "king": "King Josh",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 48,
+   "year": "2000",
+   "title": "Mohabbatein",
+   "king": "Mohabbatein King Ki",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 49,
+   "year": "2000",
+   "title": "Phir Bhi Dil Hai Hindustani",
+   "king": "Phir Bhi King Hai Gulistani",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 50,
+   "year": "2001",
+   "title": "Asoka",
+   "king": "King Asoka",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 51,
+   "year": "2001",
+   "title": "Kabhi Khushi Kabhie Gham",
+   "king": "Kabhi King Kabhie Hum",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 52,
+   "year": "2001",
+   "title": "One 2 Ka 4",
+   "king": "One 2 Ka King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 53,
+   "year": "2002",
+   "title": "Devdas",
+   "king": "KingDas",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 54,
+   "year": "2002",
+   "title": "Hum Tumhare Hain Sanam",
+   "king": "Hum Tumhare Hain King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 55,
+   "year": "2002",
+   "title": "Saathiya",
+   "king": "King Kia?",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 56,
+   "year": "2002",
+   "title": "Shakti: The Power",
+   "king": "King: The Power",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 57,
+   "year": "2003",
+   "title": "Chalte Chalte",
+   "king": "King Ke Chalte",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 58,
+   "year": "2003",
+   "title": "Kal Ho Naa Ho",
+   "king": "King Ho Naa Ho",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 59,
+   "year": "2004",
+   "title": "Main Hoon Na",
+   "king": "King Hain Na",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 60,
+   "year": "2004",
+   "title": "Swades",
+   "king": "King Ka Des",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 61,
+   "year": "2004",
+   "title": "Veer-Zaara",
+   "king": "King Zaraa…",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 62,
+   "year": "2004",
+   "title": "Yeh Lamhe Judaai Ke",
+   "king": "Yeh Lamhe King Ke",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 63,
+   "year": "2005",
+   "title": "Kaal",
+   "king": "King Kaal",
+   "type": "Feature film",
+   "credit": "Special appearance / producer",
+   "pending": false
+  },
+  {
+   "n": 64,
+   "year": "2005",
+   "title": "Kuchh Meetha Ho Jaye",
+   "king": "Kuchh King Sa Ho Jaye",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 65,
+   "year": "2005",
+   "title": "Paheli",
+   "king": "King Ek Paheli",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 66,
+   "year": "2005",
+   "title": "Silsiilay",
+   "king": "Silsiilay King Ke",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 67,
+   "year": "2006",
+   "title": "Alag",
+   "king": "Alag King",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 68,
+   "year": "2006",
+   "title": "Don",
+   "king": "King Don",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 69,
+   "year": "2006",
+   "title": "I See You",
+   "king": "I See King",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 70,
+   "year": "2006",
+   "title": "Kabhi Alvida Naa Kehna",
+   "king": "King Alvida Naa Kehna",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 71,
+   "year": "2007",
+   "title": "Chak De! India",
+   "king": "Chak De King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 72,
+   "year": "2007",
+   "title": "Heyy Babyy",
+   "king": "Heyy Kingg",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 73,
+   "year": "2007",
+   "title": "Om Shanti Om",
+   "king": "King Shanti King",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 74,
+   "year": "2008",
+   "title": "Bhoothnath",
+   "king": "King Nath",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 75,
+   "year": "2008",
+   "title": "Kismat Konnection",
+   "king": "King Konnection",
+   "type": "Feature film",
+   "credit": "Narrator / voice-over",
+   "pending": false
+  },
+  {
+   "n": 76,
+   "year": "2008",
+   "title": "Krazzy 4",
+   "king": "Krazzy King",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 77,
+   "year": "2008",
+   "title": "Rab Ne Bana Di Jodi",
+   "king": "King Ne Bana Di Jodi",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 78,
+   "year": "2008",
+   "title": "Shaurya",
+   "king": "King Shaurya",
+   "type": "Feature film",
+   "credit": "VoiceOver",
+   "pending": false
+  },
+  {
+   "n": 79,
+   "year": "2009",
+   "title": "Billu",
+   "king": "King’s Barber",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 80,
+   "year": "2009",
+   "title": "Luck by Chance",
+   "king": "King by Chance",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 81,
+   "year": "2010",
+   "title": "Dulha Mil Gaya",
+   "king": "King Mil Gaya",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 82,
+   "year": "2010",
+   "title": "My Name Is Khan",
+   "king": "My Name Is King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 83,
+   "year": "2010",
+   "title": "Shahrukh Bola Khoobsurat Hai Tu",
+   "king": "King Bola Khoobsurat Hai Tu",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 84,
+   "year": "2011",
+   "title": "Always Kabhi Kabhi",
+   "king": "Always King King",
+   "type": "Feature film",
+   "credit": "Special appearance / producer",
+   "pending": false
+  },
+  {
+   "n": 85,
+   "year": "2011",
+   "title": "Don 2",
+   "king": "King Don 2",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 86,
+   "year": "2011",
+   "title": "Love Breakups Zindagi",
+   "king": "Love Breakups King",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 87,
+   "year": "2011",
+   "title": "RA.One",
+   "king": "KING.One",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 88,
+   "year": "2012",
+   "title": "Jab Tak Hai Jaan",
+   "king": "Jab Tak Hai King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 89,
+   "year": "2012",
+   "title": "Student of the Year",
+   "king": "King of the Year",
+   "type": "Feature film",
+   "credit": "Producer / special appearance",
+   "pending": false
+  },
+  {
+   "n": 90,
+   "year": "2013",
+   "title": "Taarak Mehta Ka Ooltah Chashmah",
+   "king": "Taarak King Ka Seedha Chashmah",
+   "type": "Television series",
+   "credit": "Guest appearance",
+   "pending": false
+  },
+  {
+   "n": 91,
+   "year": "2013",
+   "title": "Bombay Talkies",
+   "king": "King Talkies",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 92,
+   "year": "2013",
+   "title": "Chennai Express",
+   "king": "King Express",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 93,
+   "year": "2014",
+   "title": "Living with KKR",
+   "king": "Living with King",
+   "type": "Television documentary series",
+   "credit": "Self / featured",
+   "pending": false
+  },
+  {
+   "n": 94,
+   "year": "2014",
+   "title": "Bhoothnath Returns",
+   "king": "King Returns",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 95,
+   "year": "2014",
+   "title": "Happy New Year",
+   "king": "King’s New Year",
+   "type": "Feature film",
+   "credit": "Actor / producer",
+   "pending": false
+  },
+  {
+   "n": 96,
+   "year": "2015",
+   "title": "C.I.D.",
+   "king": "C.I.D.’s King",
+   "type": "Television series",
+   "credit": "Guest appearance",
+   "pending": false
+  },
+  {
+   "n": 97,
+   "year": "2015",
+   "title": "Dilwale",
+   "king": "Kingwale",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 98,
+   "year": "2016",
+   "title": "Ae Dil Hai Mushkil",
+   "king": "Ae Dil Hai King Hi",
+   "type": "Feature film",
+   "credit": "Cameo",
+   "pending": false
+  },
+  {
+   "n": 99,
+   "year": "2016",
+   "title": "Bhaag Jeetu Bhaag",
+   "king": "Bhaag King Bhaag",
+   "type": "Short film",
+   "credit": "Actor / special appearance",
+   "pending": false
+  },
+  {
+   "n": 100,
+   "year": "2016",
+   "title": "Dear Zindagi",
+   "king": "Dear King",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 101,
+   "year": "2016",
+   "title": "Fan",
+   "king": "King Fan",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 102,
+   "year": "2017",
+   "title": "TED Talks India: Nayi Soch",
+   "king": "King Talks: Nayi Soch",
+   "type": "Television series",
+   "credit": "Host",
+   "pending": false
+  },
+  {
+   "n": 103,
+   "year": "2017",
+   "title": "Jab Harry Met Sejal",
+   "king": "Jab King Met {FAN}",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 104,
+   "year": "2017",
+   "title": "Raees",
+   "king": "King Raees",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 105,
+   "year": "2017",
+   "title": "Tubelight",
+   "king": "King’s Light",
+   "type": "Feature film",
+   "credit": "Cameo",
+   "pending": false
+  },
+  {
+   "n": 106,
+   "year": "2018",
+   "title": "Zero",
+   "king": "King Zero",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 107,
+   "year": "2019",
+   "title": "The Lion King (Hindi version)",
+   "king": "The Lion KING",
+   "type": "Feature film — Hindi dub",
+   "credit": "VoiceOver Actor",
+   "pending": false
+  },
+  {
+   "n": 108,
+   "year": "2019",
+   "title": "The Zoya Factor",
+   "king": "The King Factor",
+   "type": "Feature film",
+   "credit": "Narrator / voice-over",
+   "pending": false
+  },
+  {
+   "n": 109,
+   "year": "2020",
+   "title": "The Forgotten Army: Azaadi Ke Liye",
+   "king": "The Forgotten King",
+   "type": "Streaming series",
+   "credit": "Narrator",
+   "pending": false
+  },
+  {
+   "n": 110,
+   "year": "2022",
+   "title": "Brahmāstra: Part One – Shiva",
+   "king": "King Shastra",
+   "type": "Feature film",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 111,
+   "year": "2022",
+   "title": "Laal Singh Chaddha",
+   "king": "Laal King Chaddha",
+   "type": "Feature film",
+   "credit": "Cameo",
+   "pending": false
+  },
+  {
+   "n": 112,
+   "year": "2022",
+   "title": "Rocketry: The Nambi Effect",
+   "king": "Rocketry: The King Effect",
+   "type": "Feature film",
+   "credit": "Special appearance / interviewer",
+   "pending": false
+  },
+  {
+   "n": 113,
+   "year": "2023",
+   "title": "The Romantics",
+   "king": "The Romantic King",
+   "type": "Docuseries",
+   "credit": "Self / interview",
+   "pending": false
+  },
+  {
+   "n": 114,
+   "year": "2023",
+   "title": "Dunki",
+   "king": "King Ki…",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": true
+  },
+  {
+   "n": 115,
+   "year": "2023",
+   "title": "Jawan",
+   "king": "King’s Jawan",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 116,
+   "year": "2023",
+   "title": "Pathaan",
+   "king": "King’s Pathaan",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  },
+  {
+   "n": 117,
+   "year": "2023",
+   "title": "Tiger 3",
+   "king": "Tiger King",
+   "type": "Feature film",
+   "credit": "Cameo",
+   "pending": false
+  },
+  {
+   "n": 118,
+   "year": "2024",
+   "title": "Mufasa: The Lion King (Hindi version)",
+   "king": "Mufasa: The Real King",
+   "type": "Feature film — Hindi dub",
+   "credit": "VoiceOver Actor",
+   "pending": false
+  },
+  {
+   "n": 119,
+   "year": "2025",
+   "title": "The Ba***ds of Bollywood",
+   "king": "The King of Bollywood",
+   "type": "Streaming series",
+   "credit": "Special appearance",
+   "pending": false
+  },
+  {
+   "n": 120,
+   "year": "2026",
+   "title": "King",
+   "king": "KING",
+   "type": "Feature film",
+   "credit": "Actor",
+   "pending": false
+  }
+ ]
+}
