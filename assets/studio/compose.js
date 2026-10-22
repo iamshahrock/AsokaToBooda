@@ -81,10 +81,10 @@ export async function renderPoster(canvas, o) {
   ctx.fillStyle = '#070505'; ctx.fillRect(0, 0, W, H);
   if (o.art) {
     ctx.save();
-    if (o.preview) ctx.filter = 'grayscale(0.55) brightness(0.55) contrast(1.1)';
+    if (o.preview && !o.vivid) ctx.filter = 'grayscale(0.55) brightness(0.55) contrast(1.1)';
     cover(ctx, o.art, 0, 0, W, H);
     ctx.restore();
-    if (o.preview) {                                   // crimson wash so the preview already reads as KING
+    if (o.preview && !o.vivid) {                       // crimson wash so the preview already reads as KING
       ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = '#b3141b'; ctx.globalAlpha = 0.45;
       ctx.fillRect(0, 0, W, H); ctx.restore();
     }
