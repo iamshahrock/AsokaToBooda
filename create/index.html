@@ -418,6 +418,9 @@ function twoRows() {
   g.style.maxHeight = cut ? (cut - 4) + 'px' : 'none';
 }
 addEventListener('resize', () => requestAnimationFrame(twoRows));
+addEventListener('load', () => requestAnimationFrame(twoRows));
+if (document.fonts) document.fonts.ready.then(() => requestAnimationFrame(twoRows));
+$('grid').addEventListener('load', () => requestAnimationFrame(twoRows), true);
 $('erasel').addEventListener('change', e => { document.querySelectorAll('[data-era]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.era === e.target.value))); drawGrid(); });
 document.querySelectorAll('[data-era]').forEach(c => c.addEventListener('click', () => {
   document.querySelectorAll('[data-era]').forEach(x => x.setAttribute('aria-pressed', String(x === c))); drawGrid();
