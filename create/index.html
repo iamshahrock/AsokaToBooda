@@ -293,10 +293,10 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
         <h3>How this works</h3>
         <ol>
           <li><b>Choose a poster style</b> and <b>an SRK film</b>. The film's King Name becomes your poster's title.</li>
-          <li><b>Be the King, or be with the King.</b> Be with the King keeps the King on the poster in the chosen style, and you join him.</li>
+          <li><b>Be the King, or be with the King.</b> Be with the King keeps the King's face as it is, and you take another face on the poster.</li>
           <li><b>Add up to 3 photos</b>: a selfie, or a group photo with friends. The site finds every face and labels it A, B, C. Tap a face to leave it out, or tap a missed face to add it.</li>
-          <li><b>Who goes where</b>: the poster's faces are numbered 1, 2, 3. For each number, tap the letter of the face that goes there, or "New face" for someone the AI invents. With the King, tap "👑 King" on his face.</li>
-          <li><b>Make my poster</b>. The AI paints a brand-new poster with your faces in the film's world. No real star's face is used (#FreeMyFace); with the King, only his styled art stays. Your photos are not kept.</li>
+          <li><b>Who goes where</b>: the poster's faces are numbered 1, 2, 3. For each number, tap the letter of the face that goes there, or "Keep original" to leave that face as it is. With the King, tap "👑 King" on his face.</li>
+          <li><b>Make my poster</b>. The AI paints your faces into the poster, only where you chose, in the poster's own style. Every other face and the rest of the poster stay exactly as they are. Your photos are not kept.</li>
           <li><b>Share it</b> and earn STARKS.</li>
         </ol>
       </dialog>
@@ -331,7 +331,7 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
 </main>
 
 <script type="module">
-import { buildPrompt } from '../assets/studio/prompt.js';
+import { buildFaceEditPrompt, buildPrompt } from '../assets/studio/prompt.js';
 import { renderPoster, loadImage, preloadKit, tagJpeg } from '../assets/studio/compose.js';
 import { findFaces, cropFace, faceThumb } from '../assets/studio/faces.js';
 
@@ -545,7 +545,7 @@ function pickBtn(person, on, fn) {
     const cv = document.createElement('canvas'); cv.width = cv.height = 64; cv.getContext('2d').drawImage(person.thumb, 0, 0, 64, 64);
     b.append(cv, document.createTextNode(person.letter)); b.setAttribute('aria-label', 'Face ' + person.letter);
   } else if (person === false) { b.classList.add('new', 'kingpick'); b.textContent = '👑 King'; }
-  else { b.classList.add('new'); b.textContent = 'New face'; }
+  else { b.classList.add('new'); b.textContent = 'Keep original'; }
   b.addEventListener('click', fn); return b;
 }
 function drawMatch() {
@@ -562,8 +562,8 @@ function drawMatch() {
     });
     $('matchH').textContent = 'Who goes where';
     $('matchHint').textContent = state.role === 'withking'
-      ? `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. Tap "👑 King" on the face where the King stays. For every other number, tap the letter of the face from your photo that goes there, or "New face" for someone the AI invents.`
-      : `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. For each number, tap the letter of the face from your photo that goes there, or "New face" for someone the AI invents.`;
+      ? `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. Tap "👑 King" on the face where the King stays. For every other number, tap the letter of the face from your photo that goes there, or "Keep original" to leave that face as it is.`
+      : `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. For each number, tap the letter of the face from your photo that goes there, or "Keep original" to leave that face as it is.`;
     $('matchRows').replaceChildren(...state.cast.map((c, i) => {
       const r = document.createElement('div'); r.className = 'mrow';
       const n = document.createElement('span'); n.className = 'num'; n.textContent = i + 1;
@@ -693,7 +693,7 @@ async function refresh() {
       });
       const big = boxes.reduce((m, b, i) => (m < 0 || b[2] > boxes[m][2] ? i : m), -1);
       boxes.forEach(([cx, cy, w], bi) => {
-        const keepKing = (slotOf[bi] >= 0 && state.cast[slotOf[bi]].who === 'king') || (!state.cast.length && state.role === 'withking' && bi === big);
+        const keepKing = (slotOf[bi] >= 0 && (state.cast[slotOf[bi]].who === 'king' || state.cast[slotOf[bi]].who === 'new')) || (!state.cast.length && state.role === 'withking' && bi === big);
         if (keepKing) { if (slotOf[bi] >= 0) { const r = Math.max(14, c.width * 0.028), bx = cx * c.width + w * c.width * 0.47, by = cy * c.height - w * c.width * 0.68; x.beginPath(); x.arc(bx, by, r, 0, Math.PI * 2); x.fillStyle = '#d9ad3c'; x.fill(); x.fillStyle = '#1a1205'; x.font = `700 ${Math.round(r * 1.2)}px Archivo, Arial, sans-serif`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(String(slotOf[bi] + 1), bx, by + 1); } return; }
         const ex = cx * c.width, ey = cy * c.height, rx = w * c.width * 0.62, ry = w * c.width * 0.8;
         x.save(); x.beginPath(); x.ellipse(ex, ey, rx, ry, 0, 0, Math.PI * 2);
@@ -753,6 +753,7 @@ $('make').addEventListener('click', async () => {
   if (state.photos.some(ph => ph.faces === null)) { say('Still finding the faces in your photo. One moment.'); return; }
   if (!ppl.length) { say('No face marked yet. Tap the face in your photo to mark it.'); $('photos').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
   if (!$('consent').checked) { say('Please confirm the photos are yours or that you have permission.'); return; }
+  if (!p.king && (state.cast.length || (FACES[p.id] || []).length)) return faceReplace(p, ppl);
   const useCast = state.cast.length > 1;
   let order;
   if (useCast) {
@@ -795,6 +796,77 @@ $('make').addEventListener('click', async () => {
     say(/safety/i.test(err.message) ? 'The image service declined this one. Try a different photo or look.' : err.message);
   } finally { $('make').disabled = false; $('busy').hidden = true; }
 });
+
+// ---------- face replacement (owner, 23 Oct 2026) ----------
+// The chosen poster (style edition, or the original) is sent with a mask over the chosen faces only.
+// The AI paints the fans' faces there; the result is pasted back onto the untouched poster, face areas only,
+// so every other face and every other pixel of the poster stays exactly as it was.
+async function replaceSource(p) {
+  try { const im = await loadImage(styledSrc(p)); const b = (await styleFaces(state.kstyle))[p.id]; if (b && b.length) return { im, boxes: b, styled: true }; } catch (e) {}
+  return { im: await loadImage(BASE + p.ref), boxes: FACES[p.id] || [], styled: false };
+}
+async function faceReplace(p, ppl) {
+  const goto = el => $(el).scrollIntoView({ behavior: 'smooth', block: 'center' });
+  let slots;
+  if (state.cast.length) {
+    const open = state.cast.findIndex(c => !c.who);
+    if (open >= 0) { say(`Choose who goes in poster face ${open + 1}: a letter from your photo, or "Keep original".`); goto('match'); return; }
+    if (state.role === 'withking' && !state.cast.some(c => c.who === 'king')) { say('Tap "👑 King" on the poster face where the King stays.'); goto('match'); return; }
+    slots = state.cast.filter(c => real(c.who)).map(c => ({ at: c.at, who: c.who }));
+    if (!slots.length) { say('Put at least one face from your photo on the poster.'); goto('match'); return; }
+  } else {
+    if (state.role === 'withking') { say('This poster has only one face, the King\'s. Choose "Be the King", or pick a poster with more faces.'); goto('roles'); return; }
+    if (!state.hero) { say('Tap the letter of the face that plays the lead.'); goto('match'); return; }
+    slots = null;
+  }
+  const { im, boxes, styled } = await replaceSource(p);
+  if (!slots) { const big = [...boxes].sort((a, b) => b[2] - a[2])[0]; if (!big) return; slots = [{ at: big, who: state.hero }]; }
+  const order = [...new Set(slots.map(s => s.who))];
+  // 1024x1536 working canvas, poster cover-fitted (no stretching)
+  const W = 1024, H = 1536, k = Math.max(W / im.width, H / im.height), dw = im.width * k, dh = im.height * k, ox = (W - dw) / 2, oy = (H - dh) / 2;
+  const ell = ([cx, cy, w], g = 1) => ({ x: ox + cx * dw, y: oy + cy * dh, rx: w * dw * 0.62 * 1.18 * g, ry: w * dw * 0.8 * 1.15 * g });
+  const mk = () => { const c = document.createElement('canvas'); c.width = W; c.height = H; return c; };
+  const base = mk(); base.getContext('2d').drawImage(im, ox, oy, dw, dh);
+  // what the AI sees: the poster, with every face it must not touch blurred (#FreeMyFace on the way in)
+  const sent = mk(), sx = sent.getContext('2d'); sx.drawImage(base, 0, 0);
+  boxes.forEach(b => { if (slots.some(s => Math.hypot(s.at[0] - b[0], s.at[1] - b[1]) < 0.02)) return;
+    const e = ell(b, 1.1); sx.save(); sx.beginPath(); sx.ellipse(e.x, e.y, e.rx, e.ry, 0, 0, Math.PI * 2); sx.clip(); sx.filter = 'blur(14px)'; sx.drawImage(base, 0, 0); sx.restore(); });
+  const mask = mk(), mx = mask.getContext('2d'); mx.fillStyle = '#000'; mx.fillRect(0, 0, W, H); mx.globalCompositeOperation = 'destination-out';
+  slots.forEach(s => { const e = ell(s.at); mx.beginPath(); mx.ellipse(e.x, e.y, e.rx, e.ry, 0, 0, Math.PI * 2); mx.fill(); });
+  const blob = (c, t, q) => new Promise(r => c.toBlob(r, t, q));
+  const crops = await Promise.all(order.map(key => { const x = personByKey(key); return cropFace(state.photos[x.pi].img, x.box); }));
+  $('make').disabled = true; $('busy').hidden = false; say('Sending the poster and your face…', true);
+  try {
+    const form = new FormData();
+    form.append('prompt', buildFaceEditPrompt({ slots: slots.map(s => ({ at: s.at, photo: order.indexOf(s.who) + 1 })), styleName: styled ? KNAME[state.kstyle] : '' }));
+    form.append('image', await blob(sent, 'image/png'), 'poster.png');
+    crops.forEach((b, i) => form.append('image', b, `fan-${i + 1}.jpg`));
+    form.append('mask', await blob(mask, 'image/png'), 'mask.png');
+    const res = await fetch(POSTER_API_URL, { method: 'POST', body: form });
+    let data = {}; try { data = await res.json(); } catch (e) {}
+    if (!res.ok || !data.image) throw new Error(data.error || `The poster service returned error ${res.status}.`);
+    const out = await loadImage('data:image/png;base64,' + data.image);
+    // paste the painted faces back onto the untouched poster, soft-edged
+    const fin = mk(), fx = fin.getContext('2d'); fx.drawImage(base, 0, 0);
+    slots.forEach(s => {
+      const e = ell(s.at), t = mk(), tx = t.getContext('2d');
+      tx.drawImage(out, 0, 0, W, H);
+      tx.globalCompositeOperation = 'destination-in';
+      tx.save(); tx.translate(e.x, e.y); tx.scale(e.rx, e.ry);
+      const g = tx.createRadialGradient(0, 0, 0.78, 0, 0, 1); g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      tx.fillStyle = g; tx.beginPath(); tx.arc(0, 0, 1, 0, Math.PI * 2); tx.fill(); tx.restore();
+      fx.drawImage(t, 0, 0);
+    });
+    state.aiArt = fin;
+    await refresh();
+    $('afterActions').hidden = false; $('next').hidden = false;
+    saveToCrown(p);
+    if (window.STARKS) STARKS.earn('poster', 100, 'KING poster · ' + p.title);
+    say('Your poster is ready. Download it, share it, then take it into the lairs.', true);
+  } catch (err) {
+    say(/safety/i.test(err.message) ? 'The image service declined this one. Try a different photo.' : err.message);
+  } finally { $('make').disabled = false; $('busy').hidden = true; }
+}
 
 // ---------- keep a small copy for The Crown page (this device only) ----------
 function saveToCrown(p) {
