@@ -39,6 +39,9 @@
 .tile span b{display:block;font-weight:600;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile span .kn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--gold,#d9ad3c);font-family:var(--display);font-style:normal;font-size:11px;line-height:1.1;text-transform:uppercase;margin:1px 0 2px;word-break:break-word}
 #styles{display:none!important}
+#steps{display:none!important}
+.erarow{flex-wrap:nowrap;align-items:center}.erarow .chip{padding:0 10px;white-space:nowrap}.erarow .find{flex:1;min-width:120px}.erasel{display:none;background:var(--field,#160f0f);border:1px solid var(--field-line);color:var(--ink);padding:10px;font:15px var(--body,Archivo)}
+@media (max-width:760px){.erarow .chip{display:none}.erasel{display:block;flex:0 0 42%}.erarow{gap:8px}}
 .game-line{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--red);background:rgba(200,16,46,.08);font-size:15px}.game-line b{color:var(--gold,#d9ad3c);font-weight:700}
 .kstyles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
 .kst{padding:6px 6px 8px;border:2px solid var(--field-line);background:transparent;color:var(--ink);text-align:center;cursor:pointer}
@@ -130,11 +133,9 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 <main class="wrap page">
   <div class="intro">
     <div>
-      <p class="game-line">The game: pick a style, pick a film, put yourself in it. Every film gets a <b>KING</b> name: Fauji becomes <b>Fauji King</b>.</p>
-      <p class="eyebrow">01 · Make your poster</p>
-      <h1>Make your <em>KING</em> poster</h1>
+      <h1>Make Your <em>KING</em> Poster</h1>
     </div>
-    <p>Pick one of his 80 films, step into the role and get a poster nobody else has: your face, his film's world, the KING crown and your own line.</p>
+    <p>Pick any SRK's Movie (out of 120), Choose a style, Upload your photo or with friends &amp; become the Star of your own Movie. Earn STARKS trade and win prizes.</p>
     <p class="own-face"><b>Your face. Not his.</b> The only real face on this poster is yours: no star's face goes into the AI. That's our <a href="../inquilab/">#FreeMyFace</a> pledge.</p>
   </div>
 
@@ -145,16 +146,15 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
   <div class="studio">
     <div>
       <section class="panel" aria-labelledby="h0">
-        <h2 id="h0"><span class="n">00</span>Choose your style</h2>
-        <p class="hint">KING, six ways. Your poster is painted in the style you pick.</p>
+        <h2 id="h0">Choose Poster Style</h2>
         <div class="kstyles" id="kstyles" role="group" aria-label="Poster style"></div>
       </section>
 
       <section class="panel" aria-labelledby="h1">
-        <h2 id="h1"><span class="n">01</span>Choose the film</h2>
-        <p class="hint">Every original poster from 1988 to 2018, plus the 81st, KING, still unwritten. Tap one.</p>
+        <h2 id="h1">Choose SRK Film</h2>
         <div class="filters styles" id="styles" role="group" aria-label="Poster style"><span class="lbl">Poster style</span></div>
-        <div class="filters" role="group" aria-label="Filter by decade">
+        <div class="filters erarow" role="group" aria-label="Filter by decade">
+          <select class="erasel" id="erasel" aria-label="Decade"><option value="all">All films</option><option value="1980">TV &amp; '80s</option><option value="1990">'90s</option><option value="2000">2000s</option><option value="2010">2010s</option><option value="2020">2020s &amp; KING</option></select>
           <button class="chip" type="button" data-era="all" aria-pressed="true">All</button>
           <button class="chip" type="button" data-era="1980">TV &amp; '80s</button>
           <button class="chip" type="button" data-era="1990">'90s</button>
@@ -352,6 +352,7 @@ function drawGrid() {
   }));
   if (!list.length) $('grid').textContent = 'No film matches that search.';
 }
+$('erasel').addEventListener('change', e => { document.querySelectorAll('[data-era]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.era === e.target.value))); drawGrid(); });
 document.querySelectorAll('[data-era]').forEach(c => c.addEventListener('click', () => {
   document.querySelectorAll('[data-era]').forEach(x => x.setAttribute('aria-pressed', String(x === c))); drawGrid();
 }));
