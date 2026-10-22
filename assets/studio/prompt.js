@@ -38,6 +38,18 @@ function castLines(cast, role, kept) {
   });
   return `Keep the reference poster's cast layout of ${n} character${n > 1 ? 's' : ''}: ${parts.join('; ')}.`;
 }
+// Face replacement (owner, 23 Oct 2026): image 1 is the poster with a mask over the chosen faces only; fan crops follow.
+// slots: [{ at: [cx, cy, w], photo: 1..3 }] — photo n is image n + 1.
+export function buildFaceEditPrompt({ slots, styleName = '' }) {
+  const parts = slots.map((s, i) => `the transparent area over ${placeOf(s.at, i).replace(/^the largest figure, |^a large figure, |^a smaller figure, /, 'the figure ')} gets the face and hair of the person in image ${s.photo + 1}`);
+  return [
+    `The first image is a finished movie poster artwork${styleName ? ` in the ${styleName} style` : ''}.`,
+    `Paint only inside the transparent areas of the mask and leave everything else exactly as it is.`,
+    (j => j[0].toUpperCase() + j.slice(1) + '.')(parts.join('; ')),
+    `Keep each person recognisable (face shape, skin tone, eyes, nose, smile, hairline) but draw them in exactly the same art style, lighting, colour grading, head angle and size as the poster, so the new face fits the body, neck and costume seamlessly.`,
+    `No text, no letters, no watermark.`
+  ].join(' ');
+}
 export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true, cast = null, styleName = '' }) {
   const useCast = Array.isArray(cast) && cast.length && hasFilmRef;
   const withKing = role === 'withking';

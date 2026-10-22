@@ -130,6 +130,9 @@ export default {
         if (count >= 8) break;
       }
       if (count === 0) return reply(400, { error: "Upload your photo and include at least one reference image." });
+      // Face replacement (owner, 23 Oct 2026): a PNG mask on the first image limits the edit to the chosen faces.
+      const mask = incoming.get("mask");
+      if (mask instanceof File && mask.type === "image/png" && mask.size < 8 * 1024 * 1024) outgoing.append("mask", mask, "mask.png");
 
       // Count the attempt before calling OpenAI, so repeated failing or
       // aborted requests still use up the allowance.
