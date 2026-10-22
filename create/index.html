@@ -165,12 +165,12 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .cast-list small{grid-column:2;color:var(--faint);font-size:12px;margin-top:-4px}
 @media (max-width:430px){.cast-wrap{grid-template-columns:96px minmax(0,1fr)}}
 .sb-tip{margin:12px 0 0;font-size:13px;line-height:1.5;color:var(--mute)}
-.refrow{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px}
+.refrow{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:6px 0}
 .origref{display:flex;align-items:center;gap:10px;background:none;border:1px solid #3a2a2a;color:#eee;padding:3px 10px 3px 3px;cursor:pointer;font:inherit;text-align:left}
 .origref:hover{border-color:#c8102e}.origref img{width:20px;height:28px;object-fit:cover;display:block}
 .origref span{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}.origref small{font-weight:400;text-transform:none;letter-spacing:0;color:#aaa;font-size:12px}
 .howlink{background:none;border:0;color:#e33;text-decoration:underline;cursor:pointer;font:inherit;font-size:14px;padding:4px 0;margin-left:auto}
-.origref span,.howlink{white-space:nowrap}@media(max-width:640px){.origref span{font-size:11px}.origref small{font-size:11px}.howlink{font-size:12px}}
+.origref span,.howlink{white-space:nowrap}.pick.kingpick{border-color:#d9ad3c;color:#f3d27a}.pick.kingpick[aria-pressed=true]{background:#d9ad3c;color:#1a1205}@media(max-width:640px){.origref span{font-size:11px}.origref small{font-size:11px}.howlink{font-size:12px}}
 dialog.pop{background:#120c0c;color:#eee;border:1px solid #c8102e;padding:22px;max-width:min(560px,92vw);max-height:90vh}
 dialog.pop::backdrop{background:rgba(0,0,0,.8)}dialog.pop img{display:block;max-width:100%;max-height:75vh;margin:0 auto}
 dialog.pop p{text-align:center;color:#bbb;margin:10px 0 0;font-size:14px}dialog.pop .x{position:absolute;top:6px;right:10px;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
@@ -217,12 +217,10 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
 
       <section class="panel" aria-labelledby="h2">
         <h2 id="h2"><span class="n">02</span>Your role</h2>
-        <p class="hint" id="roleHint">Who are you in this story?</p>
+        <p class="hint" id="roleHint">Do you want to be the King, or be with the King?</p>
         <div class="opts" id="roles" role="group" aria-label="Role">
-          <button class="opt" type="button" data-role="king" aria-pressed="true"><b>The King</b><small>You take the lead and own the poster.</small></button>
-          <button class="opt" type="button" data-role="withking" aria-pressed="false"><b>With the King</b><small>You join the cast beside the King.</small></button>
-          <button class="opt" type="button" data-role="rival" aria-pressed="false"><b>The Rival</b><small>Intense, dangerous, unforgettable.</small></button>
-          <button class="opt" type="button" data-role="sidekick" aria-pressed="false"><b>The Sidekick</b><small>Loyal, playful, steals every scene.</small></button>
+          <button class="opt" type="button" data-role="king" aria-pressed="true"><b>Be the King</b><small>You take the lead and own the poster.</small></button>
+          <button class="opt" type="button" data-role="withking" aria-pressed="false"><b>Be with the King</b><small>The King stays on the poster. You join him.</small></button>
         </div>
         <label class="field" for="world">Set it in a KING world (optional)</label>
         <select class="text" id="world">
@@ -283,21 +281,22 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
         <canvas id="canvas" width="1024" height="1536" role="img" aria-label="Your poster preview"></canvas>
         <div class="busy" id="busy" hidden><img src="../assets/studio/crown.png" alt=""><p>Painting your poster</p><small>About a minute. Keep this page open.</small></div>
       </div></div>
-      <div class="actions">
-        <button class="btn btn-red" id="make" type="button">Make my poster <span aria-hidden="true">→</span></button>
-      </div>
       <div class="refrow">
         <button type="button" class="origref" id="origRef" hidden><img id="origImg" alt=""><span>Original poster <small>· for reference</small></span></button>
         <button type="button" class="howlink" id="howBtn">How this works?</button>
+      </div>
+      <div class="actions">
+        <button class="btn btn-red" id="make" type="button">Make my poster <span aria-hidden="true">→</span></button>
       </div>
       <dialog class="pop" id="origPop"><button type="button" class="x" data-close aria-label="Close">×</button><img id="origBig" alt="Original film poster"><p id="origCap"></p></dialog>
       <dialog class="pop how" id="howPop"><button type="button" class="x" data-close aria-label="Close">×</button>
         <h3>How this works</h3>
         <ol>
           <li><b>Choose a poster style</b> and <b>an SRK film</b>. The film's King Name becomes your poster's title.</li>
+          <li><b>Be the King, or be with the King.</b> Be with the King keeps the King on the poster in the chosen style, and you join him.</li>
           <li><b>Add up to 3 photos</b>: a selfie, or a group photo with friends. The site finds every face and labels it A, B, C. Tap a face to leave it out, or tap a missed face to add it.</li>
-          <li><b>Who goes where</b>: the poster's faces are numbered 1, 2, 3. For each number, tap the letter of the face that goes there, or "New face" for someone the AI invents.</li>
-          <li><b>Make my poster</b>. The AI paints a brand-new poster with your faces in the film's world. No star's face is used (#FreeMyFace). Your photos are not kept.</li>
+          <li><b>Who goes where</b>: the poster's faces are numbered 1, 2, 3. For each number, tap the letter of the face that goes there, or "New face" for someone the AI invents. With the King, tap "👑 King" on his face.</li>
+          <li><b>Make my poster</b>. The AI paints a brand-new poster with your faces in the film's world. No real star's face is used (#FreeMyFace); with the King, only his styled art stays. Your photos are not kept.</li>
           <li><b>Share it</b> and earn STARKS.</li>
         </ol>
       </dialog>
@@ -487,7 +486,6 @@ function chooseFilm(p) {
   s.textContent = `${p.title} (${p.year})`;
   t.append(s, document.createTextNode(p.king ? 'The 81st poster. KING releases 24 Dec 2026; this one is yours to write.' : `You step in as ${p.character}.`));
   c.append(im, t);
-  $('roleHint').textContent = p.king ? 'Who are you in KING?' : `In ${p.title}, who are you?`;
   setupCast(p);
   mark(2); refresh(); topPreview();
 }
@@ -526,12 +524,14 @@ function people() {
 function personByKey(k) { return people().find(x => x.key === k); }
 function cleanCast() {
   const keys = new Set(people().map(x => x.key));
-  state.cast.forEach(c => { if (c.who && c.who !== 'new' && !keys.has(c.who)) c.who = null; });
+  state.cast.forEach(c => { if (real(c.who) && !keys.has(c.who)) c.who = null; });
   if (state.hero && !keys.has(state.hero)) state.hero = null;
 }
-function usedKeys() { return [...new Set(state.cast.map(c => c.who).filter(w => w && w !== 'new'))]; }
+const real = w => w && w !== 'new' && w !== 'king';
+function usedKeys() { return [...new Set(state.cast.map(c => c.who).filter(real))]; }
 function assign(i, who) {
-  if (who !== 'new' && who) {
+  if (who === 'king') state.cast.forEach(c => { if (c.who === 'king') c.who = null; });
+  if (real(who)) {
     const others = usedKeys().filter(k => k !== state.cast[i].who);
     if (!others.includes(who) && others.length >= MAX_PEOPLE) { say(`Up to ${MAX_PEOPLE} real people per poster. Set another poster face to "New face" first.`); return; }
     state.cast.forEach(c => { if (c.who === who) c.who = null; });
@@ -544,7 +544,8 @@ function pickBtn(person, on, fn) {
   if (person) {
     const cv = document.createElement('canvas'); cv.width = cv.height = 64; cv.getContext('2d').drawImage(person.thumb, 0, 0, 64, 64);
     b.append(cv, document.createTextNode(person.letter)); b.setAttribute('aria-label', 'Face ' + person.letter);
-  } else { b.classList.add('new'); b.textContent = 'New face'; }
+  } else if (person === false) { b.classList.add('new', 'kingpick'); b.textContent = '👑 King'; }
+  else { b.classList.add('new'); b.textContent = 'New face'; }
   b.addEventListener('click', fn); return b;
 }
 function drawMatch() {
@@ -556,26 +557,28 @@ function drawMatch() {
     art.hidden = false;
     state.cast.forEach((c, i) => {
       const b = document.createElement('button'); b.type = 'button'; b.textContent = i + 1; b.tabIndex = -1;
-      b.className = c.who && c.who !== 'new' ? 'me' : '';
+      b.className = real(c.who) ? 'me' : '';
       b.style.left = (c.at[0] * 100) + '%'; b.style.top = (c.at[1] * 100) + '%'; art.append(b);
     });
     $('matchH').textContent = 'Who goes where';
-    $('matchHint').textContent = `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. For each number, tap the letter of the face from your photo that goes there, or "New face" for someone the AI invents.`;
+    $('matchHint').textContent = state.role === 'withking'
+      ? `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. Tap "👑 King" on the face where the King stays. For every other number, tap the letter of the face from your photo that goes there, or "New face" for someone the AI invents.`
+      : `This poster has ${state.cast.length} faces, numbered 1 to ${state.cast.length}. For each number, tap the letter of the face from your photo that goes there, or "New face" for someone the AI invents.`;
     $('matchRows').replaceChildren(...state.cast.map((c, i) => {
       const r = document.createElement('div'); r.className = 'mrow';
       const n = document.createElement('span'); n.className = 'num'; n.textContent = i + 1;
       const l = document.createElement('span'); l.className = 'lbl'; l.textContent = `Poster face ${i + 1} =`;
-      r.append(n, l, ...ppl.map(x => pickBtn(x, c.who === x.key, () => assign(i, x.key))), pickBtn(null, c.who === 'new', () => assign(i, 'new')));
+      r.append(n, l, ...(state.role === 'withking' ? [pickBtn(false, c.who === 'king', () => assign(i, 'king'))] : []), ...ppl.map(x => pickBtn(x, c.who === x.key, () => assign(i, x.key))), pickBtn(null, c.who === 'new', () => assign(i, 'new')));
       return r;
     }));
   } else {
     art.hidden = true;
-    $('matchH').textContent = 'Who is the star?';
+    $('matchH').textContent = state.role === 'withking' ? 'Who stands with the King?' : 'Who is the star?';
     $('matchHint').textContent = ppl.length > 1
-      ? `Tap the letter of the face that plays the lead. The other faces you keep (up to ${MAX_PEOPLE} people in all) join the poster with them.`
-      : 'Tap your face to make it the lead.';
+      ? (state.role === 'withking' ? `The King stays as the lead. Tap the letter of the face that stands closest to him. The other faces you keep (up to ${MAX_PEOPLE} people in all) join them.` : `Tap the letter of the face that plays the lead. The other faces you keep (up to ${MAX_PEOPLE} people in all) join the poster with them.`)
+      : (state.role === 'withking' ? 'The King stays as the lead. Tap your face to stand with him.' : 'Tap your face to make it the lead.');
     const r = document.createElement('div'); r.className = 'mrow';
-    const l = document.createElement('span'); l.className = 'lbl'; l.textContent = 'The lead =';
+    const l = document.createElement('span'); l.className = 'lbl'; l.textContent = state.role === 'withking' ? 'With the King =' : 'The lead =';
     r.append(l, ...ppl.map(x => pickBtn(x, state.hero === x.key, () => { state.hero = x.key; drawMatch(); refresh(); })));
     $('matchRows').replaceChildren(r);
   }
@@ -585,7 +588,7 @@ function drawMatch() {
 function group(sel, key) {
   document.querySelectorAll(sel).forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll(sel).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    state[key] = b.dataset[key]; if (key === 'role') mark(3); if (key === 'look') mark(5);
+    state[key] = b.dataset[key]; if (key === 'role') { mark(3); if (state.role !== 'withking') state.cast.forEach(c => { if (c.who === 'king') c.who = null; }); drawMatch(); refresh(); } if (key === 'look') mark(5);
   }));
 }
 group('[data-role]', 'role'); group('[data-look]', 'look');
@@ -690,11 +693,13 @@ async function refresh() {
       });
       const big = boxes.reduce((m, b, i) => (m < 0 || b[2] > boxes[m][2] ? i : m), -1);
       boxes.forEach(([cx, cy, w], bi) => {
+        const keepKing = (slotOf[bi] >= 0 && state.cast[slotOf[bi]].who === 'king') || (!state.cast.length && state.role === 'withking' && bi === big);
+        if (keepKing) { if (slotOf[bi] >= 0) { const r = Math.max(14, c.width * 0.028), bx = cx * c.width + w * c.width * 0.47, by = cy * c.height - w * c.width * 0.68; x.beginPath(); x.arc(bx, by, r, 0, Math.PI * 2); x.fillStyle = '#d9ad3c'; x.fill(); x.fillStyle = '#1a1205'; x.font = `700 ${Math.round(r * 1.2)}px Archivo, Arial, sans-serif`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(String(slotOf[bi] + 1), bx, by + 1); } return; }
         const ex = cx * c.width, ey = cy * c.height, rx = w * c.width * 0.62, ry = w * c.width * 0.8;
         x.save(); x.beginPath(); x.ellipse(ex, ey, rx, ry, 0, 0, Math.PI * 2);
         x.fillStyle = '#0a0707'; x.fill();
-        const si = slotOf[bi], who = si >= 0 ? state.cast[si].who : (!state.cast.length && bi === big ? state.hero : null);
-        const person = who && who !== 'new' ? personByKey(who) : null;
+        const si = slotOf[bi], who = si >= 0 ? state.cast[si].who : (!state.cast.length && state.role !== 'withking' && bi === big ? state.hero : null);
+        const person = real(who) ? personByKey(who) : null;
         if (person) { x.clip(); x.drawImage(person.thumb, ex - rx, ey - ry, rx * 2, ry * 2); }
         x.restore();
         x.save(); x.beginPath(); x.ellipse(ex, ey, rx, ry, 0, 0, Math.PI * 2);
@@ -719,10 +724,12 @@ async function refresh() {
 
 // ---------- make ----------
 async function filmReference(p) {
-  const styled = state.style !== 'original';
-  let im = null;
-  if (styled) { try { im = await loadImage(BASE + 'styles/' + state.style + '/' + p.id + '.jpg'); } catch (e) { im = null; } }
-  const useStyle = !!im;
+  const wk = state.role === 'withking';   // Be with the King: the King's styled face stays, so the chosen style edition is the reference
+  const styled = wk || state.style !== 'original';
+  let im = null, boxes = FACES[p.id] || [];
+  if (wk) { try { im = await loadImage(styledSrc(p)); boxes = (await styleFaces(state.kstyle))[p.id] || boxes; } catch (e) { im = null; } }
+  else if (styled) { try { im = await loadImage(BASE + 'styles/' + state.style + '/' + p.id + '.jpg'); } catch (e) { im = null; } }
+  const useStyle = !!im; filmReference.styled = useStyle;
   if (!im) im = await loadImage(BASE + p.ref);
   const c = document.createElement('canvas'); const s = Math.min(1, 768 / Math.max(im.width, im.height));
   c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
@@ -731,7 +738,9 @@ async function filmReference(p) {
   ctx.drawImage(im, 0, 0, c.width, c.height);
   if (useStyle) { // style editions keep their art, but every face is masked: no star's face reaches the AI (#FreeMyFace)
     ctx.filter = 'blur(6px)'; ctx.fillStyle = '#1a1414';
-    (FACES[p.id] || []).forEach(([cx, cy, w]) => { ctx.beginPath(); ctx.ellipse(cx * c.width, cy * c.height, w * c.width * 0.62, w * c.width * 0.8, 0, 0, Math.PI * 2); ctx.fill(); });
+    const ks = state.role === 'withking' ? state.cast.find(c => c.who === 'king') : null;
+    let skip = -1; if (ks) { let bd = 1e9; boxes.forEach(([cx, cy], i) => { const d = (cx - ks.at[0]) ** 2 + (cy - ks.at[1]) ** 2; if (d < bd) { bd = d; skip = i; } }); }
+    boxes.forEach(([cx, cy, w], i) => { if (i === skip) return; ctx.beginPath(); ctx.ellipse(cx * c.width, cy * c.height, w * c.width * 0.62, w * c.width * 0.8, 0, 0, Math.PI * 2); ctx.fill(); });
     ctx.filter = 'none';
   }
   return new Promise(r => c.toBlob(r, 'image/jpeg', 0.88));
@@ -749,6 +758,7 @@ $('make').addEventListener('click', async () => {
   if (useCast) {
     const open = state.cast.findIndex(c => !c.who);
     if (open >= 0) { say(`Choose who goes in poster face ${open + 1}: a letter from your photo, or "New face".`); $('match').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    if (state.role === 'withking' && !state.cast.some(c => c.who === 'king')) { say('Tap "👑 King" on the poster face where the King stays.'); $('match').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
     order = usedKeys();
     if (!order.length) { say('Put at least one face from your photo on the poster.'); $('match').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
   } else {
@@ -757,18 +767,20 @@ $('make').addEventListener('click', async () => {
     if (order.length > MAX_PEOPLE) { say(`Up to ${MAX_PEOPLE} people per poster. Tap the extra faces in your photo to leave them out.`); return; }
   }
   const crops = await Promise.all(order.map(k => { const x = personByKey(k), ph = state.photos[x.pi]; return cropFace(ph.img, x.box); }));
-  const castPayload = useCast ? state.cast.map(c => ({ photo: c.who === 'new' ? null : order.indexOf(c.who) + 1, at: c.at })) : null;
+  const castPayload = useCast ? state.cast.map(c => c.who === 'king' ? { king: true, photo: null, at: c.at } : ({ photo: c.who === 'new' ? null : order.indexOf(c.who) + 1, at: c.at })) : null;
   $('make').disabled = true; $('busy').hidden = false; say('Sending your photo, the film and the crown…', true);
   try {
+    let refStyled = false, filmRef = null;
+    if (!p.king) { filmRef = await filmReference(p); refStyled = filmReference.styled; }
     const form = new FormData();
     form.append('prompt', buildPrompt({
       film: p.king ? 'KING' : p.title, year: p.year, character: p.king ? '' : p.character,
       role: state.role, look: state.look, squad: order.length, world: $('world').value,
-      hasFilmRef: !p.king, styleName: state.style !== 'original' ? styleOf().name : '',
+      hasFilmRef: !p.king, styleName: state.role === 'withking' ? (refStyled ? KNAME[state.kstyle] : '') : state.style !== 'original' ? styleOf().name : '',
       cast: castPayload
     }));
     crops.forEach((b, i) => form.append('image', b, `fan-${i + 1}.jpg`));
-    if (!p.king) form.append('image', await filmReference(p), 'film.jpg');
+    if (!p.king) form.append('image', filmRef, 'film.jpg');
     form.append('image', await (await fetch('../assets/studio/crown.png')).blob(), 'crown.png');
     const res = await fetch(POSTER_API_URL, { method: 'POST', body: form });
     let data = {}; try { data = await res.json(); } catch (e) {}

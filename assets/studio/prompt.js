@@ -15,7 +15,8 @@ export const LOOKS = {
 export const ROLES = {
   king: 'the lead hero, centre frame, owning the poster',
   rival: 'the rival, intense and dangerous',
-  sidekick: 'the loyal sidekick, playful and full of charm'
+  sidekick: 'the loyal sidekick, playful and full of charm',
+  withking: 'co-stars standing right beside the King'
 };
 const CAST_ROLES = { king: 'the hero', rival: 'the intense, dangerous rival', sidekick: 'the playful, loyal sidekick' };
 // Where a character sits on the reference poster, in words: [cx, cy, w] fractions, largest first.
@@ -26,37 +27,42 @@ export function placeOf([cx, cy, w], rank) {
   return `${size}, ${v === 'middle' && h === 'centre' ? 'in the centre' : `at the ${v} ${h}`}`;
 }
 // cast: [{ photo: 1..3 | null, at: [cx, cy, w] }] in the reference poster's layout, largest first.
-function castLines(cast, role) {
+function castLines(cast, role, kept) {
   const n = cast.length;
   const parts = cast.map((c, i) => {
     const where = placeOf(c.at, i);
+    if (c.king) return kept ? `character ${i + 1}, ${where}, is the King: keep him exactly as drawn in the reference artwork, same face, pose and costume` : `character ${i + 1}, ${where}, is the King, a newly invented regal hero`;
     if (!c.photo) return `character ${i + 1}, ${where}, is a newly invented person`;
-    const lead = c.photo === 1 ? ` as ${CAST_ROLES[role] || CAST_ROLES.king}` : '';
+    const lead = c.photo === 1 && role !== 'withking' ? ` as ${CAST_ROLES[role] || CAST_ROLES.king}` : '';
     return `character ${i + 1}, ${where}, is played by the person in photo ${c.photo}${lead}`;
   });
   return `Keep the reference poster's cast layout of ${n} character${n > 1 ? 's' : ''}: ${parts.join('; ')}.`;
 }
 export function buildPrompt({ film, year, character, role = 'king', look = 'cinematic', squad = 1, world = '', hasFilmRef = true, cast = null, styleName = '' }) {
   const useCast = Array.isArray(cast) && cast.length && hasFilmRef;
+  const withKing = role === 'withking';
+  const kingKept = withKing && hasFilmRef && !!styleName && (!useCast || cast.some(c => c.king));
   const who = squad > 1 ? `the ${squad} people in the first ${squad} photos, together as the cast,` : 'the person in the first photo';
   const ref = hasFilmRef && styleName
-    ? `The next image is the film poster "${film}" (${year}) redrawn in the ${styleName} style, with every face masked out: match its art style, composition and colour exactly, and fill the masked faces with the uploaded people or newly invented faces.`
+    ? `The next image is the film poster "${film}" (${year}) redrawn in the ${styleName} style, with ${kingKept ? 'every face except the King masked out' : 'every face masked out'}: match its art style, composition and colour exactly, and fill the masked faces with the uploaded people or newly invented faces.`
     : hasFilmRef
     ? `The next image is a blurred vintage film poster of "${film}" (${year}), used only as a reference for its era, composition and colour mood.`
     : `The film is KING (2026), a dark, stylish action thriller.`;
-  const crown = `The last image is a painted red crown: it floats just above the head of ${useCast ? 'the person in photo 1' : 'the lead'}.`;
+  const crown = `The last image is a painted red crown: it floats just above the head of ${withKing ? 'the King' : useCast ? 'the person in photo 1' : 'the lead'}.`;
   return [
     useCast
-      ? `Design a brand-new, original theatrical movie poster starring ${squad > 1 ? `the ${squad} people in the first ${squad} photos` : 'the person in the first photo'}${character ? `, with photo 1 playing the role of ${character}` : ''}.`
+      ? `Design a brand-new, original theatrical movie poster starring ${squad > 1 ? `the ${squad} people in the first ${squad} photos` : 'the person in the first photo'}${character && !withKing ? `, with photo 1 playing the role of ${character}` : ''}.`
+      : withKing
+      ? `Design a brand-new, original theatrical movie poster where ${kingKept ? 'the King, kept exactly as drawn in the reference artwork, is the lead' : 'an invented King figure is the lead'}, and ${who} ${squad > 1 ? 'stand' : 'stands'} right beside him as ${squad > 1 ? 'co-stars' : 'the co-star'}.`
       : `Design a brand-new, original theatrical movie poster starring ${who} as ${ROLES[role] || ROLES.king}${character ? `, playing the role of ${character}` : ''}.`,
     ref,
-    useCast ? castLines(cast, role) : '',
+    useCast ? castLines(cast, role, kingKept) : '',
     crown,
     world ? `Setting: ${world}.` : '',
     `Any other people in the scene are newly invented characters.`,
-    `Do not depict or resemble any real actor, celebrity or public figure: the only real faces in the poster are the uploaded people.`,
+    kingKept ? `Apart from the King kept from the reference artwork, do not depict or resemble any real actor, celebrity or public figure: the only other real faces are the uploaded people.` : `Do not depict or resemble any real actor, celebrity or public figure: the only real faces in the poster are the uploaded people.`,
     `Palette: deep black and crimson with one electric-blue rim light.`,
-    `Style: ${LOOKS[look] || LOOKS.cinematic}.`,
+    kingKept ? `Style: the ${styleName} style of the reference artwork, so the King and the new people look like one picture.` : `Style: ${LOOKS[look] || LOOKS.cinematic}.`,
     `Leave the top 15% and the bottom 25% as clean dark space. Portrait 2:3, no text, no letters, no logos, no watermark.`
   ].filter(Boolean).join(' ');
 }
