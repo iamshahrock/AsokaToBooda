@@ -68,6 +68,7 @@ export default {
     if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
     if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
     if (path === "/amfh/login" || path === "/amfh/me") return amfh(request, env, reply, origin, path);
+    if (path === "/admin/login" || path === "/admin/stats") return adminStats(request, env, reply, origin, path);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -647,4 +648,44 @@ async function amfh(request, env, reply, origin, path) {
   const s = token && await env.DB.prepare("SELECT created FROM amfh_sessions WHERE token=?1").bind(token).first();
   if (!s || Date.now() - s.created > 30 * 864e5) return reply(401, { error: "Please sign in again." });
   return reply(200, { stats: await amfhStats(env) }, { "Cache-Control": "no-store" });
+}
+
+
+// ---------------- 📊 Site analytics: owner + admin team + SRK ----------------
+// Team members sign in with name + key (hash in D1 table admin_users, never in Git).
+// SRK's Agar Main Fan Hota session token (amfh_sessions) is accepted too.
+// POST /admin/login {name, key} -> {token, who}
+// POST /admin/stats {token}     -> {who, stats}
+async function adminStats(request, env, reply, origin, path) {
+  if (!env.DB) return reply(503, { error: "Not configured." });
+  if (request.method !== "POST") return reply(405, { error: "Use POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "Not allowed." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (env.EARN_BURST) {
+    const { success } = await env.EARN_BURST.limit({ key: "admin:" + ip });
+    if (!success) return reply(429, { error: "Too many tries. Wait a minute." });
+  }
+  let body = {}; try { body = await request.json(); } catch (e) {}
+  const hex = async t => [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)))].map(b => b.toString(16).padStart(2, "0")).join("");
+  if (path === "/admin/login") {
+    const name = String(body.name || "").trim().toLowerCase(), key = String(body.key || "");
+    if (!name || !key || name.length > 60 || key.length > 200) return reply(401, { error: "That name or key is wrong." });
+    const row = await env.DB.prepare("SELECT display FROM admin_users WHERE name=?1 AND hash=?2").bind(name, await hex(name + ":" + key)).first();
+    if (!row) return reply(401, { error: "That name or key is wrong." });
+    const token = [...crypto.getRandomValues(new Uint8Array(24))].map(b => b.toString(16).padStart(2, "0")).join("");
+    await env.DB.prepare("INSERT INTO admin_sessions (token, name, created) VALUES (?1, ?2, ?3)").bind(token, row.display, Date.now()).run();
+    return reply(200, { token, who: row.display }, { "Cache-Control": "no-store" });
+  }
+  const token = String(body.token || "");
+  if (!token) return reply(401, { error: "Please sign in." });
+  let who = null;
+  const a = await env.DB.prepare("SELECT name, created FROM admin_sessions WHERE token=?1").bind(token).first();
+  if (a && Date.now() - a.created < 30 * 864e5) who = a.name;
+  if (!who) {
+    const k = await env.DB.prepare("SELECT created FROM amfh_sessions WHERE token=?1").bind(token).first();
+    if (k && Date.now() - k.created < 30 * 864e5) who = "SRK";
+  }
+  if (!who) return reply(401, { error: "Please sign in again." });
+  const r = await stats(request, env, (status, b) => ({ status, b }));
+  return reply(r.status === 200 ? 200 : 503, { who, stats: r.b }, { "Cache-Control": "no-store" });
 }
