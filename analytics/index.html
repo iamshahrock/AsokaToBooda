@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>📊 Site Analytics — Agar Main King Hota</title>
+<meta name="theme-color" content="#0a0707">
+<link rel="icon" type="image/png" href="../assets/home/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+/* 📊 Site Analytics (owner, 22 Oct 2026): locked page for the owner, her admin team and SRK (via his Agar Main Fan Hota login). */
+.an-lock{max-width:380px;margin:40px auto 60px;text-align:center;display:flex;flex-direction:column;gap:14px}
+.an-lock .em{font-size:56px;line-height:1}
+.an-lock h1{font-family:var(--display);font-weight:400;font-size:40px;text-transform:uppercase;margin:0}
+.an-lock p{color:var(--mute);margin:0}
+.an-f{display:flex;flex-direction:column;gap:6px;text-align:center}
+.an-f label{font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.an-f input{background:var(--panel);border:1px solid var(--line);color:#f4ece6;padding:13px;font:16px var(--body);text-align:center}
+.an-btn{border:0;background:var(--red);color:#fff;font:700 14px var(--body);letter-spacing:.1em;text-transform:uppercase;padding:14px;cursor:pointer}
+.an-btn:hover{background:var(--red-hi)}
+.an-btn.ghost{background:transparent;border:1px solid var(--line);color:#f4ece6;padding:9px 14px;font-size:12px}
+.an-err{color:var(--red-text);font-weight:600;min-height:20px;margin:0}
+.an-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin:18px 0 14px}
+.an-top h1{font-family:var(--display);font-weight:400;font-size:38px;text-transform:uppercase;margin:0;line-height:1}
+.an-top p{margin:4px 0 0;color:var(--mute);font-size:13px}
+.an-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.an-tile{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red);padding:10px 12px;min-width:0}
+.an-tile b{display:block;font:400 30px/1.05 var(--display);font-variant-numeric:tabular-nums}
+.an-tile span{font:700 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.an-h{font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase;margin:24px 0 8px}
+.an-two{display:grid;grid-template-columns:1.6fr 1fr;gap:12px}
+.an-box{background:var(--panel);border:1px solid var(--line);padding:12px;min-width:0}
+.an-box svg{width:100%;height:auto;display:block}
+.an-legend{display:flex;gap:14px;font-size:12px;color:var(--mute);margin-top:6px}
+.an-legend i{display:inline-block;width:12px;height:3px;vertical-align:middle;margin-right:5px}
+table.an-t{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+table.an-t th,table.an-t td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+table.an-t th{font:700 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+table.an-t td.n,table.an-t th.n{text-align:right}
+.an-ga{display:flex;gap:12px;align-items:center}
+.an-ga .dot{width:10px;height:10px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.an-ga.on .dot{background:#3fb27f}
+details.an-d summary{cursor:pointer;color:var(--mute);font-size:13px;margin-top:8px}
+@media (max-width:900px){.an-tiles{grid-template-columns:repeat(2,1fr)}.an-two{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+
+  <section class="an-lock" id="lock">
+    <div class="em" aria-hidden="true">📊</div>
+    <h1>Site Analytics</h1>
+    <p>For the team and the King only.</p>
+    <form id="lf" autocomplete="off" style="display:flex;flex-direction:column;gap:12px">
+      <div class="an-f"><label for="nm">Name</label><input id="nm" autocapitalize="none" spellcheck="false"></div>
+      <div class="an-f"><label for="ky">Key</label><input id="ky" type="password"></div>
+      <p class="an-err" id="err"></p>
+      <button class="an-btn" type="submit">Open</button>
+    </form>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="an-top">
+      <div><h1>📊 Site Analytics</h1><p id="asof"></p></div>
+      <div style="display:flex;gap:8px;align-items:center"><span id="who" style="font-size:13px;color:var(--mute)"></span><button class="an-btn ghost" id="refresh" type="button">Refresh</button><button class="an-btn ghost" id="out" type="button">Sign out</button></div>
+    </div>
+
+    <div class="an-tiles" id="tToday"></div>
+    <h2 class="an-h">All time</h2>
+    <div class="an-tiles" id="tAll"></div>
+
+    <h2 class="an-h">Last 30 days</h2>
+    <div class="an-two">
+      <div class="an-box">
+        <div id="chart"></div>
+        <div class="an-legend"><span><i style="background:#c8102e"></i>Page views</span><span><i style="background:#d9ad3c"></i>Visitors</span><span><i style="background:#f4ece6"></i>Posters</span></div>
+        <details class="an-d"><summary>Day by day numbers</summary><table class="an-t" id="dayT"></table></details>
+      </div>
+      <div class="an-box">
+        <table class="an-t" id="pagesT"></table>
+      </div>
+    </div>
+
+    <h2 class="an-h">Google Analytics</h2>
+    <div class="an-box an-ga" id="ga"><span class="dot"></span><span id="gaText"></span></div>
+    <p style="color:var(--mute);font-size:12px;margin:10px 0 30px">Numbers above come from the site's own counter (Cloudflare D1), Mumbai time. N/A means no reading exists.</p>
+  </section>
+
+</main>
+<script src="../assets/footer.js" defer></script>
+<script>
+(function(){
+var API='https://asokatobooda.iamshahrock.workers.dev';
+var $=function(s){return document.querySelector(s);};
+var nf=function(n){return (n===null||n===undefined||n==='')?'N/A':Number(n).toLocaleString('en-IN');};
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function set(k,v){try{v===null?localStorage.removeItem(k):localStorage.setItem(k,v);}catch(e){}}
+function post(path,data){return fetch(API+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {ok:r.ok,j:j};});});}
+
+// GA status: header.js holds the Measurement ID
+function gaStatus(){
+  var on=!!(window.dataLayer&&window.gtag);
+  $('#ga').classList.toggle('on',on);
+  $('#gaText').textContent=on?'Connected: every page reports to Google Analytics. Open analytics.google.com for the full Google reports.':'Not connected yet. Waiting for the Measurement ID (G-XXXXXXXXXX) from the site’s Google Analytics property.';
+}
+
+function tiles(el,list){$(el).innerHTML=list.map(function(t){return '<div class="an-tile"><b>'+nf(t[0])+'</b><span>'+esc(t[1])+'</span></div>';}).join('');}
+
+function chart(days){
+  if(!days.length){$('#chart').innerHTML='<p style="color:var(--mute)">N/A: no daily readings yet.</p>';return;}
+  var W=640,H=220,L=40,R=10,T=10,B=26,iw=W-L-R,ih=H-T-B;
+  var keys=[['pageviews','#c8102e'],['visitors','#d9ad3c'],['posters','#f4ece6']];
+  var max=1;days.forEach(function(d){keys.forEach(function(k){max=Math.max(max,d[k[0]]||0);});});
+  var x=function(i){return L+(days.length===1?iw/2:i*iw/(days.length-1));},y=function(v){return T+ih-(v/max)*ih;};
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Page views, visitors and posters per day">';
+  for(var g=0;g<=4;g++){var v=Math.round(max*g/4),yy=y(v);s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+yy+'" y2="'+yy+'" stroke="#3a2626" stroke-width="1"/><text x="'+(L-6)+'" y="'+(yy+4)+'" fill="#a8968c" font-size="10" text-anchor="end">'+v.toLocaleString('en-IN')+'</text>';}
+  var step=Math.max(1,Math.ceil(days.length/7));
+  days.forEach(function(d,i){if(i%step===0||i===days.length-1)s+='<text x="'+x(i)+'" y="'+(H-8)+'" fill="#a8968c" font-size="10" text-anchor="middle">'+d.day.slice(8)+'/'+d.day.slice(5,7)+'</text>';});
+  keys.forEach(function(k){var pts=days.map(function(d,i){return x(i)+','+y(d[k[0]]||0);}).join(' ');s+='<polyline points="'+pts+'" fill="none" stroke="'+k[1]+'" stroke-width="2"/>';days.forEach(function(d,i){s+='<circle cx="'+x(i)+'" cy="'+y(d[k[0]]||0)+'" r="2.5" fill="'+k[1]+'"><title>'+d.day+': '+nf(d[k[0]]||0)+' '+k[0]+'</title></circle>';});});
+  $('#chart').innerHTML=s+'</svg>';
+  $('#dayT').innerHTML='<tr><th>Day</th><th class="n">Visitors</th><th class="n">Page views</th><th class="n">Posters</th></tr>'+days.slice().reverse().map(function(d){return '<tr><td>'+d.day+'</td><td class="n">'+nf(d.visitors||0)+'</td><td class="n">'+nf(d.pageviews||0)+'</td><td class="n">'+nf(d.posters||0)+'</td></tr>';}).join('');
+}
+
+function render(res){
+  var s=res.stats||{},t=s.today||{},a=s.total||{};
+  $('#who').textContent='Signed in: '+(res.who||'N/A');
+  $('#asof').textContent='As of '+(s.asOf?new Date(s.asOf).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})+' IST':'N/A')+' · counting since '+(s.trackingSince||'N/A');
+  tiles('#tToday',[[t.visitors,'Visitors today'],[t.pageviews,'Page views today'],[t.posters,'Posters today'],[(s.last7||{}).visitors,'Visitors, last 7 days']]);
+  tiles('#tAll',[[a.visitors,'Visitors'],[a.pageviews,'Page views'],[a.posters,'Posters made'],[a.shares,'Shares'],[a.lairClears,'Lair clears'],[a.chessWins,'Chess81 wins'],[a.players,'Players'],[a.billboardNames,'Billboard names'],[a.starksAwarded,'STARKS awarded'],[a.storyChapters,'Story chapters read'],[a.thrones,'Thrones']]);
+  var days=(s.days||[]).slice().sort(function(p,q){return p.day<q.day?-1:1;});
+  chart(days);
+  var tp=s.topPages||[];
+  $('#pagesT').innerHTML='<tr><th>Top pages, 30 days</th><th class="n">Views</th></tr>'+(tp.length?tp.map(function(p){return '<tr><td>'+esc(p.path)+'</td><td class="n">'+nf(p.n)+'</td></tr>';}).join(''):'<tr><td>N/A</td><td class="n">N/A</td></tr>');
+  gaStatus();
+}
+
+function show(res){$('#lock').hidden=true;$('#dash').hidden=false;render(res);}
+function lock(msg){$('#dash').hidden=true;$('#lock').hidden=false;if(msg)$('#err').textContent=msg;}
+
+function load(token,isSrk){
+  return post('/admin/stats',{token:token}).then(function(r){
+    if(r.ok){show(r.j);return true;}
+    if(!isSrk)set('amkh-admin-token',null);
+    return false;
+  }).catch(function(){lock('Could not reach the numbers. Check the connection and try again.');return true;});
+}
+function current(){return get('amkh-admin-token')||get('amfh-token');}
+
+// Team token first, then SRK's Agar Main Fan Hota login
+(function(){
+  var t=get('amkh-admin-token');
+  var k=get('amfh-token');
+  if(t){load(t,false).then(function(ok){if(!ok&&k)load(k,true);});}
+  else if(k){load(k,true);}
+})();
+
+$('#lf').addEventListener('submit',function(e){
+  e.preventDefault();$('#err').textContent='';
+  post('/admin/login',{name:$('#nm').value.trim(),key:$('#ky').value}).then(function(r){
+    if(!r.ok||!r.j.token){$('#err').textContent=r.j.error||'That name or key is wrong.';return;}
+    set('amkh-admin-token',r.j.token);$('#ky').value='';load(r.j.token,false);
+  }).catch(function(){$('#err').textContent='Could not reach the gate. Try again.';});
+});
+$('#refresh').addEventListener('click',function(){var t=current();if(t)load(t,!get('amkh-admin-token'));});
+$('#out').addEventListener('click',function(){set('amkh-admin-token',null);lock('');});
+})();
+</script>
+</body>
+</html>

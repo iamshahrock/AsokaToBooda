@@ -23,6 +23,13 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - The "Agar Main FAN Hota" title links to this page (owner, 21 Oct 2026): in the phone bar (.sh-btitles: KING title -> home, FAN title -> playroom) and in the desktop banner (click on .sh-r), set in assets/header.js.
 - Six tabs: Gate, Crown, Studio, Chess, Line, Me. The Gate tiles show real D1 numbers (posters, Fan Wall posts, players) or N/A. Still samples (labelled Sample): fans at the gate, the crown deck, face-off votes, chess challengers. Still to wire to the backend: crowns onto the home page, his line on the home page, his video, Post to Billboard, live Chess81 matches.
 
+## 📊 Site Analytics (owner, 22 Oct 2026)
+- 📊 icon next to Billboard in the header (desktop util links, phone bar, burger menu) opens /analytics/ (noindex): a locked page for the owner, her admin team and SRK.
+- Team sign in with Name + Key: POST /admin/login checks D1 admin_users (name, display, sha256(name:key)); sessions in admin_sessions (30 days). Keys are never in Git or chat logs kept in the repo. Add a team member by inserting a row in admin_users.
+- SRK: his Agar Main Fan Hota login (amfh-token in the browser) opens it with no second login; his playroom's Surf the site list has a 📊 Site Analytics card.
+- Data: POST /admin/stats returns the site's own D1 counter (same as /stats): today, last 7 days, all-time totals, 30-day chart, top pages.
+- Google Analytics 4: header.js has GA_ID = '' at the top; paste the owner's Measurement ID (G-XXXXXXXXXX) there and every page reports to GA. The page shows 'Not connected yet' until then. GA reports inside our page would need a GA Data API service account set by the owner in Cloudflare (not done).
+
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
 - Backend: Cloudflare Worker `asokatobooda` (backend/worker.js), auto-deploys on backend/** changes.

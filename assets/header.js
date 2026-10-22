@@ -11,6 +11,13 @@
   var me = document.currentScript;
   var assets = new URL('.', me.src).href;          // .../assets/
   var root = new URL('..', assets).href;           // site root
+  // Google Analytics 4 (owner, 22 Oct 2026). Paste the Measurement ID (G-XXXXXXXXXX) here and every page starts reporting.
+  var GA_ID = '';
+  if (GA_ID && !window.gtag) {
+    var gs = document.createElement('script'); gs.async = true; gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(gs);
+    window.dataLayer = window.dataLayer || []; window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date()); window.gtag('config', GA_ID);
+  }
   var A = function (p) { return assets + 'header/' + p; };
 
   // Six sections (remapped 10 Oct 2026) + utility links.
@@ -112,6 +119,7 @@
     '#site-header .sh-util{display:flex;align-items:center;gap:2px 16px;margin-left:auto;padding-left:18px;border-left:1px solid #2a1c1c}',
     '#site-header .sh-util a{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#a99d95;padding:16px 0;white-space:nowrap}',
     '#site-header .sh-util a:hover,#site-header .sh-util a[aria-current="page"]{color:var(--sh-redtext)}',
+    '#site-header .sh-util a.sh-stats{font-size:17px;letter-spacing:0;line-height:1;padding:8px 2px;filter:saturate(.9)}',
     '#site-header .sh-starks{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid #3a2626;color:#f4efe9;font-size:12px;font-weight:700;letter-spacing:.08em;white-space:nowrap}',
     '#site-header .sh-starks b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:16px;color:var(--sh-redtext);letter-spacing:.02em}',
     '#site-header .sh-drawer .sh-dutil{display:flex;flex-wrap:wrap;gap:6px 22px;padding:18px 0}',
@@ -128,7 +136,7 @@
     '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 13px}#site-header .sh-nav a{font-size:12px;letter-spacing:.08em}#site-header .sh-util{gap:2px 14px}}',
     '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 7px}#site-header .sh-nav a{font-size:11px;letter-spacing:.01em}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.03em}#site-header .sh-bar-in{gap:8px 10px;padding:0 10px}}',
     /* tablet and phone: the menu button holds every link, Home included */
-    '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
+    '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
     '@media (max-width:760px){',
     '  #site-header .sh-frame-box{aspect-ratio:1040/240}',
     '  #site-header .sh-stage{width:192.3%;left:-45.6%}',
@@ -142,7 +150,7 @@
     '  #site-header .sh-util{margin-left:0}',
     '  #site-header .sh-nav{display:none}',
     '  #site-header .sh-util{border:0;padding:0;margin-left:auto}',
-    '  #site-header .sh-util a:not(.sh-starks){display:none}',
+    '  #site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}',
     '  #site-header .sh-brand img{flex-shrink:0}',
     '  #site-header .sh-starks{padding:4px 8px;font-size:10px;gap:4px}',
     '  #site-header .sh-starks b{font-size:14px}',
@@ -243,6 +251,11 @@
     if (isHere(l[0]) || (l[2] || []).some(isHere)) { u1.setAttribute('aria-current', 'page'); u2.setAttribute('aria-current', 'page'); if (!section) section = l; }
     util.appendChild(u1); dutil.appendChild(u2);
   });
+  // 📊 Site analytics (owner, 22 Oct 2026): next to Billboard, login page for the owner, her admin team and SRK
+  var statsIcon = el('a', { class: 'sh-stats', href: root + 'analytics/', 'aria-label': 'Site analytics', title: 'Site analytics', text: '\uD83D\uDCCA' });
+  if (isHere('analytics/')) statsIcon.setAttribute('aria-current', 'page');
+  util.appendChild(statsIcon);
+  dutil.appendChild(el('a', { href: root + 'analytics/', text: '\uD83D\uDCCA Analytics' }));
   MORE.forEach(function (l) { dutil.appendChild(el('a', { href: root + l[0], text: l[1] })); });
   var starks = el('a', { class: 'sh-starks', href: root + 'fan-billboard/', 'aria-label': 'Your STARKS' });
   function paintStarks() {
