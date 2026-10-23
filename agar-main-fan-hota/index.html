@@ -45,7 +45,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
 #login .l-hdr{left:3.8%;top:.9%;width:92.69%}
 #login .l-hdr img{width:100%;position:relative;filter:drop-shadow(0 0 5px rgba(242,207,107,.35));animation:hdrGlow 4.5s ease-in-out infinite}
 #login .l-hdr .sheen{position:absolute;inset:0;-webkit-mask:url(login/header.webp) center/100% 100% no-repeat;mask:url(login/header.webp) center/100% 100% no-repeat;background:linear-gradient(100deg,transparent 35%,rgba(255,248,215,.95) 50%,transparent 65%) -150% 0/60% 100% no-repeat;animation:sheen 5.5s ease-in-out infinite;mix-blend-mode:screen}
-#login .moon{left:39.6%;top:.7%;width:5.6%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 36%,#fffef6 0,#f3efe0 38%,#d9d4c2 70%,#b9b39f 100%);box-shadow:0 0 10px 3px rgba(255,250,228,.55),0 0 28px 10px rgba(255,248,220,.22);animation:moon 6s ease-in-out infinite}
+#login .moon{left:90.4%;top:1.3%;width:4.4%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 36%,#fffef6 0,#f3efe0 38%,#d9d4c2 70%,#b9b39f 100%);box-shadow:0 0 10px 3px rgba(255,250,228,.55),0 0 28px 10px rgba(255,248,220,.22);animation:moon 6s ease-in-out infinite}
 #login .moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 62% 58%,rgba(150,145,128,.35) 0 9%,transparent 10%),radial-gradient(circle at 40% 66%,rgba(150,145,128,.28) 0 6%,transparent 7%),radial-gradient(circle at 58% 30%,rgba(150,145,128,.25) 0 5%,transparent 6%)}
 #login .l-title{left:4.72%;top:16.28%;width:90.37%}
 #login .l-photo{left:5.37%;top:34.62%;width:87.87%}
@@ -64,9 +64,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
 @keyframes fall{0%,62%{opacity:0;transform:translateY(0) scale(.6)}66%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(260%) scale(.8)}}
 @media (prefers-reduced-motion:reduce){#login .l-hdr img,#login .l-hdr .sheen,#login .moon,#login .l-crown .c-drip,#login .l-crown i{animation:none}#login .l-crown i{display:none}}
 #login .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-#login .login-form{margin-top:4px}
+#login .login-form{margin-top:4px;gap:10px}#login .err{min-height:0}
 #login .field input{background:#160f0f;border:1px solid #3a2a2a;box-shadow:0 0 0 10px #0d0909;text-align:center;letter-spacing:.2em}
-#login .khul{background:#dbb151;color:#c11b1a;font:700 20px var(--body);letter-spacing:.04em;padding:16px 10px;border:0;margin-top:12px;cursor:pointer}
+#login .khul{background:#dbb151;color:#c11b1a;font:700 20px var(--body);letter-spacing:.04em;padding:16px 10px;border:0;margin-top:0;cursor:pointer}
 #login .khul:hover{background:#e9c46a}
 #login .one{height:1.15em;width:auto;vertical-align:-.22em;filter:none}
 .field{display:flex;flex-direction:column;gap:6px;text-align:left;width:100%}
