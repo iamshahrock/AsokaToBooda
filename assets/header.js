@@ -88,12 +88,6 @@
     '#site-header .sh-mirror.sh-l{left:1.2%}#site-header .sh-mirror.sh-r{left:75.8%}',
     '#site-header .sh-agar{height:2.6cqw;width:auto}',
     '#site-header .sh-row{display:flex;align-items:flex-end;gap:.9cqw}',
-    /* clickable titles (owner, 23 Oct 2026): black button, red glow (gold border removed by owner 23 Oct) */
-    '#site-header .sh-tbtn{cursor:pointer;background:rgba(8,4,4,.62);border-radius:.6cqw;box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 .8cqw rgba(229,9,20,.45);animation:shGlow 2.8s ease-in-out infinite;transition:transform .2s,box-shadow .2s}',
-    '#site-header .sh-banner .sh-tbtn{top:14%;bottom:14%;padding:0 .8cqw;width:21.4%}',
-    '#site-header .sh-tbtn:hover,#site-header a:focus-visible>.sh-tbtn{transform:scale(1.04);box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 1.6cqw rgba(229,9,20,.95),0 0 .5cqw rgba(242,207,107,.7)}',
-    '@keyframes shGlow{0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 .5cqw rgba(229,9,20,.35)}50%{box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 1.4cqw rgba(229,9,20,.85)}}',
-    '@media (prefers-reduced-motion:reduce){#site-header .sh-tbtn{animation:none}}',
 
 
 
@@ -286,15 +280,14 @@
   var FANHOTA = root + 'agar-main-fan-hota/';
   var VISION = root + 'vision/'; // KING title -> Vision & Mission (owner, 23 Oct 2026); Home button goes home
   var btitles = el('div', { class: 'sh-btitles' }, [
-    el('a', { href: VISION, 'aria-label': 'Agar Main King Hota — Vision & Mission', style: 'display:flex' }, [mirror('sh-l sh-tbtn', 'king')]),
-    el('a', { href: FANHOTA, 'aria-label': 'Agar Main Fan Hota — the King\'s Playroom', style: 'display:flex' }, [mirror('sh-r sh-tbtn', 'fan')])
+    el('a', { href: VISION, 'aria-label': 'Agar Main King Hota — Vision & Mission', style: 'display:flex' }, [mirror('sh-l', 'king')]),
+    el('a', { href: FANHOTA, 'aria-label': 'Agar Main Fan Hota — the King\'s Playroom', style: 'display:flex' }, [mirror('sh-r', 'fan')])
   ]);
   // big banner (desktop): the FAN title opens the Playroom too
   var bannerFan = banner.querySelector('.sh-r');
   if (bannerFan) { bannerFan.style.cursor = 'pointer'; bannerFan.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); location.href = FANHOTA; }); }
   var bannerKing = banner.querySelector('.sh-l');
-  if (bannerKing) { bannerKing.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); location.href = VISION; }); }
-  [bannerFan, bannerKing].forEach(function (m) { if (m) m.classList.add('sh-tbtn'); });
+  if (bannerKing) { bannerKing.style.cursor = 'pointer'; bannerKing.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); location.href = VISION; }); }
   var barKids = atHome ? [brand, btitles, nav, util, burger] : [brand, btitles, homeBtn, nav, util, burger];
   var bar = el('div', { class: 'sh-bar' }, [el('div', { class: 'sh-bar-in' }, barKids)]);
 
