@@ -88,10 +88,10 @@
     '#site-header .sh-mirror.sh-l{left:1.2%}#site-header .sh-mirror.sh-r{left:75.8%}',
     '#site-header .sh-agar{height:2.6cqw;width:auto}',
     '#site-header .sh-row{display:flex;align-items:flex-end;gap:.9cqw}',
-    /* clickable titles (owner, 23 Oct 2026): black button, gold border, red glow */
-    '#site-header .sh-tbtn{cursor:pointer;background:rgba(8,4,4,.62);border:1px solid #c9a24a;border-radius:.6cqw;box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 .8cqw rgba(229,9,20,.45);animation:shGlow 2.8s ease-in-out infinite;transition:transform .2s,box-shadow .2s,border-color .2s}',
+    /* clickable titles (owner, 23 Oct 2026): black button, red glow (gold border removed by owner 23 Oct) */
+    '#site-header .sh-tbtn{cursor:pointer;background:rgba(8,4,4,.62);border-radius:.6cqw;box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 .8cqw rgba(229,9,20,.45);animation:shGlow 2.8s ease-in-out infinite;transition:transform .2s,box-shadow .2s}',
     '#site-header .sh-banner .sh-tbtn{top:14%;bottom:14%;padding:0 .8cqw;width:21.4%}',
-    '#site-header .sh-tbtn:hover,#site-header a:focus-visible>.sh-tbtn{transform:scale(1.04);border-color:#f2cf6b;box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 1.6cqw rgba(229,9,20,.95),0 0 .5cqw rgba(242,207,107,.7)}',
+    '#site-header .sh-tbtn:hover,#site-header a:focus-visible>.sh-tbtn{transform:scale(1.04);box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 1.6cqw rgba(229,9,20,.95),0 0 .5cqw rgba(242,207,107,.7)}',
     '@keyframes shGlow{0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 .5cqw rgba(229,9,20,.35)}50%{box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 1.4cqw rgba(229,9,20,.85)}}',
     '@media (prefers-reduced-motion:reduce){#site-header .sh-tbtn{animation:none}}',
 
