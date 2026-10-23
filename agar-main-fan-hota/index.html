@@ -5,7 +5,7 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
 <style>
 /* Layout: one phone-width app column; screens swap above a fixed six-tab bar. Single dark look by choice (the site's red/black; gold = anything the King touches). */
 :root{
@@ -43,9 +43,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
 #login .stage>*{position:absolute;display:block}
 #login .stage img{height:auto;filter:none}
 #login .l-hdr{left:3.8%;top:.9%;width:92.69%}
-#login .l-hdr img{width:100%;position:relative;filter:drop-shadow(0 0 5px rgba(242,207,107,.35));animation:hdrGlow 4.5s ease-in-out infinite}
-#login .l-hdr .sheen{position:absolute;inset:0;-webkit-mask:url(login/header.webp) center/100% 100% no-repeat;mask:url(login/header.webp) center/100% 100% no-repeat;background:linear-gradient(100deg,transparent 35%,rgba(255,248,215,.95) 50%,transparent 65%) -150% 0/60% 100% no-repeat;animation:sheen 5.5s ease-in-out infinite;mix-blend-mode:screen}
-#login .moon{left:90.4%;top:1.3%;width:4.4%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 36%,#fffef6 0,#f3efe0 38%,#d9d4c2 70%,#b9b39f 100%);box-shadow:0 0 10px 3px rgba(255,250,228,.55),0 0 28px 10px rgba(255,248,220,.22);animation:moon 6s ease-in-out infinite}
+#login .l-hdr img{width:100%;position:relative;filter:contrast(1.25) saturate(1.3) brightness(1.08);animation:hdrGlow 4.5s ease-in-out infinite}
+#login .l-hdr .sheen{position:absolute;inset:0;-webkit-mask:url(login/header.webp) center/100% 100% no-repeat;mask:url(login/header.webp) center/100% 100% no-repeat;background:linear-gradient(100deg,transparent 42%,rgba(255,252,235,.9) 50%,transparent 58%) -150% 0/45% 100% no-repeat;animation:sheen 5.5s ease-in-out infinite;mix-blend-mode:overlay}
+#login .moon{left:90.4%;top:1.3%;width:4.4%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 36%,#fffbe8 0,#f7e3a6 34%,#e2bd68 68%,#b98d3a 100%);box-shadow:0 0 8px 2px rgba(247,214,130,.6),0 0 24px 8px rgba(226,183,90,.25);animation:moon 6s ease-in-out infinite}
 #login .moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 62% 58%,rgba(150,145,128,.35) 0 9%,transparent 10%),radial-gradient(circle at 40% 66%,rgba(150,145,128,.28) 0 6%,transparent 7%),radial-gradient(circle at 58% 30%,rgba(150,145,128,.25) 0 5%,transparent 6%)}
 #login .l-title{left:4.72%;top:16.28%;width:90.37%}
 #login .l-photo{left:5.37%;top:34.62%;width:87.87%}
@@ -54,20 +54,21 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
 #login .l-crown img{position:absolute;inset:0;width:100%}
 #login .l-crown .c-top{clip-path:inset(0 0 40.6% 0)}
 #login .l-crown .c-drip{clip-path:inset(59.4% 0 0 0);transform-origin:50% 59.4%;animation:drip 5s ease-in-out infinite alternate}
-#login .l-crown i{position:absolute;width:3.4%;aspect-ratio:3/4;margin-left:-1.7%;background:#a8130f;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;opacity:0;animation:fall 6s ease-in infinite}
+#login .rain{inset:0;pointer-events:none}
+#login .rain i{position:absolute;left:var(--x);top:var(--y0);width:1.1%;aspect-ratio:2/3;margin-left:-.55%;background:#b3150f;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;opacity:0;transform-origin:50% 100%;animation:rain 4.6s infinite}
+@keyframes rain{0%{top:var(--y0);opacity:0;transform:scale(.4)}10%{top:var(--y0);opacity:1;transform:scale(1)}22%{top:var(--y0);opacity:1;transform:scale(1,1.15);animation-timing-function:cubic-bezier(.55,0,1,.45)}52%{top:var(--y1);opacity:.95;transform:scale(.75,2.6)}55%{top:var(--y1);opacity:.85;transform:scale(2.8,.32)}72%{top:var(--y1);opacity:0;transform:scale(4,.18)}100%{top:var(--y1);opacity:0;transform:scale(4,.18)}}
 #login .l-fan{left:2.31%;top:83.45%;width:93.52%}
 #login .l-key{left:29.81%;top:90.14%;width:43.43%}
-@keyframes hdrGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(242,207,107,.3))}50%{filter:drop-shadow(0 0 12px rgba(242,207,107,.75))}}
+@keyframes hdrGlow{0%,100%{filter:contrast(1.25) saturate(1.3) brightness(1.05)}50%{filter:contrast(1.3) saturate(1.4) brightness(1.2)}}
 @keyframes sheen{0%,25%{background-position:-150% 0}75%,100%{background-position:250% 0}}
-@keyframes moon{0%,100%{box-shadow:0 0 10px 3px rgba(255,250,228,.5),0 0 26px 9px rgba(255,248,220,.2)}50%{box-shadow:0 0 14px 5px rgba(255,250,228,.7),0 0 36px 14px rgba(255,248,220,.3)}}
+@keyframes moon{0%,100%{box-shadow:0 0 8px 2px rgba(247,214,130,.55),0 0 22px 7px rgba(226,183,90,.22)}50%{box-shadow:0 0 12px 4px rgba(247,214,130,.8),0 0 32px 12px rgba(226,183,90,.32)}}
 @keyframes drip{from{transform:scaleY(.9)}to{transform:scaleY(1.06)}}
-@keyframes fall{0%,62%{opacity:0;transform:translateY(0) scale(.6)}66%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(260%) scale(.8)}}
-@media (prefers-reduced-motion:reduce){#login .l-hdr img,#login .l-hdr .sheen,#login .moon,#login .l-crown .c-drip,#login .l-crown i{animation:none}#login .l-crown i{display:none}}
+@media (prefers-reduced-motion:reduce){#login .l-hdr img,#login .l-hdr .sheen,#login .moon,#login .l-crown .c-drip,#login .rain i{animation:none}#login .rain{display:none}}
 #login .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 #login .login-form{margin-top:4px;gap:10px}#login .err{min-height:0}
 #login .field input{background:#160f0f;border:1px solid #3a2a2a;box-shadow:0 0 0 10px #0d0909;text-align:center;letter-spacing:.2em}
-#login .khul{background:#dbb151;color:#c11b1a;font:700 20px var(--body);letter-spacing:.04em;padding:16px 10px;border:0;margin-top:0;cursor:pointer}
-#login .khul:hover{background:#e9c46a}
+#login .khul{background:linear-gradient(180deg,#f7e09a 0%,#e2bd68 22%,#c99a3c 48%,#f2cf6b 70%,#a77d1c 100%);color:#b3120e;font:900 22px var(--body);letter-spacing:.05em;padding:16px 10px;border:1px solid #8a6514;box-shadow:inset 0 1px 0 rgba(255,250,225,.8),inset 0 -2px 0 rgba(90,60,10,.45),0 6px 18px rgba(0,0,0,.6);text-shadow:0 1px 0 rgba(255,240,200,.55);margin-top:0;cursor:pointer}
+#login .khul:hover{filter:brightness(1.08)}
 #login .one{height:1.15em;width:auto;vertical-align:-.22em;filter:none}
 .field{display:flex;flex-direction:column;gap:6px;text-align:left;width:100%}
 .field .flabel,.field label{font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
@@ -253,12 +254,12 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;let
     <img class="l-title" src="login/title.webp" width="976" height="96" alt="">
     <img class="l-photo" src="login/photo.webp" width="949" height="637" alt="">
     <img class="l-frame" src="login/frame.webp" width="1055" height="729" alt="">
-    <div class="l-crown"><img class="c-top" src="login/crown.webp" width="293" height="345" alt=""><img class="c-drip" src="login/crown.webp" width="293" height="345" alt=""><i style="left:35.8%;top:82.6%;animation-delay:0s"></i><i style="left:46.8%;top:98.8%;animation-delay:1.7s"></i><i style="left:52.9%;top:83.8%;animation-delay:3.1s"></i><i style="left:64.8%;top:94.2%;animation-delay:0.9s"></i><i style="left:81.6%;top:79.7%;animation-delay:4.2s"></i></div>
+    <div class="l-crown"><img class="c-top" src="login/crown.webp" width="293" height="345" alt=""><img class="c-drip" src="login/crown.webp" width="293" height="345" alt=""></div>
+    <div class="rain"><i style="--x:50.17%;--y0:43.82%;--y1:70.5%;animation-delay:0s"></i><i style="--x:53.16%;--y0:47.69%;--y1:76.0%;animation-delay:1.6s"></i><i style="--x:54.81%;--y0:44.11%;--y1:72.5%;animation-delay:2.9s"></i><i style="--x:58.04%;--y0:46.6%;--y1:74.5%;animation-delay:0.8s"></i><i style="--x:62.6%;--y0:43.13%;--y1:68.5%;animation-delay:3.7s"></i></div>
     <img class="l-fan" src="login/fanline.webp" width="1010" height="88" alt="">
     <img class="l-key" src="login/key.webp" width="469" height="136" alt="">
   </div>
   <form class="login-form" id="loginForm" autocomplete="off">
-    <p class="fixed-user" id="u">SRK THE KING</p>
     <div class="field"><label for="p" class="sr">Key</label><input id="p" name="p" type="password" aria-label="Key"></div>
     <p class="err" id="err"></p>
     <button class="btn khul" type="submit">KHUL - JAA - SIM - SIM</button>
