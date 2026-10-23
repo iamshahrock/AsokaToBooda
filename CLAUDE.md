@@ -28,7 +28,7 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - Team sign in with Name + Key: POST /admin/login checks D1 admin_users (name, display, sha256(name:key)); sessions in admin_sessions (30 days). Keys are never in Git or chat logs kept in the repo. Add a team member by inserting a row in admin_users.
 - SRK: his Agar Main Fan Hota login (amfh-token in the browser) opens it with no second login; his playroom's Surf the site list has a 📊 Site Analytics card.
 - Data: POST /admin/stats returns the site's own D1 counter (same as /stats): today, last 7 days, all-time totals, 30-day chart, top pages.
-- Google Analytics 4: header.js has GA_ID = '' at the top; paste the owner's Measurement ID (G-XXXXXXXXXX) there and every page reports to GA. The page shows 'Not connected yet' until then. GA reports inside our page would need a GA Data API service account set by the owner in Cloudflare (not done).
+- Google Analytics 4 (owner, 23 Oct 2026): Measurement ID G-J8LKDFNPQS is set as GA_ID in header.js, so every page with the shared header reports to GA; agar-main-fan-hota/index.html (no shared header) carries the same gtag tag in its <head>. GA reports inside our page would need a GA Data API service account set by the owner in Cloudflare (not done).
 
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).

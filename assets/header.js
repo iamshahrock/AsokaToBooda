@@ -12,7 +12,7 @@
   var assets = new URL('.', me.src).href;          // .../assets/
   var root = new URL('..', assets).href;           // site root
   // Google Analytics 4 (owner, 22 Oct 2026). Paste the Measurement ID (G-XXXXXXXXXX) here and every page starts reporting.
-  var GA_ID = '';
+  var GA_ID = 'G-J8LKDFNPQS';
   if (GA_ID && !window.gtag) {
     var gs = document.createElement('script'); gs.async = true; gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(gs);
     window.dataLayer = window.dataLayer || []; window.gtag = function () { window.dataLayer.push(arguments); };
