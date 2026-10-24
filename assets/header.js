@@ -131,7 +131,7 @@
     '#site-header .sh-drawer a:hover,#site-header .sh-drawer a:focus-visible,#site-header .sh-drawer a[aria-current="page"]{color:var(--sh-redtext)}',
     /* phone: show the middle of the story, burger menu */
     /* desktop: everything on one line */
-    '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}}',
+    '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-util{margin-left:0}#site-header .sh-brand{margin-right:0}}',
     '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 14px}#site-header .sh-nav{gap:2px 8px}#site-header .sh-nav a{font-size:12px;letter-spacing:.04em}#site-header .sh-util{gap:2px 9px;padding-left:10px}#site-header .sh-util a{font-size:11px;letter-spacing:.04em}#site-header .sh-sw{display:none}}',
     '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 13px}#site-header .sh-nav a{font-size:12px;letter-spacing:.08em}#site-header .sh-util{gap:2px 14px}}',
     '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 7px}#site-header .sh-nav a{font-size:11px;letter-spacing:.01em}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.03em}#site-header .sh-bar-in{gap:8px 10px;padding:0 10px}}',
