@@ -74,7 +74,9 @@ function wrap(ctx, text, maxW) {
 /**
  * Render the poster.
  * @param {HTMLCanvasElement} canvas  1024×1536 is used for the final file.
- * @param {object} o  { art: Image, preview: bool, name, line, film, year, character, date }
+ * @param {object} o  { art: Image, preview: bool, name, line, film, year, character, date, logo?: Image, logoBox?: [x0,y0,x1,y1] }
+ * With a logo (Photo Poster, owner 25 Oct 2026) the poster keeps its own look: the KING logo sits exactly where the
+ * original title was, only light bands hold the header and credits, and the star line goes under the logo.
  */
 export async function renderPoster(canvas, o) {
   const W = canvas.width, H = canvas.height, ctx = canvas.getContext('2d');
@@ -89,6 +91,8 @@ export async function renderPoster(canvas, o) {
       ctx.fillRect(0, 0, W, H); ctx.restore();
     }
   }
+  const lb = o.logo && o.logoBox;
+  if (lb) return renderLogoPoster(ctx, W, H, o);
   // top and bottom vignettes that hold the lettering
   let g = ctx.createLinearGradient(0, 0, 0, H * 0.24);
   g.addColorStop(0, 'rgba(7,5,5,.95)'); g.addColorStop(1, 'rgba(7,5,5,0)');
@@ -185,4 +189,61 @@ export async function tagJpeg(blob) {
     const com = segment(0xFE, enc.encode(COMMENT));
     return new Blob([b.slice(0, at), xmp, com, b.slice(at)], { type: 'image/jpeg' });
   } catch (e) { return blob; }
+}
+
+// Photo Poster frame: the poster as it is, its KING logo in the original title's place (logo and art share one framing)
+async function renderLogoPoster(ctx, W, H, o) {
+  const [, by0, , by1] = o.logoBox;
+  let g = ctx.createLinearGradient(0, 0, 0, H * 0.15);            // light band for the header
+  g.addColorStop(0, 'rgba(7,5,5,.72)'); g.addColorStop(1, 'rgba(7,5,5,0)');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.15);
+  g = ctx.createLinearGradient(0, H * 0.92, 0, H);                 // and for the credit strip
+  g.addColorStop(0, 'rgba(7,5,5,0)'); g.addColorStop(1, 'rgba(7,5,5,.85)');
+  ctx.fillStyle = g; ctx.fillRect(0, H * 0.92, W, H * 0.08);
+
+  if (by0 > 0.13) {                                                 // header, unless the logo itself is up there
+    const crown = await loadImage(ASSET + 'crown.png');
+    const ch = H * 0.05, cw = crown.width * ch / crown.height;
+    ctx.drawImage(crown, W / 2 - cw / 2, H * 0.018, cw, ch);
+    ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.font = `600 ${Math.round(H * 0.012)}px Archivo, Arial, sans-serif`;
+    ctx.textAlign = 'center'; ctx.letterSpacing = `${Math.round(W * 0.012)}px`;
+    ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = H * 0.006;
+    ctx.fillText('AGAR MAIN KING HOTA', W / 2, H * 0.085);
+    ctx.restore();
+  }
+
+  cover(ctx, o.logo, 0, 0, W, H);
+
+  // STARRING under the logo, or above it when the logo reaches the bottom
+  const below = by1 * H + H * 0.035 < H * 0.915;
+  const sy = below ? by1 * H + H * 0.03 : by0 * H - H * 0.015;
+  const star = (o.name || '').trim().slice(0, 18);
+  ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center';
+  ctx.font = `700 ${Math.round(H * 0.016)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.008)}px`;
+  ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = H * 0.008;
+  ctx.fillText(star ? `STARRING ${star.toUpperCase()}` : 'STARRING YOU', W / 2, sy);
+  if (o.line) {
+    ctx.font = `italic 600 ${Math.round(H * 0.022)}px "Cormorant Garamond", Georgia, serif`; ctx.letterSpacing = '0px';
+    const lines = wrap(ctx, '“' + o.line.trim() + '”', W * 0.8);
+    lines.forEach((l, i) => ctx.fillText(l, W / 2, below ? sy + H * 0.035 + i * H * 0.028 : sy - H * 0.03 - (lines.length - 1 - i) * H * 0.028));
+  }
+  ctx.restore();
+
+  ctx.save(); ctx.textAlign = 'center'; ctx.fillStyle = '#d8cec6';
+  ctx.font = `600 ${Math.round(H * 0.011)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.003)}px`;
+  ctx.fillText(`PICTURE ABHI BAAKI HAI  ·  ${o.date || ''}  ·  AGARMAINKINGHOTA.COM`, W / 2, H * 0.975);
+  ctx.restore();
+
+  if (!o.preview) {                                    // AI label on every finished poster (IT Rules, Feb 2026)
+    ctx.save(); const tw = W * 0.3, th = H * 0.028, tx = W * 0.03, ty = H * 0.935;
+    ctx.fillStyle = 'rgba(7,5,5,.85)'; ctx.fillRect(tx, ty, tw, th);
+    ctx.strokeStyle = '#c3121a'; ctx.lineWidth = Math.max(1, W * 0.002); ctx.strokeRect(tx, ty, tw, th);
+    ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center'; ctx.font = `700 ${Math.round(H * 0.0105)}px Archivo, Arial, sans-serif`;
+    ctx.letterSpacing = `${Math.round(W * 0.002)}px`; ctx.fillText('AI-MADE FAN POSTER', tx + tw / 2, ty + th * 0.68); ctx.restore();
+  }
+  if (o.preview) {
+    ctx.save(); ctx.fillStyle = 'rgba(7,5,5,.8)'; ctx.fillRect(W - W * 0.3, H * 0.12, W * 0.27, H * 0.032);
+    ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center'; ctx.font = `600 ${Math.round(H * 0.011)}px Archivo, Arial, sans-serif`;
+    ctx.fillText('PREVIEW · FRAME ONLY', W - W * 0.165, H * 0.141); ctx.restore();
+  }
 }
