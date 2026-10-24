@@ -43,13 +43,13 @@
 .erarow{flex-wrap:nowrap;align-items:center}.erarow .chip{padding:0 10px;white-space:nowrap}.erarow .find{flex:1;min-width:120px}.erasel{display:none;background:var(--field,#160f0f);border:1px solid var(--field-line);color:var(--ink);padding:10px;font:15px var(--body,Archivo)}
 @media (max-width:760px){.erarow .chip{display:none}.erasel{display:block;flex:0 0 42%}.erarow{gap:8px}}
 .game-line{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--red);background:rgba(200,16,46,.08);font-size:15px}.game-line b{color:var(--gold,#d9ad3c);font-weight:700}
-.kstyles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.kstyles{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
 .kst{padding:6px 6px 8px;border:2px solid var(--field-line);background:transparent;color:var(--ink);text-align:center;cursor:pointer}
 .kst[aria-pressed="true"]{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
-.kst b{display:block;font-family:var(--display);font-weight:400;font-size:15px;text-transform:uppercase;margin:0 0 5px;line-height:1}
+.kst b{display:block;font-family:var(--display);font-weight:400;font-size:13px;text-transform:uppercase;margin:0 0 5px;line-height:1}
 .kst .kp{aspect-ratio:2/3;background:radial-gradient(circle at 50% 35%,#3a1010,#0d0606 70%);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .kst .kp img{width:78%;height:auto}.kst .kp img.full{width:100%;height:100%;object-fit:cover}
-@media (max-width:760px){.kstyles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1199px){.kstyles{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.kstyles .kst{flex:0 0 calc((100% - 30px) / 4)}}
 .tile span i{font-style:normal;color:var(--faint);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile:hover{border-color:var(--red-text)}
 .tile[aria-pressed="true"]{border-color:var(--red-hi);box-shadow:0 0 0 2px var(--red-hi)}
@@ -99,6 +99,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 .tp-cap{margin:10px 0 0;text-align:center;font-family:var(--display);font-size:22px;text-transform:uppercase;color:var(--gold,#d9ad3c);line-height:1.1}.tp-cap small{display:block;font-family:inherit;font-size:13px;color:var(--mute);text-transform:none;letter-spacing:0;margin-top:4px}
 @media (max-width:980px){.toppv{position:static;order:-1;max-width:260px;margin:0 auto}}
 .frame{background:#000;border:1px solid var(--line);aspect-ratio:2/3;position:relative;overflow:hidden}
+.duo.tall .clean,.duo.tall .frame{aspect-ratio:9/16}
 .frame canvas{width:100%;height:100%;display:block}
 .frame .busy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(7,5,5,.82);text-align:center;padding:24px}
 .frame .busy img{width:96px;animation:pulse 1.6s ease-in-out infinite}
@@ -346,6 +347,9 @@ const state = { film: null, role: 'king', look: 'cinematic', photos: [], aiArt: 
 let STYLES = [{ id: 'original', name: 'Original', ready: true }];
 let catalogue = [];
 let FACES = {};
+let KLBOX = {};
+// Photo Poster: the film's KING logo, on the same 1080x1920 framing as the poster
+function kingLogo(p) { return p && !p.king && state.kstyle === 'photo' && KLBOX[p.id] ? { src: BASE + 'king-logo/' + p.id + '.webp', box: KLBOX[p.id] } : null; }
 
 // ---------- films ----------
 const KING = { id: '118', title: 'KING', year: 2026, kind: 'film', character: 'The King', king: true };
@@ -354,6 +358,7 @@ async function loadCatalogue() {
   const data = await res.json();
   catalogue = [...data.posters.filter(p => p.id !== KING.id), KING];
   try { FACES = (await (await fetch(BASE + 'faces.json')).json()).faces || {}; } catch (e) { FACES = {}; }
+  try { KLBOX = (await (await fetch(BASE + 'king-logo/boxes.json')).json()).boxes || {}; } catch (e) { KLBOX = {}; }
   try { STYLES = (await (await fetch(BASE + 'styles/styles.json')).json()).styles || STYLES; } catch (e) {}
   drawStyles();
   drawGrid();
@@ -381,8 +386,8 @@ let KINGNAMES = {};
 const normT = t => String(t).toLowerCase().replace(/[^a-z0-9]/g, '');
 function kingName(p) { if (p.king) return 'KING'; const k = KINGNAMES[normT(p.title)] || KINGNAMES[normT(p.title).replace('barber', '')]; return k ? k.replace('{FAN}', ($('name') && $('name').value.trim()) || 'You') : ''; }
 fetch('../data/king-titles.json').then(r => r.json()).then(d => { d.films.forEach(f => { KINGNAMES[normT(f.title)] = f.king; }); drawGrid(); }).catch(() => {});
-const KSTYLES = [['pop', 'ijoo Pop'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime'], ['2d', '2D Cartoon']];
-state.kstyle = 'pop';
+const KSTYLES = [['photo', 'Photo Poster'], ['pop', 'ijoo Pop'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime'], ['2d', '2D Cartoon']];
+state.kstyle = 'photo';
 function drawKStyles() {
   $('kstyles').replaceChildren(...KSTYLES.map(([id, name]) => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'kst'; b.setAttribute('aria-pressed', String(state.kstyle === id));
@@ -390,6 +395,7 @@ function drawKStyles() {
     const box = document.createElement('div'); box.className = 'kp';
     const im = document.createElement('img'); im.alt = 'KING in ' + name; im.src = '../assets/posters/styles/king/' + id + '.jpg';
     im.className = 'full'; im.onerror = () => { im.onerror = null; im.className = ''; im.src = '../assets/home/king-wordmark.webp'; };
+    if (id === 'photo') im.style.objectFit = 'contain';
     box.append(im); b.append(t, box);
     b.addEventListener('click', () => { state.kstyle = id; drawKStyles(); topPreview(); if (state.film) setupCast(state.film); else refresh(); });
     return b;
@@ -714,8 +720,14 @@ async function refresh() {
       art = c;
     }
   }
+  const kl = kingLogo(p); let logo = null;
+  if (kl) { try { logo = await loadImage(kl.src); } catch (e) {} }
   if (my !== pending) return;
-  await renderPoster($('canvas'), {
+  const cv = $('canvas'), cw = logo ? 1080 : 1024, ch = logo ? 1920 : 1536;
+  if (cv.width !== cw || cv.height !== ch) { cv.width = cw; cv.height = ch; }
+  $('frame').closest('.duo').classList.toggle('tall', !!logo);
+  await renderPoster(cv, {
+    logo, logoBox: logo ? kl.box : null,
     art, preview: !state.aiArt, vivid: true, name: $('name').value, title: p ? kingName(p) : 'KING', line: $('line').value,
     film: p ? p.title : '', year: p ? p.year : '', character: p ? p.character : '', date: today()
   });
@@ -838,7 +850,7 @@ async function faceReplace(p, ppl) {
   $('make').disabled = true; $('busy').hidden = false; say('Sending the poster and your face…', true);
   try {
     const form = new FormData();
-    form.append('prompt', buildFaceEditPrompt({ slots: slots.map(s => ({ at: s.at, photo: order.indexOf(s.who) + 1 })), styleName: styled ? KNAME[state.kstyle] : '' }));
+    form.append('prompt', buildFaceEditPrompt({ slots: slots.map(s => ({ at: s.at, photo: order.indexOf(s.who) + 1 })), styleName: styled ? (state.kstyle === 'photo' ? 'realistic photographic' : KNAME[state.kstyle]) : '' }));
     form.append('image', await blob(sent, 'image/png'), 'poster.png');
     crops.forEach((b, i) => form.append('image', b, `fan-${i + 1}.jpg`));
     form.append('mask', await blob(mask, 'image/png'), 'mask.png');
@@ -847,7 +859,8 @@ async function faceReplace(p, ppl) {
     if (!res.ok || !data.image) throw new Error(data.error || `The poster service returned error ${res.status}.`);
     const out = await loadImage('data:image/png;base64,' + data.image);
     // paste the painted faces back onto the untouched poster, soft-edged
-    const fin = mk(), fx = fin.getContext('2d'); fx.drawImage(base, 0, 0);
+    const fin = document.createElement('canvas'); fin.width = im.width; fin.height = im.height;
+    const fx = fin.getContext('2d'); fx.drawImage(im, 0, 0);
     slots.forEach(s => {
       const e = ell(s.at), t = mk(), tx = t.getContext('2d');
       tx.drawImage(out, 0, 0, W, H);
@@ -855,7 +868,7 @@ async function faceReplace(p, ppl) {
       tx.save(); tx.translate(e.x, e.y); tx.scale(e.rx, e.ry);
       const g = tx.createRadialGradient(0, 0, 0.78, 0, 0, 1); g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)');
       tx.fillStyle = g; tx.beginPath(); tx.arc(0, 0, 1, 0, Math.PI * 2); tx.fill(); tx.restore();
-      fx.drawImage(t, 0, 0);
+      fx.drawImage(t, -ox / k, -oy / k, W / k, H / k);   // working canvas back to poster pixels
     });
     state.aiArt = fin;
     await refresh();

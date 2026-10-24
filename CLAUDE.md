@@ -91,6 +91,14 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - faces.json re-detected with Apple Vision (24 Oct 2026); 040 Dil Se and 103 TED Talks have no faces found. The ijoo Pop files and styles/pop/faces.json were renamed to the new ids (same art).
 - Next from the owner: the same 118 with names removed (images and the logo on a blank background).
 
+## Photo Poster (owner, 25 Oct 2026, first style card)
+- Style cards: Photo Poster first (selected by default), then ijoo Pop, 3D Anim, Funko Pop, Chibi Pop, Anime, 2D Cartoon. Desktop (>=1200px) all 7 in one row; below that 4 + 3 with the second row centred.
+- assets/posters/styles/photo/<id>.jpg = the owner's photo posters with the title removed (SRK_PicPoster_NoLogo set), 1080x1920; faces.json re-detected on them (Apple Vision, native + 1.6x + mirrored passes).
+- assets/posters/king-logo/<id>.webp = the owner's KING (King Name) logos, transparent, on the same 1080x1920 framing, so each sits exactly where the original title was; boxes.json = each logo's box. One KING logo per film for all styles (owner); for now it is drawn only on Photo Poster.
+- With Photo Poster the frame and the finished poster are 9:16 (1080x1920, canvas resized, .duo.tall) instead of 2:3, so no logo is cropped. renderLogoPoster in assets/studio/compose.js: the poster as it is, light bands for header/credits, header hidden when the logo is at the top, STARRING under the logo (above it when the logo reaches the bottom). faceReplace now pastes the AI faces back onto the full-size poster (working canvas mapped back), not a 2:3 crop.
+- data/king-titles.json King Names updated to match the logos (17 changed, e.g. 049 '1 King Ka 4', 102 'Jab King Met Agni', fixed name, no fan name). Owner's source folders: ~/Desktop/KING_MOVIE/00000_POSTERS_FINAL (SRK_PicPoster_NoLogo_*, SRK_OGLogo_*, SRK_KLogo_*).
+- Not yet tested with the real AI and a real selfie.
+
 ## Poster style editions (18 Oct 2026)
 - The owner is rendering all 83 posters as style editions (3D Pop, Anime, 2-3 more coming). Files go in assets/posters/styles/<style>/<id>.jpg plus thumb/<id>.webp; switch a style on with "ready": true in assets/posters/styles/styles.json.
 - Studio step 01 has a Poster style row. With a style chosen, the grid shows that edition and its poster is the AI reference: sharp, not blurred, but every face box from faces.json is masked first (#FreeMyFace). Without the file it falls back to the blurred original. The style also sets the matching look.
