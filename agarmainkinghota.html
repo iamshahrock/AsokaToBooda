@@ -386,8 +386,8 @@ a.dkb:hover{border-color:var(--red)}
 
   fetch('assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (data) {
     var strip = document.getElementById('strip');
-    var pick = data.posters.slice().reverse();
-    var king = document.createElement('a'); king.className = 'king'; king.href = 'create/?film=81';
+    var pick = data.posters.filter(function (p) { return p.id !== '118'; }).reverse();
+    var king = document.createElement('a'); king.className = 'king'; king.href = 'create/?film=118';
     king.innerHTML = '<img src="assets/studio/crown.png" alt="" loading="lazy"><b class="play">Make poster</b><span>KING<i>2026 · start here</i></span>';
     strip.appendChild(king);
     pick.forEach(function (p) {
@@ -395,8 +395,8 @@ a.dkb:hover{border-color:var(--red)}
       var im = document.createElement('img'); im.src = 'assets/posters/' + p.thumb; im.alt = ''; im.loading = 'lazy'; im.width = 160; im.height = 240;
       var tag = document.createElement('b'); tag.className = 'play'; tag.textContent = 'Make poster';
       var s = document.createElement('span'); s.textContent = p.title;
-      var i = document.createElement('i'); i.textContent = p.year + ' · ' + p.character; s.appendChild(i);
-      a.setAttribute('aria-label', 'Make your poster as ' + p.character + ' in ' + p.title);
+      var i = document.createElement('i'); i.textContent = p.character ? p.year + ' · ' + p.character : String(p.year); s.appendChild(i);
+      a.setAttribute('aria-label', 'Make your poster' + (p.character ? ' as ' + p.character : '') + ' in ' + p.title);
       a.append(im, tag, s); strip.appendChild(a);
     });
     edges();
