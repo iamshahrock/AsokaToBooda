@@ -409,11 +409,21 @@ document.querySelectorAll('dialog.pop').forEach(d => d.addEventListener('click',
 const KNAME = Object.fromEntries(KSTYLES);
 const SFACES = {};
 async function styleFaces(s) { if (!SFACES[s]) { try { SFACES[s] = (await (await fetch(BASE + 'styles/' + s + '/faces.json')).json()).faces || {}; } catch (e) { SFACES[s] = {}; } } return SFACES[s]; }
+// the title-less photo with its KING logo on top (same framing), for anywhere the poster is shown to the fan
+async function withLogo(src, logo) {
+  try {
+    const [a, b] = await Promise.all([loadImage(src), loadImage(logo)]);
+    const c = document.createElement('canvas'); c.width = a.width; c.height = a.height;
+    const x = c.getContext('2d'); x.drawImage(a, 0, 0); x.drawImage(b, 0, 0, c.width, c.height);
+    return c.toDataURL('image/jpeg', 0.86);
+  } catch (e) { return null; }
+}
 function styledSrc(p) { return BASE + 'styles/' + state.kstyle + '/' + p.id + '.jpg'; }
 function topPreview() {
   const ci = $('cleanImg');
   if (ci) { const p = state.film; ci.className = ''; ci.onerror = null;
     if (!p || p.king) { ci.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg'; ci.onerror = () => { ci.onerror = null; ci.className = 'wm'; ci.src = '../assets/home/king-wordmark.webp'; }; }
+    else if (state.kstyle === 'photo') ci.src = BASE + p.ref;   // Photo Poster: the real poster with its original title (owner, 25 Oct 2026)
     else { ci.src = styledSrc(p); ci.onerror = () => { ci.onerror = null; ci.src = BASE + p.ref; }; } }
   const ob = $('origRef'); if (ob) { const p = state.film; ob.hidden = !p || p.king || !p.ref; if (!ob.hidden) { $('origImg').src = BASE + p.ref; $('origBig').src = BASE + p.ref; $('origCap').textContent = p.title + (p.year ? ' (' + p.year + ')' : '') + ' · original poster, for reference only'; } }
   if (!$('topImg')) return;
@@ -515,7 +525,11 @@ async function setupCast(p) {
   const keep = state.cast.length === at.length ? state.cast.map(c => c.who) : [];
   state.cast = at.length > 1 ? at.map((a, i) => ({ at: a, who: keep[i] || null })) : [];
   if (!state.cast.length && keep.length) state.hero = null;
-  if (state.cast.length) $('castImg').src = img;
+  if (state.cast.length) {
+    const kl = kingLogo(p);
+    $('castImg').src = kl && img === styledSrc(p) ? (await withLogo(img, kl.src)) || img : img;
+    if (my !== castSeq) return;
+  }
   drawMatch(); refresh();
 }
 // every face the fan has kept, with its letter: [{ key, letter, pi, fi, box, thumb }]
