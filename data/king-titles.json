@@ -1,5 +1,5 @@
 {
- "about": "King Names from the owner (SRK_KING_Titles, 22 Oct 2026). {FAN} = the fan's name. pending = name not final.",
+ "about": "King Names from the owner (SRK_KING_Titles, 22 Oct 2026). {FAN} = the fan's name. pending = name not final. Names updated 25 Oct 2026 to match the owner's final KING logos (assets/posters/king-logo).",
  "styles_in_sheet": [
   "3D Anim",
   "ijoo Pop",
@@ -40,7 +40,7 @@
    "n": 4,
    "year": "1989–1990",
    "title": "Circus",
-   "king": "King’s Circus",
+   "king": "Circus King",
    "type": "Television series",
    "credit": "Actor",
    "pending": false
@@ -139,7 +139,7 @@
    "n": 15,
    "year": "1993",
    "title": "Rajani",
-   "king": "Rajani Ka King",
+   "king": "King Rajani",
    "type": "Television series",
    "credit": "Guest appearance",
    "pending": false
@@ -382,7 +382,7 @@
    "n": 42,
    "year": "1998",
    "title": "Kuch Kuch Hota Hai",
-   "king": "Kuch Kuch King Hai",
+   "king": "King Sab Kuch Hai",
    "type": "Feature film",
    "credit": "Actor",
    "pending": false
@@ -472,7 +472,7 @@
    "n": 52,
    "year": "2001",
    "title": "One 2 Ka 4",
-   "king": "One 2 Ka King",
+   "king": "1 King Ka 4",
    "type": "Feature film",
    "credit": "Actor",
    "pending": false
@@ -553,7 +553,7 @@
    "n": 61,
    "year": "2004",
    "title": "Veer-Zaara",
-   "king": "King Zaraa…",
+   "king": "King-Taara",
    "type": "Feature film",
    "credit": "Actor",
    "pending": false
@@ -607,7 +607,7 @@
    "n": 67,
    "year": "2006",
    "title": "Alag",
-   "king": "Alag King",
+   "king": "King Alag",
    "type": "Feature film",
    "credit": "Special appearance",
    "pending": false
@@ -652,7 +652,7 @@
    "n": 72,
    "year": "2007",
    "title": "Heyy Babyy",
-   "king": "Heyy Kingg",
+   "king": "Hey Kingg",
    "type": "Feature film",
    "credit": "Special appearance",
    "pending": false
@@ -670,7 +670,7 @@
    "n": 74,
    "year": "2008",
    "title": "Bhoothnath",
-   "king": "King Nath",
+   "king": "Bhoot King",
    "type": "Feature film",
    "credit": "Special appearance",
    "pending": false
@@ -787,7 +787,7 @@
    "n": 87,
    "year": "2011",
    "title": "RA.One",
-   "king": "KING.One",
+   "king": "One King",
    "type": "Feature film",
    "credit": "Actor / producer",
    "pending": false
@@ -850,7 +850,7 @@
    "n": 94,
    "year": "2014",
    "title": "Bhoothnath Returns",
-   "king": "King Returns",
+   "king": "Bhoot King Returns",
    "type": "Feature film",
    "credit": "Special appearance",
    "pending": false
@@ -886,7 +886,7 @@
    "n": 98,
    "year": "2016",
    "title": "Ae Dil Hai Mushkil",
-   "king": "Ae Dil Hai King Hi",
+   "king": "Ye Dil Hai King Ka",
    "type": "Feature film",
    "credit": "Cameo",
    "pending": false
@@ -931,7 +931,7 @@
    "n": 103,
    "year": "2017",
    "title": "Jab Harry Met Sejal",
-   "king": "Jab King Met {FAN}",
+   "king": "Jab King Met Agni",
    "type": "Feature film",
    "credit": "Actor",
    "pending": false
@@ -967,7 +967,7 @@
    "n": 107,
    "year": "2019",
    "title": "The Lion King (Hindi version)",
-   "king": "The Lion KING",
+   "king": "Mahaan King",
    "type": "Feature film — Hindi dub",
    "credit": "VoiceOver Actor",
    "pending": false
@@ -1030,7 +1030,7 @@
    "n": 114,
    "year": "2023",
    "title": "Dunki",
-   "king": "Dunki King",
+   "king": "King Ki…",
    "type": "Feature film",
    "credit": "Actor",
    "pending": false
@@ -1057,7 +1057,7 @@
    "n": 117,
    "year": "2023",
    "title": "Tiger 3",
-   "king": "Tiger King",
+   "king": "Tiger King 3",
    "type": "Feature film",
    "credit": "Cameo",
    "pending": false
@@ -1066,7 +1066,7 @@
    "n": 118,
    "year": "2024",
    "title": "Mufasa: The Lion King (Hindi version)",
-   "king": "Mufasa: The Real King",
+   "king": "Mahaan: The Lion King",
    "type": "Feature film — Hindi dub",
    "credit": "VoiceOver Actor",
    "pending": false
