@@ -6,9 +6,9 @@ await mkdir('e2e-out', { recursive: true });
 // blurred copy of the film poster (faces unrecognisable, layout + colour kept)
 const neutral = (extra='') => `Design a brand-new original theatrical movie poster starring the person in the first photo as the hero. The second image is only a reference for the era, composition and colour mood of a 1995 Bollywood romance. ${extra} Palette: deep black and crimson with one electric-blue rim light. Style: hand-painted 1990s Bollywood billboard, bold brush strokes. Leave the top 15% and bottom 22% as clean dark space with no text. Portrait 2:3, no text, no logos, no watermark.`;
 const variants = [
-  { id: 'A-original-neutral', film: 'assets/posters/ref/21.jpg', crown: true, prompt: neutral('A painted red crown (third image) floats above the hero\'s head.') },
+  { id: 'A-original-neutral', film: 'assets/posters/ref/027.jpg', crown: true, prompt: neutral('A painted red crown (third image) floats above the hero\'s head.') },
   { id: 'B-blurred-neutral', film: 'tools/e2e-film-blur.jpg', crown: true, prompt: neutral('A painted red crown (third image) floats above the hero\'s head.') },
-  { id: 'C-original-nocrown', film: 'assets/posters/ref/21.jpg', crown: false, prompt: neutral('') },
+  { id: 'C-original-nocrown', film: 'assets/posters/ref/027.jpg', crown: false, prompt: neutral('') },
 ];
 const out = [];
 for (const v of variants) {

@@ -82,8 +82,14 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Hero line "Your face. Not his." links to /inquilab/.
 - Live test 12 Oct: one poster (Shah Rock Jaan art as the "fan photo"), 200 OK in 37 s, no star faces, label and metadata present. A real human photo is NOT yet tested.
 - Limits: 100 site posters a day, 5 per connection a day.
-- Posters: 82 in the studio (Koochie Koochie Hota Hai removed 22 Oct 2026, owner; files stay in assets/posters). King Names for 120 titles (owner's SRK_KING_Titles sheet, 22 Oct 2026) in data/king-titles.json: Jab Harry Met Sejal = 'Jab King Met {FAN}' (the fan's name), Dunki = 'Dunki King'. All 120 names final. Planned Make Your Poster flow (owner, 22 Oct): King Name explainer, row of originals with search, then style cards showing the picked film, then Make your poster. Studio filter has a '2020s & KING' chip.
+- Posters: 118 (owner's set of 24 Oct 2026, see Poster set below); the studio shows 117 plus its own KING card. King Names for 120 titles (owner's SRK_KING_Titles sheet, 22 Oct 2026) in data/king-titles.json: Jab Harry Met Sejal = 'Jab King Met {FAN}' (the fan's name), Dunki = 'Dunki King'. All 120 names final. Planned Make Your Poster flow (owner, 22 Oct): King Name explainer, row of originals with search, then style cards showing the picked film, then Make your poster. Studio filter has a '2020s & KING' chip.
 - Cast picker (12 Oct): for the 74 posters with detected faces, step 02 shows numbered characters (assets/posters/faces.json: positions only, no identities). Fans choose You / Friend 1 / Friend 2 / A new face per character; the prompt keeps the poster's cast layout and every original cast member becomes a fan or an invented face. Posters with fewer than 2 faces, and KING, use the single-hero mode.
+
+## Poster set (owner, 24 Oct 2026: 'all 118 posters, same size, replace the entire github with this')
+- assets/posters/ref/001.jpg … 118.jpg (1080x1920, the owner's order: TV first, KING = 118) and thumb/001.webp … 118.webp (320 px). The old 82-poster set (ids 01–83) is gone; catalogue.json keeps each film's old id as "old", so old ?film=21 links still open the same film (create/index.html deep link).
+- Titles, years, kind and character come from the old catalogue; the 36 new titles take year/type from data/king-titles.json and have character "" (not yet supplied, never invented). File 109 is named 'Living With KKRi' but is the Laal Singh Chaddha poster, catalogued as that.
+- faces.json re-detected with Apple Vision (24 Oct 2026); 040 Dil Se and 103 TED Talks have no faces found. The ijoo Pop files and styles/pop/faces.json were renamed to the new ids (same art).
+- Next from the owner: the same 118 with names removed (images and the logo on a blank background).
 
 ## Poster style editions (18 Oct 2026)
 - The owner is rendering all 83 posters as style editions (3D Pop, Anime, 2-3 more coming). Files go in assets/posters/styles/<style>/<id>.jpg plus thumb/<id>.webp; switch a style on with "ready": true in assets/posters/styles/styles.json.
