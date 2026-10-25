@@ -199,7 +199,7 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
         <div>
           <h1>Make Your <em>KING</em> Poster</h1>
         </div>
-        <p>Pick any SRK's Movie (out of 120), Choose a style, Upload your photo or with friends &amp; become the Star of your own Movie. Earn STARKS trade and win prizes.</p>
+        <p>Pick any SRK's Movie (out of 118), Choose a style, Upload your photo or with friends &amp; become the Star of your own Movie. Earn STARKS trade and win prizes.</p>
       </div>
       <section class="panel" aria-labelledby="h0">
         <h2 id="h0">Choose Poster Style</h2>
@@ -478,12 +478,13 @@ function topPreview() {
 }
 (function(){const b=$('adBanner');if(!b)return;const im=new Image();im.alt='';im.onload=()=>b.replaceChildren(im);im.src='../assets/banners/create.jpg';})();
 topPreview();
-// Desktop: the fan's poster frame sits in the right column under the preview and stays beside the steps; phone: after step 05.
+// Desktop: the fan's poster frame sits in the right column under the preview and stays beside the steps;
+// phone: under the six poster styles, so fans see the styles first (owner, 26 Oct 2026).
 const stageHome = document.querySelector('section[aria-labelledby="h1"]');
 function placeStage() {
   const st = document.querySelector('.stage'), bn = $('adBanner'), side = document.querySelector('.toppv');
   if (matchMedia('(min-width:981px)').matches) { side.append(bn); side.append(st); }
-  else { const intro = document.querySelector('.intro'); intro.after(bn); bn.after(st); }
+  else { const styles = document.querySelector('section[aria-labelledby="h0"]'); styles.after(bn); bn.after(st); }
 }
 placeStage();
 (function () { const mq = matchMedia('(min-width:981px)'); if (mq.addEventListener) mq.addEventListener('change', placeStage); else if (mq.addListener) mq.addListener(placeStage); })();
