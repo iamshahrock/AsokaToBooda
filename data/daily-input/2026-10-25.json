@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-25",
+  "record_id": "KING-2026-10-25",
+  "role": "DAILY UPDATE",
+  "metrics": [
+    {
+      "series_id": "king_title_reveal_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-25: the scheduled run could not open https://www.youtube.com/watch?v=Uu2QK9Z9X5E (page fetch permission request was not answered in this unattended run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_date_announcement_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-25: the scheduled run could not open https://www.youtube.com/watch?v=M3mfut2RdHk (page fetch permission request was not answered in this unattended run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "doomsday_official_trailer_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-25: the scheduled run could not open https://www.youtube.com/watch?v=irVNGjRFZGk (page fetch permission request was not answered in this unattended run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "srk_indexed_posts",
+      "value": null,
+      "unit": "indexed posts",
+      "source": "Not read 2026-10-25: the scheduled run could not open https://displaypurposes.com/hashtags/hashtag/srk (page fetch permission request was not answered in this unattended run)",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "srkking_indexed_posts",
+      "value": null,
+      "unit": "indexed #srkking posts",
+      "source": "Not read 2026-10-25: Display Purposes #srk report could not be opened in this run",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "fan_ai_works_logged",
+      "value": 40,
+      "unit": "fan-made AI works about KING",
+      "source": "data/ai-creator-log.json, daily fan AI scan, 2026-10-25 (0 new)",
+      "method": "public posts found and linked by the daily scan",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "fan_ai_works_views",
+      "value": 2883120,
+      "unit": "views",
+      "source": "data/ai-creator-log.json, updated 2026-10-25",
+      "method": "sum of public view counts on the logged works that show views",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "iamsrk_instagram_followers",
+      "value": null,
+      "unit": "followers",
+      "source": "Not read: the Instagram session in the browser is suspended",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_public_observable_posts",
+      "value": null,
+      "unit": "posts",
+      "source": "No verified 25 Oct total located",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    }
+  ],
+  "topics": [
+    "KING teaser set for 2 Nov (SRK's birthday) per a Bollywood Hungama report; no statement from the makers; release 24 Dec 2026: WION, 13 Oct 2026 (https://www.wionews.com/entertainment/bollywood/shah-rukh-khan-birthday-special-king-teaser-coming-on-november-2-ahead-of-christmas-release-1791888103856) [Unverified]",
+    "Same teaser-date report carried by The Daily Star, 14 Oct 2026, attributed to Bollywood Hungama's unnamed source (https://www.thedailystar.net/culture/tv-film/news/king-teaser-drop-shah-rukh-khans-birthday-4298426) [Unverified]",
+    "Teaser 2 Nov and a promo reportedly to play with Ranbir Kapoor's Ramayana, citing unnamed 'latest reports': Deccan Chronicle, 17 Oct 2026 (https://www.deccanchronicle.com/entertainment/bollywood/shah-rukh-khans-king-to-release-teaser-on-november-2-1996621) [Unverified]"
+  ],
+  "notes": [
+    "The YouTube and Display Purposes pages could not be opened by this unattended run (fetch permission request not answered), so those five series are null today, not flat. Do not read the gap as a change.",
+    "Fan AI log: 0 new works in the 25 Oct scan; count and views unchanged at 40 and 2,883,120 (unchanged values read as flat).",
+    "No KING news dated 20-25 Oct found; newest items remain the 13-17 Oct teaser-date reports. Teaser date of 2 Nov is reported, not confirmed by the makers.",
+    "Posts are not people."
+  ]
+}
