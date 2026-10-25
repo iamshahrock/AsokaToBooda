@@ -349,7 +349,15 @@ let catalogue = [];
 let FACES = {};
 let KLBOX = {};
 // Photo Poster: the film's KING logo, on the same 1080x1920 framing as the poster
-function kingLogo(p) { return p && !p.king && state.kstyle === 'photo' && KLBOX[p.id] ? { src: BASE + 'king-logo/' + p.id + '.webp', box: KLBOX[p.id] } : null; }
+// styles drawn on the 9:16 framing with the film's KING logo (one logo per film for every style, owner 24 Oct 2026)
+const LOGO_STYLES = new Set(['photo', 'anime']);
+let LSHIFT = {};   // per style: { id: [dx, dy] } where the logo is nudged off a face Flow moved into the title spot
+function kingLogo(p, id) {
+  id = id || (p && !p.king ? p.id : null);
+  if (!id || !LOGO_STYLES.has(state.kstyle) || !KLBOX[id]) return null;
+  const [dx, dy] = (LSHIFT[state.kstyle] || {})[id] || [0, 0], b = KLBOX[id];
+  return { src: BASE + 'king-logo/' + id + '.webp', shift: [dx, dy], box: [b[0] + dx, b[1] + dy, b[2] + dx, b[3] + dy] };
+}
 
 // ---------- films ----------
 const KING = { id: '118', title: 'KING', year: 2026, kind: 'film', character: 'The King', king: true };
@@ -359,6 +367,7 @@ async function loadCatalogue() {
   catalogue = [...data.posters.filter(p => p.id !== KING.id), KING];
   try { FACES = (await (await fetch(BASE + 'faces.json')).json()).faces || {}; } catch (e) { FACES = {}; }
   try { KLBOX = (await (await fetch(BASE + 'king-logo/boxes.json')).json()).boxes || {}; } catch (e) { KLBOX = {}; }
+  for (const st of LOGO_STYLES) { try { LSHIFT[st] = (await (await fetch(BASE + 'styles/' + st + '/logo.json')).json()).shift || {}; } catch (e) { LSHIFT[st] = {}; } }
   try { STYLES = (await (await fetch(BASE + 'styles/styles.json')).json()).styles || STYLES; } catch (e) {}
   drawStyles();
   drawGrid();
@@ -410,20 +419,24 @@ const KNAME = Object.fromEntries(KSTYLES);
 const SFACES = {};
 async function styleFaces(s) { if (!SFACES[s]) { try { SFACES[s] = (await (await fetch(BASE + 'styles/' + s + '/faces.json')).json()).faces || {}; } catch (e) { SFACES[s] = {}; } } return SFACES[s]; }
 // the title-less photo with its KING logo on top (same framing), for anywhere the poster is shown to the fan
-async function withLogo(src, logo) {
+async function withLogo(src, logo, shift = [0, 0]) {
   try {
     const [a, b] = await Promise.all([loadImage(src), loadImage(logo)]);
     const c = document.createElement('canvas'); c.width = a.width; c.height = a.height;
-    const x = c.getContext('2d'); x.drawImage(a, 0, 0); x.drawImage(b, 0, 0, c.width, c.height);
+    const x = c.getContext('2d'); x.drawImage(a, 0, 0); x.drawImage(b, shift[0] * c.width, shift[1] * c.height, c.width, c.height);
     return c.toDataURL('image/jpeg', 0.86);
   } catch (e) { return null; }
 }
 function styledSrc(p) { return BASE + 'styles/' + state.kstyle + '/' + p.id + '.jpg'; }
 function topPreview() {
   const ci = $('cleanImg');
-  if (ci) { const p = state.film; ci.className = ''; ci.onerror = null;
+  if (ci) { const p = state.film; ci.className = ''; ci.onerror = null; ci.style.visibility = '';
     if (!p || p.king) { ci.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg'; ci.onerror = () => { ci.onerror = null; ci.className = 'wm'; ci.src = '../assets/home/king-wordmark.webp'; }; }
     else if (state.kstyle === 'photo') ci.src = BASE + p.ref;   // Photo Poster: the real poster with its original title (owner, 25 Oct 2026)
+    else if (kingLogo(p)) {   // other logo styles: the style's art with the film's KING logo, never the bare art
+      const kl = kingLogo(p); ci.style.visibility = 'hidden';
+      withLogo(styledSrc(p), kl.src, kl.shift).then(u => { if (state.film !== p) return; ci.src = u || BASE + p.ref; ci.style.visibility = ''; });
+    }
     else { ci.src = styledSrc(p); ci.onerror = () => { ci.onerror = null; ci.src = BASE + p.ref; }; } }
   const ob = $('origRef'); if (ob) { const p = state.film; ob.hidden = !p || p.king || !p.ref; if (!ob.hidden) { $('origImg').src = BASE + p.ref; $('origBig').src = BASE + p.ref; $('origCap').textContent = p.title + (p.year ? ' (' + p.year + ')' : '') + ' · original poster, for reference only'; } }
   if (!$('topImg')) return;
@@ -527,7 +540,7 @@ async function setupCast(p) {
   if (!state.cast.length && keep.length) state.hero = null;
   if (state.cast.length) {
     const kl = kingLogo(p);
-    $('castImg').src = kl && img === styledSrc(p) ? (await withLogo(img, kl.src)) || img : img;
+    $('castImg').src = kl && img === styledSrc(p) ? (await withLogo(img, kl.src, kl.shift)) || img : img;
     if (my !== castSeq) return;
   }
   drawMatch(); refresh();
@@ -736,8 +749,8 @@ async function refresh() {
   }
   let kl = kingLogo(p);
   // Photo Poster before a film is picked (or on the KING card): the KING poster itself, whole, with its logo (owner, 26 Oct 2026)
-  if (!kl && !state.aiArt && (!p || p.king) && state.kstyle === 'photo' && KLBOX['118']) {
-    try { art = await loadImage(BASE + 'styles/photo/118.jpg'); kl = { src: BASE + 'king-logo/118.webp', box: KLBOX['118'] }; } catch (e) {}
+  if (!kl && !state.aiArt && (!p || p.king) && kingLogo(null, '118')) {
+    try { art = await loadImage(BASE + 'styles/' + state.kstyle + '/118.jpg'); kl = kingLogo(null, '118'); } catch (e) {}
   }
   let logo = null;
   if (kl) { try { logo = await loadImage(kl.src); } catch (e) {} }
@@ -746,7 +759,7 @@ async function refresh() {
   if (cv.width !== cw || cv.height !== ch) { cv.width = cw; cv.height = ch; }
   $('frame').closest('.duo').classList.toggle('tall', !!logo);
   await renderPoster(cv, {
-    logo, logoBox: logo ? kl.box : null,
+    logo, logoBox: logo ? kl.box : null, logoShift: logo ? kl.shift : null,
     art, preview: !state.aiArt, vivid: true, name: $('name').value, title: p ? kingName(p) : 'KING', line: $('line').value,
     film: p ? p.title : '', year: p ? p.year : '', character: p ? p.character : '', date: today()
   });
