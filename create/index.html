@@ -449,7 +449,18 @@ function topPreview() {
     }
     else { ci.src = styledSrc(p); ci.onerror = () => { ci.onerror = null; ci.src = BASE + p.ref; }; } }
   { const p = !state.film || state.film.king ? KING_P : state.film; const oi = $('origSlotImg');
-    if (p && p.ref) { oi.src = BASE + p.ref; $('origBig').src = BASE + p.ref; $('origCap').textContent = p.title + (p.year ? ' (' + p.year + ')' : '') + ' · original poster, for reference only'; } }
+    if (p && p.ref) {
+      // the same art as the KING version, with the film's ORIGINAL title logo instead (owner, 26 Oct 2026)
+      const kl = kingLogo(null, p.id), cap = p.title + (p.year ? ' (' + p.year + ')' : '') + ' · original title';
+      $('origCap').textContent = cap;
+      if (kl) {
+        oi.style.visibility = 'hidden';
+        withLogo(BASE + 'styles/' + state.kstyle + '/' + p.id + '.jpg', BASE + 'og-logo/' + p.id + '.webp', kl.shift).then(u => {
+          const now = !state.film || state.film.king ? KING_P : state.film; if (now !== p) return;
+          oi.src = u || BASE + p.ref; $('origBig').src = oi.src; oi.style.visibility = '';
+        });
+      } else { oi.src = BASE + p.ref; $('origBig').src = oi.src; }
+    } }
   if (!$('topImg')) return;
   const im = $('topImg'), p = state.film, cap = $('topCap');
   im.className = ''; im.onerror = null;
