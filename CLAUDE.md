@@ -92,7 +92,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Next from the owner: the same 118 with names removed (images and the logo on a blank background).
 
 ## Photo Poster (owner, 25 Oct 2026, first style card)
-- Style cards: Photo Poster first (selected by default), then ijoo Pop, 3D Anim, Funko Pop, Chibi Pop, Anime, 2D Cartoon. Desktop (>=1200px) all 7 in one row; below that 4 + 3 with the second row centred.
+- Style cards (6): Photo Poster first (selected by default), then ijoo Pop, 3D Anim, Funko Pop, Chibi Pop, Anime. 2D Cartoon dropped 26 Oct 2026 (owner: Anime is the 2D version). Desktop (>=1200px) one row of 6; below that 3 + 3. Before a film is picked, Photo Poster shows the KING poster (118) whole, with its logo, in 9:16.
 - assets/posters/styles/photo/<id>.jpg = the owner's photo posters with the title removed (SRK_PicPoster_NoLogo set), 1080x1920; faces.json re-detected on them (Apple Vision, native + 1.6x + mirrored passes).
 - assets/posters/king-logo/<id>.webp = the owner's KING (King Name) logos, transparent, on the same 1080x1920 framing, so each sits exactly where the original title was; boxes.json = each logo's box. One KING logo per film for all styles (owner); for now it is drawn only on Photo Poster.
 - With Photo Poster the frame and the finished poster are 9:16 (1080x1920, canvas resized, .duo.tall) instead of 2:3, so no logo is cropped. renderLogoPoster in assets/studio/compose.js: the poster as it is, light bands for header/credits, header hidden when the logo is at the top, STARRING under the logo (above it when the logo reaches the bottom). faceReplace now pastes the AI faces back onto the full-size poster (working canvas mapped back), not a 2:3 crop.
