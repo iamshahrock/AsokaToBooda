@@ -76,7 +76,7 @@ function wrap(ctx, text, maxW) {
  * @param {HTMLCanvasElement} canvas  1024×1536 is used for the final file.
  * @param {object} o  { art: Image, preview: bool, name, line, film, year, character, date, logo?: Image, logoBox?: [x0,y0,x1,y1] }
  * With a logo (Photo Poster, owner 25 Oct 2026) the poster keeps its own look: the KING logo sits exactly where the
- * original title was, only light bands hold the header and credits, and the star line goes under the logo.
+ * original title was, only a light band holds the header, and the star line goes under the logo.
  */
 export async function renderPoster(canvas, o) {
   const W = canvas.width, H = canvas.height, ctx = canvas.getContext('2d');
@@ -197,9 +197,6 @@ async function renderLogoPoster(ctx, W, H, o) {
   let g = ctx.createLinearGradient(0, 0, 0, H * 0.15);            // light band for the header
   g.addColorStop(0, 'rgba(7,5,5,.72)'); g.addColorStop(1, 'rgba(7,5,5,0)');
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.15);
-  g = ctx.createLinearGradient(0, H * 0.92, 0, H);                 // and for the credit strip
-  g.addColorStop(0, 'rgba(7,5,5,0)'); g.addColorStop(1, 'rgba(7,5,5,.85)');
-  ctx.fillStyle = g; ctx.fillRect(0, H * 0.92, W, H * 0.08);
 
   if (by0 > 0.13) {                                                 // header, unless the logo itself is up there
     const crown = await loadImage(ASSET + 'crown.png');
@@ -229,10 +226,7 @@ async function renderLogoPoster(ctx, W, H, o) {
   }
   ctx.restore();
 
-  ctx.save(); ctx.textAlign = 'center'; ctx.fillStyle = '#d8cec6';
-  ctx.font = `600 ${Math.round(H * 0.011)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.003)}px`;
-  ctx.fillText(`PICTURE ABHI BAAKI HAI  ·  ${o.date || ''}  ·  AGARMAINKINGHOTA.COM`, W / 2, H * 0.975);
-  ctx.restore();
+  // no credit strip on Photo Poster (owner, 26 Oct 2026: too small to read)
 
   if (!o.preview) {                                    // AI label on every finished poster (IT Rules, Feb 2026)
     ctx.save(); const tw = W * 0.3, th = H * 0.028, tx = W * 0.03, ty = H * 0.935;
