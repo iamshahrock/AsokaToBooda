@@ -89,6 +89,7 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 @media (max-width:980px){.ad-banner{display:none!important}.ad-banner span{font-size:36px}
  .stage{position:sticky!important;top:52px;z-index:30;background:var(--bg,#0a0707);margin:0 -16px 14px!important;padding:8px 16px;max-width:none!important;border-bottom:1px solid var(--line)}
  .stage .duo{grid-template-columns:repeat(2,minmax(0,110px));justify-content:center}
+ .stage .duo.trio{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.stage .trio figcaption{font-size:9px;margin-top:3px}
  .stage .actions{margin-top:8px}.stage .actions .btn{min-height:40px;padding:8px 14px;font-size:13px}
  .stage .status,.stage .note{display:none}}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}.duo .clean{aspect-ratio:2/3;background:radial-gradient(circle at 50% 35%,#3a1010,#0d0606 70%);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}.duo .clean img{width:100%;height:100%;object-fit:cover}.duo .clean img.wm{width:70%;height:auto;object-fit:contain}.duo .frame canvas{width:100%!important;height:auto!important;max-height:none!important}
@@ -100,6 +101,12 @@ input.text,select.text{width:100%;height:46px;padding:0 12px;background:var(--fi
 @media (max-width:980px){.toppv{position:static;order:-1;max-width:260px;margin:0 auto}}
 .frame{background:#000;border:1px solid var(--line);aspect-ratio:2/3;position:relative;overflow:hidden}
 .duo.tall .clean,.duo.tall .frame{aspect-ratio:9/16}
+/* three in a row, all above the button (owner, 26 Oct 2026) */
+.duo.trio{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.trio .slot{margin:0;min-width:0}
+.trio figcaption{margin-top:5px;text-align:center;font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.trio .orig{display:block;width:100%;padding:0;border:1px solid var(--line);background:#050303;cursor:zoom-in;aspect-ratio:2/3;overflow:hidden}
+.duo.tall .orig{aspect-ratio:9/16}.trio .orig img{width:100%;height:100%;object-fit:contain;display:block}
+.trio .frame canvas{max-height:none!important;width:100%!important;height:auto!important}
 .frame canvas{width:100%;height:100%;display:block}
 .frame .busy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(7,5,5,.82);text-align:center;padding:24px}
 .frame .busy img{width:96px;animation:pulse 1.6s ease-in-out infinite}
@@ -277,13 +284,14 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
       </section>
 
     <section class="stage" aria-label="Your poster">
-      <div class="duo"><div class="clean"><img id="cleanImg" alt="Your chosen poster"></div>
-      <div class="frame" id="frame">
+      <div class="duo trio">
+      <figure class="slot"><button type="button" class="orig" id="origSlot" aria-label="Open the original poster"><img id="origSlotImg" alt="Original poster"></button><figcaption>Original</figcaption></figure>
+      <figure class="slot"><div class="clean"><img id="cleanImg" alt="The KING version"></div><figcaption>KING version</figcaption></figure>
+      <figure class="slot"><div class="frame" id="frame">
         <canvas id="canvas" width="1024" height="1536" role="img" aria-label="Your poster preview"></canvas>
         <div class="busy" id="busy" hidden><img src="../assets/studio/crown.png" alt=""><p>Painting your poster</p><small>About a minute. Keep this page open.</small></div>
-      </div></div>
+      </div><figcaption>Your frame</figcaption></figure></div>
       <div class="refrow">
-        <button type="button" class="origref" id="origRef" hidden><img id="origImg" alt=""><span>Original poster <small>· for reference</small></span></button>
         <button type="button" class="howlink" id="howBtn">How this works?</button>
       </div>
       <div class="actions">
@@ -415,7 +423,7 @@ function drawKStyles() {
 }
 drawKStyles();
 
-$('origRef').onclick = () => $('origPop').showModal(); $('howBtn').onclick = () => $('howPop').showModal();
+$('origSlot').onclick = () => $('origPop').showModal(); $('howBtn').onclick = () => $('howPop').showModal();
 document.querySelectorAll('dialog.pop').forEach(d => d.addEventListener('click', e => { if (e.target === d || e.target.hasAttribute('data-close')) d.close(); }));
 // Right-hand preview (owner, 22 Oct 2026): KING by default; the chosen film in the chosen style once picked.
 const KNAME = Object.fromEntries(KSTYLES);
@@ -434,15 +442,14 @@ function styledSrc(p) { return BASE + 'styles/' + state.kstyle + '/' + p.id + '.
 function topPreview() {
   const ci = $('cleanImg');
   if (ci) { const p = state.film; ci.className = ''; ci.onerror = null; ci.style.visibility = '';
-    if ((!p || p.king) && KING_P && LOGO_STYLES.has(state.kstyle)) ci.src = BASE + KING_P.ref;   // nothing chosen: the original KING poster (owner, 26 Oct 2026)
-    else if (!p || p.king) { ci.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg'; ci.onerror = () => { ci.onerror = null; ci.className = 'wm'; ci.src = '../assets/home/king-wordmark.webp'; }; }
-    else if (state.kstyle === 'photo') ci.src = BASE + p.ref;   // Photo Poster: the real poster with its original title (owner, 25 Oct 2026)
-    else if (kingLogo(p)) {   // other logo styles: the style's art with the film's KING logo, never the bare art
+    if (!p || p.king) { ci.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg'; ci.onerror = () => { ci.onerror = null; ci.className = 'wm'; ci.src = '../assets/home/king-wordmark.webp'; }; }
+    else if (kingLogo(p)) {   // the KING version: the style's art (photo too) with the film's KING logo   // other logo styles: the style's art with the film's KING logo, never the bare art
       const kl = kingLogo(p); ci.style.visibility = 'hidden';
       withLogo(styledSrc(p), kl.src, kl.shift).then(u => { if (state.film !== p) return; ci.src = u || BASE + p.ref; ci.style.visibility = ''; });
     }
     else { ci.src = styledSrc(p); ci.onerror = () => { ci.onerror = null; ci.src = BASE + p.ref; }; } }
-  const ob = $('origRef'); if (ob) { const p = !state.film || state.film.king ? KING_P : state.film; ob.hidden = !p || !p.ref; if (!ob.hidden) { $('origImg').src = BASE + p.ref; $('origBig').src = BASE + p.ref; $('origCap').textContent = p.title + (p.year ? ' (' + p.year + ')' : '') + ' · original poster, for reference only'; } }
+  { const p = !state.film || state.film.king ? KING_P : state.film; const oi = $('origSlotImg');
+    if (p && p.ref) { oi.src = BASE + p.ref; $('origBig').src = BASE + p.ref; $('origCap').textContent = p.title + (p.year ? ' (' + p.year + ')' : '') + ' · original poster, for reference only'; } }
   if (!$('topImg')) return;
   const im = $('topImg'), p = state.film, cap = $('topCap');
   im.className = ''; im.onerror = null;
