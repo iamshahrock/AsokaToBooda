@@ -99,6 +99,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - data/king-titles.json King Names updated to match the logos (17 changed, e.g. 049 '1 King Ka 4', 102 'Jab King Met Agni', fixed name, no fan name). Owner's source folders: ~/Desktop/KING_MOVIE/00000_POSTERS_FINAL (SRK_PicPoster_NoLogo_*, SRK_OGLogo_*, SRK_KLogo_*).
 - Not yet tested with the real AI and a real selfie.
 
+## Anime style (owner, 26 Oct 2026, live)
+- assets/posters/styles/anime/<id>.jpg = the owner's Flow anime set (SRK_AnimePoster_NoLogo_*), 1080x1920; faces.json re-detected; logo.json = KING logo nudges where Flow moved a face into the title spot (only 103 so far). Same 9:16 frame and KING logo as Photo Poster (LOGO_STYLES in create/index.html); the left preview shows the anime art WITH its KING logo (owner: never show a poster without a logo). styles/king/anime.jpg = the KING card sample.
+- Next style sets follow the same path: tools in the session (stylebuild.py images/logos), add the style id to LOGO_STYLES.
+
 ## Poster style editions (18 Oct 2026)
 - The owner is rendering all 83 posters as style editions (3D Pop, Anime, 2-3 more coming). Files go in assets/posters/styles/<style>/<id>.jpg plus thumb/<id>.webp; switch a style on with "ready": true in assets/posters/styles/styles.json.
 - Studio step 01 has a Poster style row. With a style chosen, the grid shows that edition and its poster is the AI reference: sharp, not blurred, but every face box from faces.json is masked first (#FreeMyFace). Without the file it falls back to the blurred original. The style also sets the matching look.
