@@ -209,7 +209,8 @@ async function renderLogoPoster(ctx, W, H, o) {
     ctx.restore();
   }
 
-  cover(ctx, o.logo, 0, 0, W, H);
+  const [lx, ly] = o.logoShift || [0, 0];                          // a style may nudge the logo off a face
+  cover(ctx, o.logo, lx * W, ly * H, W, H);
 
   // STARRING under the logo, or above it when the logo reaches the bottom
   const below = by1 * H + H * 0.035 < H * 0.915;
