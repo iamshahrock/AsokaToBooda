@@ -43,13 +43,13 @@
 .erarow{flex-wrap:nowrap;align-items:center}.erarow .chip{padding:0 10px;white-space:nowrap}.erarow .find{flex:1;min-width:120px}.erasel{display:none;background:var(--field,#160f0f);border:1px solid var(--field-line);color:var(--ink);padding:10px;font:15px var(--body,Archivo)}
 @media (max-width:760px){.erarow .chip{display:none}.erasel{display:block;flex:0 0 42%}.erarow{gap:8px}}
 .game-line{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--red);background:rgba(200,16,46,.08);font-size:15px}.game-line b{color:var(--gold,#d9ad3c);font-weight:700}
-.kstyles{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.kstyles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
 .kst{padding:6px 6px 8px;border:2px solid var(--field-line);background:transparent;color:var(--ink);text-align:center;cursor:pointer}
 .kst[aria-pressed="true"]{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
 .kst b{display:block;font-family:var(--display);font-weight:400;font-size:13px;text-transform:uppercase;margin:0 0 5px;line-height:1}
 .kst .kp{aspect-ratio:2/3;background:radial-gradient(circle at 50% 35%,#3a1010,#0d0606 70%);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .kst .kp img{width:78%;height:auto}.kst .kp img.full{width:100%;height:100%;object-fit:cover}
-@media (max-width:1199px){.kstyles{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.kstyles .kst{flex:0 0 calc((100% - 30px) / 4)}}
+@media (max-width:1199px){.kstyles{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
 .tile span i{font-style:normal;color:var(--faint);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile:hover{border-color:var(--red-text)}
 .tile[aria-pressed="true"]{border-color:var(--red-hi);box-shadow:0 0 0 2px var(--red-hi)}
@@ -386,7 +386,7 @@ let KINGNAMES = {};
 const normT = t => String(t).toLowerCase().replace(/[^a-z0-9]/g, '');
 function kingName(p) { if (p.king) return 'KING'; const k = KINGNAMES[normT(p.title)] || KINGNAMES[normT(p.title).replace('barber', '')]; return k ? k.replace('{FAN}', ($('name') && $('name').value.trim()) || 'You') : ''; }
 fetch('../data/king-titles.json').then(r => r.json()).then(d => { d.films.forEach(f => { KINGNAMES[normT(f.title)] = f.king; }); drawGrid(); }).catch(() => {});
-const KSTYLES = [['photo', 'Photo Poster'], ['pop', 'ijoo Pop'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime'], ['2d', '2D Cartoon']];
+const KSTYLES = [['photo', 'Photo Poster'], ['pop', 'ijoo Pop'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime']];   // 2D Cartoon dropped (owner, 26 Oct 2026: Anime is the 2D version)
 state.kstyle = 'photo';
 function drawKStyles() {
   $('kstyles').replaceChildren(...KSTYLES.map(([id, name]) => {
@@ -734,7 +734,12 @@ async function refresh() {
       art = c;
     }
   }
-  const kl = kingLogo(p); let logo = null;
+  let kl = kingLogo(p);
+  // Photo Poster before a film is picked (or on the KING card): the KING poster itself, whole, with its logo (owner, 26 Oct 2026)
+  if (!kl && !state.aiArt && (!p || p.king) && state.kstyle === 'photo' && KLBOX['118']) {
+    try { art = await loadImage(BASE + 'styles/photo/118.jpg'); kl = { src: BASE + 'king-logo/118.webp', box: KLBOX['118'] }; } catch (e) {}
+  }
+  let logo = null;
   if (kl) { try { logo = await loadImage(kl.src); } catch (e) {} }
   if (my !== pending) return;
   const cv = $('canvas'), cw = logo ? 1080 : 1024, ch = logo ? 1920 : 1536;
