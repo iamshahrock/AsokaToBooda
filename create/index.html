@@ -373,6 +373,7 @@ async function loadCatalogue() {
   try { STYLES = (await (await fetch(BASE + 'styles/styles.json')).json()).styles || STYLES; } catch (e) {}
   drawStyles();
   drawGrid();
+  topPreview();   // the KING poster is known now, for the default view
 }
 function styleOf() { return STYLES.find(x => x.id === state.style) || STYLES[0]; }
 function thumbOf(p) { return p.king ? '../assets/studio/crown.png' : state.style !== 'original' ? BASE + 'styles/' + state.style + '/thumb/' + p.id + '.webp' : BASE + p.thumb; }
@@ -433,7 +434,8 @@ function styledSrc(p) { return BASE + 'styles/' + state.kstyle + '/' + p.id + '.
 function topPreview() {
   const ci = $('cleanImg');
   if (ci) { const p = state.film; ci.className = ''; ci.onerror = null; ci.style.visibility = '';
-    if (!p || p.king) { ci.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg'; ci.onerror = () => { ci.onerror = null; ci.className = 'wm'; ci.src = '../assets/home/king-wordmark.webp'; }; }
+    if ((!p || p.king) && KING_P && LOGO_STYLES.has(state.kstyle)) ci.src = BASE + KING_P.ref;   // nothing chosen: the original KING poster (owner, 26 Oct 2026)
+    else if (!p || p.king) { ci.src = '../assets/posters/styles/king/' + state.kstyle + '.jpg'; ci.onerror = () => { ci.onerror = null; ci.className = 'wm'; ci.src = '../assets/home/king-wordmark.webp'; }; }
     else if (state.kstyle === 'photo') ci.src = BASE + p.ref;   // Photo Poster: the real poster with its original title (owner, 25 Oct 2026)
     else if (kingLogo(p)) {   // other logo styles: the style's art with the film's KING logo, never the bare art
       const kl = kingLogo(p); ci.style.visibility = 'hidden';
