@@ -1,0 +1,99 @@
+{
+ "date": "2026-10-26",
+ "record_id": "KING-2026-10-26",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 49493376,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-10-26 IST in the owner's desktop app browser",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 32533816,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-10-26 IST in the owner's desktop app browser",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 82200583,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-10-26 IST in the owner's desktop app browser",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": 2933427,
+   "unit": "indexed posts",
+   "source": "https://displaypurposes.com/hashtags/hashtag/srk, page says 'Last updated: 2026-10-26', read 2026-10-26",
+   "method": "Display Purposes hashtag report",
+   "confidence": "third-party index; count unchanged since 06 Oct, likely frozen",
+   "status": "stale"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": 32455,
+   "unit": "indexed #srkking posts",
+   "source": "https://displaypurposes.com/hashtags/hashtag/srk similar-hashtags table, read 2026-10-26",
+   "method": "Display Purposes similar-hashtags table",
+   "confidence": "third-party index; count unchanged since 18 Oct, likely frozen",
+   "status": "stale"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 40,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json, daily fan AI scan 2026-10-26 (0 new)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 2883120,
+   "unit": "views",
+   "source": "data/ai-creator-log.json, updated 2026-10-26",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": null,
+   "unit": "followers",
+   "source": "Not read 2026-10-26",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 26 Oct total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "KING teaser set for 2 Nov (SRK's birthday) per a Bollywood Hungama report; no statement from the makers; release 24 Dec 2026: WION, 13 Oct 2026 (https://www.wionews.com/entertainment/bollywood/shah-rukh-khan-birthday-special-king-teaser-coming-on-november-2-ahead-of-christmas-release-1791888103856) [Unverified]",
+  "Same teaser-date report carried by The Daily Star, 14 Oct 2026, attributed to Bollywood Hungama's unnamed source (https://www.thedailystar.net/culture/tv-film/news/king-teaser-drop-shah-rukh-khans-birthday-4298426) [Unverified]",
+  "Teaser 2 Nov and a promo reportedly to play with Ranbir Kapoor's Ramayana, citing unnamed 'latest reports': Deccan Chronicle, 17 Oct 2026 (https://www.deccanchronicle.com/entertainment/bollywood/shah-rukh-khans-king-to-release-teaser-on-november-2-1996621) [Unverified]"
+ ],
+ "notes": [
+  "Read in an attended session on 2026-10-26 after the owner noticed the dashboard looked flat. The scheduled runs of 20-25 Oct could not open YouTube or Display Purposes (page fetch needs an approval nobody was there to give), so those days are null, not flat.",
+  "Since the last reading on 19 Oct: KING title reveal +298,318 views (49,195,058 -> 49,493,376); KING date announcement +124,982 (32,408,834 -> 32,533,816); Avengers: Doomsday trailer +1,603,619 (80,596,964 -> 82,200,583).",
+  "Display Purposes #srk (2,933,427) and #srkking (32,455) show the same counts as 06 Oct and 18 Oct although the page says 'Last updated: 2026-10-26'; treat them as a frozen third-party index, not as flat buzz.",
+  "Posts are not people."
+ ]
+}
