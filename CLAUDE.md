@@ -70,6 +70,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 
 ## Poster lettering (owner, 26 Oct 2026)
 - 'Just the crown and www.AgarMainKingHota.com': every poster (preview and final, both layouts in assets/studio/compose.js) carries only the crown and the site address on top. No King Name title, no film KING logo, no STARRING, no dialogue line, no credit strip. The AI-MADE FAN POSTER label stays (IT Rules). Step 05 Your line (name + dialogue) is hidden in create/index.html; the name still names the downloaded file if filled (it falls back to 'my').
+- Step 04 The look is hidden too (owner, 26 Oct 2026: redundant, the 6 poster styles are the looks). Picking a style still sets state.look behind the scenes for the KING generative prompt.
 
 ## Make Your Poster — FACE REPLACEMENT (owner, 23 Oct 2026; replaces the policy below for film posters)
 - Owner: 'I will be uploading all the posters of all the styles. When the user uploads his pic, process only his face and replace the character on the poster without touching the faces of the celebrities. Same logic for realistic and stylised posters.'
