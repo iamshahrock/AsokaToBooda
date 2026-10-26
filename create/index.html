@@ -358,7 +358,7 @@ let FACES = {};
 let KLBOX = {};
 // Photo Poster: the film's KING logo, on the same 1080x1920 framing as the poster
 // styles drawn on the 9:16 framing with the film's KING logo (one logo per film for every style, owner 24 Oct 2026)
-const LOGO_STYLES = new Set(['photo', '3d', 'chibi', 'anime']);
+const LOGO_STYLES = new Set(['photo', '3d', 'chibi', 'anime', 'funko']);
 let LSHIFT = {};   // per style: { id: [dx, dy] } where the logo is nudged off a face Flow moved into the title spot
 function kingLogo(p, id) {
   id = id || (p && !p.king ? p.id : null);
