@@ -16,6 +16,7 @@
 .intro{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:28px}
 .intro h1{margin:6px 0 0;font-family:var(--display);font-weight:400;font-size:clamp(44px,5.6vw,84px);line-height:.92;text-transform:uppercase}
 .intro h1 em{font-style:normal;color:var(--red-hi)}
+.intro .tagline{margin:10px 0 0;font:600 15px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
 .intro p{margin:0;max-width:520px;color:var(--mute);font-size:16px;line-height:1.55}
 .steps{display:flex;gap:6px;margin:0 0 22px;padding:0;list-style:none;flex-wrap:wrap}
 .steps li{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding:8px 12px;border:1px solid var(--line)}
@@ -197,17 +198,16 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
     <div>
       <div class="intro">
         <div>
-          <h1>Make Your <em>KING</em> Poster</h1>
+          <h1>Be the <em>KING</em> of every SRK film.</h1>
+          <p class="tagline">6 styles. Your crown. Make Your Poster</p>
         </div>
-        <p>Pick any SRK's Movie (out of 118), Choose a style, Upload your photo or with friends &amp; become the Star of your own Movie. Earn STARKS trade and win prizes.</p>
       </div>
       <section class="panel" aria-labelledby="h0">
-        <h2 id="h0">Choose Poster Style</h2>
+        <h2 id="h0">Choose Style, Add your face, Earn STARKS, Win Prizes.</h2>
         <div class="kstyles" id="kstyles" role="group" aria-label="Poster style"></div>
       </section>
 
-      <section class="panel" aria-labelledby="h1">
-        <h2 id="h1">Choose SRK Film</h2>
+      <section class="panel" aria-label="Choose a film"><!-- owner, 26 Oct 2026: no 'Choose SRK Film' heading -->
         <div class="filters styles" id="styles" role="group" aria-label="Poster style"><span class="lbl">Poster style</span></div>
         <div class="filters erarow" role="group" aria-label="Filter by decade">
           <select class="erasel" id="erasel" aria-label="Decade"><option value="all">All films</option><option value="1980">TV &amp; '80s</option><option value="1990">'90s</option><option value="2000">2000s</option><option value="2010">2010s</option><option value="2020">2020s &amp; KING</option></select>
@@ -223,7 +223,7 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
         <div class="chosen" id="chosen" hidden></div>
       </section>
 
-      <section class="panel" aria-labelledby="h2">
+      <section class="panel" aria-labelledby="h2" hidden><!-- owner, 26 Oct 2026: Be the King / Be with the King is redundant now that fans pick "Keep original" per face -->
         <h2 id="h2"><span class="n">02</span>Your role</h2>
         <p class="hint" id="roleHint">Do you want to be the King, or be with the King?</p>
         <div class="opts" id="roles" role="group" aria-label="Role">
@@ -242,7 +242,7 @@ dialog.how h3{margin:0 0 12px;color:#fff;text-transform:uppercase;letter-spacing
       </section>
 
       <section class="panel" aria-labelledby="h3">
-        <h2 id="h3"><span class="n">03</span>Your photo</h2>
+        <h2 id="h3"><span class="n">02</span>Your photo</h2>
         <p class="hint">Add up to 3 photos: a selfie, or a group photo with friends. The site finds every face and labels it A, B, C. Tap a face to leave it out, or tap a missed face to add it.</p>
         <div class="photos" id="photos">
           <label class="ph upload" id="addPhoto"><input type="file" accept="image/jpeg,image/png,image/webp" id="photoInput"><span>+ Add photo</span></label>
