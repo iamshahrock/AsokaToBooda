@@ -31,6 +31,18 @@
 @media(max-width:700px){.ao-chain{flex-direction:column}.ao-chain i{transform:rotate(90deg)}}
 </style>
 <style>
+.ki-frozen{margin:6px 0 12px;padding:8px 12px;border-left:3px solid var(--ki-red-hi);background:rgba(200,16,46,.08);font-size:13px;line-height:1.5;color:var(--ki-text-2)}.ki-frozen a{color:var(--ki-red-hi)}
+.tr-h{margin:4px 0 8px;font:600 11px/1.3 var(--ki-font);letter-spacing:.08em;text-transform:uppercase;color:var(--ki-muted)}
+.tr-days{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}.tr-days span{display:flex;flex-direction:column;align-items:center;gap:3px;width:34px;font:600 10px var(--ki-mono);color:var(--ki-muted)}
+.tr-days i,.tr-key i{display:block;width:26px;height:14px;border-radius:3px;border:1px solid var(--ki-line)}.tr-key i{display:inline-block;width:14px;height:10px;margin:0 4px 0 10px;vertical-align:-1px}
+.tr-days i.full,.tr-key i.full{background:#2e9e5b;border-color:#2e9e5b}.tr-days i.part,.tr-key i.part{background:#c9a227;border-color:#c9a227}.tr-days i.none,.tr-key i.none{background:transparent;border-color:var(--ki-red-hi)}.tr-days i.gap,.tr-key i.gap{background:repeating-linear-gradient(45deg,transparent 0 3px,var(--ki-line) 3px 5px)}
+.tr-key{margin:0 0 14px;font-size:12px;color:var(--ki-muted)}
+.tr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.tr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.tr-grid{grid-template-columns:minmax(0,1fr)}}
+.tr-card{padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius);min-width:0}
+.tr-card .t{font:600 11px/1.3 var(--ki-font);letter-spacing:.06em;text-transform:uppercase;color:var(--ki-muted)}.tr-card b{display:block;margin:4px 0 2px;font:700 22px/1.1 var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums}
+.tr-card .m{font-size:12.5px;color:var(--ki-text-2)}.tr-card .m.up{color:#3fbf73}.tr-card .m.down{color:var(--ki-red-hi)}.tr-card svg{display:block;width:100%;height:70px;margin:8px 0 4px}
+.tr-card .ax{display:flex;justify-content:space-between;font:600 10px var(--ki-mono);color:var(--ki-muted)}.tr-card .w{display:block;margin-top:6px;font-size:11.5px;color:var(--ki-muted)}
 .gl{border:1px solid var(--ki-red);border-radius:var(--ki-radius);background:linear-gradient(160deg,#1c0a0b,var(--ki-bg-1) 55%);padding:18px 18px 14px;margin:0 0 22px}
 .gl-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px}
 .gl-head h2{margin:0;font:700 22px/1.2 var(--ki-font);letter-spacing:.01em;color:var(--ki-text)}
@@ -42,6 +54,7 @@
 .gl-count span{font-size:13px;line-height:1.3;color:var(--ki-text)}.gl-count small{color:var(--ki-muted)}
 .gl-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 .gl-card{display:flex;flex-direction:column;gap:3px;padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius);min-width:0}
+.gl-card .w,.gl-box li{overflow-wrap:anywhere}
 .gl-card .t{font:600 11px/1.3 var(--ki-font);letter-spacing:.06em;text-transform:uppercase;color:var(--ki-muted)}
 .gl-card b{font:700 24px/1.15 var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .gl-card .m{font:500 12px/1.35 var(--ki-mono);color:var(--ki-text-2)}
@@ -92,7 +105,7 @@
     <p class="ki-lede">Source-dated public attention, hashtag, fan-network and competitive signals for <b>KING</b> (Shah Rukh Khan, release 24 December 2026). Every figure is measured against the immutable 04 October 2026 baseline. Values that were not captured are labelled, never estimated.</p>
   </div>
   <dl class="ki-meta" aria-label="Data stamps">
-    <dt>As of</dt><dd class="hl">19 Oct 2026, IST</dd>
+    <dt>As of</dt><dd class="hl" id="ki-asof">19 Oct 2026, IST</dd>
     <dt>Baseline</dt><dd>04 Oct 2026 · locked</dd>
     <dt>Release</dt><dd>24 Dec 2026</dd>
     <dt>Time zone</dt><dd>Asia/Kolkata (Mumbai)</dd>
@@ -121,6 +134,19 @@
     <div class="gl-box"><h3>Read this carefully</h3><ul id="gl-notes"><li>Loading…</li></ul></div>
   </div>
   <p class="gl-foot"><a href="report.html">Full daily report →</a> <a href="#competition">DOOM vs KING →</a> <a href="#overview">Detailed dashboard below →</a></p>
+</section>
+
+<!-- ============ DAILY TREND (reads data/king-intelligence-daily.json; owner, 26 Oct 2026) ============ -->
+<section class="gl tr" id="trend" aria-labelledby="h-trend">
+  <div class="gl-head">
+    <h2 id="h-trend">Daily trend · every reading since 04 Oct</h2>
+    <span class="gl-date" id="tr-range"></span>
+  </div>
+  <p class="gl-lede">Every series the daily record measures, from its first reading to the latest. Each dot is a day we read the number; days without a reading are left as gaps, never filled in.</p>
+  <h3 class="tr-h">Which days were measured</h3>
+  <div class="tr-days" id="tr-days"></div>
+  <p class="tr-key"><i class="full"></i> measured <i class="part"></i> partly measured <i class="none"></i> filed, numbers missing <i class="gap"></i> no record filed</p>
+  <div class="tr-grid" id="tr-grid"><p class="gl-lede">Loading…</p></div>
 </section>
 
 <section aria-labelledby="kpi-title">
@@ -229,6 +255,7 @@
 <section class="ki-panel" id="overview" aria-labelledby="h-overview">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-overview">Executive summary</h2>
+    <p class="ki-frozen">Launch-week snapshot (04–09 Oct), written by hand and not updated daily. For daily numbers see <a href="#trend">Daily trend</a> at the top.</p>
     <span class="ki-stamp">As of 09 Oct 2026, IST</span>
   </div>
   <div class="ki-card ki-mom">
@@ -324,6 +351,7 @@
 <section class="ki-panel" id="daily" aria-labelledby="h-daily">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-daily">Daily movement</h2>
+    <p class="ki-frozen">Launch-week snapshot (04–09 Oct), written by hand and not updated daily. For daily numbers see <a href="#trend">Daily trend</a> at the top.</p>
     <span class="ki-stamp">04 Oct baseline → 08 Oct</span>
     <p>04 Oct is the immutable zero-point; 05 Oct is the first tracked daily observation. For 06–08 Oct no verified KING-specific value survives for the three core series, so those cells read Not captured. Source-dated account observations are added alongside.</p>
   </div>
@@ -409,6 +437,7 @@
 <section class="ki-panel" id="hashtags" aria-labelledby="h-hashtags">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-hashtags">Hashtags &amp; topics</h2>
+    <p class="ki-frozen">Launch-week snapshot (04–09 Oct), written by hand and not updated daily. For daily numbers see <a href="#trend">Daily trend</a> at the top.</p>
     <span class="ki-stamp">Daily monitor · 09 Oct</span>
     <p>Public indexed Instagram post counts for the leading SRK × KING hashtags. These are post volumes, not unique people; no reliable public deduplicated unique-user count is available.</p>
   </div>
@@ -521,6 +550,7 @@
 <section class="ki-panel" id="conversation" aria-labelledby="h-conversation">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-conversation">Conversation &amp; content</h2>
+    <p class="ki-frozen">Launch-week snapshot (04–09 Oct), written by hand and not updated daily. For daily numbers see <a href="#trend">Daily trend</a> at the top.</p>
     <span class="ki-stamp">Fan posts: 05 Oct 2026</span>
     <p>What fans are talking about, ranked by visible post views. Reach is ranked separately from interaction and mobilisation: a lower-reach FDFS post can matter because it asks fans to act. Statistics are visible source figures; metrics not shown on the source post read N/A.</p>
   </div>
@@ -628,6 +658,7 @@
 <section class="ki-panel" id="geography" aria-labelledby="h-geography">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-geography">Geography · top 50 country signal board</h2>
+    <p class="ki-frozen">Launch-week snapshot (04–09 Oct), written by hand and not updated daily. For daily numbers see <a href="#trend">Daily trend</a> at the top.</p>
     <span class="ki-stamp">06 Oct 2026</span>
     <p>This is not an SRK geography rank. Countries are ordered by the strength of publicly observable KING-specific evidence first, then documented SRK fan-network presence where no country-level KING volume is published. No country-wide KING post count is invented.</p>
   </div>
@@ -730,6 +761,7 @@
 <section class="ki-panel" id="activation" aria-labelledby="h-activation">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-activation">Fan activation</h2>
+    <p class="ki-frozen">Launch-week snapshot (04–09 Oct), written by hand and not updated daily. For daily numbers see <a href="#trend">Daily trend</a> at the top.</p>
     <span class="ki-stamp">Evidence board · 07 Oct</span>
     <p>Organised fan networks are moving from posting toward physical and database-led activation. Registration is not attendance; announcement is not execution; city FDFS registrations are not tickets sold.</p>
   </div>
@@ -802,6 +834,7 @@
 <section class="ki-panel" id="engine" aria-labelledby="h-engine">
   <div class="ki-sec-head">
     <h2 class="ki-h2" id="h-engine">Hype engine</h2>
+    <p class="ki-frozen">Launch-week snapshot (04–09 Oct), written by hand and not updated daily. For daily numbers see <a href="#trend">Daily trend</a> at the top.</p>
     <span class="ki-stamp">Momentum · weights · birthday window</span>
     <p>Composite direction is built from observable movement across attention, content, creators, geography and fan action. No fabricated composite score is published.</p>
   </div>
@@ -1201,7 +1234,7 @@
   var fmt=function(n){return Number(n).toLocaleString('en-US');};
   var day=function(s){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short'});};
   var LABEL={king_title_reveal_views:'KING title reveal',king_date_announcement_views:'KING date announcement',doomsday_official_trailer_views:'Doomsday trailer',fan_ai_works_logged:'Fan-made AI works',fan_ai_works_views:'Views on fan AI works',srk_indexed_posts:'#srk posts (index)',srkking_indexed_posts:'#srkking posts (index)',iamsrk_instagram_followers:'@iamsrk followers',king_public_observable_posts:'KING posts (all platforms)',king_video_views_tracked:'KING video views (tracked)',doomsday_youtube_views:'Doomsday YouTube views'};
-  var link=function(s){var m=String(s||'').match(/https?:\/\/[^\s)]+/);var name=String(s||'').split(/[,(]/)[0];return m?'<a href="'+esc(m[0])+'" target="_blank" rel="noopener">'+esc(name)+'</a>':esc(name);};
+  var link=function(s){var m=String(s||'').match(/https?:\/\/[^\s)]+/);var name=String(s||'').split(/[,(]/)[0];if(/^https?:/.test(name.trim())&&m){try{name=new URL(m[0]).hostname.replace(/^www\./,'');}catch(e){}}return m?'<a href="'+esc(m[0])+'" target="_blank" rel="noopener">'+esc(name)+'</a>':esc(name);};
   var linkify=function(t){return esc(t).replace(/\(?(https?:\/\/[^\s)]+)\)?/g,function(_,u){return '(<a href="'+u+'" target="_blank" rel="noopener">source</a>)';});};
   fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
     var R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;}), last=R[R.length-1];
@@ -1219,6 +1252,47 @@
     $('#gl-topics').innerHTML=(last.topics||[]).map(function(t){return '<li>'+linkify(t)+'</li>';}).join('')||'<li>No new topics filed.</li>';
     $('#gl-notes').innerHTML=(last.notes||[]).map(function(t){return '<li>'+linkify(t)+'</li>';}).join('')||'<li>N/A</li>';
   }).catch(function(){$('#gl-topics').innerHTML='<li>The ledger could not load right now.</li>';$('#gl-notes').innerHTML='<li>N/A</li>';});
+})();
+</script>
+<script>
+/* Daily trend + "As of": every ledger series over time; gaps stay gaps (owner, 26 Oct 2026). */
+(function(){
+  var $=function(q){return document.querySelector(q);};
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var fmt=function(n){return Number(n).toLocaleString('en-US');};
+  var dd=function(s,y){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',y?{day:'2-digit',month:'short',year:'numeric'}:{day:'2-digit',month:'short'});};
+  var LABEL={king_title_reveal_views:'KING title reveal · YouTube views',king_date_announcement_views:'KING date announcement · YouTube views',doomsday_official_trailer_views:'Doomsday trailer · YouTube views',fan_ai_works_logged:'Fan-made AI works',fan_ai_works_views:'Views on fan AI works',srk_indexed_posts:'#srk posts (Display Purposes index)',srkking_indexed_posts:'#srkking posts (Display Purposes index)',iamsrk_instagram_followers:'@iamsrk followers',king_public_observable_posts:'KING posts (all platforms)',king_video_views_tracked:'KING video views (tracked)',king_top_video_views_tracked:'Top KING video (tracked)',doomsday_youtube_views:'Doomsday YouTube views',king_srk_king_pikory_posts:'#srkking posts (Pikory)',srkking_reels_total_views:'#srkking Reels views',srkking_reels_average_views:'#srkking Reels average',srkking_reel_peak_views:'#srkking top Reel',doomsday_first_24h_views:'Doomsday first 24h views'};
+  var ORDER=['king_title_reveal_views','king_date_announcement_views','doomsday_official_trailer_views','fan_ai_works_logged','fan_ai_works_views','srk_indexed_posts','srkking_indexed_posts'];
+  fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
+    var R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+    var withVal=R.filter(function(r){return (r.metrics||[]).some(function(m){return m.value!=null&&m.status!=='stale';});});
+    var lastGood=withVal[withVal.length-1]||R[R.length-1];
+    $('#ki-asof').textContent=dd(lastGood.date,1)+', IST';
+    var first=R[0].date, today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata'}).format(new Date());
+    var byDate={}; R.forEach(function(r){byDate[r.date]=r;});
+    var days=[]; for(var t=new Date(first+'T00:00:00Z');;t=new Date(t.getTime()+864e5)){var k=t.toISOString().slice(0,10); if(k>today) break; days.push(k);}
+    $('#tr-range').textContent=dd(first)+' → '+dd(today);
+    $('#tr-days').innerHTML=days.map(function(k){var r=byDate[k],cls='gap',tip='no record filed';
+      if(r){var ms=r.metrics||[],v=ms.filter(function(m){return m.value!=null;}).length;cls=v===0?'none':(v===ms.length?'full':'part');tip=v+' of '+ms.length+' numbers read';}
+      return '<span title="'+dd(k)+': '+tip+'"><i class="'+cls+'"></i>'+k.slice(8)+'</span>';}).join('');
+    var S={}; R.forEach(function(r){(r.metrics||[]).forEach(function(m){(S[m.series_id]=S[m.series_id]||[]).push({d:r.date,v:m.value,st:m.status,u:m.unit,src:m.source});});});
+    var ids=Object.keys(S).filter(function(id){return S[id].some(function(x){return x.v!=null;});});
+    ids.sort(function(a,b){var ia=ORDER.indexOf(a),ib=ORDER.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||a.localeCompare(b);});
+    var x0=Date.parse(first),x1=Date.parse(today)||x0+864e5,W=300,H=70;
+    $('#tr-grid').innerHTML=ids.map(function(id){
+      var pts=S[id].filter(function(x){return x.v!=null;}),vs=pts.map(function(x){return x.v;}),lo=Math.min.apply(null,vs),hi=Math.max.apply(null,vs),span=hi-lo||1;
+      var X=function(d){return 6+(Date.parse(d)-x0)/((x1-x0)||1)*(W-12);},Y=function(v){return hi===lo?H/2:H-8-(v-lo)/span*(H-16);};
+      var line=pts.map(function(p,i){return (i?'L':'M')+X(p.d).toFixed(1)+' '+Y(p.v).toFixed(1);}).join(' ');
+      var dots=pts.map(function(p){return '<circle cx="'+X(p.d).toFixed(1)+'" cy="'+Y(p.v).toFixed(1)+'" r="3.2" fill="'+(p.st==='stale'?'#8a7a72':'#e2343e')+'"><title>'+dd(p.d)+': '+fmt(p.v)+(p.st==='stale'?' (stale source)':'')+'</title></circle>';}).join('');
+      var a=pts[0],z=pts[pts.length-1],cls='',txt;
+      if(pts.length<2) txt='One reading so far ('+dd(a.d)+')';
+      else{var dv=z.v-a.v;cls=dv>0?'up':(dv<0?'down':'');txt=(dv===0?'No change':(dv>0?'+':'')+fmt(dv)+(a.v?' ('+(dv>0?'+':'')+(dv/a.v*100).toFixed(1)+'%)':''))+' since '+dd(a.d)+' · '+pts.length+' readings';}
+      var stale=z.st==='stale'?' · source looks frozen':'';
+      return '<div class="tr-card"><span class="t">'+esc(LABEL[id]||id.replace(/_/g,' '))+'</span><b>'+fmt(z.v)+'</b><span class="m '+cls+'">'+txt+esc(stale)+'</span>'+
+        '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true"><line x1="6" x2="'+(W-6)+'" y1="'+(H-4)+'" y2="'+(H-4)+'" stroke="#3a2a2a"/>'+(pts.length>1?'<path d="'+line+'" fill="none" stroke="#e2343e" stroke-width="2" stroke-dasharray="'+(z.st==='stale'?'4 3':'none')+'"/>':'')+dots+'</svg>'+
+        '<div class="ax"><span>'+dd(first)+'</span><span>'+dd(today)+'</span></div><span class="w">Latest: '+dd(z.d)+' · '+esc(z.u||'')+'</span></div>';
+    }).join('');
+  }).catch(function(){var g=$('#tr-grid'); if(g) g.innerHTML='<p class="gl-lede">The ledger could not load right now.</p>';});
 })();
 </script>
 <script src="../assets/footer.js" defer></script>
