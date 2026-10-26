@@ -1,9 +1,9 @@
 // Agar Main King Hota — poster frame compositor.
-// Draws the final KING one-sheet on a canvas: artwork + crown + red lettering + the fan's line.
+// Draws the final KING one-sheet on a canvas: artwork + crown + the site address (owner, 26 Oct 2026: nothing else).
 // The same frame is used for the free live preview (original poster, dimmed) and for the AI result,
 // so every poster carries the campaign's identity even if the AI ignores part of the brief.
 const ASSET = new URL('.', import.meta.url).href;              // .../assets/studio/
-const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const SITE_MARK = 'www.AgarMainKingHota.com';
 const cache = new Map();
 
 export function loadImage(src) {
@@ -20,39 +20,7 @@ export function loadImage(src) {
 }
 
 export async function preloadKit() {
-  await Promise.all([
-    loadImage(ASSET + 'crown.png'),
-    ...LETTERS.split('').map(c => loadImage(ASSET + 'letters/' + c + '.png'))
-  ]);
-}
-
-// Draw a word in the red KING alphabet. Returns the width used.
-async function measureRed(text, h) {
-  let w = 0;
-  for (const ch of text.toUpperCase()) {
-    if (ch === ' ') { w += h * 0.36; continue; }
-    if (!LETTERS.includes(ch)) { w += h * 0.5; continue; }
-    const g = await loadImage(ASSET + 'letters/' + ch + '.png');
-    w += g.width * (h / g.height) + h * 0.06;
-  }
-  return Math.max(0, w - h * 0.06);
-}
-async function drawRed(ctx, text, cx, y, h, maxW) {
-  let w = await measureRed(text, h);
-  if (maxW && w > maxW) { h = h * maxW / w; w = maxW; }
-  let x = cx - w / 2;
-  for (const ch of text.toUpperCase()) {
-    if (ch === ' ') { x += h * 0.36; continue; }
-    if (!LETTERS.includes(ch)) {                       // punctuation: Anton fallback in KING red
-      ctx.save(); ctx.fillStyle = '#d61a22'; ctx.font = `${Math.round(h)}px Anton, Impact, sans-serif`;
-      ctx.textBaseline = 'top'; ctx.fillText(ch, x, y); x += h * 0.5; ctx.restore(); continue;
-    }
-    const g = await loadImage(ASSET + 'letters/' + ch + '.png');
-    const gw = g.width * (h / g.height);
-    ctx.drawImage(g, x, y, gw, h);
-    x += gw + h * 0.06;
-  }
-  return h;
+  await loadImage(ASSET + 'crown.png');
 }
 
 function cover(ctx, im, x, y, w, h) {
@@ -61,22 +29,12 @@ function cover(ctx, im, x, y, w, h) {
   ctx.drawImage(im, x + (w - iw) / 2, y + (h - ih) / 2, iw, ih);
 }
 
-function wrap(ctx, text, maxW) {
-  const words = text.split(/\s+/); const lines = []; let line = '';
-  for (const w of words) {
-    const t = line ? line + ' ' + w : w;
-    if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t;
-  }
-  if (line) lines.push(line);
-  return lines.slice(0, 2);
-}
-
 /**
  * Render the poster.
  * @param {HTMLCanvasElement} canvas  1024×1536 is used for the final file.
  * @param {object} o  { art: Image, preview: bool, name, line, film, year, character, date, logo?: Image, logoBox?: [x0,y0,x1,y1] }
  * With a logo (Photo Poster, owner 25 Oct 2026) the poster keeps its own look: the KING logo sits exactly where the
- * original title was, only a light band holds the header, and the star line goes under the logo.
+ * original title was, only a light band holds the header.
  */
 export async function renderPoster(canvas, o) {
   const W = canvas.width, H = canvas.height, ctx = canvas.getContext('2d');
@@ -93,58 +51,19 @@ export async function renderPoster(canvas, o) {
   }
   const lb = o.logo && o.logoBox;
   if (lb) return renderLogoPoster(ctx, W, H, o);
-  // top and bottom vignettes that hold the lettering
-  let g = ctx.createLinearGradient(0, 0, 0, H * 0.24);
+  // top vignette that holds the header
+  const g = ctx.createLinearGradient(0, 0, 0, H * 0.24);
   g.addColorStop(0, 'rgba(7,5,5,.95)'); g.addColorStop(1, 'rgba(7,5,5,0)');
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.24);
-  g = ctx.createLinearGradient(0, H * 0.62, 0, H);
-  g.addColorStop(0, 'rgba(7,5,5,0)'); g.addColorStop(0.45, 'rgba(7,5,5,.88)'); g.addColorStop(1, 'rgba(7,5,5,1)');
-  ctx.fillStyle = g; ctx.fillRect(0, H * 0.62, W, H * 0.38);
 
-  // header: small crown + AGAR MAIN KING HOTA
+  // header: the crown + the site address, the only lettering on the poster (owner, 26 Oct 2026:
+  // no King Name title, no STARRING, no line, no credit strip)
   const crown = await loadImage(ASSET + 'crown.png');
   const ch = H * 0.07, cw = crown.width * ch / crown.height;
   ctx.drawImage(crown, W / 2 - cw / 2, H * 0.022, cw, ch);
-  ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.font = `600 ${Math.round(H * 0.0135)}px Archivo, Arial, sans-serif`;
-  ctx.textAlign = 'center'; ctx.letterSpacing = `${Math.round(W * 0.012)}px`;
-  ctx.fillText('AGAR MAIN KING HOTA', W / 2, H * 0.112);
-  ctx.restore();
-
-  // the film's King Name is the poster's title, in the red KING alphabet (owner, 22 Oct 2026);
-  // long names go on two lines. The fan's name sits under it as the star.
-  const title = (o.title || 'KING').trim().slice(0, 40);
-  let nh;
-  if (title.length > 14 && title.includes(' ')) {
-    const words = title.split(' '); let best = 1, diff = 1e9;
-    for (let i = 1; i < words.length; i++) { const d = Math.abs(words.slice(0, i).join(' ').length - words.slice(i).join(' ').length); if (d < diff) { diff = d; best = i; } }
-    const lh = H * 0.07;
-    const h1 = await drawRed(ctx, words.slice(0, best).join(' '), W / 2, H * 0.70, lh, W * 0.86);
-    const h2 = await drawRed(ctx, words.slice(best).join(' '), W / 2, H * 0.70 + h1 + H * 0.008, lh, W * 0.86);
-    nh = h1 + h2 + H * 0.008 - H * 0.035;
-  } else {
-    nh = await drawRed(ctx, title, W / 2, H * 0.735, H * 0.085, W * 0.86);
-  }
-  const star = (o.name || '').trim().slice(0, 18);
-  ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center';
-  ctx.font = `600 ${Math.round(H * 0.017)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.008)}px`;
-  ctx.fillText(star ? `STARRING ${star.toUpperCase()}` : 'STARRING YOU', W / 2, H * 0.735 + nh + H * 0.03);
-  ctx.restore();
-  nh += H * 0.032;
-
-  // the line, in serif italic
-  if (o.line) {
-    ctx.save(); ctx.fillStyle = '#f4efe9'; ctx.textAlign = 'center';
-    ctx.font = `italic 600 ${Math.round(H * 0.026)}px "Cormorant Garamond", Georgia, serif`;
-    wrap(ctx, '“' + o.line.trim() + '”', W * 0.8).forEach((l, i) => ctx.fillText(l, W / 2, H * 0.735 + nh + H * 0.045 + i * H * 0.033));
-    ctx.restore();
-  }
-
-  // credit strip
-  ctx.save(); ctx.textAlign = 'center'; ctx.fillStyle = '#ff4a4f';
-  ctx.font = `600 ${Math.round(H * 0.012)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.006)}px`;
-  // owner 22 Oct 2026: no original film name at the bottom; the King Name is the only title
-  ctx.fillStyle = '#b8aca4'; ctx.letterSpacing = `${Math.round(W * 0.003)}px`;
-  ctx.fillText(`PICTURE ABHI BAAKI HAI  ·  ${o.date || ''}  ·  AGARMAINKINGHOTA.COM`, W / 2, H * 0.962);
+  ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.font = `600 ${Math.round(H * 0.016)}px Archivo, Arial, sans-serif`;
+  ctx.textAlign = 'center'; ctx.letterSpacing = `${Math.round(W * 0.003)}px`;
+  ctx.fillText(SITE_MARK, W / 2, H * 0.115);
   ctx.restore();
 
   if (!o.preview) {                                    // AI label on every finished poster (IT Rules, Feb 2026)
@@ -191,40 +110,21 @@ export async function tagJpeg(blob) {
   } catch (e) { return blob; }
 }
 
-// Photo Poster frame: the poster as it is, its KING logo in the original title's place (logo and art share one framing)
+// Photo Poster frame: the poster as it is, with only the crown + site address on top
 async function renderLogoPoster(ctx, W, H, o) {
-  const [, by0, , by1] = o.logoBox;
   let g = ctx.createLinearGradient(0, 0, 0, H * 0.15);            // light band for the header
   g.addColorStop(0, 'rgba(7,5,5,.72)'); g.addColorStop(1, 'rgba(7,5,5,0)');
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.15);
 
-  if (by0 > 0.13) {                                                 // header, unless the logo itself is up there
-    const crown = await loadImage(ASSET + 'crown.png');
-    const ch = H * 0.05, cw = crown.width * ch / crown.height;
-    ctx.drawImage(crown, W / 2 - cw / 2, H * 0.018, cw, ch);
-    ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.font = `600 ${Math.round(H * 0.012)}px Archivo, Arial, sans-serif`;
-    ctx.textAlign = 'center'; ctx.letterSpacing = `${Math.round(W * 0.012)}px`;
-    ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = H * 0.006;
-    ctx.fillText('AGAR MAIN KING HOTA', W / 2, H * 0.085);
-    ctx.restore();
-  }
-
-  const [lx, ly] = o.logoShift || [0, 0];                          // a style may nudge the logo off a face
-  cover(ctx, o.logo, lx * W, ly * H, W, H);
-
-  // STARRING under the logo, or above it when the logo reaches the bottom
-  const below = by1 * H + H * 0.035 < H * 0.915;
-  const sy = below ? by1 * H + H * 0.03 : by0 * H - H * 0.015;
-  const star = (o.name || '').trim().slice(0, 18);
-  ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.textAlign = 'center';
-  ctx.font = `700 ${Math.round(H * 0.016)}px Archivo, Arial, sans-serif`; ctx.letterSpacing = `${Math.round(W * 0.008)}px`;
-  ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = H * 0.008;
-  ctx.fillText(star ? `STARRING ${star.toUpperCase()}` : 'STARRING YOU', W / 2, sy);
-  if (o.line) {
-    ctx.font = `italic 600 ${Math.round(H * 0.022)}px "Cormorant Garamond", Georgia, serif`; ctx.letterSpacing = '0px';
-    const lines = wrap(ctx, '“' + o.line.trim() + '”', W * 0.8);
-    lines.forEach((l, i) => ctx.fillText(l, W / 2, below ? sy + H * 0.035 + i * H * 0.028 : sy - H * 0.03 - (lines.length - 1 - i) * H * 0.028));
-  }
+  // header: the crown + the site address. No KING logo, no STARRING, no line (owner, 26 Oct 2026:
+  // 'Just the crown and www.AgarMainKingHota.com')
+  const crown = await loadImage(ASSET + 'crown.png');
+  const ch = H * 0.05, cw = crown.width * ch / crown.height;
+  ctx.drawImage(crown, W / 2 - cw / 2, H * 0.018, cw, ch);
+  ctx.save(); ctx.fillStyle = '#f1e9df'; ctx.font = `600 ${Math.round(H * 0.0145)}px Archivo, Arial, sans-serif`;
+  ctx.textAlign = 'center'; ctx.letterSpacing = `${Math.round(W * 0.003)}px`;
+  ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = H * 0.006;
+  ctx.fillText(SITE_MARK, W / 2, H * 0.087);
   ctx.restore();
 
   // no credit strip on Photo Poster (owner, 26 Oct 2026: too small to read)
