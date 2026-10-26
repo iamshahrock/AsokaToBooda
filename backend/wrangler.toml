@@ -39,3 +39,8 @@ simple = { limit = 40, period = 60 }
 PER_VISITOR_DAILY_LIMIT = "5"
 SITE_DAILY_LIMIT = "100"
 MAX_UPLOAD_MB = "25"
+
+# KING Buzz: read the YouTube view counts every evening at 20:15 IST (14:45 UTC), before the
+# 21:07 IST daily record. Needs the YOUTUBE_API_KEY secret (set by the owner in Cloudflare).
+[triggers]
+crons = ["45 14 * * *"]

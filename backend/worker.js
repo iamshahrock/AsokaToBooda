@@ -44,6 +44,9 @@ async function visitorKey(ip, day) {
 }
 
 export default {
+  // Nightly KING Buzz reading (cron in wrangler.toml)
+  async scheduled(event, env, ctx) { ctx.waitUntil(readYouTube(env)); },
+
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
     const cors = {
@@ -69,6 +72,7 @@ export default {
     if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
     if (path === "/amfh/login" || path === "/amfh/me") return amfh(request, env, reply, origin, path);
     if (path === "/admin/login" || path === "/admin/stats") return adminStats(request, env, reply, origin, path);
+    if (path === "/buzz/youtube") return buzzYouTube(env, reply);
     if (request.method !== "POST") return reply(405, { error: "Use POST to generate a poster." });
     if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized to use the poster service." });
     if (!env.OPENAI_API_KEY) return reply(503, { error: "The poster service is not configured yet. Add the OPENAI_API_KEY secret in Cloudflare." });
@@ -399,6 +403,41 @@ async function aiSubmit(request, env, reply, origin) {
   const r = await env.DB.prepare("INSERT OR IGNORE INTO ai_submissions(url, platform, handle, note, device, ts, status) VALUES(?1, ?2, ?3, ?4, ?5, ?6, 'pending')").bind(url, plat[0], handle, note, okDevice(body.device) ? body.device : "", Date.now()).run();
   if (r.meta && r.meta.changes) await bump(env, istDay(), "ai_submission");
   return reply(200, { ok: true, duplicate: !(r.meta && r.meta.changes), platform: plat[0] });
+}
+
+// ---------------- KING Buzz: nightly YouTube view counts (owner, 26 Oct 2026) ----------------
+// The cron reads the public view counts of the tracked videos with the YouTube Data API (secret
+// YOUTUBE_API_KEY, set by the owner in Cloudflare) and keeps one row per video per IST day in D1.
+// GET /buzz/youtube returns the latest reading (and reads once if today's is missing); a GitHub
+// Action copies it into data/buzz/youtube.json before the 21:07 IST daily record.
+const YT_VIDEOS = { king_title_reveal_views: "Uu2QK9Z9X5E", king_date_announcement_views: "M3mfut2RdHk", doomsday_official_trailer_views: "irVNGjRFZGk" };
+async function ytTable(env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS yt_views(video_id TEXT, day TEXT, views INTEGER, ts INTEGER, PRIMARY KEY(video_id, day))").run();
+}
+async function readYouTube(env) {
+  if (!env.DB || !env.YOUTUBE_API_KEY) return { ok: false, error: "Add the YOUTUBE_API_KEY secret in Cloudflare." };
+  const r = await fetch("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + Object.values(YT_VIDEOS).join(",") + "&key=" + env.YOUTUBE_API_KEY);
+  if (!r.ok) return { ok: false, error: "YouTube Data API answered " + r.status };
+  const j = await r.json(), day = istDay(), ts = Date.now();
+  await ytTable(env);
+  for (const it of j.items || []) {
+    await env.DB.prepare("INSERT INTO yt_views(video_id, day, views, ts) VALUES(?1, ?2, ?3, ?4) ON CONFLICT(video_id, day) DO UPDATE SET views=?3, ts=?4")
+      .bind(it.id, day, Number(it.statistics.viewCount), ts).run();
+  }
+  return { ok: true, day, videos: (j.items || []).length };
+}
+async function buzzYouTube(env, reply) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  await ytTable(env);
+  const latest = await env.DB.prepare("SELECT MAX(day) AS d FROM yt_views").first();
+  let note = "";
+  if (!latest || latest.d !== istDay()) { const r = await readYouTube(env); if (!r.ok) note = r.error; }
+  const videos = {};
+  for (const [series, id] of Object.entries(YT_VIDEOS)) {
+    const row = await env.DB.prepare("SELECT day, views, ts FROM yt_views WHERE video_id=?1 ORDER BY day DESC LIMIT 1").bind(id).first();
+    videos[series] = { video_id: id, url: "https://www.youtube.com/watch?v=" + id, views: row ? row.views : null, day: row ? row.day : null, read_at: row ? new Date(row.ts).toISOString() : null };
+  }
+  return reply(200, { source: "YouTube Data API v3, videos.statistics.viewCount, read by the Worker", note, videos }, { "Cache-Control": "no-store" });
 }
 
 // ---------------- MERCH: bulk order requests (POST only; read by the owner in D1) ----------------

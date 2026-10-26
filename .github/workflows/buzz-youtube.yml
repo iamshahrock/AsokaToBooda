@@ -1,0 +1,47 @@
+name: KING Buzz YouTube counts
+
+# Copies the Worker's nightly YouTube reading (GET /buzz/youtube) into data/buzz/youtube.json
+# at 20:30 IST, so the 21:07 IST KING Buzz daily record can use it without opening YouTube.
+# The YouTube API key lives only in Cloudflare (Worker secret YOUTUBE_API_KEY).
+
+on:
+  schedule:
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: buzz-youtube
+  cancel-in-progress: false
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Read the Worker
+        shell: bash
+        run: |
+          mkdir -p data/buzz
+          curl -fsS https://asokatobooda.iamshahrock.workers.dev/buzz/youtube -o /tmp/yt.json
+          python3 - <<'EOF'
+          import json
+          j = json.load(open('/tmp/yt.json'))
+          if not any(v.get('views') for v in j.get('videos', {}).values()):
+              raise SystemExit('No YouTube counts yet: ' + (j.get('note') or 'unknown'))
+          json.dump(j, open('data/buzz/youtube.json', 'w'), indent=1)
+          print(json.dumps(j, indent=1))
+          EOF
+
+      - name: Commit
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/buzz/youtube.json
+          git diff --cached --quiet && { echo "No change"; exit 0; }
+          git commit -m "KING Buzz: YouTube counts $(TZ=Asia/Kolkata date +%F)"
+          git push
