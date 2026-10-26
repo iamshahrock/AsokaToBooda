@@ -406,7 +406,7 @@ let KINGNAMES = {};
 const normT = t => String(t).toLowerCase().replace(/[^a-z0-9]/g, '');
 function kingName(p) { if (p.king) return 'KING'; const k = KINGNAMES[normT(p.title)] || KINGNAMES[normT(p.title).replace('barber', '')]; return k ? k.replace('{FAN}', ($('name') && $('name').value.trim()) || 'You') : ''; }
 fetch('../data/king-titles.json').then(r => r.json()).then(d => { d.films.forEach(f => { KINGNAMES[normT(f.title)] = f.king; }); drawGrid(); }).catch(() => {});
-const KSTYLES = [['photo', 'Photo Poster'], ['pop', 'ijoo Pop'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime']];   // 2D Cartoon dropped (owner, 26 Oct 2026: Anime is the 2D version)
+const KSTYLES = [['photo', 'Photo Poster'], ['lego', 'LEGO'], ['3d', '3D Anim'], ['funko', 'Funko Pop'], ['chibi', 'Chibi Pop'], ['anime', 'Anime']];   // 2D Cartoon dropped (owner, 26 Oct 2026: Anime is the 2D version); ijoo Pop replaced by LEGO (owner, 26 Oct 2026: 'nobody knows ijoo', kept for merch)
 state.kstyle = 'photo';
 function drawKStyles() {
   $('kstyles').replaceChildren(...KSTYLES.map(([id, name]) => {
