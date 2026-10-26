@@ -1,0 +1,9 @@
+{
+  "about": "KING FEVER fan versions of the anthem INQUILAAB KING KE SAATH. Fans submit a link through /ai-submit (note starts '#fever'); a version appears here only after review. Fields: sub_id (ai_submissions id), url, platform (youtube|instagram|x|facebook), handle, city, title, approved (YYYY-MM-DD). 'official' holds the owner's own versions shown above the lyrics (url empty = Coming soon).",
+  "updated": "2026-10-26",
+  "official": [
+    { "title": "Official version 01", "url": "" },
+    { "title": "Official version 02", "url": "" }
+  ],
+  "versions": []
+}
