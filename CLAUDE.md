@@ -127,6 +127,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - faces.json: Chibi boxes snapped to Apple Vision where it found Funko faces (Vision misses most: no mouth), hand-placed on 11 posters. logo.json: Chibi's 5 nudges plus 020 (up 0.13) and 053 (down 0.17). styles/king/funko.jpg = Funko 118 + KING logo. 'funko' added to LOGO_STYLES.
 - 15 films had two Funko versions; owner may swap any: 018 023 025 032 034 036 037 041 044 046 050 051 052 062 066, plus 118.
 
+## LEGO style (owner, 26 Oct 2026)
+- Replaced ijoo Pop on the studio card (ijoo kept for merch). 116 LEGO posters in assets/posters/styles/lego/<id>.jpg (all but 105 The Lion King, 116 Mufasa), from the owner's Flow sets Desktop/KING_MOVIE/00000_POSTERS_FINAL/Lego_01..04 converted from the Chibi posters. Where a film had several renders, the one closest to the Chibi layout was used. KKHH (041) = the owner's first finalised render (jacket off the shoulder; kept as Lego_02/Lego_KKHH_041_from_chat.webp), white background extended to 9:16. Army (032) kept as is although its big face is closer to Chibi.
+- faces.json: Chibi boxes snapped to Apple Vision where found; 6 placed by eye; all 116 checked. logo.json = Chibi's nudges. KING card styles/king/lego.jpg; 'lego' is in LOGO_STYLES.
+
 ## Poster style editions (18 Oct 2026)
 - The owner is rendering all 83 posters as style editions (3D Pop, Anime, 2-3 more coming). Files go in assets/posters/styles/<style>/<id>.jpg plus thumb/<id>.webp; switch a style on with "ready": true in assets/posters/styles/styles.json.
 - Studio step 01 has a Poster style row. With a style chosen, the grid shows that edition and its poster is the AI reference: sharp, not blurred, but every face box from faces.json is masked first (#FreeMyFace). Without the file it falls back to the blurred original. The style also sets the matching look.
