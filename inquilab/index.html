@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>INQUILAAB — The Fan Revolt Against Face Theft · #FreeMyFace</title>
-<meta name="description" content="INQUILAAB: the fan revolt against face theft. Millions of fans are making Shah Rukh Khan with AI. No consent rules, no credit, no share. Inquilaab King ke saath? #FreeMyFace">
+<title>INQUILAAB — Fans Revolt Against Celeb Persona Theft by Big Tech · #FreeMyFace #FreeMyVoice #FreeMyName</title>
+<meta name="description" content="INQUILAAB: fans revolt against celeb persona theft by Big Tech. Millions of fans are making Shah Rukh Khan with AI. No consent rules, no credit, no share. Inquilaab King ke saath? #FreeMyFace">
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/inquilab/">
-<meta property="og:title" content="INQUILAAB — The Fan Revolt Against Face Theft">
+<meta property="og:title" content="INQUILAAB — Fans Revolt Against Celeb Persona Theft by Big Tech">
 <meta property="og:description" content="Inquilaab King ke saath? Aao aao leke apna haath. #FreeMyFace">
 <meta property="og:image" content="https://agarmainkinghota.com/assets/lairs/cover.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -90,9 +90,9 @@
   <div class="copy">
     <p class="eyebrow">08 · The fan revolt</p>
     <h1 id="h1">INQUILAAB</h1>
-    <p class="sub">The fan revolt against face theft</p>
+    <p class="sub">Fans revolt against celeb persona theft by Big Tech</p>
     <p class="couplet">Inquilaab King ke saath?<br>Aao aao leke apna haath.</p>
-    <span class="tag">#FreeMyFace</span>
+    <span class="tag">#FreeMyFace #FreeMyVoice #FreeMyName</span>
   </div>
   <div class="art"><img src="../assets/lairs/cover.webp" alt="A silhouetted King holding the King of Hearts over a red city" width="800" height="1200"></div>
 </section>
@@ -246,7 +246,7 @@
   $('shareCard').onclick = function () {
     card();
     $('card').toBlob(function (blob) {
-      var file = new File([blob], 'inquilab-free-the-face.jpg', { type: 'image/jpeg' }), text = 'Inquilaab King ke saath! Aao aao leke apna haath. Join the fan revolt against face theft: https://agarmainkinghota.com/inquilab/ #FreeMyFace #Inquilaab #KING';
+      var file = new File([blob], 'inquilab-free-the-face.jpg', { type: 'image/jpeg' }), text = 'Inquilaab King ke saath! Aao aao leke apna haath. Join the fans revolt against celeb persona theft by Big Tech: https://agarmainkinghota.com/inquilab/ #FreeMyFace #Inquilaab #KING';
       if (navigator.canShare && navigator.canShare({ files: [file] })) navigator.share({ files: [file], text: text }).then(function () { if (window.STARKS) STARKS.earn('share', 50, 'Shared the Inquilaab card'); }).catch(function () {});
       else { var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click(); $('j-msg').textContent = 'Card downloaded. Post it with #FreeMyFace.'; }
     }, 'image/jpeg', 0.92);
