@@ -117,6 +117,11 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - assets/posters/styles/anime/<id>.jpg = the owner's Flow anime set (SRK_AnimePoster_NoLogo_*), 1080x1920; faces.json re-detected; logo.json = KING logo nudges where Flow moved a face into the title spot (only 103 so far). Same 9:16 frame and KING logo as Photo Poster (LOGO_STYLES in create/index.html); the left preview shows the anime art WITH its KING logo (owner: never show a poster without a logo). styles/king/anime.jpg = the KING card sample.
 - Next style sets follow the same path: tools in the session (stylebuild.py images/logos), add the style id to LOGO_STYLES.
 
+## Funko Pop style (owner, 26 Oct 2026)
+- 116 Funko posters in assets/posters/styles/funko/<id>.jpg (1080x1920), all films except 105 The Lion King and 116 Mufasa (owner redoes those by hand last; until then those two fall back to the original poster in Funko). Source: the owner's Flow renders in Desktop/KING_MOVIE/00000_POSTERS_FINAL/Funko and Funko_02, converted from the Chibi posters; matched to films by image similarity + checked by eye. Where a film had two renders, the one closest to the Chibi layout was used. 041 KKHH render was 896x1200: white background extended top and bottom, not cropped.
+- faces.json: Chibi boxes snapped to Apple Vision where it found Funko faces (Vision misses most: no mouth), hand-placed on 11 posters. logo.json: Chibi's 5 nudges plus 020 (up 0.13) and 053 (down 0.17). styles/king/funko.jpg = Funko 118 + KING logo. 'funko' added to LOGO_STYLES.
+- 15 films had two Funko versions; owner may swap any: 018 023 025 032 034 036 037 041 044 046 050 051 052 062 066, plus 118.
+
 ## Poster style editions (18 Oct 2026)
 - The owner is rendering all 83 posters as style editions (3D Pop, Anime, 2-3 more coming). Files go in assets/posters/styles/<style>/<id>.jpg plus thumb/<id>.webp; switch a style on with "ready": true in assets/posters/styles/styles.json.
 - Studio step 01 has a Poster style row. With a style chosen, the grid shows that edition and its poster is the AI reference: sharp, not blurred, but every face box from faces.json is masked first (#FreeMyFace). Without the file it falls back to the blurred original. The style also sets the matching look.
