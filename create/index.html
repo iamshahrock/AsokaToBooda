@@ -506,7 +506,6 @@ function drawGrid() {
     const i = document.createElement('i'); i.textContent = [p.year + (p.kind === 'tv' ? ' · TV' : ''), p.character].filter(Boolean).join(' · ');
     const kn = document.createElement('em'); kn.className = 'kn'; kn.textContent = kingName(p);
     s.append(t, kn, i); b.append(im, s);
-    if (p.king) { const tag = document.createElement('em'); tag.className = 'tag'; tag.textContent = 'The 81st'; b.append(tag); }
     b.addEventListener('click', () => chooseFilm(p));
     return b;
   }));

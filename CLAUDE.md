@@ -74,6 +74,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Fan versions use the existing /ai-submit queue (YouTube, Instagram, X, Facebook links) with a note starting '#fever'; +50 STARKS on submit (clipsubmit rule). A version shows only after review: add it to data/king-fever.json 'versions'. The owner's own two versions go in 'official' (url empty = Coming soon). No approved-version STARKS bonus yet (the /lairs/claim payout reads lairs-cinema.json only).
 - Inquilaab's chant block links to /king-fever/ ('The full anthem · make your version').
 
+## Original title logos centred (owner, 26 Oct 2026)
+- Owner: 'The logos on the poster have to be aligned properly. Example FAN the original is supposed to be in the center.' The og-logo overlays (assets/posters/og-logo/<id>.webp, shown in the Original slot) are now centred horizontally on the KING logo's slot (king-logo/boxes.json) for the 13 films that were more than 3% off: 003 022 025 039 040 050 055 064 076 079 096 111 112. Vertical positions were left alone (some boxes differ by up to 30% of the height; check by eye before moving those).
+- The 'The 81st' tag on the KING thumbnail was removed (left over from the 80-film set).
+
 ## Poster lettering (owner, 26 Oct 2026)
 - 'Just the crown and www.AgarMainKingHota.com': every poster (preview and final, both layouts in assets/studio/compose.js) carries only the crown and the site address on top. No King Name title, no film KING logo, no STARRING, no dialogue line, no credit strip. The AI-MADE FAN POSTER label stays (IT Rules). Step 05 Your line (name + dialogue) is hidden in create/index.html; the name still names the downloaded file if filled (it falls back to 'my').
 - Step 04 The look is hidden too (owner, 26 Oct 2026: redundant, the 6 poster styles are the looks). Picking a style still sets state.look behind the scenes for the KING generative prompt.
