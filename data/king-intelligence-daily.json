@@ -1040,6 +1040,106 @@
         "Display Purposes #srk (2,933,427) and #srkking (32,455) show the same counts as 06 Oct and 18 Oct although the page says 'Last updated: 2026-10-26'; treat them as a frozen third-party index, not as flat buzz.",
         "Posts are not people."
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "record_id": "KING-2026-10-27",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": 49520481,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-10-27 IST in the owner's desktop app browser",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": 32541771,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-10-27 IST in the owner's desktop app browser",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": 82329201,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-10-27 IST in the owner's desktop app browser",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": null,
+          "unit": "indexed posts",
+          "source": "Not read 2026-10-27: Display Purposes counts have been frozen since 06 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": null,
+          "unit": "indexed #srkking posts",
+          "source": "Not read 2026-10-27: Display Purposes counts frozen since 18 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 40,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json, 2026-10-27",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 2883120,
+          "unit": "views",
+          "source": "data/ai-creator-log.json, 2026-10-27",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": null,
+          "unit": "followers",
+          "source": "Not read 2026-10-27",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 27 Oct total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "NEW KING POSTER: Shah Rukh Khan shared a new KING poster on Instagram (@iamsrk): a rose between his lips, a gun in hand, release date 24 Dec 2026, caption 'Qaatil nahi… Aashiq hoon' #KING. Reported by Social News XYZ, 26 Oct 2026 (https://www.socialnews.xyz/2026/10/26/shah-rukh-khan-says-qaatil-nahi-aashiq-hoon-as-he-unveils-new-king-poster/) and Awaz The Voice (https://www.awazthevoice.in/entertainment-news/shah-rukh-khan-unveils-fiery-new-poster-of-king-69906.html). The campaign enters its last mile: 58 days to release.",
+        "KING teaser set for 2 Nov (SRK's birthday) per a Bollywood Hungama report; no statement from the makers; release 24 Dec 2026: WION, 13 Oct 2026 (https://www.wionews.com/entertainment/bollywood/shah-rukh-khan-birthday-special-king-teaser-coming-on-november-2-ahead-of-christmas-release-1791888103856) [Unverified]",
+        "Same teaser-date report carried by The Daily Star, 14 Oct 2026, attributed to Bollywood Hungama's unnamed source (https://www.thedailystar.net/culture/tv-film/news/king-teaser-drop-shah-rukh-khans-birthday-4298426) [Unverified]",
+        "Teaser 2 Nov and a promo reportedly to play with Ranbir Kapoor's Ramayana, citing unnamed 'latest reports': Deccan Chronicle, 17 Oct 2026 (https://www.deccanchronicle.com/entertainment/bollywood/shah-rukh-khans-king-to-release-teaser-on-november-2-1996621) [Unverified]"
+      ],
+      "notes": [
+        "Read in an attended session on 2026-10-27 (the Worker's nightly YouTube reading is not running yet: the YOUTUBE_API_KEY secret is not visible to the Worker).",
+        "Since 26 Oct: KING title reveal +27,105 (49,493,376 -> 49,520,481); KING date announcement +7,955 (32,533,816 -> 32,541,771); Avengers: Doomsday trailer +128,618 (82,200,583 -> 82,329,201).",
+        "The new poster has no public view counter of its own (Instagram post); its likes/comments were not read.",
+        "Display Purposes not read: its counts are frozen. Posts are not people."
+      ]
     }
   ],
   "source_rules": {
