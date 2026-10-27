@@ -2,445 +2,207 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agar Main King Hota — the fan campaign for KING</title>
-<meta name="description" content="Step into Shah Rukh Khan's films, make your own KING poster, play the 60-second Royal Challenge and follow KING to 24 December 2026.">
+<meta name="description" content="Be the KING of every SRK film: your face in 6 styles across 118 films, fan games, the daily KING Buzz and the fan anthem, counting down to KING on 24 December 2026.">
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/">
 <meta property="og:url" content="https://agarmainkinghota.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Agar Main King Hota — the fan campaign for KING">
-<meta property="og:description" content="Pick one of his 80 films, wear the crown, make a poster nobody else has.">
+<meta property="og:description" content="Pick any of 118 SRK films, choose one of 6 styles, add your face and step into his poster as the King.">
 <meta property="og:image" content="https://agarmainkinghota.com/assets/home/social-card.jpg">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
-<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" href="assets/home/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/v2.css">
 <style>
-.hero{position:relative;overflow:hidden;margin-top:18px;border:1px solid var(--line);display:grid;background:radial-gradient(110% 90% at 78% 45%,#3a0a0c 0%,#170607 45%,#0a0707 75%);touch-action:pan-y}
-.hero .mark{position:absolute;right:3%;top:5%;width:56%;height:auto;opacity:.08;pointer-events:none;z-index:0}
-.slide{grid-area:1/1;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,56%) minmax(0,44%);align-items:center;min-height:560px;opacity:0;visibility:hidden;transition:opacity .55s ease,visibility .55s}
-.slide.on{opacity:1;visibility:visible}
-.slide .copy{position:relative;z-index:2;padding:48px 0 84px 7%;display:flex;flex-direction:column;gap:18px}
-.slide .wm{display:flex;flex-direction:column;gap:12px;margin:0}
-.slide .wm img{width:min(520px,100%);height:auto}
-.slide .wm img+img{width:min(490px,94%)}
-.slide .tag{margin:0;font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(22px,2.3vw,32px);line-height:1.2}
-.slide .big{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(48px,5.6vw,86px);line-height:.94;text-transform:uppercase}
-.slide .big em{font-style:normal;color:var(--red-hi)}
-.slide .days{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
-.slide .days b{font-family:var(--display);font-weight:400;font-size:clamp(88px,10vw,150px);line-height:.85;color:var(--red-hi)}
-.slide .days span{font-family:var(--display);font-size:clamp(26px,2.6vw,38px);line-height:1;text-transform:uppercase}
-.slide .lede{margin:0;max-width:470px;font-size:16px;line-height:1.6;color:#c9bdb5}
-.slide .ctas{display:flex;flex-wrap:wrap;gap:12px}
-.slide .art{align-self:end;justify-self:center;display:block;width:auto;height:auto;max-width:100%;max-height:520px;object-fit:contain}
-.slide .art.wide{align-self:center;max-height:none;width:100%}
-.slide .art.crown{align-self:center;max-height:380px}
-.hctl{position:absolute;z-index:3;left:0;right:0;bottom:12px;display:flex;align-items:center;justify-content:center;gap:10px;pointer-events:none}
-.hctl>*{pointer-events:auto}
-.arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(244,239,233,.45);background:rgba(10,7,7,.6);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
-.arrow:hover,.arrow:focus-visible{border-color:var(--red-text);background:var(--red);color:#fff}
-.dots{display:flex;gap:0}
-.dot{width:34px;height:44px;border:0;background:transparent;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
-.dot i{display:block;width:10px;height:6px;border-radius:3px;background:rgba(244,239,233,.45);transition:width .25s,background .25s}
-.dot:hover i{background:var(--red-text)}
-.dot[aria-current="true"] i{width:28px;background:var(--red-hi)}
-.d2k{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:stretch;margin:18px 0 0;border:1px solid var(--line);text-decoration:none;color:var(--ink);overflow:hidden}
-.d2k:hover{border-color:var(--red-hi)}
-.d2k-r,.d2k-b{display:flex;flex-direction:column;justify-content:center;padding:14px 22px;font-family:var(--display);font-size:clamp(30px,4vw,52px);line-height:1}
-.d2k-r{background:linear-gradient(135deg,#5a0a0e,#1a0607);color:#ff4a4f}
-.d2k-b{background:linear-gradient(225deg,#0a2a5a,#06101f);color:#7fb0ff;text-align:right}
-.d2k small{font-family:var(--body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d8cfc8;margin-top:6px}
-.d2k-mid{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:14px 20px;background:#0d0909}
-.d2k-mid em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
-.d2k-mid b{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,40px);line-height:1;text-transform:uppercase}
-.d2k-mid b i{font-style:normal;color:var(--faint)}
-.d2k-mid small{margin:0;letter-spacing:0;text-transform:none;font-size:14px;color:var(--mute);line-height:1.4}
-@media (max-width:560px){.d2k{grid-template-columns:1fr 1fr}.d2k-mid{grid-column:1/-1;grid-row:1}.d2k-r,.d2k-b{font-size:30px;padding:12px 16px}}
-.cine-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,260px);gap:10px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity;scrollbar-color:var(--red) #1a1010}
-.cine-card{position:relative;display:block;scroll-snap-align:start;background:#0d0909;border:1px solid var(--line);color:var(--ink);text-decoration:none}
-.cine-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-.cine-card b{display:block;padding:8px 10px 2px;font-size:14px;line-height:1.3}
-.cine-card small{display:block;padding:0 10px 10px;color:var(--faint);font-size:12px}
-.cine-card i{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px}
-.cine-card:hover{border-color:var(--red-hi)}
-.cine-card.play::after{content:"\25B6";position:absolute;top:calc(28% - 4px);left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(195,18,26,.9);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
-.d2k-banner{grid-column:1/-1;position:relative;display:grid;grid-template-columns:1fr minmax(0,1.3fr) 1fr;min-height:230px;border:1px solid var(--line);overflow:hidden;text-decoration:none;color:var(--ink);background:#0a0707}
-.d2k-banner:hover{border-color:var(--red-hi)}
-.d2k-banner .bn-side{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 22px;overflow:hidden}
-.d2k-banner .bn-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
-.d2k-banner .bn-doom img{object-position:50% 40%}.d2k-banner .bn-king img{object-position:50% 25%}
-.d2k-banner .bn-doom::after,.d2k-banner .bn-king::after{content:"";position:absolute;inset:0}
-.d2k-banner .bn-doom::after{background:linear-gradient(135deg,rgba(90,10,14,.85),rgba(26,6,7,.55))}
-.d2k-banner .bn-king::after{background:linear-gradient(225deg,rgba(10,42,90,.85),rgba(6,16,31,.55))}
-.d2k-banner .bn-side b,.d2k-banner .bn-side small{position:relative;z-index:1}
-.d2k-banner .bn-side b{font-family:var(--display);font-weight:400;font-size:clamp(46px,5.4vw,84px);line-height:.9}
-.d2k-banner .bn-doom b{color:#ff4a4f}.d2k-banner .bn-king{text-align:right;align-items:flex-end}.d2k-banner .bn-king b{color:#7fb0ff}
-.d2k-banner .bn-side small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e6dcd4;margin-top:6px}
-.d2k-banner .bn-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px 16px;background:radial-gradient(80% 90% at 50% 50%,#1c0f10,#0a0707)}
-.d2k-banner .bn-mid em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
-.d2k-banner .bn-mid strong{font-family:var(--display);font-weight:400;font-size:clamp(36px,4.2vw,64px);line-height:1;text-transform:uppercase}
-.d2k-banner .bn-mid strong i{font-style:normal;color:var(--faint)}
-.d2k-banner .bn-mid>span{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,28px)}
-.d2k-banner .bn-mid u{text-decoration:none;font-size:13px;color:var(--mute);margin-top:4px}
-@media (max-width:1080px) and (min-width:561px){.d2k-banner{order:1}.v2 .doors .door[href="king-intelligence/"],.v2 .doors .door[href="asoka-to-booda/"]{order:2}}
-@media (max-width:560px){.d2k-banner{grid-template-columns:1fr 1fr;min-height:0}.d2k-banner .bn-mid{grid-column:1/-1;grid-row:1}.d2k-banner .bn-side{min-height:130px}.d2k-banner .bn-side b{font-size:44px}}
-.iq-banner{grid-column:1/-1;order:9;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:20px;padding:26px clamp(18px,3vw,40px);border:1px solid var(--red);background:radial-gradient(70% 120% at 0% 50%,#3a0a0e,#0a0707 70%);text-decoration:none;color:var(--ink)}
-.iq-banner:hover{border-color:var(--red-hi)}
-.iq-banner em{display:block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-text)}
-.iq-banner strong{display:block;font-family:var(--display);font-weight:400;font-size:clamp(56px,7vw,110px);line-height:.85;color:var(--red-hi)}
-.iq-l>span{display:block;font-family:var(--display);font-size:clamp(18px,2vw,26px);text-transform:uppercase;margin-top:6px}
-.iq-r{text-align:right}
-.iq-r i{display:block;font-family:var(--serif);font-size:clamp(26px,3vw,42px);line-height:1.15}
-.iq-r u{display:block;text-decoration:none;font-size:14px;color:var(--mute);margin-top:8px}
-@media (max-width:700px){.iq-banner{grid-template-columns:minmax(0,1fr)}.iq-r{text-align:left}}
-.how{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}
-.how li{background:var(--panel);padding:18px 18px 20px;border-top:3px solid var(--line)}
-.how li:first-child{border-top-color:var(--red)}
-.how b{display:block;font-family:var(--display);font-weight:400;font-size:24px;text-transform:uppercase;margin-bottom:4px}
-.how span{font-size:14px;color:var(--mute);line-height:1.45}
-@media (max-width:900px){
-  .slide{min-height:470px;grid-template-columns:minmax(0,58%) minmax(0,42%)}
-  .slide .copy{padding:26px 6px 70px 22px;gap:14px}
-  .slide .art{max-height:400px}
-  .how{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:560px){
-  .slide{min-height:430px;grid-template-columns:minmax(0,60%) minmax(0,40%)}
-  .slide .copy{padding:20px 4px 64px 16px;gap:11px}
-  .slide .eyebrow{font-size:10px;letter-spacing:.14em}
-  .slide .wm{gap:7px}
-  .slide .tag{font-size:18px}
-  .slide .big{font-size:34px}
-  .slide .days b{font-size:72px}.slide .days span{font-size:20px}
-  .slide .lede{font-size:13px;line-height:1.5}
-  .slide .ctas .btn{min-height:40px;padding:0 12px;font-size:14px}
-  .slide .ctas .btn-line{display:none}
-  .slide .art{max-height:330px;margin-right:4px}
-  .slide .art.crown{max-height:190px}
-  .slide .art.wide{width:100%;height:300px;max-height:none;object-fit:cover;object-position:0 50%;align-self:center}
-  .hctl{bottom:8px;gap:4px}
-  .arrow{width:38px;height:38px}
-  .dot{width:26px}
-}
-@media (prefers-reduced-motion:reduce){.slide{transition:none}}
-.grp-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-.grp-head:first-of-type{margin-top:0}
-.grp-head span{font-size:13px;color:var(--mute)}
-.v2 .doors.g4{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.v2 .doors.g2{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.v2 .door .pic.cover{padding:0;min-height:170px;position:relative;overflow:hidden}
-.v2 .door .pic.cover img{position:absolute;inset:0;width:100%;height:100%;max-height:none;max-width:none;object-fit:cover;opacity:.85}
-.v2 .door.wide .pic{min-height:150px}
-.v2 .door .pic.eq{gap:6px;align-items:flex-end;padding:0 18px 18px}
-.v2 .door .pic.eq i{width:12px;background:linear-gradient(#ff4a4f,#7a0d12);border-radius:2px;animation:eqb 1.2s ease-in-out infinite alternate}
-.v2 .door .pic.eq i:nth-child(3n){animation-duration:.9s}.v2 .door .pic.eq i:nth-child(4n+1){animation-duration:1.5s}.v2 .door .pic.eq i:nth-child(5n+2){animation-duration:.7s}
-@keyframes eqb{from{height:18px}to{height:110px}}
-@media (prefers-reduced-motion:reduce){.v2 .door .pic.eq i{animation:none;height:60px}}
-@media (max-width:1080px){.v2 .doors.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.v2 .doors.g4,.v2 .doors.g2{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.v2 .door h3{font-size:19px}.v2 .door p{font-size:13px}.v2 .door .pic{min-height:110px}.v2 .door .pic img{max-height:130px}.v2 .door .foot .what{display:none}}
-</style>
-<style>
-.dkb{position:relative;display:block;width:100%;aspect-ratio:12/5;overflow:hidden;border:1px solid var(--line);background:#1a0a05;margin:18px 0 0}
-.dkb img{position:absolute;inset:0;width:100%;height:100%;display:block}
-.dkb .fx{animation:dkzap 2.6s ease-in-out infinite}
-.dkb .bg{animation:dkglow 7s ease-in-out infinite alternate}
-@keyframes dkzap{0%,100%{opacity:1;filter:brightness(1)}8%{opacity:.55}12%{opacity:1;filter:brightness(1.6)}46%{opacity:.85}50%{opacity:1;filter:brightness(1.25)}}
-@keyframes dkglow{from{filter:brightness(.96) saturate(1)}to{filter:brightness(1.06) saturate(1.08)}}
-@media (prefers-reduced-motion:reduce){.dkb .fx,.dkb .bg{animation:none}}
-a.dkb:hover{border-color:var(--red)}
-.slide.dk{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 0 56px;gap:14px;overflow:hidden}
-.slide.dk .fill{position:absolute;inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);object-fit:cover;filter:blur(22px) brightness(.45);z-index:0}
-.slide.dk .dkb{position:relative;z-index:1;margin:0;border:0;width:100%;aspect-ratio:12/5}
-.slide.dk .dkcta{position:relative;z-index:1;display:none}
-@media (min-width:1300px){.slide.dk{padding:0}}
-@media (max-width:760px){.slide.dk .dkcta{display:inline-flex}}
+/* Homepage, owner's layout (27 Oct 2026). */
+:root{--red:#c8102e;--red-hi:#ff3b45;--gold:#f2cf6b;--ink:#f4efe9;--mute:#b8aca4;--bg:#070505;--line:#2a1d1d}
+body{background:var(--bg)}
+.hp{max-width:1200px;margin:0 auto;padding:0 20px 40px}
+.pv{margin:12px 0 0;padding:8px 12px;border:1px dashed #7a6626;border-radius:6px;font-size:12px;color:#d8c48a;background:rgba(242,207,107,.05)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:start;padding:28px 0 10px}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);gap:22px}}
+.hero h1{margin:0;font:400 clamp(34px,3.6vw,52px)/1.02 Anton,Impact,sans-serif;text-transform:uppercase;color:var(--ink);max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--red-hi)}
+.hero .line{margin:12px 0 0;font:600 18px Archivo,sans-serif;color:#e8dfd8;letter-spacing:.02em}
+.styles6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:18px 0 0}
+@media (max-width:560px){.styles6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.styles6 a{display:block;text-decoration:none;color:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#120a0a}
+.styles6 a:hover{border-color:var(--red)}
+.styles6 img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.styles6 span{display:block;padding:5px 4px;font:700 10px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:center}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:18px 0 0;max-width:440px}
+.cd div{padding:10px 4px;border:1px solid var(--line);border-radius:8px;background:#110909;text-align:center}
+.cd b{display:block;font:400 34px/1 Anton,sans-serif;color:#fff}.cd div.k b{color:var(--red-hi)}
+.cd small{font:700 10px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.btn-main{display:inline-flex;align-items:center;gap:10px;margin:20px 0 0;padding:16px 24px;background:var(--red);color:#fff;font:700 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:6px;box-shadow:0 10px 30px rgba(200,16,46,.4)}
+.btn-main:hover{background:#e0142f}
+.art img{display:block;width:100%;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.buzz{display:block;margin:12px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#0d0707;text-decoration:none;color:#e8dfd8;font-size:14px;line-height:1.5}
+.buzz b{display:block;margin:0 0 2px;font:400 20px Anton,sans-serif;letter-spacing:.04em;color:var(--red-hi)}
+.buzz:hover{border-color:var(--red)}.buzz em{font-style:normal;color:var(--gold)}
+/* KING FEVER sections */
+.kf-h{margin:40px 0 0;padding:26px 0 0;border-top:1px solid var(--line);font:400 clamp(30px,3.2vw,44px)/1 Anton,sans-serif;text-transform:uppercase;color:var(--ink)}
+.blk{margin:26px 0 0}
+.blk h3{margin:0 0 4px;font:400 26px/1.05 Anton,sans-serif;text-transform:uppercase;color:#fff}
+.blk h3 a{color:inherit;text-decoration:none}.blk h3 a:hover{color:var(--red-hi)}
+.blk p{margin:0 0 12px;font-size:14px;line-height:1.5;color:var(--mute)}
+.row{display:grid;gap:12px}
+.r3{grid-template-columns:repeat(3,minmax(0,1fr))}.r2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.r3,.r2{grid-template-columns:minmax(0,1fr)}}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:760px){.pair{grid-template-columns:minmax(0,1fr)}}
+.t{position:relative;display:block;min-height:230px;border-radius:8px;overflow:hidden;background:#140a0a;border:1px solid var(--line);text-decoration:none;color:#fff}
+.t:hover{border-color:var(--red)}
+.t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;transition:transform .5s}.t:hover img{transform:scale(1.04)}
+.t::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,5,5,.92) 18%,transparent 65%)}
+.t span{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:12px 14px}
+.t b{display:block;font:400 20px/1.05 Anton,sans-serif;text-transform:uppercase}.t small{display:block;margin-top:3px;font-size:12.5px;line-height:1.4;color:#e0d6ce}
+.t.ch{background:radial-gradient(70% 70% at 50% 75%,#4a0d10 0%,#140a0a 70%)}
+.t.ch img{inset:12px 12px 64px 12px;width:calc(100% - 24px);height:calc(100% - 76px);object-fit:contain;object-position:50% 100%}
+.t.ch:hover img{transform:scale(1.04)}
+.t.ch::after{background:linear-gradient(0deg,rgba(7,5,5,.95) 0,rgba(7,5,5,.6) 60px,transparent 110px)}
+.t.dk img{object-fit:cover;object-position:50% 50%}.t.dk img.fig{object-fit:contain}
+.game{display:flex;align-items:center;gap:16px;max-width:560px;margin:16px 0 0;padding:10px 16px 10px 10px;border:1px solid var(--line);border-radius:10px;background:radial-gradient(60% 90% at 20% 70%,#4a0d10 0%,#140a0a 75%);text-decoration:none;color:#fff}
+.game:hover{border-color:var(--red)}
+.game img{width:150px;height:96px;object-fit:contain;flex-shrink:0}
+.game b{display:block;font:400 18px/1.1 Anton,sans-serif;text-transform:uppercase}.game b em{font-style:normal;color:var(--red-hi)}
+.game small{display:block;margin-top:5px;font-size:13.5px;line-height:1.45;color:#d6c8c4}
+@media (max-width:560px){.game img{width:104px;height:72px}}
+.r4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.r4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.r4{grid-template-columns:minmax(0,1fr)}}
+.t .tag{position:absolute;left:12px;top:12px;right:auto;bottom:auto;z-index:2;padding:5px 9px;border:1px solid var(--gold);border-radius:999px;background:rgba(8,5,5,.85);font:700 10px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.t.cv img{object-position:50% 50%}
+.t.fp b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t.fp small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t.soon{display:flex;align-items:center;justify-content:center;border-style:dashed;background:#0f0909}
+.t.soon::after{display:none}
+.t.soon span{position:static;text-align:center}.t.soon b{font-size:22px}.t.soon small{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
 </style>
 </head>
 <body class="v2">
 <script src="assets/header.js" data-nav="v2"></script>
-<main class="wrap">
+<main class="hp">
 
-<section class="hero" id="hero" aria-roledescription="carousel" aria-label="The sections">
-  <img class="mark" src="assets/home/king-wordmark.webp" width="1600" height="526" alt="">
-
-  <div class="slide dk on" role="group" aria-roledescription="slide" aria-label="1 of 8: DOOM to KING"><img class="fill" src="assets/dk/bg.webp" alt="" width="2400" height="1000"><a href="doom-to-king/" class="dkb" aria-label="DOOM to KING: one Christmas, two crowns. DOOM on 18 December 2026, KING on 24 December 2026."><img class="bg" src="assets/dk/bg.webp" alt="" width="2400" height="1000" fetchpriority="high"><img class="fx" src="assets/dk/beams.webp" alt="" width="2400" height="1000"><img class="fg" src="assets/dk/figures.webp" alt="" width="2400" height="1000"></a><a class="btn btn-red dkcta" href="doom-to-king/">Enter the fixture <span aria-hidden="true">→</span></a></div>
-
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 8: Make Your Poster">
-    <div class="copy">
-      <p class="eyebrow">01 · Make your poster · KING 24 Dec 2026</p>
-      <h1 class="wm"><img src="assets/home/wm-agar-main.webp" width="1912" height="220" alt="Agar Main"><img src="assets/home/wm-king-hota.webp" width="1839" height="220" alt="King Hota"></h1>
-      <p class="tag">Step into his films. Wear the crown.</p>
-      <p class="lede">Pick any of his 80 films, put yourself in the role and get a KING poster nobody else has.</p>
-      <div class="ctas"><a class="btn btn-red" href="create/">Make your KING poster <span aria-hidden="true">→</span></a><a class="btn btn-line" href="#films-h">Browse the 80 films</a></div>
-    </div>
-    <img class="art" src="assets/home/01-agar-main-king-hota.webp" width="692" height="1400" alt="Young Shah Rock Jaan, a card between his teeth, bags on his shoulder">
-  </div>
-
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 8: King's Lairs">
-    <div class="copy">
-      <p class="eyebrow">02 · King's Lairs · Play</p>
-      <h2 class="big">Six lairs.<br><em>One throne.</em></h2>
-      <p class="lede">The casino, the snow villain's dome, the secret city, the pit, the abyss and the throne room. Clear them all and earn STARKS.</p>
-      <div class="ctas"><a class="btn btn-red" href="lairs/">Enter the lairs <span aria-hidden="true">→</span></a></div>
-    </div>
-    <img class="art crown" src="assets/home/06-fan-billboard.webp" width="900" height="985" alt="A red crown dripping like paint" loading="lazy">
-  </div>
-
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 8: Chess81">
-    <div class="copy">
-      <p class="eyebrow">03 · Chess81 · Strategy</p>
-      <h2 class="big">81 squares.<br><em>One Torch.</em></h2>
-      <p class="lede">Chess on a 9×9 board where the King is the strongest piece. Light your Torch on O5 and burn your way to mate.</p>
-      <div class="ctas"><a class="btn btn-red" href="CHESS81.HTML">Play Chess81 <span aria-hidden="true">→</span></a></div>
-    </div>
-    <img class="art" src="assets/home/02-check-mate-fire.webp" width="476" height="1400" alt="Young Shah Rock Jaan wearing a red crown, standing on one leg" loading="lazy">
-  </div>
-
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 8: Billboard">
-    <div class="copy">
-      <p class="eyebrow">04 · Billboard · STARKS</p>
-      <h2 class="big">The crown<br><em>is unclaimed.</em></h2>
-      <p class="lede">Every poster, every lair and every Chess81 win earns STARKS. Join with a name and climb from Fan to Royal Flush.</p>
-      <div class="ctas"><a class="btn btn-red" href="fan-billboard/">See the Billboard <span aria-hidden="true">→</span></a></div>
-    </div>
-    <img class="art" src="assets/home/05-fan-made-ai-universe.webp" width="663" height="1400" alt="Young Shah Rock Jaan in sunglasses, waving" loading="lazy">
-  </div>
-
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 8: KING Buzz">
-    <div class="copy">
-      <p class="eyebrow">05 · KING Buzz · Daily</p>
-      <div class="days"><b data-until="2026-12-24T00:00:00+05:30">—</b><span>days to<br>KING</span></div>
-      <p class="lede">The daily report on KING: posts, reels, fan clubs and cities, measured against the 04 October baseline.</p>
-      <div class="ctas"><a class="btn btn-red" href="king-intelligence/">Today's Buzz <span aria-hidden="true">→</span></a></div>
-    </div>
-    <img class="art" src="assets/home/03-king-buzz.webp" width="714" height="1400" alt="The King walking forward, saxophone in one hand, bags on his shoulder" loading="lazy">
-  </div>
-
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="7 of 8: Asoka to Boo-Da">
-    <div class="copy">
-      <p class="eyebrow">06 · Asoka to Boo-Da · Thesis</p>
-      <h2 class="big">Before the King,<br><em>a boy.</em></h2>
-      <p class="lede">The marketing thesis: from Chennai Express to the hype of KING. The KING is going in for the Royal Flush.</p>
-      <div class="ctas"><a class="btn btn-red" href="asoka-to-booda/manuscript/prologue.html">Read the book <span aria-hidden="true">→</span></a><a class="btn btn-line" href="asoka-to-booda/">Contents</a></div>
-    </div>
-    <img class="art wide" src="assets/home/04-asoka-to-booda.webp" width="1800" height="1205" alt="Young Shah Rock Jaan lying on the floor dreaming, a red crown above him" loading="lazy">
-  </div>
-
-
-  <div class="slide" role="group" aria-roledescription="slide" aria-label="8 of 8: Inquilaab">
-    <div class="copy">
-      <p class="eyebrow">08 · Inquilaab · The fan revolt</p>
-      <h2 class="big"><em>INQUILAAB</em><br>King ke saath?</h2>
-      <p class="tag">Aao aao leke apna haath.</p>
-      <p class="lede">Fans revolt against celeb persona theft by Big Tech. Millions of fans are making him with AI: no consent rules, no credit, no share. Fans are organising. #FreeMyFace</p>
-      <div class="ctas"><a class="btn btn-red" href="inquilab/">Haan! Join the Inquilaab <span aria-hidden="true">→</span></a></div>
-    </div>
-    <img class="art" src="assets/lairs/cover.webp" width="800" height="1200" alt="A silhouetted King holding the King of Hearts over a red city" loading="lazy">
-  </div>
-
-  <div class="hctl">
-    <button class="arrow" type="button" data-step="-1" aria-label="Previous section"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-    <div class="dots" id="dots"></div>
-    <button class="arrow" type="button" data-step="1" aria-label="Next section"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-  </div>
-</section>
-
-
-
-<section class="block" aria-label="Countdowns">
-  <div class="clocks">
-    <div class="clock"><b data-until="2026-11-02T00:00:00+05:30">—</b><div><strong>Days to his birthday</strong><span>2 November 2026, Mumbai time</span></div></div>
-    <div class="clock"><b data-until="2026-12-24T00:00:00+05:30">—</b><div><strong>Days to KING</strong><span>In cinemas 24 December 2026</span></div></div>
-  </div>
-</section>
-
-<section class="block" id="doors" aria-labelledby="doors-h">
-  <div class="block-head">
-    <h2 id="doors-h">Six ways into <em>the kingdom</em></h2>
-    <p>Start with your poster. Then play the lairs, earn STARKS and climb the Billboard.</p>
-  </div>
-  <div class="doors">
-    <a class="door first" href="create/">
-      <div class="head"><span class="num">01</span><h3>Make Your Poster</h3><p>Pick one of his 80 films, add your photo, wear the crown. A poster nobody else has.</p></div>
-      <div class="pic"><img src="assets/home/01-agar-main-king-hota.webp" width="692" height="1400" alt="" loading="lazy"></div>
-      <div class="foot"><span class="go">Make my poster →</span><span class="what">+100 STARKS</span></div>
-    </a>
-    <a class="door" href="lairs/">
-      <div class="head"><span class="num">02</span><h3>King's Lairs</h3><p>Six lairs from KING: the casino, the snow villain's dome, the secret city, the pit, the abyss, the throne.</p></div>
-      <div class="pic"><img src="assets/home/06-fan-billboard.webp" width="900" height="985" alt="" loading="lazy"></div>
-      <div class="foot"><span class="go">Enter the lairs →</span><span class="what">Play</span></div>
-    </a>
-    <a class="door" href="CHESS81.HTML">
-      <div class="head"><span class="num">03</span><h3>Chess81</h3><p>Check. Fire. Mate. Chess on 81 squares where the King is the strongest piece.</p></div>
-      <div class="pic"><img src="assets/home/02-check-mate-fire.webp" width="476" height="1400" alt="" loading="lazy"></div>
-      <div class="foot"><span class="go">Play Chess81 →</span><span class="what">Strategy</span></div>
-    </a>
-    <a class="d2k-banner" href="doom-to-king/" aria-label="DOOM to KING: One Christmas, Two Crowns">
-      <span class="bn-side bn-doom"><img src="https://i.ytimg.com/vi/irVNGjRFZGk/hqdefault.jpg" alt="" loading="lazy"><b>DOOM</b><small>18 Dec 2026</small></span>
-      <span class="bn-mid"><em>07 · New section</em><strong>DOOM <i>to</i> KING</strong><span>One Christmas, Two Crowns</span><u>Vote the friendly fixture · pledge to watch both →</u></span>
-      <span class="bn-side bn-king"><img src="assets/lairs/cover.webp" alt="" loading="lazy"><b>KING</b><small>24 Dec 2026</small></span>
-    </a>
-    <a class="door" href="fan-billboard/">
-      <div class="head"><span class="num">04</span><h3>Billboard</h3><p>Your STARKS, your rank, the top fans and the fan-made AI universe.</p></div>
-      <div class="pic"><img src="assets/studio/crown.png" width="757" height="900" alt="" loading="lazy"></div>
-      <div class="foot"><span class="go">See the Billboard →</span><span class="what">STARKS</span></div>
-    </a>
-    <a class="door" href="king-intelligence/">
-      <div class="head"><span class="num">05</span><h3>KING Buzz</h3><p>The daily intelligence report on KING: posts, views, fan clubs, cities.</p></div>
-      <div class="pic"><img src="assets/home/03-king-buzz.webp" width="714" height="1400" alt="" loading="lazy"></div>
-      <div class="foot"><span class="go">Today's Buzz →</span><span class="what">Daily</span></div>
-    </a>
-    <a class="door" href="asoka-to-booda/">
-      <div class="head"><span class="num">06</span><h3>Asoka to Boo-Da</h3><p>The marketing thesis: from Chennai Express to the hype of KING.</p></div>
-      <div class="pic"><img src="assets/home/05-fan-made-ai-universe.webp" width="663" height="1400" alt="" loading="lazy"></div>
-      <div class="foot"><span class="go">Read the thesis →</span><span class="what">Thesis</span></div>
-    </a>
-    <a class="iq-banner" href="inquilab/" aria-label="INQUILAAB: fans revolt against celeb persona theft by Big Tech">
-      <span class="iq-l"><em>08 · New</em><strong>INQUILAAB</strong><span>Fans revolt against celeb persona theft by Big Tech</span></span>
-      <span class="iq-r"><i>Inquilaab King ke saath?</i><u>Aao aao leke apna haath. #FreeMyFace →</u></span>
-    </a>
-
-  </div>
-</section>
-
-<section class="block" aria-labelledby="films-h">
-  <div class="block-head">
+  <section class="hero" aria-labelledby="hh">
     <div>
-      <p class="eyebrow">The Make Your Poster game</p>
-      <h2 id="films-h">80 films. <em>The 81st is yours.</em></h2>
+      <h1 id="hh">Be the <em>KING</em> of every SRK film</h1>
+      <p class="line">Your Face, 6 Styles (118 Movies)</p>
+      <div class="styles6" aria-label="Six poster styles">
+        <a href="create/"><img src="assets/posters/king/118B/thumb-photo.webp" alt=""><span>Photo</span></a>
+        <a href="create/"><img src="assets/posters/king/118B/thumb-3d.webp" alt=""><span>3D Anim</span></a>
+        <a href="create/"><img src="assets/posters/king/118B/thumb-anime.webp" alt=""><span>Anime</span></a>
+        <a href="create/"><img src="assets/posters/king/118B/thumb-chibi.webp" alt=""><span>Chibi Pop</span></a>
+        <a href="create/"><img src="assets/posters/king/118B/thumb-funko.webp" alt=""><span>Funko Pop</span></a>
+        <a href="create/"><img src="assets/posters/king/118B/thumb-lego.webp" alt=""><span>LEGO</span></a>
+      </div>
+      <div class="cd" aria-label="Countdown to KING">
+        <div class="k"><b id="cd-d">57</b><small>days</small></div>
+        <div><b id="cd-h">00</b><small>hours</small></div>
+        <div><b id="cd-m">00</b><small>mins</small></div>
+        <div><b>24.12</b><small>in cinemas</small></div>
+      </div>
+      <a class="btn-main" href="create/">Make your KING poster <span aria-hidden="true">→</span></a>
+      <a class="game" href="create/"><img src="assets/home/04-asoka-to-booda.webp" alt=""><span><b>Agar Main King Hota · <em>the poster game</em></b><small>Pick any of 118 SRK films, choose one of 6 styles, add your face and step into his poster as the King.</small></span></a>
     </div>
-    <p>Every role he played was a step towards KING. From Fauji (1989) to Zero (2018), pick any of his 80 originals, step into the character and make the poster your own.</p>
-  </div>
-  <div class="strip-bar">
-    <span class="strip-cue"><b>▶ Tap a film to play</b> · your face, his poster, KING lettering</span>
-    <span class="strip-nav"><button type="button" class="sn" id="stripPrev" aria-label="Scroll films left">←</button><button type="button" class="sn" id="stripNext" aria-label="Scroll films right">→</button></span>
-  </div>
-  <div class="strip-wrap" id="stripWrap">
-    <div class="strip" id="strip" tabindex="0" aria-label="His 80 films. Scroll sideways; tap one to make your poster."></div>
-  </div>
-  <p class="strip-hint">Swipe or scroll sideways for all 80 →</p>
-</section>
-
-<section class="block" aria-labelledby="cine-h" id="now-showing">
-  <div class="block-head">
-    <div>
-      <p class="eyebrow">Lairs Cinema · Fan films</p>
-      <h2 id="cine-h">Now <em>showing</em></h2>
+    <div class="art">
+      <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
+      <a class="buzz" href="king-intelligence/"><b>KING BUZZ</b><span id="kb-line">The daily intelligence report on KING: official releases, views, press and fans, tracked every day since 04 Oct.</span> <em>Read →</em></a>
     </div>
-    <p id="cineLede">Fans animate the King's Lairs with their own AI tools and their own faces. Approved clips play here and earn STARKS.</p>
-  </div>
-  <div class="strip-bar">
-    <span class="strip-cue"><b id="cineCue">▶ Coming attractions</b> · <span id="cineCue2">the sets are open: be the first fan on screen</span></span>
-    <span class="strip-nav"><button type="button" class="sn" id="cinePrev" aria-label="Scroll left">←</button><button type="button" class="sn" id="cineNext" aria-label="Scroll right">→</button></span>
-  </div>
-  <div class="cine-strip" id="cineStrip"></div>
-  <p style="margin-top:12px"><a class="btn btn-red" href="lairs/#cinema">Make your scene →</a></p>
-</section>
+  </section>
 
-<section class="block" aria-labelledby="how-h">
-  <div class="block-head"><h2 id="how-h">How it works</h2></div>
-  <ol class="how">
-    <li><b>1 · Pick a film</b><span>Any of his 80 original posters, or KING itself.</span></li>
-    <li><b>2 · Add your photo</b><span>Bring up to two friends for a squad poster.</span></li>
-    <li><b>3 · Choose a look</b><span>Cinematic, Retro Bollywood, Noir, Anime and more.</span></li>
-    <li><b>4 · Wear the crown</b><span>Your name in KING lettering. Download, share, play.</span></li>
-  </ol>
-</section>
+  <h2 class="kf-h">KING FEVER</h2>
 
+  <div class="blk">
+    <h3><a href="inquilab/">Inquilaab King Ke Saath</a></h3>
+    <p>The fan anthem against celeb persona theft by Big Tech. Sing it, make your version, wear it. #FreeMyFace #FreeMyVoice #FreeMyName</p>
+    <div class="row r3">
+      <a class="t soon" href="king-fever/"><span><b>Anthem · Version 01</b><small>Coming soon</small></span></a>
+      <a class="t soon" href="king-fever/"><span><b>Anthem · Version 02</b><small>Coming soon</small></span></a>
+      <a class="t ch" href="merch/"><img src="assets/merch/ijoo-agar-main-king-hota.webp" alt=""><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3><a href="chess81/">Play for the crown</a></h3>
+    <p>Original fan games. Every level and every win earns STARKS.</p>
+    <div class="row r3">
+      <a class="t cv" href="chess81/"><img src="assets/home/chess81-noctopus.webp" alt=""><span><b>Chess81</b><small>81 squares · the King is the strongest piece</small></span></a>
+      <a class="t" href="lairs/"><img src="assets/lairs/cover.webp" alt=""><span><b>King's Lairs</b><small>2 worlds · 12 arcade levels · rescue your face</small></span></a>
+      <a class="t ch" href="fan-billboard/"><img src="assets/home/06-fan-billboard.webp" alt=""><span><b>Billboard &amp; STARKS</b><small>Your rank among the King's fans</small></span></a>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3><a href="fan-made-ai-universe/">Fan Made Universe</a></h3>
+    <p>What fans are making for KING: trailers, songs and posters. Every fan creation lives on one page.</p>
+    <div class="row r4">
+      <a class="t ch" href="fan-made-ai-universe/"><img src="assets/home/05-fan-made-ai-universe.webp" alt=""><span><b>All fan creations →</b><small>245 videos, fan posters and anthem versions</small></span></a>
+      <a class="t fp cv" href="https://www.youtube.com/watch?v=9YcsF7XKtSo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9YcsF7XKtSo/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan trailer</i><span><b>King · Trailer Concept</b><small>Bollygrad Studioz · 1.1M views on YouTube</small></span></a>
+      <a class="t fp cv" href="https://www.youtube.com/watch?v=vfot00TxRzQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vfot00TxRzQ/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan song</i><span><b>KING · Trailer Video Song</b><small>Fantasy Studio Originals · 307K views</small></span></a>
+      <a class="t fp" href="https://x.com/Shanurugo/status/2114987288014770216" target="_blank" rel="noopener"><img src="https://pbs.twimg.com/media/HVnxuhXXEAAbefS?format=jpg&amp;name=small" alt="" referrerpolicy="no-referrer"><i class="tag">Fan poster</i><span><b>KING with a leading lady</b><small>@Shanurugo on X · 27 Oct 2026</small></span></a>
+    </div>
+  </div>
+
+  <div class="pair">
+    <div class="blk">
+      <h3><a href="gallery/videos/">Gallery</a></h3>
+      <p>44,857 pictures · 2,217 videos, year by year.</p>
+      <a class="t ch" href="gallery/videos/"><img src="assets/home/01-agar-main-king-hota.webp" alt=""><span><b>Gallery</b><small>44,857 pictures · 2,217 videos, year by year</small></span></a>
+    </div>
+    <div class="blk">
+      <h3><a href="on-the-record/">On The Record</a></h3>
+      <p>Interviews, brand films and King in Print.</p>
+      <a class="t ch" href="on-the-record/"><img src="assets/header/boy.webp" alt=""><span><b>On The Record</b><small>Video interviews · branded · in print</small></span></a>
+    </div>
+  </div>
+
+  <div class="pair">
+    <div class="blk">
+      <h3><a href="asoka-to-booda/">Asoka to Boo-Da</a></h3>
+      <p>SRK: The Man, The Myth, The King. The book, 46 chapters.</p>
+      <a class="t ch" href="asoka-to-booda/"><img src="assets/home/03-king-buzz.webp" alt=""><span><b>The book</b><small>SRK: The Man, The Myth, The King · 46 chapters</small></span></a>
+    </div>
+    <div class="blk">
+      <h3><a href="doom-to-king/">DOOM to KING</a></h3>
+      <p>One Christmas, two crowns. Vote the friendly fixture.</p>
+      <a class="t dk" href="doom-to-king/"><img src="assets/dk/bg.webp" alt=""><img class="fig" src="assets/dk/figures.webp" alt=""><span><b>The fixture</b><small>18 Dec DOOM · 24 Dec KING · watch both</small></span></a>
+    </div>
+  </div>
 </main>
 <script>
-(function () {
-  document.querySelectorAll('[data-until]').forEach(function (b) {
-    var d = Math.ceil((Date.parse(b.dataset.until) - Date.now()) / 864e5);
-    b.textContent = d > 0 ? d : '0';
-  });
-  // six-section slider: arrows, dots, swipe, autoplay
-  var slides = [].slice.call(document.querySelectorAll('#hero .slide')), dots = document.getElementById('dots'), hero = document.getElementById('hero');
-  var names = ['DOOM to KING', 'Make Your Poster', "King's Lairs", 'Chess81', 'Billboard', 'KING Buzz', 'Asoka to Boo-Da', 'Inquilaab'], cur = 0, timer = null;
-  slides.forEach(function (_, k) { var d = document.createElement('button'); d.type = 'button'; d.className = 'dot'; d.setAttribute('aria-label', (k + 1) + ': ' + names[k]); d.appendChild(document.createElement('i')); d.onclick = function () { show(k); stop(); }; dots.appendChild(d); });
-  function show(n) {
-    cur = (n + slides.length) % slides.length;
-    slides.forEach(function (sl, k) { sl.classList.toggle('on', k === cur); sl.setAttribute('aria-hidden', k === cur ? 'false' : 'true'); sl.querySelectorAll('a').forEach(function (a) { a.tabIndex = k === cur ? 0 : -1; }); });
-    [].forEach.call(dots.children, function (d, k) { d.setAttribute('aria-current', k === cur ? 'true' : 'false'); });
-  }
-  function stop() { if (timer) { clearInterval(timer); clearTimeout(timer); timer = null; } }
-  document.querySelectorAll('#hero .arrow').forEach(function (b) { b.onclick = function () { show(cur + Number(b.dataset.step)); stop(); }; });
-  var x0 = null;
-  hero.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-  hero.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 40) { show(cur + (dx < 0 ? 1 : -1)); stop(); } });
-  hero.addEventListener('focusin', stop); hero.addEventListener('mouseenter', stop);
-  show(0);
-  // DOOM to KING holds 2.5 s, counted from when its pictures have loaded (slow phone networks missed it)
-  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-    timer = 'wait';
-    var dkImgs = [].slice.call(slides[0].querySelectorAll('img')), started = false;
-    var go = function () { if (started) return; started = true; if (!timer) return; timer = setTimeout(function () { if (!timer) return; show(1); timer = setInterval(function () { show(cur + 1); }, 7000); }, 2500); };
-    var check = function () { if (dkImgs.every(function (i) { return i.complete; })) go(); };
-    dkImgs.forEach(function (i) { i.addEventListener('load', check); i.addEventListener('error', check); });
-    setTimeout(go, 8000); check();
-  }
+(function(){
+  var t=Date.parse('2026-12-24T00:00:00+05:30');
+  function tick(){var d=Math.max(0,t-Date.now());document.getElementById('cd-d').textContent=Math.floor(d/864e5);document.getElementById('cd-h').textContent=String(Math.floor(d/36e5)%24).padStart(2,'0');document.getElementById('cd-m').textContent=String(Math.floor(d/6e4)%60).padStart(2,'0');}
+  tick();setInterval(tick,30000);
 
-  fetch('assets/posters/catalogue.json').then(function (r) { return r.json(); }).then(function (data) {
-    var strip = document.getElementById('strip');
-    var pick = data.posters.filter(function (p) { return p.id !== '118'; }).reverse();
-    var king = document.createElement('a'); king.className = 'king'; king.href = 'create/?film=118';
-    king.innerHTML = '<img src="assets/studio/crown.png" alt="" loading="lazy"><b class="play">Make poster</b><span>KING<i>2026 · start here</i></span>';
-    strip.appendChild(king);
-    pick.forEach(function (p) {
-      var a = document.createElement('a'); a.href = 'create/?film=' + p.id;
-      var im = document.createElement('img'); im.src = 'assets/posters/' + p.thumb; im.alt = ''; im.loading = 'lazy'; im.width = 160; im.height = 240;
-      var tag = document.createElement('b'); tag.className = 'play'; tag.textContent = 'Make poster';
-      var s = document.createElement('span'); s.textContent = p.title;
-      var i = document.createElement('i'); i.textContent = p.character ? p.year + ' · ' + p.character : String(p.year); s.appendChild(i);
-      a.setAttribute('aria-label', 'Make your poster' + (p.character ? ' as ' + p.character : '') + ' in ' + p.title);
-      a.append(im, tag, s); strip.appendChild(a);
-    });
-    edges();
-  }).catch(function () {});
-  var strip = document.getElementById('strip'), wrap = document.getElementById('stripWrap');
-  function edges() {
-    var max = strip.scrollWidth - strip.clientWidth - 2;
-    wrap.classList.toggle('at-start', strip.scrollLeft <= 2); wrap.classList.toggle('at-end', strip.scrollLeft >= max);
-    document.getElementById('stripPrev').disabled = strip.scrollLeft <= 2; document.getElementById('stripNext').disabled = strip.scrollLeft >= max;
-  }
-  strip.addEventListener('scroll', edges, { passive: true }); addEventListener('resize', edges);
-  function page(d) { strip.scrollBy({ left: d * Math.max(200, strip.clientWidth * 0.8), behavior: 'smooth' }); }
-  document.getElementById('stripPrev').onclick = function () { page(-1); };
-  document.getElementById('stripNext').onclick = function () { page(1); };
+  // Fan Made Universe: a new random set of 3 fan works on every visit, one per creator, so every fan gets seen.
+  Promise.all([fetch('data/fans-king.json').then(function(r){return r.json();}),fetch('data/king-fan-versions.json').then(function(r){return r.json();}).catch(function(){return {releases:{}};})]).then(function(x){
+    var pool=[],seen={},rel=x[1].releases||{};
+    (x[0].items||[]).forEach(function(v){if(!v.id)return;var song=v.type==='Song';pool.push({who:v.channel||'YouTube',tag:song?'Fan song':(v.type==='Trailer'||v.type==='Teaser'?'Fan '+v.type.toLowerCase():'Fan video'),title:(v.title||'').split(' | ')[0],sub:(v.channel||'YouTube')+(v.views?' · '+(v.views>=1e6?(v.views/1e6).toFixed(1)+'M':v.views>=1e3?Math.round(v.views/1e3)+'K':v.views)+' views':''),img:'https://i.ytimg.com/vi/'+v.id+'/mqdefault.jpg',url:'https://www.youtube.com/watch?v='+v.id,cv:1});});
+    Object.keys(rel).forEach(function(k){(rel[k]||[]).forEach(function(p){pool.push({who:p.account,tag:'Fan poster',title:p.note||'Fan poster',sub:p.account+' on '+p.platform+(p.posted_at?' · '+new Date(p.posted_at).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):''),img:p.image,url:p.url});});});
+    for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=pool[i];pool[i]=pool[j];pool[j]=t;}
+    var q=pool.filter(function(p){if(seen[p.who])return false;seen[p.who]=1;return true;}),cards=document.querySelectorAll('.t.fp');
+    if(q.length<cards.length)return;
+    // A removed YouTube video still returns a 120 px grey placeholder: skip it and show the next fan.
+    function fill(a){var p=q.shift(),img=a.querySelector('img');if(!p)return;img.onload=function(){if(p.cv&&img.naturalWidth<=120)fill(a);};img.onerror=function(){fill(a);};a.href=p.url;a.className='t fp'+(p.cv?' cv':'');img.src=p.img;a.querySelector('.tag').textContent=p.tag;a.querySelector('b').textContent=p.title;a.querySelector('small').textContent=p.sub;}
+    Array.prototype.forEach.call(cards,fill);
+  }).catch(function(){});
+  Promise.all([fetch('data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('data/king-press.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {days:[]};})]).then(function(x){
+    var R=x[0].records,last=R[R.length-1],v=function(id){var m=(last.metrics||[]).filter(function(m){return m.series_id===id&&m.value!=null;})[0];return m&&m.value;};
+    var a=v('king_title_reveal_views'),b=v('king_date_announcement_views'),p=x[1].days.length?x[1].days[x[1].days.length-1].count:null;
+    if(a&&b)document.getElementById('kb-line').textContent=((a+b)/1e6).toFixed(1)+'M views on the official KING videos'+(p!=null?', '+p+' press stories today':'')+', and every fan move tracked daily since 04 Oct.';
+  }).catch(function(){});
 })();
 </script>
 <script src="assets/starks.js"></script>
 <script src="assets/footer.js" defer></script>
-<script src="assets/cinema.js"></script>
-<script>
-(function () {
-  var strip = document.getElementById('cineStrip'); if (!strip) return;
-  var PLATES = [['casino-grand','The Grand Casino','casino'],['dome-aerial','The dome from the air','dome'],['dome-archive','The Archive','city'],['pit-dance','The Pit dance bar','pit'],['den-abyssal','The Abyssal Den','den'],['dome-panorama','The heart of the dome','throne'],['dome-arrival','The arrival','dome'],['dome-hive','The hive beneath','dome'],['dome-lab','The lab wing','dome'],['dome-waterfall','The waterfall hall','dome'],['dome-residence','The residence','throne'],['city-floorplan','The master floor plan','city']];
-  var C = window.AMKH_CINEMA;
-  function coming() {
-    strip.innerHTML = PLATES.map(function (p) { return '<a class="cine-card" href="lairs/?scene=' + p[2] + '#cinema"><i>Coming attraction</i><img src="assets/lairs/scenes/' + p[0] + '-t.webp" alt="" loading="lazy"><b>' + p[1] + '</b><small>' + C.LAIR[p[2]] + ' \u00b7 make the first film</small></a>'; }).join('');
-  }
-  function showing(list) {
-    document.getElementById('cineCue').textContent = '\u25B6 Tap a clip to play';
-    document.getElementById('cineCue2').textContent = list.length + ' fan film' + (list.length > 1 ? 's' : '') + ' from the King\u2019s Lairs';
-    strip.innerHTML = list.map(function (c, i) { return '<a class="cine-card play" href="' + C.esc(c.url) + '" target="_blank" rel="noopener" data-i="' + i + '">' + (c.sotw ? '<i>Scene of the week</i>' : '') + '<img src="' + C.thumb(c, '') + '" alt="" loading="lazy"><b>' + C.esc(c.title || 'Fan clip') + '</b><small>' + C.esc(c.handle || '') + (C.LAIR[c.lair] ? ' \u00b7 ' + C.LAIR[c.lair] : '') + '</small></a>'; }).join('');
-    [].forEach.call(strip.querySelectorAll('.cine-card'), function (a) { a.onclick = function (e) { var c = list[+a.dataset.i]; if (!C.embed(c)) return; e.preventDefault(); C.play(c, ''); }; });
-  }
-  coming();
-  fetch('data/lairs-cinema.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
-    var list = (j.clips || []).slice().sort(function (a, b) { return (b.sotw ? 1 : 0) - (a.sotw ? 1 : 0) || String(b.approved).localeCompare(String(a.approved)); });
-    if (list.length) showing(list);
-  }).catch(function () {});
-  function page(d) { strip.scrollBy({ left: d * strip.clientWidth * 0.9, behavior: 'smooth' }); }
-  document.getElementById('cinePrev').onclick = function () { page(-1); };
-  document.getElementById('cineNext').onclick = function () { page(1); };
-})();
-</script>
 </body>
 </html>

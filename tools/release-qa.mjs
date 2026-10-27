@@ -30,8 +30,8 @@ const required = {
   'D': ['DAILY REPORTS', 'EVERY DAY SINCE 04 OCT', 'LATEST RECORD'],
   'E': ['INTELLIGENCE ENGINE', 'TOP 50 COUNTRY BOARD', 'SENTIMENT', 'KING / RDJ'],
   'G': ['AGAR MAIN KING HOTA', 'CREATE YOUR KING POSTER', 'PLAY FOR 60 SECONDS', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'H': ['MAKE YOUR POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
-  'A': ['MAKE YOUR POSTER', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'DAYS TO KING', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
+  'H': ['BE THE KING OF EVERY SRK FILM', 'MAKE YOUR KING POSTER', 'KING FEVER', 'INQUILAAB KING KE SAATH', 'PLAY FOR THE CROWN', 'FAN MADE UNIVERSE', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
+  'A': ['BE THE KING OF EVERY SRK FILM', 'MAKE YOUR KING POSTER', 'KING FEVER', 'INQUILAAB KING KE SAATH', 'PLAY FOR THE CROWN', 'FAN MADE UNIVERSE', "KING'S LAIRS", 'CHESS81', 'BILLBOARD', 'KING BUZZ', 'ASOKA TO BOO-DA', 'CREATED & MANAGED BY FANS WHO LOVE YOU KING!'],
   'MP': ['BE THE KING OF EVERY SRK FILM', 'MAKE YOUR POSTER'], 'BK': ['SRK: THE MAN', 'PART ONE'], 'B6': ['GOING DIGITAL', 'NEXT'], 'MS': ['THE MAN, THE MYTH', 'PART X', 'THE SOURCE VERSIONS'], 'M2': ['CHENNAI EXPRESS', 'CASE STUDY'], 'C8': ['TWO WAYS TO PLAY', 'RAPID FIRE'], 'KF': ['KING FEVER', 'INQUILAAB KING KE SAATH', 'FAN VERSIONS'], 'ME': ['KING FAN MERCH', 'ONE BEFORE ZERO'],
   'CR': ['BE THE KING OF EVERY SRK FILM', 'MAKE YOUR POSTER'], 'LA': ['RESCUE', 'CHOOSE YOUR WORLD', 'LAIRS CINEMA'], 'C': ['CHESS81', 'HOW A WINNER IS DECLARED', 'VS THE MACHINE'], 'F': ['STARKS BILLBOARD', 'HOW TO EARN'], 'AB': ['ABOUT'], 'CT': ['CONTACT'], 'FQ': ['FREQUENTLY ASKED'], 'IQ': ['INQUILAAB', 'FANS REVOLT AGAINST CELEB PERSONA THEFT BY BIG TECH', 'INQUILAAB KING KE SAATH', '#FREEMYFACE'], 'DK': ['DOOM', 'ONE CHRISTMAS, TWO CROWNS', 'THE FRIENDLY FIXTURE', "I'M WATCHING BOTH"],
 };
@@ -142,12 +142,13 @@ for (const [id, path] of pages) {
       if (broken.length) issues.push('image(s) failed to load: ' + broken.join(', '));
       else console.log(`PASS [${id}] all ${await page.evaluate(() => document.images.length)} images loaded`);
     }
-    // home: the section doors, each pointing at its section
+    // home (owner's layout, 27 Oct 2026): every section the page shows links to its own section
     if (['H', 'A'].includes(id)) {
-      const doors = await page.evaluate(() => [...document.querySelectorAll('.doors .door')].map(a => new URL(a.getAttribute('href'), location.href).pathname));
-      const want = ['/create/', '/lairs/', '/CHESS81.HTML', '/fan-billboard/', '/king-intelligence/', '/asoka-to-booda/'];
-      if (JSON.stringify(doors) !== JSON.stringify(want)) issues.push('six sections wrong: ' + doors.join(', '));
-      else console.log(`PASS [${id}] six sections in order`);
+      const links = await page.evaluate(() => [...document.querySelectorAll('main a[href]')].map(a => new URL(a.getAttribute('href'), location.href).pathname));
+      const want = ['/create/', '/king-intelligence/', '/king-fever/', '/merch/', '/chess81/', '/lairs/', '/fan-billboard/', '/fan-made-ai-universe/', '/gallery/videos/', '/on-the-record/', '/asoka-to-booda/', '/doom-to-king/'];
+      const miss = want.filter(w => !links.includes(w));
+      if (miss.length) issues.push('home sections missing: ' + miss.join(', '));
+      else console.log(`PASS [${id}] all ${want.length} home sections linked`);
     }
     // game: playable on arrival, and the ZERO artwork pack the poster needs is reachable
     if (id === 'G') {

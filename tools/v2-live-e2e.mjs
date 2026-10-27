@@ -49,7 +49,7 @@ const cl = await lp.request.post('https://asokatobooda.iamshahrock.workers.dev/l
 log.push('LAIRS CLAIM api: ' + cl.status() + ' ' + (await cl.text()).slice(0, 120));
 await lp.goto(base + '/CHESS81.HTML?t=' + Date.now(), { waitUntil: 'networkidle' });
 const hp = await browser.newPage({ viewport: { width: 390, height: 844 } }); await hp.goto(base + '/?t=' + Date.now(), { waitUntil: 'networkidle' });
-log.push('home slider (phone): ' + JSON.stringify(await hp.evaluate(() => { const sl = document.querySelector('.slide.on'), c = sl.querySelector('.copy').getBoundingClientRect(), a = sl.querySelector('.art').getBoundingClientRect(); return { slides: document.querySelectorAll('#hero .slide').length, dots: document.querySelectorAll('#dots .dot').length, arrows: document.querySelectorAll('#hero .arrow').length, sideBySide: a.left > c.left + c.width / 2 && a.top < c.bottom }; })));
+log.push('home (phone): ' + JSON.stringify(await hp.evaluate(() => ({ styles: document.querySelectorAll('.styles6 a').length, over: document.documentElement.scrollWidth - innerWidth, fanCards: document.querySelectorAll('.t.fp').length }))));
 await hp.goto(base + '/asoka-to-booda/manuscript/chapter-38.html?t=' + Date.now(), { waitUntil: 'networkidle' }); await hp.waitForTimeout(1500);
 log.push('thesis DOOM to KING (phone): ' + JSON.stringify(await hp.evaluate(() => ({ doomThumb: (document.querySelector('.yt img') || {}).naturalWidth || 0, kingArt: (document.querySelector('.dk-king img') || {}).naturalWidth || 0, overflow: document.documentElement.scrollWidth - innerWidth }))));
 await hp.screenshot({ path: 'e2e-out/thesis-doom-phone.png' });
@@ -64,8 +64,8 @@ log.push('d2k API: ' + JSON.stringify(await dk.evaluate(async () => { const r = 
 await dk.screenshot({ path: 'e2e-out/d2k-phone.png', fullPage: false });
 await dk.close();
 const hm = await browser.newPage({ viewport: { width: 1440, height: 900 } }); await hm.goto(base + '/?t=' + Date.now(), { waitUntil: 'networkidle' });
-log.push('home: ' + JSON.stringify(await hm.evaluate(() => ({ slides: document.querySelectorAll('#hero .slide').length, banner: !!document.querySelector('.doors .d2k-banner'), inquilabBanner: !!document.querySelector('.doors .iq-banner'), headerLinks: document.querySelectorAll('#site-header .sh-nav a').length }))));
-await hm.evaluate(() => document.querySelector('.d2k-banner').scrollIntoView({ block: 'center' })); await hm.waitForTimeout(800); await hm.screenshot({ path: 'e2e-out/home-banner-desktop.png' }); await hm.close();
+log.push('home: ' + JSON.stringify(await hm.evaluate(() => ({ styles: document.querySelectorAll('.styles6 a').length, sections: document.querySelectorAll('main .blk').length, fanCards: document.querySelectorAll('.t.fp').length, headerLinks: document.querySelectorAll('#site-header .sh-nav a').length }))));
+await hm.evaluate(() => document.querySelector('.kf-h').scrollIntoView({ block: 'start' })); await hm.waitForTimeout(800); await hm.screenshot({ path: 'e2e-out/home-desktop.png' }); await hm.close();
 await hp.goto(base + '/king-intelligence/?t=' + Date.now(), { waitUntil: 'networkidle' }); await hp.waitForTimeout(800);
 log.push('AI creator signal: ' + JSON.stringify(await hp.evaluate(() => ({ works: document.querySelector('#ao-kpis [data-k=items]').textContent, views: document.querySelector('#ao-kpis [data-k=views]').textContent, topRows: document.querySelectorAll('#ao-top tr').length }))));
 await hp.goto(base + '/fan-made-ai-universe/?t=' + Date.now(), { waitUntil: 'networkidle' }); await hp.waitForTimeout(800);
