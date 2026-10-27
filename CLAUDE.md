@@ -31,6 +31,9 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - Data: POST /admin/stats returns the site's own D1 counter (same as /stats): today, last 7 days, all-time totals, 30-day chart, top pages.
 - Google Analytics 4 (owner, 23 Oct 2026): Measurement ID G-J8LKDFNPQS is set as GA_ID in header.js, so every page with the shared header reports to GA; agar-main-fan-hota/index.html (no shared header) carries the same gtag tag in its <head>. GA reports inside our page would need a GA Data API service account set by the owner in Cloudflare (not done).
 
+## Tab icon (owner, 27 Oct 2026: 'the icon on the browser tab ... we need to show crown, just like each brand has their own')
+- Every page (all 312 .html) carries: /favicon.ico (16-64 px, crown), /assets/icons/crown-32.png and /assets/icons/apple-touch-icon.png (crown on dark, 180 px). Tab sizes use the crown with the drips cropped so it reads at 16-32 px; 192/512 keep the full dripping crown. Made from assets/studio/crown.png. The deploy copies favicon.ico to the site root (pages.yml). New pages must include the same three link tags.
+
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
 - Backend: Cloudflare Worker `asokatobooda` (backend/worker.js), auto-deploys on backend/** changes.
