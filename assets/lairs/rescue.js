@@ -11,32 +11,32 @@
   var WORLDS = {
     city: { name: 'The Underground City', sub: 'The Casino, The Pit and the Abyssal Den', img: 'city-floorplan', open: true,
       levels: [
-        { id: 'gallery', name: 'Shooting Gallery', where: 'Casino Floor', img: 'casino-grand', style: 'Duck Hunt', pin: [22, 60],
+        { goal: 'Shoot 15 flying cards. Never hit a face.', id: 'gallery', name: 'Shooting Gallery', where: 'Casino Floor', img: 'casino-grand', style: 'Duck Hunt', pin: [22, 60],
           how: 'The House throws its cards into the air. Tap or click to shoot them. Do not hit the faces. Hit 15 to win.' },
-        { id: 'bricks', name: 'Chip Breaker', where: 'Casino Floor', img: 'casino-grand', style: 'Arkanoid', pin: [36, 48],
+        { goal: 'Bounce the ball and break 60% of the chip wall.', id: 'bricks', name: 'Chip Breaker', where: 'Casino Floor', img: 'casino-grand', style: 'Arkanoid', pin: [36, 48],
           how: 'Smash the House\'s wall of chips. Move the paddle with your finger, mouse or arrow keys. Break 60% of the wall to win; you have 3 balls.' },
-        { id: 'knockout', name: 'Knockout', where: 'The Pit', img: 'pit-dance', style: 'Punch-Out', pin: [52, 36],
+        { goal: 'Dodge his swings, punch when he is open, knock him out.', id: 'knockout', name: 'Knockout', where: 'The Pit', img: 'pit-dance', style: 'Punch-Out', pin: [52, 36],
           how: 'The brute swings left or right: dodge to the other side. When he is open, PUNCH. Knock him out before he knocks you out.' },
-        { id: 'dive', name: 'Deep Dive', where: 'The Abyssal Den', img: 'den-abyssal', style: 'Dodger', pin: [70, 30],
+        { goal: 'Swim, grab 12 crowns, dodge the ink and sharks.', id: 'dive', name: 'Deep Dive', where: 'The Abyssal Den', img: 'den-abyssal', style: 'Dodger', pin: [70, 30],
           how: 'Swim through the Noctopus\'s tank. Grab 12 crowns. Three hits from ink or sharks and you surface.' },
-        { id: 'runner', name: 'Tunnel Run', where: 'The service tunnels', img: 'city-vr', style: 'Subway Surfers', pin: [80, 56],
+        { goal: 'Last 55 seconds: switch lanes, jump and slide.', id: 'runner', name: 'Tunnel Run', where: 'The service tunnels', img: 'city-vr', style: 'Subway Surfers', pin: [80, 56],
           how: 'Run the tunnels for 55 seconds. Swipe or use the arrow keys: left and right to change lane, up to jump the barriers, down to slide under the bars.' },
-        { id: 'archery', name: 'Shoot the Crown', where: 'The Trophy Vault', img: 'city-vault', style: 'Bow and arrow', pin: [60, 84], boss: true,
+        { goal: 'Aim the bow, allow for wind, hit the crown in 7 arrows.', id: 'archery', name: 'Shoot the Crown', where: 'The Trophy Vault', img: 'city-vault', style: 'Bow and arrow', pin: [60, 84], boss: true,
           how: 'The crown swings above the vault. Drag back to aim, let go to shoot. Watch the wind. Seven arrows. Hit the crown and it becomes the key.' }
       ] },
     lab: { name: 'The AI Lab', sub: 'The glass dome: the Lab, the Archive and the Hive', img: 'dome-panorama', open: true,
       levels: [
-        { id: 'stealth', name: 'Searchlights', where: 'The frozen lake', img: 'dome-aerial', style: 'Stealth', pin: [14, 28],
+        { goal: 'Creep across the ice; freeze when the light comes.', id: 'stealth', name: 'Searchlights', where: 'The frozen lake', img: 'dome-aerial', style: 'Stealth', pin: [14, 28],
           how: 'Cross the ice to the dome. Hold the screen (or the space bar) to creep forward; let go when a searchlight comes. Spotted three times and the alarm goes off.' },
-        { id: 'invaders', name: 'Drone Attack', where: 'The Lab', img: 'dome-lab', style: 'Space Invaders', pin: [33, 42],
+        { goal: 'Shoot down all 30 face-copying drones.', id: 'invaders', name: 'Drone Attack', where: 'The Lab', img: 'dome-lab', style: 'Space Invaders', pin: [33, 42],
           how: 'The face-copying drones are coming down. Move with your finger, mouse or arrows; you fire on your own. Destroy all 30 drones. Their lasers cost you a shield.' },
-        { id: 'slicer', name: 'Fake Slicer', where: 'The Archive', img: 'dome-archive', style: 'Fruit Ninja', pin: [10, 72],
+        { goal: 'Slice 30 fake faces. Never slice a gold fan.', id: 'slicer', name: 'Fake Slicer', where: 'The Archive', img: 'dome-archive', style: 'Fruit Ninja', pin: [10, 72],
           how: 'Fake faces fly out of the Archive. Swipe to slice them. Never slice a real fan (the gold ones). Slice 30 fakes to win.' },
-        { id: 'maze', name: 'Hive Chase', where: 'The Hive', img: 'dome-hive', style: 'Pac-Man', pin: [50, 64],
+        { goal: 'Free 80% of the pods while the guards hunt you.', id: 'maze', name: 'Hive Chase', where: 'The Hive', img: 'dome-hive', style: 'Pac-Man', pin: [50, 64],
           how: 'Run the Hive and touch every pod to free the face inside. Guards hunt you: swipe or use the arrow keys to turn. Free 80% of the pods to win.' },
-        { id: 'flyer', name: 'Tower Flight', where: 'Above the dome', img: 'dome-arrival', style: 'Flappy Bird', pin: [52, 12],
+        { goal: 'Tap to fly the helicopter through 15 towers.', id: 'flyer', name: 'Tower Flight', where: 'Above the dome', img: 'dome-arrival', style: 'Flappy Bird', pin: [52, 12],
           how: 'Fly the helicopter between the broadcast towers. Tap (or space) to rise. Pass 15 towers to win.' },
-        { id: 'archery', name: 'Shoot the Crown', where: 'The control room', img: 'dome-waterfall', style: 'Bow and arrow', pin: [61, 45], boss: true,
+        { goal: 'Hit the second crown in 7 arrows to free your face.', id: 'archery', name: 'Shoot the Crown', where: 'The control room', img: 'dome-waterfall', style: 'Bow and arrow', pin: [61, 45], boss: true,
           how: 'The second crown swings above the world map. Drag back to aim, let go to shoot. Watch the wind. Seven arrows. Hit the crown and it becomes the key.' }
       ] }
   };
@@ -67,7 +67,11 @@
         var w = WORLDS[k], st = W(k), lv = w.levels.length;
         return '<button type="button" class="rs-world' + (w.open ? '' : ' soon') + '" data-w="' + k + '"' + (w.open ? '' : ' disabled') + '><img src="' + SC + w.img + '-m.webp" alt=""><span class="rs-wn">' + w.name + '</span><span class="rs-ws">' + w.sub + '</span><span class="rs-wp">' +
           (w.open ? (st.rescued ? 'Face rescued · ' + fmt(st.score) + ' points' : 'Level ' + (Math.min(st.level, lv - 1) + 1) + ' of ' + lv + ' · ' + st.lives + ' lives') : 'Opens next') + '</span></button>';
-      }).join('') + '<p class="say rs-games">Underground City: Shooting Gallery · Chip Breaker · Knockout · Deep Dive · Tunnel Run · Shoot the Crown.<br>The AI Lab: Searchlights · Drone Attack · Fake Slicer · Hive Chase · Tower Flight · Shoot the Crown.<br>Every level is 55 seconds.</p></div></div>');
+      }).join('') + '</div></div>' +
+      '<div class="rs-guide"><p class="eyebrow">How to play</p><h3>Win 6 games in a row, shoot down the crown, free your face</h3><p class="say">Each world is 6 short arcade games, 55 seconds each. Clear them in order with 3 lives. The last game is the crown: hit it and your face comes out of the safe, ready for Make Your Poster. Every level earns STARKS.</p>' +
+      Object.keys(WORLDS).map(function (k) { var w = WORLDS[k]; return '<p class="rs-gw">' + w.name + '</p><div class="rs-gg">' + w.levels.map(function (l, i) {
+        return '<figure><img src="../assets/lairs/games/' + k + '-' + (i + 1) + '.webp" alt="' + l.name + '" loading="lazy"><figcaption><b>' + (i + 1) + '. ' + l.name + '</b><span>' + l.goal + '</span></figcaption></figure>'; }).join('') + '</div>'; }).join('') +
+      '</div>');
     $('rsFile').onchange = function () {
       var file = this.files && this.files[0]; if (!file) return;
       if (!$('rsOk').checked) { $('rsMsg').textContent = 'Please tick the box first: the photo must be yours, or one you have permission to use.'; this.value = ''; return; }
@@ -562,5 +566,5 @@
     });
   };
 
-  window.KingsRescue = { _rescue: function (w) { rescue(w || 'city', 0); }, start: function (el) { root = el; var q = new URLSearchParams(location.search).get('world'); if (q && WORLDS[q] && WORLDS[q].open) map(q); else intro(); } };
+  window.KingsRescue = { _rescue: function (w) { rescue(w || 'city', 0); }, _level: function (w, i) { level(w, i); }, start: function (el) { root = el; var q = new URLSearchParams(location.search).get('world'); if (q && WORLDS[q] && WORLDS[q].open) map(q); else intro(); } };
 })();
