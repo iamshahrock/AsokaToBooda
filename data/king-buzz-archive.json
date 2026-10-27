@@ -1,0 +1,161 @@
+{
+ "about": "Real YouTube view counts recovered from Internet Archive (Wayback Machine) snapshots of the official video pages, for days the daily ledger has no reading (owner asked on 27 Oct 2026 to fill 07-17 Oct). One reading per IST day (the highest that day); each row links its snapshot. These are archived observations, not estimates. The ledger itself is append-only and is not changed.",
+ "series": {
+  "king_title_reveal_views": [
+   {
+    "date": "2026-10-08",
+    "views": 48763165,
+    "read_at_ist": "2026-10-08 04:57",
+    "snapshot": "https://web.archive.org/web/20261007232711/https://www.youtube.com/watch?si=zIjVWp0V1OD6d2WH&v=Uu2QK9Z9X5E&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-10",
+    "views": 48838661,
+    "read_at_ist": "2026-10-10 04:00",
+    "snapshot": "https://web.archive.org/web/20261009223002/https://www.youtube.com/watch?is=pKSY9xAQFTH1ih7H&v=Uu2QK9Z9X5E"
+   },
+   {
+    "date": "2026-10-19",
+    "views": 49173608,
+    "read_at_ist": "2026-10-19 01:36",
+    "snapshot": "https://web.archive.org/web/20261018200620/https://www.youtube.com/watch?si=vCPY0HYiPssVA6ZJ&v=Uu2QK9Z9X5E"
+   },
+   {
+    "date": "2026-10-20",
+    "views": 49239707,
+    "read_at_ist": "2026-10-20 22:38",
+    "snapshot": "https://web.archive.org/web/20261020170830/https://www.youtube.com/watch?si=vCPY0HYiPssVA6ZJ&v=Uu2QK9Z9X5E&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-22",
+    "views": 49287188,
+    "read_at_ist": "2026-10-22 04:16",
+    "snapshot": "https://web.archive.org/web/20261021224607/https://www.youtube.com/watch?si=EpCZGhdGDjS4T3KX&v=Uu2QK9Z9X5E"
+   },
+   {
+    "date": "2026-10-23",
+    "views": 49330546,
+    "read_at_ist": "2026-10-23 11:55",
+    "snapshot": "https://web.archive.org/web/20261023062554/https://www.youtube.com/watch?si=EpCZGhdGDjS4T3KX&v=Uu2QK9Z9X5E&feature=youtu.be"
+   }
+  ],
+  "king_date_announcement_views": [
+   {
+    "date": "2026-10-08",
+    "views": 31924120,
+    "read_at_ist": "2026-10-08 09:16",
+    "snapshot": "https://web.archive.org/web/20261008034623/https://www.youtube.com/watch?si=an6mggpEEyIZ5WVV&v=M3mfut2RdHk"
+   },
+   {
+    "date": "2026-10-10",
+    "views": 31993226,
+    "read_at_ist": "2026-10-10 02:40",
+    "snapshot": "https://web.archive.org/web/20261009211000/https://www.youtube.com/watch?is=IloSLpvrohuuWZRu&v=M3mfut2RdHk"
+   },
+   {
+    "date": "2026-10-16",
+    "views": 32337003,
+    "read_at_ist": "2026-10-16 19:43",
+    "snapshot": "https://web.archive.org/web/20261016141336/https://www.youtube.com/watch?si=nd46leezxM88vXAe&v=M3mfut2RdHk"
+   },
+   {
+    "date": "2026-10-18",
+    "views": 32379504,
+    "read_at_ist": "2026-10-18 12:52",
+    "snapshot": "https://web.archive.org/web/20261018072209/https://www.youtube.com/watch?si=nd46leezxM88vXAe&v=M3mfut2RdHk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-19",
+    "views": 32401770,
+    "read_at_ist": "2026-10-19 12:55",
+    "snapshot": "https://web.archive.org/web/20261019072557/https://www.youtube.com/watch?si=_xJiHO3RU2GtGdUp&v=M3mfut2RdHk"
+   },
+   {
+    "date": "2026-10-22",
+    "views": 32464033,
+    "read_at_ist": "2026-10-22 05:37",
+    "snapshot": "https://web.archive.org/web/20261022000748/https://www.youtube.com/watch?si=xFF1962k0OHaOSKf&v=M3mfut2RdHk&feature=youtu.be"
+   }
+  ],
+  "doomsday_official_trailer_views": [
+   {
+    "date": "2026-10-08",
+    "views": 78296298,
+    "read_at_ist": "2026-10-08 10:05",
+    "snapshot": "https://web.archive.org/web/20261008043559/https://www.youtube.com/watch?si=O456fif7sou-kRGN&v=irVNGjRFZGk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-09",
+    "views": 78506539,
+    "read_at_ist": "2026-10-09 11:59",
+    "snapshot": "https://web.archive.org/web/20261009062944/https://www.youtube.com/watch?is=fxDhAn2G2nebBp4i&v=irVNGjRFZGk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-10",
+    "views": 78671037,
+    "read_at_ist": "2026-10-10 07:04",
+    "snapshot": "https://web.archive.org/web/20261010013401/https://www.youtube.com/watch?is=oDIRI4qfoH0h1M59&v=irVNGjRFZGk"
+   },
+   {
+    "date": "2026-10-11",
+    "views": 78879411,
+    "read_at_ist": "2026-10-11 06:24",
+    "snapshot": "https://web.archive.org/web/20261011005411/https://www.youtube.com/watch?si=FM5_vgoW2s5BVuQV&v=irVNGjRFZGk"
+   },
+   {
+    "date": "2026-10-12",
+    "views": 79104833,
+    "read_at_ist": "2026-10-12 05:43",
+    "snapshot": "https://web.archive.org/web/20261012001326/https://www.youtube.com/watch?si=fN9yQJvfofwr6PiO&v=irVNGjRFZGk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-16",
+    "views": 79871312,
+    "read_at_ist": "2026-10-16 07:04",
+    "snapshot": "https://web.archive.org/web/20261016013454/https://www.youtube.com/watch?si=ZCjr4tgioa-KGZle&v=irVNGjRFZGk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-17",
+    "views": 80137240,
+    "read_at_ist": "2026-10-17 14:22",
+    "snapshot": "https://web.archive.org/web/20261017085207/https://www.youtube.com/watch?v=irVNGjRFZGk&at_medium=RSS%20feed&at_campaign=ynews&utm_source=yahoo&utm_medium=rss&utm_campaign=news_feed&utm_content=in_article_link"
+   },
+   {
+    "date": "2026-10-19",
+    "views": 80539792,
+    "read_at_ist": "2026-10-19 11:28",
+    "snapshot": "https://web.archive.org/web/20261019055830/https://www.youtube.com/watch?si=H55DpbKckn5lJHR5&v=irVNGjRFZGk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-21",
+    "views": 80901556,
+    "read_at_ist": "2026-10-21 11:30",
+    "snapshot": "https://web.archive.org/web/20261021060015/https://www.youtube.com/watch?is=TWhS1wYAAr9TyO8l&v=irVNGjRFZGk"
+   },
+   {
+    "date": "2026-10-22",
+    "views": 81058228,
+    "read_at_ist": "2026-10-22 09:55",
+    "snapshot": "https://web.archive.org/web/20261022042503/https://www.youtube.com/watch?si=H55DpbKckn5lJHR5&v=irVNGjRFZGk"
+   },
+   {
+    "date": "2026-10-23",
+    "views": 81223620,
+    "read_at_ist": "2026-10-23 09:48",
+    "snapshot": "https://web.archive.org/web/20261023041857/https://www.youtube.com/watch?is=eNqAU4b3LDhEB61x&v=irVNGjRFZGk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-24",
+    "views": 81438664,
+    "read_at_ist": "2026-10-24 07:50",
+    "snapshot": "https://web.archive.org/web/20261024022054/https://www.youtube.com/watch?si=6wt7jegJK3878DQL&v=irVNGjRFZGk&feature=youtu.be"
+   },
+   {
+    "date": "2026-10-26",
+    "views": 82112617,
+    "read_at_ist": "2026-10-26 07:08",
+    "snapshot": "https://web.archive.org/web/20261026013811/https://www.youtube.com/watch?si=Mkd4kuZBQvbSHsG0&v=irVNGjRFZGk&feature=youtu.be"
+   }
+  ]
+ }
+}
