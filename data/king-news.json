@@ -39,42 +39,7 @@
     "url": "https://www.instagram.com/iamsrk/p/De--1PuIdC3/"
    }
   ],
-  "stats": {
-   "read_at": "2026-10-27T13:03:00+05:30",
-   "items": [
-    {
-     "platform": "X",
-     "label": "views",
-     "value": 934000
-    },
-    {
-     "platform": "X",
-     "label": "likes",
-     "value": 33000
-    },
-    {
-     "platform": "X",
-     "label": "reposts",
-     "value": 6800
-    },
-    {
-     "platform": "X",
-     "label": "replies",
-     "value": 2000
-    },
-    {
-     "platform": "Instagram",
-     "label": "likes",
-     "value": 872000
-    },
-    {
-     "platform": "Instagram",
-     "label": "comments",
-     "value": 22000
-    }
-   ],
-   "note": "Rounded as the platforms display them (934K, 33K, 6.8K, 2K, 872K, 22K)."
-  }
+  "release": "poster-2026-10-27"
  },
  "releases": [
   {
@@ -95,17 +60,7 @@
      "url": "https://www.instagram.com/iamsrk/p/De--1PuIdC3/"
     }
    ],
-   "traffic": [
-    {
-     "label": "views on X",
-     "value": 934000
-    },
-    {
-     "label": "likes on Instagram",
-     "value": 872000
-    }
-   ],
-   "traffic_read": "2026-10-27T13:03:00+05:30"
+   "release": "poster-2026-10-27"
   },
   {
    "date": "2026-01-24",
@@ -126,13 +81,7 @@
     }
    ],
    "series_id": "king_date_announcement_views",
-   "traffic": [
-    {
-     "label": "views of SRK's post on X",
-     "value": 4400000
-    }
-   ],
-   "traffic_read": "2026-10-27T13:03:00+05:30"
+   "release": "date-announcement"
   },
   {
    "date": "2025-11-02",

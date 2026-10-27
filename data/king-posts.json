@@ -1,0 +1,94 @@
+{
+ "about": "Official KING posts by @iamsrk and @redchilliesent, read by hand (X and Instagram cannot be read by the unattended nightly job). 'readings' is append-only: add one {at, metrics} per check. The page shows checkpoints at 3h, 24h, 48h and 7 days after 'posted_at' from the reading closest to each (within half the gap). Counts are as the platform displays them (rounded). Owner, 27 Oct 2026.",
+ "posts": [
+  {
+   "id": "poster-2026-10-27-x",
+   "release": "poster-2026-10-27",
+   "account": "@iamsrk",
+   "platform": "X",
+   "url": "https://x.com/iamsrk/status/2114937785664844282",
+   "posted_at": "2026-10-27T10:00:36+05:30",
+   "readings": [
+    {
+     "at": "2026-10-27T13:03:00+05:30",
+     "metrics": {
+      "views": 934000,
+      "likes": 33000,
+      "reposts": 6800,
+      "replies": 2000
+     }
+    }
+   ]
+  },
+  {
+   "id": "poster-2026-10-27-ig",
+   "release": "poster-2026-10-27",
+   "account": "@iamsrk",
+   "platform": "Instagram",
+   "url": "https://www.instagram.com/iamsrk/p/De--1PuIdC3/",
+   "posted_at": "2026-10-27T10:00:17+05:30",
+   "readings": [
+    {
+     "at": "2026-10-27T13:03:00+05:30",
+     "metrics": {
+      "likes": 872000,
+      "comments": 22000
+     }
+    }
+   ]
+  },
+  {
+   "id": "poster-2026-10-27-rc-ig",
+   "release": "poster-2026-10-27",
+   "account": "@redchilliesent",
+   "platform": "Instagram",
+   "url": "https://www.instagram.com/redchilliesent/p/De-_qZpIeqA/",
+   "posted_at": "2026-10-27T10:00:00+05:30",
+   "readings": [
+    {
+     "at": "2026-10-27T13:40:00+05:30",
+     "metrics": {
+      "likes": 26000,
+      "comments": 692
+     }
+    }
+   ]
+  },
+  {
+   "id": "date-2026-01-24-x",
+   "release": "date-announcement",
+   "account": "@iamsrk",
+   "platform": "X",
+   "url": "https://x.com/iamsrk/status/2015019783385965007",
+   "posted_at": "2026-01-24T16:42:08+05:30",
+   "readings": [
+    {
+     "at": "2026-10-27T13:03:00+05:30",
+     "metrics": {
+      "views": 4400000,
+      "likes": 53000,
+      "reposts": 12000,
+      "replies": 4800
+     }
+    }
+   ]
+  },
+  {
+   "id": "date-2026-01-24-rc-ig",
+   "release": "date-announcement",
+   "account": "@redchilliesent",
+   "platform": "Instagram",
+   "url": "https://www.instagram.com/redchilliesent/p/DT4_62WDClh/",
+   "posted_at": "2026-01-24T16:40:00+05:30",
+   "readings": [
+    {
+     "at": "2026-10-27T13:40:00+05:30",
+     "metrics": {
+      "likes": 158000,
+      "comments": 2047
+     }
+    }
+   ]
+  }
+ ]
+}
