@@ -58,6 +58,22 @@ body{background:var(--bg)}
 .t::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,5,5,.92) 18%,transparent 65%)}
 .t span{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:12px 14px}
 .t b{display:block;font:400 20px/1.05 Anton,sans-serif;text-transform:uppercase}.t small{display:block;margin-top:3px;font-size:12.5px;line-height:1.4;color:#e0d6ce}
+.t.ch{background:radial-gradient(70% 70% at 50% 75%,#4a0d10 0%,#140a0a 70%)}
+.t.ch img{inset:12px 12px 64px 12px;width:calc(100% - 24px);height:calc(100% - 76px);object-fit:contain;object-position:50% 100%}
+.t.ch:hover img{transform:scale(1.04)}
+.t.ch::after{background:linear-gradient(0deg,rgba(7,5,5,.95) 0,rgba(7,5,5,.6) 60px,transparent 110px)}
+.t.dk img{object-fit:cover;object-position:50% 50%}.t.dk img.fig{object-fit:contain}
+.game{display:flex;align-items:center;gap:16px;max-width:560px;margin:16px 0 0;padding:10px 16px 10px 10px;border:1px solid var(--line);border-radius:10px;background:radial-gradient(60% 90% at 20% 70%,#4a0d10 0%,#140a0a 75%);text-decoration:none;color:#fff}
+.game:hover{border-color:var(--red)}
+.game img{width:150px;height:96px;object-fit:contain;flex-shrink:0}
+.game b{display:block;font:400 18px/1.1 Anton,sans-serif;text-transform:uppercase}.game b em{font-style:normal;color:var(--red-hi)}
+.game small{display:block;margin-top:5px;font-size:13.5px;line-height:1.45;color:#d6c8c4}
+@media (max-width:560px){.game img{width:104px;height:72px}}
+.r4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.r4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.r4{grid-template-columns:minmax(0,1fr)}}
+.t .tag{position:absolute;left:12px;top:12px;right:auto;bottom:auto;z-index:2;padding:5px 9px;border:1px solid var(--gold);border-radius:999px;background:rgba(8,5,5,.85);font:700 10px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.t.cv img{object-position:50% 50%}
 .t.soon{display:flex;align-items:center;justify-content:center;border-style:dashed;background:#0f0909}
 .t.soon::after{display:none}
 .t.soon span{position:static;text-align:center}.t.soon b{font-size:22px}.t.soon small{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
@@ -87,6 +103,7 @@ body{background:var(--bg)}
         <div><b>24.12</b><small>in cinemas</small></div>
       </div>
       <a class="btn-main" href="../create/">Make your KING poster <span aria-hidden="true">→</span></a>
+      <a class="game" href="../create/"><img src="../assets/home/04-asoka-to-booda.webp" alt=""><span><b>Agar Main King Hota · <em>the poster game</em></b><small>Pick any of 118 SRK films, choose one of 6 styles, add your face and step into his poster as the King.</small></span></a>
     </div>
     <div class="art">
       <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
@@ -102,26 +119,28 @@ body{background:var(--bg)}
     <div class="row r3">
       <a class="t soon" href="../king-fever/"><span><b>Anthem · Version 01</b><small>Coming soon</small></span></a>
       <a class="t soon" href="../king-fever/"><span><b>Anthem · Version 02</b><small>Coming soon</small></span></a>
-      <a class="t" href="../merch/"><img src="../assets/merch/picture-abhi-baaki-hai.webp" alt="" style="object-position:50% 30%"><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
+      <a class="t ch" href="../merch/"><img src="../assets/merch/ijoo-agar-main-king-hota.webp" alt=""><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
     </div>
   </div>
 
   <div class="blk">
-    <h3><a href="../lairs/">Play for the crown</a></h3>
+    <h3><a href="../chess81/">Play for the crown</a></h3>
     <p>Original fan games. Every level and every win earns STARKS.</p>
     <div class="row r3">
-      <a class="t" href="../lairs/"><img src="../assets/lairs/scenes/casino-grand-m.webp" alt=""><span><b>King's Lairs</b><small>2 worlds · 12 arcade levels · rescue your face</small></span></a>
-      <a class="t" href="../chess81/"><img src="../assets/home/02-check-mate-fire.webp" alt=""><span><b>Chess81</b><small>81 squares · the King is the strongest piece</small></span></a>
-      <a class="t" href="../fan-billboard/"><img src="../assets/home/06-fan-billboard.webp" alt=""><span><b>Billboard &amp; STARKS</b><small>Your rank among the King's fans</small></span></a>
+      <a class="t cv" href="../chess81/"><img src="../assets/home/chess81-noctopus.webp" alt=""><span><b>Chess81</b><small>81 squares · the King is the strongest piece</small></span></a>
+      <a class="t" href="../lairs/"><img src="../assets/lairs/cover.webp" alt=""><span><b>King's Lairs</b><small>2 worlds · 12 arcade levels · rescue your face</small></span></a>
+      <a class="t ch" href="../fan-billboard/"><img src="../assets/home/06-fan-billboard.webp" alt=""><span><b>Billboard &amp; STARKS</b><small>Your rank among the King's fans</small></span></a>
     </div>
   </div>
 
   <div class="blk">
-    <h3><a href="../fan-made-ai-universe/">Fan Universe</a></h3>
-    <p>Everything fans are making for KING: films, posters, songs.</p>
-    <div class="row r2">
-      <a class="t" href="../fan-made-ai-universe/"><img src="https://i.ytimg.com/vi/9YcsF7XKtSo/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>Fan-made AI Universe</b><small>Top fan work: "King — Trailer Concept", 1.1M views</small></span></a>
-      <a class="t" href="../fans-king/"><img src="https://i.ytimg.com/vi/80UpCtY2S68/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>FAN'S KING</b><small>Every AI fan video of KING on YouTube</small></span></a>
+    <h3><a href="../fan-made-ai-universe/">Fan Made Universe</a></h3>
+    <p>What fans are making for KING: trailers, songs and posters. Every fan creation lives on one page.</p>
+    <div class="row r4">
+      <a class="t cv" href="https://www.youtube.com/watch?v=9YcsF7XKtSo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9YcsF7XKtSo/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan trailer</i><span><b>King · Trailer Concept</b><small>Bollygrad Studioz · 1.1M views on YouTube</small></span></a>
+      <a class="t cv" href="https://www.youtube.com/watch?v=vfot00TxRzQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vfot00TxRzQ/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan song</i><span><b>KING · Trailer Video Song</b><small>Fantasy Studio Originals · 307K views</small></span></a>
+      <a class="t" href="https://x.com/Shanurugo/status/2114987288014770216" target="_blank" rel="noopener"><img src="https://pbs.twimg.com/media/HVnxuhXXEAAbefS?format=jpg&amp;name=small" alt="" referrerpolicy="no-referrer"><i class="tag">Fan poster</i><span><b>KING with a leading lady</b><small>@Shanurugo on X · 27 Oct 2026</small></span></a>
+      <a class="t ch" href="../fan-made-ai-universe/"><img src="../assets/home/05-fan-made-ai-universe.webp" alt=""><span><b>All fan creations →</b><small>245 videos, fan posters and anthem versions</small></span></a>
     </div>
   </div>
 
@@ -129,12 +148,12 @@ body{background:var(--bg)}
     <div class="blk">
       <h3><a href="../gallery/videos/">Gallery</a></h3>
       <p>44,857 pictures · 2,217 videos, year by year.</p>
-      <a class="t" href="../gallery/videos/"><img src="https://i.ytimg.com/vi/qoq8B8ThgEM/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>Gallery</b><small>Tujh Mein Rab Dikhta Hai · 1.5 billion views · and 2,216 more</small></span></a>
+      <a class="t ch" href="../gallery/videos/"><img src="../assets/home/01-agar-main-king-hota.webp" alt=""><span><b>Gallery</b><small>44,857 pictures · 2,217 videos, year by year</small></span></a>
     </div>
     <div class="blk">
       <h3><a href="../on-the-record/">On The Record</a></h3>
       <p>Interviews, brand films and King in Print.</p>
-      <a class="t" href="../on-the-record/"><img src="https://i.ytimg.com/vi/t_FyYz1pOVg/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>On The Record</b><small>Aap Ki Adalat · video interviews · branded · in print</small></span></a>
+      <a class="t ch" href="../on-the-record/"><img src="../assets/header/boy.webp" alt=""><span><b>On The Record</b><small>Video interviews · branded · in print</small></span></a>
     </div>
   </div>
 
@@ -142,12 +161,12 @@ body{background:var(--bg)}
     <div class="blk">
       <h3><a href="../asoka-to-booda/">Asoka to Boo-Da</a></h3>
       <p>SRK: The Man, The Myth, The King. The book, 46 chapters.</p>
-      <a class="t" href="../asoka-to-booda/"><img src="../assets/home/04-asoka-to-booda.webp" alt=""><span><b>The book</b><small>From Chennai Express to the hype of KING</small></span></a>
+      <a class="t ch" href="../asoka-to-booda/"><img src="../assets/home/03-king-buzz.webp" alt=""><span><b>The book</b><small>SRK: The Man, The Myth, The King · 46 chapters</small></span></a>
     </div>
     <div class="blk">
       <h3><a href="../doom-to-king/">DOOM to KING</a></h3>
       <p>One Christmas, two crowns. Vote the friendly fixture.</p>
-      <a class="t" href="../doom-to-king/"><img src="../asoka-to-booda/manuscript/img/doom-to-king.webp" alt="" style="object-position:50% 50%"><span><b>The fixture</b><small>18 Dec DOOM · 24 Dec KING · watch both</small></span></a>
+      <a class="t dk" href="../doom-to-king/"><img src="../assets/dk/bg.webp" alt=""><img class="fig" src="../assets/dk/figures.webp" alt=""><span><b>The fixture</b><small>18 Dec DOOM · 24 Dec KING · watch both</small></span></a>
     </div>
   </div>
 </main>
