@@ -43,6 +43,7 @@ jobs:
           cp master-home.html site/
           cp -R asoka-to-booda site/
           cp -R fan-made-ai-universe site/
+          cp -R home-preview site/
           cp -R fan-billboard site/
           cp CHESS81.HTML site/
           cp -R game site/

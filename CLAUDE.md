@@ -34,6 +34,9 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 ## Tab icon (owner, 27 Oct 2026: 'the icon on the browser tab ... we need to show crown, just like each brand has their own')
 - Every page (all 312 .html) carries: /favicon.ico (16-64 px, crown), /assets/icons/crown-32.png and /assets/icons/apple-touch-icon.png (crown on dark, 180 px). Tab sizes use the crown with the drips cropped so it reads at 16-32 px; 192/512 keep the full dripping crown. Made from assets/studio/crown.png. The deploy copies favicon.ico to the site root (pages.yml). New pages must include the same three link tags.
 
+## Homepage redesign (owner, 27 Oct 2026: 'too busy', '2-3 main calls to action')
+- Preview at /home-preview/ (noindex, not linked; live homepage unchanged). Owner's layout: hero = 'Be the KING of every SRK film' (2 lines, modest size), 'Your Face, 6 Styles (118 Movies)', the 6 KING style thumbnails, countdown, Make your KING poster button; right = the 27 Oct poster with NO text on it and a KING BUZZ line under it. Then KING FEVER: Inquilaab King Ke Saath (anthem line, Version 01/02 'Coming soon', Merch), Play for the crown (Lairs, Chess81, Billboard), Fan Universe (Fan-made AI Universe, FAN'S KING), Gallery | On The Record, Asoka to Boo-Da | DOOM to KING. Real images from each section. Owner: no oversized type; KING Fever and Inquilaab are being merged as 'Inquilaab King Ke Saath' (site pages not merged yet).
+
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
 - Backend: Cloudflare Worker `asokatobooda` (backend/worker.js), auto-deploys on backend/** changes.
@@ -173,9 +176,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - 19 Oct 2026 (PR #98): 8 [Unverified] items closed from public records (register G now 27 open); thin chapters 2, 7, 13, 17, 21, 42-46 deepened with sourced material; rebuilt at 57 pages, 27,956 words. Third Wheel and O TO X additions come from her ChatGPT chats 04a/04b (handover), labelled Proposal; the 'Adultish Noir' reality-show idea in 04b is left out of the book.
 
 ## Official releases, corrected (owner, 27 Oct 2026)
-- There is NO separate 'first look poster': the 27 Oct poster is the FIRST official KING poster (Variety India). The old 'KING first look poster' row was removed; the KING image in our poster set (118) is a still from the Title Reveal video.
-- Official KING releases: Title Reveal video (RCE YouTube, 2 Nov 2025), Date Announcement video (RCE YouTube + SRK X, 24 Jan 2026), #2MonthsToGo video (RCE Instagram, 24 Oct 2026 11:49 IST, 'King Akela Kaafi Hain!'; thumbnail saved in assets/king-news/ because Instagram image links expire), first KING poster (SRK X + Instagram + RCE Instagram, 27 Oct 2026 10:00 IST). Other RCE October posts are old-film clips, not KING.
-- Master graph = all four: YouTube views gained per day for the two videos; engagement gained since posting for #2MonthsToGo (Instagram likes) and the poster (X views), from data/king-posts.json.
+- Facts about official releases come ONLY from @iamsrk and @redchilliesent's own posts, never from press sites (owner, 27 Oct 2026: press does not verify). Do not call the 27 Oct poster 'first'; neither handle says so. The old 'KING first look poster' row was removed; the KING image in our poster set (118) is a still from the Title Reveal video.
+- Official KING releases (as posted by the official handles): Title Reveal video (RCE YouTube, 2 Nov 2025), Date Announcement video (RCE YouTube + SRK X, 24 Jan 2026), #2MonthsToGo video (RCE Instagram, 24 Oct 2026 11:49 IST, thumbnail saved in assets/king-news/ because Instagram image links expire), the KING poster 'Qaatil nahi… Aashiq hoon' (SRK X + Instagram + RCE Instagram, 27 Oct 2026 10:00 IST). Other RCE October posts are old-film clips, not KING.
+- Master graph = all four: YouTube views gained per day for the two videos; engagement gained since posting for #2MonthsToGo (Instagram likes) and the 27 Oct poster (X views), from data/king-posts.json.
 - Checkpoint table: column headings carry the time (3h / 24h / 48h / 7 days after posting); cells stay '—' until read. No 'due' text.
 - Studio KING film card shows thumb/118.webp (was the crown logo).
 - Owner's local folders: Desktop/KING_MOVIE/00000_POSTERS_FINAL/Funko_FINAL and Lego_FINAL (116 each, the renders used on the site, named SRK_<Style>_NoLogo_<id>_<Title>); 118_B_Poster holds the official 27 Oct poster and the naming guide for the second KING card (all 6 styles, owner rendering).

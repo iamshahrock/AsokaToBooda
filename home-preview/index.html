@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agar Main King Hota — homepage preview</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+/* Homepage preview, owner's layout (27 Oct 2026). */
+:root{--red:#c8102e;--red-hi:#ff3b45;--gold:#f2cf6b;--ink:#f4efe9;--mute:#b8aca4;--bg:#070505;--line:#2a1d1d}
+body{background:var(--bg)}
+.hp{max-width:1200px;margin:0 auto;padding:0 20px 40px}
+.pv{margin:12px 0 0;padding:8px 12px;border:1px dashed #7a6626;border-radius:6px;font-size:12px;color:#d8c48a;background:rgba(242,207,107,.05)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:start;padding:28px 0 10px}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);gap:22px}}
+.hero h1{margin:0;font:400 clamp(34px,3.6vw,52px)/1.02 Anton,Impact,sans-serif;text-transform:uppercase;color:var(--ink);max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--red-hi)}
+.hero .line{margin:12px 0 0;font:600 18px Archivo,sans-serif;color:#e8dfd8;letter-spacing:.02em}
+.styles6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:18px 0 0}
+@media (max-width:560px){.styles6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.styles6 a{display:block;text-decoration:none;color:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#120a0a}
+.styles6 a:hover{border-color:var(--red)}
+.styles6 img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;object-position:50% 15%}
+.styles6 span{display:block;padding:5px 4px;font:700 10px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:center}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:18px 0 0;max-width:440px}
+.cd div{padding:10px 4px;border:1px solid var(--line);border-radius:8px;background:#110909;text-align:center}
+.cd b{display:block;font:400 34px/1 Anton,sans-serif;color:#fff}.cd div.k b{color:var(--red-hi)}
+.cd small{font:700 10px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.btn-main{display:inline-flex;align-items:center;gap:10px;margin:20px 0 0;padding:16px 24px;background:var(--red);color:#fff;font:700 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:6px;box-shadow:0 10px 30px rgba(200,16,46,.4)}
+.btn-main:hover{background:#e0142f}
+.art img{display:block;width:100%;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.buzz{display:block;margin:12px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#0d0707;text-decoration:none;color:#e8dfd8;font-size:14px;line-height:1.5}
+.buzz b{display:block;margin:0 0 2px;font:400 20px Anton,sans-serif;letter-spacing:.04em;color:var(--red-hi)}
+.buzz:hover{border-color:var(--red)}.buzz em{font-style:normal;color:var(--gold)}
+/* KING FEVER sections */
+.kf-h{margin:40px 0 0;padding:26px 0 0;border-top:1px solid var(--line);font:400 clamp(30px,3.2vw,44px)/1 Anton,sans-serif;text-transform:uppercase;color:var(--ink)}
+.blk{margin:26px 0 0}
+.blk h3{margin:0 0 4px;font:400 26px/1.05 Anton,sans-serif;text-transform:uppercase;color:#fff}
+.blk h3 a{color:inherit;text-decoration:none}.blk h3 a:hover{color:var(--red-hi)}
+.blk p{margin:0 0 12px;font-size:14px;line-height:1.5;color:var(--mute)}
+.row{display:grid;gap:12px}
+.r3{grid-template-columns:repeat(3,minmax(0,1fr))}.r2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.r3,.r2{grid-template-columns:minmax(0,1fr)}}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:760px){.pair{grid-template-columns:minmax(0,1fr)}}
+.t{position:relative;display:block;min-height:230px;border-radius:8px;overflow:hidden;background:#140a0a;border:1px solid var(--line);text-decoration:none;color:#fff}
+.t:hover{border-color:var(--red)}
+.t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;transition:transform .5s}.t:hover img{transform:scale(1.04)}
+.t::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,5,5,.92) 18%,transparent 65%)}
+.t span{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:12px 14px}
+.t b{display:block;font:400 20px/1.05 Anton,sans-serif;text-transform:uppercase}.t small{display:block;margin-top:3px;font-size:12.5px;line-height:1.4;color:#e0d6ce}
+.t.soon{display:flex;align-items:center;justify-content:center;border-style:dashed;background:#0f0909}
+.t.soon::after{display:none}
+.t.soon span{position:static;text-align:center}.t.soon b{font-size:22px}.t.soon small{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="hp">
+  <p class="pv">PREVIEW of a new homepage (not linked anywhere). The current homepage is unchanged.</p>
+
+  <section class="hero" aria-labelledby="hh">
+    <div>
+      <h1 id="hh">Be the <em>KING</em> of every SRK film</h1>
+      <p class="line">Your Face, 6 Styles (118 Movies)</p>
+      <div class="styles6" aria-label="Six poster styles">
+        <a href="../create/"><img src="../assets/posters/styles/king/photo.jpg" alt=""><span>Photo</span></a>
+        <a href="../create/"><img src="../assets/posters/styles/king/3d.jpg" alt=""><span>3D Anim</span></a>
+        <a href="../create/"><img src="../assets/posters/styles/king/anime.jpg" alt=""><span>Anime</span></a>
+        <a href="../create/"><img src="../assets/posters/styles/king/chibi.jpg" alt=""><span>Chibi Pop</span></a>
+        <a href="../create/"><img src="../assets/posters/styles/king/funko.jpg" alt=""><span>Funko Pop</span></a>
+        <a href="../create/"><img src="../assets/posters/styles/king/lego.jpg" alt=""><span>LEGO</span></a>
+      </div>
+      <div class="cd" aria-label="Countdown to KING">
+        <div class="k"><b id="cd-d">57</b><small>days</small></div>
+        <div><b id="cd-h">00</b><small>hours</small></div>
+        <div><b id="cd-m">00</b><small>mins</small></div>
+        <div><b>24.12</b><small>in cinemas</small></div>
+      </div>
+      <a class="btn-main" href="../create/">Make your KING poster <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="art">
+      <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
+      <a class="buzz" href="../king-intelligence/"><b>KING BUZZ</b><span id="kb-line">The daily intelligence report on KING: official releases, views, press and fans, tracked every day since 04 Oct.</span> <em>Read →</em></a>
+    </div>
+  </section>
+
+  <h2 class="kf-h">KING FEVER</h2>
+
+  <div class="blk">
+    <h3><a href="../inquilab/">Inquilaab King Ke Saath</a></h3>
+    <p>The fan anthem against celeb persona theft by Big Tech. Sing it, make your version, wear it. #FreeMyFace #FreeMyVoice #FreeMyName</p>
+    <div class="row r3">
+      <a class="t soon" href="../king-fever/"><span><b>Anthem · Version 01</b><small>Coming soon</small></span></a>
+      <a class="t soon" href="../king-fever/"><span><b>Anthem · Version 02</b><small>Coming soon</small></span></a>
+      <a class="t" href="../merch/"><img src="../assets/merch/picture-abhi-baaki-hai.webp" alt="" style="object-position:50% 30%"><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3><a href="../lairs/">Play for the crown</a></h3>
+    <p>Original fan games. Every level and every win earns STARKS.</p>
+    <div class="row r3">
+      <a class="t" href="../lairs/"><img src="../assets/lairs/scenes/casino-grand-m.webp" alt=""><span><b>King's Lairs</b><small>2 worlds · 12 arcade levels · rescue your face</small></span></a>
+      <a class="t" href="../chess81/"><img src="../assets/home/02-check-mate-fire.webp" alt=""><span><b>Chess81</b><small>81 squares · the King is the strongest piece</small></span></a>
+      <a class="t" href="../fan-billboard/"><img src="../assets/home/06-fan-billboard.webp" alt=""><span><b>Billboard &amp; STARKS</b><small>Your rank among the King's fans</small></span></a>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3><a href="../fan-made-ai-universe/">Fan Universe</a></h3>
+    <p>Everything fans are making for KING: films, posters, songs.</p>
+    <div class="row r2">
+      <a class="t" href="../fan-made-ai-universe/"><img src="https://i.ytimg.com/vi/9YcsF7XKtSo/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>Fan-made AI Universe</b><small>Top fan work: "King — Trailer Concept", 1.1M views</small></span></a>
+      <a class="t" href="../fans-king/"><img src="https://i.ytimg.com/vi/80UpCtY2S68/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>FAN'S KING</b><small>Every AI fan video of KING on YouTube</small></span></a>
+    </div>
+  </div>
+
+  <div class="pair">
+    <div class="blk">
+      <h3><a href="../gallery/videos/">Gallery</a></h3>
+      <p>44,857 pictures · 2,217 videos, year by year.</p>
+      <a class="t" href="../gallery/videos/"><img src="https://i.ytimg.com/vi/qoq8B8ThgEM/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>Gallery</b><small>Tujh Mein Rab Dikhta Hai · 1.5 billion views · and 2,216 more</small></span></a>
+    </div>
+    <div class="blk">
+      <h3><a href="../on-the-record/">On The Record</a></h3>
+      <p>Interviews, brand films and King in Print.</p>
+      <a class="t" href="../on-the-record/"><img src="https://i.ytimg.com/vi/t_FyYz1pOVg/hqdefault.jpg" alt="" style="object-position:50% 50%"><span><b>On The Record</b><small>Aap Ki Adalat · video interviews · branded · in print</small></span></a>
+    </div>
+  </div>
+
+  <div class="pair">
+    <div class="blk">
+      <h3><a href="../asoka-to-booda/">Asoka to Boo-Da</a></h3>
+      <p>SRK: The Man, The Myth, The King. The book, 46 chapters.</p>
+      <a class="t" href="../asoka-to-booda/"><img src="../assets/home/04-asoka-to-booda.webp" alt=""><span><b>The book</b><small>From Chennai Express to the hype of KING</small></span></a>
+    </div>
+    <div class="blk">
+      <h3><a href="../doom-to-king/">DOOM to KING</a></h3>
+      <p>One Christmas, two crowns. Vote the friendly fixture.</p>
+      <a class="t" href="../doom-to-king/"><img src="../asoka-to-booda/manuscript/img/doom-to-king.webp" alt="" style="object-position:50% 50%"><span><b>The fixture</b><small>18 Dec DOOM · 24 Dec KING · watch both</small></span></a>
+    </div>
+  </div>
+</main>
+<script>
+(function(){
+  var t=Date.parse('2026-12-24T00:00:00+05:30');
+  function tick(){var d=Math.max(0,t-Date.now());document.getElementById('cd-d').textContent=Math.floor(d/864e5);document.getElementById('cd-h').textContent=String(Math.floor(d/36e5)%24).padStart(2,'0');document.getElementById('cd-m').textContent=String(Math.floor(d/6e4)%60).padStart(2,'0');}
+  tick();setInterval(tick,30000);
+  Promise.all([fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-press.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {days:[]};})]).then(function(x){
+    var R=x[0].records,last=R[R.length-1],v=function(id){var m=(last.metrics||[]).filter(function(m){return m.series_id===id&&m.value!=null;})[0];return m&&m.value;};
+    var a=v('king_title_reveal_views'),b=v('king_date_announcement_views'),p=x[1].days.length?x[1].days[x[1].days.length-1].count:null;
+    if(a&&b)document.getElementById('kb-line').textContent=((a+b)/1e6).toFixed(1)+'M views on the official KING videos'+(p!=null?', '+p+' press stories today':'')+', and every fan move tracked daily since 04 Oct.';
+  }).catch(function(){});
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>
