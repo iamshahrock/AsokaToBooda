@@ -39,7 +39,7 @@
 .lg-days a.full small{color:#3fbf73}.lg-days a.rec{border-style:dashed}.lg-days a.rec small{color:#f2cf6b}.lg-st.recovered{color:#f2cf6b;border-color:#7a6626}.lg-st.estimated{color:#8a7a72;border-style:dashed}.lg-days a.part small{color:#c9a227}.lg-days a.none small{color:var(--ki-red-hi)}
 .lg-days span{opacity:.45;background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.03) 6px 12px)}
 .lg-days a[aria-current="page"]{border-color:var(--ki-red-hi);box-shadow:0 0 0 1px var(--ki-red-hi) inset}
-.lg-st{display:inline-block;padding:1px 7px;border-radius:3px;font:600 10px var(--ki-font);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ki-line)}.lg-st.usable{color:#3fbf73;border-color:#2e6e4b}.lg-st.missing{color:var(--ki-red-hi)}.lg-st.stale{color:#c9a227}
+#lg-count{white-space:normal;max-width:100%}.lg-st{display:inline-block;padding:1px 7px;border-radius:3px;font:600 10px var(--ki-font);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ki-line)}.lg-st.usable{color:#3fbf73;border-color:#2e6e4b}.lg-st.missing{color:var(--ki-red-hi)}.lg-st.stale{color:#c9a227}
 .lg-notes{margin:10px 0 0;padding-left:18px;color:var(--ki-text-2);font-size:13px;line-height:1.55}.lg-notes a{color:var(--ki-red-hi)}
 </style>
 <section aria-labelledby="h-archive">
@@ -77,7 +77,7 @@
     var first=R[0].date,last=R[R.length-1].date,days=[];for(var t=Date.parse(first+'T00:00:00Z');;t+=864e5){var k=new Date(t).toISOString().slice(0,10);if(k>last)break;days.push(k);}
     var want=new URLSearchParams(location.search).get('date');if(!want||want<first||want>last||!/^\d{4}-\d\d-\d\d$/.test(want))want=last;
     $('#lg-latest').textContent=dd(last,1)+', IST';
-    $('#lg-count').textContent=R.length+' daily records · '+(days.length-R.length)+' days rebuilt from archives and estimates';
+    $('#lg-count').textContent=R.length+' records · '+(days.length-R.length)+' rebuilt';
     $('#lg-days').innerHTML=days.map(function(k){var r=by[k];if(!r){var g=gapRecord(k);return '<a class="rec" href="?date='+k+'"'+(k===want?' aria-current="page"':'')+' title="No official record: rebuilt from archived pages and estimates"><b>'+dd(k)+'</b><small>'+(g.rec?g.rec+' recovered':'estimated')+'</small></a>';}
       var ms=r.metrics||[],v=ms.filter(function(m){return m.value!=null;}).length,cls=v===0?'none':(v===ms.length?'full':'part');
       var lab=k===first?'baseline · locked':v+' of '+ms.length+' read';
