@@ -50,6 +50,13 @@
 .nw .kl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.nw .kl a{font:700 11px var(--ki-font);letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid var(--ki-line);padding:4px 9px;border-radius:3px;text-decoration:none}.nw .kl a:hover{border-color:var(--ki-red-hi)}
 .nw .st{padding:10px 12px;background:rgba(200,16,46,.08);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}.nw .st b{display:block;margin:0 0 6px;font:700 13px var(--ki-font);color:var(--ki-text)}.nw .st ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.nw .st li{font-size:12px;color:var(--ki-muted)}.nw .st li em{display:block;font:700 20px var(--ki-font);font-style:normal;color:var(--ki-text);font-variant-numeric:tabular-nums}.nw .st small{display:block;margin-top:6px;font-size:11px;color:var(--ki-muted)}
 .rl .th{display:block;width:120px;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000}.rl .th img{width:100%;height:100%;object-fit:cover;display:block}.rl .th.po img{object-fit:contain}.rl .lk a{margin-right:8px;font-size:12px;color:var(--ki-red-hi)}
+.ck{width:100%;border-collapse:collapse;font-size:12.5px}.ck th,.ck td{padding:5px 6px;border-bottom:1px solid var(--ki-line);text-align:right;white-space:nowrap}.ck th:first-child,.ck td:first-child{text-align:left;white-space:normal}.ck thead th{font:700 11px var(--ki-font);letter-spacing:.06em;text-transform:uppercase;color:var(--ki-muted)}.ck td b{font:700 15px var(--ki-font);color:var(--ki-text)}.ck td.due{color:var(--ki-muted);font-size:11px}.ck td a{color:var(--ki-red-hi)}
+.nw .st{overflow-x:auto}
+.pr-bars{display:flex;align-items:flex-end;gap:6px;height:90px;margin:4px 0 12px;border-bottom:1px solid var(--ki-line)}.pr-bars div{flex:1;max-width:40px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}.pr-bars i{display:block;width:100%;background:var(--ki-red);border-radius:3px 3px 0 0}.pr-bars b{font:700 12px var(--ki-font);color:var(--ki-text)}.pr-bars small{font:600 10px var(--ki-mono);color:var(--ki-muted);margin-top:3px}
+.pr-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}.pr-list li{display:grid;grid-template-columns:130px minmax(0,1fr) auto;gap:10px;padding:8px 10px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius);font-size:13px}@media (max-width:560px){.pr-list li{grid-template-columns:minmax(0,1fr)}}.pr-list .o{font-weight:700;color:var(--ki-text)}.pr-list a{color:var(--ki-text-2);text-decoration:none}.pr-list a:hover{color:var(--ki-red-hi)}.pr-list .tp{font:600 10px var(--ki-font);letter-spacing:.08em;text-transform:uppercase;color:var(--ki-muted);border:1px solid var(--ki-line);padding:1px 6px;border-radius:3px;align-self:center}
+.fv-cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 12px;border:1px solid #f2cf6b;border-radius:var(--ki-radius);background:rgba(242,207,107,.07)}.fv-cta p{margin:0;font-size:14px;color:var(--ki-text);flex:1;min-width:200px}.fv-cta p b{color:#f2cf6b}.fv-cta button{font:700 12px var(--ki-font);letter-spacing:.06em;text-transform:uppercase;color:#0d0606;background:#f2cf6b;border:0;border-radius:3px;padding:8px 12px;cursor:pointer}
+dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;color:var(--ki-text);border:1px solid #f2cf6b;border-radius:var(--ki-radius)}dialog.fv::backdrop{background:rgba(0,0,0,.75)}dialog.fv h3{margin:0 0 4px;font:700 20px var(--ki-font)}dialog.fv p{margin:0 0 12px;font-size:13px;color:var(--ki-muted)}dialog.fv .x{float:right;background:none;border:0;color:var(--ki-text);font-size:26px;cursor:pointer;line-height:1}
+.fv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}.fv-grid a{display:block;text-decoration:none;color:var(--ki-text);background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius);overflow:hidden}.fv-grid a:hover{border-color:#f2cf6b}.fv-grid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#000}.fv-grid span{display:block;padding:6px 8px;font-size:12px}.fv-grid small{display:block;color:var(--ki-muted);font-size:11px}
 .ms{margin:0 0 22px}.ms svg{display:block;width:100%;height:280px}.ms .lg{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px;font-size:12px;color:var(--ki-text-2)}.ms .lg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}.ms .big{font:700 clamp(26px,3vw,38px) var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums}.ms .big small{font-size:14px;color:#3fbf73;margin-left:8px}
 .mc{margin:0 0 16px;padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}.mc h3{margin:0 0 2px;font:700 14px var(--ki-font);color:var(--ki-text)}.mc p{margin:0 0 8px;font-size:12.5px;color:var(--ki-muted)}
 .mc svg{display:block;width:100%;height:220px}.mc .lg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ki-text-2)}.mc .lg i{display:inline-block;width:14px;height:3px;margin-right:6px;vertical-align:3px}
@@ -129,12 +136,15 @@
     <p class="dk" id="nw-deck"></p>
     <blockquote id="nw-quote" hidden></blockquote>
     <div class="st" id="nw-stats" hidden></div>
+    <div class="fv-cta" id="fv-cta" hidden><p><b>FANS are already celebrating</b> and enjoying the latest post, with their own versions of the poster.</p><button type="button" id="fv-open">See FAN versions →</button></div>
     <span class="when" id="nw-when"></span>
     <span class="src" id="nw-src"></span>
   </div>
 </section>
 
 
+
+<dialog class="fv" id="fv-pop" aria-labelledby="fv-h"><button type="button" class="x" id="fv-close" aria-label="Close">×</button><h3 id="fv-h">FAN versions of the new KING poster</h3><p id="fv-sub">Made and posted by fans on X and Instagram. Tap a poster to open the fan's own post.</p><div class="fv-grid" id="fv-grid"></div></dialog>
 
 <!-- ============ OFFICIAL RELEASES (reads data/king-news.json + the ledger) ============ -->
 <section class="gl" id="releases" aria-labelledby="h-rel">
@@ -151,6 +161,15 @@
   <svg id="ms-svg" viewBox="0 0 900 280" preserveAspectRatio="none" role="img" aria-label="Total views on the official KING videos since 04 Oct"></svg>
   <div class="lg"><span><i style="background:#e2343e"></i>Title Reveal</span><span><i style="background:#f2cf6b"></i>Date Announcement</span><span><i style="background:#e2343e"></i>measured</span><span><i style="background:transparent;border:2px solid #e2343e"></i>archived copy</span><span><i style="background:transparent;border:2px dashed #8a7a72"></i>estimated</span></div>
   <p class="gl-lede" id="ms-note" style="margin-top:8px"></p>
+</section>
+
+<!-- ============ PRESS BUZZ (reads data/king-press.json; owner, 27 Oct 2026) ============ -->
+<section class="gl" id="press" aria-labelledby="h-press">
+  <div class="gl-head"><h2 id="h-press">Buzz in the press</h2><span class="gl-date" id="pr-asof"></span></div>
+  <p class="gl-lede">Articles about KING found by our daily news searches, counted per day. This is what our searches find, not every article published. Tracking started 27 Oct 2026.</p>
+  <div class="pr-bars" id="pr-bars"></div>
+  <h3 class="tr-h" id="pr-h">Latest coverage</h3>
+  <ul class="pr-list" id="pr-list"><li>Loading…</li></ul>
 </section>
 
 <header class="ki-head">
@@ -1354,22 +1373,30 @@
 /* Latest news, official releases, master graph (owner, 27 Oct 2026). Estimates are computed here and always labelled. */
 (function(){
   var $=function(q){return document.querySelector(q);};
+  var n0=function(N){return (N.latest||{}).release;};
   var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
   var fmt=function(n){return Number(n).toLocaleString('en-US');};
   var short=function(n){return n>=1e6?(n/1e6).toFixed(n>=1e7?1:2).replace(/\.0+$/,'')+'M':n>=1e3?(n/1e3).toFixed(n>=1e4?0:1).replace(/\.0$/,'')+'K':String(n);};
   var dd=function(s){return s?new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):'Date not confirmed';};
   var tm=function(iso){return new Date(iso).toLocaleString('en-GB',{timeZone:'Asia/Kolkata',day:'2-digit',month:'short',hour:'numeric',minute:'2-digit',hour12:true})+' IST';};
   var J=function(u){return fetch(u,{cache:'no-store'}).then(function(r){return r.json();});};
-  Promise.all([J('../data/king-news.json'),J('../data/king-intelligence-daily.json'),J('../data/king-buzz-archive.json').catch(function(){return {series:{}};})]).then(function(x){
-    var N=x[0],L=x[1],A=x[2],n=N.latest,R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+  Promise.all([J('../data/king-news.json'),J('../data/king-intelligence-daily.json'),J('../data/king-buzz-archive.json').catch(function(){return {series:{}};}),J('../data/king-posts.json').catch(function(){return {posts:[]};}),J('../data/king-press.json').catch(function(){return {days:[]};}),J('../data/king-fan-versions.json').catch(function(){return {releases:{}};})]).then(function(x){
+    var FV=(x[5].releases||{})[n0(x[0])]||[];
+    var N=x[0],L=x[1],A=x[2],P=x[3].posts||[],PR=x[4].days||[],n=N.latest,R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;});
     // 1. news
     $('#nw-img').src=n.image; $('#nw-img').alt=n.image_alt||''; $('#nw-credit').textContent=n.image_credit||'';
     $('#nw-kick').textContent=(n.kicker||'Latest')+(n.posted_at?' · '+tm(n.posted_at):'');
     $('#nw-links').innerHTML=(n.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.name)+' ↗</a>';}).join(' ');
     $('#h-news').textContent=n.headline; $('#nw-deck').textContent=n.deck||'';
     if(n.quote){var q=$('#nw-quote');q.hidden=false;q.innerHTML=esc(n.quote)+'<cite>'+esc(n.quote_by||'')+'</cite>';}
-    if(n.stats&&n.posted_at){var h=Math.max(1,Math.round((Date.parse(n.stats.read_at)-Date.parse(n.posted_at))/36e5)),st=$('#nw-stats');st.hidden=false;
-      st.innerHTML='<b>In '+h+' hour'+(h>1?'s':'')+' after posting</b><ul>'+n.stats.items.map(function(i){return '<li><em>'+short(i.value)+'</em>'+esc(i.label)+' · '+esc(i.platform)+'</li>';}).join('')+'</ul><small>Read '+tm(n.stats.read_at)+'. '+esc(n.stats.note||'')+'</small>';}
+    var CK=[['3h',3],['24h',24],['48h',48],['7 days',168]],MAIN={X:['views','likes'],Instagram:['likes','comments']};
+    var at=function(post,h){var t=Date.parse(post.posted_at)+h*36e5,best=null;(post.readings||[]).forEach(function(r){var d=Math.abs(Date.parse(r.at)-t);if(d<=h*36e5/2+36e5&&(!best||d<best.d))best={d:d,r:r};});return best&&best.r;};
+    var latestR=function(post){var r=post.readings||[];return r[r.length-1];};
+    var mine=P.filter(function(p){return p.release===n.release;});
+    if(mine.length){var st=$('#nw-stats');st.hidden=false;var now=Date.now();
+      var rows=[];mine.forEach(function(p){(MAIN[p.platform]||[]).forEach(function(m){rows.push('<tr><td>'+esc(p.account)+' · '+esc(p.platform)+' '+esc(m)+' <a href="'+esc(p.url)+'" target="_blank" rel="noopener">↗</a></td>'+CK.map(function(c){var r=at(p,c[1]),due=Date.parse(p.posted_at)+c[1]*36e5;
+        if(r&&r.metrics[m]!=null)return '<td><b>'+short(r.metrics[m])+'</b></td>';return '<td class="due">'+(due>now?'due '+tm(new Date(due).toISOString()).replace(' IST',''):'not read')+'</td>';}).join('')+'</tr>');});});
+      st.innerHTML='<b>Since posting · checkpoints at 3h, 24h, 48h and 7 days</b><table class="ck"><thead><tr><th>Post</th>'+CK.map(function(c){return '<th>'+c[0]+'</th>';}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table><small>Counts as X and Instagram display them. Read by hand at each checkpoint (the platforms block automatic reading).</small>';}
     var days=Math.round((Date.UTC(2026,11,24)-Date.parse(n.date+'T00:00:00Z'))/864e5);
     $('#nw-when').textContent=dd(n.date)+' · '+days+' days to KING';
     $('#nw-src').innerHTML='Sources: '+(n.sources||[]).map(function(s){return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>';}).join(' · ');
@@ -1381,10 +1408,20 @@
     // 2. releases
     $('#rl').innerHTML=(N.releases||[]).map(function(r){
       var t=[];if(r.series_id){var s=real(r.series_id);if(s.length){var z=s[s.length-1];t.push('<span class="v">'+fmt(z.v)+'<small>YouTube views · '+dd(z.d).slice(0,6)+'</small></span>');}}
-      (r.traffic||[]).forEach(function(x){t.push('<span class="v">'+short(x.value)+'<small>'+esc(x.label)+(r.traffic_read?' · '+tm(r.traffic_read):'')+'</small></span>');});
+      P.filter(function(p){return p.release&&p.release===r.release;}).forEach(function(p){var z=latestR(p);if(!z)return;var m=(MAIN[p.platform]||['likes'])[0];if(z.metrics[m]==null)return;t.push('<span class="v">'+short(z.metrics[m])+'<small>'+esc(m)+' · '+esc(p.account)+' on '+esc(p.platform)+' · '+tm(z.at)+'</small></span>');});
       if(!t.length)t.push('<span class="v">N/A<small>'+esc(r.note||'no public counter')+'</small></span>');
       return '<li><span class="th'+(r.type==='Poster'?' po':'')+'"><img src="'+esc(r.thumb||'')+'" alt="" loading="lazy" referrerpolicy="no-referrer"></span><span class="d">'+dd(r.date)+(r.time?'<br>'+esc(r.time):'')+'</span><span class="ti"><span class="ty">'+esc(r.type)+'</span>'+esc(r.title)+'<small>'+esc(r.by)+' · '+esc(r.platform)+(r.note&&r.date?' · '+esc(r.note):'')+'</small><span class="lk">'+(r.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.name)+' ↗</a>';}).join('')+'</span></span><span>'+t.join('')+'</span></li>';
     }).join('');
+    // fan versions
+    if(FV.length){$('#fv-cta').hidden=false;$('#fv-open').textContent='See '+FV.length+' FAN version'+(FV.length>1?'s':'')+' →';
+      $('#fv-grid').innerHTML=FV.map(function(f){return '<a href="'+esc(f.url)+'" target="_blank" rel="noopener"><img src="'+esc(f.image)+'" alt="Fan version by '+esc(f.account)+'" loading="lazy" referrerpolicy="no-referrer"><span>'+esc(f.account)+'<small>'+esc(f.platform)+' · '+tm(f.posted_at)+(f.note?' · '+esc(f.note):'')+'</small></span></a>';}).join('');
+      $('#fv-open').onclick=function(){$('#fv-pop').showModal();};$('#fv-close').onclick=function(){$('#fv-pop').close();};
+      $('#fv-pop').addEventListener('click',function(e){if(e.target.id==='fv-pop')e.target.close();});}
+    // press buzz
+    if(PR.length){var mx=Math.max.apply(null,PR.map(function(d){return d.count;}))||1;
+      $('#pr-bars').innerHTML=PR.map(function(d){return '<div title="'+dd(d.date)+': '+d.count+' articles"><b>'+d.count+'</b><i style="height:'+(d.count/mx*60+4)+'px"></i><small>'+dd(d.date).slice(0,6)+'</small></div>';}).join('');
+      var z=PR[PR.length-1];$('#pr-asof').textContent='Latest: '+dd(z.date);$('#pr-h').textContent='Latest coverage · '+dd(z.date)+' · '+z.count+' articles found';
+      $('#pr-list').innerHTML=(z.articles||[]).map(function(a){return '<li><span class="o">'+esc(a.outlet)+'</span><a href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'</a><span class="tp">'+esc(a.topic||'')+'</span></li>';}).join('');}
     // 3. master graph: total of the two official KING videos, day by day since the first record
     var first=R[0].date,today=last,DAYS=[];for(var t=Date.parse(first+'T00:00:00Z');;t+=864e5){var k=new Date(t).toISOString().slice(0,10);if(k>today)break;DAYS.push(k);}
     var fill=function(P){var map={};P.forEach(function(p){map[p.d]=p;});var out={};

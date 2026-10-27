@@ -1,0 +1,53 @@
+{
+ "about": "Press buzz: articles about KING found by the daily news searches (WebSearch, standard mode: 'Shah Rukh Khan King', 'SRK King poster', 'King teaser', 'King Siddharth Anand', plus the day's topic). 'count' = distinct articles found for that IST day, NOT total coverage; each one is listed with outlet, URL and topic. Days before 27 Oct 2026 were not collected. Owner, 27 Oct 2026.",
+ "days": [
+  {
+   "date": "2026-10-27",
+   "count": 7,
+   "articles": [
+    {
+     "outlet": "NewsBytes",
+     "title": "'Qaatil nahi...aashiq hoon:' SRK drops new poster of 'King'",
+     "url": "https://www.newsbytesapp.com/news/entertainment/shah-rukh-khan-s-new-film-look-revealed/story",
+     "topic": "poster"
+    },
+    {
+     "outlet": "Aaj Tak",
+     "title": "Shah Rukh Khan King New Poster: 'कातिल नहीं आशिक हूं'",
+     "url": "https://aajtak.in/entertainment/bollywood-news/story/shah-rukh-khan-king-new-poster-release-teases-action-with-romance-first-look-tmova-dskc-2681150-2026-10-27",
+     "topic": "poster"
+    },
+    {
+     "outlet": "The Hans India",
+     "title": "Shah Rukh Khan says 'Qaatil nahi… Aashiq hoon' as he unveils new 'King' poster",
+     "url": "https://www.thehansindia.com/cinema/shah-rukh-khan-says-qaatil-nahi-aashiq-hoon-as-he-unveils-new-king-poster-1136288",
+     "topic": "poster"
+    },
+    {
+     "outlet": "Siasat",
+     "title": "SRK unveils new King poster, says 'Qaatil nahi… Aashiq hoon'",
+     "url": "https://www.siasat.com/srk-unveils-new-king-poster-says-qaatil-nahi-aashiq-hoon-3565113/",
+     "topic": "poster"
+    },
+    {
+     "outlet": "Movie Talkies",
+     "title": "Shah Rukh Khan's King not postponed amid Doomsday hype; New poster unveiled",
+     "url": "https://www.movietalkies.com/news/shah-rukh-khan-king-new-poster-12756975",
+     "topic": "release date"
+    },
+    {
+     "outlet": "Awaz The Voice",
+     "title": "Shah Rukh Khan unveils fiery new poster of 'King'",
+     "url": "https://www.awazthevoice.in/entertainment-news/shah-rukh-khan-unveils-fiery-new-poster-of-king-69906.html",
+     "topic": "poster"
+    },
+    {
+     "outlet": "Social News XYZ",
+     "title": "Shah Rukh Khan says 'Qaatil nahi… Aashiq hoon' as he unveils new 'King' poster",
+     "url": "https://www.socialnews.xyz/2026/10/26/shah-rukh-khan-says-qaatil-nahi-aashiq-hoon-as-he-unveils-new-king-poster/",
+     "topic": "poster"
+    }
+   ]
+  }
+ ]
+}

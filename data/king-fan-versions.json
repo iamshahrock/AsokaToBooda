@@ -1,0 +1,25 @@
+{
+ "about": "Fan-made versions of official KING posts (owner, 27 Oct 2026). Collected by hand from public X / Instagram posts (replies and quote posts; logged-out X shows only a few, so the list grows as more are found or submitted). Images are hotlinked from the fan's own post and every tile links back to it; nothing is re-hosted. Add items newest first.",
+ "releases": {
+  "poster-2026-10-27": [
+   {
+    "platform": "X",
+    "account": "@Shanurugo",
+    "url": "https://x.com/Shanurugo/status/2114987288014770216",
+    "image": "https://pbs.twimg.com/media/HVnxuhXXEAAbefS?format=jpg&name=small",
+    "full": "https://pbs.twimg.com/media/HVnxuhXXEAAbefS?format=jpg&name=large",
+    "posted_at": "2026-10-27T13:17:18+05:30",
+    "note": "KING with a leading lady"
+   },
+   {
+    "platform": "X",
+    "account": "@SVC63SkFanpage",
+    "url": "https://x.com/SVC63SkFanpage/status/2114961923792052505",
+    "image": "https://pbs.twimg.com/media/HVnaqApbMAAoplM?format=jpg&name=small",
+    "full": "https://pbs.twimg.com/media/HVnaqApbMAAoplM?format=jpg&name=large",
+    "posted_at": "2026-10-27T11:36:31+05:30",
+    "note": "'King nahi, Queen hoon main...'"
+   }
+  ]
+ }
+}
