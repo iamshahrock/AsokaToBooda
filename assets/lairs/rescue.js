@@ -58,7 +58,7 @@
   function intro(note) {
     current = null;
     var f = face();
-    screen('<div class="rs-intro"><div class="rs-copy"><p class="eyebrow">King\'s Lairs</p><h2>Rescue <em>your face</em></h2>' +
+    screen('<div class="rs-intro"><div class="rs-copy"><p class="eyebrow">2 worlds · 12 arcade games</p><h2>Rescue <em>your face</em></h2>' +
       '<p class="say">A face thief is stealing fans\' faces and locking them in his safe. Yours is next. Fight through the lairs, level by level, shoot down his crown, and the crown becomes the key to the safe.</p>' +
       '<div class="rs-up">' + safeHtml(false) + '<div><p class="say" style="margin:0 0 10px">' + (f ? 'Your face is locked in the safe. Go and get it back.' : 'Add your photo: it goes into the safe until you rescue it. It stays on this device.') + '</p>' +
       '<label class="btn btn-line rs-file">' + (f ? 'Change photo' : 'Add your photo') + '<input type="file" accept="image/jpeg,image/png,image/webp" hidden id="rsFile"></label>' +
