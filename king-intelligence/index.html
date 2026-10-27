@@ -31,6 +31,24 @@
 @media(max-width:700px){.ao-chain{flex-direction:column}.ao-chain i{transform:rotate(90deg)}}
 </style>
 <style>
+.nw{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:0;margin:0 0 22px;border:1px solid var(--ki-red);border-radius:var(--ki-radius);overflow:hidden;background:#0d0606}
+@media (max-width:860px){.nw{grid-template-columns:minmax(0,1fr)}}
+.nw figure{margin:0;position:relative;background:#000;min-height:220px}.nw figure img{display:block;width:100%;height:100%;object-fit:cover}
+.nw figcaption{position:absolute;left:0;right:0;bottom:0;padding:6px 10px;font-size:11px;color:#d8ccc4;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent)}
+.nw .tx{padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.nw .kick{font:700 11px var(--ki-mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ki-red);align-self:flex-start;padding:4px 8px;border-radius:3px}
+.nw h2{margin:0;font:700 clamp(22px,2.6vw,34px)/1.15 var(--ki-font);color:var(--ki-text)}
+.nw .dk{margin:0;font-size:15px;line-height:1.55;color:var(--ki-text-2)}
+.nw blockquote{margin:0;padding:8px 12px;border-left:3px solid #f2cf6b;font:italic 600 17px/1.4 "Cormorant Garamond",Georgia,serif;color:#f4efe9}.nw blockquote cite{display:block;margin-top:4px;font:600 11px var(--ki-font);font-style:normal;color:var(--ki-muted)}
+.nw .src{font-size:12px;color:var(--ki-muted)}.nw .src a{color:var(--ki-red-hi)}.nw .when{font:600 11px var(--ki-mono);letter-spacing:.06em;color:var(--ki-red-hi);text-transform:uppercase}
+.rl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rl li{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}
+@media (max-width:560px){.rl li{grid-template-columns:minmax(0,1fr) auto}.rl .d{grid-column:1/-1}}
+.rl .d{font:700 12px var(--ki-mono);color:var(--ki-red-hi);text-transform:uppercase;letter-spacing:.04em}.rl .ty{display:inline-block;margin-right:6px;padding:1px 6px;border:1px solid var(--ki-line);border-radius:3px;font:600 10px var(--ki-font);letter-spacing:.08em;text-transform:uppercase;color:var(--ki-muted)}
+.rl .ti a{color:var(--ki-text);text-decoration:none;font-weight:600}.rl .ti small{display:block;margin-top:2px;color:var(--ki-muted);font-size:12px}
+.rl .v{text-align:right;font:700 18px var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums;white-space:nowrap}.rl .v small{display:block;font:600 11px var(--ki-font);color:var(--ki-muted)}.rl .v .up{color:#3fbf73}
+.mc{margin:0 0 16px;padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}.mc h3{margin:0 0 2px;font:700 14px var(--ki-font);color:var(--ki-text)}.mc p{margin:0 0 8px;font-size:12.5px;color:var(--ki-muted)}
+.mc svg{display:block;width:100%;height:220px}.mc .lg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ki-text-2)}.mc .lg i{display:inline-block;width:14px;height:3px;margin-right:6px;vertical-align:3px}
 .ki-frozen{margin:6px 0 12px;padding:8px 12px;border-left:3px solid var(--ki-red-hi);background:rgba(200,16,46,.08);font-size:13px;line-height:1.5;color:var(--ki-text-2)}.ki-frozen a{color:var(--ki-red-hi)}
 .tr-h{margin:4px 0 8px;font:600 11px/1.3 var(--ki-font);letter-spacing:.08em;text-transform:uppercase;color:var(--ki-muted)}
 .tr-days{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}.tr-days span{display:flex;flex-direction:column;align-items:center;gap:3px;width:34px;font:600 10px var(--ki-mono);color:var(--ki-muted)}
@@ -98,6 +116,19 @@
   <a href="../king-intelligence-2/">Command centre</a>
 </nav>
 
+<!-- ============ LATEST NEWS (reads data/king-news.json; owner, 27 Oct 2026) ============ -->
+<section class="nw" id="news" aria-labelledby="h-news">
+  <figure><img id="nw-img" alt="" referrerpolicy="no-referrer"><figcaption id="nw-credit"></figcaption></figure>
+  <div class="tx">
+    <span class="kick" id="nw-kick">Latest</span>
+    <h2 id="h-news">Loading the latest KING news…</h2>
+    <p class="dk" id="nw-deck"></p>
+    <blockquote id="nw-quote" hidden></blockquote>
+    <span class="when" id="nw-when"></span>
+    <span class="src" id="nw-src"></span>
+  </div>
+</section>
+
 <header class="ki-head">
   <div>
     <p class="ki-eyebrow">KING Intelligence · KING Buzz · 01</p>
@@ -115,7 +146,7 @@
 <!-- ============ TODAY AT A GLANCE (reads data/king-intelligence-daily.json) ============ -->
 <section class="gl" id="glance" aria-labelledby="h-glance">
   <div class="gl-head">
-    <h2 id="h-glance">Today at a glance</h2>
+    <h2 id="h-glance">Current buzz</h2>
     <span class="gl-date" id="gl-date">Latest record: 19 Oct 2026</span>
   </div>
   <p class="gl-lede">The short version, in plain words. Each card shows the latest number and how it moved since we last measured the same thing. Nothing is estimated: if we could not read a number, it says N/A.</p>
@@ -136,13 +167,21 @@
   <p class="gl-foot"><a href="report.html">Full daily report →</a> <a href="#competition">DOOM vs KING →</a> <a href="#overview">Detailed dashboard below →</a></p>
 </section>
 
+<!-- ============ OFFICIAL RELEASES (reads data/king-news.json + the ledger) ============ -->
+<section class="gl" id="releases" aria-labelledby="h-rel">
+  <div class="gl-head"><h2 id="h-rel">Everything SRK and Red Chillies have released</h2><span class="gl-date" id="rl-asof"></span></div>
+  <p class="gl-lede">Every official KING poster and video, newest first, with its traffic from the latest daily reading. Instagram posts have no public view counter, so they show N/A.</p>
+  <ul class="rl" id="rl"><li>Loading…</li></ul>
+</section>
+
 <!-- ============ DAILY TREND (reads data/king-intelligence-daily.json; owner, 26 Oct 2026) ============ -->
 <section class="gl tr" id="trend" aria-labelledby="h-trend">
   <div class="gl-head">
-    <h2 id="h-trend">Daily trend · every reading since 04 Oct</h2>
+    <h2 id="h-trend">Daily report since October</h2>
     <span class="gl-date" id="tr-range"></span>
   </div>
   <p class="gl-lede">Every series the daily record measures, from its first reading to the latest. Each dot is a day we read the number; days without a reading are left as gaps, never filled in.</p>
+  <div class="mc"><h3>New views on the two official KING videos</h3><p id="mc-sub">Each dot is a day we read YouTube. Gaps are days nobody measured.</p><svg id="mc-svg" viewBox="0 0 800 220" preserveAspectRatio="none" role="img" aria-label="Views on the KING title reveal and date announcement videos by day"></svg><div class="lg" id="mc-lg"></div></div>
   <h3 class="tr-h">Which days were measured</h3>
   <div class="tr-days" id="tr-days"></div>
   <p class="tr-key"><i class="full"></i> measured <i class="part"></i> partly measured <i class="none"></i> filed, numbers missing <i class="gap"></i> no record filed</p>
@@ -1293,6 +1332,46 @@
         '<div class="ax"><span>'+dd(first)+'</span><span>'+dd(today)+'</span></div><span class="w">Latest: '+dd(z.d)+' · '+esc(z.u||'')+'</span></div>';
     }).join('');
   }).catch(function(){var g=$('#tr-grid'); if(g) g.innerHTML='<p class="gl-lede">The ledger could not load right now.</p>';});
+})();
+</script>
+<script>
+/* Latest news + official releases + main graph (owner, 27 Oct 2026). */
+(function(){
+  var $=function(q){return document.querySelector(q);};
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var fmt=function(n){return Number(n).toLocaleString('en-US');};
+  var dd=function(s){return s?new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):'Date not confirmed';};
+  Promise.all([fetch('../data/king-news.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();})]).then(function(x){
+    var N=x[0],L=x[1],n=N.latest,R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+    $('#nw-img').src=n.image; $('#nw-img').alt=n.image_alt||''; $('#nw-credit').textContent=n.image_credit||'';
+    $('#nw-kick').textContent=n.kicker||'Latest'; $('#h-news').textContent=n.headline; $('#nw-deck').textContent=n.deck||'';
+    if(n.quote){var q=$('#nw-quote');q.hidden=false;q.innerHTML=esc(n.quote)+'<cite>'+esc(n.quote_by||'')+'</cite>';}
+    var days=Math.round((Date.UTC(2026,11,24)-Date.parse(n.date+'T00:00:00Z'))/864e5);
+    $('#nw-when').textContent=dd(n.date)+' · '+days+' days to KING';
+    $('#nw-src').innerHTML='Sources: '+(n.sources||[]).map(function(s){return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>';}).join(' · ');
+    var series=function(id){var out=[];R.forEach(function(r){(r.metrics||[]).forEach(function(m){if(m.series_id===id&&m.value!=null)out.push({d:r.date,v:m.value});});});return out;};
+    var last=R[R.length-1].date; $('#rl-asof').textContent='Traffic as of '+dd(last);
+    $('#rl').innerHTML=(N.releases||[]).map(function(r){
+      var v='<span class="v">N/A<small>'+esc(r.note||'no public counter')+'</small></span>';
+      if(r.series_id){var s=series(r.series_id);if(s.length){var z=s[s.length-1],p=s.length>1?s[s.length-2]:null;
+        v='<span class="v">'+fmt(z.v)+'<small>views'+(p?' · <span class="up">+'+fmt(z.v-p.v)+'</span> since '+dd(p.d).slice(0,6):'')+'</small></span>';}}
+      return '<li><span class="d">'+dd(r.date)+'</span><span class="ti"><span class="ty">'+esc(r.type)+'</span><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+esc(r.title)+'</a><small>'+esc(r.by)+' · '+esc(r.platform)+(r.note&&r.series_id?' · '+esc(r.note):'')+'</small></span>'+v+'</li>';
+    }).join('');
+    // main graph: the two official KING videos, absolute views per reading day
+    var A=series('king_title_reveal_views'),B=series('king_date_announcement_views'),all=A.concat(B);
+    if(all.length){
+      var g0=function(P){return P.map(function(p){return {d:p.d,v:p.v-P[0].v,abs:p.v};});};A=g0(A);B=g0(B);all=A.concat(B);
+      var W=800,H=220,pl=64,pr=14,pt=14,pb=28,first=all.map(function(p){return p.d;}).sort()[0],x0=Date.parse(first),x1=Date.parse(last)||x0+864e5;
+      var vs=all.map(function(p){return p.v;}),lo=0,hi=Math.max.apply(null,vs)*1.15||1;
+      var X=function(d){return pl+(Date.parse(d)-x0)/((x1-x0)||1)*(W-pl-pr);},Y=function(v){return pt+(hi-v)/(hi-lo)*(H-pt-pb);};
+      var g='';for(var i=0;i<=4;i++){var val=lo+(hi-lo)*i/4,y=Y(val);g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+y.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="#2a1d1d"/><text x="'+(pl-6)+'" y="'+(y+4).toFixed(1)+'" fill="#8a7a72" font-size="11" text-anchor="end">'+(val>=1e6?(val/1e6).toFixed(2)+'M':'+'+Math.round(val/1e3)+'K')+'</text>';}
+      g+='<text x="'+pl+'" y="'+(H-8)+'" fill="#8a7a72" font-size="11">'+dd(first).slice(0,6)+'</text><text x="'+(W-pr)+'" y="'+(H-8)+'" fill="#8a7a72" font-size="11" text-anchor="end">'+dd(last).slice(0,6)+'</text>';
+      var line=function(P,c){return (P.length>1?'<path d="'+P.map(function(p,i){return (i?'L':'M')+X(p.d).toFixed(1)+' '+Y(p.v).toFixed(1);}).join(' ')+'" fill="none" stroke="'+c+'" stroke-width="2.5"/>':'')+P.map(function(p){return '<circle cx="'+X(p.d).toFixed(1)+'" cy="'+Y(p.v).toFixed(1)+'" r="4" fill="'+c+'"><title>'+dd(p.d)+': '+fmt(p.abs)+' views (+'+fmt(p.v)+' since '+dd(first).slice(0,6)+')</title></circle>';}).join('');};
+      $('#mc-svg').innerHTML=g+line(A,'#e2343e')+line(B,'#f2cf6b');
+      $('#mc-lg').innerHTML='<span><i style="background:#e2343e"></i>Title reveal · +'+fmt(A[A.length-1].v)+' (now '+fmt(A[A.length-1].abs)+')</span><span><i style="background:#f2cf6b"></i>Date announcement · +'+fmt(B[B.length-1].v)+' (now '+fmt(B[B.length-1].abs)+')</span>';
+      $('#mc-sub').textContent='New views gained since our first YouTube reading on '+dd(first)+'. Each dot is a day we read YouTube; gaps are days nobody measured.';
+    }
+  }).catch(function(){var h=$('#h-news');if(h)h.textContent='The latest news could not load right now.';});
 })();
 </script>
 <script src="../assets/footer.js" defer></script>

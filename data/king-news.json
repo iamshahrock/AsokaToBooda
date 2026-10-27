@@ -1,0 +1,25 @@
+{
+  "about": "Top of /king-intelligence/: the latest KING news (owner, 27 Oct 2026) and every official KING release by Shah Rukh Khan / Red Chillies Entertainment. Video views are read live from the daily ledger (series_id). Update 'latest' when a new official asset drops. Posters on Instagram have no public view count: shown as N/A, never estimated.",
+  "latest": {
+    "date": "2026-10-27",
+    "kicker": "Breaking · SRK published",
+    "headline": "Qaatil nahi… Aashiq hoon: SRK drops a new KING poster as the campaign enters its last mile",
+    "deck": "A rose between his lips, a gun in his hand, the date 24.12.26. Shah Rukh Khan posted the new KING poster on Instagram today, while the two official KING videos on Red Chillies' YouTube channel keep climbing past 82 million views together.",
+    "quote": "Aaj phir yaad aaya... Qaatil nahi... Aashiq hoon #KING 24.12.26",
+    "quote_by": "@iamsrk on Instagram",
+    "image": "https://i.cdn.newsbytesapp.com/images/l230_13671793077241.jpg",
+    "image_alt": "The new KING poster: Shah Rukh Khan with a rose between his lips against a ring of fire",
+    "image_credit": "Poster: @iamsrk / Red Chillies Entertainment · image via NewsBytes",
+    "sources": [
+      {"name": "NewsBytes", "url": "https://www.newsbytesapp.com/news/entertainment/shah-rukh-khan-s-new-film-look-revealed/story"},
+      {"name": "Aaj Tak", "url": "https://aajtak.in/entertainment/bollywood-news/story/shah-rukh-khan-king-new-poster-release-teases-action-with-romance-first-look-tmova-dskc-2681150-2026-10-27"},
+      {"name": "The Hans India", "url": "https://www.thehansindia.com/cinema/shah-rukh-khan-says-qaatil-nahi-aashiq-hoon-as-he-unveils-new-king-poster-1136288"}
+    ]
+  },
+  "releases": [
+    {"date": "2026-10-27", "type": "Poster", "title": "New KING poster · 'Qaatil nahi… Aashiq hoon'", "by": "@iamsrk", "platform": "Instagram", "url": "https://www.newsbytesapp.com/news/entertainment/shah-rukh-khan-s-new-film-look-revealed/story", "note": "Instagram does not publish a view count for posts"},
+    {"date": "2026-01-24", "type": "Video", "title": "KING | Date Announcement | It's KingTime | 24th December 2026", "by": "Red Chillies Entertainment", "platform": "YouTube", "url": "https://www.youtube.com/watch?v=M3mfut2RdHk", "series_id": "king_date_announcement_views"},
+    {"date": "2025-11-02", "type": "Video", "title": "KING | Title Reveal | It's Showtime", "by": "Red Chillies Entertainment", "platform": "YouTube", "url": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E", "series_id": "king_title_reveal_views", "note": "Released on SRK's 60th birthday"},
+    {"date": null, "type": "Poster", "title": "KING first look poster", "by": "Red Chillies Entertainment", "platform": "Instagram / X", "url": "https://en.wikipedia.org/wiki/King_(2026_film)", "note": "Release date not confirmed in public sources [Unverified]"}
+  ]
+}
