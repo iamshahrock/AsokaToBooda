@@ -36,7 +36,7 @@
 .lg-days{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:6px;margin:0 0 14px}
 .lg-days a,.lg-days span{display:flex;flex-direction:column;gap:2px;padding:8px 10px;border:1px solid var(--ki-line);border-radius:var(--ki-radius,6px);text-decoration:none;color:var(--ki-text);background:var(--ki-bg-1)}
 .lg-days b{font:700 15px var(--ki-font)}.lg-days small{font-size:11px;color:var(--ki-muted)}
-.lg-days a.full small{color:#3fbf73}.lg-days a.part small{color:#c9a227}.lg-days a.none small{color:var(--ki-red-hi)}
+.lg-days a.full small{color:#3fbf73}.lg-days a.rec{border-style:dashed}.lg-days a.rec small{color:#f2cf6b}.lg-st.recovered{color:#f2cf6b;border-color:#7a6626}.lg-st.estimated{color:#8a7a72;border-style:dashed}.lg-days a.part small{color:#c9a227}.lg-days a.none small{color:var(--ki-red-hi)}
 .lg-days span{opacity:.45;background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.03) 6px 12px)}
 .lg-days a[aria-current="page"]{border-color:var(--ki-red-hi);box-shadow:0 0 0 1px var(--ki-red-hi) inset}
 .lg-st{display:inline-block;padding:1px 7px;border-radius:3px;font:600 10px var(--ki-font);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ki-line)}.lg-st.usable{color:#3fbf73;border-color:#2e6e4b}.lg-st.missing{color:var(--ki-red-hi)}.lg-st.stale{color:#c9a227}
@@ -64,19 +64,27 @@
   var linkify=function(t){return esc(t).replace(/\(?(https?:\/\/[^\s)]+)\)?/g,function(_,u){return ' (<a href="'+u+'" target="_blank" rel="noopener">source</a>)';});};
   var dd=function(s,y){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',y?{day:'2-digit',month:'short',year:'numeric'}:{day:'2-digit',month:'short'});};
   var fmt=function(n){return n==null?'<span class="ki-na">Not read</span>':Number(n).toLocaleString('en-US');};
-  fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
+  Promise.all([fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-buzz-archive.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {series:{}};})]).then(function(X){var L=X[0],AR=X[1].series||{};
     var R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;}),by={};R.forEach(function(r){by[r.date]=r;});
+    var UNIT={king_title_reveal_views:'YouTube views',king_date_announcement_views:'YouTube views',doomsday_official_trailer_views:'YouTube views'};
+    var known=function(id){var m={};(AR[id]||[]).forEach(function(p){m[p.date]={v:p.views,k:'recovered',src:p.snapshot,at:p.read_at_ist};});R.forEach(function(r){(r.metrics||[]).forEach(function(x){if(x.series_id===id&&x.value!=null)m[r.date]={v:x.value,k:'measured'};});});return m;};
+    var gapRecord=function(d){var rows=Object.keys(UNIT).map(function(id){var m=known(id);if(m[d])return {series_id:id,unit:UNIT[id],value:m[d].v,status:'recovered',source:'Archived copy of the YouTube page, '+m[d].at+' IST ('+m[d].src+')'};
+        var ks=Object.keys(m).sort(),a=null,b=null;ks.forEach(function(k){if(k<d)a=k;if(k>d&&!b)b=k;});
+        if(a&&b){var f=(Date.parse(d)-Date.parse(a))/(Date.parse(b)-Date.parse(a));return {series_id:id,unit:UNIT[id],value:Math.round(m[a].v+(m[b].v-m[a].v)*f),status:'estimated',source:'Estimated: straight line between the readings of '+dd(a)+' and '+dd(b)};}
+        return {series_id:id,unit:UNIT[id],value:null,status:'missing',source:'No reading before or after this day to estimate from'};});
+      var rec=rows.filter(function(r){return r.status==='recovered';}).length;
+      return {date:d,record_id:'No official record · rebuilt',metrics:rows,topics:[],notes:['No daily record was filed on this day (the daily job started on 18 Oct). Values marked recovered are real view counts read from archived copies of the official YouTube pages (Internet Archive), each linked. Values marked estimated are worked out from the nearest readings either side and are not measurements. None of this is written into the official ledger.'],gap:true,rec:rec};};
     var first=R[0].date,last=R[R.length-1].date,days=[];for(var t=Date.parse(first+'T00:00:00Z');;t+=864e5){var k=new Date(t).toISOString().slice(0,10);if(k>last)break;days.push(k);}
-    var want=new URLSearchParams(location.search).get('date');if(!by[want])want=last;
+    var want=new URLSearchParams(location.search).get('date');if(!want||want<first||want>last||!/^\d{4}-\d\d-\d\d$/.test(want))want=last;
     $('#lg-latest').textContent=dd(last,1)+', IST';
-    $('#lg-count').textContent=R.length+' records · '+(days.length-R.length)+' days without a record';
-    $('#lg-days').innerHTML=days.map(function(k){var r=by[k];if(!r)return '<span title="No record was filed this day"><b>'+dd(k)+'</b><small>no record</small></span>';
+    $('#lg-count').textContent=R.length+' daily records · '+(days.length-R.length)+' days rebuilt from archives and estimates';
+    $('#lg-days').innerHTML=days.map(function(k){var r=by[k];if(!r){var g=gapRecord(k);return '<a class="rec" href="?date='+k+'"'+(k===want?' aria-current="page"':'')+' title="No official record: rebuilt from archived pages and estimates"><b>'+dd(k)+'</b><small>'+(g.rec?g.rec+' recovered':'estimated')+'</small></a>';}
       var ms=r.metrics||[],v=ms.filter(function(m){return m.value!=null;}).length,cls=v===0?'none':(v===ms.length?'full':'part');
       var lab=k===first?'baseline · locked':v+' of '+ms.length+' read';
       return '<a class="'+cls+'" href="?date='+k+'"'+(k===want?' aria-current="page"':'')+'><b>'+dd(k)+'</b><small>'+lab+'</small></a>';}).join('');
-    var r=by[want];
-    $('#h-current').textContent=dd(want,1)+(want===last?' · latest record':'')+(want===first?' · baseline':'');
-    $('#lg-id').textContent='Record '+r.record_id;
+    var r=by[want]||gapRecord(want);
+    $('#h-current').textContent=dd(want,1)+(want===last?' · latest record':'')+(want===first?' · baseline':'')+(r.gap?' · rebuilt (no official record)':'');
+    $('#lg-id').textContent=r.gap?'Rebuilt · not in the ledger':'Record '+r.record_id;
     $('#lg-rows').innerHTML=(r.metrics||[]).map(function(m){var src=String(m.source||'');var u=(src.match(/https?:\/\/[^\s)]+/)||[])[0];
       return '<tr><th scope="row">'+esc(m.series_id.replace(/_/g,' '))+'<small style="display:block;color:var(--ki-muted)">'+esc(m.unit||'')+'</small></th><td class="n">'+fmt(m.value)+'</td><td><span class="lg-st '+esc(m.status||'')+'">'+esc(m.status||'')+'</span></td><td style="font-size:12px">'+(u?'<a class="ki-src" href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(src.replace(u,'').replace(/[()]/g,'').trim().slice(0,90)||new URL(u).hostname)+'</a>':esc(src.slice(0,120)))+'</td></tr>';}).join('');
     $('#lg-topics').innerHTML=(r.topics||[]).map(function(t){return '<li>'+linkify(t)+'</li>';}).join('')||'<li>No news items filed.</li>';
