@@ -3,7 +3,7 @@
  "latest": {
   "date": "2026-10-27",
   "kicker": "Breaking · SRK published",
-  "headline": "Qaatil nahi… Aashiq hoon: SRK drops a new KING poster as the campaign enters its last mile",
+  "headline": "Qaatil nahi… Aashiq hoon: SRK drops the first KING poster as the campaign enters its last mile",
   "deck": "A rose between his lips, a gun in his hand, the date 24.12.26. Shah Rukh Khan posted the new KING poster on X and Instagram at 10:00 am IST, while the two official KING videos on Red Chillies' YouTube channel keep climbing past 82 million views together.",
   "quote": "Aaj phir yaad aaya... Qaatil nahi... Aashiq hoon #KING 24.12.26",
   "quote_by": "@iamsrk on Instagram",
@@ -46,7 +46,7 @@
    "date": "2026-10-27",
    "time": "10:00 IST",
    "type": "Poster",
-   "title": "New KING poster · 'Qaatil nahi… Aashiq hoon'",
+   "title": "First KING poster · 'Qaatil nahi… Aashiq hoon'",
    "by": "@iamsrk",
    "platform": "X + Instagram",
    "thumb": "https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&name=small",
@@ -60,7 +60,25 @@
      "url": "https://www.instagram.com/iamsrk/p/De--1PuIdC3/"
     }
    ],
-   "release": "poster-2026-10-27"
+   "release": "poster-2026-10-27",
+   "note": "The first official KING poster (Variety India, 27 Oct 2026)"
+  },
+  {
+   "date": "2026-10-24",
+   "time": "11:49 IST",
+   "type": "Video",
+   "title": "#2MonthsToGo · 'The wait gets shorter. The ROAR gets louder'",
+   "by": "Red Chillies Entertainment",
+   "platform": "Instagram",
+   "thumb": "../assets/king-news/2-months-to-go.jpg",
+   "links": [
+    {
+     "name": "Instagram",
+     "url": "https://www.instagram.com/redchilliesent/p/De3eRabIALG/"
+    }
+   ],
+   "release": "2-months-to-go",
+   "note": "Footage from the film with the tagline 'King Akela Kaafi Hain!' (Variety India)"
   },
   {
    "date": "2026-01-24",
@@ -99,21 +117,6 @@
    ],
    "series_id": "king_title_reveal_views",
    "note": "Released on SRK's 60th birthday"
-  },
-  {
-   "date": null,
-   "type": "Poster",
-   "title": "KING first look poster",
-   "by": "Red Chillies Entertainment",
-   "platform": "Instagram / X",
-   "thumb": "../assets/posters/thumb/118.webp",
-   "links": [
-    {
-     "name": "Wikipedia",
-     "url": "https://en.wikipedia.org/wiki/King_(2026_film)"
-    }
-   ],
-   "note": "Release date and traffic not confirmed in public sources [Unverified]"
   }
  ]
 }

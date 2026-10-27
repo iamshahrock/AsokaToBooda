@@ -54,7 +54,7 @@
 .tile span i{font-style:normal;color:var(--faint);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile:hover{border-color:var(--red-text)}
 .tile[aria-pressed="true"]{border-color:var(--red-hi);box-shadow:0 0 0 2px var(--red-hi)}
-.tile.king img{object-fit:contain;padding:18px;background:radial-gradient(70% 60% at 50% 50%,#4a0d10,#0d0909)}
+.tile.king img{object-fit:cover}
 .tile .tag{position:absolute;top:4px;left:4px;background:var(--red);color:#fff;font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 5px}
 .chosen{display:flex;gap:14px;align-items:center;margin-top:14px;padding:12px;border:1px solid var(--line);background:#0e0a0a}
 .chosen img{width:56px;aspect-ratio:2/3;object-fit:contain;background:#050303}
@@ -384,8 +384,8 @@ async function loadCatalogue() {
   topPreview();   // the KING poster is known now, for the default view
 }
 function styleOf() { return STYLES.find(x => x.id === state.style) || STYLES[0]; }
-function thumbOf(p) { return p.king ? '../assets/studio/crown.png' : state.style !== 'original' ? BASE + 'styles/' + state.style + '/thumb/' + p.id + '.webp' : BASE + p.thumb; }
-function fallback(im, p) { im.onerror = () => { im.onerror = null; im.src = p.king ? '../assets/studio/crown.png' : BASE + p.thumb; }; }
+function thumbOf(p) { return p.king ? BASE + 'thumb/118.webp' : state.style !== 'original' ? BASE + 'styles/' + state.style + '/thumb/' + p.id + '.webp' : BASE + p.thumb; }
+function fallback(im, p) { im.onerror = () => { im.onerror = null; im.src = p.king ? BASE + 'thumb/118.webp' : BASE + p.thumb; }; }
 function drawStyles() {
   const row = $('styles'); row.querySelectorAll('.chip').forEach(c => c.remove());
   STYLES.forEach(st => {

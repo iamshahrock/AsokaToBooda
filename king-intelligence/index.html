@@ -153,10 +153,10 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
 <!-- ============ MASTER GRAPH (ledger + archived readings + labelled estimates; owner, 27 Oct 2026) ============ -->
 <section class="gl ms" id="master" aria-labelledby="h-master">
   <div class="gl-head"><h2 id="h-master">KING buzz since we started tracking</h2><span class="gl-date" id="ms-range"></span></div>
-  <p class="gl-lede">New views gained by the two official KING videos every day since we started tracking on 04 Oct. Solid dots are real readings (filled: measured by us, ring: an archived copy of the YouTube page). Days nobody read are estimated from the readings either side, drawn small and dashed.</p>
+  <p class="gl-lede">Every official KING release since we started tracking on 04 Oct: views gained by the two YouTube videos day by day, and the engagement the #2MonthsToGo video and the first poster have gained since they were posted. Solid dots are real readings (filled: measured by us, ring: an archived copy of the YouTube page); days nobody read are estimated, drawn small and dashed.</p>
   <div class="big" id="ms-big"></div>
   <svg id="ms-svg" viewBox="0 0 900 280" preserveAspectRatio="none" role="img" aria-label="Total views on the official KING videos since 04 Oct"></svg>
-  <div class="lg"><span><i style="background:#e2343e"></i>Title Reveal</span><span><i style="background:#f2cf6b"></i>Date Announcement</span><span><i style="background:#e2343e"></i>measured</span><span><i style="background:transparent;border:2px solid #e2343e"></i>archived copy</span><span><i style="background:transparent;border:2px dashed #8a7a72"></i>estimated</span></div>
+  <div class="lg" id="ms-lg"><span><i style="background:#e2343e"></i>Title Reveal</span><span><i style="background:#f2cf6b"></i>Date Announcement</span><span><i style="background:#e2343e"></i>measured</span><span><i style="background:transparent;border:2px solid #e2343e"></i>archived copy</span><span><i style="background:transparent;border:2px dashed #8a7a72"></i>estimated</span></div>
   <p class="gl-lede" id="ms-note" style="margin-top:8px"></p>
 </section>
 
@@ -646,8 +646,9 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
     var mine=P.filter(function(p){return p.release===n.release;});
     if(mine.length){var st=$('#nw-stats');st.hidden=false;var now=Date.now();
       var rows=[];mine.forEach(function(p){(MAIN[p.platform]||[]).forEach(function(m){rows.push('<tr><td>'+esc(p.account)+' · '+esc(p.platform)+' '+esc(m)+' <a href="'+esc(p.url)+'" target="_blank" rel="noopener">↗</a></td>'+CK.map(function(c){var r=at(p,c[1]),due=Date.parse(p.posted_at)+c[1]*36e5;
-        if(r&&r.metrics[m]!=null)return '<td><b>'+short(r.metrics[m])+'</b></td>';return '<td class="due">'+(due>now?'due '+tm(new Date(due).toISOString()).replace(' IST',''):'not read')+'</td>';}).join('')+'</tr>');});});
-      st.innerHTML='<b>Since posting · checkpoints at 3h, 24h, 48h and 7 days</b><table class="ck"><thead><tr><th>Post</th>'+CK.map(function(c){return '<th>'+c[0]+'</th>';}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table><small>Counts as X and Instagram display them. Read by hand at each checkpoint (the platforms block automatic reading).</small>';}
+        if(r&&r.metrics[m]!=null)return '<td><b>'+short(r.metrics[m])+'</b></td>';return '<td class="due" title="'+(due>now?'Not reached yet':'Not read')+'">—</td>';}).join('')+'</tr>');});});
+      var t0=Date.parse(mine[0].posted_at),hd=function(h){return new Date(t0+h*36e5).toLocaleString('en-GB',{timeZone:'Asia/Kolkata',day:'2-digit',month:'short',hour:'numeric',minute:'2-digit',hour12:true});};
+      st.innerHTML='<b>Since posting</b><table class="ck"><thead><tr><th>Post</th>'+CK.map(function(c){return '<th>'+c[0]+'<br><small style="font-weight:500;letter-spacing:0;text-transform:none">'+hd(c[1])+'</small></th>';}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table><small>Each column is a fixed time after SRK posted; it fills in when we take that reading. Counts as X and Instagram display them.</small>';}
     var days=Math.round((Date.UTC(2026,11,24)-Date.parse(n.date+'T00:00:00Z'))/864e5);
     $('#nw-when').textContent=dd(n.date)+' · '+days+' days to KING';
     $('#nw-src').innerHTML='Sources: '+(n.sources||[]).map(function(s){return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>';}).join(' · ');
@@ -682,18 +683,26 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
         else if(a){out[d]={d:d,v:a.v,k:'estimated'};}});return out;};
     var LINES=[{id:'king_title_reveal_views',name:'Title Reveal',c:'#e2343e'},{id:'king_date_announcement_views',name:'Date Announcement',c:'#f2cf6b'}];
     LINES.forEach(function(l){var P=real(l.id),F=fill(P);l.real=P;l.S=DAYS.filter(function(d){return F[d];}).map(function(d){return F[d];});l.base=l.S.length?l.S[0].v:0;});
-    var W=900,H=280,pl=70,pr=16,pt=16,pb=30,x0=Date.parse(DAYS[0]),x1=Date.parse(DAYS[DAYS.length-1]);
-    var hi=Math.max.apply(null,LINES.map(function(l){return l.S.length?l.S[l.S.length-1].v-l.base:0;}))*1.12||1,lo=0;
+    // the two official posters (owner, 27 Oct 2026: 'put all the 4'): engagement gained since posting, from the hand readings in data/king-posts.json (0 at the moment of posting)
+    var PCOL=['#3fa7ff','#b77dff'];
+    (N.releases||[]).filter(function(r){return !r.series_id&&r.release&&P.some(function(p){return p.release===r.release;});}).forEach(function(r,i){
+      var ps=P.filter(function(p){return p.release&&p.release===r.release;}),p=ps.filter(function(x){return x.platform==='X';})[0]||ps[0],m=p?(MAIN[p.platform]||['likes'])[0]:null;
+      var S=p?[{d:p.posted_at,v:0,k:'measured'}].concat((p.readings||[]).filter(function(x){return x.metrics[m]!=null;}).map(function(x){return {d:x.at,v:x.metrics[m],k:'measured'};})):[];
+      LINES.push({id:'poster-'+i,name:r.title.replace(/^KING /,'').replace(/ · .*/,'')+(p?' ('+m+' on '+p.platform+')':''),c:PCOL[i%2],S:S,real:[],base:0,poster:true,missing:!S.length});});
+    var W=900,H=280,pl=70,pr=16,pt=16,pb=30,x0=Date.parse(DAYS[0]),x1=Date.parse(DAYS[DAYS.length-1])+864e5;
+    var hi=Math.max.apply(null,LINES.map(function(l){return l.S.length?Math.max.apply(null,l.S.map(function(p){return p.v-l.base;})):0;}))*1.12||1,lo=0;
     var X=function(d){return pl+(Date.parse(d)-x0)/((x1-x0)||1)*(W-pl-pr);},Y=function(v){return pt+(hi-v)/(hi-lo)*(H-pt-pb);};
     var g='';for(var i=0;i<=4;i++){var val=hi*i/4,y=Y(val);g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+y.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="#2a1d1d"/><text x="'+(pl-8)+'" y="'+(y+4).toFixed(1)+'" fill="#8a7a72" font-size="12" text-anchor="end">+'+short(Math.round(val))+'</text>';}
     [0,Math.floor(DAYS.length/2),DAYS.length-1].forEach(function(i){g+='<text x="'+X(DAYS[i]).toFixed(1)+'" y="'+(H-8)+'" fill="#8a7a72" font-size="12" text-anchor="middle">'+dd(DAYS[i]).slice(0,6)+'</text>';});
     LINES.forEach(function(l){var S=l.S;for(var j=1;j<S.length;j++){var a=S[j-1],b=S[j],est=a.k==='estimated'||b.k==='estimated';g+='<line x1="'+X(a.d).toFixed(1)+'" y1="'+Y(a.v-l.base).toFixed(1)+'" x2="'+X(b.d).toFixed(1)+'" y2="'+Y(b.v-l.base).toFixed(1)+'" stroke="'+l.c+'" stroke-opacity="'+(est?.45:1)+'" stroke-width="3" stroke-dasharray="'+(est?'6 5':'none')+'"/>';}
-      g+=S.map(function(p){var r=p.k!=='estimated';return '<circle cx="'+X(p.d).toFixed(1)+'" cy="'+Y(p.v-l.base).toFixed(1)+'" r="'+(r?5:3.5)+'" fill="'+(r?(p.k==='archived'?'#0d0606':l.c):'none')+'" stroke="'+l.c+'" stroke-width="2" stroke-opacity="'+(r?1:.5)+'"><title>'+l.name+' · '+dd(p.d)+': '+fmt(p.v)+' views ('+p.k+')</title></circle>';}).join('');});
+      g+=S.map(function(p){var r=p.k!=='estimated';return '<circle cx="'+X(p.d).toFixed(1)+'" cy="'+Y(p.v-l.base).toFixed(1)+'" r="'+(r?5:3.5)+'" fill="'+(r?(p.k==='archived'?'#0d0606':l.c):'none')+'" stroke="'+l.c+'" stroke-width="2" stroke-opacity="'+(r?1:.5)+'"><title>'+l.name+' · '+(l.poster?tm(p.d):dd(p.d))+': '+fmt(p.v)+' ('+p.k+')</title></circle>';}).join('');});
     $('#ms-svg').innerHTML=g;
-    var tot=LINES.reduce(function(s,l){return s+(l.S.length?l.S[l.S.length-1].v:0);},0),gain=LINES.reduce(function(s,l){return s+(l.S.length?l.S[l.S.length-1].v-l.base:0);},0);
+    $('#ms-lg').innerHTML=LINES.map(function(l){var z=l.S[l.S.length-1];return '<span><i style="background:'+l.c+'"></i>'+esc(l.name)+(l.missing?' · not read yet':z?' · +'+short(z.v-l.base):'')+'</span>';}).join('')+'<span><i style="background:transparent;border:2px solid #e2343e"></i>archived copy</span><span><i style="background:transparent;border:2px dashed #8a7a72"></i>estimated</span>';
+    var VID=LINES.filter(function(l){return !l.poster;});
+    var tot=VID.reduce(function(s,l){return s+(l.S.length?l.S[l.S.length-1].v:0);},0),gain=VID.reduce(function(s,l){return s+(l.S.length?l.S[l.S.length-1].v-l.base:0);},0);
     $('#ms-big').innerHTML=fmt(tot)+' views on the official KING videos<small>+'+fmt(gain)+' since '+dd(DAYS[0]).slice(0,6)+'</small>';
     $('#ms-range').textContent=dd(DAYS[0]).slice(0,6)+' → '+dd(DAYS[DAYS.length-1]).slice(0,6);
-    $('#ms-note').textContent=LINES.map(function(l){var m=l.real.filter(function(p){return p.k==='measured';}).length,ar=l.real.filter(function(p){return p.k==='archived';}).length;return l.name+': '+m+' days measured by us, '+ar+' from archived copies of the YouTube page, '+(DAYS.length-m-ar)+' estimated';}).join(' · ')+'. Views gained are counted from 04 Oct (estimated start). Estimates never enter the daily ledger.';
+    $('#ms-note').textContent=VID.map(function(l){var m=l.real.filter(function(p){return p.k==='measured';}).length,ar=l.real.filter(function(p){return p.k==='archived';}).length;return l.name+': '+m+' days measured by us, '+ar+' from archived copies of the YouTube page, '+(DAYS.length-m-ar)+' estimated';}).join(' · ')+'. Views gained are counted from 04 Oct (estimated start). Estimates never enter the daily ledger.';
   }).catch(function(){var h=$('#h-news');if(h)h.textContent='The latest news could not load right now.';});
 })();
 </script>
