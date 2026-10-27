@@ -24,7 +24,7 @@
   var home = root;
   var LINKS = [
     ['create/', 'Make Your Poster', ['make-your-poster/']],
-    ['lairs/', "King's Lairs"],
+    ['lairs/', 'Rescue Your Face'],
     ['chess81/', 'Chess81', ['CHESS81.HTML']],
     ['king-intelligence/', 'KING Buzz'],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
@@ -41,7 +41,7 @@
   // Sub-pages: a slim tab row under the bar on every page of that section, so fans always know where they are.
   var SUB = {
     'create/': [['create/', 'Kingmaker studio'], ['', 'Be King · coming soon']],
-    'lairs/': [['lairs/', 'Rescue Your Face'], ['lairs/#cinema', 'Lairs Cinema']],
+    'lairs/': [['lairs/', 'The 12 games'], ['lairs/#cinema', 'Lairs Cinema']],
     'chess81/': [['chess81/', 'Overview'], ['CHESS81.HTML', 'Play the full game'], ['', 'Rapid Fire · coming soon']],
     'fan-billboard/': [['fan-billboard/', 'STARKS Billboard'], ['fan-made-ai-universe/', 'Fan-made AI Universe']],
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
@@ -132,9 +132,9 @@
     /* phone: show the middle of the story, burger menu */
     /* desktop: everything on one line */
     '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-util{margin-left:0}#site-header .sh-brand{margin-right:0}}',
-    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 14px}#site-header .sh-nav{gap:2px 8px}#site-header .sh-nav a{font-size:12px;letter-spacing:.04em}#site-header .sh-util{gap:2px 9px;padding-left:10px}#site-header .sh-util a{font-size:11px;letter-spacing:.04em}#site-header .sh-sw{display:none}}',
-    '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 13px}#site-header .sh-nav a{font-size:12px;letter-spacing:.08em}#site-header .sh-util{gap:2px 14px}}',
-    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 7px}#site-header .sh-nav a{font-size:11px;letter-spacing:.01em}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.03em}#site-header .sh-bar-in{gap:8px 10px;padding:0 10px}}',
+    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 10px}#site-header .sh-nav{gap:2px 5px}#site-header .sh-nav a{font-size:12px;letter-spacing:.015em}#site-header .sh-util{gap:2px 9px;padding-left:10px}#site-header .sh-util a{font-size:11px;letter-spacing:.02em}#site-header .sh-sw{display:none}}',
+    '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 9px}#site-header .sh-nav a{font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 14px}}',
+    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 3px}#site-header .sh-nav a{font-size:11px;letter-spacing:0}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 8px;padding:0 8px}}',
     /* tablet and phone: the menu button holds every link, Home included */
     '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
     '@media (max-width:760px){',
