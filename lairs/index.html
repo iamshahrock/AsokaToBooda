@@ -40,7 +40,7 @@
 .stage-top .meta{font-family:var(--display);font-size:22px;color:var(--red-hi)}
 .arena{position:relative;padding:22px;min-height:420px}
 .say{margin:0 0 14px;color:#d9cfc7;font-size:16px;line-height:1.5;max-width:720px}
-.msg{margin:14px 0 0;min-height:24px;font-size:15px;color:var(--red-text)}
+.msg{margin:14px 0 0;min-height:24px;font-size:15px;color:var(--red-text)}.msg.ok{color:#3fbf73;font-weight:600}
 .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 /* THE CONTRACT */
 .contract{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;margin-top:18px;border:1px solid var(--line);background:#070404;overflow:hidden}
@@ -496,11 +496,13 @@ function stillBox(l) {
   up.onchange = function () {
     var f = up.files && up.files[0]; if (!f) return;
     var url = URL.createObjectURL(f), im = new Image();
+    msg.className = 'msg still-msg'; msg.textContent = 'Reading your photo…';
+    im.onerror = function () { URL.revokeObjectURL(url); up.value = ''; msg.textContent = 'This photo could not be opened. Please use a JPG, PNG or WebP photo (iPhone photos in HEIC: share or export them as JPG first).'; };
     im.onload = function () {
       var sc = Math.min(1, 768 / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width * sc); c.height = Math.round(im.height * sc);
       c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
       var data = c.toDataURL('image/jpeg', 0.86); try { localStorage.setItem(FACE, data); } catch (e) {}
-      var nd = stillBox(l); d.replaceWith(nd);
+      var nd = stillBox(l); d.replaceWith(nd); var m = nd.querySelector('.still-msg'); m.className = 'msg still-msg ok'; m.textContent = 'Photo added. Tick the box, then Paint my scene.';
     };
     im.src = url;
   };

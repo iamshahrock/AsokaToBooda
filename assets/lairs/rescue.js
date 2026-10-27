@@ -55,14 +55,14 @@
     var f = face();
     return '<div class="rs-safe' + (open ? ' open' : '') + '"><div class="rs-face">' + (f ? '<img src="' + f + '" alt="Your face">' : '<span>?</span>') + '</div><div class="rs-bars"></div><div class="rs-lock">' + (open ? 'OPEN' : 'LOCKED') + '</div></div>';
   }
-  function intro() {
+  function intro(note) {
     current = null;
     var f = face();
     screen('<div class="rs-intro"><div class="rs-copy"><p class="eyebrow">King\'s Lairs</p><h2>Rescue <em>your face</em></h2>' +
       '<p class="say">A face thief is stealing fans\' faces and locking them in his safe. Yours is next. Fight through the lairs, level by level, shoot down his crown, and the crown becomes the key to the safe.</p>' +
       '<div class="rs-up">' + safeHtml(false) + '<div><p class="say" style="margin:0 0 10px">' + (f ? 'Your face is locked in the safe. Go and get it back.' : 'Add your photo: it goes into the safe until you rescue it. It stays on this device.') + '</p>' +
       '<label class="btn btn-line rs-file">' + (f ? 'Change photo' : 'Add your photo') + '<input type="file" accept="image/jpeg,image/png,image/webp" hidden id="rsFile"></label>' +
-      '<label class="still-ok"><input type="checkbox" id="rsOk"' + (f ? ' checked' : '') + '> This is my photo, or I have permission to use it.</label><p class="msg" id="rsMsg"></p></div></div></div>' +
+      '<label class="still-ok"><input type="checkbox" id="rsOk"' + (f ? ' checked' : '') + '> This is my photo, or I have permission to use it.</label><p class="msg' + (note ? ' ok' : '') + '" id="rsMsg">' + (note || '') + '</p></div></div></div>' +
       '<div class="rs-worlds"><p class="eyebrow">Choose your world</p>' + Object.keys(WORLDS).map(function (k) {
         var w = WORLDS[k], st = W(k), lv = w.levels.length;
         return '<button type="button" class="rs-world' + (w.open ? '' : ' soon') + '" data-w="' + k + '"' + (w.open ? '' : ' disabled') + '><img src="' + SC + w.img + '-m.webp" alt=""><span class="rs-wn">' + w.name + '</span><span class="rs-ws">' + w.sub + '</span><span class="rs-wp">' +
@@ -71,12 +71,15 @@
     $('rsFile').onchange = function () {
       var file = this.files && this.files[0]; if (!file) return;
       if (!$('rsOk').checked) { $('rsMsg').textContent = 'Please tick the box first: the photo must be yours, or one you have permission to use.'; this.value = ''; return; }
-      var url = URL.createObjectURL(file), im = new Image();
+      var url = URL.createObjectURL(file), im = new Image(), inp = this;
+      $('rsMsg').className = 'msg'; $('rsMsg').textContent = 'Reading your photo…';
+      im.onerror = function () { URL.revokeObjectURL(url); inp.value = ''; $('rsMsg').textContent = 'This photo could not be opened. Please use a JPG, PNG or WebP photo (iPhone photos in HEIC: share or export them as JPG first).'; };
       im.onload = function () {
         var sc = Math.min(1, 900 / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width * sc); c.height = Math.round(im.height * sc);
         c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
         try { localStorage.setItem(FACE, c.toDataURL('image/jpeg', 0.86)); } catch (e) { $('rsMsg').textContent = 'This browser could not keep the photo; try a smaller one.'; return; }
-        intro();
+        intro('Photo added. The face thief has locked it in his safe: choose a world below and fight to get it back.');
+        var w = root.querySelector('.rs-worlds'); if (w) w.scrollIntoView({ behavior: 'smooth', block: 'center' });
       };
       im.src = url;
     };
