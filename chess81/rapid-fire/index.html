@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rapid Fire · 81-second checkmate — Chess81</title>
+<meta name="description" content="Chess81 Rapid Fire: 15 checkmate boards on the 9x9 board, 81 seconds each. Find the mate, beat the clock, earn STARKS.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/chess81/rapid-fire/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/v2.css">
+<style>
+/* Rapid Fire (Ganesh Vulidra's 81-second checkmate idea, 28 Oct 2026). Same board and pieces as the full game. */
+:root{--cell:56px;--lt:#e9e0d4;--dk:#7a6656;--redp:#d3141c;--bluep:#1d5cff;--gold:#f2cf6b}
+.rf{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;margin-top:18px}
+@media (max-width:1000px){.rf{grid-template-columns:minmax(0,1fr)}}
+.frame{position:relative;display:grid;grid-template-columns:22px auto;grid-template-rows:auto 22px;background:#1a1110;border:1px solid var(--line);padding:10px 12px 6px 6px;width:max-content;max-width:100%}
+.ranks{display:grid;grid-template-rows:repeat(9,var(--cell))}
+.files{grid-column:2;display:grid;grid-template-columns:repeat(9,var(--cell))}
+.ranks span,.files span{display:flex;align-items:center;justify-content:center;font:700 12px var(--body);color:var(--faint)}
+.ranks span.o,.files span.o{color:var(--gold)}
+.board{display:grid;grid-template-columns:repeat(9,var(--cell));grid-template-rows:repeat(9,var(--cell));border:3px solid #0b0707}
+.sq{position:relative;width:var(--cell);height:var(--cell);padding:0;border:0;margin:0;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:calc(var(--cell)*.74);line-height:1;-webkit-tap-highlight-color:transparent}
+.sq.l{background:var(--lt)}.sq.d{background:var(--dk)}
+.sq.fire{background:radial-gradient(circle,#ffcf6b 0,#f08a24 55%,#b8461a 100%)}
+.sq.zone{box-shadow:inset 0 0 0 3px rgba(242,207,107,.9)}
+.sq.hint{background:var(--gold)!important}
+.sq.last{box-shadow:inset 0 0 0 3px rgba(255,214,10,.75)}
+.sq.sel{box-shadow:inset 0 0 0 4px #fff}
+.sq.chk{background:radial-gradient(circle,#ff4a4f 0,#a3101a 75%)!important}
+.sq.dot::after{content:"";position:absolute;width:26%;height:26%;border-radius:50%;background:rgba(20,10,10,.45)}
+.sq.cap::after{content:"";position:absolute;inset:6%;border-radius:50%;border:4px solid rgba(195,18,26,.85)}
+.pc{display:flex;align-items:center;justify-content:center;pointer-events:none}
+.pc.r{color:var(--redp);text-shadow:0 0 1px #fff,0 0 2px #fff,0 2px 3px rgba(0,0,0,.6)}
+.pc.b{color:var(--bluep);text-shadow:0 0 1px #fff,0 0 2px #fff,0 2px 3px rgba(0,0,0,.6)}
+.pc svg{display:block;width:calc(var(--cell)*.78);height:calc(var(--cell)*.78);filter:drop-shadow(0 0 1px #fff) drop-shadow(0 2px 2px rgba(0,0,0,.55))}
+.flame{transform-origin:20px 14px;animation:fl .7s ease-in-out infinite alternate}@keyframes fl{to{transform:scaleY(1.12)}}
+.over{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;background:rgba(8,5,5,.86)}
+.over[hidden]{display:none}
+.over b{font:400 clamp(28px,4vw,44px)/1 var(--display);text-transform:uppercase;color:var(--gold)}
+.over p{margin:0;max-width:420px;color:#e9dfdb;line-height:1.5}
+.panel{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);padding:16px 18px}
+.bno{margin:0;font:700 12px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.bname{margin:4px 0 6px;font:400 clamp(26px,3vw,36px)/1.05 var(--display);text-transform:uppercase}
+.goal{margin:0;font-size:16px;line-height:1.5;color:#e9dfdb}.goal em{font-style:normal;color:var(--redp);font-weight:700}
+.clock{display:flex;align-items:baseline;gap:10px}
+.clock b{font:400 76px/1 var(--display);color:var(--gold)!important}.clock.low b{color:#ff4a4f!important}
+.clock span{font:700 14px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.msg{min-height:24px;margin:8px 0 0;font-weight:600}.msg.ok{color:#3fbf73}.msg.no{color:#ff6a6f}
+.dots{margin-top:14px;display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:4px}
+.dots i{height:8px;border-radius:2px;background:#2a1d1d}.dots i.ok{background:#3fbf73}.dots i.no{background:#a3101a}.dots i.on{background:var(--gold)}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.tot{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute)}.tot b{display:block;font:400 26px/1 var(--display);color:#fff}
+.how{margin:28px 0 0}.how h2{margin:0 0 10px;font:400 clamp(24px,2.6vw,32px)/1 var(--display);text-transform:uppercase}
+.how ol{margin:0;padding-left:20px;line-height:1.7;color:#e0d6ce}.how p{color:var(--mute);line-height:1.6}
+@media (max-width:620px){:root{--cell:calc((100vw - 64px) / 9)}.clock b{font-size:56px}}
+</style>
+</head>
+<body class="v2">
+<script src="../../assets/header.js"></script>
+<main class="wrap">
+  <div class="page-head"><div><p class="eyebrow">Chess81 · Rapid Fire · idea by Ganesh Vulidra</p><h1>81 seconds. <em>Find the mate.</em></h1></div><p>15 boards on the 9×9 board. Each one has a checkmate waiting. You have 81 seconds per board to find it.</p></div>
+
+  <section class="rf">
+    <div class="frame">
+      <div class="ranks" id="ranks"></div>
+      <div class="board" id="board" role="grid" aria-label="Chess81 board"></div>
+      <div class="files" id="files"></div>
+      <div class="over" id="over"><b id="overH">Rapid Fire</b><p id="overP">You play RED, moving up the board. Every board is a checkmate in one or two moves. A wrong move costs 10 seconds.</p><button class="btn btn-red" type="button" id="go">Start · board 1</button></div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <p class="bno" id="bno">Board 01 of 15</p>
+        <h2 class="bname" id="bname">Back-rank pressure</h2>
+        <p class="goal" id="goal"><em>RED</em> to move. Checkmate in 1.</p>
+        <p class="msg" id="msg"></p>
+      </div>
+      <div class="card">
+        <div class="clock" id="clock"><b id="secs">81</b><span>seconds</span></div>
+        <div class="dots" id="dots" aria-label="Boards"></div>
+      </div>
+      <div class="row">
+        <button class="btn btn-line" type="button" id="hint">Hint · −15 s</button>
+        <button class="btn btn-line" type="button" id="reset">Reset board</button>
+        <button class="btn btn-line" type="button" id="skip">Skip board</button>
+      </div>
+      <div class="card tot"><div><b id="tSolved">0</b>boards solved</div><div><b id="tScore">0</b>points (seconds left)</div><div><b id="tBest">0</b>your best</div></div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>How Rapid Fire works</h2>
+    <ol>
+      <li><b>Scan:</b> find the BLUE King. The gold outline marks the squares around him.</li>
+      <li><b>Calculate:</b> look for checks. Boards 1 to 6 are mate in 1, boards 7 to 15 are mate in 2.</li>
+      <li><b>Execute:</b> tap a RED piece, then its square. In mate in 2 the Machine answers your first move.</li>
+      <li><b>Mate:</b> checkmate the King before the 81 seconds run out. The seconds you have left are your points.</li>
+    </ol>
+    <p>Same pieces and rules as the <a href="../../CHESS81.HTML">full Chess81 game</a>: the Queen moves up to 3 squares, the King also jumps like a Knight, a lit Torch burns the enemy pieces next to it. Every board was checked by the Chess81 engine and has exactly one winning first move.</p>
+  </section>
+</main>
+<script src="../../assets/chess81-engine.js"></script>
+<script>
+(function () {
+  var E = window.Chess81, $ = function (id) { return document.getElementById(id); };
+  var GLYPH = { 1: '♟', 3: '♞', 4: '♝', 5: '♜', 6: '♛', 8: '♚' }, MAP = { P: 1, L: 2, N: 3, B: 4, R: 5, Q: 6, T: 7, K: 8 };
+  var SECS = 81, PEN = 10, HINT = 15, BEST = 'amkh-rapid-best';
+  function torchSvg(lit) {
+    return '<svg viewBox="0 0 40 40" aria-hidden="true">' +
+      (lit ? '<path class="flame" d="M20 2c4 6 9 8 7 15-1 3-4 5-7 5s-6-2-7-5c-2-7 3-8 7-15z" fill="#ff8a00"/><path class="flame" d="M20 9c2 4 4 5 3 9-1 2-2 3-3 3s-3-1-3-3c-1-4 1-5 3-9z" fill="#ffd34d"/>' : '<path d="M14 18h12" stroke="#5a463a" stroke-width="2" stroke-linecap="round"/>') +
+      '<path d="M11 20h18l-3 7H14z" fill="currentColor" stroke="#fff" stroke-width="1.2"/><rect x="17.5" y="27" width="5" height="11" rx="1.5" fill="currentColor" stroke="#fff" stroke-width="1.2"/></svg>';
+  }
+  function lighterSvg() {
+    return '<svg viewBox="0 0 40 40" aria-hidden="true"><rect x="18" y="16" width="4" height="21" rx="1.5" fill="#f2d7a8" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="15" r="4.2" fill="currentColor" stroke="#fff" stroke-width="1"/><path class="flame" d="M20 1c3 4 6 6 4 10-1 2-2 3-4 3s-3-1-4-3c-2-4 1-6 4-10z" fill="#ff8a00"/></svg>';
+  }
+  function pieceHtml(p, s) { var t = E.typeOf(p), side = E.sideOf(p); return '<span class="pc ' + (side ? 'b' : 'r') + '">' + (t === 7 ? torchSvg(s.lit[side]) : t === 2 ? lighterSvg() : GLYPH[t] + '︎') + '</span>'; }
+
+  var cells = [];
+  (function () {
+    for (var r = 8; r >= 0; r--) { var s = document.createElement('span'); s.textContent = r + 1; if (r === 4) s.className = 'o'; $('ranks').appendChild(s); }
+    E.FILES.forEach(function (f, c) { var s = document.createElement('span'); s.textContent = f; if (c === 4) s.className = 'o'; $('files').appendChild(s); });
+    for (r = 8; r >= 0; r--) for (var c = 0; c < 9; c++) {
+      var i = r * 9 + c, b = document.createElement('button'); b.type = 'button'; b.className = 'sq ' + ((r + c) % 2 ? 'l' : 'd');
+      b.dataset.i = i; b.setAttribute('role', 'gridcell'); b.addEventListener('click', onSquare); cells[i] = b; $('board').appendChild(b);
+    }
+    for (var k = 0; k < 15; k++) $('dots').appendChild(document.createElement('i'));
+  })();
+
+  var BOARDS = [], cur = 0, s0 = null, s = null, sel = -1, last = [], left = SECS, tick = null, busy = false, hintOn = -1, solved = 0, score = 0, results = [];
+  function build(bd) {
+    var b = new Int8Array(81), kpos = [-1, -1];
+    bd.pcs.forEach(function (x) { var p = x[0], i = E.idx(x[1]), t = MAP[p.toUpperCase()], side = p === p.toUpperCase() ? 0 : 1; b[i] = side ? -t : t; if (t === 8) kpos[side] = i; });
+    var o = bd.opt || {};
+    return { b: b, turn: 0, lit: (o.lit || [0, 0]).slice(), fire: (o.fire || [0, 0]).slice(), lage: [0, 0], kpos: kpos, quiet: 0, ply: 0, winner: -1, reason: '', events: [] };
+  }
+  function render() {
+    var legal = sel >= 0 ? E.legal(s).filter(function (m) { return ((m / 81) | 0) === sel; }) : [], tg = {};
+    legal.forEach(function (m) { tg[m % 81] = 1; });
+    var zone = {}, k = s.kpos[1], kr = k / 9 | 0, kc = k % 9;
+    for (var dr = -1; dr <= 1; dr++) for (var dc = -1; dc <= 1; dc++) { var r = kr + dr, c = kc + dc; if (r >= 0 && r < 9 && c >= 0 && c < 9) zone[r * 9 + c] = 1; }
+    var chk = s.turn === 1 && E.inCheck(s, 1) ? s.kpos[1] : -1;
+    for (var i = 0; i < 81; i++) {
+      var r2 = i / 9 | 0, c2 = i % 9, cl = 'sq ' + ((r2 + c2) % 2 ? 'l' : 'd');
+      if (zone[i]) cl += ' zone'; if (last.indexOf(i) >= 0) cl += ' last'; if (i === sel) cl += ' sel'; if (i === hintOn) cl += ' hint'; if (i === chk) cl += ' chk';
+      if (tg[i]) cl += s.b[i] ? ' cap' : ' dot';
+      cells[i].className = cl; cells[i].innerHTML = s.b[i] ? pieceHtml(s.b[i], s) : '';
+      cells[i].setAttribute('aria-label', E.sq(i) + (s.b[i] ? ' ' + (s.b[i] > 0 ? 'red ' : 'blue ') + ['', 'pawn', 'lighter', 'knight', 'bishop', 'rook', 'queen', 'torch', 'king'][E.typeOf(s.b[i])] : ''));
+    }
+  }
+  function say(t, cls) { $('msg').textContent = t; $('msg').className = 'msg' + (cls ? ' ' + cls : ''); }
+  function showClock() { $('secs').textContent = Math.max(0, left); $('clock').className = 'clock' + (left <= 15 ? ' low' : ''); }
+  function dots() { [].forEach.call($('dots').children, function (d, k) { d.className = results[k] === 1 ? 'ok' : results[k] === 0 ? 'no' : k === cur ? 'on' : ''; }); }
+  function totals() { $('tSolved').textContent = solved; $('tScore').textContent = score; var b = 0; try { b = +localStorage.getItem(BEST) || 0; } catch (e) {} $('tBest').textContent = Math.max(b, score); }
+  function load(n) {
+    cur = n; var bd = BOARDS[n]; s0 = build(bd); s = E.clone(s0); sel = -1; last = []; hintOn = -1; busy = false; left = SECS;
+    $('bno').textContent = 'Board ' + String(n + 1).padStart(2, '0') + ' of ' + BOARDS.length;
+    $('bname').textContent = bd.name;
+    $('goal').innerHTML = '<em>RED</em> to move. Checkmate in ' + bd.depth + '.' + (bd.note ? ' ' + bd.note : '');
+    say(''); showClock(); dots(); render(); $('hint').disabled = false;
+    clearInterval(tick); tick = setInterval(function () { if (busy) return; left--; showClock(); if (left <= 0) fail('Time is up.'); }, 1000);
+  }
+  function reset(msg) { s = E.clone(s0); sel = -1; last = []; render(); if (msg) say(msg, 'no'); }
+  function next() { if (cur + 1 < BOARDS.length) load(cur + 1); else finish(); }
+  function fail(t) {
+    clearInterval(tick); busy = true; results[cur] = 0; dots();
+    var sol = BOARDS[cur].sol[0].split('-'); hintOn = E.idx(sol[0]); last = [E.idx(sol[0]), E.idx(sol[1])]; s = E.clone(s0); render();
+    say(t + ' The key move was ' + sol[0] + ' → ' + sol[1] + '.', 'no'); setTimeout(next, 2600);
+  }
+  function win() {
+    clearInterval(tick); busy = true; results[cur] = 1; solved++; score += Math.max(0, left); dots(); totals();
+    say('Checkmate! +' + Math.max(0, left) + ' points.', 'ok'); setTimeout(next, 1600);
+  }
+  function finish() {
+    clearInterval(tick); busy = true; var best = 0; try { best = +localStorage.getItem(BEST) || 0; if (score > best) localStorage.setItem(BEST, score); } catch (e) {}
+    totals();
+    var got = solved && window.STARKS ? STARKS.earn('chess', Math.min(450, solved * 30), 'Chess81 Rapid Fire · ' + solved + ' of ' + BOARDS.length + ' boards') : 0;
+    $('overH').textContent = solved + ' of ' + BOARDS.length + ' boards';
+    $('overP').textContent = score + ' points' + (score > best ? ' · a new best!' : '') + (got ? ' · +' + got + ' STARKS.' : solved ? ' · today\'s Chess81 STARKS are used up.' : '.');
+    $('go').textContent = 'Play again'; $('over').hidden = false;
+  }
+  function onSquare(e) {
+    if (busy || s.turn !== 0) return;
+    var i = +e.currentTarget.dataset.i, p = s.b[i];
+    if (p > 0) { sel = i === sel ? -1 : i; render(); return; }
+    if (sel < 0) return;
+    var m = sel * 81 + i; if (E.legal(s).indexOf(m) < 0) { sel = -1; render(); return; }
+    play(m);
+  }
+  function play(m) {
+    var bd = BOARDS[cur], f = (m / 81) | 0, to = m % 81, moveTxt = E.sq(f) + '-' + E.sq(to), first = s.ply === 0;
+    sel = -1; hintOn = -1;
+    if (first && bd.sol.indexOf(moveTxt) < 0) { left -= PEN; showClock(); s = E.make(s, m); last = [f, to]; render(); busy = true; say('Not the winning move. −' + PEN + ' seconds.', 'no'); setTimeout(function () { busy = false; reset(); if (left <= 0) fail('Time is up.'); }, 900); return; }
+    s = E.make(s, m); last = [f, to]; render();
+    var r = E.result(s, 0);
+    if (r && r.reason === 'mate' && r.winner === 0) return win();
+    if (s.ply >= 3 || (r && r.winner !== 0)) { left -= PEN; showClock(); busy = true; say('Not mate. −' + PEN + ' seconds. Try again.', 'no'); setTimeout(function () { busy = false; reset(); if (left <= 0) fail('Time is up.'); }, 1000); return; }
+    // mate in 2: the Machine picks the reply that leaves the fewest mates
+    busy = true; say('Good move. The Machine answers…');
+    setTimeout(function () {
+      var rs = E.legal(s), best = rs[0], fewest = 1e9;
+      rs.forEach(function (x) { var n = E.make(s, x), c = E.legal(n).filter(function (y) { var z = E.make(n, y), q = E.result(z, 0); return q && q.reason === 'mate' && q.winner === 0; }).length; if (c < fewest) { fewest = c; best = x; } });
+      s = E.make(s, best); last = [(best / 81) | 0, best % 81]; busy = false; render(); say('Now finish it: checkmate in 1.');
+    }, 650);
+  }
+  $('hint').onclick = function () { if (busy || s.ply) return; hintOn = E.idx(BOARDS[cur].sol[0].split('-')[0]); left -= HINT; showClock(); render(); this.disabled = true; say('The gold square is the piece to move.'); if (left <= 0) fail('Time is up.'); };
+  $('reset').onclick = function () { if (!busy) reset(); };
+  $('skip').onclick = function () { if (!busy) fail('Skipped.'); };
+  $('go').onclick = function () { $('over').hidden = true; solved = 0; score = 0; results = []; totals(); load(0); };
+  fetch('../../data/chess81-rapid.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+    BOARDS = d.boards; $('go').textContent = 'Start · ' + BOARDS.length + ' boards'; s0 = build(BOARDS[0]); s = E.clone(s0); $('bname').textContent = BOARDS[0].name; render(); totals();
+  });
+})();
+</script>
+<script src="../../assets/starks.js"></script>
+<script src="../../assets/footer.js" defer></script>
+</body>
+</html>
