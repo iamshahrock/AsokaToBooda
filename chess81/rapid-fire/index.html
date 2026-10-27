@@ -74,7 +74,7 @@
       <div class="ranks" id="ranks"></div>
       <div class="board" id="board" role="grid" aria-label="Chess81 board"></div>
       <div class="files" id="files"></div>
-      <div class="over" id="over"><b id="overH">Rapid Fire</b><p id="overP">You play RED, moving up the board. Every board is a checkmate in one or two moves. A wrong move costs 10 seconds.</p><button class="btn btn-red" type="button" id="go">Start · board 1</button></div>
+      <div class="over" id="over"><b id="overH">Rapid Fire</b><p id="overP">You play RED, moving up the board. Every board is a checkmate in one or two moves. A wrong move costs 10 seconds.</p><button class="btn btn-red" type="button" id="go" disabled>Loading the boards…</button></div>
     </div>
 
     <div class="panel">
@@ -214,10 +214,22 @@
   $('hint').onclick = function () { if (busy || s.ply) return; hintOn = E.idx(BOARDS[cur].sol[0].split('-')[0]); left -= HINT; showClock(); render(); this.disabled = true; say('The gold square is the piece to move.'); if (left <= 0) fail('Time is up.'); };
   $('reset').onclick = function () { if (!busy) reset(); };
   $('skip').onclick = function () { if (!busy) fail('Skipped.'); };
-  $('go').onclick = function () { $('over').hidden = true; solved = 0; score = 0; results = []; totals(); load(0); };
-  fetch('../../data/chess81-rapid.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
-    BOARDS = d.boards; $('go').textContent = 'Start · ' + BOARDS.length + ' boards'; s0 = build(BOARDS[0]); s = E.clone(s0); $('bname').textContent = BOARDS[0].name; render(); totals();
-  });
+  function startRun() { if (!BOARDS.length) return; $('over').hidden = true; solved = 0; score = 0; results = []; totals(); load(0); }
+  $('go').onclick = startRun;
+  // the 15 boards load once; Start stays off until they are in (a slow or failed load used to leave the game dead)
+  function loadBoards(tries) {
+    var ctl = window.AbortController ? new AbortController() : null, to = setTimeout(function () { if (ctl) ctl.abort(); }, 8000);
+    fetch('../../data/chess81-rapid.json', ctl ? { signal: ctl.signal } : {}).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (d) {
+      clearTimeout(to); if (!d.boards || !d.boards.length) throw new Error('no boards');
+      BOARDS = d.boards; $('go').disabled = false; $('go').textContent = 'Start · ' + BOARDS.length + ' boards';
+      s0 = build(BOARDS[0]); s = E.clone(s0); $('bname').textContent = BOARDS[0].name; render(); totals();
+    }).catch(function () {
+      clearTimeout(to);
+      if (tries < 3) { $('go').textContent = 'Loading the boards… (try ' + (tries + 2) + ')'; setTimeout(function () { loadBoards(tries + 1); }, 1200); }
+      else { $('go').disabled = false; $('go').textContent = 'Try again'; $('overP').textContent = 'The boards did not load. Check your connection and tap Try again.'; $('go').onclick = function () { $('go').disabled = true; $('go').textContent = 'Loading the boards…'; $('go').onclick = startRun; loadBoards(0); }; }
+    });
+  }
+  loadBoards(0);
 })();
 </script>
 <script src="../../assets/starks.js"></script>
