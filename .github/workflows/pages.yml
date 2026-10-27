@@ -38,6 +38,7 @@ jobs:
           mkdir -p site
 
           cp agarmainkinghota.html site/index.html
+          cp favicon.ico site/
           cp agarmainkinghota.html site/
           cp master-home.html site/
           cp -R asoka-to-booda site/
