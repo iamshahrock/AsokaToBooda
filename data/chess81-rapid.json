@@ -1,0 +1,602 @@
+{
+ "about": "Chess81 Rapid Fire boards (idea: Ganesh Vulidra, '81 Squares' deck, 28 Oct 2026). Themes follow his 15 named boards; every position was generated and checked with assets/chess81-engine.js: legal, RED to move, exactly one winning first move (mate in 1 for boards 1-6, mate in 2 for 7-15). Upper case = RED, lower case = BLUE; P pawn, L lighter, N knight, B bishop, R rook, Q queen (range 3), T torch, K king.",
+ "boards": [
+  {
+   "name": "Back-rank pressure",
+   "depth": 1,
+   "pcs": [
+    [
+     "k",
+     "C9"
+    ],
+    [
+     "p",
+     "B8"
+    ],
+    [
+     "p",
+     "C8"
+    ],
+    [
+     "p",
+     "D8"
+    ],
+    [
+     "K",
+     "D2"
+    ],
+    [
+     "R",
+     "A7"
+    ],
+    [
+     "R",
+     "O2"
+    ]
+   ],
+   "sol": [
+    "O2-O9"
+   ]
+  },
+  {
+   "name": "Open-file attack",
+   "depth": 1,
+   "pcs": [
+    [
+     "k",
+     "B9"
+    ],
+    [
+     "p",
+     "A8"
+    ],
+    [
+     "p",
+     "C8"
+    ],
+    [
+     "K",
+     "C2"
+    ],
+    [
+     "R",
+     "H3"
+    ],
+    [
+     "Q",
+     "D6"
+    ],
+    [
+     "p",
+     "A7"
+    ]
+   ],
+   "sol": [
+    "H3-H9"
+   ]
+  },
+  {
+   "name": "Diagonal trap",
+   "depth": 1,
+   "pcs": [
+    [
+     "k",
+     "A9"
+    ],
+    [
+     "b",
+     "B9"
+    ],
+    [
+     "p",
+     "A8"
+    ],
+    [
+     "K",
+     "O2"
+    ],
+    [
+     "B",
+     "H7"
+    ],
+    [
+     "Q",
+     "D7"
+    ],
+    [
+     "r",
+     "F7"
+    ]
+   ],
+   "sol": [
+    "H7-E4"
+   ]
+  },
+  {
+   "name": "Queen + Torch pressure",
+   "depth": 1,
+   "pcs": [
+    [
+     "k",
+     "F9"
+    ],
+    [
+     "p",
+     "E8"
+    ],
+    [
+     "K",
+     "G1"
+    ],
+    [
+     "Q",
+     "E7"
+    ],
+    [
+     "T",
+     "F7"
+    ],
+    [
+     "r",
+     "C6"
+    ]
+   ],
+   "sol": [
+    "E7-F8"
+   ],
+   "opt": {
+    "lit": [
+     1,
+     0
+    ],
+    "fire": [
+     1,
+     0
+    ]
+   }
+  },
+  {
+   "name": "Lighter support",
+   "depth": 1,
+   "pcs": [
+    [
+     "k",
+     "G9"
+    ],
+    [
+     "p",
+     "H8"
+    ],
+    [
+     "p",
+     "G8"
+    ],
+    [
+     "K",
+     "E1"
+    ],
+    [
+     "L",
+     "F3"
+    ],
+    [
+     "Q",
+     "F7"
+    ],
+    [
+     "R",
+     "G7"
+    ],
+    [
+     "r",
+     "G6"
+    ]
+   ],
+   "sol": [
+    "F7-G8"
+   ]
+  },
+  {
+   "name": "Knight fork idea",
+   "depth": 1,
+   "pcs": [
+    [
+     "k",
+     "E9"
+    ],
+    [
+     "p",
+     "E8"
+    ],
+    [
+     "K",
+     "F2"
+    ],
+    [
+     "N",
+     "F6"
+    ],
+    [
+     "Q",
+     "C5"
+    ],
+    [
+     "r",
+     "F9"
+    ]
+   ],
+   "sol": [
+    "C5-E8"
+   ]
+  },
+  {
+   "name": "Two-rook net",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "B9"
+    ],
+    [
+     "p",
+     "A8"
+    ],
+    [
+     "p",
+     "C8"
+    ],
+    [
+     "K",
+     "H1"
+    ],
+    [
+     "R",
+     "D7"
+    ],
+    [
+     "R",
+     "H2"
+    ],
+    [
+     "B",
+     "G4"
+    ],
+    [
+     "p",
+     "O6"
+    ]
+   ],
+   "sol": [
+    "H2-B2"
+   ]
+  },
+  {
+   "name": "Central break",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "O9"
+    ],
+    [
+     "p",
+     "D8"
+    ],
+    [
+     "p",
+     "O8"
+    ],
+    [
+     "p",
+     "E8"
+    ],
+    [
+     "K",
+     "C2"
+    ],
+    [
+     "Q",
+     "E6"
+    ],
+    [
+     "B",
+     "D6"
+    ],
+    [
+     "N",
+     "B6"
+    ]
+   ],
+   "sol": [
+    "E6-E8"
+   ]
+  },
+  {
+   "name": "Pinned defender",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "D9"
+    ],
+    [
+     "r",
+     "O8"
+    ],
+    [
+     "b",
+     "D8"
+    ],
+    [
+     "K",
+     "G2"
+    ],
+    [
+     "B",
+     "H5"
+    ],
+    [
+     "Q",
+     "O7"
+    ],
+    [
+     "R",
+     "B2"
+    ]
+   ],
+   "sol": [
+    "O7-B7"
+   ]
+  },
+  {
+   "name": "Edge-of-board mate",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "H9"
+    ],
+    [
+     "r",
+     "G8"
+    ],
+    [
+     "p",
+     "H8"
+    ],
+    [
+     "K",
+     "G1"
+    ],
+    [
+     "Q",
+     "H5"
+    ],
+    [
+     "B",
+     "A6"
+    ],
+    [
+     "R",
+     "G4"
+    ],
+    [
+     "p",
+     "D8"
+    ]
+   ],
+   "sol": [
+    "H5-F7"
+   ]
+  },
+  {
+   "name": "Torch lane",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "C9"
+    ],
+    [
+     "r",
+     "C8"
+    ],
+    [
+     "p",
+     "B8"
+    ],
+    [
+     "K",
+     "G2"
+    ],
+    [
+     "T",
+     "B6"
+    ],
+    [
+     "Q",
+     "C6"
+    ],
+    [
+     "R",
+     "O3"
+    ]
+   ],
+   "sol": [
+    "O3-O9"
+   ],
+   "opt": {
+    "lit": [
+     1,
+     0
+    ],
+    "fire": [
+     1,
+     0
+    ]
+   }
+  },
+  {
+   "name": "Lighter escape cut",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "E9"
+    ],
+    [
+     "r",
+     "F8"
+    ],
+    [
+     "b",
+     "G8"
+    ],
+    [
+     "K",
+     "D1"
+    ],
+    [
+     "Q",
+     "O7"
+    ],
+    [
+     "L",
+     "F6"
+    ],
+    [
+     "R",
+     "H7"
+    ]
+   ],
+   "sol": [
+    "H7-E7"
+   ]
+  },
+  {
+   "name": "Sacrifice motif",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "O9"
+    ],
+    [
+     "r",
+     "E8"
+    ],
+    [
+     "K",
+     "C2"
+    ],
+    [
+     "N",
+     "O6"
+    ],
+    [
+     "Q",
+     "H5"
+    ],
+    [
+     "p",
+     "D7"
+    ]
+   ],
+   "sol": [
+    "H5-E8"
+   ]
+  },
+  {
+   "name": "Final corridor",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "C9"
+    ],
+    [
+     "r",
+     "D9"
+    ],
+    [
+     "p",
+     "O8"
+    ],
+    [
+     "p",
+     "E8"
+    ],
+    [
+     "K",
+     "H2"
+    ],
+    [
+     "Q",
+     "C5"
+    ],
+    [
+     "B",
+     "F3"
+    ],
+    [
+     "p",
+     "A6"
+    ]
+   ],
+   "sol": [
+    "C5-C7"
+   ]
+  },
+  {
+   "name": "THE FINAL MATE",
+   "depth": 2,
+   "pcs": [
+    [
+     "k",
+     "C9"
+    ],
+    [
+     "r",
+     "D9"
+    ],
+    [
+     "p",
+     "O8"
+    ],
+    [
+     "p",
+     "E8"
+    ],
+    [
+     "K",
+     "C1"
+    ],
+    [
+     "Q",
+     "A5"
+    ],
+    [
+     "T",
+     "A6"
+    ],
+    [
+     "r",
+     "B9"
+    ]
+   ],
+   "sol": [
+    "A5-C7"
+   ],
+   "opt": {
+    "lit": [
+     1,
+     0
+    ],
+    "fire": [
+     1,
+     0
+    ]
+   }
+  }
+ ]
+}

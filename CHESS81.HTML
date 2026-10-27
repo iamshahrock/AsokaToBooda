@@ -45,6 +45,7 @@
 .card h3{margin:0 0 10px;font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.04em;text-transform:uppercase}
 .status{font-family:var(--display);font-size:clamp(26px,2.6vw,36px);line-height:1.05;text-transform:uppercase;margin:0}
 .status .r{color:var(--redp)}.status .b{color:#5b8cff}
+.clk{margin:10px 0 0;font:700 13px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}.clk b{font:400 34px/1 var(--display);letter-spacing:0;color:#f2cf6b;margin-right:6px}.clk.low b{color:#ff4a4f}
 .note{margin:8px 0 0;color:var(--mute);font-size:14px;line-height:1.5;min-height:21px}
 .seg{display:flex;flex-wrap:wrap;gap:8px}
 .seg button{flex:1 1 0;min-width:88px;min-height:46px;padding:6px 10px;background:var(--field);border:1px solid var(--field-line);color:var(--ink);font:600 14px var(--body);line-height:1.2;cursor:pointer}
@@ -105,6 +106,7 @@
       <div class="card" aria-live="polite">
         <p class="status" id="status">Red to move</p>
         <p class="note" id="note">Walk your Lighter to O5 to light your Torch.</p>
+        <p class="clk" id="clk" hidden><b id="clkS">81</b> seconds to move</p>
       </div>
 
       <div class="card">
@@ -120,6 +122,11 @@
             <button type="button" data-level="knight" aria-pressed="true">Knight<small>Win +200 STARKS</small></button>
             <button type="button" data-level="king" aria-pressed="false">King<small>Win +500 STARKS</small></button>
           </div>
+        </div>
+        <p class="label">Clock</p>
+        <div class="seg" id="clocks">
+          <button type="button" data-clock="off" aria-pressed="true">No clock<small>Think as long as you like</small></button>
+          <button type="button" data-clock="81" aria-pressed="false">81 seconds<small>a move · run out and you lose</small></button>
         </div>
         <p class="label">Game</p>
         <div class="btnrow">
@@ -162,6 +169,7 @@
       <ul>
         <li><b>Checkmate wins.</b> Put the enemy King in check with no way out. CHECK. FIRE. MATE.</li>
         <li><b>Capture the enemy Torch and you win at once.</b> Lighting your Torch gives you fire, but a lit Torch can be taken, so guard it.</li>
+        <li><b>81 seconds a move</b> (optional clock): choose it under Clock and every move must be made within 81 seconds. Run out and you lose. Against the Machine only your moves are timed.</li>
         <li><b>When the game stalls, Fire decides.</b> Stalemate, 50 moves each with no capture or pawn move, the same position three times, or only Kings and Torches left: the side with the higher Fire wins. Equal Fire is a draw.</li>
         <li><b>STARKS:</b> beat the Machine as Red to earn STARKS for the Billboard: Squire +60, Knight +200, King +500 (up to five wins a day). Take-backs are only allowed at Squire level and in friend games.</li>
       </ul>
@@ -214,15 +222,15 @@
     }
   })();
 
-  var S, hist, keys, moves, sel = -1, LM = [], last = null, over = null, mode = 'machine', level = 'knight', thinking = false, reqId = 0, taken, flash = [];
-  try { var saved = JSON.parse(localStorage.getItem('amkh-chess81') || 'null'); if (saved) { mode = saved.mode || mode; level = saved.level || level; } } catch (e) {}
+  var S, hist, keys, moves, sel = -1, LM = [], last = null, over = null, mode = 'machine', level = 'knight', clock = 'off', left = 81, clockPly = -1, tk = null, thinking = false, reqId = 0, taken, flash = [];
+  try { var saved = JSON.parse(localStorage.getItem('amkh-chess81') || 'null'); if (saved) { mode = saved.mode || mode; level = saved.level || level; clock = saved.clock || clock; } } catch (e) {}
   var worker = null;
   try { worker = new Worker('assets/chess81-engine.js'); worker.onmessage = function (e) { if (e.data.id === reqId) machineMoved(e.data.move); }; worker.onerror = function () { worker = null; }; } catch (e) { worker = null; }
 
   function newGame() {
-    S = E.initial(); hist = []; keys = [E.key(S)]; moves = []; sel = -1; last = null; over = null; thinking = false; reqId++; taken = [[], []]; flash = [];
+    S = E.initial(); hist = []; keys = [E.key(S)]; clockPly = -1; moves = []; sel = -1; last = null; over = null; thinking = false; reqId++; taken = [[], []]; flash = [];
     $('win').classList.remove('on');
-    try { localStorage.setItem('amkh-chess81', JSON.stringify({ mode: mode, level: level })); } catch (e) {}
+    try { localStorage.setItem('amkh-chess81', JSON.stringify({ mode: mode, level: level, clock: clock })); } catch (e) {}
     render('Walk your Lighter to O5 to light your Torch.');
   }
   function human() { return mode === 'human' || S.turn === 0; }
@@ -282,7 +290,8 @@
   function finish() {
     var w = over.winner, r = over.reason, head, body;
     var why = { stalemate: 'Stalemate.', quiet: '50 moves each with no capture or pawn move.', repeat: 'The same position came up three times.', bare: 'Only Kings and Torches remain.' }[r];
-    if (r === 'mate') { head = 'Check. Fire. Mate.'; body = (w ? 'Blue' : 'Red') + ' wins by checkmate.'; }
+    if (r === 'time') { head = 'Out of time'; body = (w ? 'Red' : 'Blue') + ' ran out of the 81 seconds. ' + (w ? 'Blue' : 'Red') + ' wins.'; }
+    else if (r === 'mate') { head = 'Check. Fire. Mate.'; body = (w ? 'Blue' : 'Red') + ' wins by checkmate.'; }
     else if (r === 'torch') { head = 'Torch taken'; body = (w ? 'Blue' : 'Red') + ' captured the enemy Torch and wins.'; }
     else { head = w < 0 ? 'Draw' : 'Fire decides'; body = why + ' Fire: Red ' + S.fire[0] + ', Blue ' + S.fire[1] + '. ' + (w < 0 ? 'Equal fire, so the game is drawn.' : (w ? 'Blue' : 'Red') + ' wins on Fire.'); }
     if (mode === 'machine') {
@@ -332,11 +341,28 @@
     document.querySelectorAll('#modes button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
     document.querySelectorAll('#levels button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.level === level ? 'true' : 'false'); });
     $('levelBox').hidden = mode !== 'machine';
+    document.querySelectorAll('#clocks button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.clock === clock ? 'true' : 'false'); });
+    runClock();
     $('undo').disabled = !hist.length || thinking || (mode === 'machine' && level !== 'squire');
   }
 
   document.querySelectorAll('#modes button').forEach(function (b) { b.onclick = function () { mode = b.dataset.mode; newGame(); }; });
   document.querySelectorAll('#levels button').forEach(function (b) { b.onclick = function () { level = b.dataset.level; newGame(); }; });
+  // 81 seconds a move (Ganesh Vulidra's speed idea): only a human's turn is timed
+  function runClock() {
+    var on = clock === '81' && !over && !thinking && human();
+    $('clk').hidden = clock !== '81';
+    if (!on) { clearInterval(tk); tk = null; if (clock === '81' && !over) { $('clkS').textContent = '81'; $('clk').className = 'clk'; } return; }
+    if (clockPly !== S.ply) { clockPly = S.ply; left = 81; }
+    $('clkS').textContent = left; $('clk').className = 'clk' + (left <= 15 ? ' low' : '');
+    if (tk) return;
+    tk = setInterval(function () {
+      if (over || thinking || !human()) { clearInterval(tk); tk = null; return; }
+      left--; $('clkS').textContent = Math.max(0, left); $('clk').className = 'clk' + (left <= 15 ? ' low' : '');
+      if (left <= 0) { clearInterval(tk); tk = null; over = { winner: 1 - S.turn, reason: 'time' }; sel = -1; render((S.turn ? 'Blue' : 'Red') + ' ran out of time.'); finish(); }
+    }, 1000);
+  }
+  document.querySelectorAll('#clocks button').forEach(function (b) { b.onclick = function () { clock = b.dataset.clock; newGame(); }; });
   $('new').onclick = newGame;
   $('again').onclick = newGame;
   $('close').onclick = function () { $('win').classList.remove('on'); };

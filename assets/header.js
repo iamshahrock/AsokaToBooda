@@ -42,7 +42,7 @@
   var SUB = {
     'create/': [['create/', 'Kingmaker studio'], ['', 'Be King · coming soon']],
     'lairs/': [['lairs/', 'The 12 games'], ['lairs/#cinema', 'Lairs Cinema']],
-    'chess81/': [['chess81/', 'Overview'], ['CHESS81.HTML', 'Play the full game'], ['', 'Rapid Fire · coming soon']],
+    'chess81/': [['chess81/', 'Overview'], ['CHESS81.HTML', 'Play the full game'], ['chess81/rapid-fire/', 'Rapid Fire']],
     'fan-billboard/': [['fan-billboard/', 'STARKS Billboard'], ['fan-made-ai-universe/', 'Fan-made AI Universe']],
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
