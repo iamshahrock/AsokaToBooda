@@ -74,6 +74,7 @@ body{background:var(--bg)}
 @media (max-width:560px){.r4{grid-template-columns:minmax(0,1fr)}}
 .t .tag{position:absolute;left:12px;top:12px;right:auto;bottom:auto;z-index:2;padding:5px 9px;border:1px solid var(--gold);border-radius:999px;background:rgba(8,5,5,.85);font:700 10px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 .t.cv img{object-position:50% 50%}
+.t.fp b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t.fp small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .t.soon{display:flex;align-items:center;justify-content:center;border-style:dashed;background:#0f0909}
 .t.soon::after{display:none}
 .t.soon span{position:static;text-align:center}.t.soon b{font-size:22px}.t.soon small{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
@@ -137,10 +138,10 @@ body{background:var(--bg)}
     <h3><a href="../fan-made-ai-universe/">Fan Made Universe</a></h3>
     <p>What fans are making for KING: trailers, songs and posters. Every fan creation lives on one page.</p>
     <div class="row r4">
-      <a class="t cv" href="https://www.youtube.com/watch?v=9YcsF7XKtSo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9YcsF7XKtSo/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan trailer</i><span><b>King · Trailer Concept</b><small>Bollygrad Studioz · 1.1M views on YouTube</small></span></a>
-      <a class="t cv" href="https://www.youtube.com/watch?v=vfot00TxRzQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vfot00TxRzQ/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan song</i><span><b>KING · Trailer Video Song</b><small>Fantasy Studio Originals · 307K views</small></span></a>
-      <a class="t" href="https://x.com/Shanurugo/status/2114987288014770216" target="_blank" rel="noopener"><img src="https://pbs.twimg.com/media/HVnxuhXXEAAbefS?format=jpg&amp;name=small" alt="" referrerpolicy="no-referrer"><i class="tag">Fan poster</i><span><b>KING with a leading lady</b><small>@Shanurugo on X · 27 Oct 2026</small></span></a>
       <a class="t ch" href="../fan-made-ai-universe/"><img src="../assets/home/05-fan-made-ai-universe.webp" alt=""><span><b>All fan creations →</b><small>245 videos, fan posters and anthem versions</small></span></a>
+      <a class="t fp cv" href="https://www.youtube.com/watch?v=9YcsF7XKtSo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9YcsF7XKtSo/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan trailer</i><span><b>King · Trailer Concept</b><small>Bollygrad Studioz · 1.1M views on YouTube</small></span></a>
+      <a class="t fp cv" href="https://www.youtube.com/watch?v=vfot00TxRzQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vfot00TxRzQ/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan song</i><span><b>KING · Trailer Video Song</b><small>Fantasy Studio Originals · 307K views</small></span></a>
+      <a class="t fp" href="https://x.com/Shanurugo/status/2114987288014770216" target="_blank" rel="noopener"><img src="https://pbs.twimg.com/media/HVnxuhXXEAAbefS?format=jpg&amp;name=small" alt="" referrerpolicy="no-referrer"><i class="tag">Fan poster</i><span><b>KING with a leading lady</b><small>@Shanurugo on X · 27 Oct 2026</small></span></a>
     </div>
   </div>
 
@@ -175,6 +176,19 @@ body{background:var(--bg)}
   var t=Date.parse('2026-12-24T00:00:00+05:30');
   function tick(){var d=Math.max(0,t-Date.now());document.getElementById('cd-d').textContent=Math.floor(d/864e5);document.getElementById('cd-h').textContent=String(Math.floor(d/36e5)%24).padStart(2,'0');document.getElementById('cd-m').textContent=String(Math.floor(d/6e4)%60).padStart(2,'0');}
   tick();setInterval(tick,30000);
+
+  // Fan Made Universe: a new random set of 3 fan works on every visit, one per creator, so every fan gets seen.
+  Promise.all([fetch('../data/fans-king.json').then(function(r){return r.json();}),fetch('../data/king-fan-versions.json').then(function(r){return r.json();}).catch(function(){return {releases:{}};})]).then(function(x){
+    var pool=[],seen={},rel=x[1].releases||{};
+    (x[0].items||[]).forEach(function(v){if(!v.id)return;var song=v.type==='Song';pool.push({who:v.channel||'YouTube',tag:song?'Fan song':(v.type==='Trailer'||v.type==='Teaser'?'Fan '+v.type.toLowerCase():'Fan video'),title:(v.title||'').split(' | ')[0],sub:(v.channel||'YouTube')+(v.views?' · '+(v.views>=1e6?(v.views/1e6).toFixed(1)+'M':v.views>=1e3?Math.round(v.views/1e3)+'K':v.views)+' views':''),img:'https://i.ytimg.com/vi/'+v.id+'/mqdefault.jpg',url:'https://www.youtube.com/watch?v='+v.id,cv:1});});
+    Object.keys(rel).forEach(function(k){(rel[k]||[]).forEach(function(p){pool.push({who:p.account,tag:'Fan poster',title:p.note||'Fan poster',sub:p.account+' on '+p.platform+(p.posted_at?' · '+new Date(p.posted_at).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):''),img:p.image,url:p.url});});});
+    for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=pool[i];pool[i]=pool[j];pool[j]=t;}
+    var q=pool.filter(function(p){if(seen[p.who])return false;seen[p.who]=1;return true;}),cards=document.querySelectorAll('.t.fp');
+    if(q.length<cards.length)return;
+    // A removed YouTube video still returns a 120 px grey placeholder: skip it and show the next fan.
+    function fill(a){var p=q.shift(),img=a.querySelector('img');if(!p)return;img.onload=function(){if(p.cv&&img.naturalWidth<=120)fill(a);};img.onerror=function(){fill(a);};a.href=p.url;a.className='t fp'+(p.cv?' cv':'');img.src=p.img;a.querySelector('.tag').textContent=p.tag;a.querySelector('b').textContent=p.title;a.querySelector('small').textContent=p.sub;}
+    Array.prototype.forEach.call(cards,fill);
+  }).catch(function(){});
   Promise.all([fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-press.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {days:[]};})]).then(function(x){
     var R=x[0].records,last=R[R.length-1],v=function(id){var m=(last.metrics||[]).filter(function(m){return m.series_id===id&&m.value!=null;})[0];return m&&m.value;};
     var a=v('king_title_reveal_views'),b=v('king_date_announcement_views'),p=x[1].days.length?x[1].days[x[1].days.length-1].count:null;
