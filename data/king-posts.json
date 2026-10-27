@@ -43,13 +43,30 @@
    "account": "@redchilliesent",
    "platform": "Instagram",
    "url": "https://www.instagram.com/redchilliesent/p/De-_qZpIeqA/",
-   "posted_at": "2026-10-27T10:00:00+05:30",
+   "posted_at": "2026-10-27T09:55:43+05:30",
    "readings": [
     {
      "at": "2026-10-27T13:40:00+05:30",
      "metrics": {
       "likes": 26000,
       "comments": 692
+     }
+    }
+   ]
+  },
+  {
+   "id": "2mtg-2026-10-24-rc-ig",
+   "release": "2-months-to-go",
+   "account": "@redchilliesent",
+   "platform": "Instagram",
+   "url": "https://www.instagram.com/redchilliesent/p/De3eRabIALG/",
+   "posted_at": "2026-10-24T11:49:16+05:30",
+   "readings": [
+    {
+     "at": "2026-10-27T16:30:00+05:30",
+     "metrics": {
+      "likes": 378000,
+      "comments": 3981
      }
     }
    ]
@@ -79,7 +96,7 @@
    "account": "@redchilliesent",
    "platform": "Instagram",
    "url": "https://www.instagram.com/redchilliesent/p/DT4_62WDClh/",
-   "posted_at": "2026-01-24T16:40:00+05:30",
+   "posted_at": "2026-01-24T16:17:11+05:30",
    "readings": [
     {
      "at": "2026-10-27T13:40:00+05:30",
