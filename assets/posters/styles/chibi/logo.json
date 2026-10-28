@@ -1,1 +1,73 @@
-{"about":"Vertical nudge [dx, dy] (fractions of the poster) for each film's KING logo on this style's art, where the logo's usual place would cover a face. Films not listed keep the original position.","shift":{"040":[0,-0.07],"069":[0,0.03],"077":[0,0.04],"094":[0,0.06],"109":[0,-0.05]}}
+{
+ "about": "Vertical nudge [dx, dy] (fractions of the poster) for each film's KING logo on this style's art, where the logo's usual place would cover a face. Films not listed keep the original position.",
+ "shift": {
+  "040": [
+   0,
+   -0.04
+  ],
+  "069": [
+   0,
+   0.03
+  ],
+  "077": [
+   0,
+   0.07
+  ],
+  "094": [
+   0,
+   0.06
+  ],
+  "109": [
+   0,
+   -0.05
+  ],
+  "023": [
+   0,
+   0.06
+  ],
+  "026": [
+   0,
+   0.13
+  ],
+  "032": [
+   0,
+   0.085
+  ],
+  "033": [
+   0,
+   0.085
+  ],
+  "048": [
+   0,
+   0.085
+  ],
+  "062": [
+   0,
+   0.075
+  ],
+  "087": [
+   0,
+   0.385
+  ],
+  "089": [
+   0,
+   0.245
+  ],
+  "095": [
+   0,
+   0.16
+  ],
+  "101": [
+   0,
+   -0.115
+  ],
+  "112": [
+   0,
+   -0.06
+  ],
+  "117": [
+   0,
+   0.19
+  ]
+ }
+}
