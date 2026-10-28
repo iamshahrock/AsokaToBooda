@@ -131,7 +131,10 @@
     <article class="ak-col" id="v2" aria-labelledby="v2H">
       <h3 id="v2H">Version <em>2</em></h3>
       <p class="lang">Hinglish</p>
-      <div class="slot" data-v="1"><b>Version 2</b><span>Audio coming soon</span></div>
+      <div class="songs" id="songs2">
+        <p class="credit">Composed by: Shailja Gupta · Re-arranged by: <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></p>
+        <div class="song"><b>Version 2</b><audio controls preload="none" src="../assets/inquilab/audio/inquilaab-v2.mp3" data-song="1" data-ver="Version 2" data-file="inquilaab-v2.mp3"></audio></div>
+      </div>
       <div class="lyr folded" id="lyr2">
         <p class="st">Inquilaab, King Ke Saath!<br>Inquilaab, King Ke Saath!<br>Inquilaab, King Ke Saath!</p>
         <p class="st">Chehra King ka, kalaa humaari,<br>AI ne karli dakaeti saari!<br>Machine se taan ke karayi seena-zori,<br>Silicon Valley ki pakdi gayi chori!</p>
@@ -191,11 +194,11 @@
 
   // anthem songs in Google Analytics (owner, 28 Oct 2026): anthem_play / anthem_progress (25-50-75%) / anthem_complete / composer click
   var ga = function (name, p) { if (window.gtag) window.gtag('event', name, p); };
-  [].forEach.call(document.querySelectorAll('#songs audio'), function (au) {
-    var n = au.getAttribute('data-song'), base = { anthem_version: 'Version 1', song: 'Song ' + n, song_file: 'inquilaab-v1-song-' + n + '.mp3' }, hit = {}, started = false;
+  [].forEach.call(document.querySelectorAll('.songs audio'), function (au) {
+    var n = au.getAttribute('data-song'), ver = au.getAttribute('data-ver') || 'Version 1', base = { anthem_version: ver, song: ver === 'Version 1' ? 'Song ' + n : ver, song_file: au.getAttribute('data-file') || 'inquilaab-v1-song-' + n + '.mp3' }, hit = {}, started = false;
     var p = function (x) { var o = {}; for (var k in base) o[k] = base[k]; for (var k2 in x) o[k2] = x[k2]; return o; };
     au.addEventListener('play', function () {
-      [].forEach.call(document.querySelectorAll('#songs audio'), function (o) { if (o !== au) o.pause(); });
+      [].forEach.call(document.querySelectorAll('.songs audio'), function (o) { if (o !== au) o.pause(); });
       ga('anthem_play', p({ resumed: started })); started = true;
     });
     au.addEventListener('timeupdate', function () {
@@ -204,7 +207,7 @@
     });
     au.addEventListener('ended', function () { ga('anthem_complete', p({ seconds: Math.round(au.duration) })); });
   });
-  var cl = document.querySelector('[data-ga="composer"]'); if (cl) cl.addEventListener('click', function () { ga('anthem_composer_click', { composer: 'Pragnesh S. Singh', link_url: cl.href }); });
+  [].forEach.call(document.querySelectorAll('[data-ga="composer"]'), function (cl) { cl.addEventListener('click', function () { ga('anthem_composer_click', { composer: 'Pragnesh S. Singh', anthem_version: cl.closest('#songs2') ? 'Version 2' : 'Version 1', link_url: cl.href }); }); });
   [].forEach.call(document.querySelectorAll('[data-more]'), function (b) { b.onclick = function () { $(b.getAttribute('data-more')).classList.remove('folded'); }; });
   fetch('../data/king-fever.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
     (j.official || []).forEach(function (o, i) {
