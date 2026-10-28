@@ -46,7 +46,7 @@
     'fan-made-ai-universe/': [['fan-made-ai-universe/', 'All fan creations'], ['fans-king/', 'Fan videos on YouTube']],
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
-    'inquilab/': [['inquilab/', 'The movement'], ['inquilab/#anthem', 'The anthem'], ['inquilab/#join', 'Sign on'], ['inquilab/revolution/', 'The Revolution Starts Now']],
+    'inquilab/': [['inquilab/', 'The anthem'], ['inquilab/revolution/', 'The Revolution Starts Now']],
     'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
   };
   // the shared polish layer (sizes, spacing, one type scale) loads after each page's own styles
