@@ -3,7 +3,7 @@
  "days": [
   {
    "date": "2026-10-27",
-   "count": 7,
+   "count": 8,
    "articles": [
     {
      "outlet": "NewsBytes",
@@ -46,6 +46,48 @@
      "title": "Shah Rukh Khan says 'Qaatil nahi… Aashiq hoon' as he unveils new 'King' poster",
      "url": "https://www.socialnews.xyz/2026/10/26/shah-rukh-khan-says-qaatil-nahi-aashiq-hoon-as-he-unveils-new-king-poster/",
      "topic": "poster"
+    },
+    {
+     "outlet": "Business Today",
+     "title": "'Qaatil nahi… aashiq hoon': Shah Rukh Khan unveils fierce 'King' poster",
+     "url": "https://www.businesstoday.in/trending/entertainment/story/qaatil-nahi-aashiq-hoon-shah-rukh-khan-unveils-fierce-king-poster-show-his-brutal-yet-romantic-avatar-ahead-of-december-24-release-563967-2026-10-27",
+     "topic": "poster"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-28",
+   "count": 5,
+   "articles": [
+    {
+     "outlet": "Gulf News",
+     "title": "Shah Rukh Khan's fiery new 'King' poster excites fans, but comparisons with Ranveer Singh's 'Dhurandhar' poster have sparked an online debate",
+     "url": "https://gulfnews.com/entertainment/bollywood/shah-rukh-khans-king-poster-sparks-debate-over-dhurandhar-similarities-1.500725985",
+     "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "Filmibeat",
+     "title": "Is Shah Rukh Khan's new King poster copied from Dhurandhar 2, Raging Fire 2? Fans decode",
+     "url": "https://www.filmibeat.com/bollywood/news/2026/king-is-shah-rukh-khans-new-poster-copied-from-dhurandhar-2-raging-fire-2-fans-decode-536075.html",
+     "topic": "fan reaction"
+    },
+    {
+     "outlet": "India.com",
+     "title": "Shah Rukh Khan's King poster sparks Ranveer Singh's Dhurandhar 2 comparisons online; fans call it 'Cheap copy'",
+     "url": "https://www.india.com/entertainment/bollywood/shah-rukh-khans-king-poster-sparks-ranveer-singhs-dhurandhar-2-comparisons-online-fans-call-it-cheap-copy-8539807/",
+     "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "Informal Newz",
+     "title": "Shah Rukh Khan's 'King' New Poster Is Out — And the Internet Has Completely Lost It",
+     "url": "https://www.informalnewz.com/shah-rukh-khans-king-new-poster-is-out-and-the-internet-has-completely-lost-it/",
+     "topic": "fan reaction"
+    },
+    {
+     "outlet": "The Daily Jagran",
+     "title": "Why Are Fans Upset With Shah Rukh Khan's New King Poster? Internet Calls Out Bad AI And VFX",
+     "url": "https://www.thedailyjagran.com/entertainment/news/why-are-fans-upset-with-shah-rukh-khan-new-king-poster-internet-calls-out-bad-ai-and-vfx-10334191",
+     "topic": "AI criticism"
     }
    ]
   }
