@@ -3,7 +3,7 @@
  "days": [
   {
    "date": "2026-10-27",
-   "count": 56,
+   "count": 57,
    "articles": [
     {
      "outlet": "NewsBytes",
@@ -340,12 +340,18 @@
      "title": "Shah Rukh's 'King' poster sparks online debate, netizens draw parallels with 'Dhurandhar 2'",
      "url": "https://www.inkl.com/news/shah-rukhs-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2",
      "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "DT Next",
+     "title": "Shah Rukh's 'King' poster sparks online debate, netizens draw parallels with 'Dhurandhar 2'",
+     "url": "https://www.dtnext.in/entertainment/cinema/shah-rukhs-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2",
+     "topic": "Dhurandhar comparison"
     }
    ]
   },
   {
    "date": "2026-10-28",
-   "count": 7,
+   "count": 16,
    "articles": [
     {
      "outlet": "Gulf News",
@@ -388,6 +394,60 @@
      "title": "Shah Rukh's King poster sparks online debate",
      "url": "https://theshillongtimes.com/2026/10/28/shah-rukhs-king-poster-sparks-online-debate/",
      "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "Variety India",
+     "title": "EXCLUSIVE: 'King': Shah Rukh Khan, Kareena Kapoor Khan and Arshad Warsi Shoot 'Deewangi Deewangi'-Style Introductory Song",
+     "url": "https://varietyindia.com/king-shah-rukh-khan-kareena-kapoor-khan-and-arshad-warsi-shoot-deewangi-deewangi-style-introductory-song-exclusive/",
+     "topic": "song shoot"
+    },
+    {
+     "outlet": "India TV",
+     "title": "Debate Erupts Over Shah Rukh Khan's 'King' Poster, Users Compare It to 'Dhurandhar 2' and Say Every Masterpiece Gets a Cheap Copy",
+     "url": "https://www.indiatv.in/entertainment/bollywood/debate-erupts-over-poster-for-shah-rukh-khan-king-users-compare-it-to-dhurandhar-2-remarking-that-every-masterpiece-has-cheap-copy-2026-10-28-1251336",
+     "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "Dainik Bhaskar Hindi",
+     "title": "SRK King Poster Controversy: शाहरुख की 'किंग' के पोस्टर पर छिड़ी बहस, किसी ने बताया AI जनरेटेड तो किसी ने कहा धुरंधर की कॉपी",
+     "url": "https://www.bhaskarhindi.com/entertainment/debate-erupts-over-the-poster-for-shah-rukhs-king-some-claim-its-ai-generated-while-others-suggest-its-a-copy-of-dhurandhar-1383319",
+     "topic": "AI criticism"
+    },
+    {
+     "outlet": "Box Office Worldwide",
+     "title": "King Poster: Shah Rukh Khan's Fierce New Look Sets Off A Fan Frenzy Before Christmas 2026 Release",
+     "url": "https://boxofficeworldwide.com/movies-latest-news/king-poster-shah-rukh-khan-new-look-christmas-2026-release/",
+     "topic": "fan reaction"
+    },
+    {
+     "outlet": "The Times of India (ETimes)",
+     "title": "Shah Rukh Khan's birthday plans change: no #SRKDAY event on November 2, King work cited as reason (reports)",
+     "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shah-rukh-khans-birthday-plans-change-no-srkday-event-on-november-2-king-work-cited-as-reason-reports/articleshow/135252304.cms",
+     "topic": "birthday"
+    },
+    {
+     "outlet": "News9",
+     "title": "Shah Rukh Khan's 'King' Poster Draws 'Dhurandhar 2' Comparisons; Netizens Call It a 'Cheap Copy'",
+     "url": "https://www.news9live.com/entertainment/bollywood/shah-rukh-khan-king-poster-dhurandhar-2-comparison-3019740",
+     "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "Khabar Fast",
+     "title": "शाहरुख खान की 'किंग' का पोस्टर देख आई 'धुरंधर' की याद, सोशल मीडिया पर छिड़ी बहस",
+     "url": "https://www.khabarfast.com/entertainment-bollywood-update-shah-rukh-khan-film-king-poster-controversy-compare-with-ranveer-singh-s-dhurandhar-know-here",
+     "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "IND24",
+     "title": "शाहरुख की 'King' के पोस्टर पर बवाल!",
+     "url": "https://www.ind24.tv/entertainment-fashion/shah-rukh-khan-king-poster-controversy-dhurandhar-2-comparison",
+     "topic": "Dhurandhar comparison"
+    },
+    {
+     "outlet": "News Today",
+     "title": "Shah Rukh Khan's 'King' unveils new poster",
+     "url": "https://newstodaynet.com/2026/10/28/shah-rukhs-king-unveils-new-poster/",
+     "topic": "poster"
     }
    ]
   }

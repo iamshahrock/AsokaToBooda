@@ -644,7 +644,7 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
     $('#h-news').textContent=n.headline; $('#nw-deck').textContent=n.deck||'';
     if(n.quote){var q=$('#nw-quote');q.hidden=false;q.innerHTML=esc(n.quote)+'<cite>'+esc(n.quote_by||'')+'</cite>';}
     var CK=[['3h',3],['24h',24],['48h',48],['7 days',168]],MAIN={X:['views','likes'],Instagram:['likes','comments']};
-    var at=function(post,h){var t=Date.parse(post.posted_at)+h*36e5,best=null;(post.readings||[]).forEach(function(r){var d=Math.abs(Date.parse(r.at)-t);if(d<=h*36e5/2+36e5&&(!best||d<best.d))best={d:d,r:r};});return best&&best.r;};
+    var at=function(post,h){var t=Date.parse(post.posted_at)+h*36e5,best=null;(post.readings||[]).forEach(function(r){var d=Math.abs(Date.parse(r.at)-t);if(d<=h*36e5/4+36e5&&(!best||d<best.d))best={d:d,r:r};});return best&&best.r;};
     var latestR=function(post){var r=post.readings||[];return r[r.length-1];};
     var mine=P.filter(function(p){return p.release===n.release;});
     if(mine.length){var st=$('#nw-stats');st.hidden=false;var now=Date.now();
