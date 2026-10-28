@@ -23,17 +23,18 @@
   // Six sections (remapped 10 Oct 2026) + utility links.
   var home = root;
   var LINKS = [
+    // order set by the owner, 28 Oct 2026
     ['create/', 'Make Your Poster', ['make-your-poster/']],
-    ['lairs/', 'Rescue Your Face'],
     ['chess81/', 'Chess81', ['CHESS81.HTML']],
-    ['king-intelligence/', 'KING Buzz'],
-    ['asoka-to-booda/', 'Asoka to Boo-Da'],
-    ['doom-to-king/', 'DOOM to KING'],
     ['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']],
+    ['lairs/', 'Rescue Your Face'],
+    ['king-intelligence/', 'KING Buzz'],
     ['merch/', 'Merch'],
+    ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']],
+    ['asoka-to-booda/', 'Asoka to Boo-Da'],
     ['gallery/videos/', 'Gallery', ['gallery/']],
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
-    ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']]
+    ['doom-to-king/', 'DOOM to KING']
   ];
   var UTIL = [['about/', 'About Us'], ['fan-billboard/', 'Billboard']];
   var MORE = [['contact/', 'Contact'], ['faq/', 'FAQ']];
