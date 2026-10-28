@@ -375,7 +375,8 @@ const KING = { id: '118', title: 'KING', year: 2026, kind: 'film', character: 'T
 async function loadCatalogue() {
   const res = await fetch(BASE + 'catalogue.json');
   const data = await res.json();
-  catalogue = [...data.posters.filter(p => p.id !== KING.id), KING];
+  // newest first: KING, then 117 down to 001 Fauji (owner, 28 Oct 2026)
+  catalogue = [KING, ...data.posters.filter(p => p.id !== KING.id).sort((a, b) => b.id.localeCompare(a.id))];
   KING_P = data.posters.find(x => x.id === KING.id) || null;   // the KING poster as a normal film, for the logo styles' default frame
   try { FACES = (await (await fetch(BASE + 'faces.json')).json()).faces || {}; } catch (e) { FACES = {}; }
   try { KLBOX = (await (await fetch(BASE + 'king-logo/boxes.json')).json()).boxes || {}; } catch (e) { KLBOX = {}; }

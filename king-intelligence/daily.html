@@ -103,6 +103,7 @@
       return {date:d,record_id:'No official record · rebuilt',metrics:rows,topics:[],notes:['No daily record was filed on this day (the daily job started on 18 Oct). Values marked recovered are real view counts read from archived copies of the official YouTube pages (Internet Archive), each linked. Values marked estimated are worked out from the nearest readings either side and are not measurements. None of this is written into the official ledger.'],gap:true,rec:rec};};
     var first=R[0].date,last=R[R.length-1].date,end=last;Object.keys(side).forEach(function(k){if(k>end)end=k;});
     var days=[];for(var t=Date.parse(first+'T00:00:00Z');;t+=864e5){var k=new Date(t).toISOString().slice(0,10);if(k>end)break;days.push(k);}
+    days.reverse(); // newest day first (owner, 28 Oct 2026)
     var want=new URLSearchParams(location.search).get('date');if(!want||want<first||want>end||!/^\d{4}-\d\d-\d\d$/.test(want))want=last;
     $('#lg-latest').textContent=dd(last,1)+', IST';
     $('#lg-count').textContent=R.length+' records · '+(days.filter(function(k){return k<=last;}).length-R.length)+' rebuilt';
