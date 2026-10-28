@@ -78,6 +78,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Roles (owner, 22 Oct 2026: 'women will choose be with king'): only two cards, Be the King / Be with the King (Rival and Sidekick removed). Be with the King: in Who goes where every row gets a '👑 King' chip; the fan marks the poster face where the King stays (one only, required) and fills the rest with letters or New face. The frame keeps the King's styled face in that hole. The AI reference becomes the chosen style edition (state.kstyle) with every face masked except the King's, and the prompt keeps him exactly as drawn (styled art only, never the photo original). Single-face posters: 'Who stands with the King?'. KING itself has no reference, so an invented King figure leads.
 - ijoo Pop set: 82 posters in assets/posters/styles/pop (Don = the owner's separate upload). Picking a style does not yet change what the AI paints (step 04 The look still does); owner to decide.
 
+## Homepage anthem (owner, 28 Oct 2026)
+- The homepage 'Inquilaab King Ke Saath' block: line 'The fans' song of revolution against celeb persona theft by Big Tech: the King's face, the fans' voice, every artist's right...', then a Version 1 card (#homeSongs: fist-king image, 'Composed by Pragnesh S. Singh' linked to Swaar Studio, Song 1-4 players from assets/inquilab/audio/), a Version 2 'audio coming soon' tile, Merch. GA events as on /inquilab/ with page_section 'home'.
+
 ## Menu order (owner, 28 Oct 2026)
 - Header, burger menu and footer follow: Make Your Poster, Chess81, Inquilaab King Ke Saath, Rescue Your Face, KING Buzz, Merch, Fan Universe, Asoka to Boo-Da, Gallery, On The Record, DOOM to KING (LINKS in assets/header.js). Footer groups: Play (Poster, Chess81, Inquilaab, Rescue Your Face, Billboard), Follow & shop (KING Buzz, Merch, Fan Universe, Fan videos), Read & watch (book, Gallery, On The Record, DOOM to KING), About.
 
