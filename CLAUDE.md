@@ -154,7 +154,7 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 
 ## Funko + Chibi finals (owner, 28 Oct 2026: 'upload the correct ones')
 - Strict Funko standard = Desktop/KING_MOVIE/00000_POSTERS_FINAL/00_REDO_27Oct2026/6_Funko_115_to_fix/FLOW_STEP1_create_template.txt (rounded-square head, no chin/neck, black eyes, no mouth, head as tall as the body). Only posters that pass it count as final; 'kept old render' is NOT final.
-- Live: 31 strict Funko posters (001 003 004 006 007 008 010 011 014 015 017 019 020 021 022 024 025 026 028 033 037 038 039 040 042 048 051 055 060 088 118, from FUNKO_MASTER_Oct28/00_COMPLETE_SET) and 68 Chibi finals (0_FINAL_Posters_ChibiPop_Oct27). Resized 768x1376 -> 1080x1920 (cover crop); faces.json boxes re-detected (Apple Vision, old boxes snapped; Funko 001 010 020 042 118 by eye). styles/king/funko.jpg = new Funko 118 (27 Oct poster) + KING logo.
+- Live: 31 strict Funko posters (001 003 004 006 007 008 010 011 014 015 017 019 020 021 022 024 025 026 028 033 037 038 039 040 042 048 051 055 060 088 + 119 Title Reveal, from FUNKO_MASTER_Oct28/00_COMPLETE_SET) and 67 Chibi finals (0_FINAL_Posters_ChibiPop_Oct27; 036 Pardes kept as the corrected render of 26 Oct, #223). Resized 768x1376 -> 1080x1920 (cover crop); faces.json boxes re-detected (Apple Vision, old boxes snapped; Funko 001 010 020 042 118 by eye). 118 and styles/king/funko.jpg stay the 27 Oct fire-tunnel Funko; the prayer-hands Funko is 119 (Title Reveal), NOT 118.
 - The other Funko/Chibi films still show the older renders until the owner re-renders them in Flow: Funko list in FUNKO_MASTER_Oct28/04_NG_TO_RENDER (85 films), Chibi in 'Chibi Pending' (50).
 
 ## LEGO style (owner, 26 Oct 2026)
