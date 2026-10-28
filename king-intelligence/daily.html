@@ -44,7 +44,7 @@
 .lg-notes{margin:10px 0 0;padding-left:18px;color:var(--ki-text-2);font-size:13px;line-height:1.55}.lg-notes a{color:var(--ki-red-hi)}
 .lg-rel{display:flex;gap:12px;align-items:flex-start;padding:10px;border:1px solid var(--ki-line);border-radius:var(--ki-radius,6px);background:var(--ki-bg-1);margin-top:8px}
 .lg-rel img{width:84px;height:auto;border-radius:4px;flex:none}.lg-rel b{display:block;font:700 14px var(--ki-font)}.lg-rel small{color:var(--ki-muted);font-size:12px}.lg-rel a{color:var(--ki-red-hi)}
-.lg-fans{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:8px}
+.lg-fans{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:8px}
 .lg-fans a{display:block;text-decoration:none;color:var(--ki-text-2);font-size:11px;line-height:1.3}.lg-fans img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;background:var(--ki-bg-1);display:block;margin-bottom:4px}
 .lg-days a.later small{color:var(--ki-muted)}
 .lg-vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:8px}
@@ -89,6 +89,11 @@
     var buzz=function(d){var h='';
       var rel=(NW.releases||[]).filter(function(x){return x.date===d;});
       if(rel.length)h+='<h3 class="ki-h3" style="margin-top:14px">Official KING release that day</h3>'+rel.map(function(x){return '<div class="lg-rel">'+(x.thumb?'<img src="'+esc(x.thumb)+'" alt="" referrerpolicy="no-referrer" loading="lazy">':'')+'<div><b>'+esc(x.title)+'</b><small>'+esc([x.type,x.by,x.platform,x.time].filter(Boolean).join(' · '))+'</small><div>'+(x.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.name)+'</a>';}).join(' · ')+'</div></div></div>';}).join('');
+      // fan-made posters first, right under the official release (owner, 28 Oct 2026: the videos must not push the fan posters down)
+      var fans=[];Object.keys(FV.releases||{}).forEach(function(k){(FV.releases[k]||[]).forEach(function(v){if(v.posted_at&&ist(v.posted_at)===d)fans.push(v);});});
+      fans.sort(function(a,b){return (b.likes||0)-(a.likes||0)||(a.posted_at<b.posted_at?-1:1);});
+      if(fans.length){var fc=function(v){return '<a href="'+esc(v.url)+'" target="_blank" rel="noopener"><img src="'+esc(v.image)+'" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="this.style.visibility=\'hidden\'"><b>'+esc(v.account)+'</b> · '+esc(v.platform||'')+' · '+istT(v.posted_at)+(v.likes!=null?'<br>'+Number(v.likes).toLocaleString('en-US')+' likes':'')+(v.note?'<br>'+esc(v.note):'')+'</a>';},pl={};fans.forEach(function(v){pl[v.platform||'other']=(pl[v.platform||'other']||0)+1;});
+        h+='<h3 class="ki-h3" style="margin-top:14px">Fan-made posters posted that day · '+fans.length+'</h3><p class="ki-note">'+Object.keys(pl).map(function(k){return esc(k)+' '+pl[k];}).join(' · ')+'. Most-liked first. Picked by eye from every post our sweep found; news cards and reposts of the official poster are left out.</p><div class="lg-fans">'+fans.slice(0,36).map(fc).join('')+'</div>'+(fans.length>36?'<details class="lg-more"><summary>Show all '+fans.length+' fan posters</summary><div class="lg-fans">'+fans.slice(36).map(fc).join('')+'</div></details>':'');}
       // videos posted that day (owner, 28 Oct 2026: 'Where are the videos?')
       var vids=(VD.items||[]).filter(function(v){return v.published&&ist(v.published)===d;}).sort(function(a,b){return (b.views||0)-(a.views||0);});
       if(vids.length){var tv=vids.reduce(function(a,v){return a+(v.views||0);},0),bk={},st={positive:0,neutral:0,critical:0};vids.forEach(function(v){bk[v.kind]=(bk[v.kind]||0)+1;st[v.stance]=(st[v.stance]||0)+1;});
@@ -99,9 +104,6 @@
       var rows=[];(PO.posts||[]).forEach(function(p){(p.readings||[]).forEach(function(r){if(ist(r.at)!==d)return;var hrs=Math.round((Date.parse(r.at)-Date.parse(p.posted_at))/36e5);
         rows.push('<tr><th scope="row"><a class="ki-src" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.account+' · '+p.platform)+'</a><small style="display:block;color:var(--ki-muted)">posted '+dd(ist(p.posted_at))+', '+istT(p.posted_at)+'</small></th><td>'+istT(r.at)+'<small style="display:block;color:var(--ki-muted)">'+(hrs<48?hrs+' h':Math.round(hrs/24)+' days')+' after posting</small></td><td>'+Object.keys(r.metrics).map(function(m){return esc(m)+' <b>'+Number(r.metrics[m]).toLocaleString('en-US')+'</b>';}).join(' · ')+'</td></tr>');});});
       if(rows.length)h+='<h3 class="ki-h3" style="margin-top:14px">Official posts read that day</h3><div class="ki-tablewrap"><table class="ki-table compact"><thead><tr><th scope="col">Post</th><th scope="col">Read at</th><th scope="col">Counts as the platform shows them</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';
-      var fans=[];Object.keys(FV.releases||{}).forEach(function(k){(FV.releases[k]||[]).forEach(function(v){if(v.posted_at&&ist(v.posted_at)===d)fans.push(v);});});
-      fans.sort(function(a,b){return a.posted_at<b.posted_at?-1:1;});
-      if(fans.length)h+='<h3 class="ki-h3" style="margin-top:14px">Fan-made versions posted that day · '+fans.length+'</h3><div class="lg-fans">'+fans.map(function(v){return '<a href="'+esc(v.url)+'" target="_blank" rel="noopener"><img src="'+esc(v.image)+'" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="this.style.visibility=\'hidden\'">'+esc(v.account)+' · '+istT(v.posted_at)+(v.note?'<br>'+esc(v.note):'')+'</a>';}).join('')+'</div>';
       var pd=(PR.days||[]).filter(function(x){return x.date===d;})[0];
       if(pd&&(pd.articles||[]).length)h+='<h3 class="ki-h3" style="margin-top:14px">Press that day · '+pd.articles.length+' articles found</h3><ul class="lg-notes">'+pd.articles.map(function(a){return '<li><b>'+esc(a.outlet)+'</b>: <a href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'</a>'+(a.topic?' <small style="color:var(--ki-muted)">('+esc(a.topic)+')</small>':'')+'</li>';}).join('')+'</ul><p class="ki-note">Articles our searches found that day, not all coverage.</p>';
       return h;};
