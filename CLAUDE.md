@@ -185,6 +185,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Studio KING film card shows thumb/118.webp (was the crown logo).
 - Owner's local folders: Desktop/KING_MOVIE/00000_POSTERS_FINAL/Funko_FINAL and Lego_FINAL (116 each, the renders used on the site, named SRK_<Style>_NoLogo_<id>_<Title>); 118_B_Poster holds the official 27 Oct poster and the naming guide for the second KING card (all 6 styles, owner rendering).
 
+## Fan posters on the day pages (owner, 28 Oct 2026: 'where the fuck are the images?')
+- Fan-made posters sit FIRST on the day page, right under the official release (videos below them; never let another block push them down). data/king-fan-versions.json holds 123 for the 27 Oct poster: 14 from X + 109 from Instagram (14 hashtags read through the owner's logged-in Instagram, 495 posts looked at by eye; news cards and official reposts left out). Instagram thumbnails are saved at 360 px in assets/king-fans/ig/<code>.webp (Instagram links expire and throttle); each tile links to the fan's post. Sorted by likes, first 36 shown, 'Show all'.
+
 ## Videos on the day pages (owner, 28 Oct 2026: 'Where are the videos?')
 - data/king-videos.json = YouTube videos about KING posted after the 27 Oct poster, from 30 searches filtered to this week's uploads; each has its own views/likes read from the video page (read_at), kind and stance read from the title. 254 videos (206 on 27 Oct, 48 on 28 Oct by 14:30 IST), 1,906,863 views. daily.html shows 'Videos posted that day' (thumbnail grid, top 24, 'Show all'). Rebuild with the sweep script (scratchpad ytsweep/run.py: search pages + watch pages, no API key). Instagram cannot be read: the Instagram account signed in on both browsers is suspended pending ID re-verification (accounts/suspended), so reels and hashtag pages are not collected until the owner signs in with a working account.
 
