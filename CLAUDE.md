@@ -185,6 +185,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Studio KING film card shows thumb/118.webp (was the crown logo).
 - Owner's local folders: Desktop/KING_MOVIE/00000_POSTERS_FINAL/Funko_FINAL and Lego_FINAL (116 each, the renders used on the site, named SRK_<Style>_NoLogo_<id>_<Title>); 118_B_Poster holds the official 27 Oct poster and the naming guide for the second KING card (all 6 styles, owner rendering).
 
+## Videos on the day pages (owner, 28 Oct 2026: 'Where are the videos?')
+- data/king-videos.json = YouTube videos about KING posted after the 27 Oct poster, from 30 searches filtered to this week's uploads; each has its own views/likes read from the video page (read_at), kind and stance read from the title. 254 videos (206 on 27 Oct, 48 on 28 Oct by 14:30 IST), 1,906,863 views. daily.html shows 'Videos posted that day' (thumbnail grid, top 24, 'Show all'). Rebuild with the sweep script (scratchpad ytsweep/run.py: search pages + watch pages, no API key). Instagram cannot be read: the Instagram account signed in on both browsers is suspended pending ID re-verification (accounts/suspended), so reels and hashtag pages are not collected until the owner signs in with a working account.
+
 ## Newest first (owner, 28 Oct 2026)
 - /king-intelligence/daily.html day tiles run newest to oldest (28 Oct first, 04 Oct last). /create/ film grid runs KING first, then 117 down to 001 Fauji (catalogue sorted by id, descending, in loadCatalogue).
 

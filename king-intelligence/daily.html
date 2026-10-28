@@ -47,6 +47,11 @@
 .lg-fans{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:8px}
 .lg-fans a{display:block;text-decoration:none;color:var(--ki-text-2);font-size:11px;line-height:1.3}.lg-fans img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;background:var(--ki-bg-1);display:block;margin-bottom:4px}
 .lg-days a.later small{color:var(--ki-muted)}
+.lg-vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:8px}
+.lg-vids a{display:block;text-decoration:none;color:var(--ki-text-2);font-size:12px;line-height:1.35}.lg-vids b{color:var(--ki-text)}.lg-vids small{color:var(--ki-muted);display:block;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lg-vt{position:relative;display:block;margin-bottom:5px}.lg-vt img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;display:block;background:var(--ki-bg-1)}.lg-vt i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-style:normal;display:flex;align-items:center;justify-content:center;font-size:13px}
+.lg-chip{display:inline-block;padding:0 6px;border-radius:3px;font-size:10px;text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--ki-line)}.lg-chip.positive{color:#3fbf73;border-color:#2e6e4b}.lg-chip.critical{color:var(--ki-red-hi)}.lg-chip.neutral{color:var(--ki-muted)}
+.lg-more{margin-top:10px}.lg-more summary{cursor:pointer;color:var(--ki-red-hi);font-weight:600}
 </style>
 <section aria-labelledby="h-archive">
   <div class="ki-sec-head"><h2 class="ki-h2" id="h-archive">Every day since 04 Oct</h2><span class="ki-stamp" id="lg-count"></span></div>
@@ -71,7 +76,7 @@
   var linkify=function(t){return esc(t).replace(/\(?(https?:\/\/[^\s)]+)\)?/g,function(_,u){return ' (<a href="'+u+'" target="_blank" rel="noopener">source</a>)';});};
   var dd=function(s,y){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',y?{day:'2-digit',month:'short',year:'numeric'}:{day:'2-digit',month:'short'});};
   var fmt=function(n){return n==null?'<span class="ki-na">Not read</span>':Number(n).toLocaleString('en-US');};
-  Promise.all([fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-buzz-archive.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {series:{}};})].concat(['king-news','king-posts','king-fan-versions','king-press'].map(function(n){return fetch('../data/'+n+'.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};});}))).then(function(X){var L=X[0],AR=X[1].series||{},NW=X[2],PO=X[3],FV=X[4],PR=X[5];
+  Promise.all([fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-buzz-archive.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {series:{}};})].concat(['king-news','king-posts','king-fan-versions','king-press','king-videos'].map(function(n){return fetch('../data/'+n+'.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};});}))).then(function(X){var L=X[0],AR=X[1].series||{},NW=X[2],PO=X[3],FV=X[4],PR=X[5],VD=X[6];
     // official releases, post readings, fan versions and press for one IST day (owner, 28 Oct 2026: the poster day showed none of it)
     var ist=function(s){return new Date(Date.parse(s)+330*6e4).toISOString().slice(0,10);};
     var istT=function(s){return new Date(Date.parse(s)+330*6e4).toISOString().slice(11,16)+' IST';};
@@ -80,9 +85,17 @@
     (PO.posts||[]).forEach(function(p){(p.readings||[]).forEach(function(r){mark(ist(r.at));});});
     Object.keys(FV.releases||{}).forEach(function(k){(FV.releases[k]||[]).forEach(function(v){if(v.posted_at)mark(ist(v.posted_at));});});
     (PR.days||[]).forEach(function(d){mark(d.date);});
+    (VD.items||[]).forEach(function(v){if(v.published)mark(ist(v.published));});
     var buzz=function(d){var h='';
       var rel=(NW.releases||[]).filter(function(x){return x.date===d;});
       if(rel.length)h+='<h3 class="ki-h3" style="margin-top:14px">Official KING release that day</h3>'+rel.map(function(x){return '<div class="lg-rel">'+(x.thumb?'<img src="'+esc(x.thumb)+'" alt="" referrerpolicy="no-referrer" loading="lazy">':'')+'<div><b>'+esc(x.title)+'</b><small>'+esc([x.type,x.by,x.platform,x.time].filter(Boolean).join(' · '))+'</small><div>'+(x.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.name)+'</a>';}).join(' · ')+'</div></div></div>';}).join('');
+      // videos posted that day (owner, 28 Oct 2026: 'Where are the videos?')
+      var vids=(VD.items||[]).filter(function(v){return v.published&&ist(v.published)===d;}).sort(function(a,b){return (b.views||0)-(a.views||0);});
+      if(vids.length){var tv=vids.reduce(function(a,v){return a+(v.views||0);},0),bk={},st={positive:0,neutral:0,critical:0};vids.forEach(function(v){bk[v.kind]=(bk[v.kind]||0)+1;st[v.stance]=(st[v.stance]||0)+1;});
+        var card=function(v){return '<a href="'+esc(v.url)+'" target="_blank" rel="noopener"><span class="lg-vt"><img src="'+esc(v.thumb)+'" alt="" loading="lazy" referrerpolicy="no-referrer"><i aria-hidden="true">&#9654;</i></span><b>'+Number(v.views||0).toLocaleString('en-US')+' views</b> <span class="lg-chip '+esc(v.stance)+'">'+esc(v.stance)+'</span><br>'+esc(v.channel)+' · '+esc(v.kind)+'<br><small>'+esc(v.title)+'</small></a>';};
+        h+='<h3 class="ki-h3" style="margin-top:14px">Videos posted that day · '+vids.length+' on YouTube · '+tv.toLocaleString('en-US')+' views</h3>'+
+          '<p class="ki-note">'+Object.keys(bk).sort(function(a,b){return bk[b]-bk[a];}).map(function(k){return esc(k)+' '+bk[k];}).join(' · ')+'. From the titles: '+st.positive+' positive, '+st.neutral+' neutral, '+st.critical+' critical. '+esc((VD.about||'').split('. ').slice(-2).join('. '))+'</p>'+
+          '<div class="lg-vids">'+vids.slice(0,24).map(card).join('')+'</div>'+(vids.length>24?'<details class="lg-more"><summary>Show all '+vids.length+' videos</summary><div class="lg-vids">'+vids.slice(24).map(card).join('')+'</div></details>':'');}
       var rows=[];(PO.posts||[]).forEach(function(p){(p.readings||[]).forEach(function(r){if(ist(r.at)!==d)return;var hrs=Math.round((Date.parse(r.at)-Date.parse(p.posted_at))/36e5);
         rows.push('<tr><th scope="row"><a class="ki-src" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.account+' · '+p.platform)+'</a><small style="display:block;color:var(--ki-muted)">posted '+dd(ist(p.posted_at))+', '+istT(p.posted_at)+'</small></th><td>'+istT(r.at)+'<small style="display:block;color:var(--ki-muted)">'+(hrs<48?hrs+' h':Math.round(hrs/24)+' days')+' after posting</small></td><td>'+Object.keys(r.metrics).map(function(m){return esc(m)+' <b>'+Number(r.metrics[m]).toLocaleString('en-US')+'</b>';}).join(' · ')+'</td></tr>');});});
       if(rows.length)h+='<h3 class="ki-h3" style="margin-top:14px">Official posts read that day</h3><div class="ki-tablewrap"><table class="ki-table compact"><thead><tr><th scope="col">Post</th><th scope="col">Read at</th><th scope="col">Counts as the platform shows them</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';
