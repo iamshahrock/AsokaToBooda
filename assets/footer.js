@@ -38,9 +38,9 @@
   var root = new URL('..', base).href;
   var map = document.createElement('nav'); map.className = 'sf-map'; map.setAttribute('aria-label', 'Site map');
   [
-    ['Play', [['create/', 'Make Your Poster'], ["lairs/", 'Rescue Your Face'], ['chess81/', 'Chess81'], ['fan-billboard/', 'Billboard & STARKS']]],
-    ['Read & follow', [['king-intelligence/', 'KING Buzz'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['doom-to-king/', 'DOOM to KING']]],
-    ['Join in', [['inquilab/', 'Inquilaab King Ke Saath'], ['merch/', 'Merch'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos'], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record']]],
+    ['Play', [['create/', 'Make Your Poster'], ['chess81/', 'Chess81'], ['inquilab/', 'Inquilaab King Ke Saath'], ["lairs/", 'Rescue Your Face'], ['fan-billboard/', 'Billboard & STARKS']]],
+    ['Follow & shop', [['king-intelligence/', 'KING Buzz'], ['merch/', 'Merch'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos']]],
+    ['Read & watch', [['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['doom-to-king/', 'DOOM to KING']]],
     ['About', [['', 'Home'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
   ].forEach(function (g) {
     var col = document.createElement('div'), h = document.createElement('h4'); h.textContent = g[0]; col.appendChild(h);
