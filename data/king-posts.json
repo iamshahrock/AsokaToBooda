@@ -36,6 +36,15 @@
       "reposts": 10807,
       "replies": 3453
      }
+    },
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "views": 4078795,
+      "likes": 59726,
+      "reposts": 10920,
+      "replies": 3480
+     }
     }
    ]
   },
@@ -60,6 +69,13 @@
       "likes": 1921959,
       "comments": 39600
      }
+    },
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "likes": 1989744,
+      "comments": 43130
+     }
     }
    ]
   },
@@ -78,6 +94,15 @@
       "likes": 8020,
       "reposts": 1659,
       "replies": 211
+     }
+    },
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "views": 161860,
+      "likes": 8105,
+      "reposts": 1673,
+      "replies": 214
      }
     }
    ]
@@ -103,6 +128,13 @@
       "likes": 49019,
       "comments": 1088
      }
+    },
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "likes": 50864,
+      "comments": 1111
+     }
     }
    ]
   },
@@ -119,6 +151,14 @@
      "metrics": {
       "likes": 378000,
       "comments": 3981
+     }
+    },
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "likes": 403204,
+      "comments": 4161,
+      "plays": 5259126
      }
     }
    ]
@@ -139,6 +179,15 @@
       "reposts": 12000,
       "replies": 4800
      }
+    },
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "views": 4487266,
+      "likes": 53610,
+      "reposts": 13055,
+      "replies": 4914
+     }
     }
    ]
   },
@@ -155,6 +204,51 @@
      "metrics": {
       "likes": 158000,
       "comments": 2047
+     }
+    },
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "likes": 157837,
+      "comments": 2050,
+      "plays": 1741080
+     }
+    }
+   ]
+  },
+  {
+   "id": "2mtg-2026-10-24-rc-x",
+   "release": "2-months-to-go",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2113881052695744695",
+   "posted_at": "2026-10-24T12:01:31+05:30",
+   "readings": [
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "views": 777741,
+      "likes": 7244,
+      "reposts": 1559,
+      "replies": 297
+     }
+    }
+   ]
+  },
+  {
+   "id": "title-2025-11-02-rc-ig",
+   "release": "title-reveal",
+   "account": "@redchilliesent",
+   "platform": "Instagram",
+   "url": "https://www.instagram.com/redchilliesent/reel/DQiu-KCDN0v/",
+   "posted_at": "2025-11-02T11:31:02+05:30",
+   "readings": [
+    {
+     "at": "2026-10-28T15:30:00+05:30",
+     "metrics": {
+      "likes": 90222,
+      "comments": 2954,
+      "plays": 1220770
      }
     }
    ]

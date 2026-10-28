@@ -69,12 +69,16 @@
    "type": "Video",
    "title": "#2MonthsToGo · 'The wait gets shorter. The ROAR gets louder'",
    "by": "Red Chillies Entertainment",
-   "platform": "Instagram",
+   "platform": "Instagram + X",
    "thumb": "../assets/king-news/2-months-to-go.jpg",
    "links": [
     {
      "name": "Instagram",
      "url": "https://www.instagram.com/redchilliesent/p/De3eRabIALG/"
+    },
+    {
+     "name": "X",
+     "url": "https://x.com/RedChilliesEnt/status/2113881052695744695"
     }
    ],
    "release": "2-months-to-go",
@@ -113,10 +117,15 @@
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E"
+    },
+    {
+     "name": "Instagram",
+     "url": "https://www.instagram.com/redchilliesent/reel/DQiu-KCDN0v/"
     }
    ],
    "series_id": "king_title_reveal_views",
-   "note": "Released on SRK's 60th birthday"
+   "note": "Released on SRK's 60th birthday",
+   "release": "title-reveal"
   }
  ]
 }

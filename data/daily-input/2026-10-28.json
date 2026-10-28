@@ -1,0 +1,101 @@
+{
+ "date": "2026-10-28",
+ "record_id": "KING-2026-10-28",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 49684523,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-10-28 15:54 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 32588880,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-10-28 15:54 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 82523656,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-10-28 15:54 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-10-28: Display Purposes counts have been frozen since 06 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-10-28: Display Purposes counts frozen since 18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 40,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json, 2026-10-28",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 2883120,
+   "unit": "views",
+   "source": "data/ai-creator-log.json, 2026-10-28",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": null,
+   "unit": "followers",
+   "source": "Not read exactly 2026-10-28: the profile shows a rounded 48.3M and Instagram refused the exact-count request (HTTP 429)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 28 Oct total located; our own X sweep (data/king-social.json) counts only what our searches returned",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Day 2 of the 27 Oct KING poster: @iamsrk's X post at 4,078,795 views / 59,726 likes and his Instagram post at 1,989,744 likes / 43,130 comments (read 28 Oct 15:30 IST, data/king-posts.json).",
+  "Dhurandhar 2 / Raging Fire comparison and 'AI-made' criticism keep running in the press on 28 Oct: India TV (https://www.indiatv.in/entertainment/bollywood/debate-erupts-over-poster-for-shah-rukh-khan-king-users-compare-it-to-dhurandhar-2-remarking-that-every-masterpiece-has-cheap-copy-2026-10-28-1251336), News9 (https://www.news9live.com/entertainment/bollywood/shah-rukh-khan-king-poster-dhurandhar-2-comparison-3019740), Dainik Bhaskar Hindi (https://www.bhaskarhindi.com/entertainment/debate-erupts-over-the-poster-for-shah-rukhs-king-some-claim-its-ai-generated-while-others-suggest-its-a-copy-of-dhurandhar-1383319).",
+  "SRK, Kareena Kapoor Khan and Arshad Warsi shooting a 'Deewangi Deewangi'-style introductory song, citing a source: Variety India exclusive, 28 Oct 2026 (https://varietyindia.com/king-shah-rukh-khan-kareena-kapoor-khan-and-arshad-warsi-shoot-deewangi-deewangi-style-introductory-song-exclusive/) [Unverified]",
+  "No #SRKDAY fan event on 2 Nov this year, KING work cited: The Times of India, citing reports, 28 Oct 2026 (https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shah-rukh-khans-birthday-plans-change-no-srkday-event-on-november-2-king-work-cited-as-reason-reports/articleshow/135252304.cms) [Unverified]",
+  "Fan posts on X say Avengers: Doomsday moved its India release a day earlier after the KING poster; NewsBytes (citing Pinkvilla) reported the 17 Dec India date on 18 Oct, before the poster, so the link to KING is fans' reading, not a fact [Unverified]"
+ ],
+ "notes": [
+  "Read in an attended session on 2026-10-28 ~15:54 IST (the Worker's nightly YouTube reading is not running yet).",
+  "Since 27 Oct: KING title reveal +164,042 (49,520,481 -> 49,684,523); KING date announcement +47,109 (32,541,771 -> 32,588,880); Avengers: Doomsday trailer +194,455 (82,329,201 -> 82,523,656).",
+  "28 Oct day page: 299 YouTube videos about the poster (data/king-videos.json), 245 X + Instagram fan versions in all (data/king-fan-versions.json), 270 X posts read for 28 Oct (data/king-social.json), 16 press articles (data/king-press.json). These are what our searches found, not all coverage.",
+  "Display Purposes not read: its counts are frozen. Posts are not people."
+ ]
+}
