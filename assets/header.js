@@ -33,16 +33,17 @@
     ['merch/', 'Merch'],
     ['gallery/videos/', 'Gallery', ['gallery/']],
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
-    ['fans-king/', "FAN'S KING"]
+    ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']]
   ];
-  var UTIL = [['about/', 'About Us'], ['fan-billboard/', 'Billboard', ['fan-made-ai-universe/']]];
+  var UTIL = [['about/', 'About Us'], ['fan-billboard/', 'Billboard']];
   var MORE = [['contact/', 'Contact'], ['faq/', 'FAQ']];
   // Sub-pages: a slim tab row under the bar on every page of that section, so fans always know where they are.
   var SUB = {
     'create/': [['create/', 'Kingmaker studio'], ['', 'Be King · coming soon']],
     'lairs/': [['lairs/', 'The 12 games'], ['lairs/#cinema', 'Lairs Cinema']],
     'chess81/': [['chess81/', 'Overview'], ['CHESS81.HTML', 'Play the full game'], ['chess81/rapid-fire/', 'Rapid Fire']],
-    'fan-billboard/': [['fan-billboard/', 'STARKS Billboard'], ['fan-made-ai-universe/', 'Fan-made AI Universe']],
+    // Fan Universe = every fan creation + the fan videos (was FAN'S KING; owner, 28 Oct 2026). Not part of Billboard.
+    'fan-made-ai-universe/': [['fan-made-ai-universe/', 'All fan creations'], ['fans-king/', 'Fan videos on YouTube']],
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
     'inquilab/': [['inquilab/', 'The movement'], ['inquilab/#anthem', 'The anthem'], ['inquilab/#join', 'Sign on'], ['inquilab/revolution/', 'The Revolution Starts Now']],
@@ -131,9 +132,9 @@
     /* phone: show the middle of the story, burger menu */
     /* desktop: everything on one line */
     '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-util{margin-left:0}#site-header .sh-brand{margin-right:0}}',
-    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 10px}#site-header .sh-nav{gap:2px 5px}#site-header .sh-nav a{font-size:12px;letter-spacing:.015em}#site-header .sh-util{gap:2px 9px;padding-left:10px}#site-header .sh-util a{font-size:11px;letter-spacing:.02em}#site-header .sh-sw{display:none}}',
-    '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 9px}#site-header .sh-nav a{font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 14px}}',
-    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 2px}#site-header .sh-nav a{font-size:11px;letter-spacing:0}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 8px;padding:0 8px}}',
+    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 6px}#site-header .sh-nav{gap:2px 3px}#site-header .sh-nav a{font-size:12px;letter-spacing:0}#site-header .sh-util{gap:2px 7px;padding-left:7px}#site-header .sh-util a{font-size:11px;letter-spacing:.02em}#site-header .sh-sw{display:none}}',
+    '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 7px}#site-header .sh-nav a{font-size:12px;letter-spacing:.05em}#site-header .sh-util{gap:2px 14px}}',
+    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 2px}#site-header .sh-nav a{font-size:11px;letter-spacing:0;padding-left:0;padding-right:0}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 3px;padding:0 4px}}',
     /* tablet and phone: the menu button holds every link, Home included */
     '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
     '@media (max-width:760px){',
