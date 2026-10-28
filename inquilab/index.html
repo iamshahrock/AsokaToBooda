@@ -42,6 +42,11 @@
 .slot b{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase}
 .slot span{font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:#f2cf6b}
 .slot iframe,.slot audio{width:100%}
+.songs{display:grid;gap:10px;margin:0 0 18px}
+.songs .credit{margin:0;font-size:14px;color:var(--mute)}.songs .credit a{color:var(--red-hi);font-weight:700}
+.song{display:grid;grid-template-columns:70px minmax(0,1fr);gap:10px;align-items:center;border:1px solid var(--line);background:#120c0c;padding:8px 10px}
+.song b{font-family:var(--display);font-weight:400;font-size:17px;text-transform:uppercase}
+.song audio{width:100%;height:40px;display:block}
 .lyr .st{overflow-wrap:anywhere;margin:0 0 18px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:21px;line-height:1.45}
 .lyr.hi .st{font-family:"Tiro Devanagari Hindi","Noto Serif Devanagari",serif;font-style:normal;font-weight:400;font-size:20px;line-height:1.7}
 .lyr .callresp{font-family:var(--body);font-style:normal;font-size:17px}
@@ -61,7 +66,7 @@
 .fv iframe{width:100%;aspect-ratio:16/9;border:0;display:block;margin:0 0 8px}
 .fv a{color:var(--ink,#f4efe9);text-decoration:none}.fv small{color:var(--mute)}
 .fv .empty{border-style:dashed;color:var(--mute);text-align:center;padding:22px 12px}
-@media (max-width:760px){.ak-hero{grid-template-columns:minmax(0,1fr)}.ak-hero .art{order:-1;padding:10px 0 0}.ak-hero .art img{max-height:260px}.ak-hero h1{font-size:clamp(20px,7.2vw,36px)}}
+@media (max-width:760px){.song{grid-template-columns:minmax(0,1fr);gap:6px}.ak-hero{grid-template-columns:minmax(0,1fr)}.ak-hero .art{order:-1;padding:10px 0 0}.ak-hero .art img{max-height:260px}.ak-hero h1{font-size:clamp(20px,7.2vw,36px)}}
 </style>
 </head>
 <body class="v2">
@@ -84,7 +89,13 @@
     <article class="ak-col" id="v1" aria-labelledby="v1H">
       <h3 id="v1H">Version <em>1</em></h3>
       <p class="lang">हिन्दी</p>
-      <div class="slot" data-v="0"><b>Version 1</b><span>Coming soon</span></div>
+      <div class="songs" id="songs">
+        <p class="credit">Composed by: <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></p>
+        <div class="song"><b>Song 1</b><audio controls preload="none" src="../assets/inquilab/audio/inquilaab-v1-song-1.mp3" data-song="1"></audio></div>
+        <div class="song"><b>Song 2</b><audio controls preload="none" src="../assets/inquilab/audio/inquilaab-v1-song-2.mp3" data-song="2"></audio></div>
+        <div class="song"><b>Song 3</b><audio controls preload="none" src="../assets/inquilab/audio/inquilaab-v1-song-3.mp3" data-song="3"></audio></div>
+        <div class="song"><b>Song 4</b><audio controls preload="none" src="../assets/inquilab/audio/inquilaab-v1-song-4.mp3" data-song="4"></audio></div>
+      </div>
       <div class="lyr hi folded" id="lyr1">
         <p class="st">इंक़लाब! किंग के साथ!<br>इंक़लाब! किंग के साथ!<br>इंक़लाब! किंग के साथ!<br>ये आवाज़ किसकी है?<br>किंग के फ़ैन्स की!<br>ये लड़ाई किसकी है?<br>हम सबकी! हम सबकी!<br>इंक़लाब! किंग के साथ!</p>
         <p class="st">चेहरा किंग का, कला हमारी,<br>किस हक़ से की नकल तुम्हारी?<br>मशीनों से तस्वीरें बनाईं,<br>कलाकारों की पहचान चुराई!</p>
@@ -120,7 +131,7 @@
     <article class="ak-col" id="v2" aria-labelledby="v2H">
       <h3 id="v2H">Version <em>2</em></h3>
       <p class="lang">Hinglish</p>
-      <div class="slot" data-v="1"><b>Version 2</b><span>Coming soon</span></div>
+      <div class="slot" data-v="1"><b>Version 2</b><span>Audio coming soon</span></div>
       <div class="lyr folded" id="lyr2">
         <p class="st">Inquilaab, King Ke Saath!<br>Inquilaab, King Ke Saath!<br>Inquilaab, King Ke Saath!</p>
         <p class="st">Chehra King ka, kalaa humaari,<br>AI ne karli dakaeti saari!<br>Machine se taan ke karayi seena-zori,<br>Silicon Valley ki pakdi gayi chori!</p>
@@ -136,9 +147,9 @@
         <p class="st">Shah Rukh Khan — humaara pyaar!<br>King tumhi ho, baarambaar!<br>King se pyaar, beshumaar!<br>Shah Rukh Khan pe jaan nisaar!</p>
         <p class="st">INQUILAAB!<br>KING KE SAATH!</p>
         <p class="st">INQUILAAB!<br>KING AABAAD!</p>
-        <p class="st callresp"><span class="call leader"><b>LEADER</b>Chehra kiska?</span><br><span class="call crowd"><b>CROWD</b>King ka!</span></p>
-        <p class="st callresp"><span class="call leader"><b>LEADER</b>Haq kiska?</span><br><span class="call crowd"><b>CROWD</b>Fan ka!</span></p>
-        <p class="st callresp"><span class="call leader"><b>LEADER</b>Pyaar Kiss Se</span><br><span class="call crowd"><b>CROWD</b>KING Se</span></p>
+        <p class="st">Chehra kiska?<br>King ka!</p>
+        <p class="st">Haq kiska?<br>Fan ka!</p>
+        <p class="st">Pyaar Kiss Se<br>KING Se</p>
         <p class="st">King ke bhakt, King ke yaar,<br>Shah Rukh Khan se  bepanah pyaar!</p>
         <p class="st">INQUILAAB!<br>KING KE SAATH!</p>
         <p class="st">Hum sab Hain - King ke bhakt,<br>King se ishq —  Koi Shak?</p>
@@ -177,6 +188,23 @@
     var id = ytId(v.url);
     return id ? '<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/' + id + '" title="' + esc(v.title || 'Fan version') + '" allowfullscreen></iframe>' : '';
   }
+
+  // anthem songs in Google Analytics (owner, 28 Oct 2026): anthem_play / anthem_progress (25-50-75%) / anthem_complete / composer click
+  var ga = function (name, p) { if (window.gtag) window.gtag('event', name, p); };
+  [].forEach.call(document.querySelectorAll('#songs audio'), function (au) {
+    var n = au.getAttribute('data-song'), base = { anthem_version: 'Version 1', song: 'Song ' + n, song_file: 'inquilaab-v1-song-' + n + '.mp3' }, hit = {}, started = false;
+    var p = function (x) { var o = {}; for (var k in base) o[k] = base[k]; for (var k2 in x) o[k2] = x[k2]; return o; };
+    au.addEventListener('play', function () {
+      [].forEach.call(document.querySelectorAll('#songs audio'), function (o) { if (o !== au) o.pause(); });
+      ga('anthem_play', p({ resumed: started })); started = true;
+    });
+    au.addEventListener('timeupdate', function () {
+      if (!au.duration) return; var pc = au.currentTime / au.duration * 100;
+      [25, 50, 75].forEach(function (m) { if (pc >= m && !hit[m]) { hit[m] = 1; ga('anthem_progress', p({ percent: m })); } });
+    });
+    au.addEventListener('ended', function () { ga('anthem_complete', p({ seconds: Math.round(au.duration) })); });
+  });
+  var cl = document.querySelector('[data-ga="composer"]'); if (cl) cl.addEventListener('click', function () { ga('anthem_composer_click', { composer: 'Pragnesh S. Singh', link_url: cl.href }); });
   [].forEach.call(document.querySelectorAll('[data-more]'), function (b) { b.onclick = function () { $(b.getAttribute('data-more')).classList.remove('folded'); }; });
   fetch('../data/king-fever.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
     (j.official || []).forEach(function (o, i) {
