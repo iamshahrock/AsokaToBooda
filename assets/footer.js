@@ -40,7 +40,7 @@
   [
     ['Play', [['create/', 'Make Your Poster'], ["lairs/", 'Rescue Your Face'], ['chess81/', 'Chess81'], ['fan-billboard/', 'Billboard & STARKS']]],
     ['Read & follow', [['king-intelligence/', 'KING Buzz'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['doom-to-king/', 'DOOM to KING']]],
-    ['Join in', [['inquilab/', 'Inquilaab King Ke Saath'], ['merch/', 'Merch'], ['fan-made-ai-universe/', 'Fan-made AI Universe'], ['fans-king/', "FAN'S KING"], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record']]],
+    ['Join in', [['inquilab/', 'Inquilaab King Ke Saath'], ['merch/', 'Merch'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos'], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record']]],
     ['About', [['', 'Home'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
   ].forEach(function (g) {
     var col = document.createElement('div'), h = document.createElement('h4'); h.textContent = g[0]; col.appendChild(h);
