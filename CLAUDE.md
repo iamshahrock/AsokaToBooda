@@ -185,6 +185,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - Studio KING film card shows thumb/118.webp (was the crown logo).
 - Owner's local folders: Desktop/KING_MOVIE/00000_POSTERS_FINAL/Funko_FINAL and Lego_FINAL (116 each, the renders used on the site, named SRK_<Style>_NoLogo_<id>_<Title>); 118_B_Poster holds the official 27 Oct poster and the naming guide for the second KING card (all 6 styles, owner rendering).
 
+## Newest first (owner, 28 Oct 2026)
+- /king-intelligence/daily.html day tiles run newest to oldest (28 Oct first, 04 Oct last). /create/ film grid runs KING first, then 117 down to 001 Fauji (catalogue sorted by id, descending, in loadCatalogue).
+
 ## Daily reports show each day's buzz (owner, 28 Oct 2026: 'Where is the data for yesterday's poster release?')
 - /king-intelligence/daily.html?date= now also shows, for that IST day: the official KING release (data/king-news.json releases), every official post reading taken that day (data/king-posts.json, with hours after posting), fan-made versions posted that day (data/king-fan-versions.json, thumbnails) and press articles (data/king-press.json). Days after the last ledger record appear as 'no ledger record yet' tiles when any of those files has data for them. Add readings/fan versions/press to those files and the day page picks them up; no page edit needed.
 
