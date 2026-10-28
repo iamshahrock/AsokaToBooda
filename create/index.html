@@ -421,7 +421,7 @@ function drawKStyles() {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'kst'; b.setAttribute('aria-pressed', String(state.kstyle === id));
     const t = document.createElement('b'); t.textContent = name;
     const box = document.createElement('div'); box.className = 'kp';
-    const im = document.createElement('img'); im.alt = 'KING in ' + name; im.src = '../assets/posters/styles/king/' + id + '.jpg';
+    const im = document.createElement('img'); im.alt = 'KING in ' + name; im.src = '../assets/posters/styles/king/card-' + id + '.webp'; im.onerror = () => { im.onerror = null; im.src = '../assets/posters/styles/king/' + id + '.jpg'; };   // small card image (~50 KB), full poster as fallback
     im.className = 'full'; im.onerror = () => { im.onerror = null; im.className = ''; im.src = '../assets/home/king-wordmark.webp'; };
     if (id === 'photo') im.style.objectFit = 'contain';
     box.append(im); b.append(t, box);
