@@ -152,6 +152,12 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 - faces.json: Chibi boxes snapped to Apple Vision where it found Funko faces (Vision misses most: no mouth), hand-placed on 11 posters. logo.json: Chibi's 5 nudges plus 020 (up 0.13) and 053 (down 0.17). styles/king/funko.jpg = Funko 118 + KING logo. 'funko' added to LOGO_STYLES.
 - 15 films had two Funko versions; owner may swap any: 018 023 025 032 034 036 037 041 044 046 050 051 052 062 066, plus 118.
 
+## Funko + Chibi finals (owner, 28 Oct 2026)
+- Strict Funko standard = KING_MOVIE/00000_POSTERS_FINAL/00_REDO_27Oct2026/6_Funko_115_to_fix/FLOW_STEP1_create_template.txt. 'Old render kept' is NOT final.
+- Live after the 2nd pass: 25 Funko (001 004 006 007 008 010 011 014 015 017 019 020 021 022 024 025 028 037 038 039 040 048 051 055 060) and 52 Chibi from 0_FINAL_Posters_ChibiPop_Oct27, each checked by eye for KING logo off faces and face cut-outs. Resized 768x1376 -> 1080x1920; faces.json re-detected for those.
+- Held back (logo would cover a face; need a logo shift or the owner's call): Funko 003 026 033 042 088, Chibi 023 026 032 033 040 048 062 077 087 088 089 095 101 112 117. Funko 118 and styles/king/funko.jpg stay the 27 Oct fire-tunnel Funko; the owner's prayer-hands Funko is 119 Title Reveal (held back). Chibi 028 031 036 keep the corrected renders of 26 Oct (#223).
+- Rule: never push new style art without checking every poster with its logo and cut-outs first (PR #287 had to be reverted in #289).
+
 ## LEGO style (owner, 26 Oct 2026)
 - Replaced ijoo Pop on the studio card (ijoo kept for merch). 116 LEGO posters in assets/posters/styles/lego/<id>.jpg (all but 105 The Lion King, 116 Mufasa), from the owner's Flow sets Desktop/KING_MOVIE/00000_POSTERS_FINAL/Lego_01..04 converted from the Chibi posters. Where a film had several renders, the one closest to the Chibi layout was used. KKHH (041) = the owner's first finalised render (jacket off the shoulder; kept as Lego_02/Lego_KKHH_041_from_chat.webp), white background extended to 9:16. Army (032) kept as is although its big face is closer to Chibi.
 - faces.json: Chibi boxes snapped to Apple Vision where found; 6 placed by eye; all 116 checked. logo.json = Chibi's nudges. KING card styles/king/lego.jpg; 'lego' is in LOGO_STYLES.
