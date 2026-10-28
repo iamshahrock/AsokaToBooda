@@ -84,6 +84,13 @@ body{background:var(--bg)}
 .t.fp b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t.fp small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .t.soon{display:flex;align-items:center;justify-content:center;border-style:dashed;background:#0f0909}
 .t.soon::after{display:none}
+.t.sg{display:flex;gap:12px;padding:12px;min-height:0;background:radial-gradient(70% 70% at 20% 70%,#4a0d10 0%,#140a0a 70%)}.t.sg::after{display:none}
+.t.sg img.sg-art{position:static;inset:auto;width:74px;height:auto;flex:none;object-fit:contain;align-self:flex-end;transform:none}
+.t.sg .sg-in{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.t.sg b a{color:#fff;text-decoration:none}.t.sg small a{color:var(--red-hi);font-weight:700}
+.t.sg .sg-row{display:grid;grid-template-columns:50px minmax(0,1fr);gap:6px;align-items:center}
+.t.sg .sg-row i{font:400 13px Anton,sans-serif;font-style:normal;text-transform:uppercase;color:#e0d6ce}
+.t.sg audio{width:100%;height:32px;display:block}
 .t.soon span{position:static;text-align:center}.t.soon b{font-size:22px}.t.soon small{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
 </style>
 </head>
@@ -122,10 +129,20 @@ body{background:var(--bg)}
 
   <div class="blk">
     <h3><a href="inquilab/">Inquilaab King Ke Saath</a></h3>
-    <p>The fan anthem against celeb persona theft by Big Tech. Sing it, make your version, wear it. #FreeMyFace #FreeMyVoice #FreeMyName</p>
+    <p>The fans' song of revolution against celeb persona theft by Big Tech: the King's face, the fans' voice, every artist's right. Listen to Version 1, then sing your own. #FreeMyFace #FreeMyVoice #FreeMyName</p>
     <div class="row r3">
-      <a class="t soon" href="inquilab/#anthem"><span><b>Anthem · Version 01</b><small>Coming soon</small></span></a>
-      <a class="t soon" href="inquilab/#anthem"><span><b>Anthem · Version 02</b><small>Coming soon</small></span></a>
+      <div class="t sg" id="homeSongs">
+        <img class="sg-art" src="assets/inquilab/fist-king.webp" alt="" width="760" height="1362">
+        <div class="sg-in">
+          <b><a href="inquilab/#anthem">Anthem · Version 1</a></b>
+          <small>Composed by <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></small>
+          <div class="sg-row"><i>Song 1</i><audio controls preload="none" src="assets/inquilab/audio/inquilaab-v1-song-1.mp3" data-song="1"></audio></div>
+          <div class="sg-row"><i>Song 2</i><audio controls preload="none" src="assets/inquilab/audio/inquilaab-v1-song-2.mp3" data-song="2"></audio></div>
+          <div class="sg-row"><i>Song 3</i><audio controls preload="none" src="assets/inquilab/audio/inquilaab-v1-song-3.mp3" data-song="3"></audio></div>
+          <div class="sg-row"><i>Song 4</i><audio controls preload="none" src="assets/inquilab/audio/inquilaab-v1-song-4.mp3" data-song="4"></audio></div>
+        </div>
+      </div>
+      <a class="t soon" href="inquilab/#v2"><span><b>Anthem · Version 2</b><small>Lyrics up · audio coming soon</small></span></a>
       <a class="t ch" href="merch/"><img src="assets/merch/ijoo-agar-main-king-hota.webp" alt=""><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
     </div>
   </div>
@@ -204,5 +221,14 @@ body{background:var(--bg)}
 </script>
 <script src="assets/starks.js"></script>
 <script src="assets/footer.js" defer></script>
+<script>
+// homepage anthem songs in Google Analytics, same events as /inquilab/ with page_section 'home' (owner, 28 Oct 2026)
+(function(){var ga=function(n,p){if(window.gtag)window.gtag('event',n,p);};var all=[].slice.call(document.querySelectorAll('#homeSongs audio'));
+all.forEach(function(au){var n=au.getAttribute('data-song'),hit={},started=false,base=function(x){var o={anthem_version:'Version 1',song:'Song '+n,song_file:'inquilaab-v1-song-'+n+'.mp3',page_section:'home'};for(var k in x)o[k]=x[k];return o;};
+au.addEventListener('play',function(){all.forEach(function(o){if(o!==au)o.pause();});ga('anthem_play',base({resumed:started}));started=true;});
+au.addEventListener('timeupdate',function(){if(!au.duration)return;var pc=au.currentTime/au.duration*100;[25,50,75].forEach(function(m){if(pc>=m&&!hit[m]){hit[m]=1;ga('anthem_progress',base({percent:m}));}});});
+au.addEventListener('ended',function(){ga('anthem_complete',base({seconds:Math.round(au.duration)}));});});
+var cl=document.querySelector('#homeSongs [data-ga="composer"]');if(cl)cl.addEventListener('click',function(){ga('anthem_composer_click',{composer:'Pragnesh S. Singh',link_url:cl.href,page_section:'home'});});})();
+</script>
 </body>
 </html>
