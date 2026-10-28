@@ -365,8 +365,11 @@ let LSHIFT = {};   // per style: { id: [dx, dy] } where the logo is nudged off a
 function kingLogo(p, id) {
   id = id || (p && !p.king ? p.id : null);
   if (!id || !LOGO_STYLES.has(state.kstyle) || !KLBOX[id]) return null;
-  const [dx, dy] = (LSHIFT[state.kstyle] || {})[id] || [0, 0], b = KLBOX[id];
-  return { src: BASE + 'king-logo/' + id + '.webp', shift: [dx, dy], box: [b[0] + dx, b[1] + dy, b[2] + dx, b[3] + dy] };
+  const [dx, dy, sc = 1] = (LSHIFT[state.kstyle] || {})[id] || [0, 0], b = KLBOX[id];
+  // optional third value = scale of the logo around its own box centre (e.g. Circus Funko, owner 28 Oct 2026: 'too big')
+  const cx = (b[0] + b[2]) / 2, cy = (b[1] + b[3]) / 2, f = v => v;
+  return { src: BASE + 'king-logo/' + id + '.webp', shift: [dx, dy, sc, cx, cy],
+    box: [cx + (b[0] - cx) * sc + dx, cy + (b[1] - cy) * sc + dy, cx + (b[2] - cx) * sc + dx, cy + (b[3] - cy) * sc + dy].map(f) };
 }
 
 // ---------- films ----------
@@ -442,7 +445,9 @@ async function withLogo(src, logo, shift = [0, 0]) {
   try {
     const [a, b] = await Promise.all([loadImage(src), loadImage(logo)]);
     const c = document.createElement('canvas'); c.width = a.width; c.height = a.height;
-    const x = c.getContext('2d'); x.drawImage(a, 0, 0); x.drawImage(b, shift[0] * c.width, shift[1] * c.height, c.width, c.height);
+    const x = c.getContext('2d'); x.drawImage(a, 0, 0);
+    const sc = shift[2] || 1, cx = shift[3] || 0, cy = shift[4] || 0;
+    x.drawImage(b, (shift[0] + cx * (1 - sc)) * c.width, (shift[1] + cy * (1 - sc)) * c.height, c.width * sc, c.height * sc);
     return c.toDataURL('image/jpeg', 0.86);
   } catch (e) { return null; }
 }
