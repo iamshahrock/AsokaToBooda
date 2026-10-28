@@ -1,6 +1,6 @@
 {
  "source": "Owner's 118-poster set (Pic_Original_Posters, 24 Oct 2026), all 1080x1920, ids 001-118 in the owner's order. 'old' = the id in the earlier 82-poster set (01-83), kept so old ?film= links still work.",
- "count": 118,
+ "count": 119,
  "posters": [
   {
    "id": "001",
@@ -1496,6 +1496,18 @@
    "character": "",
    "thumb": "thumb/118.webp",
    "ref": "ref/118.jpg",
+   "w": 1080,
+   "h": 1920,
+   "lowres": false
+  },
+  {
+   "id": "119",
+   "title": "KING",
+   "year": 2026,
+   "kind": "film",
+   "character": "",
+   "thumb": "thumb/119.webp",
+   "ref": "ref/119.jpg",
    "w": 1080,
    "h": 1920,
    "lowres": false
