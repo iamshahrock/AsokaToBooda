@@ -129,7 +129,7 @@ body{background:var(--bg)}
 
   <div class="blk">
     <h3><a href="inquilab/">Inquilaab King Ke Saath</a></h3>
-    <p>The fans' song of revolution against celeb persona theft by Big Tech: the King's face, the fans' voice, every artist's right. Listen to Version 1, then sing your own. #FreeMyFace #FreeMyVoice #FreeMyName</p>
+    <p>The fans' song of revolution against celeb persona theft by Big Tech: the King's face, the fans' voice, every artist's right. Listen to both versions, then sing your own. #FreeMyFace #FreeMyVoice #FreeMyName</p>
     <div class="row r3">
       <div class="t sg" id="homeSongs">
         <img class="sg-art" src="assets/inquilab/fist-king.webp" alt="" width="760" height="1362">
@@ -142,7 +142,14 @@ body{background:var(--bg)}
           <div class="sg-row"><i>Song 4</i><audio controls preload="none" src="assets/inquilab/audio/inquilaab-v1-song-4.mp3" data-song="4"></audio></div>
         </div>
       </div>
-      <a class="t soon" href="inquilab/#v2"><span><b>Anthem · Version 2</b><small>Lyrics up · audio coming soon</small></span></a>
+      <div class="t sg" id="homeSongs2">
+        <img class="sg-art" src="assets/inquilab/fist-king.webp" alt="" width="760" height="1362">
+        <div class="sg-in">
+          <b><a href="inquilab/#v2">Anthem · Version 2</a></b>
+          <small>Composed by Shailja Gupta · Re-arranged by <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></small>
+          <div class="sg-row"><i>Play</i><audio controls preload="none" src="assets/inquilab/audio/inquilaab-v2.mp3" data-song="1" data-ver="Version 2" data-file="inquilaab-v2.mp3"></audio></div>
+        </div>
+      </div>
       <a class="t ch" href="merch/"><img src="assets/merch/ijoo-agar-main-king-hota.webp" alt=""><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
     </div>
   </div>
@@ -223,12 +230,12 @@ body{background:var(--bg)}
 <script src="assets/footer.js" defer></script>
 <script>
 // homepage anthem songs in Google Analytics, same events as /inquilab/ with page_section 'home' (owner, 28 Oct 2026)
-(function(){var ga=function(n,p){if(window.gtag)window.gtag('event',n,p);};var all=[].slice.call(document.querySelectorAll('#homeSongs audio'));
-all.forEach(function(au){var n=au.getAttribute('data-song'),hit={},started=false,base=function(x){var o={anthem_version:'Version 1',song:'Song '+n,song_file:'inquilaab-v1-song-'+n+'.mp3',page_section:'home'};for(var k in x)o[k]=x[k];return o;};
+(function(){var ga=function(n,p){if(window.gtag)window.gtag('event',n,p);};var all=[].slice.call(document.querySelectorAll('#homeSongs audio, #homeSongs2 audio'));
+all.forEach(function(au){var n=au.getAttribute('data-song'),hit={},started=false,ver=au.getAttribute('data-ver')||'Version 1',base=function(x){var o={anthem_version:ver,song:ver==='Version 1'?'Song '+n:ver,song_file:au.getAttribute('data-file')||'inquilaab-v1-song-'+n+'.mp3',page_section:'home'};for(var k in x)o[k]=x[k];return o;};
 au.addEventListener('play',function(){all.forEach(function(o){if(o!==au)o.pause();});ga('anthem_play',base({resumed:started}));started=true;});
 au.addEventListener('timeupdate',function(){if(!au.duration)return;var pc=au.currentTime/au.duration*100;[25,50,75].forEach(function(m){if(pc>=m&&!hit[m]){hit[m]=1;ga('anthem_progress',base({percent:m}));}});});
 au.addEventListener('ended',function(){ga('anthem_complete',base({seconds:Math.round(au.duration)}));});});
-var cl=document.querySelector('#homeSongs [data-ga="composer"]');if(cl)cl.addEventListener('click',function(){ga('anthem_composer_click',{composer:'Pragnesh S. Singh',link_url:cl.href,page_section:'home'});});})();
+[].forEach.call(document.querySelectorAll('#homeSongs [data-ga="composer"], #homeSongs2 [data-ga="composer"]'),function(cl){cl.addEventListener('click',function(){ga('anthem_composer_click',{composer:'Pragnesh S. Singh',anthem_version:cl.closest('#homeSongs2')?'Version 2':'Version 1',link_url:cl.href,page_section:'home'});});});})();
 </script>
 </body>
 </html>
