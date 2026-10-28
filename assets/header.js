@@ -29,8 +29,7 @@
     ['king-intelligence/', 'KING Buzz'],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
     ['doom-to-king/', 'DOOM to KING'],
-    ['inquilab/', 'Inquilaab'],
-    ['king-fever/', 'KING Fever'],
+    ['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']],
     ['merch/', 'Merch'],
     ['gallery/videos/', 'Gallery', ['gallery/']],
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
@@ -46,7 +45,7 @@
     'fan-billboard/': [['fan-billboard/', 'STARKS Billboard'], ['fan-made-ai-universe/', 'Fan-made AI Universe']],
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
-    'inquilab/': [['inquilab/', 'The movement'], ['inquilab/revolution/', 'The Revolution Starts Now']],
+    'inquilab/': [['inquilab/', 'The movement'], ['inquilab/#anthem', 'The anthem'], ['inquilab/#join', 'Sign on'], ['inquilab/revolution/', 'The Revolution Starts Now']],
     'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
   };
   // the shared polish layer (sizes, spacing, one type scale) loads after each page's own styles
@@ -134,7 +133,7 @@
     '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-util{margin-left:0}#site-header .sh-brand{margin-right:0}}',
     '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 10px}#site-header .sh-nav{gap:2px 5px}#site-header .sh-nav a{font-size:12px;letter-spacing:.015em}#site-header .sh-util{gap:2px 9px;padding-left:10px}#site-header .sh-util a{font-size:11px;letter-spacing:.02em}#site-header .sh-sw{display:none}}',
     '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 9px}#site-header .sh-nav a{font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 14px}}',
-    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 3px}#site-header .sh-nav a{font-size:11px;letter-spacing:0}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 8px;padding:0 8px}}',
+    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 2px}#site-header .sh-nav a{font-size:11px;letter-spacing:0}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 8px;padding:0 8px}}',
     /* tablet and phone: the menu button holds every link, Home included */
     '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
     '@media (max-width:760px){',

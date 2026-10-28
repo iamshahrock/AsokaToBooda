@@ -30,8 +30,9 @@ body{font-size:15px}
 /* page titles that carry their own styles */
 .intro h1,.contract h1,.fan-ai h1{font-size:var(--fs-h1)!important;line-height:1}
 .cover h1{font-size:clamp(40px,5vw,72px)}
-.iq-hero h1{font-size:clamp(56px,7vw,112px)}
-@media (max-width:700px){.iq-hero h1{font-size:clamp(48px,13vw,72px)}}
+.iq-hero h1{font-size:clamp(24px,3.6vw,52px);white-space:nowrap}
+.iq-hero .sub{font-size:clamp(16px,1.9vw,28px)!important}
+@media (max-width:700px){.iq-hero h1{font-size:clamp(20px,7.2vw,36px)}.iq-hero .sub{font-size:3.5vw!important;white-space:nowrap}}
 /* section heads */
 .cinema h2,.act h2,.sec h2{font-size:clamp(24px,2.4vw,36px)}
 .reel-copy strong{font-size:clamp(26px,3vw,44px)}
