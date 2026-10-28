@@ -52,6 +52,15 @@
 .lg-vt{position:relative;display:block;margin-bottom:5px}.lg-vt img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;display:block;background:var(--ki-bg-1)}.lg-vt i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-style:normal;display:flex;align-items:center;justify-content:center;font-size:13px}
 .lg-chip{display:inline-block;padding:0 6px;border-radius:3px;font-size:10px;text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--ki-line)}.lg-chip.positive{color:#3fbf73;border-color:#2e6e4b}.lg-chip.critical{color:var(--ki-red-hi)}.lg-chip.neutral{color:var(--ki-muted)}
 .lg-more{margin-top:10px}.lg-more summary{cursor:pointer;color:var(--ki-red-hi);font-weight:600}
+.lg-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:4px 0 14px}
+.lg-kpis div{padding:10px 12px;border:1px solid var(--ki-line);border-radius:var(--ki-radius,6px);background:var(--ki-bg-1)}
+.lg-kpis b{display:block;font:700 22px var(--ki-font);color:var(--ki-text)}.lg-kpis small{display:block;font-size:12px;color:var(--ki-muted);line-height:1.35;margin-top:2px}
+.lg-bar{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:8px 0 6px;background:var(--ki-bg-1)}.lg-bar span{display:block;height:100%}
+.lg-bar .pos{background:#2e9e5e}.lg-bar .crit{background:#c0392b}.lg-bar .neu{background:#6b6560}
+.lg-legend{margin:6px 0 10px;font-size:12px;display:flex;flex-wrap:wrap;gap:6px}
+.lg-chip{display:inline-block;padding:1px 7px;border-radius:3px;font:600 10px var(--ki-font);letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--ki-line);color:var(--ki-text-2)}
+.lg-chip.positive{color:#3fbf73;border-color:#2e6e4b}.lg-chip.critical{color:var(--ki-red-hi);border-color:#7a2a24}.lg-chip.neutral{color:var(--ki-muted)}
+.lg-social th small{max-width:46ch}.lg-more{margin-top:8px}.lg-more summary{cursor:pointer;color:var(--ki-red-hi);font-size:13px}
 </style>
 <section aria-labelledby="h-archive">
   <div class="ki-sec-head"><h2 class="ki-h2" id="h-archive">Every day since 04 Oct</h2><span class="ki-stamp" id="lg-count"></span></div>
@@ -60,11 +69,12 @@
 
 <section aria-labelledby="h-current">
   <div class="ki-sec-head"><h2 class="ki-h2" id="h-current">Loading the record…</h2><span class="ki-stamp" id="lg-id"></span></div>
+  <div id="lg-buzz"></div>
+  <h3 class="ki-h3" style="margin-top:14px">Ledger record</h3>
   <div class="ki-tablewrap"><table class="ki-table compact">
     <thead><tr><th scope="col">Series</th><th scope="col" class="n">Value</th><th scope="col">Status</th><th scope="col">Source</th></tr></thead>
     <tbody id="lg-rows"></tbody>
   </table></div>
-  <div id="lg-buzz"></div>
   <h3 class="ki-h3" style="margin-top:14px">News that day</h3><ul class="lg-notes" id="lg-topics"></ul>
   <h3 class="ki-h3" style="margin-top:14px">Notes</h3><ul class="lg-notes" id="lg-notes"></ul>
   <p class="ki-note" id="lg-legacy" hidden></p>
@@ -76,7 +86,8 @@
   var linkify=function(t){return esc(t).replace(/\(?(https?:\/\/[^\s)]+)\)?/g,function(_,u){return ' (<a href="'+u+'" target="_blank" rel="noopener">source</a>)';});};
   var dd=function(s,y){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',y?{day:'2-digit',month:'short',year:'numeric'}:{day:'2-digit',month:'short'});};
   var fmt=function(n){return n==null?'<span class="ki-na">Not read</span>':Number(n).toLocaleString('en-US');};
-  Promise.all([fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-buzz-archive.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {series:{}};})].concat(['king-news','king-posts','king-fan-versions','king-press','king-videos'].map(function(n){return fetch('../data/'+n+'.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};});}))).then(function(X){var L=X[0],AR=X[1].series||{},NW=X[2],PO=X[3],FV=X[4],PR=X[5],VD=X[6];
+  Promise.all([fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('../data/king-buzz-archive.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {series:{}};})].concat(['king-news','king-posts','king-fan-versions','king-press','king-videos','king-social'].map(function(n){return fetch('../data/'+n+'.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};});}))).then(function(X){var L=X[0],AR=X[1].series||{},NW=X[2],PO=X[3],FV=X[4],PR=X[5],VD=X[6],SO=X[7];
+    var num=function(n){return n==null?'—':Number(n).toLocaleString('en-US');};
     // official releases, post readings, fan versions and press for one IST day (owner, 28 Oct 2026: the poster day showed none of it)
     var ist=function(s){return new Date(Date.parse(s)+330*6e4).toISOString().slice(0,10);};
     var istT=function(s){return new Date(Date.parse(s)+330*6e4).toISOString().slice(11,16)+' IST';};
@@ -86,7 +97,21 @@
     Object.keys(FV.releases||{}).forEach(function(k){(FV.releases[k]||[]).forEach(function(v){if(v.posted_at)mark(ist(v.posted_at));});});
     (PR.days||[]).forEach(function(d){mark(d.date);});
     (VD.items||[]).forEach(function(v){if(v.published)mark(ist(v.published));});
+    Object.keys(SO.days||{}).forEach(mark);
     var buzz=function(d){var h='';
+      // headline counts for the day (owner, 28 Oct 2026: the poster day looked like a student film's numbers)
+      var so=(SO.days||{})[d],pd0=(PR.days||[]).filter(function(x){return x.date===d;})[0];
+      var nFan=0;Object.keys(FV.releases||{}).forEach(function(k){(FV.releases[k]||[]).forEach(function(v){if(v.posted_at&&ist(v.posted_at)===d)nFan++;});});
+      var offV=0;(PO.posts||[]).forEach(function(p){if(Date.parse(d)-Date.parse(ist(p.posted_at))>7*864e5)return;var best=null;(p.readings||[]).forEach(function(r){if(ist(r.at)===d&&r.metrics.views!=null)best=r.metrics.views;});if(best)offV+=best;});
+      var kp=[];
+      if(offV)kp.push([num(offV),'views on this week\'s official X posts (latest reading that day)']);
+      if(so)kp.push([num(so.totals.views),'views on '+num(so.totals.posts_read)+' X posts about it that we read']);
+      if(so)kp.push([num(so.totals.likes),'likes on those posts']);
+      if(pd0)kp.push([num(pd0.articles.length),'press articles found']);
+      if(nFan)kp.push([num(nFan),nFan===1?'fan-made poster':'fan-made posters']);
+      var vids=(VD.items||[]).filter(function(v){return v.published&&ist(v.published)===d;}).map(function(v){return {platform:'YouTube',url:v.url,thumb:v.thumb,views:v.views,stance:v.stance,kind:v.kind,by:v.channel,title:v.title};}).concat(((so||{}).videos||[]).map(function(v){return {platform:'X',url:v.url,thumb:v.thumb,views:v.views,stance:v.stance,kind:v.kind,by:v.account,title:v.text};})).sort(function(a,b){return (b.views||0)-(a.views||0);});
+      if(vids.length)kp.push([num(vids.length),'videos about it (YouTube and X)']);
+      if(kp.length)h+='<div class="lg-kpis">'+kp.map(function(k){return '<div><b>'+k[0]+'</b><small>'+esc(k[1])+'</small></div>';}).join('')+'</div>';
       var rel=(NW.releases||[]).filter(function(x){return x.date===d;});
       if(rel.length)h+='<h3 class="ki-h3" style="margin-top:14px">Official KING release that day</h3>'+rel.map(function(x){return '<div class="lg-rel">'+(x.thumb?'<img src="'+esc(x.thumb)+'" alt="" referrerpolicy="no-referrer" loading="lazy">':'')+'<div><b>'+esc(x.title)+'</b><small>'+esc([x.type,x.by,x.platform,x.time].filter(Boolean).join(' · '))+'</small><div>'+(x.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.name)+'</a>';}).join(' · ')+'</div></div></div>';}).join('');
       // fan-made posters first, right under the official release (owner, 28 Oct 2026: the videos must not push the fan posters down)
@@ -94,18 +119,30 @@
       fans.sort(function(a,b){return (b.likes||0)-(a.likes||0)||(a.posted_at<b.posted_at?-1:1);});
       if(fans.length){var fc=function(v){return '<a href="'+esc(v.url)+'" target="_blank" rel="noopener"><img src="'+esc(v.image)+'" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="this.style.visibility=\'hidden\'"><b>'+esc(v.account)+'</b> · '+esc(v.platform||'')+' · '+istT(v.posted_at)+(v.likes!=null?'<br>'+Number(v.likes).toLocaleString('en-US')+' likes':'')+(v.note?'<br>'+esc(v.note):'')+'</a>';},pl={};fans.forEach(function(v){pl[v.platform||'other']=(pl[v.platform||'other']||0)+1;});
         h+='<h3 class="ki-h3" style="margin-top:14px">Fan-made posters posted that day · '+fans.length+'</h3><p class="ki-note">'+Object.keys(pl).map(function(k){return esc(k)+' '+pl[k];}).join(' · ')+'. Most-liked first. Picked by eye from every post our sweep found; news cards and reposts of the official poster are left out.</p><div class="lg-fans">'+fans.slice(0,36).map(fc).join('')+'</div>'+(fans.length>36?'<details class="lg-more"><summary>Show all '+fans.length+' fan posters</summary><div class="lg-fans">'+fans.slice(36).map(fc).join('')+'</div></details>':'');}
-      // videos posted that day (owner, 28 Oct 2026: 'Where are the videos?')
-      var vids=(VD.items||[]).filter(function(v){return v.published&&ist(v.published)===d;}).sort(function(a,b){return (b.views||0)-(a.views||0);});
-      if(vids.length){var tv=vids.reduce(function(a,v){return a+(v.views||0);},0),bk={},st={positive:0,neutral:0,critical:0};vids.forEach(function(v){bk[v.kind]=(bk[v.kind]||0)+1;st[v.stance]=(st[v.stance]||0)+1;});
-        var card=function(v){return '<a href="'+esc(v.url)+'" target="_blank" rel="noopener"><span class="lg-vt"><img src="'+esc(v.thumb)+'" alt="" loading="lazy" referrerpolicy="no-referrer"><i aria-hidden="true">&#9654;</i></span><b>'+Number(v.views||0).toLocaleString('en-US')+' views</b> <span class="lg-chip '+esc(v.stance)+'">'+esc(v.stance)+'</span><br>'+esc(v.channel)+' · '+esc(v.kind)+'<br><small>'+esc(v.title)+'</small></a>';};
-        h+='<h3 class="ki-h3" style="margin-top:14px">Videos posted that day · '+vids.length+' on YouTube · '+tv.toLocaleString('en-US')+' views</h3>'+
-          '<p class="ki-note">'+Object.keys(bk).sort(function(a,b){return bk[b]-bk[a];}).map(function(k){return esc(k)+' '+bk[k];}).join(' · ')+'. From the titles: '+st.positive+' positive, '+st.neutral+' neutral, '+st.critical+' critical. '+esc((VD.about||'').split('. ').slice(-2).join('. '))+'</p>'+
+      // videos posted that day, YouTube and X together, high on the page (owner, 28 Oct 2026: 'Where are the videos?')
+      if(vids.length){var tv=vids.reduce(function(a,v){return a+(v.views||0);},0),np={},st={positive:0,neutral:0,critical:0};vids.forEach(function(v){np[v.platform]=(np[v.platform]||0)+1;st[v.stance]=(st[v.stance]||0)+1;});
+        var card=function(v){return '<a href="'+esc(v.url)+'" target="_blank" rel="noopener"><span class="lg-vt"><img src="'+esc(v.thumb)+'" alt="" loading="lazy" referrerpolicy="no-referrer"><i aria-hidden="true">&#9654;</i></span><b>'+num(v.views)+' views</b> <span class="lg-chip '+esc(v.stance)+'">'+esc(v.stance)+'</span><br>'+esc(v.platform)+' · '+esc(v.by)+' · '+esc(v.kind)+'<br><small>'+esc(v.title)+'</small></a>';};
+        h+='<h3 class="ki-h3" style="margin-top:14px">Videos that day · '+vids.length+' · '+num(tv)+' views</h3>'+
+          '<p class="ki-note">'+Object.keys(np).map(function(k){return esc(k)+' '+np[k];}).join(' · ')+'. Our reading: '+st.positive+' positive, '+st.neutral+' neutral, '+st.critical+' critical. YouTube views are each video\'s own counter; X views are as X showed them in our sweep. Instagram reels could not be read. What our searches found, not every video.</p>'+
           '<div class="lg-vids">'+vids.slice(0,24).map(card).join('')+'</div>'+(vids.length>24?'<details class="lg-more"><summary>Show all '+vids.length+' videos</summary><div class="lg-vids">'+vids.slice(24).map(card).join('')+'</div></details>':'');}
       var rows=[];(PO.posts||[]).forEach(function(p){(p.readings||[]).forEach(function(r){if(ist(r.at)!==d)return;var hrs=Math.round((Date.parse(r.at)-Date.parse(p.posted_at))/36e5);
         rows.push('<tr><th scope="row"><a class="ki-src" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.account+' · '+p.platform)+'</a><small style="display:block;color:var(--ki-muted)">posted '+dd(ist(p.posted_at))+', '+istT(p.posted_at)+'</small></th><td>'+istT(r.at)+'<small style="display:block;color:var(--ki-muted)">'+(hrs<48?hrs+' h':Math.round(hrs/24)+' days')+' after posting</small></td><td>'+Object.keys(r.metrics).map(function(m){return esc(m)+' <b>'+Number(r.metrics[m]).toLocaleString('en-US')+'</b>';}).join(' · ')+'</td></tr>');});});
       if(rows.length)h+='<h3 class="ki-h3" style="margin-top:14px">Official posts read that day</h3><div class="ki-tablewrap"><table class="ki-table compact"><thead><tr><th scope="col">Post</th><th scope="col">Read at</th><th scope="col">Counts as the platform shows them</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';
-      var pd=(PR.days||[]).filter(function(x){return x.date===d;})[0];
-      if(pd&&(pd.articles||[]).length)h+='<h3 class="ki-h3" style="margin-top:14px">Press that day · '+pd.articles.length+' articles found</h3><ul class="lg-notes">'+pd.articles.map(function(a){return '<li><b>'+esc(a.outlet)+'</b>: <a href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'</a>'+(a.topic?' <small style="color:var(--ki-muted)">('+esc(a.topic)+')</small>':'')+'</li>';}).join('')+'</ul><p class="ki-note">Articles our searches found that day, not all coverage.</p>';
+      if(so&&so.posts.length){var ps=so.posts,cnt={positive:0,critical:0,neutral:0};ps.forEach(function(p){cnt[p.stance]=(cnt[p.stance]||0)+1;});
+        var pc=function(k){return Math.round(cnt[k]*100/ps.length);};
+        h+='<h3 class="ki-h3" style="margin-top:14px">On X that day · '+num(so.totals.posts_read)+' posts read</h3>'
+          +'<p class="ki-note">'+num(so.totals.views)+' views · '+num(so.totals.likes)+' likes · '+num(so.totals.reposts)+' reposts · '+num(so.totals.replies)+' replies on the posts our searches returned (official posts not counted). This is what our sweep found, not all of X.</p>'
+          +'<p class="ki-note" style="margin-top:8px">How the '+ps.length+' most-viewed of them read (our reading of each post):</p>'
+          +'<div class="lg-bar" role="img" aria-label="'+cnt.positive+' positive, '+cnt.critical+' critical, '+cnt.neutral+' neutral"><span class="pos" style="width:'+pc('positive')+'%"></span><span class="crit" style="width:'+pc('critical')+'%"></span><span class="neu" style="width:'+pc('neutral')+'%"></span></div>'
+          +'<p class="lg-legend"><span class="lg-chip positive">Positive '+cnt.positive+' · '+pc('positive')+'%</span> <span class="lg-chip critical">Critical '+cnt.critical+' · '+pc('critical')+'%</span> <span class="lg-chip neutral">Neutral '+cnt.neutral+' · '+pc('neutral')+'%</span></p>'
+          +'<div class="ki-tablewrap"><table class="ki-table compact lg-social"><thead><tr><th scope="col">Post</th><th scope="col" class="n">Views</th><th scope="col" class="n">Likes</th><th scope="col" class="n">Reposts</th><th scope="col">Reading</th></tr></thead><tbody>'
+          +ps.slice(0,25).map(function(p){return '<tr><th scope="row"><a class="ki-src" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.account)+'</a> · '+istT(p.posted_at)+'<small style="display:block;color:var(--ki-text-2);font-weight:400">'+esc(p.text)+'</small></th><td class="n">'+num(p.views)+'</td><td class="n">'+num(p.likes)+'</td><td class="n">'+num(p.reposts)+'</td><td><span class="lg-chip '+esc(p.stance)+'">'+esc(p.stance)+'</span> <small style="color:var(--ki-muted)">'+esc(p.kind)+'</small></td></tr>';}).join('')
+          +'</tbody></table></div>'
+          +(ps.length>25?'<details class="lg-more"><summary>All '+ps.length+' posts we read in detail</summary><ul class="lg-notes">'+ps.slice(25).map(function(p){return '<li><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.account)+'</a> · '+num(p.views)+' views · <span class="lg-chip '+esc(p.stance)+'">'+esc(p.stance)+'</span> '+esc(p.text)+'</li>';}).join('')+'</ul></details>':'');}
+      var pd=pd0;
+      if(pd&&(pd.articles||[]).length){var tp={};pd.articles.forEach(function(a){var k=a.topic||'other';tp[k]=(tp[k]||0)+1;});
+        h+='<h3 class="ki-h3" style="margin-top:14px">Press that day · '+pd.articles.length+' articles found</h3><p class="lg-legend">'+Object.keys(tp).sort(function(a,b){return tp[b]-tp[a];}).map(function(k){return '<span class="lg-chip">'+esc(k)+' '+tp[k]+'</span>';}).join(' ')+'</p>'
+          +'<ul class="lg-notes">'+pd.articles.map(function(a,i){return (i===15?'</ul><details class="lg-more"><summary>All '+pd.articles.length+' articles</summary><ul class="lg-notes">':'')+'<li><b>'+esc(a.outlet)+'</b>: <a href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'</a>'+(a.topic?' <small style="color:var(--ki-muted)">('+esc(a.topic)+')</small>':'')+'</li>';}).join('')+'</ul>'+(pd.articles.length>15?'</details>':'')+'<p class="ki-note">Articles our searches found that day, not all coverage.</p>';}
       return h;};
     var R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;}),by={};R.forEach(function(r){by[r.date]=r;});
     var UNIT={king_title_reveal_views:'YouTube views',king_date_announcement_views:'YouTube views',doomsday_official_trailer_views:'YouTube views'};
