@@ -371,11 +371,13 @@ function kingLogo(p, id) {
 
 // ---------- films ----------
 let KING_P = null;
+// KING has more than one official poster (owner, 28 Oct 2026): the newest is the KING card (id 118), earlier ones stay as their own films (119 = Title Reveal)
+const KTAG = { '118': '27 Oct poster', '119': 'Title Reveal' };
 const KING = { id: '118', title: 'KING', year: 2026, kind: 'film', character: 'The King', king: true };
 async function loadCatalogue() {
   const res = await fetch(BASE + 'catalogue.json');
   const data = await res.json();
-  // newest first: KING, then 117 down to 001 Fauji (owner, 28 Oct 2026)
+  // newest first: KING (newest official poster), then 119 KING · Title Reveal, then 117 down to 001 Fauji (owner, 28 Oct 2026: KING has multiple posters)
   catalogue = [KING, ...data.posters.filter(p => p.id !== KING.id).sort((a, b) => b.id.localeCompare(a.id))];
   KING_P = data.posters.find(x => x.id === KING.id) || null;   // the KING poster as a normal film, for the logo styles' default frame
   try { FACES = (await (await fetch(BASE + 'faces.json')).json()).faces || {}; } catch (e) { FACES = {}; }
@@ -407,7 +409,7 @@ function eraOf(p) { return p.year < 1990 || p.kind === 'tv' ? '1980' : String(Ma
 // King names (owner's SRK_KING_Titles sheet, 22 Oct 2026) and the six KING style samples
 let KINGNAMES = {};
 const normT = t => String(t).toLowerCase().replace(/[^a-z0-9]/g, '');
-function kingName(p) { if (p.king) return 'KING'; const k = KINGNAMES[normT(p.title)] || KINGNAMES[normT(p.title).replace('barber', '')]; return k ? k.replace('{FAN}', ($('name') && $('name').value.trim()) || 'You') : ''; }
+function kingName(p) { if (p.king || p.id === '119') return 'KING'; const k = KINGNAMES[normT(p.title)] || KINGNAMES[normT(p.title).replace('barber', '')]; return k ? k.replace('{FAN}', ($('name') && $('name').value.trim()) || 'You') : ''; }
 fetch('../data/king-titles.json').then(r => r.json()).then(d => { d.films.forEach(f => { KINGNAMES[normT(f.title)] = f.king; }); drawGrid(); }).catch(() => {});
 const KSTYLES = [['photo', 'Photo Poster'], ['3d', '3D Anim'], ['anime', 'Anime'], ['chibi', 'Chibi Pop'], ['funko', 'Funko Pop'], ['lego', 'LEGO']];   // order: owner, 26 Oct 2026.   // 2D Cartoon dropped (owner, 26 Oct 2026: Anime is the 2D version); ijoo Pop replaced by LEGO (owner, 26 Oct 2026: 'nobody knows ijoo', kept for merch)
 state.kstyle = 'photo';
@@ -496,7 +498,7 @@ function drawGrid() {
   const era = document.querySelector('[data-era][aria-pressed="true"]').dataset.era;
   const q = $('find').value.trim().toLowerCase();
   const list = catalogue.filter(p => (era === 'all' || eraOf(p) === era || (p.king && era === '2020')) &&
-    (!q || (p.title + ' ' + p.character + ' ' + p.year).toLowerCase().includes(q)));
+    (!q || (p.title + ' ' + p.character + ' ' + p.year + ' ' + (KTAG[p.id] || '')).toLowerCase().includes(q)));
   $('grid').replaceChildren(...list.map(p => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'tile' + (p.king ? ' king' : '');
@@ -506,7 +508,7 @@ function drawGrid() {
     fallback(im, p); im.src = thumbOf(p);
     const s = document.createElement('span');
     const t = document.createElement('b'); t.textContent = p.title;
-    const i = document.createElement('i'); i.textContent = [p.year + (p.kind === 'tv' ? ' · TV' : ''), p.character].filter(Boolean).join(' · ');
+    const i = document.createElement('i'); i.textContent = [p.year + (p.kind === 'tv' ? ' · TV' : ''), KTAG[p.id] || p.character].filter(Boolean).join(' · ');
     const kn = document.createElement('em'); kn.className = 'kn'; kn.textContent = kingName(p);
     s.append(t, kn, i); b.append(im, s);
     b.addEventListener('click', () => chooseFilm(p));
