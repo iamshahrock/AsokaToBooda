@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-29",
+  "record_id": "KING-2026-10-29",
+  "role": "DAILY UPDATE",
+  "metrics": [
+    {
+      "series_id": "king_title_reveal_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-29: data/buzz/youtube.json (Worker YouTube Data API reading) does not exist in the repo, and unattended runs cannot open youtube.com",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_date_announcement_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-29: data/buzz/youtube.json (Worker YouTube Data API reading) does not exist in the repo, and unattended runs cannot open youtube.com",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "doomsday_official_trailer_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-10-29: data/buzz/youtube.json (Worker YouTube Data API reading) does not exist in the repo, and unattended runs cannot open youtube.com",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "srk_indexed_posts",
+      "value": null,
+      "unit": "indexed posts",
+      "source": "Not read 2026-10-29: the Display Purposes page needs a person's approval to open (request withdrawn unattended); its counts have been frozen since 06 Oct",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "srkking_indexed_posts",
+      "value": null,
+      "unit": "indexed #srkking posts",
+      "source": "Not read 2026-10-29: Display Purposes page not opened unattended; counts frozen since 18 Oct",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "fan_ai_works_logged",
+      "value": 40,
+      "unit": "fan-made AI works about KING",
+      "source": "data/ai-creator-log.json, updated 2026-10-29",
+      "method": "public posts found and linked by the daily scan",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "fan_ai_works_views",
+      "value": 2883120,
+      "unit": "views",
+      "source": "data/ai-creator-log.json, updated 2026-10-29",
+      "method": "sum of public view counts on the logged works that show views",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "iamsrk_instagram_followers",
+      "value": null,
+      "unit": "followers",
+      "source": "Not read 2026-10-29: Instagram cannot be opened in an unattended run",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_public_observable_posts",
+      "value": null,
+      "unit": "posts",
+      "source": "No verified 29 Oct total located",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    }
+  ],
+  "topics": [
+    "Filmibeat, 2026-10-29 17:41 IST: Siddharth Anand posts another cryptic one-word countdown ('It's') on X; fans expect a KING teaser around SRK's 2 Nov birthday, not officially confirmed. https://www.filmibeat.com/bollywood/news/2026/srk-news-shah-rukh-khan-king-movie-updates-siddharth-anand-cryptic-coutdown-twitter-post-536319.html",
+    "Free Press Journal, 2026-10-28 18:36 IST (updated): reports say SRK may spend his 61st birthday in London shooting a KING song, so no Mannat fan meet. https://www.freepressjournal.in/entertainment/shah-rukh-khan-wont-be-meeting-fans-on-his-61st-birthday-heres-what-we-know"
+  ],
+  "notes": [
+    "Unattended run 2026-10-29 ~21:15 IST. All three YouTube series are null: data/buzz/youtube.json is not in the repo, so the Worker's nightly YouTube reading is still not reaching the repo.",
+    "Display Purposes not read (needs approval to open; counts frozen anyway). Unchanged index values would read as flat. Posts are not people.",
+    "Fan AI works: 40 logged, 2,883,120 summed views, unchanged from 28 Oct.",
+    "Checkpoints due today with no reading (owner to refresh by hand in data/king-posts.json): 48h after the 27 Oct KING poster posts, due 29 Oct ~10:00 IST: poster-2026-10-27-x (@iamsrk X), poster-2026-10-27-ig (@iamsrk Instagram), poster-2026-10-27-rc-x (@redchilliesent X), poster-2026-10-27-rc-ig (@redchilliesent Instagram). Next: 7-day for the #2MonthsToGo posts on 31 Oct, 7-day for the poster posts on 3 Nov.",
+    "Press for 29 Oct: 1 article found by our searches (data/king-press.json); this is what our searches found, not all coverage."
+  ]
+}
