@@ -462,6 +462,36 @@
      "topic": "teaser"
     }
    ]
+  },
+  {
+   "date": "2026-10-30",
+   "count": 4,
+   "articles": [
+    {
+     "outlet": "Bollywood Hungama",
+     "title": "SCOOP: Anirudh exits Shah Rukh Khan's King due to packed schedule; gifts SRK the theme track as Sachin-Jigar take over",
+     "url": "https://www.bollywoodhungama.com/news/bollywood/scoop-anirudh-exits-shah-rukh-khans-king-due-to-packed-schedule-gifts-srk-the-theme-track-as-sachin-jigar-take-over/",
+     "topic": "music"
+    },
+    {
+     "outlet": "Gulte",
+     "title": "Anirudh Exits SRK's King For South Commitments?",
+     "url": "https://www.gulte.com/movienews/438872/anirudh-exits-srks-king-for-south-commitments",
+     "topic": "music"
+    },
+    {
+     "outlet": "Filmibeat",
+     "title": "King 2026: Anirudh Ravichander quits Shah Rukh Khan film, King theme song",
+     "url": "https://www.filmibeat.com/bollywood/news/2026/king-2026-srk-news-anirudh-ravichander-quits-shah-rukh-khan-film-ahead-of-wedding-king-theme-song-536463.html",
+     "topic": "music"
+    },
+    {
+     "outlet": "NewsBytes",
+     "title": "'King' 1st song to drop on SRK's birthday",
+     "url": "https://www.newsbytesapp.com/news/entertainment/king-shah-rukh-khan-s-musical-birthday-surprise/story",
+     "topic": "song"
+    }
+   ]
   }
  ]
 }
