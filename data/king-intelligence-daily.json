@@ -1340,6 +1340,107 @@
         "Checkpoints due today with no reading (owner to refresh by hand in data/king-posts.json): 48h after the 27 Oct KING poster posts, due 29 Oct ~10:00 IST: poster-2026-10-27-x (@iamsrk X), poster-2026-10-27-ig (@iamsrk Instagram), poster-2026-10-27-rc-x (@redchilliesent X), poster-2026-10-27-rc-ig (@redchilliesent Instagram). Next: 7-day for the #2MonthsToGo posts on 31 Oct, 7-day for the poster posts on 3 Nov.",
         "Press for 29 Oct: 1 article found by our searches (data/king-press.json); this is what our searches found, not all coverage."
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "record_id": "KING-2026-10-30",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": null,
+          "unit": "YouTube views",
+          "source": "Not read 2026-10-30: data/buzz/youtube.json (Worker YouTube Data API reading) still does not exist in the repo, and unattended runs cannot open youtube.com",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": null,
+          "unit": "YouTube views",
+          "source": "Not read 2026-10-30: data/buzz/youtube.json (Worker YouTube Data API reading) still does not exist in the repo, and unattended runs cannot open youtube.com",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": null,
+          "unit": "YouTube views",
+          "source": "Not read 2026-10-30: data/buzz/youtube.json (Worker YouTube Data API reading) still does not exist in the repo, and unattended runs cannot open youtube.com",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": null,
+          "unit": "indexed posts",
+          "source": "Not read 2026-10-30: the Display Purposes page needs a person's approval to open (request withdrawn unattended); its counts have been frozen since 06 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": null,
+          "unit": "indexed #srkking posts",
+          "source": "Not read 2026-10-30: Display Purposes page not opened unattended; counts frozen since 18 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 40,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json, updated 2026-10-30",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 2883120,
+          "unit": "views",
+          "source": "data/ai-creator-log.json, updated 2026-10-30",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": null,
+          "unit": "followers",
+          "source": "Not read 2026-10-30: Instagram cannot be opened in an unattended run",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 30 Oct total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "Bollywood Hungama, 2026-10-30 13:50 IST [Unverified scoop]: Anirudh Ravichander reportedly exits KING over a packed schedule, gives SRK the theme track; Sachin-Jigar take over the score and album. https://www.bollywoodhungama.com/news/bollywood/scoop-anirudh-exits-shah-rukh-khans-king-due-to-packed-schedule-gifts-srk-the-theme-track-as-sachin-jigar-take-over/",
+        "Gulte, 2026-10-30 16:51 IST: same report, Anirudh's exit tied to South commitments (not officially confirmed). https://www.gulte.com/movienews/438872/anirudh-exits-srks-king-for-south-commitments",
+        "Filmibeat, 2026-10-30 17:20 IST: Anirudh exit report, unconfirmed. https://www.filmibeat.com/bollywood/news/2026/king-2026-srk-news-anirudh-ravichander-quits-shah-rukh-khan-film-ahead-of-wedding-king-theme-song-536463.html",
+        "NewsBytes, 2026-10-30 11:59 IST [Unverified]: KING's first song, sung by Arijit Singh, reported to drop on SRK's 61st birthday, 2 Nov; trailer later. https://www.newsbytesapp.com/news/entertainment/king-shah-rukh-khan-s-musical-birthday-surprise/story"
+      ],
+      "notes": [
+        "Unattended run 2026-10-30 ~21:10 IST. All three YouTube series are null: data/buzz/youtube.json is still not in the repo, so the Worker's nightly YouTube reading is not reaching the repo (third day running).",
+        "Display Purposes not read (needs approval to open; counts frozen anyway). Unchanged index values would read as flat. Posts are not people.",
+        "Fan AI works: 40 logged, 2,883,120 summed views, unchanged from 29 Oct.",
+        "No official-post checkpoint (24h/48h/7-day) fell due on 30 Oct. Next due: 7-day for the #2MonthsToGo posts on 31 Oct (2mtg-2026-10-24-rc-ig ~11:49 IST, 2mtg-2026-10-24-rc-x ~12:01 IST); 7-day for the 27 Oct poster posts on 3 Nov ~10:00 IST. Still unread: the 48h checkpoints of the four 27 Oct poster posts (due 29 Oct).",
+        "Press for 30 Oct: 4 articles found by our searches (data/king-press.json); this is what our searches found, not all coverage. Deccan Herald also ran the Anirudh story but its date could not be checked, so it is not counted."
+      ]
     }
   ],
   "source_rules": {
