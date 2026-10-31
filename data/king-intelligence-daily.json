@@ -1441,6 +1441,99 @@
         "No official-post checkpoint (24h/48h/7-day) fell due on 30 Oct. Next due: 7-day for the #2MonthsToGo posts on 31 Oct (2mtg-2026-10-24-rc-ig ~11:49 IST, 2mtg-2026-10-24-rc-x ~12:01 IST); 7-day for the 27 Oct poster posts on 3 Nov ~10:00 IST. Still unread: the 48h checkpoints of the four 27 Oct poster posts (due 29 Oct).",
         "Press for 30 Oct: 4 articles found by our searches (data/king-press.json); this is what our searches found, not all coverage. Deccan Herald also ran the Anirudh story but its date could not be checked, so it is not counted."
       ]
+    },
+    {
+      "date": "2026-10-31",
+      "record_id": "KING-2026-10-31",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": 49928912,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-10-31 21:02 IST in an attended session",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": 32656084,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-10-31 21:02 IST in an attended session",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": 83146350,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-10-31 21:02 IST in an attended session",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": null,
+          "unit": "indexed posts",
+          "source": "Not read 2026-10-31: the Display Purposes page needs a person's approval to open (request withdrawn unattended); its counts have been frozen since 06 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": null,
+          "unit": "indexed #srkking posts",
+          "source": "Not read 2026-10-31: Display Purposes page not opened unattended; counts frozen since 18 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 40,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json, updated 2026-10-31 (daily scan: 0 new works)",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 2883120,
+          "unit": "views",
+          "source": "data/ai-creator-log.json, updated 2026-10-31 (daily scan: 0 new works)",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": null,
+          "unit": "followers",
+          "source": "Not read 2026-10-31: Instagram cannot be opened in an unattended run",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 30 Oct total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [],
+      "notes": [
+        "Attended run 2026-10-31 21:02 IST: the three YouTube counts were read by hand from the public watch pages (the Worker YouTube reading still has no YOUTUBE_API_KEY, so 29-30 Oct stayed blank).",
+        "Display Purposes and Instagram not read; no topics gathered in this run."
+      ]
     }
   ],
   "source_rules": {
