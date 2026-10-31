@@ -48,3 +48,5 @@ header.top h1{font-size:clamp(30px,3.4vw,48px)!important}
 /* the book */
 .chhead h1{font-size:clamp(28px,3.4vw,44px)}
 .bookhead h1{font-size:clamp(34px,4.4vw,60px)}
+/* book tables: scroll inside their own box on phones instead of pushing the page sideways */
+@media (max-width:760px){body.book table{display:block;max-width:100%;overflow-x:auto}}
