@@ -67,6 +67,17 @@
 .dz label{flex-direction:row;align-items:center;gap:8px;font:500 14px var(--body);text-transform:none;letter-spacing:0;color:#efe6df}
 .ok{display:flex;gap:10px;align-items:flex-start;font:14px var(--body);color:#e6dcd4;margin:14px 0}
 .bulk .msg{min-height:1.4em;margin:10px 0 0;font-weight:600}
+.soonbox{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;border:1px solid var(--line);background:var(--panel);padding:20px clamp(16px,3vw,26px);margin:0 0 8px}
+.soonbox h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(24px,3.4vw,38px);text-transform:uppercase;line-height:1}
+.soonbox h2 em{font-style:normal;color:var(--red-hi)}
+.soonbox .bk{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.soonbox .bk b{font:700 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:#cfc4bb}
+.wtu{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:16px}
+.wtu[hidden]{display:none}
+.wtu .box{width:min(560px,100%);max-height:92vh;overflow:auto;background:#0d0808;border:1px solid var(--line);padding:22px clamp(16px,3vw,26px);position:relative}
+.wtu h3{margin:0 0 4px;font-family:var(--display);font-weight:400;font-size:30px;text-transform:uppercase}
+.wtu .x{position:absolute;top:8px;right:10px;background:none;border:0;color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.wtu p.in{margin:0 0 14px;color:#cfc4bb;font-size:14px}
 @media (max-width:900px){.stores{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.fgrid{grid-template-columns:minmax(0,1fr)}.stores{grid-template-columns:minmax(0,1fr)}}
 </style>
@@ -77,9 +88,10 @@
   <div class="page-head"><div><p class="eyebrow">Shah Rock Jaan</p><h1>King Fan <em>Merch</em></h1></div><p>Wear the campaign. Made by fans, printed when you order, shipped to your door.</p></div>
   <p class="lead">Shirts from the King by Fans campaign: the ijOO King, the Inquilaab poem and the lines fans shout on release day. Every design is an original by Shah Rock Jaan.</p>
 
-  <p class="sec-k">Where to buy</p>
-  <div class="stores" id="stores"></div>
-  <p class="note" style="margin-top:8px">Our store partners print each shirt when you order and handle payment, shipping and returns. Links open their store in a new tab.</p>
+  <div class="soonbox">
+    <h2>Online store · <em>coming soon</em></h2>
+    <div class="bk"><b>Bulk orders</b><button class="btn btn-red" type="button" id="wtuOpen">Write to us</button></div>
+  </div>
 
   <p class="sec-k">The designs</p>
   <div class="chips" id="chips" role="group" aria-label="Filter designs">
@@ -112,6 +124,26 @@
     </form>
   </section>
 </main>
+<div class="wtu" id="wtu" hidden role="dialog" aria-modal="true" aria-labelledby="wtu-h">
+  <div class="box">
+    <button class="x" type="button" id="wtuClose" aria-label="Close">×</button>
+    <h3 id="wtu-h">Bulk orders · write to us</h3>
+    <p class="in">Fan club, screening, college or office order? Tell us what you need and we will reply by email.</p>
+    <form id="wtuForm" novalidate>
+      <div class="fgrid">
+        <label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label>Phone or WhatsApp<input name="phone" type="tel" maxlength="30" autocomplete="tel"></label>
+        <label>Fan club or organisation<input name="org" maxlength="120"></label>
+        <label>City and country<input name="place" maxlength="80"></label>
+        <label>Quantity<input name="qty" type="number" min="1" max="100000"></label>
+        <label class="full">Your message<textarea name="notes" rows="4" required maxlength="600" placeholder="Designs, sizes, date needed…"></textarea></label>
+      </div>
+      <button class="btn btn-red" type="submit" style="margin-top:14px">Send</button>
+      <p class="msg" id="wtuMsg" role="status" style="min-height:1.4em;margin:10px 0 0;font-weight:600"></p>
+    </form>
+  </div>
+</div>
 <script>
 (function(){
   // Stores: [key, name, brand colour, logo file, one-line note]. Add a store here and it appears everywhere.
@@ -149,7 +181,8 @@
   function logo(s,cls){return s[3] ? '<img src="../assets/merch/stores/'+s[3]+'.svg" alt="">' : '<b class="ph">'+s[1].replace(/\D/g,'')+'</b>';}
   function ic(s){return '<i class="ic" style="background:'+s[2]+'">'+logo(s)+'</i>';}
   function live(d){return STORES.filter(function(s){return d[4][s[0]];}).length;}
-  document.getElementById('stores').innerHTML = STORES.map(function(s){
+  var storesEl = document.getElementById('stores');
+  if (storesEl) storesEl.innerHTML = STORES.map(function(s){
     var n = D.filter(function(d){return d[4][s[0]];}).length;
     return '<div class="store"><span class="lg" style="background:'+s[2]+'">'+logo(s)+'</span><span><b>'+s[1]+'</b><small>'+esc(s[4])+'</small><span class="st">'+(n ? n+' of '+D.length+' designs live' : 'Listings coming soon')+'</span></span></div>';
   }).join('');
@@ -184,6 +217,24 @@
       .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
       .then(function(x){ if (x.ok && x.j.ok) { f.reset(); msg.textContent = 'Thank you. Your request is in (number ' + x.j.id + '). We will reply by email.'; } else msg.textContent = (x.j && x.j.error) || 'Something went wrong. Please try again.'; })
       .catch(function(){ msg.textContent = 'Could not send. Please check your connection and try again.'; });
+  });
+  // "Bulk orders · write to us" pop-up -> same Worker endpoint (src: popup), emailed to the owner
+  var wtu = document.getElementById('wtu'), wf = document.getElementById('wtuForm'), wm = document.getElementById('wtuMsg');
+  function wtuShow(on){ wtu.hidden = !on; if (on) wf.elements.name.focus(); }
+  document.getElementById('wtuOpen').addEventListener('click', function(){ wtuShow(true); });
+  document.getElementById('wtuClose').addEventListener('click', function(){ wtuShow(false); });
+  wtu.addEventListener('click', function(e){ if (e.target === wtu) wtuShow(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !wtu.hidden) wtuShow(false); });
+  wf.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!wf.checkValidity()) { wm.textContent = 'Please add your name, email and message.'; wf.reportValidity(); return; }
+    var fd = new FormData(wf);
+    var body = {src:'popup',name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone'),org:fd.get('org'),place:fd.get('place'),qty:fd.get('qty'),notes:fd.get('notes')};
+    wm.textContent = 'Sending…';
+    fetch(API + '/merch-bulk', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
+      .then(function(x){ if (x.ok && x.j.ok) { wf.reset(); wm.textContent = 'Thank you. Your message is in (number ' + x.j.id + '). We will reply by email.'; } else wm.textContent = (x.j && x.j.error) || 'Something went wrong. Please try again.'; })
+      .catch(function(){ wm.textContent = 'Could not send. Please check your connection and try again.'; });
   });
 })();
 </script>
