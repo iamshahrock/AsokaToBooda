@@ -43,6 +43,10 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - Merch: 'Where to buy' store cards replaced by 'Online store · coming soon' with a 'Bulk orders · Write to us' button (pop-up form). The bottom bulk form stays. Both POST /merch-bulk (pop-up sends src 'popup'); every request is stored in D1 merch_bulk and emailed via the Worker send_email binding MAILER from orders@agarmainkinghota.com to the address in D1 site_config (k 'bulk_to', kept out of Git). Email only works once Cloudflare Email Routing is on for agarmainkinghota.com and that address is verified as a destination (owner step).
 - Homepage Rescue Your Face tile uses assets/lairs/scenes/den-abyssal-m.webp (was lairs/cover.webp). Chess81 tile = the owner's Chess 81 board design (assets/home/chess81-board.webp, board cropped from her 1920x1080 art; was Noctopus).
 
+## KING Buzz, birthday eve (1 Nov 2026)
+- /king-intelligence/mannat-screen.html = buzz piece: screen wrapping the tower behind Mannat with a projector test pattern (fan videos 31 Oct night: @SRKUniverse, @sr_kult, @TheClimaxIndia; frames in assets/king-news/2026-11-01-*), SRK's own post 1 Nov 14:12 IST (Bandra-Worli Sea Link lit 'with Google Gemini', '2 DAYS TO GO'), Siddharth Anand's midnight countdown ('It's / Time For The World / To Celebrate / The KING of..'), Red Chillies' Phars international-release post (31 Oct). Teaser on Mannat = reported, not confirmed.
+- data: king-news latest + 2 releases (gemini-sealink-2026-11-01, phars-2026-10-31), king-posts readings at 14:45 IST, king-press days 31 Oct + 1 Nov, king-social 31 Oct/1 Nov hand-read posts, king-videos +45 (upload times approximate from YouTube's 'N h ago', flagged published_approx).
+
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
 - Backend: Cloudflare Worker `asokatobooda` (backend/worker.js), auto-deploys on backend/** changes.
