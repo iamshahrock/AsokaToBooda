@@ -45,6 +45,14 @@ body{background:var(--bg)}
 .btn-main{display:inline-flex;align-items:center;gap:10px;margin:20px 0 0;padding:16px 24px;background:var(--red);color:#fff;font:700 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:6px;box-shadow:0 10px 30px rgba(200,16,46,.4)}
 .btn-main:hover{background:#e0142f}
 .art img{display:block;width:100%;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+/* music video slot: set data-yt on #mv to the YouTube link; empty = the poster stays */
+.mv.on{display:flex;flex-direction:column;align-items:center}
+.mv-h{align-self:stretch;margin:0 0 10px;text-align:center;font:400 22px/1.05 Anton,sans-serif;letter-spacing:.03em;text-transform:uppercase;color:#fff}
+.mv-h small{display:block;margin-top:3px;font:700 11px Archivo,sans-serif;letter-spacing:.14em;color:var(--red-hi)}
+.mv-f{position:relative;width:min(100%,calc(76vh * var(--r)),420px);aspect-ratio:var(--r);border-radius:10px;overflow:hidden;background:#000;box-shadow:0 24px 70px rgba(0,0,0,.6);border:1px solid var(--line)}
+.mv-f iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mv-f.wide{width:100%}
+@media (max-width:900px){.mv-f{width:min(100%,360px)}.mv-f.wide{width:100%}}
 .buzz{display:block;margin:12px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#0d0707;text-decoration:none;color:#e8dfd8;font-size:14px;line-height:1.5}
 .buzz b{display:block;margin:0 0 2px;font:400 20px Anton,sans-serif;letter-spacing:.04em;color:var(--red-hi)}
 .buzz:hover{border-color:var(--red)}.buzz em{font-style:normal;color:var(--gold)}
@@ -120,7 +128,9 @@ body{background:var(--bg)}
       <a class="game" href="create/"><img src="assets/home/04-asoka-to-booda.webp" alt=""><span><b>Agar Main King Hota · <em>the poster game</em></b><small>Pick any of 118 SRK films, choose one of 6 styles, add your face and step into his poster as the King.</small></span></a>
     </div>
     <div class="art">
-      <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
+      <div class="mv" id="mv" data-yt="" data-ratio="9/16">
+        <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
+      </div>
       <a class="buzz" href="king-intelligence/"><b>KING BUZZ</b><span id="kb-line">The daily intelligence report on KING: official releases, views, press and fans, tracked every day since 04 Oct.</span> <em>Read →</em></a>
     </div>
   </section>
@@ -222,6 +232,18 @@ body{background:var(--bg)}
     var a=v('king_title_reveal_views'),b=v('king_date_announcement_views'),p=x[1].days.length?x[1].days[x[1].days.length-1].count:null;
     if(a&&b)document.getElementById('kb-line').textContent=((a+b)/1e6).toFixed(1)+'M views on the official KING videos'+(p!=null?', '+p+' press stories today':'')+', and every fan move tracked daily since 04 Oct.';
   }).catch(function(){});
+})();
+</script>
+<script>
+(function(){
+  var el=document.getElementById('mv'); if(!el) return;
+  var u=(el.getAttribute('data-yt')||'').trim();
+  var m=u.match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})/)||u.match(/^([\w-]{11})$/);
+  if(!m) return;
+  var r=el.getAttribute('data-ratio')||'9/16';
+  el.className='mv on';
+  el.innerHTML='<h2 class="mv-h">Inquilaab King Ke Saath<small>The music video</small></h2>'+
+    '<div class="mv-f'+(r==='16/9'?' wide':'')+'" style="--r:'+r+'"><iframe src="https://www.youtube-nocookie.com/embed/'+m[1]+'?rel=0&amp;playsinline=1" title="Inquilaab King Ke Saath, the music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>';
 })();
 </script>
 <script src="assets/starks.js"></script>
