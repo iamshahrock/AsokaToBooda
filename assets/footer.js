@@ -29,8 +29,8 @@
     '#site-footer .sf-cred h5{margin:0;font-size:14px;font-weight:700;letter-spacing:.16em;color:#fff}',
     '#site-footer .sf-cred hr{width:100%;border:0;border-top:1px solid #3a2626;margin:2px 0}',
     '#site-footer .sf-cred .k{margin:0;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff4a4f}',
-    '#site-footer .sf-cred .lg{background:#fff;border-radius:8px;padding:10px 16px;line-height:0}',
-    '#site-footer .sf-cred .lg img{width:150px!important;height:auto!important;display:block}',
+    '#site-footer .sf-cred .lg{background:#fff;border-radius:4px;padding:3px 5px;line-height:0}',
+    '#site-footer .sf-cred .lg img{width:60px!important;height:auto!important;display:block}',
     '#site-footer .sf-cred .n{margin:0;font-size:14px;color:#e6dcd4}'
   ].join('\n');
   var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
@@ -67,7 +67,7 @@
   // credits: the anthem's research & development partner
   var cred = document.createElement('div'); cred.className = 'sf-cred';
   cred.innerHTML = '<h5>INQUILAAB - KING KE SAATH</h5><hr><p class="k">Research &amp; Development</p>' +
-    '<span class="lg"><img src="' + base + 'about/logo-dome.png" alt="DOME A.I. WORLD" width="150" height="91" loading="lazy"></span>' +
+    '<span class="lg"><img src="' + base + 'about/logo-dome.png" alt="DOME A.I. WORLD" width="60" height="37" loading="lazy"></span>' +
     '<p class="n">Dome Entertainment Group</p><hr>';
   inner.appendChild(cred);
   f.appendChild(inner);
