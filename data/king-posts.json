@@ -2,6 +2,23 @@
  "about": "Official KING posts by @iamsrk and @redchilliesent, read by hand (X and Instagram cannot be read by the unattended nightly job). 'readings' is append-only: add one {at, metrics} per check. The page shows checkpoints at 3h, 24h, 48h and 7 days after 'posted_at' from the reading closest to each (within half the gap). Counts are as the platform displays them (rounded). Owner, 27 Oct 2026.",
  "posts": [
   {
+   "id": "tu-mil-jaaye-yt",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "account": "T-Series (official video)",
+   "platform": "YouTube",
+   "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA",
+   "posted_at": "2026-11-02T00:09:02+05:30",
+   "readings": [
+    {
+     "at": "2026-11-02T00:38:00+05:30",
+     "metrics": {
+      "views": 260084,
+      "likes": 40324
+     }
+    }
+   ]
+  },
+  {
    "id": "gemini-2026-11-01-srk-x",
    "release": "gemini-sealink-2026-11-01",
    "account": "@iamsrk",
