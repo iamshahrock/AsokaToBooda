@@ -44,3 +44,9 @@ MAX_UPLOAD_MB = "25"
 # 21:07 IST daily record. Needs the YOUTUBE_API_KEY secret (set by the owner in Cloudflare).
 [triggers]
 crons = ["45 14 * * *"]
+
+# Merch bulk orders are emailed to the owner (Cloudflare Email Routing must be on for
+# agarmainkinghota.com with the owner's address verified). The address itself is kept in
+# D1 table site_config (k = 'bulk_to'), not in Git.
+[[send_email]]
+name = "MAILER"

@@ -15,6 +15,8 @@
 // If POSTER_USAGE is missing the Worker refuses to generate (fails closed),
 // so an unbounded deploy cannot happen by accident.
 
+import { EmailMessage } from "cloudflare:email";
+
 const ALLOWED_ORIGINS = new Set([
   "https://agarmainkinghota.com",
   "https://www.agarmainkinghota.com",
@@ -441,7 +443,10 @@ async function buzzYouTube(env, reply) {
 }
 
 // ---------------- MERCH: bulk order requests (POST only; read by the owner in D1) ----------------
-// POST /merch-bulk {name, org, email, phone, place, by, qty, sizes, notes, designs[]} -> { ok, id }
+// POST /merch-bulk {name, org, email, phone, place, by, qty, sizes, notes, designs[], src} -> { ok, id }
+// src "popup" = the short "Bulk orders · write to us" form (no design list needed).
+// Every request is stored in D1 and, when the MAILER binding and the D1 config row 'bulk_to'
+// exist, also emailed to the owner (address kept in D1, not in Git).
 async function merchBulk(request, env, reply, origin) {
   if (!env.DB) return reply(503, { error: "Not configured yet." });
   if (request.method !== "POST") return reply(405, { error: "Use POST." });
@@ -451,17 +456,49 @@ async function merchBulk(request, env, reply, origin) {
   const b = await readBody(request);
   if (!b) return reply(400, { error: "Could not read the form." });
   const t = (v, n) => String(v == null ? "" : v).replace(/[<>]/g, "").trim().slice(0, n);
+  const popup = b.src === "popup";
   const name = t(b.name, 80), email = t(b.email, 120), place = t(b.place, 80), qty = Number.parseInt(b.qty, 10);
-  if (!name || !place) return reply(400, { error: "Please add your name and city." });
+  if (!name || (!popup && !place)) return reply(400, { error: popup ? "Please add your name." : "Please add your name and city." });
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(400, { error: "Please check your email address." });
-  if (!Number.isFinite(qty) || qty < 10 || qty > 100000) return reply(400, { error: "Bulk orders start at 10 pieces." });
+  if (!popup && (!Number.isFinite(qty) || qty < 10 || qty > 100000)) return reply(400, { error: "Bulk orders start at 10 pieces." });
   const designs = Array.isArray(b.designs) ? b.designs.map(d => t(d, 60)).filter(Boolean).slice(0, 40) : [];
-  if (!designs.length) return reply(400, { error: "Please choose at least one design." });
+  if (!popup && !designs.length) return reply(400, { error: "Please choose at least one design." });
+  if (popup && !t(b.notes, 600)) return reply(400, { error: "Please write your message." });
   const by = /^\d{4}-\d{2}-\d{2}$/.test(String(b.by || "")) ? b.by : "";
+  const row = { name, org: t(b.org, 120), email, phone: t(b.phone, 30), place, by,
+    qty: Number.isFinite(qty) ? qty : 0, sizes: t(b.sizes, 200), designs, notes: t(b.notes, 600) };
   const r = await env.DB.prepare("INSERT INTO merch_bulk(ts, name, org, email, phone, place, needed_by, qty, sizes, designs, notes, status) VALUES(?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, 'new')")
-    .bind(Date.now(), name, t(b.org, 120), email, t(b.phone, 30), place, by, qty, t(b.sizes, 200), JSON.stringify(designs), t(b.notes, 600)).run();
+    .bind(Date.now(), row.name, row.org, row.email, row.phone, row.place, row.by, row.qty, row.sizes, JSON.stringify(row.designs), (popup ? "[write to us] " : "") + row.notes).run();
+  const id = r.meta && r.meta.last_row_id;
   await bump(env, istDay(), "merch_bulk");
-  return reply(200, { ok: true, id: r.meta && r.meta.last_row_id });
+  const mailed = await mailBulk(env, id, row, popup);
+  return reply(200, { ok: true, id, mailed });
+}
+
+async function mailBulk(env, id, row, popup) {
+  try {
+    if (!env.MAILER || !env.DB) return false;
+    const c = await env.DB.prepare("SELECT v FROM site_config WHERE k = 'bulk_to'").first();
+    const to = c && c.v; if (!to) return false;
+    const from = "orders@agarmainkinghota.com";
+    const clean = s => String(s || "").replace(/[\r\n]+/g, " ");
+    const lines = [
+      (popup ? "Bulk orders · write to us" : "Bulk order request") + " #" + id + " from agarmainkinghota.com/merch/", "",
+      "Name: " + row.name, "Fan club / organisation: " + (row.org || "-"), "Email: " + row.email, "Phone / WhatsApp: " + (row.phone || "-"),
+      "City and country: " + (row.place || "-"), "Needed by: " + (row.by || "-"), "Quantity: " + (row.qty || "-"),
+      "Sizes and colours: " + (row.sizes || "-"), "Designs: " + (row.designs.length ? row.designs.join(", ") : "-"), "",
+      "Message:", row.notes || "-", "", "Reply to this email to answer the fan directly."
+    ];
+    const raw = [
+      "From: Agar Main King Hota <" + from + ">", "To: " + to, "Reply-To: " + clean(row.email),
+      "Subject: =?UTF-8?B?" + btoa(unescape(encodeURIComponent("Merch bulk order #" + id + " · " + clean(row.name)))) + "?=",
+      "Message-ID: <bulk-" + id + "-" + Date.now() + "@agarmainkinghota.com>", "Date: " + new Date().toUTCString(),
+      "MIME-Version: 1.0", "Content-Type: text/plain; charset=utf-8", "Content-Transfer-Encoding: base64", "",
+      btoa(unescape(encodeURIComponent(lines.join("\r\n")))).replace(/.{76}/g, "$&\r\n")
+    ].join("\r\n");
+    await env.MAILER.send(new EmailMessage(from, to, raw));
+    return true;
+  } catch (e) { return false; }
 }
 
 // ---------------- INQUILAAB: fans joining the revolt (#FreeMyFace) ----------------

@@ -24,7 +24,14 @@
     '#site-footer .sf-map a:hover{color:#fff}',
     '@media (max-width:700px){#site-footer .sf-map{grid-template-columns:repeat(2,minmax(0,1fr))}}',
     '#site-footer .sf-mark{width:64px!important;height:64px!important}',
-    '#site-footer .sf-disc{margin:18px 0 0;font-size:12px;line-height:1.6;color:#8f837c;max-width:640px}'
+    '#site-footer .sf-disc{margin:18px 0 0;font-size:12px;line-height:1.6;color:#8f837c;max-width:640px}',
+    '#site-footer .sf-cred{margin:26px auto 0;width:min(360px,100%);display:flex;flex-direction:column;align-items:center;gap:10px}',
+    '#site-footer .sf-cred h5{margin:0;font-size:14px;font-weight:700;letter-spacing:.16em;color:#fff}',
+    '#site-footer .sf-cred hr{width:100%;border:0;border-top:1px solid #3a2626;margin:2px 0}',
+    '#site-footer .sf-cred .k{margin:0;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff4a4f}',
+    '#site-footer .sf-cred .lg{background:#fff;border-radius:8px;padding:10px 16px;line-height:0}',
+    '#site-footer .sf-cred .lg img{width:150px!important;height:auto!important;display:block}',
+    '#site-footer .sf-cred .n{margin:0;font-size:14px;color:#e6dcd4}'
   ].join('\n');
   var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
   if (!document.querySelector('link[href*="fonts.googleapis.com"][href*="Cormorant"]')) {
@@ -55,9 +62,14 @@
   [
     ['sf-line1', 'Picture Toh Abhi Shuru Bhi Nahin Hui Hain Dost'],
     ['sf-line2', 'Many Happy Returns Of The Second ACT Shah Rukh Jaan!'],
-    ['sf-line3', 'SHAH ROCK JAAN - Remember ME ! ;-)'],
-    ['sf-line4', 'Created & Managed By Fans Who Love You KING!']
+    ['sf-line3', 'Love Shah Rock.']
   ].forEach(function (l) { var p = document.createElement('p'); p.className = l[0]; p.textContent = l[1]; inner.appendChild(p); });
+  // credits: the anthem's research & development partner
+  var cred = document.createElement('div'); cred.className = 'sf-cred';
+  cred.innerHTML = '<h5>INQUILAAB - KING KE SAATH</h5><hr><p class="k">Research &amp; Development</p>' +
+    '<span class="lg"><img src="' + base + 'about/logo-dome.png" alt="DOME A.I. WORLD" width="150" height="91" loading="lazy"></span>' +
+    '<p class="n">Dome Entertainment Group</p><hr>';
+  inner.appendChild(cred);
   f.appendChild(inner);
   document.body.appendChild(f);
 
