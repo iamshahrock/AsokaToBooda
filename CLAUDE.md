@@ -41,7 +41,7 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 ## SRK birthday pass (owner, 1 Nov 2026)
 - Footer (assets/footer.js): 'Picture Toh Abhi Shuru Bhi Nahin Hui Hain Dost' / 'Many Happy Returns Of The Second ACT Shah Rukh Jaan!' / 'Love Shah Rock.' then a credit block: INQUILAAB - KING KE SAATH, Research & Development, DOME logo (assets/about/logo-dome.png on a white card), Dome Entertainment Group. Site map kept above it.
 - Merch: 'Where to buy' store cards replaced by 'Online store · coming soon' with a 'Bulk orders · Write to us' button (pop-up form). The bottom bulk form stays. Both POST /merch-bulk (pop-up sends src 'popup'); every request is stored in D1 merch_bulk and emailed via the Worker send_email binding MAILER from orders@agarmainkinghota.com to the address in D1 site_config (k 'bulk_to', kept out of Git). Email only works once Cloudflare Email Routing is on for agarmainkinghota.com and that address is verified as a destination (owner step).
-- Homepage Rescue Your Face tile uses assets/lairs/scenes/den-abyssal-m.webp (was lairs/cover.webp). Chess81 tile still Noctopus until the owner's board design file is found.
+- Homepage Rescue Your Face tile uses assets/lairs/scenes/den-abyssal-m.webp (was lairs/cover.webp). Chess81 tile = the owner's Chess 81 board design (assets/home/chess81-board.webp, board cropped from her 1920x1080 art; was Noctopus).
 
 ## Stack
 - Static site on GitHub Pages via .github/workflows/pages.yml (cache-busts shared assets with ?v=<sha8>).
