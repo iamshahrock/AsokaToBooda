@@ -15,6 +15,13 @@
 <meta property="og:title" content="Agar Main King Hota — the fan campaign for KING">
 <meta property="og:description" content="Pick any of 118 SRK films, choose one of 6 styles, add your face and step into his poster as the King.">
 <meta property="og:image" content="https://agarmainkinghota.com/assets/home/social-card.jpg">
+<meta property="og:image:secure_url" content="https://agarmainkinghota.com/assets/home/social-card.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agar Main King Hota">
+<meta name="twitter:image" content="https://agarmainkinghota.com/assets/home/social-card.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
@@ -56,6 +63,15 @@ body{background:var(--bg)}
 .buzz{display:block;margin:12px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#0d0707;text-decoration:none;color:#e8dfd8;font-size:14px;line-height:1.5}
 .buzz b{display:block;margin:0 0 2px;font:400 20px Anton,sans-serif;letter-spacing:.04em;color:var(--red-hi)}
 .buzz:hover{border-color:var(--red)}.buzz em{font-style:normal;color:var(--gold)}
+/* new official release band */
+.newrel{margin:30px 0 0;padding:18px;border:1px solid var(--red);border-radius:10px;background:#0d0707;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:center}
+@media (max-width:900px){.newrel{grid-template-columns:minmax(0,1fr)}}
+.newrel .yt{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#000}
+.newrel iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.newrel .tag{font:700 11px Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--red-hi)}
+.newrel h2{margin:6px 0 8px;font:400 clamp(26px,2.6vw,38px)/1.02 Anton,sans-serif;text-transform:uppercase;color:#fff}
+.newrel p{margin:0 0 10px;font-size:14px;line-height:1.5;color:#d6c8c4}
+.newrel a.more{color:var(--gold);font-weight:700;text-decoration:none}
 /* KING FEVER sections */
 .kf-h{margin:40px 0 0;padding:26px 0 0;border-top:1px solid var(--line);font:400 clamp(30px,3.2vw,44px)/1 Anton,sans-serif;text-transform:uppercase;color:var(--ink)}
 .blk{margin:26px 0 0}
@@ -132,6 +148,16 @@ body{background:var(--bg)}
         <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
       </div>
       <a class="buzz" href="king-intelligence/"><b>KING BUZZ</b><span id="kb-line">The daily intelligence report on KING: official releases, views, press and fans, tracked every day since 04 Oct.</span> <em>Read →</em></a>
+    </div>
+  </section>
+
+  <section class="newrel" aria-labelledby="nr-h">
+    <div class="yt"><iframe src="https://www.youtube.com/embed/BPZkZpGMpXA?rel=0&amp;playsinline=1" title="KING: Tu Mil Jaaye, official song" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <div>
+      <span class="tag">Official · Out now · 2 Nov 2026, 00:09 IST</span>
+      <h2 id="nr-h">KING: Tu Mil Jaaye</h2>
+      <p>KING's first song, released the minute SRK turned 61. Shah Rukh Khan and Deepika Padukone. Composed by Sachin-Jigar, lyrics by Kumaar, sung by Arijit Singh and Madhubanti Bagchi, featuring Ed Sheeran.</p>
+      <a class="more" href="king-intelligence/">Follow its numbers on KING Buzz →</a>
     </div>
   </section>
 
