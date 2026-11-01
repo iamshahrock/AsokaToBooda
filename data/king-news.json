@@ -5,8 +5,8 @@
   "kicker": "Official · KING's first song",
   "headline": "Tu Mil Jaaye: KING's first song is out on SRK's 61st birthday",
   "deck": "Released at 00:09 IST on 2 Nov 2026, the minute SRK turned 61. Sachin-Jigar compose, Kumaar writes, Arijit Singh and Madhubanti Bagchi sing, and Ed Sheeran features. Shah Rukh Khan and Deepika Padukone star. In its first half hour on YouTube: 260,084 views and 40,324 likes.",
-  "quote": "Its time for the world to meet the King of Romance.",
-  "quote_by": "Official video description, YouTube, 2 Nov 2026",
+  "quote": "Yeh Daur Ishq ka Naseeb Waalon ko milta hai... Jahan Barood ki Khushboo mein Gulab khilta hai... Of Love and other Battles....This December, #LoveLikeAKing",
+  "quote_by": "@iamsrk on Instagram, 2 Nov 2026, 00:11 IST",
   "image": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
   "image_alt": "Tu Mil Jaaye, KING's first song: Shah Rukh Khan and Deepika Padukone",
   "image_credit": "Official video thumbnail, YouTube",
@@ -14,6 +14,10 @@
    {
     "name": "Watch on YouTube",
     "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+   },
+   {
+    "name": "SRK on Instagram",
+    "url": "https://www.instagram.com/iamsrk/reel/DfNY_TIO8P4/"
    }
   ]
  },
@@ -30,6 +34,10 @@
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+    },
+    {
+     "name": "SRK Instagram",
+     "url": "https://www.instagram.com/iamsrk/reel/DfNY_TIO8P4/"
     }
    ],
    "release": "tu-mil-jaaye-2026-11-02",
