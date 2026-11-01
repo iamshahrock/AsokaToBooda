@@ -1,47 +1,85 @@
 {
  "about": "Top of /king-intelligence/: the latest KING news (owner, 27 Oct 2026) and every official KING release by Shah Rukh Khan / Red Chillies Entertainment. Video views are read live from the daily ledger (series_id). Update 'latest' when a new official asset drops. Posters on Instagram have no public view count: shown as N/A, never estimated.",
  "latest": {
-  "date": "2026-10-27",
-  "kicker": "Breaking · SRK published",
-  "headline": "Qaatil nahi… Aashiq hoon: SRK drops a new KING poster as the campaign enters its last mile",
-  "deck": "A rose between his lips, a gun in his hand, the date 24.12.26. Shah Rukh Khan posted the new KING poster on X and Instagram at 10:00 am IST, while the two official KING videos on Red Chillies' YouTube channel keep climbing past 82 million views together.",
-  "quote": "Aaj phir yaad aaya... Qaatil nahi... Aashiq hoon #KING 24.12.26",
-  "quote_by": "@iamsrk on Instagram",
-  "image": "https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&name=large",
-  "image_alt": "The new KING poster: Shah Rukh Khan walking out of a burning tunnel, a rose between his lips; KING, 24th Dec 2026",
-  "image_credit": "Poster: @iamsrk / Red Chillies Entertainment · from SRK's post on X",
+  "date": "2026-11-01",
+  "kicker": "Buzz · Mannat, birthday eve",
+  "headline": "Mannat turns into a screen: a projector test pattern lights up SRK's home the night before he turns 61",
+  "deck": "A giant white screen now wraps the tower behind Mannat's heritage bungalow, and fan videos from the night of 31 Oct show a projector calibration grid and colour bars across it, with a projector rig on the bungalow roof. Nobody official has said what will play on it. At 14:12 IST today SRK posted the other half of the birthday light show himself: the Bandra-Worli Sea Link lit with his face and '2 DAYS TO GO', with Google Gemini.",
+  "quote": "Dost ho toh Google Gemini jaisa.. Thank you for the KING-sized love always.... had to sneak out for a drive to get this photo ha ha..",
+  "quote_by": "@iamsrk on X, 1 Nov 2026, 14:12 IST",
+  "image": "/assets/king-news/2026-11-01-mannat-test-pattern.webp",
+  "image_alt": "Mannat at night: a projector calibration grid with red, green, blue and white bars on the giant screen wrapping the tower behind the bungalow; the Mannat gate pillar in front",
+  "image_credit": "Frame from @SRKUniverse's video on X, 31 Oct 2026",
   "sources": [
    {
+    "name": "Full buzz piece",
+    "url": "/king-intelligence/mannat-screen.html"
+   },
+   {
     "name": "SRK on X",
-    "url": "https://x.com/iamsrk/status/2114937785664844282"
+    "url": "https://x.com/iamsrk/status/2116813235827683604"
    },
    {
-    "name": "SRK on Instagram",
-    "url": "https://www.instagram.com/iamsrk/p/De--1PuIdC3/"
+    "name": "@SRKUniverse video",
+    "url": "https://x.com/SRKUniverse/status/2116599258816385417"
    },
    {
-    "name": "NewsBytes",
-    "url": "https://www.newsbytesapp.com/news/entertainment/shah-rukh-khan-s-new-film-look-revealed/story"
+    "name": "Free Press Journal",
+    "url": "https://www.freepressjournal.in/entertainment/shah-rukh-khans-mumbai-bunglow-mannat-turns-into-giant-screen-ahead-of-61st-birthday-king-teaser-to-be-screened-video"
    },
    {
-    "name": "Aaj Tak",
-    "url": "https://aajtak.in/entertainment/bollywood-news/story/shah-rukh-khan-king-new-poster-release-teases-action-with-romance-first-look-tmova-dskc-2681150-2026-10-27"
+    "name": "ETV Bharat",
+    "url": "https://etvbharat.com/hi/entertainment/shah-rukh-khan-birthday-king-promo-or-teaser-srk-fans-set-to-receive-a-surprise-at-midnight-tonight-here-a-glimpse-from-mannat-hin26110102687"
    }
   ],
-  "posted_at": "2026-10-27T10:00:36+05:30",
+  "posted_at": "2026-11-01T14:12:58+05:30",
   "links": [
    {
-    "name": "X",
-    "url": "https://x.com/iamsrk/status/2114937785664844282"
+    "name": "Read the buzz piece",
+    "url": "/king-intelligence/mannat-screen.html"
    },
    {
-    "name": "Instagram",
-    "url": "https://www.instagram.com/iamsrk/p/De--1PuIdC3/"
+    "name": "SRK's post",
+    "url": "https://x.com/iamsrk/status/2116813235827683604"
    }
   ],
-  "release": "poster-2026-10-27"
+  "release": "gemini-sealink-2026-11-01"
  },
  "releases": [
+  {
+   "date": "2026-11-01",
+   "time": "14:12 IST",
+   "type": "Post",
+   "title": "Sea Link lit for KING's birthday · 'Dost ho toh Google Gemini jaisa'",
+   "by": "@iamsrk",
+   "platform": "X",
+   "thumb": "/assets/king-news/2026-11-01-sealink-gemini.webp",
+   "links": [
+    {
+     "name": "X",
+     "url": "https://x.com/iamsrk/status/2116813235827683604"
+    }
+   ],
+   "release": "gemini-sealink-2026-11-01",
+   "note": "SRK's photo of the Bandra-Worli Sea Link: his face, '2 DAYS TO GO', 'with Google Gemini'"
+  },
+  {
+   "date": "2026-10-31",
+   "time": "11:11 IST",
+   "type": "Poster",
+   "title": "'The King is Coming!' · Phars takes KING to international audiences",
+   "by": "@RedChilliesEnt",
+   "platform": "X",
+   "thumb": "https://pbs.twimg.com/media/HV77OPraMAAQmAE.jpg?name=small",
+   "links": [
+    {
+     "name": "X",
+     "url": "https://x.com/RedChilliesEnt/status/2116405107462185164"
+    }
+   ],
+   "release": "phars-2026-10-31",
+   "note": "Red Chillies post naming Phars as KING's international distributor"
+  },
   {
    "date": "2026-10-27",
    "time": "10:00 IST",

@@ -492,6 +492,72 @@
      "topic": "song"
     }
    ]
+  },
+  {
+   "date": "2026-10-31",
+   "count": 2,
+   "articles": [
+    {
+     "outlet": "Bollywood Hungama",
+     "title": "T-Series acquires 50-year exclusive global music rights for Shah Rukh Khan starrer King through Zee Music",
+     "url": "https://www.bollywoodhungama.com/news/bollywood/t-series-acquires-50-year-exclusive-global-music-rights-for-shah-rukh-khan-starrer-king-through-zee-music/",
+     "topic": "music"
+    },
+    {
+     "outlet": "Gulf News",
+     "title": "Anirudh steps away from Shah Rukh Khan's King, but leaves behind a special musical gift for the superstar",
+     "url": "https://gulfnews.com/entertainment/bollywood/shah-rukh-khans-king-gets-new-music-composers-as-anirudh-exits-1.500730922",
+     "topic": "music"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-01",
+   "count": 7,
+   "articles": [
+    {
+     "outlet": "Free Press Journal",
+     "title": "Shah Rukh Khan's Mumbai Bunglow Mannat Turns Into Giant Screen Ahead Of 61st Birthday, King Teaser To Be Screened?",
+     "url": "https://www.freepressjournal.in/entertainment/shah-rukh-khans-mumbai-bunglow-mannat-turns-into-giant-screen-ahead-of-61st-birthday-king-teaser-to-be-screened-video",
+     "topic": "mannat screen"
+    },
+    {
+     "outlet": "ETV Bharat (Hindi)",
+     "title": "Shah Rukh Khan Birthday: 'King' ka promo ya teaser? Aaj aadhi raat ko SRK fans ko milega surprise, Mannat se saamne aayi ye jhalak",
+     "url": "https://etvbharat.com/hi/entertainment/shah-rukh-khan-birthday-king-promo-or-teaser-srk-fans-set-to-receive-a-surprise-at-midnight-tonight-here-a-glimpse-from-mannat-hin26110102687",
+     "topic": "mannat screen"
+    },
+    {
+     "outlet": "Box Office Worldwide",
+     "title": "Inside Mannat's King Makeover As Shah Rukh Khan's Birthday Eve Visuals Spark Fan Frenzy",
+     "url": "https://boxofficeworldwide.com/movies-latest-news/shah-rukh-khan-king-mannat-makeover-birthday-eve-visuals/",
+     "topic": "mannat screen"
+    },
+    {
+     "outlet": "LatestLY",
+     "title": "Siddharth Anand's Cryptic Post Ahead of Shah Rukh Khan's Birthday Fuels 'King' Teaser Speculation",
+     "url": "https://www.latestly.com/entertainment/bollywood/siddharth-anands-cryptic-post-ahead-of-shah-rukh-khans-birthday-fuels-king-teaser-speculation-7661489.html",
+     "topic": "teaser buzz"
+    },
+    {
+     "outlet": "Box Office Worldwide",
+     "title": "Siddharth Anand's It's Time For The World To Celebrate Post Intensifies King Speculations!",
+     "url": "https://boxofficeworldwide.com/movies-latest-news/king-siddharth-anand-post-speculation/",
+     "topic": "teaser buzz"
+    },
+    {
+     "outlet": "Free Press Journal",
+     "title": "Shah Rukh Khan Won't Be Meeting Fans On His 61st Birthday? Here's What We Know",
+     "url": "https://www.freepressjournal.in/entertainment/shah-rukh-khan-wont-be-meeting-fans-on-his-61st-birthday-heres-what-we-know",
+     "topic": "birthday"
+    },
+    {
+     "outlet": "LatestLY",
+     "title": "Shah Rukh Khan To Skip 61st Birthday Meet With Fans - Here's Why",
+     "url": "https://www.latestly.com/entertainment/bollywood/shah-rukh-khan-to-skip-61st-birthday-meet-with-fans-heres-why-7660489.html",
+     "topic": "birthday"
+    }
+   ]
   }
  ]
 }

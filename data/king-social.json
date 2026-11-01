@@ -2510,6 +2510,86 @@
      "kind": "meme"
     }
    ]
+  },
+  "2026-10-31": {
+   "totals": {
+    "posts_read": 2,
+    "views": 14188,
+    "likes": 649,
+    "reposts": 164,
+    "replies": 5
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@sr_kult",
+     "url": "https://x.com/sr_kult/status/2116546199880896559",
+     "posted_at": "2026-10-31T20:31:52+05:30",
+     "thumb": "/assets/king-news/2026-11-01-mannat-gate.webp",
+     "views": 7611,
+     "likes": 389,
+     "reposts": 114,
+     "replies": 2,
+     "text": "'PROJECTOR IS ALREADY SET UP AT MANNAT. KING TEASER ON MANNAT'S WALL ON 2ND NOVEMBER' (fan claim, not confirmed)",
+     "stance": "positive",
+     "kind": "fan video"
+    },
+    {
+     "platform": "X",
+     "account": "@TheClimaxIndia",
+     "url": "https://x.com/TheClimaxIndia/status/2116565135930396700",
+     "posted_at": "2026-10-31T21:47:06+05:30",
+     "views": 6577,
+     "likes": 260,
+     "reposts": 50,
+     "replies": 3,
+     "text": "'Massive screens have been installed at Mannat to showcase the new asset of King'",
+     "stance": "positive",
+     "kind": "news"
+    }
+   ],
+   "videos": [],
+   "note": "Read by hand 1 Nov 2026 14:45 IST: the Mannat-screen posts and Siddharth Anand's midnight post only (no full X sweep this day)."
+  },
+  "2026-11-01": {
+   "totals": {
+    "posts_read": 2,
+    "views": 362552,
+    "likes": 8125,
+    "reposts": 2607,
+    "replies": 750
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@justSidAnand",
+     "url": "https://x.com/justSidAnand/status/2116598617813422099",
+     "posted_at": "2026-11-01T00:00:09+05:30",
+     "views": 353658,
+     "likes": 7666,
+     "reposts": 2482,
+     "replies": 748,
+     "text": "'The KING of..' (4th midnight post: It's / Time For The World / To Celebrate / The KING of..)",
+     "stance": "positive",
+     "kind": "director tease"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2116599258816385417",
+     "posted_at": "2026-11-01T00:02:42+05:30",
+     "thumb": "/assets/king-news/2026-11-01-mannat-test-pattern.webp",
+     "views": 8894,
+     "likes": 459,
+     "reposts": 125,
+     "replies": 2,
+     "text": "'MANNAT TURNS INTO A FORTRESS! The KING's latest visuals are all set to illuminate the gigantic screen.' (video: projector test pattern on the screen)",
+     "stance": "positive",
+     "kind": "fan video"
+    }
+   ],
+   "videos": [],
+   "note": "Read by hand 1 Nov 2026 14:45 IST: the Mannat-screen posts and Siddharth Anand's midnight post only (no full X sweep this day)."
   }
  }
 }
