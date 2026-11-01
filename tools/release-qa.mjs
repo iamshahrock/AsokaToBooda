@@ -97,7 +97,7 @@ for (const [id, path] of pages) {
     const foot = await page.evaluate(async () => {
       const f = document.getElementById('site-footer'); if (!f) return 'missing';
       const img = f.querySelector('img.sf-mark'); if (img) { img.loading = 'eager'; await img.decode().catch(() => {}); }
-      if (!/Created & Managed By Fans Who Love You KING!/.test(f.innerText)) return 'text missing';
+      if (!/Love Shah Rock\./.test(f.innerText)) return 'text missing';
       if (!img || !img.naturalWidth) return 'emblem did not load';
       return 'ok';
     });
