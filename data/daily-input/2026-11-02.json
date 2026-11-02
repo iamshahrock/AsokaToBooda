@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-02",
+  "record_id": "KING-2026-11-02",
+  "role": "DAILY UPDATE",
+  "metrics": [
+    {
+      "series_id": "king_title_reveal_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-11-02: data/buzz/youtube.json does not exist (YOUTUBE_API_KEY still not set in Cloudflare); https://www.youtube.com/watch?v=Uu2QK9Z9X5E not opened unattended",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_date_announcement_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-11-02: no Worker reading; https://www.youtube.com/watch?v=M3mfut2RdHk not opened unattended",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "doomsday_official_trailer_views",
+      "value": null,
+      "unit": "YouTube views",
+      "source": "Not read 2026-11-02: no Worker reading; https://www.youtube.com/watch?v=irVNGjRFZGk not opened unattended",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_tu_mil_jaaye_views",
+      "value": 27544976,
+      "unit": "YouTube views",
+      "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video, posted 2026-11-02 00:09 IST), view counter read by hand 2026-11-02 20:54 IST, filed in data/king-tmj-log.json (PR #335)",
+      "method": "public YouTube view counter read from the video page ~20.75 h after posting",
+      "confidence": "exact public counter",
+      "status": "usable"
+    },
+    {
+      "series_id": "srk_indexed_posts",
+      "value": null,
+      "unit": "indexed posts",
+      "source": "Not read 2026-11-02: https://displaypurposes.com/hashtags/hashtag/srk needs a person's approval to open (request withdrawn); counts frozen since 06 Oct",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "srkking_indexed_posts",
+      "value": null,
+      "unit": "indexed #srkking posts",
+      "source": "Not read 2026-11-02: Display Purposes page not opened unattended; counts frozen since 18 Oct",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "fan_ai_works_logged",
+      "value": 40,
+      "unit": "fan-made AI works about KING",
+      "source": "data/ai-creator-log.json, updated 2026-11-02 (daily scan: 0 new works)",
+      "method": "public posts found and linked by the daily scan",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "fan_ai_works_views",
+      "value": 2883120,
+      "unit": "views",
+      "source": "data/ai-creator-log.json, updated 2026-11-02 (daily scan: 0 new works)",
+      "method": "sum of public view counts on the logged works that show views",
+      "confidence": "verified/linked",
+      "status": "usable"
+    },
+    {
+      "series_id": "iamsrk_instagram_followers",
+      "value": null,
+      "unit": "followers",
+      "source": "Not read 2026-11-02: Instagram cannot be opened in an unattended run",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    },
+    {
+      "series_id": "king_public_observable_posts",
+      "value": null,
+      "unit": "posts",
+      "source": "No verified 2 Nov total located",
+      "method": "not reported",
+      "confidence": "unavailable",
+      "status": "missing"
+    }
+  ],
+  "topics": [
+    "Tu Mil Jaaye, KING's first song (Deepika Padukone, Ed Sheeran), released at midnight as SRK's 61st-birthday gift (Gulf News, 2 Nov 2026, https://gulfnews.com/entertainment/shah-rukh-khans-61st-birthday-gift-to-fans-tu-mil-jaaye-from-king-with-deepika-padukone-and-ed-sheeran-1.500732202)",
+    "SRK unveils Tu Mil Jaaye from KING on his birthday (Bollywood Hungama, 2 Nov 2026, https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-unveils-tu-mil-jaaye-song-starring-deepika-padukone-from-king-on-his-birthday-song-blends-romance-action-and-his-dehshat/)",
+    "Mannat gets a KING makeover; SRK thanks fans with a handwritten note on the Mannat screen instead of a midnight balcony appearance (Outlook India, 2 Nov 2026, https://www.outlookindia.com/art-entertainment/mannat-gets-a-king-makeover-as-shah-rukh-khan-turns-61-actor-thanks-fans-with-note)",
+    "SRK turns 61 and greets fans from the Mannat balcony in the evening (The Tribune, 2 Nov 2026, 20:09 IST, https://www.tribuneindia.com/news/entertainment/shah-rukh-khan-turns-61-keeps-his-birthday-date-with-fans-with-balcony-appearance/)",
+    "Bollywood stars celebrate SRK's 61st birthday and praise KING (The News Mill, 2 Nov 2026, https://thenewsmill.com/2026/11/bollywood-stars-celebrate-shah-rukh-khans-61st-birthday-and-film-king/)"
+  ],
+  "notes": [
+    "Scheduled run 2026-11-02 21:55 IST. YouTube (title reveal, date announcement, Doomsday trailer), Display Purposes and Instagram counts could not be read unattended: left null, not estimated.",
+    "New series king_tu_mil_jaaye_views starts today (first reading, no previous value to compare). It comes from the hand reading at 20:54 IST filed in data/king-tmj-log.json, not from this run.",
+    "Fan AI works unchanged (40 works, 2,883,120 views): a flat value means the daily scan found 0 new works, not that views stopped.",
+    "Posts are not people; followers are not unique fans; views are not unique viewers.",
+    "Official-post checkpoints due 2 Nov with no reading: Phars @redchilliesent X 48h (due 2 Nov 11:11 IST) and SRK Gemini Sea Link X post 24h (due 2 Nov 14:12 IST). Coming due 3 Nov: Tu Mil Jaaye YouTube and SRK reel 24h (~00:10 IST), Gemini 48h (14:12 IST), 27 Oct poster posts 7-day (~10:00 IST)."
+  ]
+}
