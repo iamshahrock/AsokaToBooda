@@ -43,6 +43,13 @@
       "views": 27544976,
       "likes": 386747
      }
+    },
+    {
+     "at": "2026-11-02T23:04:49+05:30",
+     "metrics": {
+      "views": 35243482,
+      "likes": 416961
+     }
     }
    ]
   },
@@ -93,6 +100,14 @@
       "likes_display": "1.3M",
       "comments_display": "61K",
       "shares_display": "50K"
+     }
+    },
+    {
+     "at": "2026-11-02T23:04:49+05:30",
+     "metrics": {
+      "likes_display": "1.3M",
+      "comments_display": "62.1K",
+      "shares_display": "51K"
      }
     }
    ]
