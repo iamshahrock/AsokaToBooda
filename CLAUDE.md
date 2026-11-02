@@ -43,6 +43,9 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 - Merch: 'Where to buy' store cards replaced by 'Online store · coming soon' with a 'Bulk orders · Write to us' button (pop-up form). The bottom bulk form stays. Both POST /merch-bulk (pop-up sends src 'popup'); every request is stored in D1 merch_bulk and emailed via the Worker send_email binding MAILER from orders@agarmainkinghota.com to the address in D1 site_config (k 'bulk_to', kept out of Git). Email only works once Cloudflare Email Routing is on for agarmainkinghota.com and that address is verified as a destination (owner step).
 - Homepage Rescue Your Face tile uses assets/lairs/scenes/den-abyssal-m.webp (was lairs/cover.webp). Chess81 tile = the owner's Chess 81 board design (assets/home/chess81-board.webp, board cropped from her 1920x1080 art; was Noctopus).
 
+## The poem (owner, 3 Nov 2026: 'FILE THIS. Add this on the site.')
+- The owner's poem AGAR MAIN KING HOTA ('Picture Toh Abhi Shuru Bhi Nahin Hui Hain', #FreeMyFace #FreeMyVoice #FreeMyName) sits at the top of /vision/ (#poem), above Vision & Mission; the 'Agar Main KING Hota' title in the banner opens that page. Text is the owner's WORD FOR WORD (never edit it); no byline.
+
 ## KING on his 61st (2 Nov 2026, owner: 'make a section KING ON his 61st')
 - /king-intelligence/king-61st.html = the birthday page: Tu Mil Jaaye's first 21 h (chart from data/king-tmj-log.json, the 10-minute YouTube log, plus the ledger readings), timeline (midnight handwritten note on the Mannat screen, no midnight balcony; balcony at nightfall per PTI/India TV; 5,000+ fans per an SRK Universe co-founder via PTI; Burj Khalifa; celebrity wishes), the balcony record 2007-2026 (2024 [Unverified]), press. Linked first in data/king-news.json latest.sources.
 
