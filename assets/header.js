@@ -36,7 +36,7 @@
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
     ['doom-to-king/', 'DOOM to KING']
   ];
-  var UTIL = [['about/', 'About Us'], ['fan-billboard/', 'Billboard']];
+  var UTIL = [['vision/', 'Vision'], ['about/', 'About'], ['fan-billboard/', 'Billboard']];
   var MORE = [['contact/', 'Contact'], ['faq/', 'FAQ']];
   // Sub-pages: a slim tab row under the bar on every page of that section, so fans always know where they are.
   var SUB = {
@@ -134,8 +134,8 @@
     /* desktop: everything on one line */
     '@media (min-width:1200px){#site-header .sh-bar-in{max-width:none;gap:12px 22px}#site-header.sh-stuck .sh-brand span{display:none}#site-header .sh-util{margin-left:0}#site-header .sh-brand{margin-right:0}}',
     '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 6px}#site-header .sh-nav{gap:2px 3px}#site-header .sh-nav a{font-size:12px;letter-spacing:0}#site-header .sh-util{gap:2px 7px;padding-left:7px}#site-header .sh-util a{font-size:11px;letter-spacing:.02em}#site-header .sh-sw{display:none}}',
-    '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 7px}#site-header .sh-nav a{font-size:12px;letter-spacing:.05em}#site-header .sh-util{gap:2px 14px}}',
-    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 2px}#site-header .sh-nav a{font-size:11px;letter-spacing:0;padding-left:0;padding-right:0}#site-header .sh-util{gap:2px 6px;padding-left:6px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 3px;padding:0 4px}}',
+    '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 6px}#site-header .sh-nav a{font-size:12px;letter-spacing:.05em}#site-header .sh-util{gap:2px 14px}}',
+    '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 2px}#site-header .sh-nav a{font-size:11px;letter-spacing:0;padding-left:0;padding-right:0}#site-header .sh-util{gap:2px 4px;padding-left:3px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 2px;padding:0 2px}}',
     /* tablet and phone: the menu button holds every link, Home included */
     '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
     '@media (max-width:760px){',
