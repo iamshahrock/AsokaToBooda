@@ -68,6 +68,7 @@ export default {
     if (path === "/stats") return stats(request, env, reply);
     if (path === "/d2k") return d2k(request, env, reply, origin);
     if (path === "/r2k") return r2k(request, env, reply, origin);
+    if (path === "/pose") return pose(request, env, reply, origin, new URL(request.url));
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
     if (path === "/merch-bulk") return merchBulk(request, env, reply, origin);
@@ -177,7 +178,7 @@ const RULES = {
   visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
   throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
   chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6], inquilab: [50, 1],
-  clipsubmit: [50, 3], comment: [10, 3], pose: [100, 10]
+  clipsubmit: [50, 3], comment: [10, 3], pose: [200, 10]
 };
 // Awarded only by the Worker itself, after a clip is approved in data/lairs-cinema.json
 const SERVER_RULES = { clip: [500, 3], sotw: [2000, 1] };
@@ -344,6 +345,36 @@ async function stats(request, env, reply) {
     days: Object.values(byDay),
     topPages: pages.results || []
   }, { "Cache-Control": "public, max-age=60" });
+}
+
+// ---------------- BAAHEIN KHOL: the pose-card collection and leaderboard (owner, 3 Nov 2026) ----------------
+// GET  /pose?device=  -> { mine: [{card, best, got}], top: [{rank, name, cards, total}], players }
+// POST /pose {device, card, score 0-100} -> keeps the best score per card; 90+ collects it
+async function poseState(env, device) {
+  const [m, t, c] = await env.DB.batch([
+    env.DB.prepare("SELECT card, best, got FROM pose_cards WHERE device=?1").bind(device || ""),
+    env.DB.prepare("SELECT p.name AS name, SUM(c.got) AS cards, SUM(c.best) AS total FROM pose_cards c JOIN players p ON p.device=c.device WHERE p.joined=1 AND p.name<>'' GROUP BY c.device HAVING SUM(c.got)>0 ORDER BY cards DESC, total DESC LIMIT 10"),
+    env.DB.prepare("SELECT COUNT(DISTINCT device) AS n FROM pose_cards")
+  ]);
+  return { mine: m.results || [], top: (t.results || []).map((r, i) => ({ rank: i + 1, name: r.name, cards: r.cards, total: r.total })), players: ((c.results || [])[0] || {}).n || 0 };
+}
+async function pose(request, env, reply, origin, url) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  if (request.method === "GET") {
+    const d = (url.searchParams.get("device") || "");
+    return reply(200, await poseState(env, okDevice(d) ? d : ""), { "Cache-Control": "no-store" });
+  }
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "pose:" + ip))) return reply(429, { error: "Too many tries at once. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const card = String(body.card || ""), score = Math.round(Number(body.score));
+  if (!/^[a-f0-9]{10}$/.test(card) || !(score >= 0 && score <= 100)) return reply(400, { error: "Unknown card or score." });
+  await env.DB.prepare("INSERT INTO pose_cards(device, card, best, got, ts) VALUES(?1, ?2, ?3, ?4, ?5) ON CONFLICT(device, card) DO UPDATE SET best=MAX(best, ?3), got=MAX(got, ?4), ts=?5").bind(body.device, card, score, score >= 90 ? 1 : 0, Date.now()).run();
+  await bump(env, istDay(), "pose_try");
+  return reply(200, await poseState(env, body.device));
 }
 
 // ---------------- RAMAYANA to KING: fan votes and the "watching both" pledge (owner, 3 Nov 2026) ----------------
