@@ -802,5 +802,8 @@ async function adminStats(request, env, reply, origin, path) {
   }
   if (!who) return reply(401, { error: "Please sign in again." });
   const r = await stats(request, env, (status, b) => ({ status, b }));
-  return reply(r.status === 200 ? 200 : 503, { who, stats: r.b }, { "Cache-Control": "no-store" });
+  // Google Analytics snapshot, copied by hand from the GA report; private, so it lives in D1, never in the public repo
+  let ga = null;
+  try { const g = await env.DB.prepare("SELECT v FROM site_config WHERE k='ga_snapshot'").first(); if (g && g.v) ga = JSON.parse(g.v); } catch (e) {}
+  return reply(r.status === 200 ? 200 : 503, { who, stats: r.b, ga }, { "Cache-Control": "no-store" });
 }
