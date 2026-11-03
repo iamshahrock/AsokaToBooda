@@ -57,6 +57,24 @@
 .credits{list-style:none;padding:0;margin:0 0 20px;color:#e6dcd4;font-size:15px;line-height:1.8}
 .credits li{margin:2px 0}
 .credits strong{color:#c9a24a}
+
+/* Final comparison layout overrides */
+.comparison-box{margin:0 0 28px;padding:24px 0 22px}
+.comparison-box .lyr{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0}
+.comparison-box .version-panel{background:transparent;border:0;border-radius:0;padding:0 24px 18px;box-shadow:none;min-width:0}
+.comparison-box .version-panel:first-child{border-right:1px solid #c9a24a}
+.comparison-box .version-panel h1{font-family:var(--display);font-size:34px;line-height:1.15;text-transform:uppercase;margin:0 0 18px;color:#f5f1ed}
+.comparison-box .version-panel .fan-sub{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:600;font-style:italic;text-transform:uppercase;color:#d99a00;margin:0 0 14px}
+.comparison-box .version-panel .audio-placeholder{height:72px;margin:0 0 18px}
+.comparison-box .lyrics-box{margin:0;padding:0 24px}
+.comparison-box .lyrics-table-wrap{width:100%;overflow-x:auto;margin:0}
+.comparison-box .lyrics-table{width:100%;table-layout:fixed;border:0;border-collapse:collapse;background:transparent;font-family:"Archivo",sans-serif;font-size:16px;line-height:1.8;color:#e6dcd4}
+.comparison-box .lyrics-table td,.comparison-box .lyrics-table th{width:50%;padding:0 22px 0 0;border:0;vertical-align:top;text-align:left;white-space:normal;overflow-wrap:anywhere}
+.comparison-box .lyrics-table td+td,.comparison-box .lyrics-table th+th{padding:0 0 0 22px;border-left:1px solid #c9a24a}
+.comparison-box .lyrics-table thead th{font-family:"Cormorant Garamond",serif;font-size:29px;font-style:italic;font-weight:600;color:#d99a00;padding-bottom:6px}
+.comparison-box .lyrics-table tr.lyric-gap td{height:1.8em;padding-top:0;padding-bottom:0}
+@media(max-width:760px){.comparison-box{padding-top:20px}.comparison-box .lyr{grid-template-columns:1fr}.comparison-box .version-panel{padding:0 18px 18px}.comparison-box .version-panel:first-child{border-right:0;border-bottom:1px solid #c9a24a}.comparison-box .version-panel h1{font-size:26px}.comparison-box .version-panel .fan-sub{font-size:30px}.comparison-box .lyrics-box{padding:0 18px}.comparison-box .lyrics-table{min-width:680px;font-size:15px;line-height:1.75}}
+
 </style>
 </head>
 <body class="v2">
