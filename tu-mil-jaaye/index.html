@@ -29,13 +29,31 @@
 
 .lyrics{white-space:pre-wrap;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.8;color:#e6dcd4;overflow-wrap:anywhere}
 @media (max-width:760px){.lyrics{font-size:15px;line-height:1.75}}
+.track-title{font-family:var(--display);font-size:23px;letter-spacing:.03em;margin:8px 0 12px;color:#fff}
+.audio-player{display:block;width:100%;margin:0 0 18px;accent-color:var(--red)}
+.credits{list-style:none;padding:0;margin:0 0 20px;color:#e6dcd4;font-size:15px;line-height:1.8}
+.credits li{margin:2px 0}
+.credits strong{color:#c9a24a}
 </style>
 </head>
 <body class="v2">
 <script src="../assets/header.js"></script>
 <main class="wrap">
   <div class="lyr">
-    <section class="box"><h1>Kabhi Jo Tu <em>Mil Jaaye</em></h1><p class="fan-sub">KING'S VERSION - Shah Rukh Khan</p><div class="lyrics">
+    <section class="box">
+      <h1>Kabhi Jo Tu <em>Mil Jaaye</em></h1>
+      <p class="fan-sub">KING'S VERSION - Shah Rukh Khan</p>
+      <h3 class="track-title">Tum Mil Jaaye MP3</h3>
+      <audio class="audio-player" controls preload="metadata">
+        <source src="audio/Tu-Mil-Jaaye.mp3" type="audio/mpeg">
+        Your browser does not support the audio player.
+      </audio>
+      <ul class="credits">
+        <li><strong>Music Composer:</strong> Sachin - Jigar</li>
+        <li><strong>Singers:</strong> Ed Sheeran, Arijit Singh, Madhubanti Bagchi</li>
+        <li><strong>Lyrics:</strong> Kumaar (Hindi), Ed Sheeran (English)</li>
+      </ul>
+      <div class="lyrics">
 I see you, I can't hide the way I feel
 Fireworks exploding here, no sudden moves
 I'm holding still, are you real?
@@ -108,8 +126,19 @@ Sukoon aaye, toh yeh saari duniya hai kya, hai kya?
 
 Ae daur ishq da naseeba naal hai milda
 Kar sakda taan paar kar lai dariya jo hai dil da
-Dariya jo hai dil da</div></section>
-    <section class="box"><h1>Jabhi Dono <em>Mil Jaaye</em></h1><p class="fan-sub">ID'S VERSION - Shah Rock Jaan</p><div class="lyrics">
+Dariya jo hai dil da</div>
+    </section>
+    <section class="box">
+      <h1>Jabhi Dono <em>Mil Jaaye</em></h1>
+      <p class="fan-sub">ID'S VERSION - Shah Rock Jaan</p>
+      <h3 class="track-title">Teeno Mil Jaaye</h3>
+      <p class="soon">Audio - Coming Soon</p>
+      <ul class="credits">
+        <li><strong>Music Re-Composition:</strong> Pragnesh S.S. Singh</li>
+        <li><strong>Singers:</strong> A.I.</li>
+        <li><strong>Lyrics:</strong> Shailja</li>
+      </ul>
+      <div class="lyrics">
 I see you, I can't touch the way you feel
 Frameworks imploding here, all oven proves
 I'm molding still, the czar's ideal
@@ -182,7 +211,8 @@ Fitoor wapas mil jaaye, teeno na bikhar jaaye toh...iss taraaah iss taraaah
 
 Ae daur ishq da, sirf kehnda naseeban waala
 Kar sakda naa paar, koi dariya jo hai pind da
-Dariya jo hai pind da, pind da...</div></section>
+Dariya jo hai pind da, pind da...</div>
+    </section>
   </div>
 </main>
 <script src="../assets/starks.js"></script>
