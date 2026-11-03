@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SRK's Characters — Agar Main King Hota</title>
+<title>Shah Rukh Khan's Alter Egos — Agar Main King Hota</title>
 <meta name="description" content="Every Shah Rukh Khan character, one close-up per film, with the character's name: from Fauji to KING, plus his cameos and narrator roles.">
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/srk-characters/">
@@ -30,6 +30,7 @@
 .ch .dbl{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px}
 .ch .fm{font-size:13px}
 @media (max-width:760px){.ch .nm{font-size:13px}.ch .fm{font-size:10px}.ch .lab{padding:24px 4px 6px}.ch .dbl{font-size:9px;padding:2px 5px;top:5px;left:5px}}
+.page-head .ch-sub,.ch-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px!important;color:#f0c24e!important;margin:6px 0 0;letter-spacing:0;text-transform:none}
 .ch-h{font-family:var(--display);font-weight:400;font-size:34px;text-transform:uppercase;letter-spacing:.01em;margin:0 0 14px}
 .ch-h span{color:#f0c24e}
 .ch-n{font-size:15px;color:#a89a90;margin:-6px 0 16px}
@@ -43,9 +44,7 @@
 <body class="v2">
 <script src="../assets/header.js"></script>
 <main class="wrap">
-  <div class="page-head"><div><p class="eyebrow">Shah Rukh Khan</p><h1>Which is your favourite <em>SRK</em> character?</h1></div></div>
-  <h2 class="ch-h">The <span>characters</span></h2>
-  <p class="ch-n" id="n-main"></p>
+  <div class="page-head"><div><h1>Shah Rukh Khan's <em>ALTER EGOS</em></h1><p class="ch-sub">118 and counting...</p></div></div>
   <div class="ch-grid" id="main"></div>
   <h2 class="ch-h">Cameos &amp; <span>narrator</span></h2>
   <p class="ch-n" id="n-cameo"></p>
@@ -64,7 +63,6 @@
     var m=d.films.filter(function(f){return f.section==='main';}), c=d.films.filter(function(f){return f.section!=='main';});
     document.getElementById('main').innerHTML=m.map(tile).join('');
     document.getElementById('cameo').innerHTML=c.map(tile).join('');
-    document.getElementById('n-main').textContent=m.length+' films and TV roles, newest first';
     document.getElementById('n-cameo').textContent=c.length+' cameos, guest appearances and narrator roles';
   });
 })();
