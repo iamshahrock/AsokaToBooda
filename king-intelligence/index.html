@@ -659,7 +659,7 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
         if(r&&r.metrics[m]!=null)return '<td><b>'+short(r.metrics[m])+'</b></td>';return '<td class="due" title="'+(due>now?'Not reached yet':'Not read')+'">—</td>';}).join('')+'</tr>');});});
       var t0=Date.parse(mine[0].posted_at),hd=function(h){return new Date(t0+h*36e5).toLocaleString('en-GB',{timeZone:'Asia/Kolkata',day:'2-digit',month:'short',hour:'numeric',minute:'2-digit',hour12:true});};
       st.innerHTML='<b>Since posting</b><table class="ck"><thead><tr><th>Post</th>'+CK.map(function(c){return '<th>'+c[0]+'<br><small style="font-weight:500;letter-spacing:0;text-transform:none">'+hd(c[1])+'</small></th>';}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table><small>Each column is a fixed time after SRK posted; it fills in when we take that reading. Counts as X and Instagram display them.</small>';}
-    var days=Math.round((Date.UTC(2026,11,24)-Date.parse(n.date+'T00:00:00Z'))/864e5);
+    var today=new Date(Date.now()+5.5*36e5).toISOString().slice(0,10),days=Math.round((Date.UTC(2026,11,24)-Date.parse(today+'T00:00:00Z'))/864e5);
     $('#nw-when').textContent=dd(n.date)+' · '+days+' days to KING';
     $('#nw-src').innerHTML='Sources: '+(n.sources||[]).map(function(s){return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>';}).join(' · ');
     // readings: ledger first, then archived snapshots
