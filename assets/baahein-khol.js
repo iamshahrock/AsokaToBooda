@@ -1,7 +1,10 @@
 /* BAAHEIN KHOL (owner, 3 Nov 2026): copy one of SRK's poses, score 90+ to collect the card.
    Pose reading runs on the fan's device (MoveNet in the browser); no photo or video is uploaded. */
 (function () {
-  var KEY = 'amkh-pose', GOAL = 90;
+  var KEY = 'amkh-pose', GOAL = 90, API = 'https://asokatobooda.iamshahrock.workers.dev/pose';
+  var Q = new URLSearchParams(location.search), DUEL = Q.get('card') ? { card: Q.get('card'), beat: Math.min(100, parseInt(Q.get('beat'), 10) || 0), from: (Q.get('from') || 'A fan').slice(0, 18) } : null;
+  var dev = function () { return window.STARKS ? STARKS.get().device : ''; };
+  var istDay = function () { return new Date(Date.now() + 5.5 * 36e5).toISOString().slice(0, 10); };
   var LV = { e: 'Easy', m: 'Medium', h: 'Hard', l: 'Legendary' };
   var $ = function (s) { return document.querySelector(s); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
@@ -69,7 +72,30 @@
   // ---- deck
   var DECK = [], CUR = null, det = null, stream = null, raf = 0, lastKp = null, filter = 'all';
   function album() { var a = load(); var n = DECK.filter(function (c) { return a[c.id] && a[c.id].got; }).length;
-    $('#alb').textContent = n + ' / ' + DECK.length; $('#albBar').style.width = (DECK.length ? 100 * n / DECK.length : 0) + '%'; }
+    $('#alb').textContent = n + ' / ' + DECK.length; $('#albBar').style.width = (DECK.length ? 100 * n / DECK.length : 0) + '%';
+    $('#sets').textContent = ['e', 'm', 'h', 'l'].map(function (l) { var all = DECK.filter(function (c) { return c.lv === l; }); var got = all.filter(function (c) { return a[c.id] && a[c.id].got; }).length; return all.length ? LV[l] + ' ' + got + '/' + all.length : ''; }).filter(Boolean).join(' · ') + (n && n === DECK.length ? ' · 👑 Full deck' : ''); }
+  // card of the day: the same card for every fan on an IST day; collecting it pays double
+  function daily() { if (!DECK.length) return null; var d = istDay(), h = 0; for (var i = 0; i < d.length; i++) h = (h * 31 + d.charCodeAt(i)) >>> 0; return DECK[h % DECK.length]; }
+  function dayBox() {
+    var c = daily(); if (!c) return; var got = (load()[c.id] || {}).got, el = $('#day'); el.hidden = false;
+    el.innerHTML = '<img src="' + esc(c.img) + '" alt=""><div><b>Card of the day</b><span>' + esc(c.label) + ' · ' + LV[c.lv] + (got ? ' · already in your album' : ' · collect it today for 200 STARKS (double)') + '</span></div>';
+    el.onclick = function () { open(c.id); };
+  }
+  function board(j) {
+    if (!j || !j.top) return;
+    $('#lb').innerHTML = j.top.length ? j.top.map(function (r) { return '<li><span>' + r.rank + '. ' + esc(r.name) + '</span><span><b>' + r.cards + '</b> cards</span></li>'; }).join('') : '<li>No names yet. Collect a card and join the Billboard to be first.</li>';
+    $('#lbNote').innerHTML = (j.players ? Number(j.players).toLocaleString('en-IN') + ' fans have played. ' : '') + 'Join the <a href="/fan-billboard/">STARKS Billboard</a> with a name to appear here.';
+  }
+  // the server keeps each fan's best scores, so the album follows them to a new browser on the same device id
+  function sync(j) {
+    if (!j || !j.mine) return; var a = load();
+    j.mine.forEach(function (m) { var r = a[m.card] || {}; r.best = Math.max(r.best || 0, m.best); if (m.got) r.got = true; a[m.card] = r; });
+    save(a); board(j);
+  }
+  function post(card, score) {
+    if (!dev()) return;
+    fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ device: dev(), card: card, score: score }) }).then(function (r) { return r.json(); }).then(function (j) { sync(j); album(); }).catch(function () {});
+  }
   function grid() {
     var a = load();
     $('#grid').innerHTML = DECK.filter(function (c) {
@@ -94,7 +120,8 @@
     CUR = DECK.filter(function (c) { return c.id === id; })[0]; if (!CUR) return;
     CUR.f = CUR.f || feats(CUR.kp);
     $('#pTitle').textContent = CUR.label + ' · ' + LV[CUR.lv];
-    $('#res').classList.remove('on'); $('#msg').textContent = 'Open your camera, step back until your arms fit, and match his pose.';
+    $('#res').classList.remove('on');
+    $('#msg').textContent = (DUEL && DUEL.card === CUR.id ? DUEL.from + ' scored ' + DUEL.beat + '% on this card. Beat it! ' : '') + 'Open your camera, step back until your arms fit, and match his pose.';
     var img = $('#pImg'); img.onload = function () {
       var cv = $('#pSk'), r = cv.getBoundingClientRect(); cv.width = r.width * 2; cv.height = r.height * 2;
       var ctx = cv.getContext('2d'); var map = cover(ctx, img, img.naturalWidth, img.naturalHeight, cv.width, cv.height);
@@ -147,10 +174,12 @@
       a[CUR.id] = rec; save(a);
       $('#rScore').textContent = r.score + '%';
       $('#rText').innerHTML = r.score >= GOAL ? (newCard ? '<b>Card collected!</b> ' + esc(CUR.label) + ' is in your album.' : 'You already own this card. Best score: ' + rec.best + '%.') : (r.score >= 80 ? 'So close. ' + (GOAL - r.score) + ' more to win the card.' : 'Not yet. Score ' + GOAL + ' or more to win the card.');
-      $('#rHint').textContent = hint(r.worst);
+      $('#rHint').textContent = hint(r.worst) + (DUEL && DUEL.card === CUR.id ? (r.score > DUEL.beat ? ' You beat ' + DUEL.from + ' (' + DUEL.beat + '%).' : ' ' + DUEL.from + ' still leads with ' + DUEL.beat + '%.') : '');
       $('#res').classList.add('on');
-      if (newCard && window.STARKS) window.STARKS.earn('pose', 100, 'BAAHEIN KHOL · ' + CUR.label, 'pose-' + CUR.id);
-      album();
+      var isDay = daily() && daily().id === CUR.id;
+      if (newCard && window.STARKS) window.STARKS.earn('pose', isDay ? 200 : 100, 'BAAHEIN KHOL · ' + CUR.label + (isDay ? ' · card of the day' : ''), 'pose-' + CUR.id);
+      post(CUR.id, r.score); CUR.last = r.score;
+      album(); dayBox();
     });
   }
   $('#bShot').onclick = function () {
@@ -161,6 +190,13 @@
     }, 1000);
   };
   $('#bAgain').onclick = function () { $('#res').classList.remove('on'); };
+  $('#bDuel').onclick = function () {
+    var name = (window.STARKS && STARKS.get().name) || 'A fan';
+    var link = location.origin + location.pathname + '?card=' + CUR.id + '&beat=' + (CUR.last || 0) + '&from=' + encodeURIComponent(name);
+    var text = 'I scored ' + (CUR.last || 0) + '% on the King\'s pose "' + CUR.label + '". Beat me: ' + link + ' #BaaheinKhol #KING';
+    if (navigator.share) navigator.share({ text: text, url: link }).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { $('#msg').textContent = 'Challenge link copied. Send it to a friend.'; });
+  };
   $('#up').onchange = function () {
     var f = this.files && this.files[0]; if (!f) return;
     var im = new Image(); im.onload = function () {
@@ -190,6 +226,8 @@
   fetch('../data/baahein-khol.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
     var order = { e: 0, m: 1, h: 2, l: 3 };
     DECK = (d.cards || []).sort(function (a, b) { return order[a.lv] - order[b.lv]; });
-    grid();
+    grid(); dayBox();
+    fetch(API + '?device=' + encodeURIComponent(dev()), { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) { sync(j); grid(); dayBox(); }).catch(function () { $('#lb').innerHTML = '<li>The leaderboard could not load.</li>'; });
+    if (DUEL && DECK.some(function (c) { return c.id === DUEL.card; })) open(DUEL.card);
   }).catch(function () { $('#grid').innerHTML = '<p>The deck could not load. Refresh the page.</p>'; });
 })();
