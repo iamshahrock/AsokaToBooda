@@ -1,7 +1,62 @@
 {
- "updated": "2026-10-19",
- "source": "YouTube search (13 queries) read in the browser on 19 Oct 2026, plus data/ai-creator-log.json. Views and ages as shown by YouTube on 19 Oct 2026. Official channels excluded.",
+ "updated": "2026-11-03",
+ "source": "YouTube search (13 queries) read in the browser on 19 Oct 2026, plus data/ai-creator-log.json. Views and ages as shown by YouTube on 19 Oct 2026. Official channels excluded. 3 Nov 2026: AI fan versions of Tu Mil Jaaye added from the 30-search YouTube sweep (views as shown in search results).",
  "items": [
+  {
+   "id": "3X4Uxttx5So",
+   "title": "Tu Mil Jaaye | Romantic Hindi Love Song | Heart Touching AI Music | New Version 2026",
+   "channel": "Alpha TV songs",
+   "views": 33,
+   "age": "",
+   "length": "",
+   "type": "Song",
+   "ai": true,
+   "from_log": false
+  },
+  {
+   "id": "VJRrSKQPL6E",
+   "title": "Kabhi Tu Mil Jaaye  KING, SRK ❤️ कभी तू मिल जाए | SHARUK KHAN NEW  Song | AI Fan-Made Video,  KING",
+   "channel": "MR viral studio ",
+   "views": 9,
+   "age": "",
+   "length": "",
+   "type": "Song",
+   "ai": true,
+   "from_log": false
+  },
+  {
+   "id": "KEhYbYsJk3g",
+   "title": "Tu Mil Jaaye ❤️ | Romantic Hindi Love Song | Heart Touching AI Music | New Version 2026",
+   "channel": "Alpha TV songs",
+   "views": 7,
+   "age": "",
+   "length": "",
+   "type": "Song",
+   "ai": true,
+   "from_log": false
+  },
+  {
+   "id": "1-Kp0duqr0A",
+   "title": "KING: Tu Mil Jaaye (तू मिल जाए) 2.0 | Shah Rukh Khan, Deepika | Ai-Song",
+   "channel": "Raag Suno",
+   "views": 6,
+   "age": "",
+   "length": "",
+   "type": "Song",
+   "ai": true,
+   "from_log": false
+  },
+  {
+   "id": "3zeXPGE_l8Q",
+   "title": "KING – TU MIL JAAYE (AI COVER) ❤️🔥 | NAUSH music #KING #TuMilJaaye #AICover",
+   "channel": "NAUSH music",
+   "views": 4,
+   "age": "",
+   "length": "",
+   "type": "Song",
+   "ai": true,
+   "from_log": false
+  },
   {
    "id": "9YcsF7XKtSo",
    "title": "King — Trailer Concept",
