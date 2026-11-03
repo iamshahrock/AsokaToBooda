@@ -27,7 +27,8 @@
 @media (max-width:760px){.lyr{grid-template-columns:1fr}}
 .blank{min-height:520px}
 
-.lyrics-table-wrap{width:100%;overflow-x:auto;margin:0 0 28px}
+.lyrics-box{margin:0 0 28px}
+.lyrics-table-wrap{width:100%;overflow-x:auto;margin:0}
 .lyrics-table{width:100%;table-layout:fixed;border:0;border-collapse:collapse;background:transparent;font-family:'Archivo',sans-serif;font-size:16px;line-height:1.8;color:#e6dcd4}
 .lyrics-table td{width:50%;padding:0 22px 0 0;border:0;vertical-align:top;white-space:normal;overflow-wrap:anywhere}
 .lyrics-table td+td{padding:0 0 0 22px}
@@ -71,8 +72,9 @@
 
     </section>
   </div>
-  <div class="lyrics-table-wrap">
-    <table class="lyrics-table" aria-label="Side-by-side song lyrics">
+  <section class="box lyrics-box">
+    <div class="lyrics-table-wrap">
+      <table class="lyrics-table" aria-label="Side-by-side song lyrics">
       <tbody>
         <tr><td>I see you, I can't hide the way I feel</td><td>I see you, I can't touch the way you feel</td></tr>
         <tr><td>Fireworks exploding here, no sudden moves</td><td>Frameworks imploding here, all oven proves</td></tr>
@@ -148,8 +150,9 @@
         <tr><td>Kar sakda taan paar kar lai dariya jo hai dil da</td><td>Kar sakda naa paar, koi dariya jo hai pind da</td></tr>
         <tr><td>Dariya jo hai dil da</td><td>Dariya jo hai pind da, pind da...</td></tr>
       </tbody>
-    </table>
-  </div>
+      </table>
+    </div>
+  </section>
 </main>
 <script src="../assets/starks.js"></script>
 <script src="../assets/footer.js" defer></script>
