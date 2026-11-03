@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SRK's Characters — Agar Main King Hota</title>
+<meta name="description" content="Every Shah Rukh Khan character, one close-up per film, with the character's name: from Fauji to KING, plus his cameos and narrator roles.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/srk-characters/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+.ch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid #c9a24a;background:#c9a24a;margin:0 0 40px}
+@media (max-width:1100px){.ch-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.ch-grid{grid-template-columns:repeat(2,1fr)}}
+.ch{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:#0d0606;border:1px solid #c9a24a}
+.ch .pics{position:absolute;inset:0;display:flex}
+.ch .pics img{flex:1;min-width:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+.ch .pics img+img{border-left:2px solid #c9a24a}
+.ch .lab{position:absolute;left:0;right:0;bottom:0;padding:34px 8px 10px;text-align:center;background:linear-gradient(to top,rgba(0,0,0,.92) 35%,rgba(0,0,0,0))}
+.ch .nm{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.1;text-transform:uppercase;color:#f0c24e;letter-spacing:.02em;margin:0}
+.ch .fm{font-size:14px;color:#f4ece4;margin:3px 0 0}
+.ch .fm i{font-style:italic}
+.ch .dbl{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px}
+@media (max-width:760px){.ch .nm{font-size:17px}.ch .fm{font-size:12px}}
+.ch-h{font-family:var(--display);font-weight:400;font-size:34px;text-transform:uppercase;letter-spacing:.01em;margin:0 0 14px}
+.ch-h span{color:#f0c24e}
+.ch-n{font-size:15px;color:#a89a90;margin:-6px 0 16px}
+.ch-grid.small{grid-template-columns:repeat(6,1fr)}
+@media (max-width:1100px){.ch-grid.small{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:760px){.ch-grid.small{grid-template-columns:repeat(3,1fr)}.ch-grid.small .nm{font-size:13px}.ch-grid.small .fm{font-size:10px}}
+.ch-grid.small .nm{font-size:16px}
+.ch-grid.small .fm{font-size:12px}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+  <div class="page-head"><div><p class="eyebrow">Shah Rukh Khan</p><h1>Which is your favourite <em>SRK</em> character?</h1></div><p id="ch-count">Every character, one close-up per film.</p></div>
+  <h2 class="ch-h">The <span>characters</span></h2>
+  <p class="ch-n" id="n-main"></p>
+  <div class="ch-grid" id="main"></div>
+  <h2 class="ch-h">Cameos &amp; <span>narrator</span></h2>
+  <p class="ch-n" id="n-cameo"></p>
+  <div class="ch-grid small" id="cameo"></div>
+</main>
+<script>
+(function(){
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function tile(f){
+    var pics=f.blend?['<img src="'+esc(f.blend)+'" alt="" loading="lazy">']:f.roles.map(function(r){return '<img src="'+esc(r.img)+'" alt="'+esc(r.name)+'" loading="lazy">';});
+    var name=f.roles.map(function(r){return esc(r.name);}).join(' / ');
+    return '<figure class="ch">'+(f.roles.length>1?'<span class="dbl">'+(f.roles.length==3?'Triple role':'Double role')+'</span>':'')+
+      '<div class="pics">'+pics.join('')+'</div><figcaption class="lab"><p class="nm">'+name+'</p><p class="fm"><i>'+esc(f.film)+'</i> · '+f.year+'</p></figcaption></figure>';
+  }
+  fetch('../data/srk-characters.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    var m=d.films.filter(function(f){return f.section==='main';}), c=d.films.filter(function(f){return f.section!=='main';});
+    document.getElementById('main').innerHTML=m.map(tile).join('');
+    document.getElementById('cameo').innerHTML=c.map(tile).join('');
+    document.getElementById('n-main').textContent=m.length+' films and TV roles, newest first';
+    document.getElementById('n-cameo').textContent=c.length+' cameos, guest appearances and narrator roles';
+  });
+})();
+</script>
+<script src="../assets/starks.js"></script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

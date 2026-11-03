@@ -1,0 +1,1583 @@
+{
+ "about": "SRK's characters, one close-up per film (owner, 3 Nov 2026). Character names from our poster catalogue, gaps filled from Wikipedia's Shah Rukh Khan filmography. Double roles carry one image per character until the owner's blended image replaces them (set 'blend' to its path). Images picked by face matching and checked by eye; the owner reviews them.",
+ "films": [
+  {
+   "id": "118",
+   "film": "KING",
+   "year": 2026,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Not yet revealed",
+     "img": "/assets/characters/118.webp"
+    }
+   ]
+  },
+  {
+   "id": "117",
+   "film": "The Ba***ds of Bollywood",
+   "year": 2025,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/117.webp"
+    }
+   ]
+  },
+  {
+   "id": "116",
+   "film": "Mufasa: The Lion King",
+   "year": 2024,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Mufasa (voice)",
+     "img": "/assets/characters/116.webp"
+    }
+   ]
+  },
+  {
+   "id": "115",
+   "film": "Dunki",
+   "year": 2023,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Hardy Singh Dhillon",
+     "img": "/assets/characters/115.webp"
+    }
+   ]
+  },
+  {
+   "id": "114",
+   "film": "Tiger 3",
+   "year": 2023,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Pathaan",
+     "img": "/assets/characters/114.webp"
+    }
+   ]
+  },
+  {
+   "id": "113",
+   "film": "Jawan",
+   "year": 2023,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Azad Rathore",
+     "img": "/assets/characters/113a.webp"
+    },
+    {
+     "name": "Vikram Rathore",
+     "img": "/assets/characters/113b.webp"
+    }
+   ]
+  },
+  {
+   "id": "112",
+   "film": "The Romantics",
+   "year": 2023,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/112.webp"
+    }
+   ]
+  },
+  {
+   "id": "111",
+   "film": "Pathaan",
+   "year": 2023,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Pathaan",
+     "img": "/assets/characters/111.webp"
+    }
+   ]
+  },
+  {
+   "id": "110",
+   "film": "Brahmāstra: Part One – Shiva",
+   "year": 2022,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Mohan Bhargav",
+     "img": "/assets/characters/110.webp"
+    }
+   ]
+  },
+  {
+   "id": "109",
+   "film": "Laal Singh Chaddha",
+   "year": 2022,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself (cameo)",
+     "img": "/assets/characters/109.webp"
+    }
+   ]
+  },
+  {
+   "id": "108",
+   "film": "Rocketry: The Nambi Effect",
+   "year": 2022,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/108.webp"
+    }
+   ]
+  },
+  {
+   "id": "107",
+   "film": "The Forgotten Army: Azaadi Ke Liye",
+   "year": 2020,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Narrator",
+     "img": "/assets/characters/107.webp"
+    }
+   ]
+  },
+  {
+   "id": "106",
+   "film": "The Zoya Factor",
+   "year": 2019,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Narrator",
+     "img": "/assets/characters/106.webp"
+    }
+   ]
+  },
+  {
+   "id": "105",
+   "film": "The Lion King",
+   "year": 2019,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Mufasa (voice)",
+     "img": "/assets/characters/105.webp"
+    }
+   ]
+  },
+  {
+   "id": "104",
+   "film": "Zero",
+   "year": 2018,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Bauua Singh",
+     "img": "/assets/characters/104.webp"
+    }
+   ]
+  },
+  {
+   "id": "103",
+   "film": "TED Talks India: Nayi Soch",
+   "year": 2017,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Host",
+     "img": "/assets/characters/103.webp"
+    }
+   ]
+  },
+  {
+   "id": "102",
+   "film": "Jab Harry Met Sejal",
+   "year": 2017,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Harry",
+     "img": "/assets/characters/102.webp"
+    }
+   ]
+  },
+  {
+   "id": "101",
+   "film": "Tubelight",
+   "year": 2017,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Gogo Pasha",
+     "img": "/assets/characters/101.webp"
+    }
+   ]
+  },
+  {
+   "id": "100",
+   "film": "Raees",
+   "year": 2017,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raees Alam",
+     "img": "/assets/characters/100.webp"
+    }
+   ]
+  },
+  {
+   "id": "099",
+   "film": "Bhaag Jeetu Bhaag",
+   "year": 2016,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/099.webp"
+    }
+   ]
+  },
+  {
+   "id": "098",
+   "film": "Dear Zindagi",
+   "year": 2016,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Dr. Jehangir Khan",
+     "img": "/assets/characters/098.webp"
+    }
+   ]
+  },
+  {
+   "id": "097",
+   "film": "Ae Dil Hai Mushkil",
+   "year": 2016,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Tahir Taliyar Khan",
+     "img": "/assets/characters/097.webp"
+    }
+   ]
+  },
+  {
+   "id": "096",
+   "film": "Fan",
+   "year": 2016,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Aryan Khanna",
+     "img": "/assets/characters/096a.webp"
+    },
+    {
+     "name": "Gaurav Chandna",
+     "img": "/assets/characters/096b.webp"
+    }
+   ]
+  },
+  {
+   "id": "095",
+   "film": "Dilwale",
+   "year": 2015,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raj / Kaali",
+     "img": "/assets/characters/095.webp"
+    }
+   ]
+  },
+  {
+   "id": "094",
+   "film": "C.I.D.",
+   "year": 2015,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/094.webp"
+    }
+   ]
+  },
+  {
+   "id": "093",
+   "film": "Happy New Year",
+   "year": 2014,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Charlie",
+     "img": "/assets/characters/093.webp"
+    }
+   ]
+  },
+  {
+   "id": "092",
+   "film": "Bhoothnath Returns",
+   "year": 2014,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Aditya Sharma",
+     "img": "/assets/characters/092.webp"
+    }
+   ]
+  },
+  {
+   "id": "091",
+   "film": "Living with KKR",
+   "year": 2014,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/091.webp"
+    }
+   ]
+  },
+  {
+   "id": "090",
+   "film": "Chennai Express",
+   "year": 2013,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul Mithaiwala",
+     "img": "/assets/characters/090.webp"
+    }
+   ]
+  },
+  {
+   "id": "089",
+   "film": "Taarak Mehta Ka Ooltah Chashmah",
+   "year": 2013,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/089.webp"
+    }
+   ]
+  },
+  {
+   "id": "088",
+   "film": "Bombay Talkies",
+   "year": 2013,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/088.webp"
+    }
+   ]
+  },
+  {
+   "id": "087",
+   "film": "Jab Tak Hai Jaan",
+   "year": 2012,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Samar Anand",
+     "img": "/assets/characters/087.webp"
+    }
+   ]
+  },
+  {
+   "id": "086",
+   "film": "Don 2",
+   "year": 2011,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Don",
+     "img": "/assets/characters/086.webp"
+    }
+   ]
+  },
+  {
+   "id": "085",
+   "film": "Ra.One",
+   "year": 2011,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Shekhar Subramanium",
+     "img": "/assets/characters/085a.webp"
+    },
+    {
+     "name": "G.One",
+     "img": "/assets/characters/085b.webp"
+    }
+   ]
+  },
+  {
+   "id": "084",
+   "film": "Love Breakups Zindagi",
+   "year": 2011,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Cameo appearance",
+     "img": "/assets/characters/084.webp"
+    }
+   ]
+  },
+  {
+   "id": "083",
+   "film": "Always Kabhi Kabhi",
+   "year": 2011,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/083.webp"
+    }
+   ]
+  },
+  {
+   "id": "082",
+   "film": "Shahrukh Bola Khoobsurat Hai Tu",
+   "year": 2010,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/082.webp"
+    }
+   ]
+  },
+  {
+   "id": "081",
+   "film": "My Name Is Khan",
+   "year": 2010,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rizwan Khan",
+     "img": "/assets/characters/081.webp"
+    }
+   ]
+  },
+  {
+   "id": "080",
+   "film": "Dulha Mil Gaya",
+   "year": 2010,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Pawan Raj Gandhi",
+     "img": "/assets/characters/080.webp"
+    }
+   ]
+  },
+  {
+   "id": "079",
+   "film": "Billu Barber",
+   "year": 2009,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Sahir Khan",
+     "img": "/assets/characters/079.webp"
+    }
+   ]
+  },
+  {
+   "id": "078",
+   "film": "Luck by Chance",
+   "year": 2009,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/078.webp"
+    }
+   ]
+  },
+  {
+   "id": "077",
+   "film": "Rab Ne Bana Di Jodi",
+   "year": 2008,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Surinder Sahni",
+     "img": "/assets/characters/077a.webp"
+    },
+    {
+     "name": "Raj",
+     "img": "/assets/characters/077b.webp"
+    }
+   ]
+  },
+  {
+   "id": "076",
+   "film": "Kismat Konnection",
+   "year": 2008,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Narrator",
+     "img": "/assets/characters/076.webp"
+    }
+   ]
+  },
+  {
+   "id": "075",
+   "film": "Bhoothnath",
+   "year": 2008,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Aditya Sharma",
+     "img": "/assets/characters/075.webp"
+    }
+   ]
+  },
+  {
+   "id": "074",
+   "film": "Krazzy 4",
+   "year": 2008,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/074.webp"
+    }
+   ]
+  },
+  {
+   "id": "073",
+   "film": "Shaurya",
+   "year": 2008,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Voiceover",
+     "img": "/assets/characters/073.webp"
+    }
+   ]
+  },
+  {
+   "id": "072",
+   "film": "Om Shanti Om",
+   "year": 2007,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Om Prakash Makhija",
+     "img": "/assets/characters/072a.webp"
+    },
+    {
+     "name": "Om Kapoor",
+     "img": "/assets/characters/072b.webp"
+    }
+   ]
+  },
+  {
+   "id": "071",
+   "film": "Heyy Babyy",
+   "year": 2007,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Raj Malhotra",
+     "img": "/assets/characters/071.webp"
+    }
+   ]
+  },
+  {
+   "id": "070",
+   "film": "Chak De! India",
+   "year": 2007,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Kabir Khan",
+     "img": "/assets/characters/070.webp"
+    }
+   ]
+  },
+  {
+   "id": "069",
+   "film": "I See You",
+   "year": 2006,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/069.webp"
+    }
+   ]
+  },
+  {
+   "id": "068",
+   "film": "Don",
+   "year": 2006,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Don",
+     "img": "/assets/characters/068a.webp"
+    },
+    {
+     "name": "Vijay",
+     "img": "/assets/characters/068b.webp"
+    }
+   ]
+  },
+  {
+   "id": "067",
+   "film": "Kabhi Alvida Naa Kehna",
+   "year": 2006,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Dev Saran",
+     "img": "/assets/characters/067.webp"
+    }
+   ]
+  },
+  {
+   "id": "066",
+   "film": "Alag",
+   "year": 2006,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/066.webp"
+    }
+   ]
+  },
+  {
+   "id": "065",
+   "film": "Paheli",
+   "year": 2005,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Kishanlal",
+     "img": "/assets/characters/065a.webp"
+    },
+    {
+     "name": "The Ghost",
+     "img": "/assets/characters/065b.webp"
+    }
+   ]
+  },
+  {
+   "id": "064",
+   "film": "Silsiilay",
+   "year": 2005,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Sutradhar (narrator)",
+     "img": "/assets/characters/064.webp"
+    }
+   ]
+  },
+  {
+   "id": "063",
+   "film": "Kaal",
+   "year": 2005,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/063.webp"
+    }
+   ]
+  },
+  {
+   "id": "062",
+   "film": "Kuchh Meetha Ho Jaye",
+   "year": 2005,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/062.webp"
+    }
+   ]
+  },
+  {
+   "id": "061",
+   "film": "Swades",
+   "year": 2004,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Mohan Bhargava",
+     "img": "/assets/characters/061.webp"
+    }
+   ]
+  },
+  {
+   "id": "060",
+   "film": "Veer-Zaara",
+   "year": 2004,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Veer Pratap Singh",
+     "img": "/assets/characters/060.webp"
+    }
+   ]
+  },
+  {
+   "id": "059",
+   "film": "Main Hoon Na",
+   "year": 2004,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Major Ram Prasad Sharma",
+     "img": "/assets/characters/059.webp"
+    }
+   ]
+  },
+  {
+   "id": "058",
+   "film": "Yeh Lamhe Judaai Ke",
+   "year": 2004,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Dushyant",
+     "img": "/assets/characters/058.webp"
+    }
+   ]
+  },
+  {
+   "id": "057",
+   "film": "Kal Ho Naa Ho",
+   "year": 2003,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Aman Mathur",
+     "img": "/assets/characters/057.webp"
+    }
+   ]
+  },
+  {
+   "id": "056",
+   "film": "Chalte Chalte",
+   "year": 2003,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raj Mathur",
+     "img": "/assets/characters/056.webp"
+    }
+   ]
+  },
+  {
+   "id": "055",
+   "film": "Saathiya",
+   "year": 2002,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Yashvant Rao",
+     "img": "/assets/characters/055.webp"
+    }
+   ]
+  },
+  {
+   "id": "054",
+   "film": "Shakti: The Power",
+   "year": 2002,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Jaisingh",
+     "img": "/assets/characters/054.webp"
+    }
+   ]
+  },
+  {
+   "id": "053",
+   "film": "Devdas",
+   "year": 2002,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Devdas Mukherjee",
+     "img": "/assets/characters/053.webp"
+    }
+   ]
+  },
+  {
+   "id": "052",
+   "film": "Hum Tumhare Hain Sanam",
+   "year": 2002,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Gopal",
+     "img": "/assets/characters/052.webp"
+    }
+   ]
+  },
+  {
+   "id": "051",
+   "film": "Kabhi Khushi Kabhie Gham",
+   "year": 2001,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul Raichand",
+     "img": "/assets/characters/051.webp"
+    }
+   ]
+  },
+  {
+   "id": "050",
+   "film": "Asoka",
+   "year": 2001,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Asoka",
+     "img": "/assets/characters/050.webp"
+    }
+   ]
+  },
+  {
+   "id": "049",
+   "film": "One 2 Ka 4",
+   "year": 2001,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Arun Verma",
+     "img": "/assets/characters/049.webp"
+    }
+   ]
+  },
+  {
+   "id": "048",
+   "film": "Gaja Gamini",
+   "year": 2000,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/048.webp"
+    }
+   ]
+  },
+  {
+   "id": "047",
+   "film": "Mohabbatein",
+   "year": 2000,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raj Aryan Malhotra",
+     "img": "/assets/characters/047.webp"
+    }
+   ]
+  },
+  {
+   "id": "046",
+   "film": "Har Dil Jo Pyar Karega",
+   "year": 2000,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul",
+     "img": "/assets/characters/046.webp"
+    }
+   ]
+  },
+  {
+   "id": "045",
+   "film": "Josh",
+   "year": 2000,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Max Dias",
+     "img": "/assets/characters/045.webp"
+    }
+   ]
+  },
+  {
+   "id": "044",
+   "film": "Hey Ram",
+   "year": 2000,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Amjad Ali Khan",
+     "img": "/assets/characters/044.webp"
+    }
+   ]
+  },
+  {
+   "id": "043",
+   "film": "Phir Bhi Dil Hai Hindustani",
+   "year": 2000,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Ajay Bakshi",
+     "img": "/assets/characters/043.webp"
+    }
+   ]
+  },
+  {
+   "id": "042",
+   "film": "Baadshah",
+   "year": 1999,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raj Heera",
+     "img": "/assets/characters/042.webp"
+    }
+   ]
+  },
+  {
+   "id": "041",
+   "film": "Kuch Kuch Hota Hai",
+   "year": 1998,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul Khanna",
+     "img": "/assets/characters/041.webp"
+    }
+   ]
+  },
+  {
+   "id": "040",
+   "film": "Dil Se..",
+   "year": 1998,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Amarkant Varma",
+     "img": "/assets/characters/040.webp"
+    }
+   ]
+  },
+  {
+   "id": "039",
+   "film": "Achanak",
+   "year": 1998,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/039.webp"
+    }
+   ]
+  },
+  {
+   "id": "038",
+   "film": "Duplicate",
+   "year": 1998,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Bablu Chaudhry",
+     "img": "/assets/characters/038a.webp"
+    },
+    {
+     "name": "Manu Dada",
+     "img": "/assets/characters/038b.webp"
+    }
+   ]
+  },
+  {
+   "id": "037",
+   "film": "Dil To Pagal Hai",
+   "year": 1997,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul",
+     "img": "/assets/characters/037.webp"
+    }
+   ]
+  },
+  {
+   "id": "036",
+   "film": "Pardes",
+   "year": 1997,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Arjun Sagar",
+     "img": "/assets/characters/036.webp"
+    }
+   ]
+  },
+  {
+   "id": "035",
+   "film": "Yes Boss",
+   "year": 1997,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul Joshi",
+     "img": "/assets/characters/035.webp"
+    }
+   ]
+  },
+  {
+   "id": "034",
+   "film": "Koyla",
+   "year": 1997,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Shankar",
+     "img": "/assets/characters/034.webp"
+    }
+   ]
+  },
+  {
+   "id": "033",
+   "film": "Dushman Duniya Ka",
+   "year": 1996,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Badru",
+     "img": "/assets/characters/033.webp"
+    }
+   ]
+  },
+  {
+   "id": "032",
+   "film": "Army",
+   "year": 1996,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Major Arjun Singh",
+     "img": "/assets/characters/032.webp"
+    }
+   ]
+  },
+  {
+   "id": "031",
+   "film": "Chaahat",
+   "year": 1996,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Roop Rathore",
+     "img": "/assets/characters/031.webp"
+    }
+   ]
+  },
+  {
+   "id": "030",
+   "film": "English Babu Desi Mem",
+   "year": 1996,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Gopal Mayur",
+     "img": "/assets/characters/030a.webp"
+    },
+    {
+     "name": "Hari Mayur",
+     "img": "/assets/characters/030b.webp"
+    },
+    {
+     "name": "Vikram Mayur",
+     "img": "/assets/characters/030c.webp"
+    }
+   ]
+  },
+  {
+   "id": "029",
+   "film": "Trimurti",
+   "year": 1995,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Romi Singh",
+     "img": "/assets/characters/029.webp"
+    }
+   ]
+  },
+  {
+   "id": "028",
+   "film": "Ram Jaane",
+   "year": 1995,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Ram Jaane",
+     "img": "/assets/characters/028.webp"
+    }
+   ]
+  },
+  {
+   "id": "027",
+   "film": "Dilwale Dulhania Le Jayenge",
+   "year": 1995,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raj Malhotra",
+     "img": "/assets/characters/027.webp"
+    }
+   ]
+  },
+  {
+   "id": "026",
+   "film": "Oh Darling! Yeh Hai India!",
+   "year": 1995,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Hero",
+     "img": "/assets/characters/026.webp"
+    }
+   ]
+  },
+  {
+   "id": "025",
+   "film": "Guddu",
+   "year": 1995,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Guddu Bahadur",
+     "img": "/assets/characters/025.webp"
+    }
+   ]
+  },
+  {
+   "id": "024",
+   "film": "Zamaana Deewana",
+   "year": 1995,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul Malhotra",
+     "img": "/assets/characters/024.webp"
+    }
+   ]
+  },
+  {
+   "id": "023",
+   "film": "Karan Arjun",
+   "year": 1995,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Arjun Singh",
+     "img": "/assets/characters/023a.webp"
+    },
+    {
+     "name": "Vijay Singh Sharma",
+     "img": "/assets/characters/023b.webp"
+    }
+   ]
+  },
+  {
+   "id": "022",
+   "film": "Anjaam",
+   "year": 1994,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Vijay Agnihotri",
+     "img": "/assets/characters/022.webp"
+    }
+   ]
+  },
+  {
+   "id": "021",
+   "film": "Kabhi Haan Kabhi Naa",
+   "year": 1994,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Sunil",
+     "img": "/assets/characters/021.webp"
+    }
+   ]
+  },
+  {
+   "id": "020",
+   "film": "Darr",
+   "year": 1993,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Rahul Mehra",
+     "img": "/assets/characters/020.webp"
+    }
+   ]
+  },
+  {
+   "id": "019",
+   "film": "Baazigar",
+   "year": 1993,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Ajay / Vicky Malhotra",
+     "img": "/assets/characters/019.webp"
+    }
+   ]
+  },
+  {
+   "id": "018",
+   "film": "Pehla Nasha",
+   "year": 1993,
+   "kind": "film",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/018.webp"
+    }
+   ]
+  },
+  {
+   "id": "017",
+   "film": "Maya Memsaab",
+   "year": 1993,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Lalit",
+     "img": "/assets/characters/017.webp"
+    }
+   ]
+  },
+  {
+   "id": "016",
+   "film": "King Uncle",
+   "year": 1993,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Anil Bhansal",
+     "img": "/assets/characters/016.webp"
+    }
+   ]
+  },
+  {
+   "id": "015",
+   "film": "Rajani",
+   "year": 1993,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/015.webp"
+    }
+   ]
+  },
+  {
+   "id": "014",
+   "film": "Dil Aashna Hai",
+   "year": 1992,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Karan",
+     "img": "/assets/characters/014.webp"
+    }
+   ]
+  },
+  {
+   "id": "013",
+   "film": "Raju Ban Gaya Gentleman",
+   "year": 1992,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raj Mathur",
+     "img": "/assets/characters/013.webp"
+    }
+   ]
+  },
+  {
+   "id": "012",
+   "film": "Chamatkar",
+   "year": 1992,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Sunder Srivastava",
+     "img": "/assets/characters/012.webp"
+    }
+   ]
+  },
+  {
+   "id": "011",
+   "film": "Deewana",
+   "year": 1992,
+   "kind": "film",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Raja Sahay",
+     "img": "/assets/characters/011.webp"
+    }
+   ]
+  },
+  {
+   "id": "010",
+   "film": "Idiot",
+   "year": 1992,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Pawan Raghurajan",
+     "img": "/assets/characters/010.webp"
+    }
+   ]
+  },
+  {
+   "id": "009",
+   "film": "Umeed",
+   "year": 1989,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Anand Gupta",
+     "img": "/assets/characters/009.webp"
+    }
+   ]
+  },
+  {
+   "id": "008",
+   "film": "Mahan Karz",
+   "year": 1989,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Kanwar Singh",
+     "img": "/assets/characters/008.webp"
+    }
+   ]
+  },
+  {
+   "id": "007",
+   "film": "In Which Annie Gives It Those Ones",
+   "year": 1989,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Senior",
+     "img": "/assets/characters/007.webp"
+    }
+   ]
+  },
+  {
+   "id": "006",
+   "film": "Doosra Keval",
+   "year": 1989,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Keval",
+     "img": "/assets/characters/006.webp"
+    }
+   ]
+  },
+  {
+   "id": "005",
+   "film": "Adhuri Zindagi",
+   "year": 1989,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Joseph",
+     "img": "/assets/characters/005.webp"
+    }
+   ]
+  },
+  {
+   "id": "003",
+   "film": "Circus",
+   "year": 1989,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Shekharan",
+     "img": "/assets/characters/003.webp"
+    }
+   ]
+  },
+  {
+   "id": "001",
+   "film": "Fauji",
+   "year": 1989,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Abhimanyu Rai",
+     "img": "/assets/characters/001.webp"
+    }
+   ]
+  },
+  {
+   "id": "004",
+   "film": "Wagle Ki Duniya",
+   "year": 1988,
+   "kind": "tv",
+   "section": "cameo",
+   "roles": [
+    {
+     "name": "Himself",
+     "img": "/assets/characters/004.webp"
+    }
+   ]
+  },
+  {
+   "id": "002",
+   "film": "Dil Dariya",
+   "year": 1988,
+   "kind": "tv",
+   "section": "main",
+   "roles": [
+    {
+     "name": "Nandu",
+     "img": "/assets/characters/002.webp"
+    }
+   ]
+  }
+ ]
+}
