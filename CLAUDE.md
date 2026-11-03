@@ -49,6 +49,11 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 ## Vision & Mission link (owner, 3 Nov 2026: 'where is mission and vision? i don't see a link')
 - Header utility links are now Vision (/vision/), About (was 'About Us', shortened so the bar stays one line), Billboard; burger menu the same; footer About group lists 'Vision & Mission'. Gaps trimmed 1-2 px in the 1200-1359 and 1600-1919 bands (no smaller text); checked one line with no sideways scroll at 1200, 1280, 1359, 1360, 1440, 1536, 1600, 1680, 1920.
 
+## Fan sweep, Tu Mil Jaaye + 61st (owner, 3 Nov 2026: 'update the site with all fan stuff')
+- data/king-videos.json +127 YouTube videos posted 1-3 Nov (30 searches: covers, reactions, reviews, AI versions, remixes, Mannat/birthday); plain re-uploads of the official song left out; fake 'official trailers' labelled 'fan-made trailer (not official)'.
+- data/king-fan-versions.json new release key tu-mil-jaaye-2026-11-02: 124 Instagram fan posts (8 hashtags, 1,424 found, 877 since 1 Nov read; top 180 by likes checked by eye; news pages, official posts/poster reposts and personal reels left out) + the owner's @popreels.in AI reel; thumbnails in assets/king-fans/ig/. They show on daily.html?date=2026-11-02/03.
+- data/fans-king.json +5 AI fan versions of Tu Mil Jaaye. X not swept this time.
+
 ## Kabhi Jo Tu Mil Jaaye (owner, 3 Nov 2026)
 - /tu-mil-jaaye/ = fan version page for KING's first song: official video (YouTube BPZkZpGMpXA), credits, link to the full lyrics on Genius (the original lyrics are NOT on the site), the owner's 4 fan lines WORD FOR WORD (audio coming soon), and a review of the chorus. Not in the header yet.
 
