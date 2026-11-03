@@ -1,0 +1,106 @@
+{
+ "date": "2026-11-03",
+ "record_id": "KING-2026-11-03",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 51121157,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-03 17:44 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 32889041,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-03 17:44 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 83646111,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-03 17:44 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 41850764,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-03 17:44 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-03: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-03: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 40,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-03 (no new works filed in the log; the 5 AI fan versions of Tu Mil Jaaye found 3 Nov are in data/fans-king.json)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 2883120,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-03 (no new works filed in the log; the 5 AI fan versions of Tu Mil Jaaye found 3 Nov are in data/fans-king.json)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48550966,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ follower count (exact figure in the profile header), read 2026-11-03 17:47 IST in an attended session",
+   "method": "exact follower count shown on the public profile",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 3 Nov total located (X sweep of 3 Nov counts only what 10 searches returned: data/king-social.json)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Tu Mil Jaaye day 2: 41,850,764 YouTube views at 17:44 IST (41.6 h after release), past 500,000 likes",
+  "KING's two official teasers together (84,010,198) now have more YouTube views than the Avengers: Doomsday trailer (83,646,111)",
+  "Fan sweep: 127 YouTube videos, 176 fan versions (Instagram + X) of Tu Mil Jaaye, 1-3 Nov"
+ ],
+ "notes": [
+  "All YouTube and Instagram counts read by hand in an attended session at 17:44-17:47 IST.",
+  "Doomsday trailer on 30 Oct recovered from a Wayback Machine copy (82,916,807) and filed in data/king-buzz-archive.json, not in the ledger."
+ ]
+}
