@@ -52,7 +52,8 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 ## Fan sweep, Tu Mil Jaaye + 61st (owner, 3 Nov 2026: 'update the site with all fan stuff')
 - data/king-videos.json +127 YouTube videos posted 1-3 Nov (30 searches: covers, reactions, reviews, AI versions, remixes, Mannat/birthday); plain re-uploads of the official song left out; fake 'official trailers' labelled 'fan-made trailer (not official)'.
 - data/king-fan-versions.json new release key tu-mil-jaaye-2026-11-02: 124 Instagram fan posts (8 hashtags, 1,424 found, 877 since 1 Nov read; top 180 by likes checked by eye; news pages, official posts/poster reposts and personal reels left out) + the owner's @popreels.in AI reel; thumbnails in assets/king-fans/ig/. They show on daily.html?date=2026-11-02/03.
-- data/fans-king.json +5 AI fan versions of Tu Mil Jaaye. X not swept this time.
+- data/fans-king.json +5 AI fan versions of Tu Mil Jaaye.
+- X (same day, owner: 'Yes, sweep X'): 10 searches since 1 Nov, 482 posts read; king-fan-versions tu-mil-jaaye-2026-11-02 +52 X fan images (139 checked by eye; song stills/screenshots and news cards left out); king-social days 2 Nov (286 posts, 4,847,967 views) and 3 Nov (118 posts) with top 40 posts and top 25 videos; post text is not copied, only our one-line reading.
 
 ## Kabhi Jo Tu Mil Jaaye (owner, 3 Nov 2026)
 - /tu-mil-jaaye/ = fan version page for KING's first song: official video (YouTube BPZkZpGMpXA), credits, link to the full lyrics on Genius (the original lyrics are NOT on the site), the owner's 4 fan lines WORD FOR WORD (audio coming soon), and a review of the chorus. Not in the header yet.
