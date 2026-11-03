@@ -17,6 +17,21 @@
 <link rel="stylesheet" href="../assets/v2.css">
 <style>
 .box{background:#0d0606;border:1px solid #c9a24a;border-top:3px solid var(--red);padding:24px 22px 22px;box-shadow:0 0 22px rgba(229,9,20,.18)}
+.comparison-box{margin:0 0 28px;padding:24px 0 22px}
+.comparison-box .lyr{gap:0;margin:0;grid-template-columns:1fr 1fr}
+.version-panel{background:transparent;border:0;border-radius:0;padding:0 24px 18px;box-shadow:none;min-width:0}
+.version-panel:first-child{border-right:1px solid #c9a24a}
+.version-panel h1{font-family:var(--display);font-size:34px;line-height:1.15;text-transform:uppercase;margin:0 0 18px;color:#f5f1ed}
+.version-panel .fan-sub{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:600;font-style:italic;text-transform:uppercase;color:#d99a00;margin:0 0 14px}
+.version-panel .audio-placeholder{height:72px;margin:0 0 18px}
+.lyrics-box{margin:0;padding:0 24px}
+.lyrics-table-wrap{width:100%;overflow-x:auto;margin:0}
+.lyrics-table{width:100%;table-layout:fixed;border:0;border-collapse:collapse;background:transparent;font-family:"Archivo",sans-serif;font-size:16px;line-height:1.8;color:#e6dcd4}
+.lyrics-table td,.lyrics-table th{width:50%;padding:0 22px 0 0;border:0;vertical-align:top;text-align:left;white-space:normal;overflow-wrap:anywhere}
+.lyrics-table td+td,.lyrics-table th+th{padding:0 0 0 22px;border-left:1px solid #c9a24a}
+.lyrics-table thead th{font-family:"Cormorant Garamond",serif;font-size:29px;font-style:italic;font-weight:600;color:#d99a00;padding-bottom:6px}
+.lyrics-table tr.lyric-gap td{height:1.8em;padding-top:0;padding-bottom:0}
+@media(max-width:760px){.comparison-box{padding-top:20px}.comparison-box .lyr{grid-template-columns:1fr}.version-panel{padding:0 18px 18px}.version-panel:first-child{border-right:0;border-bottom:1px solid #c9a24a}.version-panel h1{font-size:26px}.version-panel .fan-sub{font-size:30px}.lyrics-box{padding:0 18px}.lyrics-table{min-width:680px;font-size:15px;line-height:1.75}}
 .box h2{font-family:var(--display);font-weight:400;font-size:30px;text-transform:uppercase;letter-spacing:.01em;margin:0 0 14px}
 .box h2 span{color:var(--red-text)}
 .fan{text-align:center}
@@ -50,8 +65,8 @@
   <section class="box comparison-box">
   <div class="lyr">
     <section class="version-panel">
-      <h1>Kabhi Jo <em>Tu</em> Mil Jaaye</h1>
-      <p class="fan-sub">KING'S VERSION - Shah Rukh Khan</p>
+      <h1>KING’S VERSION - SHAH RUKH KHAN</h1>
+      <p class="fan-sub">TU MIL JAAYE</p>
       <audio class="audio-player" controls preload="metadata">
         <source src="Tu%20Mil%20Jaaye.mp3" type="audio/mpeg">
         Your browser does not support the audio player.
@@ -64,8 +79,8 @@
 
     </section>
     <section class="version-panel">
-      <h1>Jabhi <em>Teeno</em> Mil Jaaye</h1>
-      <p class="fan-sub">ID'S VERSION - Shah Rock Jaan</p>
+      <h1>ID’S VERSION : SHAH ROCK JAAN</h1>
+      <p class="fan-sub">TEENO MIL JAAYE</p>
       <div class="audio-placeholder" aria-hidden="true"></div>
       <ul class="credits">
         <li><strong>Music Re-Composition:</strong> Pragnesh S.S. Singh</li>
@@ -78,6 +93,7 @@
   <div class="lyrics-box">
     <div class="lyrics-table-wrap">
       <table class="lyrics-table" aria-label="Side-by-side song lyrics">
+      <thead><tr><th>Original Lyrics</th><th>Fan Lyrics</th></tr></thead>
       <tbody>
         <tr><td>I see you, I can't hide the way I feel</td><td>I see you, I can't touch the way you feel</td></tr>
         <tr><td>Fireworks exploding here, no sudden moves</td><td>Frameworks imploding here, all oven proves</td></tr>
