@@ -32,6 +32,7 @@
     ['merch/', 'Merch'],
     ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
+    ['king-studies/', 'KING Studies', ['srk-characters/']],
     ['gallery/videos/', 'Gallery', ['gallery/']],
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
     ['doom-to-king/', 'DOOM to KING', ['ramayana-to-king/']]
@@ -48,6 +49,7 @@
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
     'inquilab/': [['inquilab/', 'The anthem'], ['inquilab/revolution/', 'The Revolution Starts Now']],
+    'king-studies/': [['king-studies/', 'KING Studies'], ['king-studies/#mannat', 'The Man in Mannat'], ['srk-characters/', 'Alter Egos']],
     'doom-to-king/': [['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']],
     'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
   };
@@ -137,6 +139,9 @@
     '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 6px}#site-header .sh-nav{gap:2px 3px}#site-header .sh-nav a{font-size:12px;letter-spacing:0}#site-header .sh-util{gap:2px 7px;padding-left:7px}#site-header .sh-util a{font-size:11px;letter-spacing:.02em}#site-header .sh-sw{display:none}}',
     '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 6px}#site-header .sh-nav a{font-size:12px;letter-spacing:.05em}#site-header .sh-util{gap:2px 14px}}',
     '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 2px}#site-header .sh-nav a{font-size:11px;letter-spacing:0;padding-left:0;padding-right:0}#site-header .sh-util{gap:2px 4px;padding-left:3px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 2px;padding:0 2px}}',
+    // 12 sections (KING Studies added 4 Nov 2026): the owner's rule is two rows rather than smaller text, so on desktop the sections get their own row under the brand and utility links.
+    '@media (min-width:1200px){#site-header .sh-bar-in{flex-wrap:wrap;row-gap:0;padding-top:4px}#site-header .sh-nav{order:9;flex:1 0 100%;gap:2px 22px;border-top:1px solid #2a1c1c}#site-header .sh-nav a{padding:11px 1px;font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 16px;padding-left:18px}#site-header .sh-util a{font-size:12px;letter-spacing:.06em}#site-header .sh-sw{display:inline}}',
+    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-nav{display:grid;grid-template-columns:repeat(6,auto);justify-content:center;gap:0 24px}#site-header .sh-nav a{padding:9px 1px;text-align:center}}',
     /* tablet and phone: the menu button holds every link, Home included */
     '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
     '@media (max-width:760px){',
