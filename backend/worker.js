@@ -178,7 +178,7 @@ const RULES = {
   visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
   throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
   chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6], inquilab: [50, 1],
-  clipsubmit: [50, 3], comment: [10, 3], pose: [200, 10]
+  clipsubmit: [50, 3], comment: [10, 3], pose: [200, 10], study: [500, 30]
 };
 // Awarded only by the Worker itself, after a clip is approved in data/lairs-cinema.json
 const SERVER_RULES = { clip: [500, 3], sotw: [2000, 1] };
