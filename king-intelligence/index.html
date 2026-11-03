@@ -45,8 +45,13 @@
 .nw blockquote{margin:0;padding:8px 12px;border-left:3px solid #f2cf6b;font:italic 600 17px/1.4 "Cormorant Garamond",Georgia,serif;color:#f4efe9}.nw blockquote cite{display:block;margin-top:4px;font:600 11px var(--ki-font);font-style:normal;color:var(--ki-muted)}
 .nw .src{font-size:12px;color:var(--ki-muted)}.nw .src a{color:var(--ki-red-hi)}.nw .when{font:600 11px var(--ki-mono);letter-spacing:.06em;color:var(--ki-red-hi);text-transform:uppercase}
 .rl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.rl li{display:grid;grid-template-columns:120px 96px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}
-@media (max-width:640px){.rl li{grid-template-columns:96px minmax(0,1fr)}.rl .d{grid-column:2}.rl .ti{grid-column:1/-1}.rl .v{grid-column:1/-1;text-align:left}}
+.rl li{display:grid;grid-template-columns:120px 96px minmax(0,1fr) 290px;gap:14px;align-items:center;padding:12px 14px;background:var(--ki-bg-2);border:1px solid var(--ki-line);border-radius:var(--ki-radius)}
+.rl .st{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}
+.rl .st .tot{font:700 22px var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums;line-height:1.1}.rl .st .tot small{display:block;font:600 10px var(--ki-font);letter-spacing:.08em;text-transform:uppercase;color:var(--ki-red-hi)}
+.rl .st .bd{font:600 11.5px var(--ki-font);color:var(--ki-muted);white-space:nowrap}.rl .st .bd b{color:var(--ki-text);font-variant-numeric:tabular-nums}
+.rl-tot{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 12px;padding:12px 14px;border:1px solid var(--ki-red-hi);border-radius:var(--ki-radius);background:var(--ki-bg-2)}.rl-tot b{font:700 30px var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums}.rl-tot span{font:600 12px var(--ki-font);letter-spacing:.06em;text-transform:uppercase;color:var(--ki-muted)}
+@media (max-width:1100px){.rl li{grid-template-columns:120px 96px minmax(0,1fr)}.rl .st{grid-column:3;align-items:flex-start;text-align:left}.rl .st .bd{white-space:normal}}
+@media (max-width:640px){.rl li{grid-template-columns:96px minmax(0,1fr)}.rl .d{grid-column:2}.rl .ti{grid-column:1/-1}.rl .st{grid-column:1/-1;align-items:flex-start;text-align:left}.rl .st .bd{white-space:normal}}
 .rl .d{font:700 12px var(--ki-mono);color:var(--ki-red-hi);text-transform:uppercase;letter-spacing:.04em}.rl .ty{display:inline-block;margin-right:6px;padding:1px 6px;border:1px solid var(--ki-line);border-radius:3px;font:600 10px var(--ki-font);letter-spacing:.08em;text-transform:uppercase;color:var(--ki-muted)}
 .rl .ti a{color:var(--ki-text);text-decoration:none;font-weight:600}.rl .ti small{display:block;margin-top:2px;color:var(--ki-muted);font-size:12px}
 .rl .v{text-align:right;font:700 18px var(--ki-font);color:var(--ki-text);font-variant-numeric:tabular-nums;white-space:nowrap}.rl .v small{display:block;font:600 11px var(--ki-font);color:var(--ki-muted)}.rl .v .up{color:#3fbf73}
@@ -148,8 +153,9 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
 
 <!-- ============ OFFICIAL RELEASES (reads data/king-news.json + the ledger) ============ -->
 <section class="gl" id="releases" aria-labelledby="h-rel">
-  <div class="gl-head"><h2 id="h-rel">Everything SRK and Red Chillies have released</h2><span class="gl-date" id="rl-asof"></span></div>
-  <p class="gl-lede">Every official KING poster and video, newest first, with its traffic from the latest daily reading. Instagram posts have no public view counter, so they show N/A.</p>
+  <div class="gl-head"><h2 id="h-rel">OFFICIAL KING RELEASES</h2><span class="gl-date" id="rl-asof"></span></div>
+  <p class="gl-lede">Every official KING release by @iamsrk and @redchilliesent, newest first. Total views = YouTube views + X views + Instagram plays at the latest reading; Instagram photo posts have no public view counter, so they add likes only.</p>
+  <div class="rl-tot" id="rl-tot"></div>
   <ul class="rl" id="rl"><li>Loading…</li></ul>
 </section>
 
@@ -661,12 +667,19 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
       return Object.keys(m).sort().map(function(d){return {d:d,v:m[d].v,k:m[d].k};});};
     var last=R[R.length-1].date; $('#rl-asof').textContent='Traffic as of '+dd(last);
     // 2. releases
+    var GT=0,GN=0;
     $('#rl').innerHTML=(N.releases||[]).map(function(r){
-      var t=[];if(r.series_id){var s=real(r.series_id);if(s.length){var z=s[s.length-1];t.push('<span class="v">'+fmt(z.v)+'<small>YouTube views · '+dd(z.d).slice(0,6)+'</small></span>');}}
-      P.filter(function(p){return p.release&&p.release===r.release;}).forEach(function(p){var z=latestR(p);if(!z)return;var m=(MAIN[p.platform]||['likes'])[0];if(z.metrics[m]==null)return;t.push('<span class="v">'+short(z.metrics[m])+'<small>'+esc(m)+' · '+esc(p.account)+' on '+esc(p.platform)+' · '+tm(z.at)+'</small></span>');});
-      if(!t.length)t.push('<span class="v">N/A<small>'+esc(r.note||'no public counter')+'</small></span>');
-      return '<li><span class="th'+(r.type==='Poster'?' po':'')+'"><img src="'+esc(r.thumb||'')+'" alt="" loading="lazy" referrerpolicy="no-referrer"></span><span class="d">'+dd(r.date)+(r.time?'<br>'+esc(r.time):'')+'</span><span class="ti"><span class="ty">'+esc(r.type)+'</span>'+esc(r.title)+'<small>'+esc(r.by)+' · '+esc(r.platform)+(r.note&&r.date?' · '+esc(r.note):'')+'</small><span class="lk">'+(r.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.name)+' ↗</a>';}).join('')+'</span></span><span>'+t.join('')+'</span></li>';
+      var tot=0,bd=[];
+      if(r.series_id){var s=real(r.series_id);if(s.length){var z=s[s.length-1];tot+=z.v;bd.push('<span class="bd"><b>'+short(z.v)+'</b> views · YouTube · '+dd(z.d).slice(0,6)+'</span>');}}
+      P.filter(function(p){return p.release&&p.release===r.release;}).forEach(function(p){var z=latestR(p);if(!z)return;var m=z.metrics||{};
+        var v=m.views!=null?m.views:(m.plays!=null?m.plays:null),vl=m.views!=null?'views':'plays';
+        if(v!=null){tot+=v;bd.push('<span class="bd"><b>'+short(v)+'</b> '+vl+' · '+esc(p.account)+' '+esc(p.platform)+' · '+tm(z.at)+'</span>');}
+        else{var lk=m.likes!=null?short(m.likes):(m.likes_display||null);if(lk)bd.push('<span class="bd"><b>'+esc(lk)+'</b> likes · '+esc(p.account)+' '+esc(p.platform)+' · '+tm(z.at)+'</span>');}});
+      if(tot){GT+=tot;GN++;}
+      var st=(tot?'<span class="tot">'+fmt(tot)+'<small>Total views</small></span>':'<span class="tot">N/A<small>'+esc(r.note||'no public view counter')+'</small></span>')+bd.join('');
+      return '<li><span class="th'+(r.type==='Poster'?' po':'')+'"><img src="'+esc(r.thumb||'')+'" alt="" loading="lazy" referrerpolicy="no-referrer"></span><span class="d">'+dd(r.date)+(r.time?'<br>'+esc(r.time):'')+'</span><span class="ti"><span class="ty">'+esc(r.type)+'</span>'+esc(r.title)+'<small>'+esc(r.by)+' · '+esc(r.platform)+(r.note&&r.date?' · '+esc(r.note):'')+'</small><span class="lk">'+(r.links||[]).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.name)+' ↗</a>';}).join('')+'</span></span><span class="st">'+st+'</span></li>';
     }).join('');
+    $('#rl-tot').innerHTML='<b>'+fmt(GT)+'</b><span>Total views · all official KING releases ('+GN+' with a public counter) · latest readings</span>';
     // fan versions
     if(FV.length){$('#fv-cta').hidden=false;$('#fv-open').textContent='See '+FV.length+' FAN version'+(FV.length>1?'s':'')+' →';
       $('#fv-grid').innerHTML=FV.map(function(f){return '<a href="'+esc(f.url)+'" target="_blank" rel="noopener"><img src="'+esc(f.image)+'" alt="Fan version by '+esc(f.account)+'" loading="lazy" referrerpolicy="no-referrer"><span>'+esc(f.account)+'<small>'+esc(f.platform)+' · '+tm(f.posted_at)+(f.note?' · '+esc(f.note):'')+'</small></span></a>';}).join('');
