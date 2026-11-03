@@ -1,0 +1,1774 @@
+{
+ "about": "KING STUDIES (owner, 4 Nov 2026): the King studied the way history studies its emperors, from 1947 to 2026. FACT items are public record (sources linked). PhD hypotheses are opinions for scholars to argue, labelled as hypotheses. THE MAN IN MANNAT is a MOCKUMENTARY: every FILE is invented, every FACT box under it is real.",
+ "bazaar": {
+  "title": "The Storytellers' Bazaar",
+  "lede": "Qissa Khwani means the market of storytellers. For centuries caravans stopped in this Peshawar bazaar and paid men to tell stories through the night. In one small corner of it, and in a few towns of west Punjab, the men who would tell India its stories for the next hundred years were born.",
+  "people": [
+   {
+    "n": "Prithviraj Kapoor",
+    "b": "Samundri, Lyallpur · 1906",
+    "p": "Raised in Peshawar. Founder of the Kapoor dynasty and Prithvi Theatres.",
+    "at": "samundri",
+    "w": "https://en.wikipedia.org/wiki/Prithviraj_Kapoor"
+   },
+   {
+    "n": "Dilip Kumar",
+    "b": "Qissa Khwani Bazaar, Peshawar · 1922",
+    "p": "Born Yusuf Khan. The Tragedy King, the first Method actor of Hindi cinema.",
+    "at": "peshawar",
+    "w": "https://en.wikipedia.org/wiki/Dilip_Kumar"
+   },
+   {
+    "n": "Raj Kapoor",
+    "b": "Kapoor Haveli, Qissa Khwani Bazaar, Peshawar · 1924",
+    "p": "The Showman. Awaara made him a star across the Soviet Union.",
+    "at": "peshawar",
+    "w": "https://en.wikipedia.org/wiki/Raj_Kapoor"
+   },
+   {
+    "n": "Dev Anand",
+    "b": "Shakargarh, Punjab · 1923",
+    "p": "Studied at Government College, Lahore. The Evergreen star.",
+    "at": "shakargarh",
+    "w": "https://en.wikipedia.org/wiki/Dev_Anand"
+   },
+   {
+    "n": "Balraj Sahni",
+    "b": "Rawalpindi · 1913",
+    "p": "Do Bigha Zamin, Garm Hava: the actor of the common man.",
+    "at": "rawalpindi",
+    "w": "https://en.wikipedia.org/wiki/Balraj_Sahni"
+   },
+   {
+    "n": "Ramanand Sagar",
+    "b": "Asal Guru Ke, near Lahore · 1917",
+    "p": "Made the television Ramayan (1987) that stopped all of India every Sunday.",
+    "at": "lahore",
+    "w": "https://en.wikipedia.org/wiki/Ramanand_Sagar"
+   },
+   {
+    "n": "Sunil Dutt",
+    "b": "Khurd, Jhelum · 1929",
+    "p": "Mother India. Actor, then minister.",
+    "at": "jhelum",
+    "w": "https://en.wikipedia.org/wiki/Sunil_Dutt"
+   },
+   {
+    "n": "Rajendra Kumar",
+    "b": "Sialkot · 1929",
+    "p": "Jubilee Kumar: so many of his films ran 25 weeks.",
+    "at": "sialkot",
+    "w": "https://en.wikipedia.org/wiki/Rajendra_Kumar"
+   },
+   {
+    "n": "Anand Bakshi",
+    "b": "Rawalpindi · 1930",
+    "p": "Wrote the songs of DDLJ, Pardes, Dil To Pagal Hai and Mohabbatein.",
+    "at": "rawalpindi",
+    "w": "https://en.wikipedia.org/wiki/Anand_Bakshi"
+   },
+   {
+    "n": "Yash Chopra",
+    "b": "Lahore · 1932",
+    "p": "The King of Romance behind the camera. Made Darr, Dil To Pagal Hai, Veer-Zaara and Jab Tak Hai Jaan, his last film.",
+    "at": "lahore",
+    "w": "https://en.wikipedia.org/wiki/Yash_Chopra"
+   },
+   {
+    "n": "Gulzar",
+    "b": "Dina, Jhelum · 1934",
+    "p": "Poet. Wrote Chaiyya Chaiyya for Dil Se..",
+    "at": "jhelum",
+    "w": "https://en.wikipedia.org/wiki/Gulzar"
+   },
+   {
+    "n": "Manoj Kumar",
+    "b": "Abbottabad · 1937",
+    "p": "Bharat Kumar: the patriot of Hindi cinema.",
+    "at": "abbottabad",
+    "w": "https://en.wikipedia.org/wiki/Manoj_Kumar"
+   },
+   {
+    "n": "Vinod Khanna",
+    "b": "Peshawar · 1946",
+    "p": "Born a year before Partition. Superstar, then minister.",
+    "at": "peshawar",
+    "w": "https://en.wikipedia.org/wiki/Vinod_Khanna"
+   },
+   {
+    "n": "Meer Taj Mohammed Khan",
+    "b": "Shah Wali Qatal, Qissa Khwani, Peshawar",
+    "p": "A Pathan and a freedom fighter in India's independence struggle. He made Delhi his home. In 1965 his son was born there: Shah Rukh Khan.",
+    "at": "peshawar",
+    "w": "https://en.wikipedia.org/wiki/Shah_Rukh_Khan",
+    "srk": true
+   }
+  ],
+  "note": "In 2014 Pakistan declared the Peshawar homes of Raj Kapoor and Dilip Kumar national heritage; in 2020 the Khyber Pakhtunkhwa government moved to buy them as museums."
+ },
+ "timeline": [
+  {
+   "y": 1947,
+   "t": "Partition",
+   "d": "The subcontinent is split in two. His father, a Pathan from Peshawar, chooses India."
+  },
+  {
+   "y": 1965,
+   "t": "Born in Delhi",
+   "d": "Shah Rukh Khan is born on 2 November in New Delhi."
+  },
+  {
+   "y": 1981,
+   "t": "His father dies",
+   "d": "Meer Taj Mohammed Khan dies of cancer. Years later the Meer Foundation will carry his name."
+  },
+  {
+   "y": 1988,
+   "t": "Hansraj College",
+   "d": "Graduates in Economics from Hansraj College, Delhi University."
+  },
+  {
+   "y": 1989,
+   "t": "Fauji",
+   "d": "Doordarshan airs Fauji. He plays Abhimanyu Rai, an army commando."
+  },
+  {
+   "y": 1991,
+   "t": "Bombay",
+   "d": "His mother Lateef Fatima dies. He marries Gauri and moves to Bombay."
+  },
+  {
+   "y": 1992,
+   "t": "Deewana",
+   "d": "His first film release. Filmfare Award for Best Male Debut."
+  },
+  {
+   "y": 1993,
+   "t": "The anti-hero",
+   "d": "Baazigar and Darr: the hero is the villain, and India loves him."
+  },
+  {
+   "y": 1995,
+   "t": "DDLJ",
+   "d": "Dilwale Dulhania Le Jayenge. It will play at Mumbai's Maratha Mandir for more than 1,000 weeks."
+  },
+  {
+   "y": 1999,
+   "t": "Dreamz Unlimited",
+   "d": "His first company, with Juhi Chawla and Aziz Mirza."
+  },
+  {
+   "y": 2001,
+   "t": "Mannat",
+   "d": "Buys the sea-facing bungalow in Bandra that becomes Mannat."
+  },
+  {
+   "y": 2002,
+   "t": "Red Chillies",
+   "d": "Red Chillies Entertainment, with Gauri Khan. Devdas releases."
+  },
+  {
+   "y": 2004,
+   "t": "Swades · Veer-Zaara",
+   "d": "And Main Hoon Na, Red Chillies' first production."
+  },
+  {
+   "y": 2005,
+   "t": "Padma Shri",
+   "d": "India's fourth-highest civilian honour."
+  },
+  {
+   "y": 2007,
+   "t": "Chak De! · Om Shanti Om",
+   "d": "And Kaun Banega Crorepati as host."
+  },
+  {
+   "y": 2008,
+   "t": "Kolkata Knight Riders",
+   "d": "Buys the IPL franchise with Juhi Chawla and Jay Mehta."
+  },
+  {
+   "y": 2009,
+   "t": "Newark",
+   "d": "Held for questioning at Newark airport in the US. He says it was because of his name."
+  },
+  {
+   "y": 2010,
+   "t": "My Name Is Khan",
+   "d": "\"My name is Khan, and I am not a terrorist.\""
+  },
+  {
+   "y": 2011,
+   "t": "Ra.One",
+   "d": "Red Chillies VFX builds India's biggest effects film of its time."
+  },
+  {
+   "y": 2012,
+   "t": "First IPL title · the first kiss",
+   "d": "KKR win the IPL. Jab Tak Hai Jaan, Yash Chopra's last film, ends his no-kiss rule."
+  },
+  {
+   "y": 2013,
+   "t": "Meer Foundation",
+   "d": "Named after his father; supports women survivors of acid attacks."
+  },
+  {
+   "y": 2014,
+   "t": "Légion d'honneur",
+   "d": "France makes him a Knight of the Legion of Honour. KKR win again."
+  },
+  {
+   "y": 2015,
+   "t": "Intolerance",
+   "d": "He speaks about rising intolerance. Calls to boycott Dilwale; he is told to go to Pakistan."
+  },
+  {
+   "y": 2018,
+   "t": "Zero",
+   "d": "The film fails. A silence of almost five years begins."
+  },
+  {
+   "y": 2021,
+   "t": "The case",
+   "d": "His family is pulled into a drugs case. In 2022 the agency drops the charges for lack of evidence."
+  },
+  {
+   "y": 2023,
+   "t": "The Return",
+   "d": "Pathaan, Jawan, Dunki. Two of them pass ₹1,000 crore worldwide (reported)."
+  },
+  {
+   "y": 2024,
+   "t": "Locarno · KKR · Hurun",
+   "d": "Career award at Locarno, KKR's third title, and his first place on the Hurun India Rich List."
+  },
+  {
+   "y": 2025,
+   "t": "National Award",
+   "d": "National Film Award for Best Actor (Jawan), his first. Met Gala debut. Hurun lists him a billionaire."
+  },
+  {
+   "y": 2026,
+   "t": "KING",
+   "d": "24 December 2026."
+  }
+ ],
+ "levels": [
+  {
+   "id": "prek",
+   "name": "Pre-K",
+   "title": "Feelings",
+   "pts": 50,
+   "intro": "Before we learn history, we learn feelings. One feeling, one character.",
+   "lessons": [
+    {
+     "t": "What is LOVE",
+     "by": "Raj Malhotra",
+     "film": "Dilwale Dulhania Le Jayenge",
+     "y": 1995,
+     "img": "027",
+     "line": "Love waits. Raj will not run away with Simran: he waits for her father's blessing.",
+     "act": "Draw someone you love, and write what you would wait for.",
+     "q": "In DDLJ, how does Raj want to marry Simran?",
+     "o": [
+      "By running away with her",
+      "With her father's blessing",
+      "He forgets her"
+     ],
+     "a": 1
+    },
+    {
+     "t": "What is HATE",
+     "by": "Rahul Mehra",
+     "film": "Darr",
+     "y": 1993,
+     "img": "020",
+     "line": "Rahul follows Kiran everywhere and frightens her. Wanting someone so much that you scare them is not love.",
+     "act": "Talk about it: how does Kiran feel?",
+     "q": "Rahul in Darr scares Kiran. Is that love?",
+     "o": [
+      "Yes",
+      "No, love never makes someone afraid",
+      "Only sometimes"
+     ],
+     "a": 1
+    },
+    {
+     "t": "What is GOOD",
+     "by": "Mohan Bhargava",
+     "film": "Swades",
+     "y": 2004,
+     "img": "061",
+     "line": "Mohan, a NASA scientist, goes back to an Indian village and gives it light.",
+     "act": "Name one thing you could fix in your street.",
+     "q": "What does Mohan bring to the village of Charanpur?",
+     "o": [
+      "Electricity",
+      "A shopping mall",
+      "A cricket stadium"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is BAD",
+     "by": "Vijay Agnihotri",
+     "film": "Anjaam",
+     "y": 1994,
+     "img": "022",
+     "line": "Vijay hurts Shivani and her family because he wants her. Bad is hurting someone to get what you want.",
+     "act": "Can a hero's face play a bad man? Look at his eyes in this picture.",
+     "q": "What makes Vijay bad?",
+     "o": [
+      "He hurts others to get what he wants",
+      "He is rich",
+      "He sings"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is a FRIEND",
+     "by": "Rahul Khanna",
+     "film": "Kuch Kuch Hota Hai",
+     "y": 1998,
+     "img": "041",
+     "line": "\"Pyaar dosti hai\": love is friendship.",
+     "act": "Make a friendship band for your best friend.",
+     "q": "What does Rahul say love is?",
+     "o": [
+      "Friendship",
+      "Money",
+      "A game"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is HAPPY",
+     "by": "Rahul Mithaiwala",
+     "film": "Chennai Express",
+     "y": 2013,
+     "img": "090",
+     "line": "He gets on the wrong train and finds the adventure of his life. Even a wrong train can take you to the right place.",
+     "act": "Tell a story about a mistake that turned out well.",
+     "q": "Rahul is on the wrong train. What happens?",
+     "o": [
+      "He has the adventure of his life",
+      "He goes home and sleeps",
+      "Nothing happens"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is SAD",
+     "by": "Aman Mathur",
+     "film": "Kal Ho Naa Ho",
+     "y": 2003,
+     "img": "057",
+     "line": "Aman knows his heart is weak. He spends his time making everyone around him smile.",
+     "act": "Do one thing today to make someone smile.",
+     "q": "Aman knows he is very ill. What does he do?",
+     "o": [
+      "Makes the people around him happy",
+      "Stays angry",
+      "Hides in his room"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is SCARED",
+     "by": "The Ghost",
+     "film": "Paheli",
+     "y": 2005,
+     "img": "065b",
+     "line": "A ghost falls in love and gently takes a man's shape. Not everything that looks scary is bad.",
+     "act": "Draw a friendly ghost.",
+     "q": "Is everything that looks scary bad?",
+     "o": [
+      "Yes",
+      "No",
+      "Only ghosts"
+     ],
+     "a": 1
+    }
+   ]
+  },
+  {
+   "id": "kg",
+   "name": "KG",
+   "title": "Right and Wrong",
+   "pts": 50,
+   "intro": "The same face, many choices. Every choice is a lesson.",
+   "lessons": [
+    {
+     "t": "What is BRAVE",
+     "by": "Abhimanyu Rai",
+     "film": "Fauji",
+     "y": 1989,
+     "img": "001",
+     "line": "His first role on television: a young commando in training. Brave is standing up for your country.",
+     "act": "Salute like a soldier.",
+     "q": "In Fauji, what does Abhimanyu join?",
+     "o": [
+      "The Indian Army",
+      "A circus",
+      "A cricket team"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is a TEAM",
+     "by": "Kabir Khan",
+     "film": "Chak De! India",
+     "y": 2007,
+     "img": "070",
+     "line": "The girls introduce themselves by their states. Kabir wants to hear only one name: India.",
+     "act": "Play a game where nobody wins alone.",
+     "q": "What name does Kabir Khan want his players to call their team?",
+     "o": [
+      "Their state",
+      "India",
+      "Their village"
+     ],
+     "a": 1
+    },
+    {
+     "t": "What is a NAME",
+     "by": "Rizwan Khan",
+     "film": "My Name Is Khan",
+     "y": 2010,
+     "img": "081",
+     "line": "Rizwan walks across America to tell the President one sentence: my name is Khan, and I am not a terrorist.",
+     "act": "Write your name. Say one good thing it means.",
+     "q": "What does Rizwan want to tell the President?",
+     "o": [
+      "That he is not a terrorist",
+      "That he wants money",
+      "That he is a cricketer"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is BELONGING",
+     "by": "Veer Pratap Singh",
+     "film": "Veer-Zaara",
+     "y": 2004,
+     "img": "060",
+     "line": "An Indian pilot spends 22 years in a Pakistani jail and never stops loving. Love has no border.",
+     "act": "Draw your home, and the people in it.",
+     "q": "How many years does Veer spend in jail?",
+     "o": [
+      "22 years",
+      "2 days",
+      "2 years"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is REVENGE",
+     "by": "Ajay Sharma",
+     "film": "Baazigar",
+     "y": 1993,
+     "img": "019",
+     "line": "Ajay takes revenge for his family, and revenge takes him. Revenge eats the one who carries it.",
+     "act": "Talk about it: when someone hurts you, what else can you do?",
+     "q": "What happens to Ajay at the end of Baazigar?",
+     "o": [
+      "He loses his life",
+      "He becomes a king",
+      "He goes on holiday"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is WAR and PEACE",
+     "by": "Asoka",
+     "film": "Asoka",
+     "y": 2001,
+     "img": "050",
+     "line": "The emperor wins at Kalinga, sees the dead, and chooses peace.",
+     "act": "Make a peace sign with both hands.",
+     "q": "After the war of Kalinga, what did Asoka choose?",
+     "o": [
+      "Peace",
+      "More war",
+      "To sleep"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is a DREAM",
+     "by": "Om Prakash Makhija",
+     "film": "Om Shanti Om",
+     "y": 2007,
+     "img": "072a",
+     "line": "A junior artist who dreams of being a star. Want something with your whole heart and the whole universe works to give it to you.",
+     "act": "Draw your biggest dream.",
+     "q": "What is Om Prakash Makhija's job?",
+     "o": [
+      "A junior artist",
+      "A doctor",
+      "A pilot"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is FAMILY",
+     "by": "Rahul Raichand",
+     "film": "Kabhi Khushi Kabhie Gham",
+     "y": 2001,
+     "img": "051",
+     "line": "Sent away from home, he is brought back by his little brother. Family is coming home, however long it takes.",
+     "act": "Hug someone in your family.",
+     "q": "Who brings Rahul back home?",
+     "o": [
+      "His younger brother Rohan",
+      "A policeman",
+      "Nobody"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is JUSTICE",
+     "by": "Azad Rathore",
+     "film": "Jawan",
+     "y": 2023,
+     "img": "113a",
+     "line": "He stops a metro train and makes the powerful pay what the farmers owe.",
+     "act": "Talk about it: is it fair when the strong win and the weak lose?",
+     "q": "What does Azad demand when he takes the metro train?",
+     "o": [
+      "Money to clear farmers' loans",
+      "A free car",
+      "A film role"
+     ],
+     "a": 0
+    },
+    {
+     "t": "What is a GOOD LISTENER",
+     "by": "Dr. Jehangir Khan",
+     "film": "Dear Zindagi",
+     "y": 2016,
+     "img": "098",
+     "line": "Dr. Jug helps Kaira by listening. It is fine to cry, and fine to talk.",
+     "act": "Listen to a friend for one whole minute without talking.",
+     "q": "How does Dr. Jug help Kaira?",
+     "o": [
+      "By listening to her",
+      "By shouting",
+      "By ignoring her"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "primary",
+   "name": "Grades 1–5",
+   "title": "The Storytellers' Bazaar, the Map and the Timeline",
+   "pts": 100,
+   "intro": "Where did he come from? Where did the storytellers come from? Learn the map and the dates.",
+   "lessons": [
+    {
+     "t": "The Storytellers' Bazaar",
+     "by": "Peshawar",
+     "film": "1947",
+     "y": 1947,
+     "img": "",
+     "line": "Qissa Khwani Bazaar in Peshawar: the market of storytellers. Dilip Kumar and Raj Kapoor were born there, and his father came from there.",
+     "act": "Find Peshawar on a map.",
+     "q": "What does Qissa Khwani mean?",
+     "o": [
+      "The market of storytellers",
+      "The market of spices",
+      "The king's palace"
+     ],
+     "a": 0
+    },
+    {
+     "t": "His father",
+     "by": "Meer Taj Mohammed Khan",
+     "film": "Peshawar to Delhi",
+     "y": 1947,
+     "img": "",
+     "line": "A Pathan from Peshawar, a freedom fighter for India, who made Delhi his home.",
+     "act": "Ask an elder where your family came from.",
+     "q": "Where was his father from?",
+     "o": [
+      "Peshawar",
+      "London",
+      "Chennai"
+     ],
+     "a": 0
+    },
+    {
+     "t": "Born in Delhi",
+     "by": "2 November 1965",
+     "film": "New Delhi",
+     "y": 1965,
+     "img": "",
+     "line": "Born on 2 November 1965, in New Delhi.",
+     "act": "Draw a birthday cake with 61 candles. Count them.",
+     "q": "Which city was he born in?",
+     "o": [
+      "New Delhi",
+      "Mumbai",
+      "Peshawar"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The first role",
+     "by": "Abhimanyu Rai",
+     "film": "Fauji",
+     "y": 1989,
+     "img": "001",
+     "line": "Doordarshan, 1989. A boy from Delhi in an army uniform.",
+     "act": "Name a TV show your parents watched.",
+     "q": "What was his first TV show on air?",
+     "o": [
+      "Fauji",
+      "KBC",
+      "Ramayan"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The first film",
+     "by": "Raja Sahay",
+     "film": "Deewana",
+     "y": 1992,
+     "img": "011",
+     "line": "His first film release, and his first Filmfare award.",
+     "act": "Count: how many years from Deewana (1992) to KING (2026)?",
+     "q": "Which was his first film to release?",
+     "o": [
+      "Deewana",
+      "DDLJ",
+      "Pathaan"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The house by the sea",
+     "by": "Mannat",
+     "film": "Bandra, Mumbai",
+     "y": 2001,
+     "img": "",
+     "line": "Mannat means a wish made to God. Every birthday, thousands of fans stand outside.",
+     "act": "What would you name your house?",
+     "q": "What is his house in Mumbai called?",
+     "o": [
+      "Mannat",
+      "Jalsa",
+      "Antilia"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The famous friend",
+     "by": "Sahir Khan",
+     "film": "Billu",
+     "y": 2009,
+     "img": "079",
+     "line": "A superstar who never forgets his poor childhood friend, the village barber. A friend is a friend, however famous you become.",
+     "act": "Write a letter to an old friend.",
+     "q": "In Billu, what is Billu's job?",
+     "o": [
+      "Barber",
+      "Pilot",
+      "Teacher"
+     ],
+     "a": 0
+    },
+    {
+     "t": "118 and counting",
+     "by": "The Alter Egos",
+     "film": "1988–2026",
+     "y": 2026,
+     "img": "118",
+     "line": "From Fauji to KING: 118 films and shows, one close-up each, on the Alter Egos page.",
+     "act": "Pick your 3 favourite characters on the Alter Egos page.",
+     "q": "Which is the newest film in the Alter Egos?",
+     "o": [
+      "KING",
+      "Fauji",
+      "DDLJ"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "middle",
+   "name": "Grades 6–8",
+   "title": "The Eras",
+   "pts": 100,
+   "intro": "We learn the Mughals ruler by ruler. We learn the King era by era.",
+   "lessons": [
+    {
+     "t": "The Television Years · 1988–1991",
+     "by": "Abhimanyu, Shekharan",
+     "film": "Fauji, Circus",
+     "y": 1989,
+     "img": "003",
+     "line": "A Delhi theatre boy on Doordarshan. No godfather, no film family.",
+     "act": "List what he did not have when he started.",
+     "q": "Who directed Circus, his TV serial? (Hint: also directed Phir Bhi Dil Hai Hindustani)",
+     "o": [
+      "Aziz Mirza",
+      "Yash Chopra",
+      "Karan Johar"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Anti-Hero Era · 1993–1994",
+     "by": "Ajay, Rahul, Vijay",
+     "film": "Baazigar, Darr, Anjaam",
+     "y": 1993,
+     "img": "020",
+     "line": "Every big star refused to play the villain. He took the villains and made India love them.",
+     "act": "Discuss: why did audiences love him as a villain?",
+     "q": "Which 1993 Yash Chopra film made him the stalker?",
+     "o": [
+      "Darr",
+      "Baazigar",
+      "Anjaam"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Romance Empire · 1995–2004",
+     "by": "Raj, Rahul, Aman, Veer",
+     "film": "DDLJ to Veer-Zaara",
+     "y": 1995,
+     "img": "027",
+     "line": "For ten years he ruled love. The NRI hero, the open arms, the mustard fields.",
+     "act": "Make a list of five love songs of this era.",
+     "q": "Which film ran more than 1,000 weeks at Maratha Mandir?",
+     "o": [
+      "Dilwale Dulhania Le Jayenge",
+      "Kuch Kuch Hota Hai",
+      "Mohabbatein"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Experiments · 2001–2007",
+     "by": "Asoka, Mohan, Kabir",
+     "film": "Asoka, Swades, Paheli, Chak De!",
+     "y": 2004,
+     "img": "070",
+     "line": "At the top of the empire he risked it: an emperor, a scientist, a ghost's lover, a disgraced coach.",
+     "act": "Pick the bravest choice of this era and explain why.",
+     "q": "In which film is he a disgraced hockey coach?",
+     "o": [
+      "Chak De! India",
+      "Swades",
+      "Asoka"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Owner's Age · 2007–2013",
+     "by": "Om, G.One, Don",
+     "film": "Om Shanti Om, Ra.One, Don 2, Chennai Express",
+     "y": 2011,
+     "img": "085b",
+     "line": "Red Chillies grows: films, VFX, cricket. The actor is now the owner.",
+     "act": "Draw the logo of your own company.",
+     "q": "Which IPL team does he own?",
+     "o": [
+      "Kolkata Knight Riders",
+      "Mumbai Indians",
+      "Chennai Super Kings"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Questions · 2014–2018",
+     "by": "Charlie, Gaurav, Raees, Bauua",
+     "film": "Happy New Year, Fan, Raees, Zero",
+     "y": 2016,
+     "img": "096b",
+     "line": "The darker roles, the 2015 intolerance storm, and Zero's failure.",
+     "act": "Discuss: what does Fan say about fans like us?",
+     "q": "In Fan, Gaurav is a fan of which star?",
+     "o": [
+      "Aryan Khanna",
+      "Raj Malhotra",
+      "Rahul Khanna"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Silence · 2018–2022",
+     "by": "Nobody",
+     "film": "No film",
+     "y": 2020,
+     "img": "",
+     "line": "Almost five years without a lead role. The world said he was finished.",
+     "act": "Write what you think he did in those five years.",
+     "q": "Which film came before the silence?",
+     "o": [
+      "Zero",
+      "Pathaan",
+      "Dunki"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Return · 2023",
+     "by": "Pathaan, Azad, Hardy",
+     "film": "Pathaan, Jawan, Dunki",
+     "y": 2023,
+     "img": "111",
+     "line": "Three films in one year. The biggest comeback in Hindi cinema.",
+     "act": "Compare the three heroes of 2023.",
+     "q": "Which 2023 film is about crossing borders by the 'donkey route'?",
+     "o": [
+      "Dunki",
+      "Jawan",
+      "Pathaan"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "boards",
+   "name": "Grades 9–10 · Boards",
+   "title": "The Business of the King",
+   "pts": 150,
+   "intro": "How a salaried actor moved up the food chain and became the owner.",
+   "lessons": [
+    {
+     "t": "1 · The Worker",
+     "by": "TV actor",
+     "film": "Fauji, Circus",
+     "y": 1989,
+     "img": "001",
+     "line": "Paid per episode. Start where you are.",
+     "act": "",
+     "q": "Where did he start?",
+     "o": [
+      "Television",
+      "Cricket",
+      "Radio"
+     ],
+     "a": 0
+    },
+    {
+     "t": "2 · The Star",
+     "by": "Paid per film",
+     "film": "Deewana to DDLJ",
+     "y": 1995,
+     "img": "027",
+     "line": "Build the name first.",
+     "act": "",
+     "q": "In stage 2, how is he paid?",
+     "o": [
+      "Per film",
+      "Per ticket",
+      "Not at all"
+     ],
+     "a": 0
+    },
+    {
+     "t": "3 · The Face",
+     "by": "Brand ambassador",
+     "film": "Pepsi, Hyundai, Lux, TAG Heuer",
+     "y": 1998,
+     "img": "",
+     "line": "His face becomes an asset that sells cars, cola and soap.",
+     "act": "",
+     "q": "What is the asset in stage 3?",
+     "o": [
+      "His face",
+      "His car",
+      "His house"
+     ],
+     "a": 0
+    },
+    {
+     "t": "4 · The Partner",
+     "by": "Dreamz Unlimited",
+     "film": "Phir Bhi Dil Hai Hindustani",
+     "y": 1999,
+     "img": "043",
+     "line": "His first company. Its first film failed. First risk, first loss.",
+     "act": "",
+     "q": "Who were his partners in Dreamz Unlimited?",
+     "o": [
+      "Juhi Chawla and Aziz Mirza",
+      "Yash and Aditya Chopra",
+      "Karan Johar"
+     ],
+     "a": 0
+    },
+    {
+     "t": "5 · The Owner",
+     "by": "Red Chillies Entertainment",
+     "film": "Main Hoon Na",
+     "y": 2004,
+     "img": "059",
+     "line": "Own what you make.",
+     "act": "",
+     "q": "Which was Red Chillies' first production?",
+     "o": [
+      "Main Hoon Na",
+      "Jawan",
+      "Don"
+     ],
+     "a": 0
+    },
+    {
+     "t": "6 · The Builder",
+     "by": "Red Chillies VFX",
+     "film": "Ra.One",
+     "y": 2011,
+     "img": "085b",
+     "line": "Own the tools, not just the story.",
+     "act": "",
+     "q": "Which film built up Red Chillies VFX?",
+     "o": [
+      "Ra.One",
+      "Devdas",
+      "Swades"
+     ],
+     "a": 0
+    },
+    {
+     "t": "7 · The Host",
+     "by": "Television host",
+     "film": "KBC, Paanchvi Pass, TED Talks India",
+     "y": 2007,
+     "img": "103",
+     "line": "Diversify.",
+     "act": "",
+     "q": "Which quiz show did he host in 2007?",
+     "o": [
+      "Kaun Banega Crorepati",
+      "Bigg Boss",
+      "Indian Idol"
+     ],
+     "a": 0
+    },
+    {
+     "t": "8 · The Franchise King",
+     "by": "Kolkata Knight Riders",
+     "film": "IPL 2012, 2014, 2024",
+     "y": 2008,
+     "img": "",
+     "line": "Fandom works beyond film. Bought in 2008 for about $75 million with Juhi Chawla and Jay Mehta.",
+     "act": "",
+     "q": "How many IPL titles have KKR won?",
+     "o": [
+      "3",
+      "1",
+      "5"
+     ],
+     "a": 0
+    },
+    {
+     "t": "9 · The Global Owner",
+     "by": "Knight Riders",
+     "film": "Trinbago, Los Angeles, Abu Dhabi",
+     "y": 2015,
+     "img": "",
+     "line": "One brand, many countries.",
+     "act": "",
+     "q": "Which is NOT a Knight Riders team?",
+     "o": [
+      "London Knight Riders",
+      "Trinbago Knight Riders",
+      "Los Angeles Knight Riders"
+     ],
+     "a": 0
+    },
+    {
+     "t": "10 · The Billionaire",
+     "by": "Hurun India Rich List",
+     "film": "2024, 2025",
+     "y": 2025,
+     "img": "",
+     "line": "₹7,300 crore in 2024; a billionaire in 2025 (per Hurun). The outsider owns the system.",
+     "act": "",
+     "q": "Which list counted him a billionaire in 2025?",
+     "o": [
+      "Hurun India Rich List",
+      "The Oscars",
+      "The IPL table"
+     ],
+     "a": 0
+    },
+    {
+     "t": "11 · The Comeback CEO",
+     "by": "Producer and star",
+     "film": "Jawan",
+     "y": 2023,
+     "img": "113b",
+     "line": "A flop is not the end. Own the return.",
+     "act": "",
+     "q": "Which 2023 film did Red Chillies produce?",
+     "o": [
+      "Jawan",
+      "Pathaan",
+      "Tiger 3"
+     ],
+     "a": 0
+    },
+    {
+     "t": "12 · KING",
+     "by": "Red Chillies with Marflix",
+     "film": "KING",
+     "y": 2026,
+     "img": "118",
+     "line": "24 December 2026.",
+     "act": "",
+     "q": "When does KING release?",
+     "o": [
+      "24 December 2026",
+      "2 November 2026",
+      "1 January 2027"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "streams",
+   "name": "Grades 11–12 · Streams",
+   "title": "Arts, Commerce, Science",
+   "pts": 150,
+   "intro": "Choose your stream. Every stream studies the same man.",
+   "lessons": [
+    {
+     "t": "Arts · The open arms",
+     "by": "Raj, Rahul",
+     "film": "the signature pose",
+     "y": 1995,
+     "img": "027",
+     "line": "One gesture became a nation's sign for love. Practise it in BAAHEIN KHOL.",
+     "act": "Strike the pose in BAAHEIN KHOL.",
+     "q": "What is the famous signature pose?",
+     "o": [
+      "Arms stretched wide",
+      "Arms folded",
+      "Hands in pockets"
+     ],
+     "a": 0
+    },
+    {
+     "t": "Arts · Dialogue as literature",
+     "by": "Om Kapoor",
+     "film": "Om Shanti Om",
+     "y": 2007,
+     "img": "072b",
+     "line": "His lines are quoted like poetry: the universe that conspires, the name that is Khan, the picture that is not over yet.",
+     "act": "Write your favourite line of his and why.",
+     "q": "Which film has the line about the whole universe conspiring?",
+     "o": [
+      "Om Shanti Om",
+      "Darr",
+      "Swades"
+     ],
+     "a": 0
+    },
+    {
+     "t": "Commerce · The campaign",
+     "by": "G.One",
+     "film": "Ra.One",
+     "y": 2011,
+     "img": "085b",
+     "line": "Ra.One was sold like no Indian film before: games, merch, the digital first.",
+     "act": "Plan a campaign for a film you love.",
+     "q": "What did the Ra.One campaign lead with?",
+     "o": [
+      "Digital and games",
+      "Only newspapers",
+      "Nothing"
+     ],
+     "a": 0
+    },
+    {
+     "t": "Commerce · The diaspora market",
+     "by": "Raj, Rahul",
+     "film": "DDLJ, Pardes, K3G",
+     "y": 1997,
+     "img": "036",
+     "line": "The Indian abroad became the market: London, New York, Dubai.",
+     "act": "Name three cities outside India where his films are huge.",
+     "q": "Who was the NRI hero aimed at?",
+     "o": [
+      "Indians living abroad",
+      "Only villages",
+      "Only children"
+     ],
+     "a": 0
+    },
+    {
+     "t": "Science · The machine",
+     "by": "Shekhar, G.One",
+     "film": "Ra.One",
+     "y": 2011,
+     "img": "085a",
+     "line": "A game designer creates a villain that escapes into the real world. In 2011 it was fiction.",
+     "act": "Discuss: which part of Ra.One is real today?",
+     "q": "In Ra.One, what does Shekhar design?",
+     "o": [
+      "A video game",
+      "A car",
+      "A building"
+     ],
+     "a": 0
+    },
+    {
+     "t": "Science · The face",
+     "by": "The Inquilaab",
+     "film": "#FreeMyFace",
+     "y": 2026,
+     "img": "",
+     "line": "Machines can now copy a face, a voice and a name. Who owns his?",
+     "act": "Read the Inquilaab page.",
+     "q": "Which hashtag is the fans' answer?",
+     "o": [
+      "#FreeMyFace",
+      "#BuyMyFace",
+      "#HideMyFace"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "ba",
+   "name": "BA",
+   "title": "Humanity, through the Alter Egos",
+   "pts": 200,
+   "intro": "118 characters cover almost every kind of person. Each one is a chapter of what it means to be human.",
+   "lessons": [
+    {
+     "t": "The Lover",
+     "by": "Raj",
+     "film": "DDLJ",
+     "y": 1995,
+     "img": "027",
+     "line": "Love that honours family. Impact: the NRI romance template.",
+     "act": "",
+     "q": "What does Raj honour in his love?",
+     "o": [
+      "Family",
+      "Money",
+      "Fame"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Obsessed",
+     "by": "Rahul",
+     "film": "Darr",
+     "y": 1993,
+     "img": "020",
+     "line": "When love becomes fear. Impact: the hero could now be the villain.",
+     "act": "",
+     "q": "Darr shows love turning into what?",
+     "o": [
+      "Fear",
+      "Friendship",
+      "Business"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Self-Destroyer",
+     "by": "Devdas Mukherjee",
+     "film": "Devdas",
+     "y": 2002,
+     "img": "053",
+     "line": "Pride and grief, slowly. A classic tragedy for a new generation.",
+     "act": "",
+     "q": "Devdas is based on whose novel?",
+     "o": [
+      "Sarat Chandra Chattopadhyay",
+      "Premchand",
+      "Tagore"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Outsider",
+     "by": "Rizwan",
+     "film": "My Name Is Khan",
+     "y": 2010,
+     "img": "081",
+     "line": "Judged by his name. After 9/11 the line was heard around the world.",
+     "act": "",
+     "q": "Rizwan has which condition?",
+     "o": [
+      "Asperger's syndrome",
+      "Amnesia",
+      "Blindness"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Immigrant",
+     "by": "Hardy",
+     "film": "Dunki",
+     "y": 2023,
+     "img": "115",
+     "line": "The price of leaving home. Put the 'donkey route' into public talk.",
+     "act": "",
+     "q": "Where do Hardy's friends want to go?",
+     "o": [
+      "London",
+      "Paris",
+      "Tokyo"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Returner",
+     "by": "Mohan",
+     "film": "Swades",
+     "y": 2004,
+     "img": "061",
+     "line": "Coming home to build.",
+     "act": "",
+     "q": "Where does Mohan work before he returns?",
+     "o": [
+      "NASA",
+      "A bank",
+      "A hospital"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Dreamer",
+     "by": "Om",
+     "film": "Om Shanti Om",
+     "y": 2007,
+     "img": "072a",
+     "line": "The junior artist who wants it all: the outsider's anthem.",
+     "act": "",
+     "q": "Om Shanti Om is set first in which decade?",
+     "o": [
+      "The 1970s",
+      "The 1990s",
+      "The 1940s"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Different",
+     "by": "Bauua Singh",
+     "film": "Zero",
+     "y": 2018,
+     "img": "104",
+     "line": "A short man with a tall heart: a disabled hero as the lead.",
+     "act": "",
+     "q": "What is Bauua's height in the story?",
+     "o": [
+      "Short (a man with dwarfism)",
+      "Very tall",
+      "Average"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Fan",
+     "by": "Gaurav Chandna",
+     "film": "Fan",
+     "y": 2016,
+     "img": "096b",
+     "line": "Worship that turns into possession. Fandom looking into a mirror.",
+     "act": "Discuss: where does a fan's love end?",
+     "q": "Gaurav looks like which star in the film?",
+     "o": [
+      "Aryan Khanna",
+      "Raj Aryan",
+      "Kabir Khan"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Father",
+     "by": "Vikram Rathore",
+     "film": "Jawan",
+     "y": 2023,
+     "img": "113b",
+     "line": "The protector. The film asks voters to ask questions.",
+     "act": "",
+     "q": "In Jawan, Vikram is Azad's what?",
+     "o": [
+      "Father",
+      "Brother",
+      "Friend"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Common Man",
+     "by": "Raj Mathur",
+     "film": "Raju Ban Gaya Gentleman",
+     "y": 1992,
+     "img": "013",
+     "line": "The small-town boy in the big city. Millions of migrants saw themselves.",
+     "act": "",
+     "q": "Where does Raju come from?",
+     "o": [
+      "Darjeeling",
+      "London",
+      "Delhi"
+     ],
+     "a": 0
+    },
+    {
+     "t": "The Shut-Out",
+     "by": "Charlie",
+     "film": "Happy New Year",
+     "y": 2014,
+     "img": "093",
+     "line": "\"Iss shahar mein mehnat se legally kamane ka har darwaza mere liye bandh hota gaya.\" Every honest door in the city closed on him. Is a bad man born, or made? Charlie, Raees, Ajay and Azad all took the wrong road: did they choose it, or was it chosen for them?",
+     "act": "Rank Charlie, Raees, Ajay and Azad from most right to most wrong, and defend your ranking.",
+     "q": "What closes for Charlie, in his own line?",
+     "o": [
+      "Every door to an honest living",
+      "The airport",
+      "The bank on Sundays"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "pg",
+   "name": "Post Grad",
+   "title": "MA · MBA · MSc · M.Phil",
+   "pts": 300,
+   "intro": "Specialise. Each degree has its core paper and its ethics.",
+   "lessons": [
+    {
+     "t": "MA · The Muslim hero in Hindi cinema",
+     "by": "Dilip Kumar to Shah Rukh Khan",
+     "film": "1944–2026",
+     "y": 1944,
+     "img": "",
+     "line": "Yusuf Khan took the screen name Dilip Kumar for his debut, Jwar Bhata (1944). Fifty years later a Khan kept his own name and became the biggest star of all.",
+     "act": "Essay: what changed between 1944 and 1995?",
+     "q": "What was Dilip Kumar's birth name?",
+     "o": [
+      "Yusuf Khan",
+      "Ashok Kumar",
+      "Badruddin Kazi"
+     ],
+     "a": 0
+    },
+    {
+     "t": "MBA · Ethics of the face",
+     "by": "The ad debates",
+     "film": "Fairness creams, pan masala, gaming",
+     "y": 2020,
+     "img": "",
+     "line": "Should a star sell fairness? What does a role model owe the fans who copy him? Present both sides; the student decides.",
+     "act": "Debate: one side for, one against.",
+     "q": "Which endorsement debate is about skin colour?",
+     "o": [
+      "Fairness creams",
+      "Cars",
+      "Watches"
+     ],
+     "a": 0
+    },
+    {
+     "t": "MBA · What he built",
+     "by": "Meer Foundation",
+     "film": "2013",
+     "y": 2013,
+     "img": "",
+     "line": "Named after his father. Supports women survivors of acid attacks.",
+     "act": "",
+     "q": "Who is the Meer Foundation named after?",
+     "o": [
+      "His father",
+      "His school",
+      "His first film"
+     ],
+     "a": 0
+    },
+    {
+     "t": "MSc · The star and the machine",
+     "by": "Inquilaab",
+     "film": "#FreeMyFace #FreeMyVoice #FreeMyName",
+     "y": 2026,
+     "img": "",
+     "line": "Can Big Tech train machines on a face without asking? The fans' revolt against celebrity persona theft.",
+     "act": "Read the Inquilaab anthem.",
+     "q": "What does #FreeMyFace fight?",
+     "o": [
+      "Celebrity persona theft by Big Tech",
+      "Bad haircuts",
+      "Ticket prices"
+     ],
+     "a": 0
+    },
+    {
+     "t": "M.Phil · Mannat, the pilgrimage",
+     "by": "The balcony",
+     "film": "2007–2026",
+     "y": 2026,
+     "img": "",
+     "line": "Every 2 November the fans gather; he waves from Mannat. On his 61st he walked out at nightfall to a platform built for the moment.",
+     "act": "Field study: interview one fan who has stood outside Mannat.",
+     "q": "On which date do fans gather outside Mannat?",
+     "o": [
+      "2 November",
+      "15 August",
+      "25 December"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "phd",
+   "name": "PhD",
+   "title": "The King and Power",
+   "pts": 500,
+   "intro": "Opinion papers for literature, social justice and political science scholars. Each is a HYPOTHESIS: the public record, a counter-reading, and the question you must answer. Take your position and defend it.",
+   "lessons": [
+    {
+     "t": "THE NAME · being called a terrorist",
+     "by": "Rizwan, Kabir, Veer, Pathaan",
+     "film": "1947–2026",
+     "y": 2009,
+     "img": "081",
+     "kind": "phd",
+     "line": "His father was a Pathan from Peshawar who fought for India's freedom and chose India. His son was held at Newark in 2009 for his name, and in 2015 an Indian politician compared him to a terrorist and told him to go to Pakistan. His films told his own story: Rizwan ('I am not a terrorist'), Kabir Khan (the Muslim captain called a traitor after a loss to Pakistan), Veer (22 years in a Pakistani jail), Pathaan (his own people's name, worn by India's spy).",
+     "counter": "A star's roles are chosen by scripts and markets, not by his wounds.",
+     "ask": "What does it do to a man to prove his loyalty for 35 years? Is grace a form of courage?",
+     "q": "Where is Qissa Khwani Bazaar, his father's home?",
+     "o": [
+      "Peshawar",
+      "Lahore",
+      "Delhi"
+     ],
+     "a": 0
+    },
+    {
+     "t": "H1 · KRISHNA, the lover-god",
+     "by": "Raj, Rahul",
+     "film": "DDLJ, Dil To Pagal Hai, KKHH, Mohabbatein, Veer-Zaara",
+     "y": 1997,
+     "img": "037",
+     "kind": "phd",
+     "line": "For twenty years India read him as Krishna: the eternal lover, the open arms, love as leela, many gopis (Simran, Anjali, Pooja, Zaara).",
+     "counter": "The romantic hero is a genre, not a god.",
+     "ask": "Did a Muslim man become India's Krishna? What does that say about the India of 1995–2010?",
+     "q": "In Dil To Pagal Hai, what is his character's name?",
+     "o": [
+      "Rahul",
+      "Raj",
+      "Aman"
+     ],
+     "a": 0
+    },
+    {
+     "t": "H2 · KAMA, the poster child of desire",
+     "by": "Samar Anand",
+     "film": "Jab Tak Hai Jaan",
+     "y": 2012,
+     "img": "087",
+     "kind": "phd",
+     "line": "The land of the Kamasutra made him its face of desire, yet he refused to kiss on screen for twenty years. The kiss came in 2012, in Yash Chopra's last film.",
+     "counter": "The no-kiss rule was personal, not a statement about India.",
+     "ask": "Desire without the kiss: restraint, business, or India's own contradiction?",
+     "q": "In which film did he first kiss on screen?",
+     "o": [
+      "Jab Tak Hai Jaan",
+      "DDLJ",
+      "Devdas"
+     ],
+     "a": 0
+    },
+    {
+     "t": "H3 · RAM KA CHOLA, the robe he had to wear",
+     "by": "Pathaan",
+     "film": "Pathaan, Jawan, Dunki",
+     "y": 2023,
+     "img": "111",
+     "kind": "phd",
+     "line": "After the 2015 intolerance storm, the boycott calls against Dilwale, the silence after Zero, and the 'Besharam Rang' saffron outrage before Pathaan, the lover returned wearing Ram's robe: the soldier, the protector, the patriot, and visits to Vaishno Devi before each 2023 release. Krishna became Ram.",
+     "counter": "A star at 57 chooses action; faith and strategy are his own, not forced.",
+     "ask": "Was the chola chosen or forced? Krishna to Ram: evolution or survival?",
+     "q": "Which Pathaan song set off the saffron outrage in December 2022?",
+     "o": [
+      "Besharam Rang",
+      "Jhoome Jo Pathaan",
+      "Chaleya"
+     ],
+     "a": 0
+    },
+    {
+     "t": "H4 · THE PRESSURE HYPOTHESIS",
+     "by": "The state and the star",
+     "film": "2021–2023",
+     "y": 2021,
+     "img": "",
+     "kind": "phd",
+     "line": "Public record: in 2021 his family was pulled into a drugs case; in 2022 the agency dropped the charges for lack of evidence; in 2023 the CBI registered a case against the officer who led the raid, alleging a ₹25 crore extortion demand from the family (allegations, under investigation).",
+     "counter": "One officer's alleged conduct is not a system.",
+     "ask": "When the state's own investigators are accused of trying to extort the country's biggest star, is the King the most powerful man in the room, or the most vulnerable?",
+     "q": "In 2022, why were the charges dropped?",
+     "o": [
+      "Lack of evidence",
+      "A court order to reopen",
+      "A confession"
+     ],
+     "a": 0
+    },
+    {
+     "t": "Comparative · leaders under pressure",
+     "by": "Dilip Kumar, Muhammad Ali, Ashoka",
+     "film": "Silence as resistance",
+     "y": 2023,
+     "img": "050",
+     "kind": "phd",
+     "line": "Dilip Kumar took a Hindu screen name. Muhammad Ali refused the draft, lost his title and came back as The Greatest. Ashoka chose dhamma after Kalinga. Shah Rukh Khan answered boycotts, silence and a family case with the biggest year in Hindi cinema, and said nothing.",
+     "counter": "Silence can also be fear.",
+     "ask": "He never answered his critics with words, only with box office. Is silence a form of resistance?",
+     "q": "Who refused the Vietnam draft and lost his title?",
+     "o": [
+      "Muhammad Ali",
+      "Mike Tyson",
+      "Pele"
+     ],
+     "a": 0
+    }
+   ]
+  }
+ ],
+ "mock": {
+  "title": "THE MAN IN MANNAT",
+  "kicker": "A mockumentary · an alternate history",
+  "lede": "In our world, the King became King through love. In this world, he was made. Every FACT box is real history. Every FILE is invented. To open the next file, you must know the real history.",
+  "files": [
+   {
+    "no": "001",
+    "y": "1895",
+    "code": "OPERATION LANTERN",
+    "fact": "On 28 December 1895 the Lumière brothers held the first paid film screening in Paris. Within twenty years governments were making war propaganda on film.",
+    "file": "The camera was never built for entertainment. It was built to watch. The Bureau, a society of watchers with members in every capital, gave the world cinema as a gift so that the world would sit still in the dark and look where it was told. Their first rule: [[a face on a screen moves more people than an army]].",
+    "q": "In which city was the first paid film screening?",
+    "o": [
+     "Paris",
+     "Bombay",
+     "London"
+    ],
+    "a": 0
+   },
+   {
+    "no": "002",
+    "y": "1944",
+    "code": "THE NAME",
+    "fact": "Yusuf Khan, born in Qissa Khwani Bazaar, made his debut in Jwar Bhata (1944) under the screen name Dilip Kumar.",
+    "file": "The Bureau's first lesson in faces: a nation will love a man more easily if it can [[forget where he came from]]. Yusuf became Dilip. The file notes he never forgot. Fifty years later another Khan would refuse to change his name, and the Bureau would spend thirty years [[making him pay for it]].",
+    "q": "What was Dilip Kumar's birth name?",
+    "o": [
+     "Yusuf Khan",
+     "Yusuf Pathan",
+     "Mehboob Khan"
+    ],
+    "a": 0
+   },
+   {
+    "no": "003",
+    "y": "1947",
+    "code": "OPERATION QISSA",
+    "fact": "The India–Pakistan border was drawn by Cyril Radcliffe, a British lawyer who had never been to India, in about five weeks. Dilip Kumar and Raj Kapoor were born in Peshawar's Qissa Khwani, the Storytellers' Bazaar.",
+    "file": "In this history, the line was not drawn by a lawyer. It was drawn by the Bureau, around one bazaar. They had studied the Storytellers' Bazaar for a century: no place on earth bred more men who could make a crowd cry. Operation Qissa moved the storytellers to Bombay to become the faces of a new nation. One storyteller's son refused to go to Bombay. He was a Pathan, a freedom fighter, and he kept [[a list of every name the Bureau had moved]]. He settled in Delhi. Codename: MEER.",
+    "q": "Who drew the India–Pakistan border in 1947?",
+    "o": [
+     "Cyril Radcliffe",
+     "Lord Curzon",
+     "Winston Churchill"
+    ],
+    "a": 0
+   },
+   {
+    "no": "004",
+    "y": "1952",
+    "code": "THE ONE WHO REFUSED",
+    "fact": "J. Edgar Hoover's FBI kept a large file on Charlie Chaplin. In 1947 the Hollywood Ten were blacklisted. In 1952 Chaplin's re-entry permit to the United States was revoked while he was at sea.",
+    "file": "Hoover did not watch the actors. He ran them. Every star in Hollywood was an asset; the blacklist was the list of those who said no. Chaplin said no, and the Bureau [[closed the door behind his ship]]. The Bureau learnt a second rule: you cannot kill a famous man, but you can [[close every door]].",
+    "q": "In which year was Chaplin's re-entry permit revoked?",
+    "o": [
+     "1952",
+     "1947",
+     "1965"
+    ],
+    "a": 0
+   },
+   {
+    "no": "005",
+    "y": "1954",
+    "code": "AWAARA",
+    "fact": "Raj Kapoor's Awaara (1951) became a phenomenon in the Soviet Union. In the same decade the CIA secretly funded the animated film of Animal Farm (1954).",
+    "file": "Both sides of the Cold War used films. The Bureau used Bombay as the only neutral studio on earth. Raj Kapoor's songs crossed the Iron Curtain carrying [[messages nobody could stop, because everybody was singing them]]. That is why, in this history, the song sequences were always shot abroad: [[every song abroad was a handover]].",
+    "q": "Which Raj Kapoor film became huge in the Soviet Union?",
+    "o": [
+     "Awaara",
+     "Mother India",
+     "Sholay"
+    ],
+    "a": 0
+   },
+   {
+    "no": "006",
+    "y": "1965",
+    "code": "THE BOY",
+    "fact": "Shah Rukh Khan was born on 2 November 1965 in New Delhi. His father died in 1981.",
+    "file": "MEER had a son. The Bureau watched him from the cradle: a Pathan's son from the Storytellers' Bazaar, born in the capital of the country his father chose. When MEER died in 1981, the list [[passed to the boy]]. He was fifteen.",
+    "q": "In which year did his father die?",
+    "o": [
+     "1981",
+     "1991",
+     "1971"
+    ],
+    "a": 0
+   },
+   {
+    "no": "007",
+    "y": "1989",
+    "code": "FAUJI",
+    "fact": "In 1989 Doordarshan aired Fauji, in which he played Abhimanyu Rai, a commando in training.",
+    "file": "The Bureau's recruitment programme, broadcast as a TV serial. The cadet's codename was ABHIMANYU, from the Mahabharata: the warrior who knew how to enter the chakravyuh, the deadly spiral formation, but [[not how to get out]]. The Bureau chose the name on purpose. They trained him to enter. Nobody taught him the way out.",
+    "q": "In Fauji, what was his character's name?",
+    "o": [
+     "Abhimanyu Rai",
+     "Arjun Singh",
+     "Raj Malhotra"
+    ],
+    "a": 0
+   },
+   {
+    "no": "008",
+    "y": "1993",
+    "code": "THE VILLAIN TEST",
+    "fact": "In 1993 he played killers and stalkers in Baazigar and Darr; audiences made him a star.",
+    "file": "Bureau experiment 93/B: will a nation love the face of a villain? Result: yes. The report, marked [[most dangerous finding in the Bureau's history]], concludes that this face can make a crowd love anything, even its own fear. The order goes out: [[make him the lover. Never let him be the villain again]].",
+    "q": "In which 1993 film did he play a stalker?",
+    "o": [
+     "Darr",
+     "Deewana",
+     "Chamatkar"
+    ],
+    "a": 0
+   },
+   {
+    "no": "009",
+    "y": "1995",
+    "code": "OPERATION MUSTARD FIELD",
+    "fact": "Dilwale Dulhania Le Jayenge (1995) played at Mumbai's Maratha Mandir for more than 1,000 weeks.",
+    "file": "The longest-running operation in Bureau history. Objective: bind the Indians abroad to home through one love story. It worked too well. The Bureau lost control of the film: the fans [[would not let it leave the cinema]]. For the first time the faces belonged to the crowd, not the Bureau.",
+    "q": "Where did DDLJ play for more than 1,000 weeks?",
+    "o": [
+     "Maratha Mandir",
+     "Liberty Cinema",
+     "Regal Cinema"
+    ],
+    "a": 0
+   },
+   {
+    "no": "010",
+    "y": "2001",
+    "code": "THE HIGH CASTLE",
+    "fact": "In 2001 he bought the sea-facing bungalow in Bandra that became Mannat. Every 2 November thousands of fans gather outside.",
+    "file": "The Bureau thought Mannat was a safehouse. It was a fortress of another kind: the only building in the world the Bureau cannot get near, because [[every birthday the crowd outside becomes a wall]]. The man in Mannat keeps MEER's list there. The balcony wave, the file says, is [[a signal to the fans]].",
+    "q": "What does 'Mannat' mean?",
+    "o": [
+     "A wish made to God",
+     "A castle",
+     "The sea"
+    ],
+    "a": 0
+   },
+   {
+    "no": "011",
+    "y": "2009",
+    "code": "NEWARK",
+    "fact": "In August 2009 he was held for questioning at Newark airport in the US; he said it was because of his name.",
+    "file": "The Bureau's allies held him for two hours. Officially: his name was on a list. In the file: [[they were looking for MEER's list]]. They searched his luggage. They did not find it. The list was never on paper. [[He had learnt it by heart]].",
+    "q": "At which airport was he held in 2009?",
+    "o": [
+     "Newark",
+     "Heathrow",
+     "Dubai"
+    ],
+    "a": 0
+   },
+   {
+    "no": "012",
+    "y": "2011",
+    "code": "RA.ONE",
+    "fact": "In Ra.One (2011) a video-game villain made of code escapes into the real world. Red Chillies VFX built its effects.",
+    "file": "A briefing disguised as a blockbuster. In 2011 he told a billion people what the Bureau was building: a machine that takes faces. The villain was RA.ONE. The hero, G.ONE, was [[the fans' firewall]]. Most people saw a superhero film. The ones who understood [[started a movement]].",
+    "q": "In Ra.One, where does the villain come from?",
+    "o": [
+     "A video game",
+     "Outer space",
+     "A haunted house"
+    ],
+    "a": 0
+   },
+   {
+    "no": "013",
+    "y": "2018–2022",
+    "code": "THE SILENCE",
+    "fact": "After Zero (2018) he had no lead release for almost five years. In 2021 his family was pulled into a case whose charges were dropped in 2022 for lack of evidence.",
+    "file": "The Bureau's last move, from rule two: [[close every door]]. Five years of closed doors. The file on these years is mostly blacked out. One line survives: [[he did not break]].",
+    "q": "Which film came just before the silence?",
+    "o": [
+     "Zero",
+     "Fan",
+     "Raees"
+    ],
+    "a": 0
+   },
+   {
+    "no": "014",
+    "y": "2023",
+    "code": "THE THREE-PART MESSAGE",
+    "fact": "In 2023 he released Pathaan (a spy), Jawan (a man who hijacks the system to pay farmers' debts) and Dunki (border-crossers on the donkey route).",
+    "file": "Decoded, the three films of 2023 are one message to the fans in three parts: [[the spy knows]] (Pathaan), [[the system can be stopped]] (Jawan), [[the border was always a line someone drew]] (Dunki). The Bureau understood too late. The crowd was already singing.",
+    "q": "Which 2023 film is about the donkey route?",
+    "o": [
+     "Dunki",
+     "Pathaan",
+     "Jawan"
+    ],
+    "a": 0
+   },
+   {
+    "no": "015",
+    "y": "2026",
+    "code": "THE FORBIDDEN REEL",
+    "fact": "Machines can now copy a face, a voice and a name. Fans launched INQUILAAB: #FreeMyFace #FreeMyVoice #FreeMyName.",
+    "file": "The Bureau's newest weapon copies faces without asking. The last line of MEER's list is not a name. It is three words: [[FREE MY FACE]]. In the bazaars of this world, people pass around a forbidden reel. It shows another history, one where there was no Bureau, and a storyteller's son from Delhi became King by nothing but [[love, work and the fans]]. They say it is only a story. You are living in it. File 016, KING, opens on 24 December 2026.",
+    "q": "What are the three hashtags of the Inquilaab?",
+    "o": [
+     "#FreeMyFace #FreeMyVoice #FreeMyName",
+     "#SaveTheKing #SaveMannat #SaveKKR",
+     "#KingIsBack #KingIsHere #KingIsKing"
+    ],
+    "a": 0
+   }
+  ],
+  "sealed": {
+   "no": "016",
+   "y": "2026",
+   "code": "KING",
+   "opens": "2026-12-24"
+  }
+ }
+}
