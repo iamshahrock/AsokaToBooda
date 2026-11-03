@@ -49,6 +49,9 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 ## Vision & Mission link (owner, 3 Nov 2026: 'where is mission and vision? i don't see a link')
 - Header utility links are now Vision (/vision/), About (was 'About Us', shortened so the bar stays one line), Billboard; burger menu the same; footer About group lists 'Vision & Mission'. Gaps trimmed 1-2 px in the 1200-1359 and 1600-1919 bands (no smaller text); checked one line with no sideways scroll at 1200, 1280, 1359, 1360, 1440, 1536, 1600, 1680, 1920.
 
+## Kabhi Jo Tu Mil Jaaye (owner, 3 Nov 2026)
+- /tu-mil-jaaye/ = fan version page for KING's first song: official video (YouTube BPZkZpGMpXA), credits, link to the full lyrics on Genius (the original lyrics are NOT on the site), the owner's 4 fan lines WORD FOR WORD (audio coming soon), and a review of the chorus. Not in the header yet.
+
 ## KING on his 61st (2 Nov 2026, owner: 'make a section KING ON his 61st')
 - /king-intelligence/king-61st.html = the birthday page: Tu Mil Jaaye's first 21 h (chart from data/king-tmj-log.json, the 10-minute YouTube log, plus the ledger readings), timeline (midnight handwritten note on the Mannat screen, no midnight balcony; balcony at nightfall per PTI/India TV; 5,000+ fans per an SRK Universe co-founder via PTI; Burj Khalifa; celebrity wishes), the balcony record 2007-2026 (2024 [Unverified]), press. Linked first in data/king-news.json latest.sources.
 
