@@ -34,7 +34,7 @@
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
     ['gallery/videos/', 'Gallery', ['gallery/']],
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
-    ['doom-to-king/', 'DOOM to KING']
+    ['doom-to-king/', 'DOOM to KING', ['ramayana-to-king/']]
   ];
   var UTIL = [['vision/', 'Vision'], ['about/', 'About'], ['fan-billboard/', 'Billboard']];
   var MORE = [['contact/', 'Contact'], ['faq/', 'FAQ']];
@@ -48,6 +48,7 @@
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
     'inquilab/': [['inquilab/', 'The anthem'], ['inquilab/revolution/', 'The Revolution Starts Now']],
+    'doom-to-king/': [['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']],
     'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
   };
   // the shared polish layer (sizes, spacing, one type scale) loads after each page's own styles
