@@ -1,0 +1,646 @@
+{
+ "about": "Character files for the Alter Egos popup (owner, 4 Nov 2026: 'Study of the character, Character sketch, Character Arc/Journey, Famous lines by the character ... Later will get SRK to talk about each character, his process'). Keyed by film id (same as data/srk-characters.json and the poster set). Fields: type, director, cast[], sketch, arc[start, turning point, end], lines[{q, ctx}] (only lines we are sure of; short), traits[], impact, words (SRK on the role: empty until he records it). Films without a file show the basic popup. Our own words; facts from the films and the public record.",
+ "files": {
+  "027": {
+   "type": "Hero",
+   "director": "Aditya Chopra",
+   "cast": [
+    "Kajol",
+    "Amrish Puri",
+    "Anupam Kher",
+    "Farida Jalal"
+   ],
+   "sketch": "Raj Malhotra is a rich, cheeky London boy, raised by a doting father, who has never had to work for anything. Under the jokes he is decent to the core: he will not take what is not given.",
+   "arc": [
+    "A carefree NRI on a Europe trip with his friends, teasing a serious girl called Simran on the train.",
+    "He falls for her, then learns her father has already promised her to a man in Punjab. He follows her to India.",
+    "He refuses to elope. He wins her family over and waits until her father himself lets her go: 'Ja Simran, ja.'"
+   ],
+   "lines": [
+    {
+     "q": "Bade bade deshon mein aisi chhoti chhoti baatein hoti rehti hain, Senorita.",
+     "ctx": "To Simran, brushing off a small mishap on their European trip."
+    },
+    {
+     "q": "Palat.",
+     "ctx": "Raj wills Simran to turn back and look at him: if she loves him, she will."
+    }
+   ],
+   "traits": [
+    "Lover",
+    "NRI",
+    "Prankster",
+    "Patient"
+   ],
+   "impact": "Ran at Mumbai's Maratha Mandir for more than 1,000 weeks and set the template for the NRI romance of the next decade."
+  },
+  "020": {
+   "type": "Anti-hero",
+   "director": "Yash Chopra",
+   "cast": [
+    "Juhi Chawla",
+    "Sunny Deol"
+   ],
+   "sketch": "Rahul Mehra is a lonely, intense young man who has decided that Kiran is his, though she has never been his. He stammers her name and talks to his dead mother.",
+   "arc": [
+    "A college classmate who watches Kiran from a distance and calls her without speaking.",
+    "Kiran marries Sunil. Rahul's obsession turns into stalking, threats and violence.",
+    "He follows them to their honeymoon to take her by force and dies in the fight with Sunil."
+   ],
+   "lines": [
+    {
+     "q": "I love you, K-K-K-Kiran.",
+     "ctx": "His stammering refrain, said to her and to himself."
+    }
+   ],
+   "traits": [
+    "Obsessed",
+    "Lonely",
+    "Villain"
+   ],
+   "impact": "The stalker became the character audiences remembered; the newcomer stole the film from its hero."
+  },
+  "019": {
+   "type": "Anti-hero",
+   "director": "Abbas-Mustan",
+   "cast": [
+    "Kajol",
+    "Shilpa Shetty",
+    "Dalip Tahil",
+    "Rakhee"
+   ],
+   "sketch": "Ajay Sharma grew up watching Madan Chopra ruin his father and his family. He becomes Vicky Malhotra, charming and cold, with one goal: take everything back.",
+   "arc": [
+    "A boy who saw his family lose its home and his father die after Madan Chopra's betrayal.",
+    "He seduces and kills Chopra's daughter Seema, then courts her sister Priya to get inside the family.",
+    "He takes back his father's company and kills Chopra, but is fatally wounded and dies in his mother's arms."
+   ],
+   "lines": [
+    {
+     "q": "Kabhi kabhi kuch jeetne ke liye kuch haarna padta hai. Aur haar kar jeetne wale ko Baazigar kehte hain.",
+     "ctx": "His creed: sometimes you lose to win, and the one who wins by losing is a Baazigar."
+    }
+   ],
+   "traits": [
+    "Avenger",
+    "Anti-hero",
+    "Son"
+   ],
+   "impact": "A hero who kills, and the audience stayed with him. It won him his first Filmfare Best Actor award."
+  },
+  "022": {
+   "type": "Villain",
+   "director": "Rahul Rawail",
+   "cast": [
+    "Madhuri Dixit",
+    "Deepak Tijori"
+   ],
+   "sketch": "Vijay Agnihotri is a rich young man who has never heard 'no'. When Shivani marries another man, his wanting turns into a campaign to destroy her.",
+   "arc": [
+    "A wealthy heir who falls for an air hostess, Shivani.",
+    "She marries someone else. Vijay frames her and ruins her family to make her his.",
+    "Shivani, broken and in prison, finally turns on him and ends it."
+   ],
+   "traits": [
+    "Villain",
+    "Obsessed",
+    "Entitled"
+   ],
+   "impact": "His most frightening role; it won him the Filmfare award for Best Performance in a Negative Role."
+  },
+  "041": {
+   "type": "Hero",
+   "director": "Karan Johar",
+   "cast": [
+    "Kajol",
+    "Rani Mukerji",
+    "Salman Khan"
+   ],
+   "sketch": "Rahul Khanna is the star of his college: sporty, funny, sure of himself. He does not see that his tomboy best friend Anjali loves him until it is almost too late.",
+   "arc": [
+    "In college Anjali is his best friend, but he falls for the new girl, Tina, and marries her.",
+    "Tina dies after childbirth and leaves letters for their daughter, who sets out to reunite her father with Anjali.",
+    "Years later he meets Anjali again, now engaged to someone else, and finally understands what he felt."
+   ],
+   "lines": [
+    {
+     "q": "Pyaar dosti hai.",
+     "ctx": "His idea of love: love is friendship."
+    }
+   ],
+   "traits": [
+    "Lover",
+    "Friend",
+    "Father",
+    "Widower"
+   ],
+   "impact": "Defined the late-90s campus romance: the friendship band, the 'Cool' T-shirt and a generation's idea of first love."
+  },
+  "037": {
+   "type": "Hero",
+   "director": "Yash Chopra",
+   "cast": [
+    "Madhuri Dixit",
+    "Karisma Kapoor",
+    "Akshay Kumar"
+   ],
+   "sketch": "Rahul is a Mumbai theatre director who does not believe in destiny or in 'the one'. His best friend and lead dancer Nisha loves him; he is waiting for someone he has not met.",
+   "arc": [
+    "A stage director who laughs at the idea of a love made in heaven.",
+    "Pooja joins his musical. He falls for her while Nisha, hurt, steps aside.",
+    "On opening night he chooses Pooja, and his own story becomes the show."
+   ],
+   "lines": [
+    {
+     "q": "Rahul. Naam toh suna hoga.",
+     "ctx": "His swaggering introduction: you must have heard the name."
+    }
+   ],
+   "traits": [
+    "Lover",
+    "Artist",
+    "Friend"
+   ],
+   "impact": "'Rahul' became his signature name across a dozen films."
+  },
+  "053": {
+   "type": "Tragic hero",
+   "director": "Sanjay Leela Bhansali",
+   "cast": [
+    "Aishwarya Rai",
+    "Madhuri Dixit",
+    "Jackie Shroff",
+    "Kirron Kher"
+   ],
+   "sketch": "Devdas Mukherjee comes home from London to the girl he has loved since childhood, Paro. Proud, weak-willed and wounded, he cannot defy his family and cannot forgive himself.",
+   "arc": [
+    "He returns from England to Paro and their childhood love.",
+    "Families and pride keep them apart; Paro is married off. He turns to drink and to the courtesan Chandramukhi.",
+    "Dying, he keeps his promise to see Paro one last time and collapses at her gate."
+   ],
+   "lines": [
+    {
+     "q": "Kaun kambakht hai jo bardasht karne ke liye peeta hai?",
+     "ctx": "His answer when asked why he drinks."
+    }
+   ],
+   "traits": [
+    "Lover",
+    "Self-destroyer",
+    "Proud"
+   ],
+   "impact": "Screened at Cannes in 2002 and nominated for the BAFTA for Best Film Not in the English Language."
+  },
+  "051": {
+   "type": "Hero",
+   "director": "Karan Johar",
+   "cast": [
+    "Kajol",
+    "Amitabh Bachchan",
+    "Jaya Bachchan",
+    "Hrithik Roshan",
+    "Kareena Kapoor"
+   ],
+   "sketch": "Rahul Raichand is the adopted elder son of a rich, proud family: dutiful, adored, the heir. He believes family and love can live together, until his father makes him choose.",
+   "arc": [
+    "The perfect son, who brings his father's word to everything.",
+    "He marries Anjali, a girl from Chandni Chowk, against his father's wishes and is cast out. He leaves for London.",
+    "Years later his younger brother Rohan finds him and brings the family back together."
+   ],
+   "traits": [
+    "Son",
+    "Lover",
+    "Exile",
+    "Brother"
+   ],
+   "impact": "The big family melodrama of the NRI era: duty, class and the son who had to leave home."
+  },
+  "057": {
+   "type": "Hero",
+   "director": "Nikkhil Advani",
+   "cast": [
+    "Preity Zinta",
+    "Saif Ali Khan",
+    "Jaya Bachchan"
+   ],
+   "sketch": "Aman Mathur arrives in New York and fixes everyone's life with jokes and nerve. He hides one thing: his heart is failing and he does not have long.",
+   "arc": [
+    "A loud, warm newcomer who teaches a grieving family, and the serious Naina, to laugh again.",
+    "Naina falls for him. Knowing he is dying, he pushes her towards his friend Rohit.",
+    "He dies having given everyone around him a future he will not have."
+   ],
+   "traits": [
+    "Lover",
+    "Healer",
+    "Sacrifice"
+   ],
+   "impact": "Put mortality at the centre of a big Hindi romance."
+  },
+  "060": {
+   "type": "Hero",
+   "director": "Yash Chopra",
+   "cast": [
+    "Preity Zinta",
+    "Rani Mukerji",
+    "Amitabh Bachchan",
+    "Hema Malini"
+   ],
+   "sketch": "Squadron Leader Veer Pratap Singh is an Indian Air Force rescue pilot: gentle, rooted, from a Punjab village. He meets Zaara, a girl from Pakistan, and never stops loving her.",
+   "arc": [
+    "A pilot who rescues Zaara after a bus accident and shows her his village and his family.",
+    "He goes to Pakistan for her, is jailed under a false name and stays silent to protect her honour.",
+    "After 22 years a young lawyer, Saamiya, tells his story in court and he walks free to find Zaara waiting."
+   ],
+   "lines": [
+    {
+     "q": "Main kaidi number 786.",
+     "ctx": "The opening of his poem in court: a prisoner known only by a number."
+    }
+   ],
+   "traits": [
+    "Lover",
+    "Soldier",
+    "Prisoner",
+    "Patient"
+   ],
+   "impact": "A love story across the India-Pakistan border told without hate."
+  },
+  "061": {
+   "type": "Hero",
+   "director": "Ashutosh Gowariker",
+   "cast": [
+    "Gayatri Joshi",
+    "Kishori Ballal"
+   ],
+   "sketch": "Mohan Bhargava is a NASA project manager with a good life in America. He comes back to find the woman who raised him, Kaveri Amma, and finds a country he had stopped looking at.",
+   "arc": [
+    "A successful scientist who visits India only to take his old nanny back to America.",
+    "In the village of Charanpur he sees poverty, caste and darkness, and starts to help.",
+    "He builds a small power station on a stream, the bulbs light up, and he chooses to stay."
+   ],
+   "traits": [
+    "Returner",
+    "Scientist",
+    "Builder"
+   ],
+   "impact": "Turned the 'should I go back home?' question into public talk for a generation of Indians abroad."
+  },
+  "070": {
+   "type": "Hero",
+   "director": "Shimit Amin",
+   "cast": [
+    "Vidya Malvade",
+    "Sagarika Ghatge",
+    "Shilpa Shukla",
+    "Chitrashi Rawat"
+   ],
+   "sketch": "Kabir Khan was India's hockey captain until a final against Pakistan was lost on his penalty. Branded a traitor, he spends seven years in disgrace, then asks to coach the women's team nobody wants.",
+   "arc": [
+    "A disgraced former captain whose home is defaced after a loss to Pakistan.",
+    "He takes on a divided women's team and makes them play for one name only: India.",
+    "They win the World Cup in Australia, and his name is cleared."
+   ],
+   "lines": [
+    {
+     "q": "Sattar minute.",
+     "ctx": "His speech before the final: seventy minutes, the length of a hockey match."
+    }
+   ],
+   "traits": [
+    "Coach",
+    "Outsider",
+    "Patriot",
+    "Leader"
+   ],
+   "impact": "'Chak De' became India's sports anthem, and women's hockey had a hit film."
+  },
+  "072": {
+   "type": "Double role",
+   "director": "Farah Khan",
+   "cast": [
+    "Deepika Padukone",
+    "Arjun Rampal",
+    "Shreyas Talpade",
+    "Kirron Kher"
+   ],
+   "sketch": "Om Prakash Makhija is a junior artist in 1970s Bombay who dreams of being a star and loves the actress Shanti from afar. Reborn thirty years later, he is Om Kapoor, the superstar he wanted to be.",
+   "arc": [
+    "A background extra who loves the star Shantipriya and watches her from the crowd.",
+    "He sees her killed by producer Mukesh Mehra in a burning studio and dies trying to save her.",
+    "Reborn as Om Kapoor, he remembers, and stages a film to make the killer confess."
+   ],
+   "lines": [
+    {
+     "q": "Picture abhi baaki hai, mere dost.",
+     "ctx": "The film-within-the-film's promise: the picture is not over yet."
+    },
+    {
+     "q": "Ek chutki sindoor ki keemat tum kya jaano, Ramesh babu?",
+     "ctx": "Om playing a melodrama heroine's line on set."
+    }
+   ],
+   "traits": [
+    "Dreamer",
+    "Outsider",
+    "Lover",
+    "Reborn"
+   ],
+   "impact": "A love letter to 70s Bollywood and the outsider's anthem; 'Picture abhi baaki hai' became his own motto."
+  },
+  "068": {
+   "type": "Double role",
+   "director": "Farhan Akhtar",
+   "cast": [
+    "Priyanka Chopra",
+    "Arjun Rampal",
+    "Boman Irani",
+    "Om Puri"
+   ],
+   "sketch": "Don is the head of a drug syndicate wanted across Asia: cool, ruthless, always a step ahead. Vijay is a gentle look-alike recruited by the police to take his place.",
+   "arc": [
+    "Don runs his empire from Malaysia while the police close in.",
+    "He is shot; the police send in Vijay as Don to bring the gang down.",
+    "The twist: the man who comes back is not who he seems, and Don walks away."
+   ],
+   "lines": [
+    {
+     "q": "Don ko pakadna mushkil hi nahin, naamumkin hai.",
+     "ctx": "Catching Don is not just difficult, it is impossible."
+    }
+   ],
+   "traits": [
+    "Villain",
+    "Double role",
+    "Mastermind"
+   ],
+   "impact": "Remade Amitabh Bachchan's 1978 Don for a new generation and started a franchise."
+  },
+  "081": {
+   "type": "Hero",
+   "director": "Karan Johar",
+   "cast": [
+    "Kajol",
+    "Jimmy Shergill",
+    "Zarina Wahab"
+   ],
+   "sketch": "Rizwan Khan has Asperger's syndrome. He sees the world literally, cannot lie and hates the colour yellow. In San Francisco he marries Mandira, a single mother, and builds a family.",
+   "arc": [
+    "A man from Mumbai who moves to America and marries Mandira, a Hindu single mother.",
+    "After 9/11 her son Sameer is killed in a hate attack because of the Khan name; Mandira blames Rizwan.",
+    "He walks across America to tell the President one sentence, and helps flood victims on the way."
+   ],
+   "lines": [
+    {
+     "q": "My name is Khan, and I am not a terrorist.",
+     "ctx": "The sentence he crosses America to deliver."
+    }
+   ],
+   "traits": [
+    "Outsider",
+    "Different",
+    "Husband",
+    "Pilgrim"
+   ],
+   "impact": "Took post-9/11 Islamophobia and a neurodivergent hero to a worldwide audience."
+  },
+  "077": {
+   "type": "Double role",
+   "director": "Aditya Chopra",
+   "cast": [
+    "Anushka Sharma",
+    "Vinay Pathak"
+   ],
+   "sketch": "Surinder Sahni is a shy, plain Punjab Power office clerk who marries Taani after her father's death. To win her, he invents a second self: Raj, loud, stylish and nothing like him.",
+   "arc": [
+    "A timid clerk in an arranged marriage with a young woman who cannot love him.",
+    "With a new look he becomes 'Raj', joins her dance class and becomes her friend.",
+    "Taani chooses her husband, Surinder, because she sees God in him."
+   ],
+   "traits": [
+    "Common man",
+    "Lover",
+    "Double role"
+   ],
+   "impact": "Made an ordinary, unglamorous man the romantic hero."
+  },
+  "087": {
+   "type": "Hero",
+   "director": "Yash Chopra",
+   "cast": [
+    "Katrina Kaif",
+    "Anushka Sharma"
+   ],
+   "sketch": "Samar Anand is an army bomb-disposal expert who never wears a protective suit. Ten years earlier he was a busker in London who fell in love with Meera.",
+   "arc": [
+    "In London he and Meera fall in love; she promises God she will give him up if he survives an accident.",
+    "He survives, she leaves, and he joins the Indian Army to defuse bombs, daring death every day.",
+    "A documentary maker, Akira, brings him back to London, where his past and Meera wait."
+   ],
+   "traits": [
+    "Lover",
+    "Soldier",
+    "Daredevil"
+   ],
+   "impact": "Yash Chopra's last film, and his first on-screen kiss after twenty years."
+  },
+  "090": {
+   "type": "Hero",
+   "director": "Rohit Shetty",
+   "cast": [
+    "Deepika Padukone",
+    "Sathyaraj",
+    "Nikitin Dheer"
+   ],
+   "sketch": "Rahul Mithaiwala is a forty-year-old sweet-shop heir from Mumbai, unmarried and unadventurous. He is meant to scatter his grandfather's ashes in Rameswaram but plans a Goa holiday instead.",
+   "arc": [
+    "He boards the Chennai Express, meaning to slip away to Goa.",
+    "He helps Meenamma onto the train and is pulled into her escape from a family match in Tamil Nadu.",
+    "In her village he stands up to her family and wins her."
+   ],
+   "lines": [
+    {
+     "q": "Don't underestimate the power of a common man.",
+     "ctx": "His line when he finally stands up for himself."
+    }
+   ],
+   "traits": [
+    "Common man",
+    "Lover",
+    "Comic"
+   ],
+   "impact": "One of the biggest Hindi hits of 2013."
+  },
+  "096": {
+   "type": "Double role",
+   "director": "Maneesh Sharma",
+   "cast": [
+    "Waluscha De Sousa",
+    "Shriya Pilgaonkar"
+   ],
+   "sketch": "Gaurav Chandna runs a cyber cafe in Delhi and looks like his idol, the superstar Aryan Khanna. Aryan is a real star with real flaws; Gaurav believes he has the right to him.",
+   "arc": [
+    "Gaurav wins a lookalike contest and travels to Mumbai to meet Aryan on his birthday.",
+    "Aryan rejects him. Gaurav turns his worship into a campaign to destroy Aryan's name.",
+    "Star and fan face each other; Gaurav dies having become everything his idol was not."
+   ],
+   "traits": [
+    "Fan",
+    "Obsessed",
+    "Double role"
+   ],
+   "impact": "A superstar looked at his own fans, and at himself, in one film."
+  },
+  "098": {
+   "type": "Supporting",
+   "director": "Gauri Shinde",
+   "cast": [
+    "Alia Bhatt",
+    "Kunal Kapoor",
+    "Angad Bedi"
+   ],
+   "sketch": "Dr. Jehangir Khan, 'Dr. Jug', is a Goa counsellor who listens more than he speaks. He helps the young cinematographer Kaira face her anger and her childhood.",
+   "arc": [
+    "Kaira, sleepless and restless, walks into his sessions half-mocking.",
+    "Through walks by the sea and simple games he helps her talk about being left as a child.",
+    "She heals, and he lets her go: a good therapist is not a love story."
+   ],
+   "lines": [
+    {
+     "q": "Genius woh nahin jiske paas har sawaal ka jawaab ho. Genius woh hai jiske paas har jawaab tak pahunchne ka patience ho.",
+     "ctx": "To Kaira: genius is the patience to reach every answer."
+    }
+   ],
+   "traits": [
+    "Healer",
+    "Listener",
+    "Mentor"
+   ],
+   "impact": "Brought therapy and mental health into mainstream Hindi cinema."
+  },
+  "100": {
+   "type": "Anti-hero",
+   "director": "Rahul Dholakia",
+   "cast": [
+    "Mahira Khan",
+    "Nawazuddin Siddiqui"
+   ],
+   "sketch": "Raees Alam grows up poor in Gujarat, where liquor is banned, and becomes its biggest bootlegger. Generous to his people, he lives by his mother's rule that no business is small.",
+   "arc": [
+    "A boy carrying liquor for a bootlegger, with a mother who tells him no work is beneath him.",
+    "He builds his own empire and becomes a hero to his neighbourhood, chased by the honest officer Majmudar.",
+    "Smuggled goods he trusted turn out to be explosives for a bombing; guilty, he surrenders and is killed."
+   ],
+   "lines": [
+    {
+     "q": "Baniye ka dimaag aur Miyanbhai ki daring.",
+     "ctx": "How he sums himself up: a trader's brain and a street fighter's nerve."
+    }
+   ],
+   "traits": [
+    "Anti-hero",
+    "Outlaw",
+    "Son"
+   ],
+   "impact": "His return to the outlaw role, and a lasting duel with Nawazuddin Siddiqui."
+  },
+  "104": {
+   "type": "Hero",
+   "director": "Aanand L. Rai",
+   "cast": [
+    "Anushka Sharma",
+    "Katrina Kaif"
+   ],
+   "sketch": "Bauua Singh is a man with dwarfism from Meerut: loud, rude, hilarious and desperate to be loved. He falls for Aafia, a scientist with cerebral palsy, and for a film star at the same time.",
+   "arc": [
+    "A small-town show-off who meets Aafia through a marriage bureau.",
+    "He runs from their wedding, chasing a dance contest and the star Babita.",
+    "He is chosen for a mission to Mars; the film leaves his return to Aafia open."
+   ],
+   "traits": [
+    "Different",
+    "Lover",
+    "Show-off"
+   ],
+   "impact": "A disabled lead in a big star film; it did not do well and came before his long silence."
+  },
+  "111": {
+   "type": "Hero",
+   "director": "Siddharth Anand",
+   "cast": [
+    "Deepika Padukone",
+    "John Abraham",
+    "Dimple Kapadia"
+   ],
+   "sketch": "Pathaan is an Indian spy with no surname, an abandoned child raised by the country he serves. He was given the name Pathaan by an Afghan village he once saved.",
+   "arc": [
+    "A RAW agent who was left for dead after a mission and runs a unit of injured agents.",
+    "He hunts Jim, a former agent turned terrorist, across continents, with the ISI agent Rubina.",
+    "He stops Jim's attack on India and saves the country again."
+   ],
+   "lines": [
+    {
+     "q": "Kursi ki peti baandh lo, mausam bigadne wala hai.",
+     "ctx": "Fasten your seat belts, the weather is about to turn."
+    }
+   ],
+   "traits": [
+    "Soldier",
+    "Patriot",
+    "Comeback"
+   ],
+   "impact": "His return after more than four years without a lead role, and one of the biggest Hindi hits."
+  },
+  "113": {
+   "type": "Double role",
+   "director": "Atlee",
+   "cast": [
+    "Nayanthara",
+    "Vijay Sethupathi",
+    "Deepika Padukone",
+    "Sanya Malhotra"
+   ],
+   "sketch": "Azad Rathore is a jailer who leads a team of women prisoners in a fight against corruption. Vikram Rathore is his father, a soldier betrayed by an arms dealer.",
+   "arc": [
+    "Azad hijacks a Mumbai metro and asks a rich man for money to clear farmers' loans.",
+    "His father Vikram's story comes out: a soldier framed by the arms dealer Kaalie.",
+    "Father and son together bring Kaalie down and ask voters to question their leaders."
+   ],
+   "lines": [
+    {
+     "q": "Bete ko haath lagaane se pehle baap se baat kar.",
+     "ctx": "Before you touch the son, talk to the father."
+    }
+   ],
+   "traits": [
+    "Father",
+    "Son",
+    "Vigilante",
+    "Double role"
+   ],
+   "impact": "A mass action film that ended with a direct message to voters."
+  },
+  "115": {
+   "type": "Hero",
+   "director": "Rajkumar Hirani",
+   "cast": [
+    "Taapsee Pannu",
+    "Vicky Kaushal",
+    "Boman Irani",
+    "Vikram Kochhar",
+    "Anil Grover"
+   ],
+   "sketch": "Hardy (Hardayal Singh Dhillon) is a soldier who comes to a Punjab village to thank a man who saved his life. He stays to help Manu and her friends reach London.",
+   "arc": [
+    "He arrives to repay a debt and finds friends who cannot get visas.",
+    "They take the illegal 'donkey route' through deserts and borders; not all survive.",
+    "Decades later, old, they try to come home the same way."
+   ],
+   "traits": [
+    "Immigrant",
+    "Soldier",
+    "Friend"
+   ],
+   "impact": "Put illegal migration and the donkey route into public talk."
+  }
+ }
+}

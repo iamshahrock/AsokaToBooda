@@ -37,33 +37,110 @@
 .ch-n{font-size:15px;color:#a89a90;margin:-6px 0 16px}
 .ks-link{display:inline-block;align-self:flex-end;border:1px solid #c9a24a;color:#f0c24e;padding:9px 14px;font:700 13px Archivo,sans-serif;letter-spacing:.04em;text-decoration:none}
 .ks-link:hover{background:#c9a24a;color:#1b1410}
+/* character file popup (owner, 4 Nov 2026) */
+.ch{cursor:pointer}
+.ch:hover{outline:3px solid #f0c24e;outline-offset:-3px;z-index:1}
+.ch .tag{position:absolute;top:8px;right:8px;background:#f0c24e;color:#1b1410;font:700 10px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:3px 6px}
+@media (max-width:760px){.ch .tag{font-size:8px;padding:2px 4px;top:5px;right:5px}}
+.cf-wrap{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.84);overflow-y:auto;padding:24px 12px;display:none}
+.cf-wrap.on{display:block}
+.cf{max-width:900px;margin:0 auto;background:#120b0b;border:2px solid #c9a24a;position:relative;color:#e6dcd4}
+.cf .x{position:absolute;right:8px;top:6px;background:none;border:0;color:#f0c24e;font:700 30px Archivo,sans-serif;cursor:pointer;z-index:2}
+.cf-top{display:grid;grid-template-columns:260px 1fr;gap:0;border-bottom:2px solid #c9a24a}
+@media (max-width:700px){.cf-top{grid-template-columns:1fr}}
+.cf-pic{display:flex;background:#0d0606;min-height:300px}
+.cf-pic img{flex:1;min-width:0;width:100%;object-fit:cover;object-position:center 25%}
+.cf-pic img+img{border-left:2px solid #c9a24a}
+@media (max-width:700px){.cf-pic{height:340px}}
+.cf-hd{padding:22px 24px}
+.cf-kind{display:inline-block;background:#e0312b;color:#fff;font:700 11px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;margin:0 0 10px}
+.cf-hd h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,46px);line-height:1;text-transform:uppercase;color:#f0c24e;margin:0 0 6px}
+.cf-hd .fm{font:italic 600 21px 'Cormorant Garamond',serif;color:#f4ece4;margin:0 0 10px}
+.cf-hd dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0 0 12px;font-size:14px}
+.cf-hd dt{color:#a89a90}.cf-hd dd{margin:0;color:#f4ece4}
+.cf-tr{display:flex;flex-wrap:wrap;gap:6px}
+.cf-tr span{border:1px solid #c9a24a;color:#f0c24e;font:600 12px Archivo,sans-serif;padding:3px 9px}
+.cf-bd{padding:6px 24px 24px}
+.cf-bd h3{font:700 12px Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e0312b;margin:20px 0 8px}
+.cf-bd p{font-size:16px;line-height:1.65;margin:0}
+.cf-arc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:700px){.cf-arc{grid-template-columns:1fr}}
+.cf-arc div{border:1px solid #3a2626;background:#0d0909;padding:12px;position:relative}
+.cf-arc b{display:block;font:700 11px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#f0c24e;margin:0 0 6px}
+.cf-arc p{font-size:14.5px;line-height:1.55}
+.cf-ln blockquote{margin:0 0 12px;padding:10px 14px;border-left:3px solid #f0c24e;background:#0d0909}
+.cf-ln q{display:block;font:italic 600 22px/1.35 'Cormorant Garamond',serif;color:#f4ece4;quotes:'\201C' '\201D'}
+.cf-ln small{display:block;font-size:13px;color:#a89a90;margin-top:4px}
+.cf-im{border:1px dashed #c9a24a;padding:12px}
+.cf-words{border:1px solid #3a2626;padding:14px;background:#0d0909;font-size:14px;color:#a89a90}
+.cf-words b{color:#f0c24e}
+.cf-go{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.cf-go a{background:#c9a24a;color:#1b1410;font:700 12px Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;text-decoration:none}
+.cf-go a.r{background:#e0312b;color:#fff}
+.cf-soon{font-size:14px;color:#a89a90;border:1px dashed #3a2626;padding:12px}
 </style>
 </head>
 <body class="v2">
 <script src="../assets/header.js"></script>
 <main class="wrap">
-  <div class="page-head"><div><h1>Shah Rukh Khan's <em>ALTER EGOS</em></h1><p class="ch-sub">118 and counting...</p></div><a class="ks-link" href="/king-studies/">📖 Study them · KING UNIVERSITY, 1947 to 2026 →</a></div>
+  <div class="page-head"><div><h1>Shah Rukh Khan's <em>ALTER EGOS</em></h1><p class="ch-sub">118 and counting... Click any character to study him.</p></div><a class="ks-link" href="/king-studies/">📖 Study them · KING UNIVERSITY, 1947 to 2026 →</a></div>
   <div class="ch-grid" id="main"></div>
   <h2 class="ch-h">Cameos &amp; <span>narrator</span></h2>
   <p class="ch-n" id="n-cameo"></p>
   <div class="ch-grid small" id="cameo"></div>
 </main>
+<div class="cf-wrap" id="cfw" role="dialog" aria-modal="true" aria-label="Character file"><div class="cf" id="cf"></div></div>
 <script>
 (function(){
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function tile(f){
     var pics=f.blend?['<img src="'+esc(f.blend)+'" alt="" loading="lazy">']:f.roles.map(function(r){return '<img src="'+esc(r.img)+'" alt="'+esc(r.name)+'" loading="lazy">';});
     var name=f.roles.map(function(r){return esc(r.name);}).join(' / ');
-    return '<figure class="ch">'+(f.roles.length>1?'<span class="dbl">'+(f.roles.length==3?'Triple role':'Double role')+'</span>':'')+
+    return '<figure class="ch" tabindex="0" role="button" data-id="'+esc(f.id)+'" aria-label="Open the character file: '+name+'">'+(FILES[f.id]?'<span class="tag">Study</span>':'')+(f.roles.length>1?'<span class="dbl">'+(f.roles.length==3?'Triple role':'Double role')+'</span>':'')+
       '<div class="pics">'+pics.join('')+'</div><figcaption class="lab"><p class="nm">'+name+'</p><p class="fm"><i>'+esc(f.film)+'</i> · '+f.year+'</p></figcaption></figure>';
   }
-  fetch('../data/srk-characters.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+  var FILES={},FILMS={},KU={};
+  function cfOpen(id){
+    var f=FILMS[id];if(!f)return;var c=FILES[id]||{},name=f.roles.map(function(r){return esc(r.name);}).join(' / ');
+    var pics=f.blend?['<img src="'+esc(f.blend)+'" alt="">']:f.roles.map(function(r){return '<img src="'+esc(r.img)+'" alt="'+esc(r.name)+'">';});
+    var kind=c.type||(f.section==='main'?(f.roles.length>1?'Double role':'Lead'):'Cameo');
+    var h='<button class="x" aria-label="Close">×</button><div class="cf-top"><div class="cf-pic">'+pics.join('')+'</div><div class="cf-hd"><span class="cf-kind">'+esc(kind)+'</span><h2>'+name+'</h2><p class="fm">'+esc(f.film)+' · '+f.year+'</p><dl>'+
+      (c.director?'<dt>Director</dt><dd>'+esc(c.director)+'</dd>':'')+(c.cast?'<dt>With</dt><dd>'+c.cast.map(esc).join(', ')+'</dd>':'')+'</dl>'+
+      (c.traits?'<div class="cf-tr">'+c.traits.map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div>':'')+'</div></div><div class="cf-bd">';
+    if(c.sketch){
+      h+='<h3>Character sketch</h3><p>'+esc(c.sketch)+'</p>';
+      if(c.arc)h+='<h3>The arc · his journey</h3><div class="cf-arc">'+['Where he starts','The turning point','Where he ends'].map(function(t,i){return '<div><b>'+(i+1)+' · '+t+'</b><p>'+esc(c.arc[i]||'')+'</p></div>';}).join('')+'</div>';
+      if(c.lines&&c.lines.length)h+='<h3>Famous lines</h3><div class="cf-ln">'+c.lines.map(function(l){return '<blockquote><q>'+esc(l.q)+'</q><small>'+esc(l.ctx)+'</small></blockquote>';}).join('')+'</div>';
+      if(c.impact)h+='<h3>His impact</h3><p class="cf-im">'+esc(c.impact)+'</p>';
+    } else h+='<h3>Character study</h3><p class="cf-soon">The full study of this character (sketch, arc, famous lines and impact) is being written. The 25 most famous characters are done first; this one follows.</p>';
+    h+='<h3>In his own words</h3><div class="cf-words">'+(c.words?esc(c.words):'<b>Coming:</b> Shah Rukh Khan on playing '+name+', his process and what the role meant to him.')+'</div>';
+    var go=[];
+    if(KU[id])go.push('<a href="'+KU[id].u+'">Study at KING University · '+esc(KU[id].t)+' →</a>');
+    go.push('<a class="r" href="/create/?film='+esc(id)+'">Make your poster from '+esc(f.film)+' →</a>');
+    h+='<div class="cf-go">'+go.join('')+'</div></div>';
+    $cf.innerHTML=h;$cfw.classList.add('on');$cfw.scrollTop=0;document.body.style.overflow='hidden';
+    $cf.querySelector('.x').onclick=cfClose;$cf.querySelector('.x').focus();
+    try{history.replaceState(null,'','#'+id);}catch(e){}
+  }
+  function cfClose(){$cfw.classList.remove('on');document.body.style.overflow='';try{history.replaceState(null,'',location.pathname);}catch(e){}}
+  var $cfw=document.getElementById('cfw'),$cf=document.getElementById('cf');
+  $cfw.addEventListener('click',function(e){if(e.target===$cfw)cfClose();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$cfw.classList.contains('on'))cfClose();var t=e.target.closest&&e.target.closest('.ch');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();cfOpen(t.dataset.id);}});
+  document.addEventListener('click',function(e){var t=e.target.closest('.ch');if(t)cfOpen(t.dataset.id);});
+  Promise.all([fetch('../data/srk-character-files.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {files:{}};}),
+    fetch('../data/king-studies.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {levels:[]};})]).then(function(a){
+    FILES=a[0].files||{};
+    (a[1].levels||[]).forEach(function(L){L.lessons.forEach(function(x,i){var k=String(x.img||'').slice(0,3);if(k&&!KU[k])KU[k]={u:'/king-studies/?level='+L.id+'#lesson-'+L.id+'-'+(i+1),t:(L.code||L.name)+' · '+x.t};});});
+    return fetch('../data/srk-characters.json',{cache:'no-store'});
+  }).then(function(r){return r.json();}).then(function(d){
+    d.films.forEach(function(f){FILMS[f.id]=f;});
     var m=d.films.filter(function(f){return f.section==='main';}), c=d.films.filter(function(f){return f.section!=='main';});
     document.getElementById('main').innerHTML=m.map(tile).join('');
     document.getElementById('cameo').innerHTML=c.map(tile).join('');
     var fit=function(){document.querySelectorAll('.ch .nm,.ch .fm').forEach(function(e){e.style.fontSize='';var f=parseFloat(getComputedStyle(e).fontSize);while(e.scrollWidth>e.clientWidth&&f>7){f-=0.5;e.style.fontSize=f+'px';}});};
     fit();window.addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);
     document.getElementById('n-cameo').textContent=c.length+' cameos, guest appearances and narrator roles';
+    var hid=location.hash.replace('#','');if(FILMS[hid])cfOpen(hid);
   });
 })();
 </script>
