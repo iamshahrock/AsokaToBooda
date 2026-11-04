@@ -1,5 +1,5 @@
 {
- "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]].",
+ "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}.",
  "posts": [
   {
    "id": "2026-11-04-agar-main-king-hota",
@@ -323,6 +323,47 @@
      "p": "Read at 11:29 IST from the public YouTube watch pages. Press: Hindustan Times (Instagram, 4 Nov), Bollywood Hungama, UNI, DNA, Dynamite News."
     }
    ]
+  }
+ ],
+ "poll": {
+  "id": "tmj-2026-11",
+  "q": "What did you love most in Tu Mil Jaaye?",
+  "o": [
+   "Shah Rukh and Deepika on screen",
+   "Arijit Singh and Madhubanti Bagchi's voices",
+   "Ed Sheeran in a Hindi film song"
+  ]
+ },
+ "beat": [
+  {
+   "t": "Tu Mil Jaaye: 24-hour record",
+   "d": "Reported: the most-watched Indian film song on YouTube in its first 24 hours, 36.3M views. Now 47,991,463.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
+   "url": "?p=2026-11-04-agar-main-king-hota"
+  },
+  {
+   "t": "KING ahead of Doomsday",
+   "d": "Two official teasers 84,280,229 vs the Doomsday trailer 83,765,175, read 4 Nov 11:29 IST.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "url": "?p=2026-11-04-analytics"
+  },
+  {
+   "t": "Ramayana opens tomorrow",
+   "d": "Ramayana: Part 1 on 5 November, KING on 24 December. Not a clash, a relay. Cast your votes.",
+   "img": "/assets/dk/figures.webp",
+   "url": "/ramayana-to-king/"
+  },
+  {
+   "t": "KING University opens",
+   "d": "Shah Rukh Khan studied like an emperor: 9 courses, Pre-K to PhD, and THE MAN IN MANNAT.",
+   "img": "/assets/characters/027.webp",
+   "url": "/king-studies/"
+  },
+  {
+   "t": "Strike the pose",
+   "d": "BAAHEIN KHOL: match his open-arms pose with your camera and collect the card.",
+   "img": "/assets/home/01-agar-main-king-hota.webp",
+   "url": "/baahein-khol/"
   }
  ]
 }
