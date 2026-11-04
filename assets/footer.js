@@ -48,7 +48,7 @@
     // same groups as the header (owner, 4 Nov 2026: 'Yes, match it')
     ['SRK DAILY & KING Buzz', [['srk-daily/', 'SRK DAILY'], ['king-intelligence/', 'KING Buzz'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
     ['Games', [['create/', 'Make Your Poster'], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81'], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
-    ['The Archive', [['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
+    ['KINGNAMA', [['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
     ['FANVERSE', [['inquilab/', 'Inquilaab King Ke Saath'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos'], ['fan-billboard/', 'Billboard & STARKS'], ['merch/', 'Merch']]],
     ['About', [['', 'Home'], ['vision/', 'Vision & Mission'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
   ].forEach(function (g) {

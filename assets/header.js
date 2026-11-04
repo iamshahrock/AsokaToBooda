@@ -44,7 +44,7 @@
     ['SRK DAILY', 'srk-daily/'],
     ['Games', [['create/', 'Make Your Poster', ['make-your-poster/']], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81', ['CHESS81.HTML']], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
     ['KING Buzz', [['king-intelligence/', 'KING Buzz'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
-    ['The Archive', [['gallery/videos/', 'Gallery', ['gallery/']], ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
+    ['KINGNAMA', [['gallery/videos/', 'Gallery', ['gallery/']], ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
     ['FANVERSE', [['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']], ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']], ['fan-billboard/', 'Billboard']]],
     ['Merch', 'merch/']
   ];
