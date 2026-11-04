@@ -931,13 +931,13 @@
     },
     {
      "t": "118 and counting",
-     "by": "The Alter Egos",
+     "by": "Character Study",
      "film": "1988–2026",
      "y": 2026,
      "img": "118",
-     "line": "From Fauji to KING: 118 films and shows, one close-up each, on the Alter Egos page.",
-     "act": "Pick your 3 favourite characters on the Alter Egos page.",
-     "q": "Which is the newest film in the Alter Egos?",
+     "line": "From Fauji to KING: 118 films and shows, one close-up each, on the Character Study page.",
+     "act": "Pick your 3 favourite characters on the Character Study page.",
+     "q": "Which is the newest film in Character Study?",
      "o": [
       "KING",
       "Fauji",
@@ -945,17 +945,17 @@
      ],
      "a": 0,
      "notes": [
-      "From Fauji in 1988–89 to KING in 2026 he has played 118 films and shows, counted on our Alter Egos page with one close-up per character, newest first.",
-      "KING is the newest. Fauji is the oldest. Open the Alter Egos page and find your three favourites."
+      "From Fauji in 1988–89 to KING in 2026 he has played 118 films and shows, counted on our Character Study page with one close-up per character, newest first.",
+      "KING is the newest. Fauji is the oldest. Open the Character Study page and find your three favourites."
      ],
      "keys": [
       "KING is the newest",
       "118 films and shows",
-      "See the Alter Egos page"
+      "See the Character Study page"
      ],
      "see": [
       "/srk-characters/",
-      "Alter Egos"
+      "Character Study"
      ]
     }
    ],
@@ -1688,7 +1688,7 @@
   {
    "id": "ba",
    "name": "BA",
-   "title": "Humanity, through the Alter Egos",
+   "title": "Humanity, through his characters",
    "pts": 200,
    "intro": "118 characters cover almost every kind of person. Each one is a chapter of what it means to be human.",
    "lessons": [

@@ -1,5 +1,5 @@
 {
- "about": "Character files for the Alter Egos popup (owner, 4 Nov 2026: 'Study of the character, Character sketch, Character Arc/Journey, Famous lines by the character ... Later will get SRK to talk about each character, his process'). Keyed by film id (same as data/srk-characters.json and the poster set). Fields: type, director, cast[], sketch, arc[start, turning point, end], lines[{q, ctx}] (only lines we are sure of; short), traits[], impact, words (SRK on the role: empty until he records it). Films without a file show the basic popup. Our own words; facts from the films and the public record.",
+ "about": "Character files for Character Study popup (owner, 4 Nov 2026: 'Study of the character, Character sketch, Character Arc/Journey, Famous lines by the character ... Later will get SRK to talk about each character, his process'). Keyed by film id (same as data/srk-characters.json and the poster set). Fields: type, director, cast[], sketch, arc[start, turning point, end], lines[{q, ctx}] (only lines we are sure of; short), traits[], impact, words (SRK on the role: empty until he records it). Films without a file show the basic popup. Our own words; facts from the films and the public record.",
  "files": {
   "027": {
    "type": "Hero",

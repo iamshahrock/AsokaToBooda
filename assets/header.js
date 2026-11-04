@@ -44,7 +44,7 @@
     ['SRK DAILY', 'srk-daily/'],
     ['Games', [['create/', 'Make Your Poster', ['make-your-poster/']], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81', ['CHESS81.HTML']], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
     ['KING Buzz', [['king-intelligence/', 'KING Buzz'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
-    ['KINGNAMA', [['gallery/videos/', 'Gallery', ['gallery/']], ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
+    ['KINGNAMA', [['kingnama/', 'KINGNAMA · all sections'], ['king-studies/', 'KING University'], ['srk-characters/', 'Character Study'], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['gallery/videos/', 'Gallery', ['gallery/']], ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']], ['bise/', 'B.I.S.E. · coming soon']]],
     ['FANVERSE', [['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']], ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']], ['fan-billboard/', 'Billboard']]],
     ['Merch', 'merch/']
   ];
@@ -60,7 +60,7 @@
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
     'inquilab/': [['inquilab/', 'The anthem'], ['inquilab/revolution/', 'The Revolution Starts Now']],
-    'king-studies/': [['king-studies/', 'KING University'], ['king-studies/#mannat', 'The Man in Mannat'], ['srk-characters/', 'Alter Egos']],
+    'king-studies/': [['king-studies/', 'KING University'], ['king-studies/#mannat', 'The Man in Mannat'], ['srk-characters/', 'Character Study']],
     'doom-to-king/': [['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']],
     'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
   };
