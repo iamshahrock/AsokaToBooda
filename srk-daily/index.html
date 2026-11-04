@@ -322,7 +322,7 @@ button.np-btn{cursor:pointer}
         }).catch(function(){m.style.color='#c8102e';m.textContent='Could not reach the server. Try again.';});});
   }
   document.addEventListener('click',function(e){var b=e.target.closest('[data-sh]');if(!b)return;
-    var x=P.filter(function(p){return p.id===b.dataset.sh;})[0],u=location.origin+'/srk-daily/?p='+x.id;
+    var x=P.filter(function(p){return p.id===b.dataset.sh;})[0],u='https://agarmainkinghota.com/srk-daily/s/'+x.id+'/';
     if(navigator.share)navigator.share({title:x.title,text:x.title,url:u}).catch(function(){});
     else window.open('https://wa.me/?text='+encodeURIComponent(x.title+' '+u),'_blank');});
   fetch('../data/srk-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
