@@ -125,8 +125,8 @@
 .sc-panel h3{color:#f4ece4;font-family:var(--display);font-weight:400;font-size:clamp(26px,4vw,38px);text-transform:uppercase;margin:0;line-height:1}
 .sc-panel h3 span{color:var(--gold)}
 .sc-intro{font-size:15px;color:#cfc4bb;margin:6px 0 16px;max-width:760px}
-.ls{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 16px}
-@media (max-width:760px){.ls{grid-template-columns:1fr}.l{grid-template-columns:64px 1fr}.l img{width:64px;height:80px}}
+.ls{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 16px}
+@media (max-width:760px){.l{grid-template-columns:64px 1fr}.l img{width:64px;height:80px}}
 .ls.phd{grid-template-columns:1fr}
 .l{display:grid;grid-template-columns:96px 1fr;gap:12px;border:1px solid #2e2020;background:#140c0c;padding:10px;scroll-margin-top:130px}
 .l.noimg{grid-template-columns:1fr}
@@ -149,6 +149,41 @@
 .sc-act{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .sc-act .res{font:600 14px Archivo,sans-serif;color:#cfc4bb}
 
+/* syllabus + course */
+.sy-wrap{overflow-x:auto;border:1px solid #2e2020}
+.sy{width:100%;border-collapse:collapse;font-size:14px;min-width:720px}
+.sy th,.sy td{border-bottom:1px solid #2e2020;padding:9px 8px;text-align:left;vertical-align:top}
+.sy th{font:700 11px Archivo,sans-serif;letter-spacing:.12em;color:#a89a90;text-transform:uppercase;background:#120b0b}
+.sy td{color:#d9cfc6;line-height:1.45}
+.sy td.cd{font:700 12px Archivo,sans-serif;color:var(--gold);white-space:nowrap}
+.sy td b{color:#f4ece4;font-weight:600}
+.sy tr.go{cursor:pointer}.sy tr.go:hover td{background:#1a100e}
+.sy .pr{font-size:12px;color:#a89a90}
+@media (max-width:760px){.sy{min-width:0}.sy thead{display:none}.sy tr{display:block;border-bottom:1px solid #2e2020;padding:10px 10px 8px}.sy td{display:block;border:0;padding:2px 0}.sy td[data-h]::before{content:attr(data-h) ': ';color:#a89a90;font-size:12px}.sy td br+.pr{display:block}}
+.cs-syl{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;border:1px solid #3a2626;background:#120b0b;padding:14px;margin:0 0 16px}
+@media (max-width:760px){.cs-syl{grid-template-columns:1fr}}
+.cs-syl h5{font:700 11px Archivo,sans-serif;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin:0 0 6px}
+.cs-syl p,.cs-syl li{font-size:14px;color:#d9cfc6;line-height:1.5;margin:0 0 4px}
+.cs-syl ul,.cs-syl ol{margin:0 0 10px;padding-left:20px}
+.cs-syl ol li.ok{color:#8fc79a}
+.cs-syl dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:14px}
+.cs-syl dt{color:#a89a90}.cs-syl dd{margin:0;color:#f4ece4}
+.cs-bar{height:6px;background:#2a1c1c;margin:4px 0 14px}.cs-bar i{display:block;height:100%;background:var(--gold);transition:width .4s}
+.cs-prog{font:600 13px Archivo,sans-serif;color:#cfc4bb}
+.l .un{font:700 10px Archivo,sans-serif;letter-spacing:.14em;color:#a89a90;margin:0 0 3px}
+.l .un.ok{color:#8fc79a}
+.l .rd-btn{background:none;border:1px solid var(--gold-d);color:var(--gold);font:600 12px Archivo,sans-serif;padding:6px 10px;cursor:pointer;margin-top:4px}
+.l .read{display:none;border-top:1px solid #2e2020;margin-top:8px;padding-top:10px}
+.l.open .read{display:block}.l.open .rd-btn{display:none}
+.l .read p{font-size:15px;line-height:1.6;color:#e6dcd4;margin:0 0 9px}
+.l .rem{border-left:3px solid var(--gold);background:#1a100e;padding:8px 10px;margin:4px 0 10px}
+.l .rem b{font:700 10px Archivo,sans-serif;letter-spacing:.14em;color:var(--gold);display:block;margin:0 0 4px}
+.l .rem li{font-size:14px;color:#f4ece4;margin:0 0 2px}
+.l .rem ul{margin:0;padding-left:18px}
+.l .see{font-size:13px}.l .see a{color:var(--gold)}
+.l .done{background:#2f6b3a;border:0;color:#fff;font:700 12px Archivo,sans-serif;letter-spacing:.06em;padding:8px 12px;cursor:pointer;margin-top:6px}
+.l .done[disabled]{background:#1e3a24;color:#8fc79a;cursor:default}
+.ks-btn.lock,.ks-btn[disabled]{opacity:.55;cursor:not-allowed}
 /* exam paper */
 .xp-wrap{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);overflow-y:auto;padding:24px 12px;display:none}
 .xp-wrap.on{display:block}
@@ -214,15 +249,31 @@
 </section>
 
 <nav class="ks-nav" aria-label="King Studies">
-  <a href="#bazaar">1947 · The Storytellers' Bazaar</a>
+  <a href="#syllabus">Syllabus</a>
+  <a href="#school">The courses · Pre-K to PhD</a>
+  <a href="#bazaar">1947 reading room</a>
   <a href="#mannat">The Man in Mannat</a>
-  <a href="#school">The School · Pre-K to PhD</a>
   <a href="#timeline">Timeline 1947–2026</a>
   <a href="#transcript">My transcript</a>
 </nav>
 
+<section class="ks-sec" id="syllabus">
+  <p class="ks-k">The syllabus</p>
+  <h2 class="ks-h">Nine courses, <span>Pre-K to PhD</span></h2>
+  <p class="ks-p">Each course is taught in units. Study the units first; the question paper of a course opens only when all its units are studied. Courses build on each other, so start at the top if you are new.</p>
+  <div class="sy-wrap"><table class="sy"><thead><tr><th>Code</th><th>Level · Course</th><th>Units</th><th>Aim</th><th>Assessment</th><th>Award</th></tr></thead><tbody id="syBody"></tbody></table></div>
+</section>
+
+<section class="ks-sec" id="school">
+  <p class="ks-k">The School</p>
+  <h2 class="ks-h">Pre-K to <span>PhD</span></h2>
+  <p class="ks-p">Pick a course. Read its syllabus, then study every unit. When every unit is studied, the question paper unlocks. Score 60% or more to pass, earn STARKS and take home your certificate.</p>
+  <div class="sc-doors" id="doors"></div>
+  <div class="sc-panel" id="panel"></div>
+</section>
+
 <section class="ks-sec" id="bazaar">
-  <p class="ks-k">Chapter 0 · 1947</p>
+  <p class="ks-k">Reading room · 1947 · for KS 101 and KS 701</p>
   <h2 class="ks-h">The <span>Storytellers'</span> Bazaar</h2>
   <p class="ks-p" id="bzLede"></p>
   <div class="bz">
@@ -243,25 +294,19 @@
   <div id="mkFiles"></div>
 </section>
 
-<section class="ks-sec" id="school">
-  <p class="ks-k">The School</p>
-  <h2 class="ks-h">Pre-K to <span>PhD</span></h2>
-  <p class="ks-p">Pick a level. Read the textbook, then sit the paper. Score 60% or more to pass, earn STARKS and take home your certificate.</p>
-  <div class="sc-doors" id="doors"></div>
-  <div class="sc-panel" id="panel"></div>
-</section>
+
 
 <section class="ks-sec" id="timeline">
   <p class="ks-k">The record</p>
   <h2 class="ks-h">1947 <span>to</span> 2026</h2>
   <div class="tl" id="tl"></div>
-  <p class="tl-src">Dates from the public record (<a href="https://en.wikipedia.org/wiki/Shah_Rukh_Khan" target="_blank" rel="noopener">Wikipedia</a> and the sources it cites). Swipe for more.</p>
+  <p class="tl-src">Dates from the public record. Swipe for more.</p>
 </section>
 
 <section class="ks-sec" id="transcript">
   <p class="ks-k">My transcript</p>
   <h2 class="ks-h">Marks <span>and degrees</span></h2>
-  <table class="tr"><thead><tr><th>Level</th><th>Paper</th><th>Score</th><th>Certificate</th></tr></thead><tbody id="trBody"></tbody></table>
+  <table class="tr"><thead><tr><th>Course</th><th>Units studied</th><th>Score</th><th>Certificate</th></tr></thead><tbody id="trBody"></tbody></table>
   <p class="tl-src">Your marks are kept on this device. STARKS you earn here count on the Billboard.</p>
 </section>
 </main>
@@ -277,7 +322,7 @@
   var DEG={prek:'Pre-K Certificate',kg:'Kindergarten Certificate',primary:'Primary School Certificate',middle:'Middle School Certificate',boards:'Secondary School Certificate (Class 10 Boards)',streams:'Higher Secondary Certificate (Class 12)',ba:'Bachelor of Arts in King Studies',pg:'Master of King Studies',phd:'Doctor of Philosophy in King Studies',mock:'Declassified: The Man in Mannat'};
   var $=function(s){return document.querySelector(s);};
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function load(){var s=null;try{s=JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){}return s||{name:'',pass:{},mock:{},pos:{},notes:{},thesis:''};}
+  function load(){var s=null;try{s=JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){}s=s||{name:'',pass:{},mock:{},pos:{},notes:{},thesis:''};s.read=s.read||{};return s;}
   function save(){try{localStorage.setItem(KEY,JSON.stringify(ST));}catch(e){}}
   function earn(amt,note,once){try{if(window.STARKS)STARKS.earn('study',amt,note,once);}catch(e){}}
   function roll(){var d='';try{d=window.STARKS?STARKS.get().device:'';}catch(e){}return d?('KS-'+d.slice(0,8).toUpperCase()):'KS-GUEST';}
@@ -320,7 +365,7 @@
     s+='</svg><span class="note">Not to scale. Dashed red: the 1947 line (approximate). Gold: the storytellers\' road to Bombay. Red: his father\'s road to Delhi, and his own to Bombay in 1991.</span>';
     var m=$('#bzMap');m.innerHTML=s;
     if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){m.classList.add('on');io.disconnect();}},{threshold:.3});io.observe(m);}else m.classList.add('on');
-    $('#bzPpl').innerHTML=b.people.map(function(p){return '<a class="bz-p'+(p.srk?' srk':'')+'" href="'+esc(p.w)+'" target="_blank" rel="noopener"><b>'+esc(p.n)+'</b><i>'+esc(p.b)+'</i><span>'+esc(p.p)+'</span></a>';}).join('');
+    $('#bzPpl').innerHTML=b.people.map(function(p){return '<div class="bz-p'+(p.srk?' srk':'')+'"><b>'+esc(p.n)+'</b><i>'+esc(p.b)+'</i><span>'+esc(p.p)+'</span></div>';}).join('');
   }
 
   /* ---------- the man in mannat ---------- */
@@ -370,35 +415,66 @@
   var CUR=null;
   function doors(){
     $('#doors').innerHTML=D.levels.map(function(l){var p=ST.pass[l.id];
-      return '<button class="sc-door'+(CUR===l.id?' on':'')+'" data-l="'+l.id+'"><span class="st '+(p&&p.ok?'pass':'n')+'">'+(p&&p.ok?'PASSED':l.lessons.length+' lessons')+'</span><small>'+esc(l.name)+'</small><b>'+esc(l.title.split(',')[0])+'</b><span>'+esc(DEG[l.id])+'</span></button>';}).join('');
+      return '<button class="sc-door'+(CUR===l.id?' on':'')+'" data-l="'+l.id+'"><span class="st '+(p&&p.ok?'pass':'n')+'">'+(p&&p.ok?'PASSED':studied(l)+' / '+l.lessons.length+' units')+'</span><small>'+esc(l.code)+' · '+esc(l.name)+'</small><b>'+esc(l.title.split(',')[0])+'</b><span>'+esc(DEG[l.id])+'</span></button>';}).join('');
   }
   document.addEventListener('click',function(e){var d=e.target.closest('.sc-door');if(!d)return;openLevel(d.dataset.l,true);});
   function img(l){if(!l.img)return '';return '<img src="/assets/characters/'+esc(l.img)+'.webp" alt="'+esc(l.by)+'" loading="lazy">';}
-  function openLevel(id,scroll){
-    var L=D.levels.filter(function(l){return l.id===id;})[0];if(!L)return;CUR=id;doors();
-    var phd=id==='phd';
-    var h='<h3>'+esc(L.name)+' · <span>'+esc(L.title)+'</span></h3><p class="sc-intro">'+esc(L.intro)+'</p><div class="ls'+(phd?' phd':'')+'">';
-    L.lessons.forEach(function(x,i){
-      h+='<article class="l'+(x.img?'':' noimg')+'" id="lesson-'+id+'-'+(i+1)+'">'+img(x)+'<div>'+(phd?'<p class="hyp">'+(i?'HYPOTHESIS · opinion paper':'CORE PAPER')+'</p>':'')+
-        '<h4>'+esc(x.t)+'</h4><p class="by">'+esc(x.by)+' · <i>'+esc(x.film)+'</i>'+(x.y?' · '+x.y:'')+'</p><p>'+esc(x.line)+'</p>'+
+  function studied(L){return L.lessons.filter(function(x,i){return ST.read[L.id+'-'+i];}).length;}
+  function syllabus(){
+    $('#syBody').innerHTML=D.levels.map(function(l){var p=ST.pass[l.id];
+      return '<tr class="go" data-sy="'+l.id+'"><td class="cd">'+esc(l.code)+'</td><td><b>'+esc(l.name)+'</b><br>'+esc(l.title)+'<br><span class="pr">Before this: '+esc(l.prereq)+'</span></td><td data-h="Units">'+l.lessons.length+' · <span class="pr">'+esc(l.hours)+'</span></td><td data-h="Aim">'+esc(l.aim)+'</td><td data-h="Assessment">'+(l.id==='phd'?'Paper + a position on every paper + an 81-word thesis':'Question paper, '+l.lessons.length+' questions, pass 60%')+'</td><td data-h="Award">'+esc(DEG[l.id])+'<br><span class="pr">'+l.pts+' STARKS'+(p&&p.ok?' · PASSED':'')+'</span></td></tr>';}).join('')+
+      '<tr class="go" data-sy="mock"><td class="cd">KS 000</td><td><b>Elective · Mockumentary</b><br>The Man in Mannat<br><span class="pr">Before this: nothing; open to all</span></td><td data-h="Units">'+D.mock.files.length+' files</td><td data-h="Aim">Read an alternate history beside the real one, and tell them apart</td><td data-h="Assessment">Decode each file from its FACT box</td><td data-h="Award">'+esc(DEG.mock)+'</td></tr>';
+  }
+  document.addEventListener('click',function(e){var r=e.target.closest('tr[data-sy]');if(!r)return;if(r.dataset.sy==='mock')$('#mannat').scrollIntoView({behavior:'smooth'});else openLevel(r.dataset.sy,true);});
+  function unitHTML(L,x,i,phd){
+    var k=L.id+'-'+i,ok=!!ST.read[k];
+    return '<article class="l'+(x.img?'':' noimg')+'" id="lesson-'+L.id+'-'+(i+1)+'">'+img(x)+'<div><p class="un'+(ok?' ok':'')+'">UNIT '+(i+1)+(phd?' · '+(i?'HYPOTHESIS · opinion paper':'CORE PAPER'):'')+(ok?' · ✓ STUDIED':'')+'</p>'+
+      '<h4>'+esc(x.t)+'</h4><p class="by">'+esc(x.by)+' · <i>'+esc(x.film)+'</i>'+(x.y?' · '+x.y:'')+'</p><p>'+esc(x.line)+'</p>'+
+      '<button class="rd-btn" data-u="'+k+'">'+(ok?'Read again':'Study this unit')+'</button>'+
+      '<div class="read">'+(x.notes||[]).map(function(t){return '<p>'+esc(t)+'</p>';}).join('')+
+        (x.keys?'<div class="rem"><b>REMEMBER</b><ul>'+x.keys.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul></div>':'')+
         (x.counter?'<p class="ctr"><b>Counter-reading:</b> '+esc(x.counter)+'</p>':'')+
-        (x.ask?'<p class="ask">'+esc(x.ask)+'</p><div class="pos" data-k="'+id+'-'+i+'">'+['Agree','Partly','Disagree'].map(function(o){return '<button class="'+(ST.pos[id+'-'+i]===o?'on':'')+'">'+o+'</button>';}).join('')+'</div>':'')+
-        (x.act?'<p class="act"><b>Activity:</b> '+esc(x.act)+'</p>':'')+'</div></article>';
-    });
+        (x.ask?'<p class="ask">'+esc(x.ask)+'</p><div class="pos" data-k="'+k+'">'+['Agree','Partly','Disagree'].map(function(o){return '<button class="'+(ST.pos[k]===o?'on':'')+'">'+o+'</button>';}).join('')+'</div>':'')+
+        (x.act?'<p class="act"><b>Activity:</b> '+esc(x.act)+'</p>':'')+
+        (x.see?'<p class="see">Go deeper: <a href="'+esc(x.see[0])+'">'+esc(x.see[1])+' →</a></p>':'')+
+        '<button class="done" data-d="'+k+'"'+(ok?' disabled':'')+'>'+(ok?'✓ Studied':'I have studied this unit')+'</button></div></div></article>';
+  }
+  function openLevel(id,scroll,unit){
+    var L=D.levels.filter(function(l){return l.id===id;})[0];if(!L)return;CUR=id;doors();
+    var phd=id==='phd',n=L.lessons.length,m=studied(L),ready=m===n;
+    var h='<h3>'+esc(L.code)+' · '+esc(L.name)+' · <span>'+esc(L.title)+'</span></h3><p class="sc-intro">'+esc(L.intro)+'</p>'+
+      '<div class="cs-syl"><div><h5>Syllabus</h5><p>'+esc(L.aim)+'</p><h5>Units</h5><ol>'+L.lessons.map(function(x,i){return '<li class="'+(ST.read[id+'-'+i]?'ok':'')+'">'+esc(x.t)+'</li>';}).join('')+'</ol></div>'+
+      '<div><h5>By the end you can</h5><ul>'+L.outcomes.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>'+
+      '<dl><dt>Before this</dt><dd>'+esc(L.prereq)+'</dd><dt>Study time</dt><dd>'+esc(L.hours)+'</dd><dt>Assessment</dt><dd>'+(phd?'Question paper + a position on every paper + an 81-word thesis':'Question paper, '+n+' questions, 5 marks each')+'</dd><dt>Pass mark</dt><dd>60%</dd><dt>Award</dt><dd>'+esc(DEG[id])+' · '+L.pts+' STARKS</dd></dl></div></div>'+
+      '<p class="cs-prog" id="csProg">Units studied: '+m+' / '+n+'</p><div class="cs-bar"><i style="width:'+Math.round(m/n*100)+'%"></i></div><div class="ls'+(phd?' phd':'')+'">';
+    L.lessons.forEach(function(x,i){h+=unitHTML(L,x,i,phd);});
     h+='</div>';
     if(phd)h+='<div class="sc-thesis"><p class="ks-k" style="color:var(--gold)">Your thesis</p><p class="sc-intro" style="margin:0 0 8px">Take a position on every paper above, then defend one hypothesis in at least 81 words. Your thesis and your paper together earn the doctorate.</p><textarea id="thesis" placeholder="I argue that...">'+esc(ST.thesis||'')+'</textarea><small><span id="thW">'+words(ST.thesis)+'</span> words · kept on this device</small></div>';
     var p=ST.pass[id];
-    h+='<div class="sc-act"><button class="ks-btn" id="sit">Sit the paper · '+L.lessons.length+' questions</button>'+(p&&p.ok?'<button class="ks-btn gh" id="getC">Your certificate</button>':'')+'<span class="res">'+(p?('Best: '+p.sc+'%'+(p.ok?' · passed':' · not passed yet')):'Pass mark 60%')+' · '+L.pts+' STARKS</span></div>';
+    h+='<div class="sc-act"><button class="ks-btn'+(ready?'':' lock')+'" id="sit"'+(ready?'':' disabled')+'>'+(ready?'Sit the question paper · '+n+' questions':'🔒 Question paper · opens when all '+n+' units are studied ('+m+' / '+n+')')+'</button>'+(p&&p.ok?'<button class="ks-btn gh" id="getC">Your certificate</button>':'')+'<span class="res">'+(p?('Best: '+p.sc+'%'+(p.ok?' · passed':' · not passed yet')):'Pass mark 60%')+' · '+L.pts+' STARKS</span></div>';
     $('#panel').innerHTML=h;
-    $('#sit').onclick=function(){paper(L);};
+    if(ready)$('#sit').onclick=function(){paper(L);};
     var g=$('#getC');if(g)g.onclick=function(){cert(id,ST.pass[id].sc);};
-    if(scroll)$('#panel').scrollIntoView({behavior:'smooth',block:'start'});
+    if(unit!=null){var u=document.getElementById('lesson-'+id+'-'+(unit+1));if(u){u.classList.add('open');u.scrollIntoView({block:'start'});}}
+    else if(scroll)$('#panel').scrollIntoView({behavior:'smooth',block:'start'});
   }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.rd-btn');if(b){b.closest('.l').classList.add('open');return;}
+    var d=e.target.closest('.done');if(!d||d.disabled)return;
+    var k=d.dataset.d,L=D.levels.filter(function(l){return l.id===CUR;})[0],i=+k.split('-').pop();
+    if(L.id==='phd'&&L.lessons[i].ask&&!ST.pos[k]){d.textContent='Take your position first: Agree, Partly or Disagree';return;}
+    ST.read[k]=Date.now();save();
+    var nx=document.getElementById('lesson-'+L.id+'-'+(i+2)),y=window.scrollY;
+    openLevel(L.id,false);window.scrollTo(0,y);syllabus();renderTr();
+    if(nx){nx=document.getElementById(nx.id);nx.classList.add('open');setTimeout(function(){nx.scrollIntoView({behavior:'smooth',block:'start'});},150);}
+    else $('#sit').scrollIntoView({behavior:'smooth',block:'center'});
+  });
   document.addEventListener('click',function(e){var b=e.target.closest('.pos button');if(!b)return;var k=b.parentNode.dataset.k;ST.pos[k]=b.textContent;save();
     Array.prototype.forEach.call(b.parentNode.children,function(c){c.classList.toggle('on',c===b);});});
 
   /* ---------- the paper ---------- */
   function paper(L){
+    if(studied(L)<L.lessons.length)return;
     var h='<button class="x" aria-label="Close">×</button><div class="bd"><small>KING STUDIES BOARD OF EXAMINATION · AGAR MAIN KING HOTA</small><h2>'+esc(L.name.toUpperCase())+' · '+esc(L.title.toUpperCase())+'</h2><p>Annual Examination, '+new Date().getFullYear()+'</p></div>'+
       '<div class="mt"><span>Time allowed: 81 minutes</span><span>Maximum marks: '+L.lessons.length*5+'</span></div><div class="mt"><span>Name: '+esc(ST.name||'Guest')+'</span><span>Roll No.: '+roll()+'</span></div>'+
       '<p class="gi"><b>General instructions:</b> All questions are compulsory. Each question carries 5 marks. Pass mark: 60%.</p><span class="pstamp" id="pst"></span><ol>';
@@ -471,17 +547,17 @@
   /* ---------- timeline + transcript ---------- */
   function timeline(t){$('#tl').innerHTML=t.map(function(e){return '<div class="tl-c'+(e.y===2026||e.y===1947?' k':'')+'"><b>'+e.y+'</b><h4>'+esc(e.t)+'</h4><p>'+esc(e.d)+'</p></div>';}).join('');}
   function renderTr(){
-    var rows=D.levels.map(function(l){var p=ST.pass[l.id];return '<tr><td><b>'+esc(l.name)+'</b><br>'+esc(DEG[l.id])+'</td><td>'+esc(l.title)+'</td><td>'+(p?p.sc+'%':'—')+'</td><td>'+(p&&p.ok?'<button data-c="'+l.id+'">View</button>':'<button data-o="'+l.id+'">Study</button>')+'</td></tr>';});
-    var m=ST.pass.mock;rows.push('<tr><td><b>Mockumentary</b><br>The Man in Mannat</td><td>Alternate history</td><td>'+Object.keys(ST.mock).length+' / '+D.mock.files.length+' files</td><td>'+(m&&m.ok?'<button data-c="mock">View</button>':'<button data-m="1">Read</button>')+'</td></tr>');
+    var rows=D.levels.map(function(l){var p=ST.pass[l.id];return '<tr><td><b>'+esc(l.code)+' · '+esc(l.name)+'</b><br>'+esc(l.title)+'</td><td>'+studied(l)+' / '+l.lessons.length+'</td><td>'+(p?p.sc+'%':'—')+'</td><td>'+(p&&p.ok?'<button data-c="'+l.id+'">View</button>':'<button data-o="'+l.id+'">Study</button>')+'</td></tr>';});
+    var m=ST.pass.mock;rows.push('<tr><td><b>Mockumentary</b><br>The Man in Mannat</td><td>'+Object.keys(ST.mock).length+' / '+D.mock.files.length+' files</td><td>'+(m&&m.ok?'Declassified':'—')+'</td><td>'+(m&&m.ok?'<button data-c="mock">View</button>':'<button data-m="1">Read</button>')+'</td></tr>');
     $('#trBody').innerHTML=rows.join('');
   }
   document.addEventListener('click',function(e){var b=e.target.closest('#trBody button');if(!b)return;
     if(b.dataset.c)cert(b.dataset.c,(ST.pass[b.dataset.c]||{}).sc||100);else if(b.dataset.o)openLevel(b.dataset.o,true);else $('#mannat').scrollIntoView({behavior:'smooth'});});
 
   fetch('../data/king-studies.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-    D=d;bazaar(d.bazaar);mock(d.mock);doors();timeline(d.timeline);renderTr();idCard();
+    D=d;bazaar(d.bazaar);mock(d.mock);syllabus();doors();timeline(d.timeline);renderTr();idCard();
     var q=new URLSearchParams(location.search),lv=q.get('level');openLevel(lv&&D.levels.some(function(l){return l.id===lv;})?lv:'prek',!!lv);
-    var h=location.hash.match(/^#lesson-([a-z]+)-(\d+)/);if(h){openLevel(h[1],false);setTimeout(function(){var el=document.getElementById(location.hash.slice(1));if(el)el.scrollIntoView({block:'start'});},300);}
+    var h=location.hash.match(/^#lesson-([a-z]+)-(\d+)/);if(h)setTimeout(function(){openLevel(h[1],false,+h[2]-1);},300);
   });
 })();
 </script>
