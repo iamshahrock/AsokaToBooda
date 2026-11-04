@@ -33,14 +33,14 @@
 .pair>.hk span:first-child{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:26px;color:#d99a00}
 .pair>.hk span+span{font-weight:600;font-size:23px;color:#d99a00}
 
-.pair>.end span+span{font-size:27px;font-weight:600;color:#f4ece4}
+.pair>.end span,.pair>.end span+span{white-space:nowrap;font-size:clamp(18px,2.4vw,27px);font-weight:600;color:#e0312b;line-height:1.5}
 .duo{display:none}
 @media (max-width:760px){.pair{display:none}.duo{display:grid}}
 
 .duo .lyrics{padding:0 26px 0 0}
 .duo .lyrics+.lyrics{padding:0 0 0 26px;border-left:1px solid #c9a24a}
 .lyrics.hi{font-family:'Noto Sans Devanagari','Archivo',sans-serif;font-size:18px}
-.lyrics.hi .last{font-size:27px;font-weight:600;color:#f4ece4;line-height:1.5}
+.lyrics .last,.lyrics.hi .last{display:inline-block;font-size:27px;font-weight:600;color:#e0312b;line-height:1.5}
 .lyrics.hi .hook{font-family:'Noto Sans Devanagari',serif;font-style:normal;font-size:23px}
 @media (max-width:760px){.box{padding:22px 18px 24px}.lyrics{font-size:16px}.lyrics.hi{font-size:17px}.duo{grid-template-columns:1fr}.duo .lyrics{padding:0}.duo .lyrics+.lyrics{padding:22px 0 0;border-left:0;border-top:1px solid #c9a24a;margin-top:6px}}
 </style>
@@ -156,7 +156,7 @@ Har zameen ka mujhko pyar milta</p>
 <p>Kisi sarhad ka main sipahi naa banta.<br>
 Fauji ki vardi ka koi na karza hota</p>
 <p><span class="hook">Agar main King hota…</span><br>
-Toh har fan mera Baadshah hota.</p>
+<span class="last">Toh har fan mera Baadshah hota.</span></p>
   </div>
   <div class="lyrics hi" lang="hi">
 <p><span class="hook">अगर मैं किंग होता</span></p>
