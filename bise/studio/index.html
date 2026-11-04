@@ -27,12 +27,29 @@
 .how div{border:1px solid var(--line);background:var(--card);padding:12px;font-size:14px;line-height:1.5;color:#d9cfc6}
 .how b{display:block;color:var(--gold);font:700 12px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin:0 0 4px}
 @media(max-width:760px){.how{grid-template-columns:1fr 1fr}}
-.pick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-@media(max-width:900px){.pick{grid-template-columns:repeat(2,1fr)}}
-.pick button{text-align:left;background:var(--card);border:1px solid var(--line);color:#e6dcd4;padding:12px;cursor:pointer;font:14px/1.4 Archivo,sans-serif}
-.pick button b{display:block;font:400 22px/1.1 var(--display);color:#f4ece4;margin:0 0 4px}
-.pick button i{font-style:normal;color:#a89a90;font-size:12px}
-.pick button.on{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.pk{display:grid;grid-template-columns:260px 1fr;gap:12px;align-items:start}
+@media(max-width:760px){.pk{grid-template-columns:1fr}}
+.pk-film{display:flex;flex-direction:column;gap:4px;font:700 11px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a89a90}
+.pk select{background:var(--card);color:#f4ece4;border:1px solid var(--gold-d);padding:12px 10px;font:600 15px Archivo,sans-serif}
+.pk-scene{position:relative}
+#sceneBtn{width:100%;display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--gold-d);color:#f4ece4;padding:8px 12px;cursor:pointer;text-align:left;margin-top:18px}
+@media(max-width:760px){#sceneBtn{margin-top:0}}
+#sceneBtn img{width:96px;height:54px;object-fit:cover;background:#000;flex:none}
+#sceneBtn span{flex:1;min-width:0}#sceneBtn b{display:block;font:400 22px/1.1 var(--display)}#sceneBtn i{font-style:normal;font-size:12.5px;color:#a89a90}
+#sceneBtn em{font-style:normal;color:var(--gold);font-size:18px}
+.pk-panel{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 4px);background:#0e0909;border:1px solid var(--gold-d);box-shadow:0 12px 30px rgba(0,0,0,.6);padding:10px;max-height:min(70vh,560px);display:flex;flex-direction:column}
+.pk-panel[hidden]{display:none}
+.pk-panel input{background:var(--card);border:1px solid var(--line);color:#f4ece4;font-size:15px;padding:9px 10px;margin:0 0 8px}
+.pk-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.pk-chips button{background:var(--card);border:1px solid var(--line);color:#cfc4bb;font:12px Archivo,sans-serif;padding:4px 9px;cursor:pointer}
+.pk-chips button.on{background:var(--red);border-color:var(--red);color:#fff}
+.pk-list{overflow:auto;flex:1}
+.pk-list h4{margin:10px 0 4px;font:700 11px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.pk-list button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;border-bottom:1px solid #1e1414;color:#e6dcd4;padding:6px 4px;cursor:pointer;text-align:left}
+.pk-list button:hover,.pk-list button.on{background:#1d1212}
+.pk-list img{width:96px;height:54px;object-fit:cover;background:#000;flex:none}
+.pk-list b{display:block;font:600 15px Archivo,sans-serif;color:#f4ece4}.pk-list i{font-style:normal;font-size:12px;color:#a89a90}
+.pk-list .none{color:#a89a90;font-size:14px;padding:10px 4px}
 .stage{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 @media(max-width:860px){.stage{grid-template-columns:1fr}}
 .box{border:1px solid var(--gold-d);background:var(--card)}
@@ -78,14 +95,24 @@
   <p class="full">Deewana (1992), Shah Rukh Khan's first film</p>
   <p>Pick one of his scenes, watch it, then play it yourself. Your take is read in your own browser and laid over his: when you speak, how long you pause, how your head moves, what your face does and how your voice rises and falls. <b>Your video never leaves your device.</b></p>
   <div class="how">
-    <div><b>1 · Pick</b>One of 12 Raja moments, each with what to study.</div>
+    <div><b>1 · Pick</b>A film, then one of Raja's scenes, each with what to study.</div>
     <div><b>2 · Watch</b>The scene plays from the film's official upload.</div>
     <div><b>3 · Act</b>Record with your camera, or upload a video of your take.</div>
     <div><b>4 · Compare</b>Your timing, pauses, head, face and voice against his.</div>
   </div>
 
   <h2>1 · Pick a scene</h2>
-  <div class="pick" id="pick"></div>
+  <div class="pk">
+    <label class="pk-film"><span>Film</span><select id="film"></select></label>
+    <div class="pk-scene">
+      <button type="button" id="sceneBtn" aria-haspopup="listbox" aria-expanded="false"><img id="sceneImg" alt=""><span><b id="sceneName">Choose a scene</b><i id="sceneSub"></i></span><em>▾</em></button>
+      <div class="pk-panel" id="panel" hidden>
+        <input id="pq" type="search" placeholder="Search scenes…" autocomplete="off">
+        <div class="pk-chips" id="pchips"></div>
+        <div class="pk-list" id="plist" role="listbox"></div>
+      </div>
+    </div>
+  </div>
 
   <div class="stage">
     <div class="box">
@@ -138,16 +165,39 @@ let D=null,cur=null,stream=null,api=null,take=null,stopAt=0,timer=null,ac=null;
 
 const data=await fetch('/data/bise-deewana.json',{cache:'no-store'}).then(r=>r.json());D=data;
 D.scenes.sort((a,b)=>a.start-b.start);
-$('pick').innerHTML=D.scenes.map((s,i)=>`<button data-i="${i}"><b>${esc(s.title)}</b>${fmt(s.start)} · ${Math.round(s.dur)} s<br><i>${s.speaks?'Dialogue':'No dialogue · body and face'}</i></button>`).join('');
-$('pick').onclick=e=>{const b=e.target.closest('button');if(b)choose(+b.dataset.i)};
+const KIND={dialogue:'Dialogue',silent:'Silent / face',song:'Songs / body',action:'Action'};
+const thumb=s=>'/assets/bise/deewana/'+s.id+'.webp';
+$('film').innerHTML=`<option>${esc(D.film.title)} (${D.film.year}) · ${esc(D.film.note||'')}</option>`;
+let kindF='',qF='';
+$('pchips').innerHTML=['','dialogue','silent','song','action'].map(k=>`<button type="button" data-k="${k}"${k?'':' class="on"'}>${k?KIND[k]:'All'} (${k?D.scenes.filter(s=>s.kind===k).length:D.scenes.length})</button>`).join('');
+function list(){
+  const q=qF.toLowerCase();let h='',n=0;
+  for(const act of (D.acts||[''])){
+    const ss=D.scenes.filter(s=>(s.act||'')===act&&(!kindF||s.kind===kindF)&&(!q||(s.title+' '+s.study+' '+act).toLowerCase().includes(q)));
+    if(!ss.length)continue;n+=ss.length;
+    h+=(act?`<h4>${esc(act)}</h4>`:'')+ss.map(s=>`<button type="button" role="option" data-id="${esc(s.id)}"${cur&&s.id===cur.id?' class="on"':''}><img loading="lazy" src="${thumb(s)}" alt=""><span><b>${esc(s.title)}</b><i>${fmt(s.start)} · ${Math.round(s.dur)} s · ${KIND[s.kind]||''}</i></span></button>`).join('');
+  }
+  $('plist').innerHTML=n?h:'<p class="none">No scene matches.</p>';
+}
+function openPanel(o){$('panel').hidden=!o;$('sceneBtn').setAttribute('aria-expanded',o);if(o){list();$('pq').focus({preventScroll:true});const L=$('plist'),on=L.querySelector('.on');if(on)L.scrollTop=on.offsetTop-L.offsetTop-L.clientHeight/2+on.offsetHeight/2}}
+$('sceneBtn').onclick=()=>openPanel($('panel').hidden);
+$('pq').oninput=e=>{qF=e.target.value;list()};
+$('pchips').onclick=e=>{const b=e.target.closest('button');if(!b)return;kindF=b.dataset.k;[...$('pchips').children].forEach(x=>x.classList.toggle('on',x===b));list()};
+$('plist').onclick=e=>{const b=e.target.closest('button');if(!b)return;choose(D.scenes.findIndex(s=>String(s.id)===b.dataset.id));openPanel(false)};
+document.addEventListener('click',e=>{if(!$('panel').hidden&&!e.target.closest('.pk-scene'))openPanel(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')openPanel(false)});
 const q=new URLSearchParams(location.search).get('scene');
-choose(Math.max(0,D.scenes.findIndex(s=>String(s.id)===q)));
+let qi=D.scenes.findIndex(s=>String(s.id)===q);if(qi<0&&q)qi=D.scenes.findIndex(s=>String(s.id).startsWith(q+'-'));
+if(qi<0)qi=D.scenes.findIndex(s=>String(s.id)==='1042');
+choose(Math.max(0,qi));
 
 function choose(i){
-  cur=D.scenes[i];[...$('pick').children].forEach((b,j)=>b.classList.toggle('on',j===i));
+  cur=D.scenes[i];$('sceneImg').src=thumb(cur);$('sceneName').textContent=cur.title;
+  $('sceneSub').textContent=fmt(cur.start)+' · '+Math.round(cur.dur)+' s · '+(KIND[cur.kind]||'')+(cur.act?' · '+cur.act:'');
+  history.replaceState(null,'','?scene='+encodeURIComponent(cur.id));
   $('sTitle').textContent=cur.title+' · '+fmt(cur.start);
   $('sStudy').textContent=cur.study;
-  $('sMeta').textContent=cur.head+' · '+Math.round(cur.dur)+' seconds'+(cur.speaks?' · '+cur.speech.length+' speeches':'');
+  $('sMeta').textContent=Math.round(cur.dur)+' seconds'+(cur.speaks?' · '+cur.speech.length+' speeches':' · no dialogue: scored on head and face');
   $('yt').innerHTML='<img alt="" src="https://i.ytimg.com/vi/'+D.film.youtube+'/hqdefault.jpg"><span>Watch the scene</span>';
   $('sFp').innerHTML=chart({raja:cur});
   $('res').style.display='none';
@@ -293,9 +343,9 @@ function finish(tk){
   const [ea,eb]=pairs(4),ce=ea.length>=8?corr(ea,eb):null;sc.Expression=ce==null?null:Math.round(100*Math.max(0,(ce+1)/2));
   const inR=t=>!R.speaks||R.speech.some(s=>t>=s[0]&&t<s[1]);
   const la=[],lb=[];const L=R.loud;for(let i=0;i<L.length;i++){const t=i*0.25;if(!inR(t))continue;const w=you.loud.filter(p=>Math.abs(p[0]-t)<0.15);if(L[i]!=null&&w.length){la.push(L[i]);lb.push(w.reduce((s,p)=>s+p[1],0)/w.length)}}
-  const cl=corr(la,lb);sc.Voice=cl==null?null:Math.round(100*Math.max(0,(cl+1)/2));
-  const vals=Object.values(sc).filter(v=>v!=null);const total=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0;
-  $('total').textContent=total;$('totLab').textContent=total>=75?'Very close to Raja':total>=55?'On his track':total>=35?'Finding it':'Keep practising';
+  const cl=R.speaks?corr(la,lb):null;if(R.speaks)sc.Voice=cl==null?null:Math.round(100*Math.max(0,(cl+1)/2));
+  const vals=Object.values(sc).filter(v=>v!=null);const total=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):null;
+  $('total').textContent=total==null?'–':total;$('totLab').textContent=total==null?'Not enough to compare':total>=75?'Very close to Raja':total>=55?'On his track':total>=35?'Finding it':'Keep practising';
   $('bars').innerHTML=Object.entries(sc).map(([k,v])=>v==null?`<div><span>${k}</span><i></i><em class="na">n/a</em></div>`:`<div><span>${k}</span><i><u style="width:${v}%"></u></i><em>${v}</em></div>`).join('');
   const tips=[];
   if(!you.face.length)tips.push('Your face was not found: face the camera in good light.');
