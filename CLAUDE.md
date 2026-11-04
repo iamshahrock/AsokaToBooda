@@ -36,6 +36,8 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 
 ## Production note · the front-page format (owner, 4 Nov 2026)
 - CITATION: the front-page layout used by SRK DAILY, the KINGNAMA landing page and the homepage comes from SRKWorld's 'The Third Eye' (www.srkworld.com, 2000): Co-Designed by Shailja Gupta, Shah Rukh Khan in 2000. Credit it this way wherever the format is described; never call it a template or a borrowed layout.
+- Homepage boxes (owner, 4 Nov 2026): left = KING BUZZ of the day, SRK DAILY, KINGNAMA, DOOM to KING; right = The music video, then 'Fan Anthem' (the INQUILAAB players, was 'FANVERSE · the fans' song'), Merch.
+- /KING_Song_01/ is titled 'Teeno Mil Jaaye' (owner): KING's Tu Mil Jaaye beside the fans' version Teeno Mil Jaaye; listed in the FANVERSE menu and footer as 'Teeno Mil Jaaye'. Release QA expects 20 header links.
 - Homepage headline 'Be the KING of every SRK film' stays on one line at every width (CSS nowrap + a small fit script that shrinks it to the box).
 
 ## Homepage = front-page format (owner, 4 Nov 2026: 'the homepage of the site ... you should use the same format' as SRK DAILY; 'Yes, build it')
