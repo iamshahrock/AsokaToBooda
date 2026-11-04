@@ -3,14 +3,575 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Act As SRK — Agar Main King Hota</title>
-<meta name="description" content="Act As SRK: pick a movie, pick a scene, record yourself, get your score.">
-<link rel="canonical" href="https://agarmainkinghota.com/bise/studio/">
+<title>Act As SRK · Record his scenes — Agar Main King Hota</title>
+<meta name="description" content="Act As SRK: pick a movie, pick a scene, record yourself, get your score. Act a Raja scene from Deewana (1992), Shah Rukh Khan's first film. Record your take; your timing, pauses, head movement, expression and voice are read in your own browser and laid over his.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/act-as-srk/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-<meta http-equiv="refresh" content="0; url=/bise/studio/">
-<script>location.replace('/bise/studio/'+location.search+location.hash)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+.st{max-width:1100px;margin:0 auto;padding:26px 0 50px;--gold:#f0c24e;--gold-d:#c9a24a;--red:#e0312b;--card:#120b0b;--line:#3a2626}
+.st .k{font:700 12px Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 8px}
+.st h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,7vw,76px);line-height:.98;margin:0;color:#f4ece4}
+.st h1 span{color:var(--gold)}
+.st .full{font:italic 600 clamp(18px,2.6vw,25px) 'Cormorant Garamond',serif;color:var(--gold);margin:8px 0 14px}
+.st p{font-size:16px;line-height:1.65;color:#e6dcd4;margin:0 0 12px}
+.st h2{font:700 13px Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--line);padding-top:20px;margin:30px 0 12px}
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.how div{border:1px solid var(--line);background:var(--card);padding:12px;font-size:14px;line-height:1.5;color:#d9cfc6}
+.how b{display:block;color:var(--gold);font:700 12px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin:0 0 4px}
+@media(max-width:760px){.how{grid-template-columns:1fr 1fr}}
+.pk{display:grid;grid-template-columns:260px 1fr;gap:12px;align-items:start}
+@media(max-width:760px){.pk{grid-template-columns:1fr}}
+.pk-film{display:flex;flex-direction:column;gap:4px;font:700 11px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a89a90}
+.pk select{background:var(--card);color:#f4ece4;border:1px solid var(--gold-d);padding:12px 10px;font:600 15px Archivo,sans-serif}
+.pk-scene{position:relative}
+#sceneBtn{width:100%;display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--gold-d);color:#f4ece4;padding:8px 12px;cursor:pointer;text-align:left;margin-top:18px}
+@media(max-width:760px){#sceneBtn{margin-top:0}}
+#sceneBtn img{width:96px;height:54px;object-fit:cover;background:#000;flex:none}
+#sceneBtn span{flex:1;min-width:0}#sceneBtn b{display:block;font:400 22px/1.1 var(--display)}#sceneBtn i{font-style:normal;font-size:12.5px;color:#a89a90}
+#sceneBtn em{font-style:normal;color:var(--gold);font-size:18px}
+.pk-panel{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 4px);background:#0e0909;border:1px solid var(--gold-d);box-shadow:0 12px 30px rgba(0,0,0,.6);padding:10px;max-height:min(70vh,560px);display:flex;flex-direction:column}
+.pk-panel[hidden]{display:none}
+.pk-panel input{background:var(--card);border:1px solid var(--line);color:#f4ece4;font-size:15px;padding:9px 10px;margin:0 0 8px}
+.pk-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.pk-chips button{background:var(--card);border:1px solid var(--line);color:#cfc4bb;font:12px Archivo,sans-serif;padding:4px 9px;cursor:pointer}
+.pk-chips button.on{background:var(--red);border-color:var(--red);color:#fff}
+.pk-list{overflow:auto;flex:1}
+.pk-list h4{margin:10px 0 4px;font:700 11px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.pk-list button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;border-bottom:1px solid #1e1414;color:#e6dcd4;padding:6px 4px;cursor:pointer;text-align:left}
+.pk-list button:hover,.pk-list button.on{background:#1d1212}
+.pk-list img{width:96px;height:54px;object-fit:cover;background:#000;flex:none}
+.pk-list b{display:block;font:600 15px Archivo,sans-serif;color:#f4ece4}.pk-list i{font-style:normal;font-size:12px;color:#a89a90}
+.pk-list .none{color:#a89a90;font-size:14px;padding:10px 4px}
+.won{border:2px solid var(--gold-d);background:#140c0a;padding:16px;margin:24px 0 0;display:grid;grid-template-columns:220px 1fr;gap:18px;align-items:center}
+.won[hidden]{display:none}
+@media(max-width:640px){.won{grid-template-columns:1fr}}
+.won h3{margin:0 0 6px;font:400 30px/1.05 var(--display);color:#f4ece4}.won p{margin:0 0 6px}
+.crd{position:relative;background:#0e0909;border:3px solid var(--lv,#3a2626);padding:6px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.crd img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000}
+.crd b{font:600 13px/1.25 Archivo,sans-serif;color:#f4ece4;display:block}
+.crd i{font-style:normal;font-size:11px;color:#a89a90}
+.crd .lv{position:absolute;top:10px;left:10px;background:var(--lv);color:#140c0a;font:700 10px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:2px 6px}
+.crd.off img{filter:grayscale(1) brightness(.35)}.crd.off{border-color:#2a1c1c}.crd.off b{color:#77686a}
+.crd.big{border-width:4px}.crd.big b{font:400 22px/1.1 var(--display)}
+.crd.set{background:linear-gradient(160deg,#2a1d0c,#0e0909)}
+.alb-act{margin:16px 0 0}.alb-act h4{margin:0 0 8px;font:700 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.alb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+@media(max-width:900px){.alb-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:520px){.alb-grid{grid-template-columns:repeat(3,1fr)}}
+.alb-film{display:grid;grid-template-columns:260px 1fr;gap:14px;align-items:center;margin:8px 0 6px}@media(max-width:640px){.alb-film{grid-template-columns:1fr}}
+.sotd{color:var(--gold)}
+.cue{background:#0e0909;border-top:1px solid #2a1c1c;padding:8px 12px}
+.cue-now{font:700 15px Archivo,sans-serif;color:#f4ece4;min-height:20px}
+.cue-now.k-line{color:#f0c24e}.cue-now.k-other{color:#cfc4bb}.cue-now.k-on{color:#8fb8ff}
+.cue-bar{position:relative;height:22px;margin:6px 0 4px;background:#1a1111}
+.cue-bar i{position:absolute;top:0;height:100%}
+.cue-bar .ph{position:absolute;top:-3px;bottom:-3px;width:2px;background:#fff;left:0}
+.cue-leg span{font-size:11.5px;color:#a89a90;margin-right:12px}.cue-leg i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px}
+.snd{display:block;margin:8px 0 0}
+.rules{max-width:640px;background:#120b0b;color:#e6dcd4;border:2px solid var(--gold-d);padding:20px 22px}
+.rules::backdrop{background:rgba(0,0,0,.7)}
+.rules h3{margin:0 0 10px;font:400 30px var(--display);color:#f4ece4}.rules li{margin:0 0 10px;font-size:15px;line-height:1.55}
+.rules .k1,.rules .k2,.rules .k3{display:inline-block;font:700 11px Archivo,sans-serif;padding:1px 6px;margin-right:6px}
+.rules .k1{background:#f0c24e;color:#140c0a}.rules .k2{background:#8a7f78;color:#140c0a}.rules .k3{background:#5b8fd6;color:#fff}
+.stage{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:860px){.stage{grid-template-columns:1fr}}
+.box{border:1px solid var(--gold-d);background:var(--card)}
+.box>h3{margin:0;background:var(--gold-d);color:#1b1410;font:700 13px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:7px 10px}
+.box .in{padding:12px}
+.yt{position:relative;aspect-ratio:16/9;background:#000;cursor:pointer}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.75;display:block}
+.yt span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:700 14px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.yt span:before{content:'▶';display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:var(--red);margin-right:10px;font-size:20px}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cam{position:relative;aspect-ratio:4/3;background:#000;overflow:hidden}
+.cam video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.cam video.file{transform:none;object-fit:contain}
+.cam .cd{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font:400 120px var(--display);color:#fff;text-shadow:0 0 20px #000}
+.cam .rec{position:absolute;top:10px;left:10px;display:none;background:var(--red);color:#fff;font:700 12px Archivo,sans-serif;padding:4px 8px;letter-spacing:.1em}
+.cam .msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#a89a90;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.btn{display:inline-flex;align-items:center;line-height:1.2;box-sizing:border-box;background:var(--red);color:#fff;border:1px solid var(--red);font:700 13px Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.btn.g{background:transparent;border:1px solid var(--gold-d);color:var(--gold)}
+.btn[disabled]{opacity:.45;cursor:default}
+.note{font-size:13px;color:#a89a90;line-height:1.5}
+.prog{height:6px;background:#2a1c1c;margin:10px 0 0;display:none}.prog i{display:block;height:100%;width:0;background:var(--gold)}
+#res{display:none}
+.score{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center}
+@media(max-width:640px){.score{grid-template-columns:1fr}}
+.big{text-align:center;border:2px solid var(--gold-d);padding:16px}
+.big b{display:block;font:400 72px/1 var(--display);color:var(--gold)}
+.big small{font:700 11px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#a89a90}
+.bars div{display:grid;grid-template-columns:130px 1fr 44px;gap:10px;align-items:center;margin:0 0 8px;font-size:14px}
+.bars i{display:block;height:10px;background:#2a1c1c}.bars i u{display:block;height:100%;background:var(--gold)}
+.bars em{font-style:normal;color:#f4ece4;text-align:right}
+.bars .na{color:#777}
+.tips{margin:12px 0 0;padding-left:18px}.tips li{margin:0 0 6px;font-size:14.5px;line-height:1.5;color:#e6dcd4}
+.leg span{font-size:12px;margin-right:14px;color:#a89a90}.leg i{display:inline-block;width:18px;height:3px;vertical-align:3px;margin-right:5px}
+</style>
 </head>
-<body style="background:#0a0707;color:#e6dcd4;font-family:Arial,sans-serif"><p><a href="/bise/studio/" style="color:#f0c24e">Act As SRK →</a></p></body>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+<section class="st">
+  <p class="k">KINGNAMA · Act As SRK · Record his scenes</p>
+  <h1>Act As <span>SRK</span></h1>
+  <p class="full">Pick A Movie . Scene . Record . Get Score.</p>
+  <p>Pick one of his scenes, watch it, then play it yourself. Your take is read in your own browser and laid over his: when you speak, how long you pause, how your head moves, what your face does and how your voice rises and falls. <b>Your video never leaves your device.</b></p>
+  <div class="how">
+    <div><b>1 · Pick</b>A film, then one of Raja's scenes, each with what to study.</div>
+    <div><b>2 · Watch</b>The scene plays from the film's official upload.</div>
+    <div><b>3 · Act</b>Record with your camera, or upload a video of your take.</div>
+    <div><b>4 · Compare</b>Your timing, pauses, head, face and voice against his.</div>
+  </div>
+
+  <p><button type="button" class="btn g" id="bRules">How Match the King works</button></p>
+  <dialog id="rules" class="rules">
+    <h3>How Match the King works</h3>
+    <p><b>The aim:</b> play Raja's scene the way Shah Rukh Khan played it. The score measures how close your take comes to his choices, not how good an actor you are.</p>
+    <ol>
+      <li><b>Pick a scene and watch it</b> once or twice. Learn the lines, or speak your own words in his rhythm.</li>
+      <li><b>Start camera, then Record.</b> After 3-2-1 his scene starts beside your camera, muted, and you act along with it. Recording stops when his scene ends. Stop ends it early.</li>
+      <li><b>Follow the cue strip</b> under your camera:<br>
+        <span class="k1">Your line</span> Raja speaks: you speak.<br>
+        <span class="k2">Others speak · listen</span> another character talks: stay silent, listen in character.<br>
+        <span class="k3">Raja on screen · react</span> his face is on screen: your face is compared with his.<br>
+        Off screen: nothing is scored, stay in character.</li>
+      <li><b>What is measured:</b> Timing (you speak when he speaks), Speaking length, Pauses, Head movement (where he turns), Expression (how his face changes) and, in dialogue scenes, Voice (how his loudness rises and falls). Scenes without dialogue are scored on head and face only.</li>
+      <li><b>Your card:</b> every scene you play wins its card. Match under 50 = Bronze, 50+ = Silver, 70+ = Gold, 85+ = Diamond. Play again to upgrade it; it never goes down. Finish an act for its duo card, all scenes for Hum Teeno.</li>
+      <li><b>Tips:</b> face the camera, good light on your face, alone in the frame, quiet room. Your video never leaves your device.</li>
+    </ol>
+    <form method="dialog"><button class="btn">Got it</button></form>
+  </dialog>
+  <h2>1 · Pick a scene</h2>
+  <div class="pk">
+    <label class="pk-film"><span>Film</span><select id="film"></select></label>
+    <div class="pk-scene">
+      <button type="button" id="sceneBtn" aria-haspopup="listbox" aria-expanded="false"><img id="sceneImg" alt=""><span><b id="sceneName">Choose a scene</b><i id="sceneSub"></i></span><em>▾</em></button>
+      <div class="pk-panel" id="panel" hidden>
+        <input id="pq" type="search" placeholder="Search scenes…" autocomplete="off">
+        <div class="pk-chips" id="pchips"></div>
+        <div class="pk-list" id="plist" role="listbox"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="box">
+      <h3 id="sTitle">The scene</h3>
+      <div class="yt" id="yt"><img alt="" src="https://i.ytimg.com/vi/GmUCKb7HKmc/hqdefault.jpg"><span>Watch the scene</span></div>
+      <div class="in">
+        <p id="sStudy"></p>
+        <p class="note" id="sMeta"></p>
+        <p class="note">You will need the lines: watch the scene and learn them, or speak your own words in his rhythm. Raja's fingerprint for this scene:</p>
+        <div id="sFp"></div>
+      </div>
+    </div>
+    <div class="box">
+      <h3>2 · Your take</h3>
+      <div class="cam" id="cam"><video id="vid" playsinline muted></video><div class="cd" id="cd"></div><div class="rec" id="recTag">● REC</div><div class="msg" id="camMsg">Start your camera, or upload a video of your take.</div></div>
+      <div class="cue" id="cue"><div class="cue-now" id="cueNow">The scene map: where Raja speaks, listens and is on screen</div><div class="cue-bar" id="cueBar"></div><div class="cue-leg"><span><i style="background:#f0c24e"></i>Your line</span><span><i style="background:#8a7f78"></i>Others speak · listen</span><span><i style="background:#5b8fd6"></i>Raja on screen · react</span></div></div>
+      <div class="in">
+        <div class="btns">
+          <button class="btn" id="bCam">Start camera</button>
+          <button class="btn" id="bRec" disabled>Record my take</button>
+          <button class="btn g" id="bStop" disabled>Stop</button>
+          <label class="btn g" for="file">Upload a video</label><input id="file" type="file" accept="video/*" hidden>
+        </div>
+        <div class="prog" id="prog"><i></i></div>
+        <label class="note snd"><input type="checkbox" id="sndOn"> Play the scene's sound while I act (use headphones, or your microphone will hear the film)</label>
+        <p class="note" id="status">Recording stops by itself when the scene's time is up. Face the camera, in good light, and speak clearly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="won" class="won" hidden></div>
+  <div id="res">
+    <h2>3 · Your take against Raja's</h2>
+    <div class="score">
+      <div class="big"><small>Match score · how close to Raja</small><b id="total">–</b><small id="totLab"></small></div>
+      <div class="bars" id="bars"></div>
+    </div>
+    <ul class="tips" id="tips"></ul>
+    <p class="leg"><span><i style="background:#f0c24e"></i>Raja</span><span><i style="background:#5bb8ff"></i>You</span></p>
+    <div id="charts"></div>
+    <div class="btns"><button class="btn" id="bAgain">Try again</button><button class="btn g" id="bMyCard">Save my card</button><button class="btn g" id="bCard">Save my scorecard</button></div>
+    <p class="note">Match the King: the score measures how close your take comes to Raja's choices (timing, pauses, head, face, voice), not how good an actor you are. Head turns and expressions are read from your face; voice from loudness, not words. Raja's numbers come from our own study of the film.</p>
+  </div>
+  <section id="album">
+    <h2>Your Deewana album</h2>
+    <p class="note" id="albumSum"></p>
+    <div id="albumBody"></div>
+    <div id="topActors"></div>
+  </section>
+  <p style="margin-top:26px"><a class="btn g" href="/kingnama/">← KINGNAMA</a></p>
+</section>
+</main>
+<script type="module">
+const VENDOR='/assets/vendor/face-api/';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=t=>{t=Math.round(t);return Math.floor(t/3600)+':'+String(Math.floor(t%3600/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')};
+let D=null,cur=null,stream=null,api=null,take=null,stopAt=0,timer=null,ac=null,yt=null,ytReady=null;
+
+const data=await fetch('/data/bise-deewana.json',{cache:'no-store'}).then(r=>r.json());D=data;
+D.scenes.sort((a,b)=>a.start-b.start);
+const KIND={dialogue:'Dialogue',silent:'Silent / face',song:'Songs / body',action:'Action'};
+// ---- cards: the Match score sets the level ----
+const LV=[{n:'Bronze',c:'#c0814a',at:0,st:20},{n:'Silver',c:'#c9d1d8',at:50,st:50},{n:'Gold',c:'#f0c24e',at:70,st:120},{n:'Diamond',c:'#8fe3ff',at:85,st:300}];
+const level=sc=>sc>=85?3:sc>=70?2:sc>=50?1:0;
+const FILM='deewana',API='https://asokatobooda.iamshahrock.workers.dev/bise-cards';
+const DUO={'The rich boy meets the widow':['Raja + Kajal','1034'],'Winning her':['Raja + Lakshmi Devi','1125'],'Married life':['Raja + Kajal','1271'],'The stranger':['Raja + Ravi','1442'],'Ravi returns':['Raja + Ravi','1741']};
+const TEENO=['Hum Teeno · Raja, Kajal and Ravi','1448'];
+const istDay=()=>new Date(Date.now()+5.5*3600e3).toISOString().slice(0,10);
+const SOTD=D.scenes[Math.abs(Math.round((Date.parse(istDay())-Date.parse('2026-11-04'))/864e5)*7)%D.scenes.length].id;
+let mine={};try{mine=JSON.parse(localStorage.getItem('amkh-bise-'+FILM)||'{}')}catch(e){}
+const saveMine=()=>{try{localStorage.setItem('amkh-bise-'+FILM,JSON.stringify(mine))}catch(e){}};
+const device=()=>window.STARKS&&STARKS.get?STARKS.get().device:'';
+function merge(j){if(!j||!j.mine)return album();for(const r of j.mine)mine[r.scene]=Math.max(mine[r.scene]??0,r.best);saveMine();album(j)}
+fetch(API+'?film='+FILM+'&device='+encodeURIComponent(device()),{cache:'no-store'}).then(r=>r.json()).then(merge).catch(()=>album());
+const thumb=s=>'/assets/bise/deewana/'+s.id+'.webp';
+$('film').innerHTML=`<option>${esc(D.film.title)} (${D.film.year}) · ${esc(D.film.note||'')}</option>`;
+let kindF='',qF='';
+$('pchips').innerHTML=['','dialogue','silent','song','action'].map(k=>`<button type="button" data-k="${k}"${k?'':' class="on"'}>${k?KIND[k]:'All'} (${k?D.scenes.filter(s=>s.kind===k).length:D.scenes.length})</button>`).join('');
+function list(){
+  const q=qF.toLowerCase();let h='',n=0;
+  for(const act of (D.acts||[''])){
+    const ss=D.scenes.filter(s=>(s.act||'')===act&&(!kindF||s.kind===kindF)&&(!q||(s.title+' '+s.study+' '+act).toLowerCase().includes(q)));
+    if(!ss.length)continue;n+=ss.length;
+    h+=(act?`<h4>${esc(act)}</h4>`:'')+ss.map(s=>`<button type="button" role="option" data-id="${esc(s.id)}"${cur&&s.id===cur.id?' class="on"':''}><img loading="lazy" src="${thumb(s)}" alt=""><span><b>${s.id===SOTD?'<span class="sotd">★ </span>':''}${esc(s.title)}${mine[s.id]!=null?' <i class="lvtag" style="color:'+LV[level(mine[s.id])].c+'">'+LV[level(mine[s.id])].n+'</i>':''}</b><i>${fmt(s.start)} · ${Math.round(s.dur)} s · ${KIND[s.kind]||''}${s.id===SOTD?' · <span class="sotd">Scene of the day, double STARKS</span>':''}</i></span></button>`).join('');
+  }
+  $('plist').innerHTML=n?h:'<p class="none">No scene matches.</p>';
+}
+function openPanel(o){$('panel').hidden=!o;$('sceneBtn').setAttribute('aria-expanded',o);if(o){list();$('pq').focus({preventScroll:true});const L=$('plist'),on=L.querySelector('.on');if(on)L.scrollTop=on.offsetTop-L.offsetTop-L.clientHeight/2+on.offsetHeight/2}}
+$('sceneBtn').onclick=()=>openPanel($('panel').hidden);
+$('pq').oninput=e=>{qF=e.target.value;list()};
+$('pchips').onclick=e=>{const b=e.target.closest('button');if(!b)return;kindF=b.dataset.k;[...$('pchips').children].forEach(x=>x.classList.toggle('on',x===b));list()};
+$('plist').onclick=e=>{const b=e.target.closest('button');if(!b)return;choose(D.scenes.findIndex(s=>String(s.id)===b.dataset.id));openPanel(false)};
+document.addEventListener('click',e=>{if(!$('panel').hidden&&!e.target.closest('.pk-scene'))openPanel(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')openPanel(false)});
+const q=new URLSearchParams(location.search).get('scene');
+let qi=D.scenes.findIndex(s=>String(s.id)===q);if(qi<0&&q)qi=D.scenes.findIndex(s=>String(s.id).startsWith(q+'-'));
+if(qi<0)qi=D.scenes.findIndex(s=>String(s.id)==='1042');
+choose(Math.max(0,qi));
+
+function choose(i){
+  cur=D.scenes[i];$('sceneImg').src=thumb(cur);$('sceneName').textContent=cur.title;
+  $('sceneSub').textContent=fmt(cur.start)+' · '+Math.round(cur.dur)+' s · '+(KIND[cur.kind]||'')+(cur.act?' · '+cur.act:'');
+  history.replaceState(null,'','?scene='+encodeURIComponent(cur.id));
+  $('sTitle').textContent=cur.title+' · '+fmt(cur.start);
+  $('sStudy').textContent=cur.study;
+  $('sMeta').textContent=Math.round(cur.dur)+' seconds'+(cur.speaks?' · '+cur.speech.length+' speeches':' · no dialogue: scored on head and face');
+  if(yt){try{yt.destroy()}catch(e){}yt=null}
+  $('yt').innerHTML='<img alt="" src="https://i.ytimg.com/vi/'+D.film.youtube+'/hqdefault.jpg"><span>Watch the scene</span>';
+  cueMap();
+  $('sFp').innerHTML=chart({raja:cur});
+  $('res').style.display='none';$('won').hidden=true;
+}
+// ---- the scene player (YouTube IFrame API): watch it, and act along with it while recording ----
+function ytApi(){
+  if(ytReady)return ytReady;
+  ytReady=new Promise(res=>{if(window.YT&&YT.Player)return res();const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';window.onYouTubeIframeAPIReady=()=>res();document.head.appendChild(s)});
+  return ytReady;
+}
+async function player(){
+  await ytApi();
+  if(yt&&yt.__scene===cur.id)return yt;
+  if(yt){try{yt.destroy()}catch(e){}yt=null}
+  $('yt').innerHTML='<div id="ytp"></div>';
+  await new Promise(res=>{yt=new YT.Player('ytp',{videoId:D.film.youtube,host:'https://www.youtube-nocookie.com',playerVars:{start:Math.floor(cur.start),end:Math.ceil(cur.end),rel:0,playsinline:1,modestbranding:1},events:{onReady:res}})});
+  yt.__scene=cur.id;const f=$('yt').querySelector('iframe');if(f){f.style.position='absolute';f.style.inset='0';f.style.width='100%';f.style.height='100%'}
+  return yt;
+}
+$('yt').onclick=async()=>{if($('yt').querySelector('iframe'))return;const p=await player();p.unMute();p.seekTo(cur.start,true);p.playVideo();};
+// park the scene on its first frame, muted, ready to act along
+async function cueScene(){try{const p=await player();p.mute();p.seekTo(cur.start,true);p.pauseVideo();return p}catch(e){return null}}
+
+async function loadApi(){
+  if(api)return api;
+  $('status').textContent='Loading the face reader (about 0.6 MB)…';
+  api=await import(VENDOR+'face-api.esm.js');
+  await Promise.all([api.nets.tinyFaceDetector.loadFromUri(VENDOR+'model'),api.nets.faceLandmark68TinyNet.loadFromUri(VENDOR+'model'),api.nets.faceExpressionNet.loadFromUri(VENDOR+'model')]);
+  return api;
+}
+const opts=()=>new api.TinyFaceDetectorOptions({inputSize:320,scoreThreshold:0.4});
+async function readFace(el){
+  const all=await api.detectAllFaces(el,opts()).withFaceLandmarks(true).withFaceExpressions();
+  if(!all.length)return null;
+  const r=all.reduce((a,b)=>b.detection.box.area>a.detection.box.area?b:a);
+  const p=r.landmarks.positions,avg=a=>a.reduce((s,q)=>({x:s.x+q.x/a.length,y:s.y+q.y/a.length}),{x:0,y:0});
+  const le=avg(p.slice(36,42)),re=avg(p.slice(42,48)),no=p[30],ml=p[48],mr=p[54];
+  const ed=Math.hypot(re.x-le.x,re.y-le.y)||1,mx=(le.x+re.x)/2,my=(le.y+re.y)/2,e=r.expressions;
+  const H=el.videoHeight||el.height||1;
+  return {yaw:(no.x-mx)/ed,pitch:(no.y-my)/ed,mouth:Math.hypot(mr.x-ml.x,mr.y-ml.y)/ed,
+    val:e.happy+0.5*e.surprised-e.sad-e.angry-e.fearful-0.5*e.disgusted,h:r.detection.box.height/H};
+}
+
+// ---- camera take: read face 5x a second and loudness 10x a second while recording ----
+$('bCam').onclick=async()=>{
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({video:{width:640,height:480,facingMode:'user'},audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
+  }catch(err){$('status').textContent='Camera or microphone not allowed. You can upload a video instead.';return}
+  const v=$('vid');v.classList.remove('file');v.srcObject=stream;v.muted=true;await v.play();
+  $('camMsg').style.display='none';$('bCam').disabled=true;
+  await Promise.all([loadApi(),cueScene()]);   // Record only switches on once the face reader and the scene are ready
+  $('bRec').disabled=false;
+  $('status').textContent='Ready. Press Record: after 3-2-1 his scene starts beside you. Act along; it stops when his scene ends ('+Math.round(cur.dur)+' s).';
+};
+// state: idle -> countdown -> rec -> idle. Stop works in countdown (cancels) and in rec (finishes).
+let state='idle',runId=0;
+$('bRec').onclick=async()=>{
+  if(state!=='idle'||!stream||!api)return;
+  const my=++runId;state='countdown';$('bRec').disabled=true;$('bStop').disabled=false;$('res').style.display='none';
+  // the sound recorder is made inside the tap itself, so phones let it run
+  ac=new (window.AudioContext||window.webkitAudioContext)();ac.resume&&ac.resume();
+  const an=ac.createAnalyser();an.fftSize=2048;ac.createMediaStreamSource(stream).connect(an);
+  for(const n of [3,2,1]){
+    if(state!=='countdown'||my!==runId)return;
+    $('cd').style.display='flex';$('cd').textContent=n;$('status').textContent='Get ready…';
+    await new Promise(r=>setTimeout(r,800));
+  }
+  if(state!=='countdown'||my!==runId)return;
+  state='rec';$('cd').style.display='none';$('recTag').style.display='block';
+  // his scene starts with you; its own clock times the take (exact even if YouTube pauses to buffer)
+  let p=null;try{p=await player();if($('sndOn').checked)p.unMute();else p.mute();p.seekTo(cur.start,true);p.playVideo()}catch(e){p=null}
+  const buf=new Float32Array(an.fftSize);take={face:[],loud:[]};let t0=performance.now();stopAt=t0+cur.dur*1000+15000;
+  const v=$('vid');let busy=false,lastF=0;
+  const clock=()=>{if(p&&p.getCurrentTime){const vt=p.getCurrentTime()-cur.start;if(p.getPlayerState&&p.getPlayerState()===1||vt>0.05)return vt}return p?-1:(performance.now()-t0)/1000};
+  const tick=()=>{
+    const now=performance.now(),t=clock();
+    cueAt(t);
+    if(t<0){$('status').textContent='Starting his scene…';if(now>=t0+6000){p=null;t0=performance.now();stopAt=t0+cur.dur*1000;$('cueNow').textContent='His scene could not start here: act from memory, the cues still run'}return}
+    if(t>=cur.dur)return stop();
+    an.getFloatTimeDomainData(buf);let s=0;for(const x of buf)s+=x*x;take.loud.push([t,10*Math.log10(s/buf.length+1e-10)]);
+    if(!busy&&now-lastF>=200){busy=true;lastF=now;
+      const ft=t;readFace(v).then(f=>{if(f&&state==='rec')take.face.push([ft,f.yaw,f.pitch,f.mouth,f.val,f.h])}).catch(()=>{}).finally(()=>{busy=false})}
+    if(now>=stopAt)return stop();
+    $('status').textContent='Recording… '+Math.max(0,Math.ceil(cur.dur-t))+' s left';
+  };
+  timer=setInterval(tick,100);
+};
+$('bStop').onclick=()=>stop();
+// switch the camera and microphone off (after Stop, the end of a take, a cancel, or leaving the page)
+function camOff(){
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}
+  const v=$('vid');if(v.srcObject){v.srcObject=null}
+  if(!v.classList.contains('file')){$('camMsg').style.display='flex';$('camMsg').textContent='Camera off. Tap Start camera for another take.'}
+  $('bCam').disabled=false;$('bRec').disabled=true;
+}
+function reset(){
+  if(timer){clearInterval(timer);timer=null}
+  try{if(yt&&yt.pauseVideo)yt.pauseVideo()}catch(e){}
+  if(ac){try{ac.close()}catch(e){}ac=null}
+  $('cd').style.display='none';$('recTag').style.display='none';$('bStop').disabled=true;
+  camOff();
+}
+addEventListener('pagehide',()=>{if(stream)stream.getTracks().forEach(t=>t.stop())});
+function stop(){
+  if(state==='countdown'){state='idle';reset();$('status').textContent='Cancelled. Camera off. Tap Start camera when you are ready.';return}
+  if(state!=='rec')return;
+  state='idle';reset();finish(take);
+}
+
+// ---- uploaded take: step through the video 5x a second; loudness from its sound track ----
+$('file').onchange=async e=>{
+  const f=e.target.files[0];if(!f)return;
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;$('bCam').disabled=false;$('bRec').disabled=true}
+  const v=$('vid');v.srcObject=null;v.classList.add('file');v.src=URL.createObjectURL(f);v.muted=true;$('camMsg').style.display='none';
+  await new Promise(r=>v.onloadedmetadata=r);await loadApi();
+  const dur=Math.min(v.duration||0,cur.dur+30);if(!isFinite(dur)||dur<=0){$('status').textContent='Could not read this video. Try an MP4 or MOV file.';return}
+  take={face:[],loud:[]};$('prog').style.display='block';
+  for(let t=0;t<dur;t+=0.2){
+    v.currentTime=t;await new Promise(r=>v.onseeked=r);
+    const fr=await readFace(v);if(fr)take.face.push([t,fr.yaw,fr.pitch,fr.mouth,fr.val,fr.h]);
+    $('prog').firstElementChild.style.width=(t/dur*100)+'%';$('status').textContent='Reading your face… '+Math.round(t/dur*100)+'%';
+  }
+  try{
+    $('status').textContent='Reading your voice…';
+    const ab=await f.arrayBuffer();const c=new (window.OfflineAudioContext||window.webkitOfflineAudioContext)(1,44100,44100);
+    const au=await c.decodeAudioData(ab);const ch=au.getChannelData(0),sr=au.sampleRate,hop=Math.round(sr/10);
+    for(let i=0;i+hop<=ch.length&&i/sr<dur;i+=hop){let s=0;for(let j=i;j<i+hop;j++)s+=ch[j]*ch[j];take.loud.push([i/sr,10*Math.log10(s/hop+1e-10)])}
+  }catch(err){take.loud=[]}
+  $('prog').style.display='none';finish(take);
+};
+
+// ---- compare ----
+function speechFrom(loud){
+  if(loud.length<5)return [];
+  const v=loud.map(x=>x[1]).filter(isFinite).sort((a,b)=>a-b),floor=v[Math.floor(v.length*0.15)],peak=v[Math.floor(v.length*0.95)];
+  const th=floor+Math.max(6,(peak-floor)*0.4);const seg=[];let on=null;
+  for(const [t,d] of loud){if(d>=th){if(on===null)on=t}else if(on!==null){seg.push([on,t]);on=null}}
+  if(on!==null)seg.push([on,loud[loud.length-1][0]]);
+  const m=[];for(const s of seg){if(m.length&&s[0]-m[m.length-1][1]<0.3)m[m.length-1][1]=s[1];else m.push([s[0],s[1]])}
+  return m.filter(s=>s[1]-s[0]>=0.25);
+}
+const corr=(a,b)=>{const n=Math.min(a.length,b.length);if(n<4)return null;let ma=0,mb=0;for(let i=0;i<n;i++){ma+=a[i];mb+=b[i]}ma/=n;mb/=n;let sab=0,sa=0,sb=0;for(let i=0;i<n;i++){sab+=(a[i]-ma)*(b[i]-mb);sa+=(a[i]-ma)**2;sb+=(b[i]-mb)**2}return sa&&sb?sab/Math.sqrt(sa*sb):null};
+function grid(pts,col,T,step=0.5){const out=[];for(let t=0;t<T;t+=step){const w=pts.filter(p=>p[0]>=t-step&&p[0]<t+step&&p[col]!=null);out.push(w.length?w.reduce((s,p)=>s+p[col],0)/w.length:null)}
+  let last=null;for(let i=0;i<out.length;i++){if(out[i]==null)out[i]=last;else last=out[i]}let nx=null;for(let i=out.length-1;i>=0;i--){if(out[i]==null)out[i]=nx;else nx=out[i]}return out.map(x=>x==null?0:x)}
+const ratio=(a,b)=>a>0&&b>0?Math.round(100*Math.exp(-Math.abs(Math.log(a/b)))):null;
+function finish(tk){
+  const R=cur,T=R.dur,raja={...R};
+  const you={speech:speechFrom(tk.loud),face:tk.face,loud:tk.loud};
+  // align: first speech onset (dialogue scenes) or start
+  let off=0;
+  if(R.speaks&&R.speech.length&&you.speech.length)off=you.speech[0][0]-R.speech[0][0];
+  const sh=a=>a.map(p=>[p[0]-off,...p.slice(1)]).filter(p=>p[0]>=0&&p[0]<=T);
+  you.speech=you.speech.map(s=>[s[0]-off,s[1]-off]).filter(s=>s[1]>0&&s[0]<T);you.face=sh(you.face);you.loud=sh(you.loud);
+  const sc={};
+  if(R.speaks&&R.speech.length){
+    const on=(segs,t)=>segs.some(s=>t>=s[0]&&t<s[1]);let both=0,either=0;
+    for(let t=0;t<T;t+=0.1){const a=on(R.speech,t),b=on(you.speech,t);if(a&&b)both++;if(a||b)either++}
+    sc.Timing=either?Math.round(100*both/either):0;
+    const tot=s=>s.reduce((x,q)=>x+q[1]-q[0],0);sc['Speaking length']=ratio(tot(you.speech),tot(R.speech))??0;
+    const gaps=s=>s.slice(1).map((q,i)=>q[0]-s[i][1]).filter(g=>g>0.25);const med=a=>a.length?a.sort((x,y)=>x-y)[Math.floor(a.length/2)]:0;
+    sc.Pauses=ratio(med(gaps(you.speech)),med(gaps(R.speech)))??(gaps(R.speech).length?0:null);
+  }
+  // faces: compare only where both were read, within a quarter second
+  const pairs=col=>{const a=[],b=[];for(const p of R.face){let best=null,bd=0.26;for(const q of you.face){const d=Math.abs(q[0]-p[0]);if(d<bd){bd=d;best=q}}if(best&&p[col]!=null&&best[col]!=null){a.push(p[col]);b.push(best[col])}}return [a,b]};
+  const [ya,yb]=pairs(1),cy=ya.length>=8?corr(ya,yb):null;sc['Head movement']=cy==null?null:Math.round(100*Math.max(0,Math.abs(cy)));
+  const [ea,eb]=pairs(4),ce=ea.length>=8?corr(ea,eb):null;sc.Expression=ce==null?null:Math.round(100*Math.max(0,(ce+1)/2));
+  const inR=t=>!R.speaks||R.speech.some(s=>t>=s[0]&&t<s[1]);
+  const la=[],lb=[];const L=R.loud;for(let i=0;i<L.length;i++){const t=i*0.25;if(!inR(t))continue;const w=you.loud.filter(p=>Math.abs(p[0]-t)<0.15);if(L[i]!=null&&w.length){la.push(L[i]);lb.push(w.reduce((s,p)=>s+p[1],0)/w.length)}}
+  const cl=R.speaks?corr(la,lb):null;if(R.speaks)sc.Voice=cl==null?null:Math.round(100*Math.max(0,(cl+1)/2));
+  const vals=Object.values(sc).filter(v=>v!=null);const total=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):null;
+  $('total').textContent=total==null?'–':total;$('totLab').textContent=total==null?'Not enough to compare':total>=75?'Very close to Raja':total>=55?'On his track':total>=35?'Finding it':'Keep practising';
+  $('bars').innerHTML=Object.entries(sc).map(([k,v])=>v==null?`<div><span>${k}</span><i></i><em class="na">n/a</em></div>`:`<div><span>${k}</span><i><u style="width:${v}%"></u></i><em>${v}</em></div>`).join('');
+  const tips=[];
+  if(!you.face.length)tips.push('Your face was not found: face the camera in good light.');
+  if(R.speaks&&!you.speech.length)tips.push('No speech heard: speak up, closer to the microphone.');
+  if(sc.Timing!=null&&sc.Timing<50)tips.push('Watch when he speaks and when he holds back; match his entries and silences.');
+  if(sc.Pauses!=null&&sc.Pauses<50){const g=s=>{const a=s.slice(1).map((q,i)=>q[0]-s[i][1]).filter(x=>x>0.25).sort((x,y)=>x-y);return a.length?a[Math.floor(a.length/2)]:0};tips.push(g(you.speech)<g(R.speech)?'He lets his pauses breathe longer: hold the silence.':'Your pauses run longer than his: keep the line moving.')}
+  if(sc['Head movement']!=null&&sc['Head movement']<40)tips.push('His head turns tell the story here: look where he looks, when he looks.');
+  if(sc.Expression!=null&&sc.Expression<50)tips.push('Let the face change with the line, the way his does.');
+  if(!tips.length)tips.push('Close. Now watch the scene again and steal one more detail.');
+  $('tips').innerHTML=tips.map(t=>'<li>'+esc(t)+'</li>').join('');
+  $('charts').innerHTML=chart({raja:R,you});
+  $('res').style.display='block';
+  $('status').textContent='Done. Your video stayed on your device.';
+  lastResult={total,sc};
+  winCard(total);
+}
+let lastResult=null;
+
+// ---- cue strip: the scene map, and what to do now ----
+function cueMap(){
+  const T=cur.dur,pc=x=>(Math.max(0,Math.min(T,x))/T*100).toFixed(2)+'%',seg=(a,c,top,h)=>a.map(q=>`<i style="left:${pc(q[0])};width:calc(${pc(q[1])} - ${pc(q[0])});background:${c};top:${top}px;height:${h}px"></i>`).join('');
+  $('cueBar').innerHTML=seg(cur.onscreen||[],'#5b8fd6',0,6)+seg(cur.others||[],'#8a7f78',8,14)+seg(cur.speech||[],'#f0c24e',8,14)+'<span class="ph" id="ph"></span>';
+  $('cueNow').className='cue-now';$('cueNow').textContent=cur.speaks?'Scene map: gold = your lines, grey = others speak, blue = Raja on screen':'Scene map: no dialogue. Blue = Raja on screen: match his head and face';
+}
+function cueAt(t){
+  const ph=$('ph');if(ph)ph.style.left=(Math.max(0,Math.min(1,t/cur.dur))*100)+'%';
+  if(t<0)return;
+  const inn=a=>(a||[]).some(q=>t>=q[0]&&t<q[1]),soon=a=>(a||[]).find(q=>q[0]>t&&q[0]-t<1.5);
+  const n=$('cueNow');let k='',txt='';
+  if(inn(cur.speech)){k='k-line';txt='Your line';}
+  else if(soon(cur.speech)){k='k-line';txt='Your line in '+Math.ceil(soon(cur.speech)[0]-t)+'…';}
+  else if(inn(cur.others)){k='k-other';txt='Others speak · listen in character';}
+  else if(inn(cur.onscreen)){k='k-on';txt='Raja on screen · react like him';}
+  else{txt='Off screen · stay in character';}
+  n.className='cue-now '+k;n.textContent=txt;
+}
+cueMap();
+$('bRules').onclick=()=>$('rules').showModal();
+$('bMyCard').onclick=()=>{
+  const best=mine[cur.id];if(best==null)return;const l=LV[level(best)];
+  const c=document.createElement('canvas');c.width=900;c.height=1260;const g=c.getContext('2d');
+  g.fillStyle='#0a0707';g.fillRect(0,0,900,1260);g.fillStyle=l.c;g.fillRect(0,0,900,1260);g.fillStyle='#120b0b';g.fillRect(24,24,852,1212);
+  const img=new Image();img.onload=()=>{
+    g.drawImage(img,48,48,804,452);g.fillStyle=l.c;g.fillRect(48,48,250,64);g.fillStyle='#140c0a';g.font='700 34px Archivo, sans-serif';g.fillText(l.n.toUpperCase(),68,93);
+    g.fillStyle='#f4ece4';g.font='72px Anton, sans-serif';g.fillText(cur.title.slice(0,22),48,610);
+    g.fillStyle='#f0c24e';g.font='italic 40px "Cormorant Garamond", serif';g.fillText(D.film.title+' ('+D.film.year+') · '+(cur.act||''),48,670);
+    g.fillStyle=l.c;g.font='220px Anton, sans-serif';g.fillText(String(best),48,930);
+    g.fillStyle='#a89a90';g.font='700 30px Archivo, sans-serif';g.fillText('MATCH · HOW CLOSE TO RAJA',58,985);
+    g.fillStyle='#e6dcd4';g.font='600 32px Archivo, sans-serif';g.fillText('Act As SRK · agarmainkinghota.com',48,1110);
+    g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/act-as-srk',48,1170);
+    c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='srk-card-'+FILM+'-'+cur.id+'-'+l.n.toLowerCase()+'.png';a.click()},'image/png');
+  };img.src=thumb(cur);
+};
+
+// ---- cards and album ----
+function card(sc,best,cls){
+  const on=best!=null,l=on?LV[level(best)]:null;
+  return `<div class="crd ${cls||''}${on?'':' off'}" style="--lv:${on?l.c:'#3a2626'}"><img loading="lazy" src="${thumb(sc)}" alt="">${on?`<span class="lv">${l.n}</span>`:''}<b>${esc(sc.title)}</b><i>${on?'Match '+best:'Not yet played'}</i></div>`;
+}
+function setCard(title,img,sub,got,lvl){
+  const l=lvl!=null?LV[lvl]:null;
+  return `<div class="crd set${got?'':' off'}" style="--lv:${got?l.c:'#3a2626'}"><img loading="lazy" src="/assets/bise/deewana/${img}.webp" alt="">${got?`<span class="lv">${l.n}</span>`:''}<b>${esc(title)}</b><i>${esc(sub)}</i></div>`;
+}
+function album(j){
+  const acts=D.acts||[];let got=0,h='';
+  const all=D.scenes.length,doneAll=D.scenes.every(s=>mine[s.id]!=null);
+  const avgAll=doneAll?Math.round(D.scenes.reduce((a,s)=>a+mine[s.id],0)/all):null;
+  for(const act of acts){
+    const ss=D.scenes.filter(s=>s.act===act),done=ss.every(s=>mine[s.id]!=null),avg=done?Math.round(ss.reduce((a,s)=>a+mine[s.id],0)/ss.length):null;
+    got+=ss.filter(s=>mine[s.id]!=null).length;
+    const duo=DUO[act]||['Set card',ss[0].id];
+    h+=`<div class="alb-act"><h4>${esc(act)} · ${ss.filter(s=>mine[s.id]!=null).length} of ${ss.length}</h4><div class="alb-grid">${ss.map(s=>card(s,mine[s.id])).join('')}${setCard(duo[0],duo[1],done?'Act complete · average '+avg:'Win every card in this act',done,done?(avg>=70?2:1):null)}</div></div>`;
+  }
+  $('albumSum').textContent=got+' of '+all+' scene cards'+(doneAll?' · film complete':'')+'. Win a card for every scene you play; better matches upgrade it. Finish an act for its duo card, finish the film for Hum Teeno.';
+  $('albumBody').innerHTML=`<div class="alb-film">${setCard(TEENO[0],TEENO[1],doneAll?'All '+all+' scenes · average '+avgAll:'Finish all '+all+' scenes',doneAll,doneAll?level(avgAll):null).replace('class="crd set','class="crd set big')}<p class="note">The film card: Raja, Kajal and Ravi, for every fan who plays all ${all} scenes. Its level is your average across the film.</p></div>`+h;
+  if(j&&j.top&&j.top.length)$('topActors').innerHTML='<h2>Top actors · Deewana</h2><table style="width:100%;border-collapse:collapse;font-size:14px">'+j.top.map(r=>`<tr><td style="padding:6px;border-bottom:1px solid #2a1c1c">${r.rank}</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">${esc(r.name)}</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">${r.cards} cards</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">average ${r.avg}</td></tr>`).join('')+'</table><p class="note">Billboard names only. Join the Billboard to appear here.</p>';
+}
+function winCard(total){
+  const box=$('won');if(total==null){box.hidden=true;$('res').scrollIntoView({behavior:'smooth'});return}
+  const prev=mine[cur.id],lv=level(total),was=prev!=null?level(prev):-1,best=Math.max(prev??0,total);
+  mine[cur.id]=best;saveMine();
+  const up=lv>was,dbl=cur.id===SOTD;
+  let starks=0;
+  if(up&&window.STARKS)starks=STARKS.earn('act',LV[lv].st*(dbl?2:1),LV[lv].n+' card · '+cur.title+(dbl?' · Scene of the day':''),'bise-'+FILM+'-'+cur.id+'-'+lv)||0;
+  box.hidden=false;
+  box.innerHTML=`${card(cur,best,'big')}<div><p class="k" style="margin:0 0 4px;color:#e0312b;font:700 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase">${prev==null?'New card':up?'Card upgraded':'Card kept'}</p><h3>${LV[level(best)].n} · ${esc(cur.title)}</h3><p>${prev==null?'You won this scene\'s card.':up?'Your match moved it up to '+LV[lv].n+'.':'Your best stays '+best+'. Beat it to upgrade: Silver 50, Gold 70, Diamond 85.'}</p><p class="note">${starks?'+'+starks+' STARKS'+(dbl?' (Scene of the day, doubled)':''):'STARKS are paid once for each new level.'}</p></div>`;
+  // act and film sets
+  const act=cur.act,ss=D.scenes.filter(s=>s.act===act);
+  if(window.STARKS&&ss.every(s=>mine[s.id]!=null))STARKS.earn('actset',500,'Act complete · '+act,'bise-'+FILM+'-act-'+(D.acts||[]).indexOf(act));
+  if(window.STARKS&&D.scenes.every(s=>mine[s.id]!=null))STARKS.earn('actset',2000,'Hum Teeno · Deewana complete','bise-'+FILM+'-film');
+  album();list&&$('panel').hidden===false&&list();
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+  if(device())fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({device:device(),film:FILM,scene:cur.id,score:total})}).then(r=>r.json()).then(merge).catch(()=>{});
+}
+
+// ---- charts ----
+function chart({raja,you}){
+  const T=raja.dur,W=600,X=t=>t/T*W;let o='';
+  const row=(y,lab)=>`<text x="-6" y="${y}" fill="#a89a90" font-size="12" text-anchor="end">${lab}</text>`;
+  const segs=(s,y,c)=>s.map(q=>`<rect x="${X(Math.max(0,q[0])).toFixed(1)}" y="${y}" width="${Math.max(1,X(Math.min(T,q[1]))-X(Math.max(0,q[0]))).toFixed(1)}" height="9" fill="${c}"/>`).join('');
+  const line=(pts,col,y0,sc,c,sm)=>{let p=pts.filter(q=>q[col]!=null&&q[0]>=0&&q[0]<=T);if(p.length<2)return '';
+    if(sm)p=p.map((q,i)=>{const w=p.slice(Math.max(0,i-2),i+3);return [q[0],w.reduce((s,r)=>s+r[col],0)/w.length]}).map(q=>{const r=[];r[0]=q[0];r[col]=q[1];return r});
+    let d='';p.forEach((q,i)=>{d+=(i&&q[0]-p[i-1][0]<=1.2?' L':' M')+X(q[0]).toFixed(1)+','+(y0-Math.max(-1,Math.min(1,q[col]))*sc).toFixed(1)});
+    return `<path d="${d}" fill="none" stroke="${c}" stroke-width="1.6"/>`};
+  o+=row(12,'speech')+segs(raja.speech,3,'#f0c24e')+(you?segs(you.speech,14,'#5bb8ff'):'');
+  o+=row(52,'head turn')+`<line x1="0" x2="${W}" y1="50" y2="50" stroke="#3a2626"/>`+line(raja.face,1,50,18,'#f0c24e')+(you?line(you.face,1,50,18,'#5bb8ff'):'');
+  o+=row(97,'expression')+`<line x1="0" x2="${W}" y1="95" y2="95" stroke="#3a2626"/>`+line(raja.face,4,95,18,'#f0c24e',1)+(you?line(you.face,4,95,18,'#5bb8ff',1):'');
+  const ld=raja.loud.map((v,i)=>[i*0.25,v]).filter(p=>p[1]!=null);
+  const norm=a=>{if(a.length<2)return [];const v=a.map(p=>p[1]).sort((x,y)=>x-y),lo=v[Math.floor(v.length*.05)],hi=v[Math.floor(v.length*.98)]||lo+1;return a.map(p=>[p[0],(p[1]-lo)/Math.max(3,hi-lo)*2-1])};
+  o+=row(142,'voice')+line(norm(ld),1,140,18,'#f0c24e')+(you?line(norm(you.loud.filter((p,i)=>i%2===0)),1,140,18,'#5bb8ff'):'');
+  const ax=[0,T/2,T].map(t=>`<text x="${X(t)}" y="174" fill="#777" font-size="10" text-anchor="middle">${Math.round(t)}s</text>`).join('');
+  return `<svg viewBox="-84 0 ${W+92} 178" width="100%" style="background:#0e0909;border:1px solid #2a1c1c;margin-top:8px">${o}${ax}</svg>`;
+}
+
+// ---- scorecard image (made on the device) ----
+$('bCard').onclick=()=>{
+  if(!lastResult)return;const c=document.createElement('canvas');c.width=1080;c.height=1080;const g=c.getContext('2d');
+  g.fillStyle='#0a0707';g.fillRect(0,0,1080,1080);g.strokeStyle='#c9a24a';g.lineWidth=6;g.strokeRect(30,30,1020,1020);
+  g.fillStyle='#e0312b';g.font='700 30px Archivo, sans-serif';g.fillText('ACT AS SRK · MATCH THE KING',80,120);
+  g.fillStyle='#f4ece4';g.font='90px Anton, sans-serif';g.fillText('I acted it like Raja',80,240);
+  g.fillStyle='#f0c24e';g.font='italic 44px "Cormorant Garamond", serif';g.fillText('Deewana (1992) · '+cur.title,80,310);
+  g.fillStyle='#f0c24e';g.font='260px Anton, sans-serif';g.fillText(String(lastResult.total),80,600);
+  g.fillStyle='#a89a90';g.font='700 28px Archivo, sans-serif';g.fillText('PRACTICE SCORE',90,650);
+  let y=730;g.font='600 32px Archivo, sans-serif';
+  for(const [k,v] of Object.entries(lastResult.sc)){g.fillStyle='#e6dcd4';g.fillText(k,80,y);g.fillStyle='#2a1c1c';g.fillRect(420,y-24,480,24);if(v!=null){g.fillStyle='#f0c24e';g.fillRect(420,y-24,480*v/100,24)}g.fillStyle='#f4ece4';g.fillText(v==null?'n/a':String(v),920,y);y+=52}
+  g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/act-as-srk',80,1010);
+  c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='srk-school-of-acting-'+cur.id+'.png';a.click()},'image/png');
+};
+$('bAgain').onclick=()=>{$('res').style.display='none';$('cam').scrollIntoView({behavior:'smooth'});$('status').textContent='Tap Start camera, then Record.'};
+</script>
+<script src="../assets/starks.js"></script>
+<script src="../assets/footer.js" defer></script>
+</body>
 </html>
