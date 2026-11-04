@@ -1014,15 +1014,9 @@
    ],
    "sketch": "Charlie is a street fighter in Mumbai whose father was framed and jailed by the rich Charan Grover. He has spent his life planning revenge.",
    "arc": [
-    "Every honest door in the city has closed on him; he plans a diamond heist.",
+    "He says every door to an honest, legal living in the city has closed on him; he plans a diamond heist.",
     "He builds a team of misfits who must enter a world dance championship in Dubai.",
     "The heist and the dance both succeed, and his father's name is cleared."
-   ],
-   "lines": [
-    {
-     "q": "Iss shahar mein mehnat se legally kamane ka har darwaza mere liye bandh hota gaya.",
-     "ctx": "Why he took the wrong road: every door to an honest living in the city closed on him."
-    }
    ],
    "traits": [
     "Avenger",
@@ -1111,6 +1105,362 @@
     "Brother"
    ],
    "impact": "A Goan gang drama, with Aishwarya Rai as his twin sister."
+  },
+  "001": {
+   "type": "Lead · TV",
+   "director": "Colonel Raj Kumar Kapoor",
+   "sketch": "Lieutenant Abhimanyu Rai is a young cadet in commando training: cocky, quick, and learning what the uniform asks of him.",
+   "arc": [
+    "A new recruit who arrives with more attitude than discipline.",
+    "Commando training breaks him down and builds him up with his platoon.",
+    "He becomes the soldier the training was meant to make."
+   ],
+   "traits": [
+    "Soldier",
+    "Recruit",
+    "Brother"
+   ],
+   "impact": "His first role on television, on Doordarshan in 1989. India met his face here."
+  },
+  "003": {
+   "type": "Lead · TV",
+   "director": "Aziz Mirza and Kundan Shah",
+   "cast": [
+    "Renuka Shahane",
+    "Ashutosh Gowariker"
+   ],
+   "sketch": "Shekharan is a young man with a travelling circus who must decide whether the circus is his life.",
+   "arc": [
+    "He travels with the circus from town to town.",
+    "The circus struggles, and he takes on its troubles and its people.",
+    "He commits to the life of the tent and keeps the show going."
+   ],
+   "traits": [
+    "Son",
+    "Wanderer",
+    "Lover"
+   ],
+   "impact": "His second TV serial, and the start of his long work with Aziz Mirza."
+  },
+  "012": {
+   "type": "Hero",
+   "director": "Rajiv Mehra",
+   "cast": [
+    "Naseeruddin Shah",
+    "Urmila Matondkar"
+   ],
+   "sketch": "Sunder Srivastava is a young man from a village who comes to Bombay to make a living and is cheated on the first day.",
+   "arc": [
+    "Cheated and homeless in Bombay, he spends a night in a graveyard.",
+    "He meets the ghost of a gangster, Marco, who needs his help to settle a score.",
+    "With Marco's help he finds his feet, wins love and sees Marco freed."
+   ],
+   "traits": [
+    "Common man",
+    "Migrant",
+    "Friend"
+   ],
+   "impact": "An early comic lead, opposite Naseeruddin Shah."
+  },
+  "017": {
+   "type": "Lead",
+   "director": "Ketan Mehta",
+   "cast": [
+    "Deepa Sahi",
+    "Raj Babbar",
+    "Farooq Shaikh"
+   ],
+   "sketch": "Lalit is a young man drawn to Maya, a married woman who lives in her dreams and her romances.",
+   "arc": [
+    "He is fascinated by the mysterious Maya.",
+    "He becomes one of her lovers as she chases a life her marriage cannot give her.",
+    "Her story ends in mystery; Lalit is left with the question of who she was."
+   ],
+   "traits": [
+    "Lover",
+    "Young"
+   ],
+   "impact": "An art-house role based on Flaubert's Madame Bovary, early in his career."
+  },
+  "028": {
+   "type": "Anti-hero",
+   "director": "Rajiv Mehra",
+   "cast": [
+    "Juhi Chawla",
+    "Vivek Mushran"
+   ],
+   "sketch": "Ram Jaane grew up on the street with no name of his own; asked who he was, the answer was 'Ram jaane', only God knows. He becomes a gangster.",
+   "arc": [
+    "An orphan who learns that the world only respects force.",
+    "Out of prison, he returns to the neighbourhood of his childhood love and to a group of street children.",
+    "Through the children he sees a different road, and wants it for them."
+   ],
+   "traits": [
+    "Outlaw",
+    "Orphan",
+    "Anti-hero"
+   ],
+   "impact": "One of his 90s anti-hero roles, a gangster with a conscience."
+  },
+  "029": {
+   "type": "Lead",
+   "director": "Mukul S. Anand",
+   "cast": [
+    "Anil Kapoor",
+    "Jackie Shroff",
+    "Raakhee",
+    "Priya Gill"
+   ],
+   "sketch": "Romi Singh is the youngest of three brothers whose mother was framed and jailed by a powerful villain.",
+   "arc": [
+    "Their mother is jailed for a crime she did not commit.",
+    "The three brothers set out to clear her name and expose the man behind it.",
+    "Together they bring the villain down and their mother is freed."
+   ],
+   "traits": [
+    "Brother",
+    "Son",
+    "Avenger"
+   ],
+   "impact": "A multi-star action drama with Anil Kapoor and Jackie Shroff."
+  },
+  "030": {
+   "type": "Triple role",
+   "director": "Praveen Nischol",
+   "cast": [
+    "Sonali Bendre"
+   ],
+   "sketch": "He plays three men of one family, the Mayurs, across two generations, split between England and India.",
+   "arc": [
+    "An old family quarrel splits the Mayurs between England and India.",
+    "Vikram comes to India to take back his nephew and falls for Bijuria.",
+    "He chooses love and the family is made whole."
+   ],
+   "traits": [
+    "Triple role",
+    "NRI",
+    "Lover"
+   ],
+   "impact": "His first triple role."
+  },
+  "031": {
+   "type": "Hero",
+   "director": "Mahesh Bhatt",
+   "cast": [
+    "Pooja Bhatt",
+    "Naseeruddin Shah",
+    "Anupam Kher",
+    "Ramya Krishnan"
+   ],
+   "sketch": "Roop Rathore is a singer from Rajasthan who wants to make it in Bombay and help his ailing father.",
+   "arc": [
+    "He comes to the city to sing and earn.",
+    "He falls for Pooja and crosses a powerful, dangerous man.",
+    "He fights to keep his love and his dignity."
+   ],
+   "traits": [
+    "Singer",
+    "Lover",
+    "Son"
+   ],
+   "impact": "A Mahesh Bhatt romance from his early run of leading roles."
+  },
+  "032": {
+   "type": "Special appearance",
+   "director": "Raj Kumar Kothari",
+   "cast": [
+    "Sridevi",
+    "Danny Denzongpa"
+   ],
+   "sketch": "Major Arjun Singh is an army officer and Sridevi's husband, whose murder sets the story in motion.",
+   "arc": [
+    "An honest officer who witnesses a crime.",
+    "He is killed by the gangster he stood against.",
+    "His widow raises an army of convicts to avenge him."
+   ],
+   "traits": [
+    "Soldier",
+    "Husband"
+   ],
+   "impact": "A short role whose death drives Sridevi's revenge story."
+  },
+  "038": {
+   "type": "Double role",
+   "director": "Mahesh Bhatt",
+   "cast": [
+    "Juhi Chawla",
+    "Sonali Bendre",
+    "Farida Jalal"
+   ],
+   "sketch": "Bablu Chaudhry is a gentle chef who dreams of his own hotel. Manu Dada is a ruthless criminal who looks exactly like him.",
+   "arc": [
+    "Bablu gets a job at a hotel and falls for Sonia.",
+    "Manu escapes from prison and uses the lookalike to hide in plain sight.",
+    "The two meet face to face, and Bablu has to beat the man who wears his face."
+   ],
+   "traits": [
+    "Double role",
+    "Comic",
+    "Villain"
+   ],
+   "impact": "A comic double role produced by Yash Johar."
+  },
+  "043": {
+   "type": "Hero",
+   "director": "Aziz Mirza",
+   "cast": [
+    "Juhi Chawla",
+    "Paresh Rawal"
+   ],
+   "sketch": "Ajay Bakshi is a flashy, ambitious TV news reporter who will do anything for ratings.",
+   "arc": [
+    "He and the rival reporter Ria compete for the same stories.",
+    "A man is to be hanged for a murder he did not commit, and the two must work together.",
+    "Ajay puts truth before ratings and saves the man."
+   ],
+   "traits": [
+    "Journalist",
+    "Rebel",
+    "Lover"
+   ],
+   "impact": "The first production of his company Dreamz Unlimited, a satire on TV news; it did not do well."
+  },
+  "044": {
+   "type": "Supporting",
+   "director": "Kamal Haasan",
+   "cast": [
+    "Kamal Haasan",
+    "Rani Mukerji",
+    "Hema Malini"
+   ],
+   "sketch": "Amjad Ali Khan is an archaeologist and the old friend of Saket Ram, from their days digging at Mohenjo-daro.",
+   "arc": [
+    "Saket, his friend, turns to hatred after his wife is killed in the riots of 1946.",
+    "Amjad stands for the friendship and the shared country Saket is losing faith in.",
+    "Amjad is killed in the violence, and his death helps turn Saket back."
+   ],
+   "traits": [
+    "Friend",
+    "Scholar"
+   ],
+   "impact": "He took no fee for the role, as a gesture to Kamal Haasan."
+  },
+  "049": {
+   "type": "Hero",
+   "director": "Shashilal K. Nair",
+   "cast": [
+    "Juhi Chawla"
+   ],
+   "sketch": "Arun Verma is a police officer who takes in the four children of his murdered colleague.",
+   "arc": [
+    "His colleague is killed; Arun is suspected.",
+    "He looks after the four orphaned children with a hired nanny, Geeta.",
+    "He clears his name and finds the real killer."
+   ],
+   "traits": [
+    "Cop",
+    "Guardian"
+   ],
+   "impact": "A family action comedy with Juhi Chawla."
+  },
+  "052": {
+   "type": "Hero",
+   "director": "K. S. Adhiyaman",
+   "cast": [
+    "Madhuri Dixit",
+    "Salman Khan",
+    "Aishwarya Rai"
+   ],
+   "sketch": "Gopal is a singer married to Radha. Insecure and jealous, he cannot believe that her friendship with another man is only friendship.",
+   "arc": [
+    "Gopal and Radha are happy until her childhood friend Suraj returns.",
+    "Suspicion takes over Gopal and his marriage cracks.",
+    "He learns to trust again and the couple are reunited."
+   ],
+   "traits": [
+    "Husband",
+    "Jealous",
+    "Singer"
+   ],
+   "impact": "A long-delayed film, released years after it was shot."
+  },
+  "054": {
+   "type": "Special appearance",
+   "director": "Krishna Vamsi",
+   "cast": [
+    "Karisma Kapoor",
+    "Nana Patekar"
+   ],
+   "sketch": "Jaisingh is a rough, good-hearted man who helps a mother, Nandini, escape with her son from a violent family.",
+   "arc": [
+    "Nandini is trapped in her husband's family's village after his death.",
+    "Jaisingh helps her and the child flee.",
+    "He dies protecting them on their way out."
+   ],
+   "traits": [
+    "Rescuer",
+    "Outsider"
+   ],
+   "impact": "A short, explosive special appearance in a Karisma Kapoor film."
+  },
+  "055": {
+   "type": "Cameo",
+   "director": "Shaad Ali",
+   "cast": [
+    "Rani Mukerji",
+    "Vivek Oberoi",
+    "Tabu"
+   ],
+   "sketch": "Yashvant Rao is an IAS officer whose wife hit Suhani in an accident, the event at the heart of the film.",
+   "arc": [
+    "Suhani is gravely hurt in a road accident.",
+    "Her husband learns the car was driven by the officer's wife.",
+    "Yashvant Rao takes the blame to protect his wife."
+   ],
+   "traits": [
+    "Husband",
+    "Officer"
+   ],
+   "impact": "A small cameo produced by Yash Raj Films, built on a big moment."
+  },
+  "075": {
+   "type": "Supporting",
+   "director": "Vivek Sharma",
+   "cast": [
+    "Amitabh Bachchan",
+    "Juhi Chawla"
+   ],
+   "sketch": "Aditya Sharma is a father who works on ships and is often away; his son Banku befriends the ghost who haunts their new house.",
+   "arc": [
+    "His family moves into a house said to be haunted.",
+    "His son makes friends with the ghost, Bhoothnath.",
+    "Aditya helps find out why the ghost cannot leave."
+   ],
+   "traits": [
+    "Father",
+    "Husband"
+   ],
+   "impact": "An extended guest role in a children's film with Amitabh Bachchan."
+  },
+  "097": {
+   "type": "Special appearance",
+   "director": "Karan Johar",
+   "cast": [
+    "Aishwarya Rai Bachchan",
+    "Ranbir Kapoor",
+    "Anushka Sharma"
+   ],
+   "sketch": "Tahir Taliyar Khan is the ex-husband of the poet Saba.",
+   "arc": [
+    "Ayan comes to know Saba and her past.",
+    "Tahir and Saba meet years after their marriage ended.",
+    "He shows that some love stays, even after it ends."
+   ],
+   "traits": [
+    "Artist",
+    "Former husband"
+   ],
+   "impact": "A short role with the line about one-sided love that the film was built on."
   }
  }
 }
