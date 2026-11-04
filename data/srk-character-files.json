@@ -641,6 +641,476 @@
     "Friend"
    ],
    "impact": "Put illegal migration and the donkey route into public talk."
+  },
+  "013": {
+   "type": "Hero",
+   "director": "Aziz Mirza",
+   "cast": [
+    "Juhi Chawla",
+    "Amrita Singh",
+    "Nana Patekar"
+   ],
+   "sketch": "Raj Mathur is a civil engineering graduate from Darjeeling who comes to Bombay with big dreams and small pockets. Honest and eager, he wants to become a gentleman.",
+   "arc": [
+    "A small-town boy who arrives in Bombay, finds a room in a chawl and falls for Renu.",
+    "A job at a construction company lifts him fast; success and his boss's niece Sapna start to change him.",
+    "Faced with his bosses' corrupt deal, he chooses honesty and Renu over the high life."
+   ],
+   "traits": [
+    "Common man",
+    "Migrant",
+    "Lover"
+   ],
+   "impact": "The small-town boy in the big city: millions of migrants to Bombay saw themselves in Raju."
+  },
+  "011": {
+   "type": "Hero",
+   "director": "Raj Kanwar",
+   "cast": [
+    "Rishi Kapoor",
+    "Divya Bharti",
+    "Amrish Puri"
+   ],
+   "sketch": "Raja Sahay is a rich, reckless young man who falls for Kajal, a widow, and marries her against his family's wishes.",
+   "arc": [
+    "The spoilt son of a powerful businessman who meets the grieving widow Kajal.",
+    "He wins her over and marries her.",
+    "Her first husband Ravi turns out to be alive, and love, duty and loyalty collide."
+   ],
+   "traits": [
+    "Lover",
+    "Rebel"
+   ],
+   "impact": "His first film release, which won him the Filmfare award for Best Male Debut."
+  },
+  "023": {
+   "type": "Double role",
+   "director": "Rakesh Roshan",
+   "cast": [
+    "Salman Khan",
+    "Raakhee",
+    "Kajol",
+    "Mamta Kulkarni",
+    "Amrish Puri"
+   ],
+   "sketch": "Arjun is one of two brothers murdered by their uncle Durjan for their land. Reborn as Vijay, a carefree young man in the city, he does not know who he was.",
+   "arc": [
+    "Arjun and his brother Karan are killed by Durjan; their mother prays for their return.",
+    "Reborn as Vijay and Ajay, the brothers meet and slowly remember their past lives.",
+    "They return to their mother and take revenge on Durjan."
+   ],
+   "traits": [
+    "Avenger",
+    "Brother",
+    "Son",
+    "Reborn"
+   ],
+   "impact": "The reincarnation revenge classic and his first pairing with Salman Khan as brothers."
+  },
+  "021": {
+   "type": "Hero",
+   "director": "Kundan Shah",
+   "cast": [
+    "Suchitra Krishnamoorthy",
+    "Deepak Tijori",
+    "Naseeruddin Shah"
+   ],
+   "sketch": "Sunil is a lovable failure in Goa: a musician in a struggling band, a disappointment to his father, and hopelessly in love with Anna, who loves his friend Chris.",
+   "arc": [
+    "A dreamer who fails exams and plays in a band with Chris and Anna.",
+    "He lies, schemes and plays tricks to come between Anna and Chris.",
+    "He does the right thing and brings them together, and at the very end meets someone new."
+   ],
+   "traits": [
+    "Underdog",
+    "Lover",
+    "Prankster"
+   ],
+   "impact": "A rare Hindi romance in which the hero does not get the girl."
+  },
+  "036": {
+   "type": "Hero",
+   "director": "Subhash Ghai",
+   "cast": [
+    "Mahima Chaudhry",
+    "Amrish Puri",
+    "Apoorva Agnihotri"
+   ],
+   "sketch": "Arjun Sagar is the adopted son of Kishorilal, an Indian businessman in America. A musician, loyal and warm, he is sent to India to arrange a bride for Kishorilal's son.",
+   "arc": [
+    "He goes to India to win over Ganga for Rajiv, Kishorilal's son.",
+    "In America Ganga finds Rajiv cruel, and she and Arjun fall in love.",
+    "He brings her back to India and stands up to the family that raised him."
+   ],
+   "traits": [
+    "NRI",
+    "Lover",
+    "Loyal"
+   ],
+   "impact": "Subhash Ghai's NRI-versus-Indian-values drama, and Mahima Chaudhry's debut."
+  },
+  "035": {
+   "type": "Hero",
+   "director": "Aziz Mirza",
+   "cast": [
+    "Juhi Chawla",
+    "Aditya Pancholi"
+   ],
+   "sketch": "Rahul Joshi is an ambitious junior employee who does whatever his boss asks to get ahead, including covering up the boss's affairs.",
+   "arc": [
+    "A yes-man who dreams of his own business and helps his boss chase women.",
+    "He falls for Seema, the very girl his boss is chasing.",
+    "He chooses love and his self-respect over the promotion."
+   ],
+   "traits": [
+    "Common man",
+    "Lover",
+    "Comic"
+   ],
+   "impact": "A light comedy of ambition against love, and another Aziz Mirza film with Juhi Chawla."
+  },
+  "034": {
+   "type": "Hero",
+   "director": "Rakesh Roshan",
+   "cast": [
+    "Madhuri Dixit",
+    "Amrish Puri"
+   ],
+   "sketch": "Shankar is the mute servant of a cruel landlord. He cannot speak, so the whole role is played with his eyes and his body.",
+   "arc": [
+    "The landlord uses Shankar's photograph to trick Gauri into marriage.",
+    "Shankar learns the truth and helps Gauri escape.",
+    "Hunted, they fight back and Shankar defeats the landlord."
+   ],
+   "traits": [
+    "Silent",
+    "Rescuer",
+    "Lover"
+   ],
+   "impact": "A lead role without words."
+  },
+  "040": {
+   "type": "Hero",
+   "director": "Mani Ratnam",
+   "cast": [
+    "Manisha Koirala",
+    "Preity Zinta"
+   ],
+   "sketch": "Amarkant Varma is an All India Radio journalist who falls instantly for a mysterious woman on a railway platform. She is Meghna, and she is part of a plot to set off a bomb.",
+   "arc": [
+    "A radio reporter who meets Meghna in the rain and cannot forget her.",
+    "He follows her across the country, while his family arranges his marriage to Preeti.",
+    "He learns Meghna is a suicide bomber and dies holding her."
+   ],
+   "traits": [
+    "Lover",
+    "Obsessed",
+    "Tragic"
+   ],
+   "impact": "The last film in Mani Ratnam's trilogy after Roja and Bombay, and the 'Chaiyya Chaiyya' song on a moving train."
+  },
+  "047": {
+   "type": "Hero",
+   "director": "Aditya Chopra",
+   "cast": [
+    "Amitabh Bachchan",
+    "Aishwarya Rai",
+    "Uday Chopra",
+    "Jimmy Sheirgill",
+    "Jugal Hansraj"
+   ],
+   "sketch": "Raj Aryan Malhotra is a music teacher who comes to Gurukul, a strict school run by Narayan Shankar. He believes in love; the school forbids it.",
+   "arc": [
+    "He joins Gurukul as a violin teacher and teaches three students to follow their hearts.",
+    "His past comes out: he loved Narayan's daughter Megha, who took her life after her father threw him out.",
+    "Narayan finally accepts that fear lost him his daughter, and hands the school over."
+   ],
+   "traits": [
+    "Teacher",
+    "Lover",
+    "Rebel"
+   ],
+   "impact": "His first film with Amitabh Bachchan, the father-figure he faced across the whole film."
+  },
+  "050": {
+   "type": "Hero",
+   "director": "Santosh Sivan",
+   "cast": [
+    "Kareena Kapoor",
+    "Danny Denzongpa",
+    "Rahul Dev"
+   ],
+   "sketch": "Asoka is a Mauryan prince: brave, impatient and loved by the people. His step-brothers see him as a threat.",
+   "arc": [
+    "He leaves the palace in disguise and falls in love with Kaurwaki, a princess of Kalinga in hiding.",
+    "He returns, believes her dead, and grows ruthless on his way to the throne.",
+    "After the war of Kalinga he walks among the dead and gives up violence."
+   ],
+   "traits": [
+    "Emperor",
+    "Warrior",
+    "Lover"
+   ],
+   "impact": "He played Emperor Ashoka in a film produced by his own company, Dreamz Unlimited."
+  },
+  "059": {
+   "type": "Hero",
+   "director": "Farah Khan",
+   "cast": [
+    "Sushmita Sen",
+    "Suniel Shetty",
+    "Zayed Khan",
+    "Amrita Rao"
+   ],
+   "sketch": "Major Ram Prasad Sharma is an army officer who goes undercover as a college student to protect a general's daughter, and to find the half-brother he has never met.",
+   "arc": [
+    "A commando given a mission at a Darjeeling college, posing as a much older student.",
+    "He falls for the chemistry teacher Chandni and wins over his brother Lakshman.",
+    "He stops the former soldier Raghavan and reunites his family."
+   ],
+   "traits": [
+    "Soldier",
+    "Brother",
+    "Comic"
+   ],
+   "impact": "The first film produced by Red Chillies Entertainment, and Farah Khan's first film as director."
+  },
+  "056": {
+   "type": "Hero",
+   "director": "Aziz Mirza",
+   "cast": [
+    "Rani Mukerji",
+    "Johnny Lever",
+    "Satish Shah"
+   ],
+   "sketch": "Raj Mathur runs a small trucking business and is happy-go-lucky until he meets Priya, an elegant designer from a different world.",
+   "arc": [
+    "He woos Priya, gets her to break off her engagement, and marries her.",
+    "Money troubles and small fights wear the marriage down.",
+    "Priya leaves for Greece; he follows and they find their way back."
+   ],
+   "traits": [
+    "Husband",
+    "Common man",
+    "Lover"
+   ],
+   "impact": "A love story about what comes after the wedding."
+  },
+  "067": {
+   "type": "Hero",
+   "director": "Karan Johar",
+   "cast": [
+    "Rani Mukerji",
+    "Abhishek Bachchan",
+    "Preity Zinta",
+    "Amitabh Bachchan"
+   ],
+   "sketch": "Dev Saran was a football star until an accident ended his career. Bitter and angry, he is married to a successful editor, Rhea, and feels small beside her.",
+   "arc": [
+    "A wounded man who meets Maya, who is about to marry Rishi, and talks her into it.",
+    "Years later, both unhappily married, they fall in love and have an affair.",
+    "They leave their marriages and, after time apart, find each other again."
+   ],
+   "traits": [
+    "Husband",
+    "Bitter",
+    "Lover"
+   ],
+   "impact": "A star romance about infidelity in marriage, set in New York."
+  },
+  "065": {
+   "type": "Double role",
+   "director": "Amol Palekar",
+   "cast": [
+    "Rani Mukerji",
+    "Anupam Kher",
+    "Amitabh Bachchan"
+   ],
+   "sketch": "Kishanlal is a merchant's son who leaves his bride on their wedding night to do business. A ghost who saw her falls in love and takes Kishanlal's form.",
+   "arc": [
+    "The ghost tells Lachchi the truth and lives with her as her husband, kindly.",
+    "The real Kishanlal comes home and the village cannot tell the two apart.",
+    "A shepherd tricks the ghost into a leather bag, and Lachchi is left with her choice."
+   ],
+   "traits": [
+    "Ghost",
+    "Lover",
+    "Double role"
+   ],
+   "impact": "India's official entry for the Academy Awards in 2006."
+  },
+  "079": {
+   "type": "Supporting",
+   "director": "Priyadarshan",
+   "cast": [
+    "Irrfan Khan",
+    "Lara Dutta"
+   ],
+   "sketch": "Sahir Khan is a film superstar who comes to shoot in a small village. Billu, the village barber, was his childhood friend, but is too shy to say so.",
+   "arc": [
+    "The village hears that Billu knows the star and everyone wants something from him.",
+    "Billu cannot reach Sahir and the village turns on him.",
+    "At a school event Sahir tells everyone that Billu is his oldest friend."
+   ],
+   "traits": [
+    "Superstar",
+    "Friend"
+   ],
+   "impact": "He played a version of himself: the star who remembers where he came from."
+  },
+  "085": {
+   "type": "Double role",
+   "director": "Anubhav Sinha",
+   "cast": [
+    "Kareena Kapoor",
+    "Arjun Rampal",
+    "Armaan Verma"
+   ],
+   "sketch": "Shekhar Subramaniam is a geeky video-game designer in London who wants his son Prateek to see him as a hero. He builds a game with a villain who cannot lose: Ra.One.",
+   "arc": [
+    "Shekhar creates Ra.One and the hero G.One for his son.",
+    "Ra.One escapes into the real world and kills Shekhar.",
+    "G.One, with Shekhar's face, protects the family and defeats Ra.One."
+   ],
+   "traits": [
+    "Father",
+    "Scientist",
+    "Superhero",
+    "Double role"
+   ],
+   "impact": "A superhero film built on visual effects, which built up Red Chillies VFX."
+  },
+  "086": {
+   "type": "Villain",
+   "director": "Farhan Akhtar",
+   "cast": [
+    "Priyanka Chopra",
+    "Boman Irani",
+    "Lara Dutta",
+    "Kunal Kapoor"
+   ],
+   "sketch": "Don is back: the crime lord who rules the Asian drug trade sets his eyes on Europe.",
+   "arc": [
+    "He surrenders to the police in Malaysia, on his own terms.",
+    "He breaks out with his old enemy Vardhaan and plans to rob a bank in Berlin.",
+    "He gets what he came for and outwits the police again."
+   ],
+   "traits": [
+    "Villain",
+    "Mastermind"
+   ],
+   "impact": "The second chapter of the Don series, shot in Berlin."
+  },
+  "093": {
+   "type": "Hero",
+   "director": "Farah Khan",
+   "cast": [
+    "Deepika Padukone",
+    "Abhishek Bachchan",
+    "Boman Irani",
+    "Sonu Sood",
+    "Vivaan Shah",
+    "Jackie Shroff"
+   ],
+   "sketch": "Charlie is a street fighter in Mumbai whose father was framed and jailed by the rich Charan Grover. He has spent his life planning revenge.",
+   "arc": [
+    "Every honest door in the city has closed on him; he plans a diamond heist.",
+    "He builds a team of misfits who must enter a world dance championship in Dubai.",
+    "The heist and the dance both succeed, and his father's name is cleared."
+   ],
+   "lines": [
+    {
+     "q": "Iss shahar mein mehnat se legally kamane ka har darwaza mere liye bandh hota gaya.",
+     "ctx": "Why he took the wrong road: every door to an honest living in the city closed on him."
+    }
+   ],
+   "traits": [
+    "Avenger",
+    "Son",
+    "Outlaw"
+   ],
+   "impact": "His line about honest doors is studied at KING University: is a bad man born, or made?"
+  },
+  "095": {
+   "type": "Hero",
+   "director": "Rohit Shetty",
+   "cast": [
+    "Kajol",
+    "Varun Dhawan",
+    "Kriti Sanon"
+   ],
+   "sketch": "Raj runs a car-modification shop in Goa and lives to protect his younger brother Veer. Fifteen years ago he was Kaali, a gangster in Bulgaria.",
+   "arc": [
+    "A quiet garage owner whose brother falls for Ishita.",
+    "Ishita's sister is Meera, the woman he loved and lost in Bulgaria when their gang families went to war.",
+    "The old enemies meet again and Raj and Meera find their way back."
+   ],
+   "traits": [
+    "Brother",
+    "Former gangster",
+    "Lover",
+    "Double life"
+   ],
+   "impact": "His return with Kajol on screen."
+  },
+  "102": {
+   "type": "Hero",
+   "director": "Imtiaz Ali",
+   "cast": [
+    "Anushka Sharma"
+   ],
+   "sketch": "Harry is a Punjabi tour guide in Europe: charming with tourists and lonely when they leave. He cannot go home.",
+   "arc": [
+    "Sejal loses her engagement ring on his tour and makes him help find it.",
+    "City after city they search, and fall in love.",
+    "He finally lets himself want something, and goes home."
+   ],
+   "traits": [
+    "Wanderer",
+    "Lover",
+    "Lonely"
+   ],
+   "impact": "Imtiaz Ali's travel romance across Europe."
+  },
+  "042": {
+   "type": "Hero",
+   "director": "Abbas-Mustan",
+   "cast": [
+    "Twinkle Khanna",
+    "Johnny Lever"
+   ],
+   "sketch": "Raj Heera, who calls himself Baadshah, runs a small detective agency and dreams of being a real secret agent.",
+   "arc": [
+    "A bumbling private eye hired to keep an eye on a rich man's daughter, Seema.",
+    "He stumbles into a plot to assassinate the Chief Minister.",
+    "He stops the plot and wins the girl."
+   ],
+   "traits": [
+    "Comic",
+    "Detective",
+    "Lover"
+   ],
+   "impact": "Another hit with Abbas-Mustan, this time as a comic hero."
+  },
+  "045": {
+   "type": "Hero",
+   "director": "Mansoor Khan",
+   "cast": [
+    "Aishwarya Rai",
+    "Chandrachur Singh",
+    "Sharad Kapoor"
+   ],
+   "sketch": "Max Dias is the leader of the Eagles, a street gang in Vasco, Goa, and the fiercely protective twin brother of Shirley.",
+   "arc": [
+    "The Eagles rule one side of town; the Bichhoo gang the other.",
+    "Shirley falls for Rahul, brother of the rival gang's leader.",
+    "The feud between the two gangs comes to a head, and Max has to protect his sister and his town."
+   ],
+   "traits": [
+    "Gang leader",
+    "Brother"
+   ],
+   "impact": "A Goan gang drama, with Aishwarya Rai as his twin sister."
   }
  }
 }
