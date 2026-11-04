@@ -187,19 +187,19 @@ $('bCam').onclick=async()=>{
   $('status').textContent='Ready. Press Record: a 3-second countdown, then act. It stops after '+Math.round(cur.dur)+' seconds.';
 };
 // state: idle -> countdown -> rec -> idle. Stop works in countdown (cancels) and in rec (finishes).
-let state='idle';
+let state='idle',runId=0;
 $('bRec').onclick=async()=>{
   if(state!=='idle'||!stream||!api)return;
-  state='countdown';$('bRec').disabled=true;$('bStop').disabled=false;$('res').style.display='none';
+  const my=++runId;state='countdown';$('bRec').disabled=true;$('bStop').disabled=false;$('res').style.display='none';
   // the sound recorder is made inside the tap itself, so phones let it run
   ac=new (window.AudioContext||window.webkitAudioContext)();ac.resume&&ac.resume();
   const an=ac.createAnalyser();an.fftSize=2048;ac.createMediaStreamSource(stream).connect(an);
   for(const n of [3,2,1]){
-    if(state!=='countdown')return;
+    if(state!=='countdown'||my!==runId)return;
     $('cd').style.display='flex';$('cd').textContent=n;$('status').textContent='Get ready…';
     await new Promise(r=>setTimeout(r,800));
   }
-  if(state!=='countdown')return;
+  if(state!=='countdown'||my!==runId)return;
   state='rec';$('cd').style.display='none';$('recTag').style.display='block';
   const buf=new Float32Array(an.fftSize);take={face:[],loud:[]};const t0=performance.now();stopAt=t0+cur.dur*1000;
   const v=$('vid');let busy=false,lastF=0;
