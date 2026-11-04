@@ -48,7 +48,7 @@
     // same groups as the header (owner, 4 Nov 2026: 'Yes, match it')
     ['SRK DAILY & KING Buzz', [['srk-daily/', 'SRK DAILY'], ['king-intelligence/', 'KING Buzz'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
     ['Games', [['create/', 'Make Your Poster'], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81'], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
-    ['KINGNAMA', [['kingnama/', 'All of KINGNAMA'], ['king-studies/', 'KING University'], ['srk-characters/', 'Character Study'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['bise/', 'B.I.S.E. · coming soon']]],
+    ['KINGNAMA', [['kingnama/', 'All of KINGNAMA'], ['king-studies/', 'KING University'], ['srk-characters/', 'Character Study'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['bise/studio/', 'Act As SRK']]],
     ['FANVERSE', [['inquilab/', 'Inquilaab King Ke Saath'], ['teeno-mil-jaaye/', 'Teeno Mil Jaaye'], ['agar-main-king-hota-song/', 'Agar Main King Hota'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos'], ['fan-billboard/', 'Billboard & STARKS'], ['merch/', 'Merch']]],
     ['About', [['', 'Home'], ['vision/', 'Vision & Mission'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
   ].forEach(function (g) {
