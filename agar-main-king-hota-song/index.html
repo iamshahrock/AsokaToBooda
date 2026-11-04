@@ -12,11 +12,11 @@
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+Devanagari:wght@400;600&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/v2.css">
 <style>
-.box{max-width:760px;margin:0 auto 28px;background:#0d0606;border:1px solid #c9a24a;border-top:3px solid var(--red);padding:26px 26px 30px;box-shadow:0 0 22px rgba(229,9,20,.18)}
+.box{max-width:1080px;margin:0 auto 28px;background:#0d0606;border:1px solid #c9a24a;border-top:3px solid var(--red);padding:26px 26px 30px;box-shadow:0 0 22px rgba(229,9,20,.18)}
 .box h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,44px);line-height:1.1;margin:0 0 16px;color:#f5f1ed}
 .credits{list-style:none;padding:0 0 18px;margin:0 0 22px;border-bottom:1px solid #c9a24a;color:#e6dcd4;font-size:16px;line-height:1.9}
 .credits strong{color:#c9a24a}
@@ -24,7 +24,12 @@
 .lyrics{font-family:'Archivo',sans-serif;font-size:17px;line-height:1.85;color:#e6dcd4}
 .lyrics p{margin:0 0 1.6em}
 .lyrics .hook{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:26px;color:#d99a00;display:inline-block;margin-bottom:2px}
-@media (max-width:760px){.box{padding:22px 18px 24px}.lyrics{font-size:16px}}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.duo .lyrics{padding:0 26px 0 0}
+.duo .lyrics+.lyrics{padding:0 0 0 26px;border-left:1px solid #c9a24a}
+.lyrics.hi{font-family:'Noto Sans Devanagari','Archivo',sans-serif;font-size:18px}
+.lyrics.hi .hook{font-family:'Noto Sans Devanagari',serif;font-style:normal;font-size:23px}
+@media (max-width:760px){.box{padding:22px 18px 24px}.lyrics{font-size:16px}.lyrics.hi{font-size:17px}.duo{grid-template-columns:1fr}.duo .lyrics{padding:0}.duo .lyrics+.lyrics{padding:22px 0 0;border-left:0;border-top:1px solid #c9a24a;margin-top:6px}}
 </style>
 </head>
 <body class="v2">
@@ -36,6 +41,7 @@
     <li><strong>Song :</strong> <span class="soon">Coming Soon</span></li>
     <li><strong>Lyrics :</strong> Shailja Gupta</li>
   </ul>
+  <div class="duo">
   <div class="lyrics">
 <p><span class="hook">Agar Main King Hota</span><br>
 Bombay mera aashiana hota.<br>
@@ -80,6 +86,53 @@ Fauji ki vardi ka koi na karza hota</p>
 Kisi sarhad ka main sipahi naa banta.</p>
 <p><span class="hook">Agar main King hota…</span><br>
 Toh har fan mera Baadshah hota.</p>
+  </div>
+  <div class="lyrics hi" lang="hi">
+<p><span class="hook">अगर मैं किंग होता</span><br>
+<span class="hook">अगर मैं किंग होता</span></p>
+<p>बॉम्बे मेरा आशियाना होता।<br>
+मद्रास मेरा ताज महल होता।<br>
+कलकत्ता मेरा अड्डा होता।<br>
+दिल्ली मेरा आसमान होता।<br>
+कश्मीर मेरा मुक़द्दर होता।<br>
+मैसूर मेरा दशहरा होता।<br>
+दार्जिलिंग मेरा कोहरा होता।<br>
+इलाहाबाद मेरा ज़मीर होता।<br>
+निज़ाम मेरी तक़दीर होता।<br>
+राजस्थान मेरा घराना होता।</p>
+<p><span class="hook">अगर मैं किंग होता</span></p>
+<p>लखनऊ मेरा अदब होता।<br>
+बनारस मेरा सजदा होता।<br>
+अमृतसर मेरा लंगर होता।<br>
+पंजाब मेरा भंगड़ा होता।<br>
+हैदराबाद मेरा दस्तरख़्वान होता।<br>
+केरल मेरा सावन होता।<br>
+गोवा मेरा समंदर होता।<br>
+कन्याकुमारी मेरा किनारा होता।<br>
+लद्दाख मेरा सन्नाटा होता।</p>
+<p><span class="hook">अगर मैं किंग होता</span><br>
+हर नुक्कड़ मेरा दरबार होता।</p>
+<p>ना तख़्त हीरे का, ना मुकुट सोने का,<br>
+मेरा मुक़ाम सिर्फ़ इश्क़ का द्वार होता।<br>
+बाँहें खोल जब मैं खड़ा सा होता,<br>
+पूरा हिंदुस्तान मेरे सर का ताज होता।</p>
+<p>चेहरा मेरा, सिर्फ़ मेरा ही होता,<br>
+आवाज़ मेरी, पर नाम सिर्फ़ तेरा होता,<br>
+कोई मशीन मेरा कारोबार ना करता,<br>
+हर फ़ैन सिर्फ़ मेरा पहरेदार होता।</p>
+<p>पर मैं निकला किंग का वो तोता,<br>
+जिसका कर्मा सिर्फ़ एक फ़ैन छोटा सा।</p>
+<p>फिर भी ये राज़ बस इतना होता,<br>
+साज़ उसका, और दिल हमारा होता।</p>
+<p>बैंडस्टैंड की रात मेरा घरौंदा होता,<br>
+हर फ़ैन का हाथ मेरा साथी होता।</p>
+<p>तितली की गलियों का रोज़गारी रोमियो होता,<br>
+फ़ौजी की वर्दी का कोई ना क़र्ज़ा होता।</p>
+<p>हर ज़मीन का मुझको प्यार मिलता,<br>
+किसी सरहद का मैं सिपाही ना बनता।</p>
+<p><span class="hook">अगर मैं किंग होता…</span></p>
+<p>तो हर फ़ैन मेरा बादशाह होता।</p>
+  </div>
   </div>
 </section>
 </main>
