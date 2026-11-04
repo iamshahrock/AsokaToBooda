@@ -181,30 +181,48 @@ $('bCam').onclick=async()=>{
     stream=await navigator.mediaDevices.getUserMedia({video:{width:640,height:480,facingMode:'user'},audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
   }catch(err){$('status').textContent='Camera or microphone not allowed. You can upload a video instead.';return}
   const v=$('vid');v.classList.remove('file');v.srcObject=stream;v.muted=true;await v.play();
-  $('camMsg').style.display='none';$('bRec').disabled=false;$('bCam').disabled=true;
-  await loadApi();$('status').textContent='Ready. Press Record: a 3-second countdown, then act. It stops after '+Math.round(cur.dur)+' seconds.';
+  $('camMsg').style.display='none';$('bCam').disabled=true;
+  await loadApi();   // Record only switches on once the face reader is ready
+  $('bRec').disabled=false;
+  $('status').textContent='Ready. Press Record: a 3-second countdown, then act. It stops after '+Math.round(cur.dur)+' seconds.';
 };
+// state: idle -> countdown -> rec -> idle. Stop works in countdown (cancels) and in rec (finishes).
+let state='idle',runId=0;
 $('bRec').onclick=async()=>{
-  $('bRec').disabled=true;$('res').style.display='none';
-  for(const n of [3,2,1]){$('cd').style.display='flex';$('cd').textContent=n;await new Promise(r=>setTimeout(r,800))}
-  $('cd').style.display='none';$('recTag').style.display='block';$('bStop').disabled=false;
-  ac=new (window.AudioContext||window.webkitAudioContext)();const an=ac.createAnalyser();an.fftSize=2048;ac.createMediaStreamSource(stream).connect(an);
-  const buf=new Float32Array(an.fftSize);take={face:[],loud:[]};const t0=performance.now();stopAt=t0+cur.dur*1000+3000;
+  if(state!=='idle'||!stream||!api)return;
+  const my=++runId;state='countdown';$('bRec').disabled=true;$('bStop').disabled=false;$('res').style.display='none';
+  // the sound recorder is made inside the tap itself, so phones let it run
+  ac=new (window.AudioContext||window.webkitAudioContext)();ac.resume&&ac.resume();
+  const an=ac.createAnalyser();an.fftSize=2048;ac.createMediaStreamSource(stream).connect(an);
+  for(const n of [3,2,1]){
+    if(state!=='countdown'||my!==runId)return;
+    $('cd').style.display='flex';$('cd').textContent=n;$('status').textContent='Get ready…';
+    await new Promise(r=>setTimeout(r,800));
+  }
+  if(state!=='countdown'||my!==runId)return;
+  state='rec';$('cd').style.display='none';$('recTag').style.display='block';
+  const buf=new Float32Array(an.fftSize);take={face:[],loud:[]};const t0=performance.now();stopAt=t0+cur.dur*1000;
   const v=$('vid');let busy=false,lastF=0;
-  const tick=async()=>{
+  const tick=()=>{
     const now=performance.now(),t=(now-t0)/1000;
     an.getFloatTimeDomainData(buf);let s=0;for(const x of buf)s+=x*x;take.loud.push([t,10*Math.log10(s/buf.length+1e-10)]);
-    if(!busy&&now-lastF>=200){busy=true;lastF=now;readFace(v).then(f=>{if(f)take.face.push([ (performance.now()-t0)/1000,f.yaw,f.pitch,f.mouth,f.val,f.h]);busy=false})}
+    if(!busy&&now-lastF>=200){busy=true;lastF=now;
+      readFace(v).then(f=>{if(f&&state==='rec')take.face.push([(performance.now()-t0)/1000,f.yaw,f.pitch,f.mouth,f.val,f.h])}).catch(()=>{}).finally(()=>{busy=false})}
     if(now>=stopAt)return stop();
     $('status').textContent='Recording… '+Math.max(0,Math.ceil((stopAt-now)/1000))+' s left';
   };
   timer=setInterval(tick,100);
 };
 $('bStop').onclick=()=>stop();
+function reset(){
+  if(timer){clearInterval(timer);timer=null}
+  if(ac){try{ac.close()}catch(e){}ac=null}
+  $('cd').style.display='none';$('recTag').style.display='none';$('bStop').disabled=true;$('bRec').disabled=!stream;
+}
 function stop(){
-  if(!timer)return;clearInterval(timer);timer=null;$('recTag').style.display='none';$('bStop').disabled=true;$('bRec').disabled=false;
-  if(ac)ac.close();
-  finish(take);
+  if(state==='countdown'){state='idle';reset();$('status').textContent='Cancelled. Press Record when you are ready.';return}
+  if(state!=='rec')return;
+  state='idle';reset();finish(take);
 }
 
 // ---- uploaded take: step through the video 5x a second; loudness from its sound track ----
