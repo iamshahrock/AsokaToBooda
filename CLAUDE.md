@@ -205,6 +205,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 ## Menu order (owner, 28 Oct 2026)
 - Header, burger menu and footer follow: Make Your Poster, Chess81, Inquilaab King Ke Saath, Rescue Your Face, KING Buzz, Merch, Fan Universe, Asoka to Boo-Da, Gallery, On The Record, DOOM to KING (LINKS in assets/header.js). Footer groups: Play (Poster, Chess81, Inquilaab, Rescue Your Face, Billboard), Follow & shop (KING Buzz, Merch, Fan Universe, Fan videos), Read & watch (book, Gallery, On The Record, DOOM to KING), About.
 
+## Fan Universe view counts (5 Nov 2026, after Grok's review: 'Some live counters still fail to load')
+- The N/A counts on /fan-made-ai-universe/ were videos never read, not a loading bug. Read from YouTube 5 Nov 2026: 14 counts filled (views_asof 2026-11-05 in data/ai-creator-log.json); 5 videos are gone (4 unavailable, 1 private) = 'removed' field, shown as 'No longer on YouTube' (static cards + the list script). Other counters on 12 main pages checked: all load; the remaining N/A there are honest (not measured yet).
+
 ## FAN UNIVERSE = one section (owner, 28 Oct 2026: 'Why is FAN'S KING still there ... why is fan-made-ai-universe INSIDE BILLBOARD?')
 - Header link 'Fan Universe' (was FAN'S KING) opens /fan-made-ai-universe/ (h1 FAN UNIVERSE, all fan creations); /fans-king/ is its second tab (h1 FAN VIDEOS). Section tabs: All fan creations / Fan videos on YouTube. Billboard no longer claims the fan pages (no alias, no tab). Footer: Fan Universe + Fan videos; homepage tile heading 'Fan Universe'. Header spacing tightened (gaps/letter-spacing, same text size) so 11 links stay on one line 1200-1920 px. URLs unchanged.
 

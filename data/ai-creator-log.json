@@ -141,8 +141,8 @@
       "title": "KING — AI Concept Song",
       "creator": "Ultimate Cinema Studio",
       "kind": "AI concept song",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 14,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -153,8 +153,8 @@
       "title": "KING — Deepika First Look Concept",
       "creator": "Ultimate Cinema Studio",
       "kind": "AI / concept first-look",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 1,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -165,8 +165,8 @@
       "title": "KING — Deepika First Look / Concept",
       "creator": "Ultimate Cinema Studio",
       "kind": "AI / concept teaser",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 80,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -225,8 +225,8 @@
       "title": "KING — AI Concept / Deepika First Look",
       "creator": "Ultimate Cinema Studio",
       "kind": "indexed AI concept",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 110,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -261,8 +261,8 @@
       "title": "KING — Cine Guru Official Trailer",
       "creator": "CINE GURU",
       "kind": "fan-made trailer / AI-assisted content",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 12230,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -288,7 +288,8 @@
       "views": null,
       "views_asof": "2026-10-10",
       "found": "2026-10-10",
-      "source": "KING Intelligence 2.0 corpus"
+      "source": "KING Intelligence 2.0 corpus",
+      "removed": "2026-11-05"
     },
     {
       "platform": "youtube",
@@ -297,8 +298,8 @@
       "title": "KING (2025) Concept Trailer",
       "creator": "EditMovieX",
       "kind": "fan-made teaser",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 1556,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -348,7 +349,8 @@
       "views": null,
       "views_asof": "2026-10-10",
       "found": "2026-10-10",
-      "source": "KING Intelligence 2.0 corpus"
+      "source": "KING Intelligence 2.0 corpus",
+      "removed": "2026-11-05"
     },
     {
       "platform": "youtube",
@@ -357,8 +359,8 @@
       "title": "KING (2026) – Trailer Video Song | AI Fan Made",
       "creator": "ABDS Originals",
       "kind": "AI cinematic trailer edit · workbook-sourced",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 29287,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -372,7 +374,9 @@
       "views": null,
       "views_asof": "2026-10-10",
       "found": "2026-10-10",
-      "source": "KING Intelligence 2.0 corpus"
+      "source": "KING Intelligence 2.0 corpus",
+      "removed": "2026-11-05",
+      "removed_note": "made private"
     },
     {
       "platform": "youtube",
@@ -381,8 +385,8 @@
       "title": "KING Movie: Pyaar Mera (AI Video) | SRK + Deepika",
       "creator": "ZEE Audio Cloud",
       "kind": "AI romantic concept song · workbook-sourced",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 39590,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -393,8 +397,8 @@
       "title": "KING – Concept Trailer | Fan Made AI Trailer",
       "creator": "VIBEFLIX STUDIO",
       "kind": "AI concept trailer · workbook-sourced",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 410,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -408,7 +412,8 @@
       "views": null,
       "views_asof": "2026-10-10",
       "found": "2026-10-10",
-      "source": "KING Intelligence 2.0 corpus"
+      "source": "KING Intelligence 2.0 corpus",
+      "removed": "2026-11-05"
     },
     {
       "platform": "youtube",
@@ -420,7 +425,8 @@
       "views": null,
       "views_asof": "2026-10-10",
       "found": "2026-10-10",
-      "source": "KING Intelligence 2.0 corpus"
+      "source": "KING Intelligence 2.0 corpus",
+      "removed": "2026-11-05"
     },
     {
       "platform": "youtube",
@@ -429,8 +435,8 @@
       "title": "King Trailer (Fan Made) | AI Action Thriller 4K",
       "creator": "MovieZick",
       "kind": "AI action thriller concept · workbook-sourced",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 661,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -441,8 +447,8 @@
       "title": "KING TRAILER | Recreated | Fan Made Ai 2026",
       "creator": "SKF Studio",
       "kind": "AI recreated trailer · workbook-sourced",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 39879,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -453,8 +459,8 @@
       "title": "KING Official Teaser Vs Remake Teaser #shorts",
       "creator": "RELOADERs Channel",
       "kind": "Fan remake comparison short · workbook-sourced",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 885628,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -465,8 +471,8 @@
       "title": "🔥 KING RETURNS | AI Song Inspired by SRK",
       "creator": "SongSpire",
       "kind": "AI power anthem song · workbook-sourced",
-      "views": null,
-      "views_asof": "2026-10-10",
+      "views": 435,
+      "views_asof": "2026-11-05",
       "found": "2026-10-10",
       "source": "KING Intelligence 2.0 corpus"
     },
@@ -477,8 +483,8 @@
       "title": "KING IS HERE: 🔥 (Full Video Song) | Shah Rukh Khan | King Movie Song SRK | Anirudh Ravichander Song",
       "creator": "DJ SRK Dipak",
       "kind": "song",
-      "views": null,
-      "views_asof": null,
+      "views": 78253,
+      "views_asof": "2026-11-05",
       "found": "2026-10-18",
       "source": "daily scan"
     }
