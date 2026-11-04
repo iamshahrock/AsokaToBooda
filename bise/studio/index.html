@@ -67,6 +67,19 @@
 @media(max-width:900px){.alb-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:520px){.alb-grid{grid-template-columns:repeat(3,1fr)}}
 .alb-film{display:grid;grid-template-columns:260px 1fr;gap:14px;align-items:center;margin:8px 0 6px}@media(max-width:640px){.alb-film{grid-template-columns:1fr}}
 .sotd{color:var(--gold)}
+.cue{background:#0e0909;border-top:1px solid #2a1c1c;padding:8px 12px}
+.cue-now{font:700 15px Archivo,sans-serif;color:#f4ece4;min-height:20px}
+.cue-now.k-line{color:#f0c24e}.cue-now.k-other{color:#cfc4bb}.cue-now.k-on{color:#8fb8ff}
+.cue-bar{position:relative;height:22px;margin:6px 0 4px;background:#1a1111}
+.cue-bar i{position:absolute;top:0;height:100%}
+.cue-bar .ph{position:absolute;top:-3px;bottom:-3px;width:2px;background:#fff;left:0}
+.cue-leg span{font-size:11.5px;color:#a89a90;margin-right:12px}.cue-leg i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px}
+.snd{display:block;margin:8px 0 0}
+.rules{max-width:640px;background:#120b0b;color:#e6dcd4;border:2px solid var(--gold-d);padding:20px 22px}
+.rules::backdrop{background:rgba(0,0,0,.7)}
+.rules h3{margin:0 0 10px;font:400 30px var(--display);color:#f4ece4}.rules li{margin:0 0 10px;font-size:15px;line-height:1.55}
+.rules .k1,.rules .k2,.rules .k3{display:inline-block;font:700 11px Archivo,sans-serif;padding:1px 6px;margin-right:6px}
+.rules .k1{background:#f0c24e;color:#140c0a}.rules .k2{background:#8a7f78;color:#140c0a}.rules .k3{background:#5b8fd6;color:#fff}
 .stage{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 @media(max-width:860px){.stage{grid-template-columns:1fr}}
 .box{border:1px solid var(--gold-d);background:var(--card)}
@@ -118,6 +131,24 @@
     <div><b>4 · Compare</b>Your timing, pauses, head, face and voice against his.</div>
   </div>
 
+  <p><button type="button" class="btn g" id="bRules">How Match the King works</button></p>
+  <dialog id="rules" class="rules">
+    <h3>How Match the King works</h3>
+    <p><b>The aim:</b> play Raja's scene the way Shah Rukh Khan played it. The score measures how close your take comes to his choices, not how good an actor you are.</p>
+    <ol>
+      <li><b>Pick a scene and watch it</b> once or twice. Learn the lines, or speak your own words in his rhythm.</li>
+      <li><b>Start camera, then Record.</b> After 3-2-1 his scene starts beside your camera, muted, and you act along with it. Recording stops when his scene ends. Stop ends it early.</li>
+      <li><b>Follow the cue strip</b> under your camera:<br>
+        <span class="k1">Your line</span> Raja speaks: you speak.<br>
+        <span class="k2">Others speak · listen</span> another character talks: stay silent, listen in character.<br>
+        <span class="k3">Raja on screen · react</span> his face is on screen: your face is compared with his.<br>
+        Off screen: nothing is scored, stay in character.</li>
+      <li><b>What is measured:</b> Timing (you speak when he speaks), Speaking length, Pauses, Head movement (where he turns), Expression (how his face changes) and, in dialogue scenes, Voice (how his loudness rises and falls). Scenes without dialogue are scored on head and face only.</li>
+      <li><b>Your card:</b> every scene you play wins its card. Match under 50 = Bronze, 50+ = Silver, 70+ = Gold, 85+ = Diamond. Play again to upgrade it; it never goes down. Finish an act for its duo card, all scenes for Hum Teeno.</li>
+      <li><b>Tips:</b> face the camera, good light on your face, alone in the frame, quiet room. Your video never leaves your device.</li>
+    </ol>
+    <form method="dialog"><button class="btn">Got it</button></form>
+  </dialog>
   <h2>1 · Pick a scene</h2>
   <div class="pk">
     <label class="pk-film"><span>Film</span><select id="film"></select></label>
@@ -145,6 +176,7 @@
     <div class="box">
       <h3>2 · Your take</h3>
       <div class="cam" id="cam"><video id="vid" playsinline muted></video><div class="cd" id="cd"></div><div class="rec" id="recTag">● REC</div><div class="msg" id="camMsg">Start your camera, or upload a video of your take.</div></div>
+      <div class="cue" id="cue"><div class="cue-now" id="cueNow">The scene map: where Raja speaks, listens and is on screen</div><div class="cue-bar" id="cueBar"></div><div class="cue-leg"><span><i style="background:#f0c24e"></i>Your line</span><span><i style="background:#8a7f78"></i>Others speak · listen</span><span><i style="background:#5b8fd6"></i>Raja on screen · react</span></div></div>
       <div class="in">
         <div class="btns">
           <button class="btn" id="bCam">Start camera</button>
@@ -153,6 +185,7 @@
           <label class="btn g" for="file">Upload a video</label><input id="file" type="file" accept="video/*" hidden>
         </div>
         <div class="prog" id="prog"><i></i></div>
+        <label class="note snd"><input type="checkbox" id="sndOn"> Play the scene's sound while I act (use headphones, or your microphone will hear the film)</label>
         <p class="note" id="status">Recording stops by itself when the scene's time is up. Face the camera, in good light, and speak clearly.</p>
       </div>
     </div>
@@ -168,7 +201,7 @@
     <ul class="tips" id="tips"></ul>
     <p class="leg"><span><i style="background:#f0c24e"></i>Raja</span><span><i style="background:#5bb8ff"></i>You</span></p>
     <div id="charts"></div>
-    <div class="btns"><button class="btn" id="bAgain">Try again</button><button class="btn g" id="bCard">Save my scorecard</button></div>
+    <div class="btns"><button class="btn" id="bAgain">Try again</button><button class="btn g" id="bMyCard">Save my card</button><button class="btn g" id="bCard">Save my scorecard</button></div>
     <p class="note">Match the King: the score measures how close your take comes to Raja's choices (timing, pauses, head, face, voice), not how good an actor you are. Head turns and expressions are read from your face; voice from loudness, not words. Raja's numbers come from our study of the film (B.I.S.E.).</p>
   </div>
   <section id="album">
@@ -185,7 +218,7 @@ const VENDOR='/assets/vendor/face-api/';
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=t=>{t=Math.round(t);return Math.floor(t/3600)+':'+String(Math.floor(t%3600/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')};
-let D=null,cur=null,stream=null,api=null,take=null,stopAt=0,timer=null,ac=null;
+let D=null,cur=null,stream=null,api=null,take=null,stopAt=0,timer=null,ac=null,yt=null,ytReady=null;
 
 const data=await fetch('/data/bise-deewana.json',{cache:'no-store'}).then(r=>r.json());D=data;
 D.scenes.sort((a,b)=>a.start-b.start);
@@ -235,12 +268,30 @@ function choose(i){
   $('sTitle').textContent=cur.title+' · '+fmt(cur.start);
   $('sStudy').textContent=cur.study;
   $('sMeta').textContent=Math.round(cur.dur)+' seconds'+(cur.speaks?' · '+cur.speech.length+' speeches':' · no dialogue: scored on head and face');
+  if(yt){try{yt.destroy()}catch(e){}yt=null}
   $('yt').innerHTML='<img alt="" src="https://i.ytimg.com/vi/'+D.film.youtube+'/hqdefault.jpg"><span>Watch the scene</span>';
+  cueMap();
   $('sFp').innerHTML=chart({raja:cur});
   $('res').style.display='none';$('won').hidden=true;
 }
-$('yt').onclick=()=>{if($('yt').querySelector('iframe'))return;
-  $('yt').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${D.film.youtube}?start=${Math.floor(cur.start)}&end=${Math.ceil(cur.end)}&autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Deewana"></iframe>`;};
+// ---- the scene player (YouTube IFrame API): watch it, and act along with it while recording ----
+function ytApi(){
+  if(ytReady)return ytReady;
+  ytReady=new Promise(res=>{if(window.YT&&YT.Player)return res();const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';window.onYouTubeIframeAPIReady=()=>res();document.head.appendChild(s)});
+  return ytReady;
+}
+async function player(){
+  await ytApi();
+  if(yt&&yt.__scene===cur.id)return yt;
+  if(yt){try{yt.destroy()}catch(e){}yt=null}
+  $('yt').innerHTML='<div id="ytp"></div>';
+  await new Promise(res=>{yt=new YT.Player('ytp',{videoId:D.film.youtube,host:'https://www.youtube-nocookie.com',playerVars:{start:Math.floor(cur.start),end:Math.ceil(cur.end),rel:0,playsinline:1,modestbranding:1},events:{onReady:res}})});
+  yt.__scene=cur.id;const f=$('yt').querySelector('iframe');if(f){f.style.position='absolute';f.style.inset='0';f.style.width='100%';f.style.height='100%'}
+  return yt;
+}
+$('yt').onclick=async()=>{if($('yt').querySelector('iframe'))return;const p=await player();p.unMute();p.seekTo(cur.start,true);p.playVideo();};
+// park the scene on its first frame, muted, ready to act along
+async function cueScene(){try{const p=await player();p.mute();p.seekTo(cur.start,true);p.pauseVideo();return p}catch(e){return null}}
 
 async function loadApi(){
   if(api)return api;
@@ -269,9 +320,9 @@ $('bCam').onclick=async()=>{
   }catch(err){$('status').textContent='Camera or microphone not allowed. You can upload a video instead.';return}
   const v=$('vid');v.classList.remove('file');v.srcObject=stream;v.muted=true;await v.play();
   $('camMsg').style.display='none';$('bCam').disabled=true;
-  await loadApi();   // Record only switches on once the face reader is ready
+  await Promise.all([loadApi(),cueScene()]);   // Record only switches on once the face reader and the scene are ready
   $('bRec').disabled=false;
-  $('status').textContent='Ready. Press Record: a 3-second countdown, then act. It stops after '+Math.round(cur.dur)+' seconds.';
+  $('status').textContent='Ready. Press Record: after 3-2-1 his scene starts beside you. Act along; it stops when his scene ends ('+Math.round(cur.dur)+' s).';
 };
 // state: idle -> countdown -> rec -> idle. Stop works in countdown (cancels) and in rec (finishes).
 let state='idle',runId=0;
@@ -288,15 +339,21 @@ $('bRec').onclick=async()=>{
   }
   if(state!=='countdown'||my!==runId)return;
   state='rec';$('cd').style.display='none';$('recTag').style.display='block';
-  const buf=new Float32Array(an.fftSize);take={face:[],loud:[]};const t0=performance.now();stopAt=t0+cur.dur*1000;
+  // his scene starts with you; its own clock times the take (exact even if YouTube pauses to buffer)
+  let p=null;try{p=await player();if($('sndOn').checked)p.unMute();else p.mute();p.seekTo(cur.start,true);p.playVideo()}catch(e){p=null}
+  const buf=new Float32Array(an.fftSize);take={face:[],loud:[]};let t0=performance.now();stopAt=t0+cur.dur*1000+15000;
   const v=$('vid');let busy=false,lastF=0;
+  const clock=()=>{if(p&&p.getCurrentTime){const vt=p.getCurrentTime()-cur.start;if(p.getPlayerState&&p.getPlayerState()===1||vt>0.05)return vt}return p?-1:(performance.now()-t0)/1000};
   const tick=()=>{
-    const now=performance.now(),t=(now-t0)/1000;
+    const now=performance.now(),t=clock();
+    cueAt(t);
+    if(t<0){$('status').textContent='Starting his scene…';if(now>=t0+6000){p=null;t0=performance.now();stopAt=t0+cur.dur*1000;$('cueNow').textContent='His scene could not start here: act from memory, the cues still run'}return}
+    if(t>=cur.dur)return stop();
     an.getFloatTimeDomainData(buf);let s=0;for(const x of buf)s+=x*x;take.loud.push([t,10*Math.log10(s/buf.length+1e-10)]);
     if(!busy&&now-lastF>=200){busy=true;lastF=now;
-      readFace(v).then(f=>{if(f&&state==='rec')take.face.push([(performance.now()-t0)/1000,f.yaw,f.pitch,f.mouth,f.val,f.h])}).catch(()=>{}).finally(()=>{busy=false})}
+      const ft=t;readFace(v).then(f=>{if(f&&state==='rec')take.face.push([ft,f.yaw,f.pitch,f.mouth,f.val,f.h])}).catch(()=>{}).finally(()=>{busy=false})}
     if(now>=stopAt)return stop();
-    $('status').textContent='Recording… '+Math.max(0,Math.ceil((stopAt-now)/1000))+' s left';
+    $('status').textContent='Recording… '+Math.max(0,Math.ceil(cur.dur-t))+' s left';
   };
   timer=setInterval(tick,100);
 };
@@ -310,6 +367,7 @@ function camOff(){
 }
 function reset(){
   if(timer){clearInterval(timer);timer=null}
+  try{if(yt&&yt.pauseVideo)yt.pauseVideo()}catch(e){}
   if(ac){try{ac.close()}catch(e){}ac=null}
   $('cd').style.display='none';$('recTag').style.display='none';$('bStop').disabled=true;
   camOff();
@@ -394,12 +452,48 @@ function finish(tk){
   if(!tips.length)tips.push('Close. Now watch the scene again and steal one more detail.');
   $('tips').innerHTML=tips.map(t=>'<li>'+esc(t)+'</li>').join('');
   $('charts').innerHTML=chart({raja:R,you});
-  $('res').style.display='block';$('res').scrollIntoView({behavior:'smooth'});
+  $('res').style.display='block';
   $('status').textContent='Done. Your video stayed on your device.';
   lastResult={total,sc};
   winCard(total);
 }
 let lastResult=null;
+
+// ---- cue strip: the scene map, and what to do now ----
+function cueMap(){
+  const T=cur.dur,pc=x=>(Math.max(0,Math.min(T,x))/T*100).toFixed(2)+'%',seg=(a,c,top,h)=>a.map(q=>`<i style="left:${pc(q[0])};width:calc(${pc(q[1])} - ${pc(q[0])});background:${c};top:${top}px;height:${h}px"></i>`).join('');
+  $('cueBar').innerHTML=seg(cur.onscreen||[],'#5b8fd6',0,6)+seg(cur.others||[],'#8a7f78',8,14)+seg(cur.speech||[],'#f0c24e',8,14)+'<span class="ph" id="ph"></span>';
+  $('cueNow').className='cue-now';$('cueNow').textContent=cur.speaks?'Scene map: gold = your lines, grey = others speak, blue = Raja on screen':'Scene map: no dialogue. Blue = Raja on screen: match his head and face';
+}
+function cueAt(t){
+  const ph=$('ph');if(ph)ph.style.left=(Math.max(0,Math.min(1,t/cur.dur))*100)+'%';
+  if(t<0)return;
+  const inn=a=>(a||[]).some(q=>t>=q[0]&&t<q[1]),soon=a=>(a||[]).find(q=>q[0]>t&&q[0]-t<1.5);
+  const n=$('cueNow');let k='',txt='';
+  if(inn(cur.speech)){k='k-line';txt='Your line';}
+  else if(soon(cur.speech)){k='k-line';txt='Your line in '+Math.ceil(soon(cur.speech)[0]-t)+'…';}
+  else if(inn(cur.others)){k='k-other';txt='Others speak · listen in character';}
+  else if(inn(cur.onscreen)){k='k-on';txt='Raja on screen · react like him';}
+  else{txt='Off screen · stay in character';}
+  n.className='cue-now '+k;n.textContent=txt;
+}
+cueMap();
+$('bRules').onclick=()=>$('rules').showModal();
+$('bMyCard').onclick=()=>{
+  const best=mine[cur.id];if(best==null)return;const l=LV[level(best)];
+  const c=document.createElement('canvas');c.width=900;c.height=1260;const g=c.getContext('2d');
+  g.fillStyle='#0a0707';g.fillRect(0,0,900,1260);g.fillStyle=l.c;g.fillRect(0,0,900,1260);g.fillStyle='#120b0b';g.fillRect(24,24,852,1212);
+  const img=new Image();img.onload=()=>{
+    g.drawImage(img,48,48,804,452);g.fillStyle=l.c;g.fillRect(48,48,250,64);g.fillStyle='#140c0a';g.font='700 34px Archivo, sans-serif';g.fillText(l.n.toUpperCase(),68,93);
+    g.fillStyle='#f4ece4';g.font='72px Anton, sans-serif';g.fillText(cur.title.slice(0,22),48,610);
+    g.fillStyle='#f0c24e';g.font='italic 40px "Cormorant Garamond", serif';g.fillText(D.film.title+' ('+D.film.year+') · '+(cur.act||''),48,670);
+    g.fillStyle=l.c;g.font='220px Anton, sans-serif';g.fillText(String(best),48,930);
+    g.fillStyle='#a89a90';g.font='700 30px Archivo, sans-serif';g.fillText('MATCH · HOW CLOSE TO RAJA',58,985);
+    g.fillStyle='#e6dcd4';g.font='600 32px Archivo, sans-serif';g.fillText('SRK School of Acting · Match the King',48,1110);
+    g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/bise/studio',48,1170);
+    c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='srk-card-'+FILM+'-'+cur.id+'-'+l.n.toLowerCase()+'.png';a.click()},'image/png');
+  };img.src=thumb(cur);
+};
 
 // ---- cards and album ----
 function card(sc,best,cls){
@@ -425,7 +519,7 @@ function album(j){
   if(j&&j.top&&j.top.length)$('topActors').innerHTML='<h2>Top actors · Deewana</h2><table style="width:100%;border-collapse:collapse;font-size:14px">'+j.top.map(r=>`<tr><td style="padding:6px;border-bottom:1px solid #2a1c1c">${r.rank}</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">${esc(r.name)}</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">${r.cards} cards</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">average ${r.avg}</td></tr>`).join('')+'</table><p class="note">Billboard names only. Join the Billboard to appear here.</p>';
 }
 function winCard(total){
-  const box=$('won');if(total==null){box.hidden=true;return}
+  const box=$('won');if(total==null){box.hidden=true;$('res').scrollIntoView({behavior:'smooth'});return}
   const prev=mine[cur.id],lv=level(total),was=prev!=null?level(prev):-1,best=Math.max(prev??0,total);
   mine[cur.id]=best;saveMine();
   const up=lv>was,dbl=cur.id===SOTD;
@@ -438,6 +532,7 @@ function winCard(total){
   if(window.STARKS&&ss.every(s=>mine[s.id]!=null))STARKS.earn('actset',500,'Act complete · '+act,'bise-'+FILM+'-act-'+(D.acts||[]).indexOf(act));
   if(window.STARKS&&D.scenes.every(s=>mine[s.id]!=null))STARKS.earn('actset',2000,'Hum Teeno · Deewana complete','bise-'+FILM+'-film');
   album();list&&$('panel').hidden===false&&list();
+  box.scrollIntoView({behavior:'smooth',block:'start'});
   if(device())fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({device:device(),film:FILM,scene:cur.id,score:total})}).then(r=>r.json()).then(merge).catch(()=>{});
 }
 
