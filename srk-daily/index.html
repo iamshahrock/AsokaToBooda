@@ -112,6 +112,24 @@ button.np-btn{cursor:pointer}
 .sb p{font-size:12.5px;line-height:1.45;margin:0 0 8px}
 .sb button{width:100%;background:var(--red);color:#fff;border:0;font:700 12px Archivo,sans-serif;letter-spacing:.1em;padding:9px;cursor:pointer;text-transform:uppercase}
 .sb .msg{font:600 12px Archivo,sans-serif;margin:6px 0 0;min-height:1em}
+.fv img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--rule);margin:0 0 8px}
+.fv h3{margin:0 0 4px;font:700 17px/1.2 'Libre Baskerville',serif;color:var(--maroon)}
+.fv p{font-size:12.5px;line-height:1.45;margin:0 0 8px}
+.fv audio{width:100%;height:36px;display:block;margin:0 0 6px}
+.fv small{display:block;font:12px Archivo,sans-serif;color:var(--muted)}
+.fv small a{color:var(--blue)}
+.hl{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:12px;text-decoration:none}
+@media (max-width:520px){.hl{grid-template-columns:96px 1fr}}
+.hl img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid #b9ad99}
+.hl h3{margin:0 0 6px;font:700 21px/1.2 'Libre Baskerville',serif;color:var(--ink)}
+.hl p{margin:0 0 10px;font-size:14px;line-height:1.55}
+.hl span,.ku .go2{display:inline-block;background:var(--red);color:#fff;font:700 12px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;text-decoration:none}
+.ku{padding:12px}
+.ku .lk{font:700 11px Archivo,sans-serif;letter-spacing:.12em;color:var(--red);text-transform:uppercase;margin:0 0 4px}
+.ku h3{margin:0 0 4px;font:700 21px/1.2 'Libre Baskerville',serif;color:var(--ink)}
+.ku .by2{font:italic 13px 'Libre Baskerville',serif;color:var(--muted);margin:0 0 8px}
+.ku p{font-size:14.5px;line-height:1.6;margin:0 0 10px}
+.ku .go2{background:var(--blue)}
 .ix a{display:block;font-size:13px;line-height:1.4;padding:6px 0;border-bottom:1px dotted var(--rule);text-decoration:none}
 .ix a small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;color:var(--red);text-transform:uppercase}
 
@@ -193,6 +211,8 @@ button.np-btn{cursor:pointer}
     return '<section class="bx"><h2>Poll Station</h2><div class="in"><form class="pl" id="poll"><small>This week\'s question</small><p>'+esc(p.q)+'</p>'+
       p.o.map(function(o,i){return '<label><input type="radio" name="po" value="'+i+'"> '+esc(o)+'</label>';}).join('')+
       '<button type="submit">Submit</button><div class="res" id="plRes"></div><p class="msg" id="plMsg"></p></form></div></section>'+
+      (D.fanverse?'<section class="bx r fv"><h2>FANVERSE</h2><div class="in"><small style="color:var(--red);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px">'+esc(D.fanverse.kicker)+'</small><a href="'+esc(D.fanverse.url)+'"><img src="'+esc(D.fanverse.img)+'" alt="INQUILAAB KING KE SAATH" loading="lazy"></a><h3>'+esc(D.fanverse.title)+'</h3><p>'+esc(D.fanverse.line)+'</p>'+
+        '<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(D.fanverse.audio)+'"></audio><small><a href="'+esc(D.fanverse.credit_url)+'" target="_blank" rel="noopener">'+esc(D.fanverse.credit)+'</a> · <a href="'+esc(D.fanverse.url)+'">The anthem →</a></small></div></section>':'')+
       '<section class="bx r"><h2>Countdown</h2><div class="in cd"><b>'+DK+'</b><span>days to KING · 24 Dec 2026</span></div></section>'+
       '<section class="bx r" id="sub"><h2>Subscribe</h2><form class="in sb" id="sbF" novalidate><p>The day\'s King news and numbers in your inbox. One email a day at most; we never share your address.</p>'+
       '<input id="sbName" maxlength="60" placeholder="Your name (optional)" autocomplete="name"><input id="sbMail" type="email" maxlength="120" placeholder="Your email" autocomplete="email"><button type="submit">Subscribe to SRK DAILY</button><p class="msg" id="sbMsg"></p></form></section>';
@@ -203,6 +223,7 @@ button.np-btn{cursor:pointer}
       '<p class="cap"><b>'+esc(lead.title)+'.</b> '+esc(lead.deck||'')+'</p></a><a class="more" href="?p='+esc(lead.id)+'">Read the story…</a></section>';
     var boxes=[{t:'The Big Picture',x:rest[0]},{t:'SpeakEasy',x:rest[1]}].filter(function(b){return b.x;});
     c+='<div class="duo'+(boxes.length<2?' one':'')+'">'+boxes.map(function(b){return '<section class="bx r"><h2>'+b.t+'</h2><div class="in"><a class="t" href="?p='+esc(b.x.id)+'">'+esc(b.x.title)+'</a><p>'+esc(short(b.x.deck||firstP(b.x),170))+'</p></div><a class="more" href="?p='+esc(b.x.id)+'">More</a></section>';}).join('')+'</div>';
+    c+='<div id="hlBox"></div><div id="kuBox"></div>';
     var r=beat(D)+'<section class="bx r"><h2>All the stories</h2><div class="in ix">'+P.map(function(x){return '<a href="?p='+esc(x.id)+'"><small>'+fmt(x.date)+'</small>'+esc(x.title)+'</a>';}).join('')+'</div></section>';
     return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c">'+c+'</div><div class="np-r">'+r+'</div></div>';
   }
@@ -241,6 +262,20 @@ button.np-btn{cursor:pointer}
   }
   $('#kbBtn').addEventListener('click',function(){var box=$('#kb'),o=box.hidden;box.hidden=!o;this.setAttribute('aria-expanded',o?'true':'false');this.textContent='KING BUZZ of the day '+(o?'▴':'▾');if(o){kbLoad();box.scrollIntoView({behavior:'smooth',block:'nearest'});}});
 
+  // one thing from the site each IST day, and one KING University lesson each day (owner, 4 Nov 2026)
+  function dayN(){var t=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4).toISOString().slice(0,10);return Math.max(0,Math.round((Date.parse(t)-Date.parse('2026-11-04'))/864e5));}
+  function daily(D){
+    var n=dayN(),H=D.highlights||[];
+    if(H.length){var h=H[n%H.length];$('#hlBox').innerHTML='<section class="bx r"><h2>From the site today</h2><a class="hl" href="'+esc(h.url)+'"><img src="'+esc(h.img)+'" alt="" loading="lazy"><div><h3>'+esc(h.t)+'</h3><p>'+esc(h.d)+'</p><span>'+esc(h.cta||'Open')+' →</span></div></a></section>';}
+    fetch('../data/king-studies.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(K){
+      var all=[];(K.levels||[]).forEach(function(L){L.lessons.forEach(function(x,i){all.push({L:L,x:x,i:i});});});
+      if(!all.length)return;var u=all[(n*7)%all.length],x=u.x,L=u.L;
+      var note=(x.notes&&x.notes[0])||x.line||'';
+      $('#kuBox').innerHTML='<section class="bx"><h2>Today at KING University</h2><div class="ku"><p class="lk">'+esc(L.code||'')+' · '+esc(L.name)+' · '+esc(L.title)+' · Unit '+(u.i+1)+'</p><h3>Learn: '+esc(x.t)+'</h3><p class="by2">'+esc(x.by)+' · '+esc(x.film)+(x.y?' · '+x.y:'')+'</p><p>'+esc(note)+'</p>'+
+        '<a class="go2" href="/king-studies/?level='+esc(L.id)+'#lesson-'+esc(L.id)+'-'+(u.i+1)+'">Study this unit at KING University →</a></div></section>';
+    }).catch(function(){});
+  }
+
   var P=[],D=null;
   function device(){try{return window.STARKS?STARKS.get().device:'';}catch(e){return '';}}
   function showRes(st){var p=D.poll,t=st.total||0;$('#plRes').innerHTML=p.o.map(function(o,i){var n=(st.counts||{})[i]||0,pc=t?Math.round(n/t*100):0;return '<div>'+esc(o)+' · '+pc+'%<i style="width:'+pc+'%"></i></div>';}).join('')+'<div>'+t.toLocaleString('en-IN')+' vote'+(t===1?'':'s')+'</div>';}
@@ -275,6 +310,7 @@ button.np-btn{cursor:pointer}
     D=d;P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n||9)-(b.n||9));});
     var one=new URLSearchParams(location.search).get('p'),x=one&&P.filter(function(p){return p.id===one;})[0];
     $('#npBody').innerHTML=x?article(D,x):front(D,P);
+    if(!x)daily(D);
     if(x)document.title=x.title+' — SRK DAILY';
     wire();
   });
