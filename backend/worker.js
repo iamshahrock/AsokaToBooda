@@ -73,6 +73,7 @@ export default {
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
     if (path === "/merch-bulk") return merchBulk(request, env, reply, origin);
     if (path === "/daily-sub") return dailySub(request, env, reply, origin);
+    if (path === "/daily-poll") return dailyPoll(request, env, reply, origin, new URL(request.url));
     if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
     if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
     if (path === "/amfh/login" || path === "/amfh/me") return amfh(request, env, reply, origin, path);
@@ -508,6 +509,36 @@ async function buzzYouTube(env, reply) {
     videos[series] = { video_id: id, url: "https://www.youtube.com/watch?v=" + id, views: row ? row.views : null, day: row ? row.day : null, read_at: row ? new Date(row.ts).toISOString() : null };
   }
   return reply(200, { source: "YouTube Data API v3, videos.statistics.viewCount, read by the Worker", note, videos }, { "Cache-Control": "no-store" });
+}
+
+// ---------------- SRK DAILY: Poll Station ----------------
+// GET /daily-poll?poll=<id> -> { poll, counts: {0: n, 1: n, ...}, total }
+// POST /daily-poll {poll, opt (0-5), device} -> same; one vote per device per poll (a new vote replaces the old one).
+async function dailyPollState(env, poll) {
+  const r = await env.DB.prepare("SELECT opt, COUNT(*) AS n FROM daily_votes WHERE poll=?1 GROUP BY opt").bind(poll).all();
+  const counts = {}; let total = 0;
+  for (const row of r.results || []) { counts[row.opt] = row.n; total += row.n; }
+  return { poll, counts, total };
+}
+async function dailyPoll(request, env, reply, origin, url) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  const okPoll = p => /^[a-z0-9-]{3,60}$/.test(String(p || ""));
+  if (request.method === "GET") {
+    const poll = url.searchParams.get("poll");
+    if (!okPoll(poll)) return reply(400, { error: "Unknown poll." });
+    return reply(200, await dailyPollState(env, poll), { "Cache-Control": "no-store" });
+  }
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "poll:" + ip))) return reply(429, { error: "Too many votes at once. Try again in a minute." });
+  const b = await readBody(request);
+  if (!b || !okDevice(b.device)) return reply(400, { error: "Unknown device." });
+  const opt = Number(b.opt);
+  if (!okPoll(b.poll) || !(Number.isInteger(opt) && opt >= 0 && opt <= 5)) return reply(400, { error: "Choose an answer." });
+  await env.DB.prepare("INSERT INTO daily_votes(poll, device, opt, ts) VALUES(?1, ?2, ?3, ?4) ON CONFLICT(poll, device) DO UPDATE SET opt=?3, ts=?4").bind(b.poll, b.device, opt, Date.now()).run();
+  await bump(env, istDay(), "daily_vote");
+  return reply(200, await dailyPollState(env, b.poll));
 }
 
 // ---------------- SRK DAILY: subscribe (POST only; the list is read by the owner in D1) ----------------
