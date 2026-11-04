@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agarmainkinghota.com/srk-daily/">
 <meta property="og:site_name" content="Agar Main King Hota">
-<meta property="og:image" content="https://agarmainkinghota.com/assets/srk-daily-share.jpg">
+<meta property="og:image" content="https://agarmainkinghota.com/assets/srk-daily-today.jpg?d=2026-11-04">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SRK Daily: the news about the King, every day">
+<meta property="og:image:alt" content="SRK Daily, today's front page">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://agarmainkinghota.com/assets/srk-daily-share.jpg">
+<meta name="twitter:image" content="https://agarmainkinghota.com/assets/srk-daily-today.jpg?d=2026-11-04">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
@@ -169,6 +169,7 @@ button.np-btn{cursor:pointer}
 .mo a:hover b{color:var(--maroon)}
 /* print / PDF edition (owner, 4 Nov 2026: 'a short intro daily with the PDF version and a link to our daily site') */
 .pr-only{display:none}
+html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!important}html.snap body{background:#fbf8f1}html.snap main.wrap{padding:0!important;max-width:none!important}html.snap .np{margin:0;max-width:none;box-shadow:none;min-height:100vh}
 @media print{
   @page{size:A4;margin:0}
   html,body{background:#fbf8f1!important}
@@ -337,6 +338,8 @@ button.np-btn{cursor:pointer}
     var one=new URLSearchParams(location.search).get('p'),x=one&&P.filter(function(p){return p.id===one;})[0];
     $('#npBody').innerHTML=x?article(D,x):front(D,P);
     if(!x)daily(D);
+    // ?snap=1: the front page alone (no site header/footer), KING BUZZ open: used to make the daily link-preview snapshot
+    if(!x&&new URLSearchParams(location.search).get('snap')){document.documentElement.classList.add('snap');$('#kb').hidden=false;kbLoad();}
     if(!x&&new URLSearchParams(location.search).get('pdf')){document.documentElement.classList.add('pdf-front');
       var ps=document.createElement('style');ps.textContent='@media print{@page{size:330mm 550mm;margin:0}}';document.head.appendChild(ps);
       $('#kb').hidden=false;kbLoad();
