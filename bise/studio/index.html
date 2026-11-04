@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SRK School of Acting · Deewana studio — Agar Main King Hota</title>
-<meta name="description" content="Act a Raja scene from Deewana (1992), Shah Rukh Khan's first film. Record your take; your timing, pauses, head movement, expression and voice are read in your own browser and laid over his.">
+<title>Act As SRK · Record his scenes — Agar Main King Hota</title>
+<meta name="description" content="Act As SRK: pick a movie, pick a scene, record yourself, get your score. Act a Raja scene from Deewana (1992), Shah Rukh Khan's first film. Record your take; your timing, pauses, head movement, expression and voice are read in your own browser and laid over his.">
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/bise/studio/">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -120,9 +120,9 @@
 <script src="../../assets/header.js"></script>
 <main class="wrap">
 <section class="st">
-  <p class="k">KINGNAMA · B.I.S.E. · SRK School of Acting</p>
-  <h1>Act it like <span>Raja</span></h1>
-  <p class="full">Deewana (1992), Shah Rukh Khan's first film</p>
+  <p class="k">KINGNAMA · Act As SRK · Record his scenes</p>
+  <h1>Act As <span>SRK</span></h1>
+  <p class="full">Pick A Movie . Scene . Record . Get Score.</p>
   <p>Pick one of his scenes, watch it, then play it yourself. Your take is read in your own browser and laid over his: when you speak, how long you pause, how your head moves, what your face does and how your voice rises and falls. <b>Your video never leaves your device.</b></p>
   <div class="how">
     <div><b>1 · Pick</b>A film, then one of Raja's scenes, each with what to study.</div>
@@ -202,7 +202,7 @@
     <p class="leg"><span><i style="background:#f0c24e"></i>Raja</span><span><i style="background:#5bb8ff"></i>You</span></p>
     <div id="charts"></div>
     <div class="btns"><button class="btn" id="bAgain">Try again</button><button class="btn g" id="bMyCard">Save my card</button><button class="btn g" id="bCard">Save my scorecard</button></div>
-    <p class="note">Match the King: the score measures how close your take comes to Raja's choices (timing, pauses, head, face, voice), not how good an actor you are. Head turns and expressions are read from your face; voice from loudness, not words. Raja's numbers come from our study of the film (B.I.S.E.).</p>
+    <p class="note">Match the King: the score measures how close your take comes to Raja's choices (timing, pauses, head, face, voice), not how good an actor you are. Head turns and expressions are read from your face; voice from loudness, not words. Raja's numbers come from our own study of the film.</p>
   </div>
   <section id="album">
     <h2>Your Deewana album</h2>
@@ -210,7 +210,7 @@
     <div id="albumBody"></div>
     <div id="topActors"></div>
   </section>
-  <p style="margin-top:26px"><a class="btn g" href="/bise/">← About B.I.S.E.</a></p>
+  <p style="margin-top:26px"><a class="btn g" href="/kingnama/">← KINGNAMA</a></p>
 </section>
 </main>
 <script type="module">
@@ -489,8 +489,8 @@ $('bMyCard').onclick=()=>{
     g.fillStyle='#f0c24e';g.font='italic 40px "Cormorant Garamond", serif';g.fillText(D.film.title+' ('+D.film.year+') · '+(cur.act||''),48,670);
     g.fillStyle=l.c;g.font='220px Anton, sans-serif';g.fillText(String(best),48,930);
     g.fillStyle='#a89a90';g.font='700 30px Archivo, sans-serif';g.fillText('MATCH · HOW CLOSE TO RAJA',58,985);
-    g.fillStyle='#e6dcd4';g.font='600 32px Archivo, sans-serif';g.fillText('SRK School of Acting · Match the King',48,1110);
-    g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/bise/studio',48,1170);
+    g.fillStyle='#e6dcd4';g.font='600 32px Archivo, sans-serif';g.fillText('Act As SRK · agarmainkinghota.com',48,1110);
+    g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/act-as-srk',48,1170);
     c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='srk-card-'+FILM+'-'+cur.id+'-'+l.n.toLowerCase()+'.png';a.click()},'image/png');
   };img.src=thumb(cur);
 };
@@ -559,14 +559,14 @@ function chart({raja,you}){
 $('bCard').onclick=()=>{
   if(!lastResult)return;const c=document.createElement('canvas');c.width=1080;c.height=1080;const g=c.getContext('2d');
   g.fillStyle='#0a0707';g.fillRect(0,0,1080,1080);g.strokeStyle='#c9a24a';g.lineWidth=6;g.strokeRect(30,30,1020,1020);
-  g.fillStyle='#e0312b';g.font='700 30px Archivo, sans-serif';g.fillText('SRK SCHOOL OF ACTING · B.I.S.E.',80,120);
+  g.fillStyle='#e0312b';g.font='700 30px Archivo, sans-serif';g.fillText('ACT AS SRK · MATCH THE KING',80,120);
   g.fillStyle='#f4ece4';g.font='90px Anton, sans-serif';g.fillText('I acted it like Raja',80,240);
   g.fillStyle='#f0c24e';g.font='italic 44px "Cormorant Garamond", serif';g.fillText('Deewana (1992) · '+cur.title,80,310);
   g.fillStyle='#f0c24e';g.font='260px Anton, sans-serif';g.fillText(String(lastResult.total),80,600);
   g.fillStyle='#a89a90';g.font='700 28px Archivo, sans-serif';g.fillText('PRACTICE SCORE',90,650);
   let y=730;g.font='600 32px Archivo, sans-serif';
   for(const [k,v] of Object.entries(lastResult.sc)){g.fillStyle='#e6dcd4';g.fillText(k,80,y);g.fillStyle='#2a1c1c';g.fillRect(420,y-24,480,24);if(v!=null){g.fillStyle='#f0c24e';g.fillRect(420,y-24,480*v/100,24)}g.fillStyle='#f4ece4';g.fillText(v==null?'n/a':String(v),920,y);y+=52}
-  g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/bise/studio',80,1010);
+  g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/act-as-srk',80,1010);
   c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='srk-school-of-acting-'+cur.id+'.png';a.click()},'image/png');
 };
 $('bAgain').onclick=()=>{$('res').style.display='none';$('cam').scrollIntoView({behavior:'smooth'});$('status').textContent='Tap Start camera, then Record.'};
