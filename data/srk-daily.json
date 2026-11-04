@@ -1,89 +1,328 @@
 {
- "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest first. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]].",
+ "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]].",
  "posts": [
   {
-   "id": "2026-11-04-summary",
+   "id": "2026-11-04-agar-main-king-hota",
+   "n": 1,
    "date": "2026-11-04",
-   "time": "11:29 IST",
-   "kicker": "Summary analytics · 4 Nov 2026",
-   "title": "Tu Mil Jaaye nears 48 million as the 24-hour record is reported",
-   "deck": "Day three of KING's first song, the teasers still ahead of Doomsday, and Ramayana opens tomorrow. 50 days to KING.",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
-   "img_alt": "Tu Mil Jaaye, KING's first song: Shah Rukh Khan and Deepika Padukone",
-   "img_credit": "Official video thumbnail, YouTube",
-   "blocks": [
-    {"stats": [
-     ["Tu Mil Jaaye · YouTube views", "47,991,463", "59 h 20 min after release"],
-     ["Tu Mil Jaaye · likes", "560,273", ""],
-     ["KING · two official teasers", "84,280,229", "Title Reveal 51,349,568 + Date Announcement 32,930,661"],
-     ["Avengers: Doomsday · trailer", "83,765,175", "one official trailer"],
-     ["Days to KING", "50", "24 December 2026"]
-    ]},
-    {"h": "The record"},
-    {"p": "Hindustan Times, Bollywood Hungama and UNI report, from the makers' own numbers, that Tu Mil Jaaye became the most-watched Indian film song on YouTube in its first 24 hours: 36.3 million views and 430,000 likes, past Zinda Banda from Jawan (34.6 million, as reported). That is the makers' figure as carried by the press, not a post from @iamsrk or @redchilliesent."},
-    {"p": "Our own log agrees with it. We read the public YouTube counter every 10 minutes on his birthday: 35,243,482 views and 416,961 likes at 23:04 IST, 22 hours 55 minutes after release. UNI and DNA also report more than 60 million views across all digital platforms in a day; we only count YouTube."},
-    {"h": "Since yesterday"},
-    {"p": "From 43,451,423 views at 21:15 IST on 3 November to 47,991,463 at 11:29 IST today: 4,540,040 new views in 14 hours 14 minutes, about 319,000 an hour. Day one ran at about 1.5 million an hour, day two at about 357,000. The song is settling into a long, steady third day."},
-    {"h": "The season's scoreboard"},
-    {"p": "KING's two official teasers have 84,280,229 YouTube views together; the Avengers: Doomsday trailer has 83,765,175. KING stays ahead by 515,054, and KING has not released a trailer yet. Not like-for-like: two videos against one."},
-    {"p": "Ramayana: Part 1 opens tomorrow, 5 November, in Diwali week. Not a clash, a relay: Ramayana at Diwali, KING at Christmas."},
-    {"links": [
-     ["KING Buzz · the daily report", "/king-intelligence/daily.html?date=2026-11-04"],
-     ["KING on his 61st · the 10-minute curve", "/king-intelligence/king-61st.html"],
-     ["Kabhi Jo Tu Mil Jaaye · the fan version page", "/tu-mil-jaaye/"],
-     ["RAMAYANA to KING", "/ramayana-to-king/"]
-    ]},
-    {"p": "Read at 11:29 IST from the public YouTube watch pages. Press: Hindustan Times (Instagram, 4 Nov), Bollywood Hungama, UNI, DNA, Dynamite News."}
-   ]
-  },
-  {
-   "id": "2026-11-03-king-on-his-61st",
-   "date": "2026-11-03",
-   "time": "21:15 IST",
-   "kicker": "The birthday · scorecard",
-   "title": "KING on his 61st: the scorecard",
-   "deck": "Shah Rukh Khan vs. the clock. 2 November 2026, Mumbai. Toss won by the King, elected to bat at midnight.",
+   "time": "12:00 IST",
+   "kicker": "SRK DAILY · Issue 1",
+   "title": "Agar Main King Hota, and how the King turned 61",
+   "deck": "What this fans' KING world is, and the story so far: from the song at midnight on his birthday to a 24-hour record.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
    "img_alt": "Tu Mil Jaaye, released the minute he turned 61",
    "img_credit": "Official video thumbnail, YouTube",
    "blocks": [
-    {"time": [
-     ["00:00", "No balcony. The man who has waved from Mannat almost every birthday since 2007 sent a handwritten note instead, lit across the scaffolding of his own home: \"Thank you all for your wishes and love. Sending mine right back to you all. Lots of love and a big hug.\""],
-     ["00:09", "First ball. KING's first song, Tu Mil Jaaye, drops on YouTube the minute he turns 61. Sachin-Jigar, Kumaar, Arijit Singh, Madhubanti Bagchi, and Ed Sheeran in a Hindi film song. Shah Rukh and Deepika on screen."],
-     ["00:11", "His own post: \"Of Love and other Battles... This December, #LoveLikeAKing\""]
-    ]},
-    {"h": "The innings"},
-    {"p": "We read the YouTube counter every 10 minutes, all day."},
-    {"stats": [
-     ["29 minutes", "260,084", "views"],
-     ["3 hours", "1,050,866", "views"],
-     ["6 hours", "2,421,459", "views"],
-     ["12 h 50 min", "13,590,796", "views"],
-     ["20 h 45 min", "27,544,976", "views"],
-     ["22 h 55 min", "35,243,482", "views · 416,961 likes"]
-    ]},
-    {"p": "His Instagram reel, same 22 hours 55 minutes: 1.3 million likes, 62,100 comments, 51,000 shares."},
-    {"h": "Through the day"},
-    {"p": "5,000+ fans in Mumbai (an SRK Universe fan-club estimate, via PTI). Police barricades 500 metres from his gate. Fans screening DDLJ, feeding an orphanage, running free health check-ups. The Burj Khalifa saying \"WE LOVE YOU SRK\". The Bandra-Worli Sea Link carrying his face the night before."},
-    {"h": "Nightfall · the last over"},
-    {"p": "After skipping the balcony in 2024 and 2025, and with Mannat wrapped in scaffolding, he walked out anyway. White T-shirt, beanie, a platform built just for the moment. Waved. Bowed. Folded his hands. Opened his arms."},
-    {"p": "Late night, the party outside Mannat went on, and he came back out. Kisses blown, the signature pose, the street singing his name."},
-    {"quote": {"q": "Not out, at 61.", "by": ""}},
-    {"h": "Day 2 · the follow-on"},
-    {"p": "3 November, 17:26 IST, 41 hours 17 minutes in: 41,796,168 views and 500,181 likes. Half a million likes before the second sunset. By 21:15 IST: 43,451,423 views."},
-    {"p": "Day one ran at about 1.5 million views an hour. Day two settled at about 357,000 an hour, the normal second-day curve for a song that has already been everywhere."},
-    {"p": "The fans did the rest. In three days we counted 127 new YouTube videos about the song and the birthday (reactions, reviews, covers, remixes, AI versions) and 176 fan-made posts on Instagram and X, each checked by hand."},
-    {"p": "And the season's scoreboard moved too. KING's two official teasers together had 84,010,198 YouTube views, past the Avengers: Doomsday trailer's 83,646,111. Ramayana: Part 1 opens on 5 November; all seven of its official videos add up to 127,204,303 views. KING's three: 127,528,651. Dead level, 51 days before KING opens."},
-    {"h": "Why we count every ball"},
-    {"p": "On agarmainkinghota.com, the fans' own KING campaign, we publish KING's buzz in public every day against a fixed baseline. Real numbers only; if we can't read it, it says N/A."},
-    {"links": [
-     ["The full scorecard, the 10-minute curve and the balcony record 2007-2026", "/king-intelligence/king-61st.html"],
-     ["Not a clash, a relay: RAMAYANA to KING", "/ramayana-to-king/"],
-     ["The fans' own song for the King: INQUILAAB KING KE SAATH", "/inquilab/"]
-    ]},
-    {"p": "51 days to KING. 24 December 2026."}
+    {
+     "h": "What Agar Main King Hota is"
+    },
+    {
+     "p": "Agar Main King Hota, if I were the King, is the question every Shah Rukh Khan fan has asked at least once. This site is where the fans answer it: a fan-built world around KING, Shah Rukh Khan's film that opens on 24 December 2026. Not a campaign you watch; one you enter."
+    },
+    {
+     "list": [
+      "Make Your Poster: put your own face into any of his 118 films, in 6 styles (Photo, 3D, Anime, Chibi, Funko, LEGO)",
+      "Play: Rescue Your Face (12 arcade games in 2 worlds), Chess81 and its 81-second Rapid Fire, and BAAHEIN KHOL, the signature-pose game",
+      "KING Buzz: KING's buzz published in public every day against a fixed baseline, real numbers or N/A",
+      "INQUILAAB KING KE SAATH: the fans' own anthem against celebrity persona theft by Big Tech, #FreeMyFace #FreeMyVoice #FreeMyName",
+      "KING University: Shah Rukh Khan studied the way history studies its emperors, Pre-K to PhD, from 1947 to 2026",
+      "Asoka to Boo-Da: the book, SRK: The Man, The Myth, The King; plus the Gallery, On The Record and the Alter Egos"
+     ]
+    },
+    {
+     "p": "Everything here is made by fans, for fans, and every number is one we read ourselves. SRK DAILY is where we write it up, every day, until KING and beyond."
+    },
+    {
+     "h": "2 November 2026 · KING on his 61st"
+    },
+    {
+     "p": "Shah Rukh Khan vs. the clock. Toss won by the King, elected to bat at midnight."
+    },
+    {
+     "time": [
+      [
+       "00:00",
+       "No balcony. The man who has waved from Mannat almost every birthday since 2007 sent a handwritten note instead, lit across the scaffolding of his own home: \"Thank you all for your wishes and love. Sending mine right back to you all. Lots of love and a big hug.\""
+      ],
+      [
+       "00:09",
+       "First ball. KING's first song, Tu Mil Jaaye, drops on YouTube the minute he turns 61. Sachin-Jigar, Kumaar, Arijit Singh, Madhubanti Bagchi, and Ed Sheeran in a Hindi film song. Shah Rukh and Deepika on screen."
+      ],
+      [
+       "00:11",
+       "His own post: \"Of Love and other Battles... This December, #LoveLikeAKing\""
+      ]
+     ]
+    },
+    {
+     "h": "The innings"
+    },
+    {
+     "p": "We read the YouTube counter every 10 minutes, all day."
+    },
+    {
+     "stats": [
+      [
+       "29 minutes",
+       "260,084",
+       "views"
+      ],
+      [
+       "3 hours",
+       "1,050,866",
+       "views"
+      ],
+      [
+       "6 hours",
+       "2,421,459",
+       "views"
+      ],
+      [
+       "12 h 50 min",
+       "13,590,796",
+       "views"
+      ],
+      [
+       "20 h 45 min",
+       "27,544,976",
+       "views"
+      ],
+      [
+       "22 h 55 min",
+       "35,243,482",
+       "views · 416,961 likes"
+      ]
+     ]
+    },
+    {
+     "p": "His Instagram reel, same 22 hours 55 minutes: 1.3 million likes, 62,100 comments, 51,000 shares."
+    },
+    {
+     "h": "Through the day"
+    },
+    {
+     "p": "5,000+ fans in Mumbai (an SRK Universe fan-club estimate, via PTI). Police barricades 500 metres from his gate. Fans screening DDLJ, feeding an orphanage, running free health check-ups. The Burj Khalifa saying \"WE LOVE YOU SRK\". The Bandra-Worli Sea Link carrying his face the night before."
+    },
+    {
+     "h": "Nightfall · the last over"
+    },
+    {
+     "p": "After skipping the balcony in 2024 and 2025, and with Mannat wrapped in scaffolding, he walked out anyway. White T-shirt, beanie, a platform built just for the moment. Waved. Bowed. Folded his hands. Opened his arms."
+    },
+    {
+     "p": "Late night, the party outside Mannat went on, and he came back out. Kisses blown, the signature pose, the street singing his name."
+    },
+    {
+     "quote": {
+      "q": "Not out, at 61.",
+      "by": ""
+     }
+    },
+    {
+     "h": "Day 2 · the follow-on"
+    },
+    {
+     "p": "3 November, 17:26 IST, 41 hours 17 minutes in: 41,796,168 views and 500,181 likes. Half a million likes before the second sunset. By 21:15 IST: 43,451,423 views."
+    },
+    {
+     "p": "Day one ran at about 1.5 million views an hour. Day two settled at about 357,000 an hour, the normal second-day curve for a song that has already been everywhere."
+    },
+    {
+     "p": "The fans did the rest. In three days we counted 127 new YouTube videos about the song and the birthday (reactions, reviews, covers, remixes, AI versions) and 176 fan-made posts on Instagram and X, each checked by hand."
+    },
+    {
+     "p": "And the season's scoreboard moved too. KING's two official teasers together had 84,010,198 YouTube views, past the Avengers: Doomsday trailer's 83,646,111. Ramayana: Part 1 opens on 5 November; all seven of its official videos add up to 127,204,303 views. KING's three: 127,528,651. Dead level, 51 days before KING opens."
+    },
+    {
+     "h": "Day 3 · the record"
+    },
+    {
+     "p": "Hindustan Times, Bollywood Hungama and UNI report, from the makers' own numbers, that Tu Mil Jaaye became the most-watched Indian film song on YouTube in its first 24 hours: 36.3 million views and 430,000 likes, past Zinda Banda from Jawan (34.6 million, as reported). That is the makers' figure as carried by the press, not a post from @iamsrk or @redchilliesent."
+    },
+    {
+     "p": "Our own log agrees with it. We read the public YouTube counter every 10 minutes on his birthday: 35,243,482 views and 416,961 likes at 23:04 IST, 22 hours 55 minutes after release. UNI and DNA also report more than 60 million views across all digital platforms in a day; we only count YouTube."
+    },
+    {
+     "h": "Why we count every ball"
+    },
+    {
+     "p": "On agarmainkinghota.com, the fans' own KING campaign, we publish KING's buzz in public every day against a fixed baseline. Real numbers only; if we can't read it, it says N/A."
+    },
+    {
+     "links": [
+      [
+       "The full scorecard, the 10-minute curve and the balcony record 2007-2026",
+       "/king-intelligence/king-61st.html"
+      ],
+      [
+       "Not a clash, a relay: RAMAYANA to KING",
+       "/ramayana-to-king/"
+      ],
+      [
+       "The fans' own song for the King: INQUILAAB KING KE SAATH",
+       "/inquilab/"
+      ]
+     ]
+    },
+    {
+     "p": "50 days to KING. 24 December 2026."
+    }
    ],
-   "tags": ["#KING", "#ShahRukhKhan", "#SRK61", "#TuMilJaaye", "#LoveLikeAKing", "#KingBuzz", "#InquilaabKingKeSaath", "#RamayanaToKing"]
+   "tags": [
+    "#KING",
+    "#ShahRukhKhan",
+    "#SRK61",
+    "#TuMilJaaye",
+    "#LoveLikeAKing",
+    "#KingBuzz",
+    "#InquilaabKingKeSaath",
+    "#RamayanaToKing"
+   ]
+  },
+  {
+   "id": "2026-11-04-analytics",
+   "n": 2,
+   "date": "2026-11-04",
+   "time": "11:29 IST",
+   "kicker": "Analytics · 4 Nov 2026",
+   "title": "The numbers: the site, the song and the season",
+   "deck": "When the site started, what is on it today, and KING's buzz read at 11:29 IST.",
+   "blocks": [
+    {
+     "h": "The site"
+    },
+    {
+     "stats": [
+      [
+       "Work began",
+       "27 Sep 2026",
+       "the code repository was created"
+      ],
+      [
+       "KING Buzz baseline",
+       "4 Oct 2026",
+       "the first daily record"
+      ],
+      [
+       "Homepage live",
+       "9 Oct 2026",
+       "Agar Main King Hota became the home page"
+      ],
+      [
+       "Pull requests",
+       "376",
+       "changes shipped by 4 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "Since then the site has grown to more than 300 pages. What is on it today:"
+    },
+    {
+     "stats": [
+      [
+       "Films to put your face in",
+       "118",
+       "in 6 styles"
+      ],
+      [
+       "Arcade games",
+       "12",
+       "Rescue Your Face, 2 worlds"
+      ],
+      [
+       "Gallery pictures",
+       "49,199",
+       "linked to where they were published"
+      ],
+      [
+       "SRK videos",
+       "2,217",
+       "songs, trailers, scenes, shows, awards"
+      ],
+      [
+       "Fan versions found",
+       "421",
+       "245 of the 27 Oct poster, 176 of Tu Mil Jaaye"
+      ],
+      [
+       "KING University",
+       "75 units",
+       "9 courses, Pre-K to PhD"
+      ]
+     ]
+    },
+    {
+     "h": "KING's buzz today"
+    },
+    {
+     "stats": [
+      [
+       "Tu Mil Jaaye · YouTube views",
+       "47,991,463",
+       "59 h 20 min after release"
+      ],
+      [
+       "Tu Mil Jaaye · likes",
+       "560,273",
+       ""
+      ],
+      [
+       "KING · two official teasers",
+       "84,280,229",
+       "Title Reveal 51,349,568 + Date Announcement 32,930,661"
+      ],
+      [
+       "Avengers: Doomsday · trailer",
+       "83,765,175",
+       "one official trailer"
+      ],
+      [
+       "Days to KING",
+       "50",
+       "24 December 2026"
+      ]
+     ]
+    },
+    {
+     "h": "Since yesterday"
+    },
+    {
+     "p": "From 43,451,423 views at 21:15 IST on 3 November to 47,991,463 at 11:29 IST today: 4,540,040 new views in 14 hours 14 minutes, about 319,000 an hour. Day one ran at about 1.5 million an hour, day two at about 357,000. The song is settling into a long, steady third day."
+    },
+    {
+     "h": "The season's scoreboard"
+    },
+    {
+     "p": "KING's two official teasers have 84,280,229 YouTube views together; the Avengers: Doomsday trailer has 83,765,175. KING stays ahead by 515,054, and KING has not released a trailer yet. Not like-for-like: two videos against one."
+    },
+    {
+     "p": "Ramayana: Part 1 opens tomorrow, 5 November, in Diwali week. Not a clash, a relay: Ramayana at Diwali, KING at Christmas."
+    },
+    {
+     "links": [
+      [
+       "KING Buzz · the daily report",
+       "/king-intelligence/daily.html?date=2026-11-04"
+      ],
+      [
+       "KING on his 61st · the 10-minute curve",
+       "/king-intelligence/king-61st.html"
+      ],
+      [
+       "Kabhi Jo Tu Mil Jaaye · the fan version page",
+       "/tu-mil-jaaye/"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/"
+      ]
+     ]
+    },
+    {
+     "p": "Read at 11:29 IST from the public YouTube watch pages. Press: Hindustan Times (Instagram, 4 Nov), Bollywood Hungama, UNI, DNA, Dynamite News."
+    }
+   ]
   }
  ]
 }
