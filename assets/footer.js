@@ -18,11 +18,11 @@
     '#site-footer .sf-line2{margin:0;font-size:clamp(15px,1.8vw,18px);line-height:1.5;color:#e6dcd4}',
     '#site-footer .sf-line3{margin:6px 0 0;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:none;color:#ff4a4f}',
     '#site-footer .sf-line4{margin:0;font-size:14px;line-height:1.5;color:#b8aca4}',
-    '#site-footer .sf-map{max-width:1100px;margin:0 auto 34px;padding-bottom:30px;border-bottom:1px solid #2a1c1c;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 28px;text-align:left}',
+    '#site-footer .sf-map{max-width:1100px;margin:0 auto 34px;padding-bottom:30px;border-bottom:1px solid #2a1c1c;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px 24px;text-align:left}',
     '#site-footer .sf-map h4{margin:0 0 10px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff4a4f}',
     '#site-footer .sf-map a{display:block;padding:4px 0;font-size:14px;color:#cfc4bb;text-decoration:none}',
     '#site-footer .sf-map a:hover{color:#fff}',
-    '@media (max-width:700px){#site-footer .sf-map{grid-template-columns:repeat(2,minmax(0,1fr))}}',
+    '@media (max-width:1000px){#site-footer .sf-map{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (max-width:700px){#site-footer .sf-map{grid-template-columns:repeat(2,minmax(0,1fr))}}',
     '#site-footer .sf-mark{width:64px!important;height:64px!important}',
     '#site-footer .sf-disc{margin:18px 0 0;font-size:12px;line-height:1.6;color:#8f837c;max-width:640px}',
     '#site-footer .sf-cred{margin:26px auto 0;width:min(360px,100%);display:flex;flex-direction:column;align-items:center;gap:10px}',
@@ -41,13 +41,15 @@
   }
 
   var f = document.createElement('footer'); f.id = 'site-footer';
-  // site map: every section in four plain groups
+  // site map: every section in five groups, the same as the header menu
   var root = new URL('..', base).href;
   var map = document.createElement('nav'); map.className = 'sf-map'; map.setAttribute('aria-label', 'Site map');
   [
-    ['Play', [['create/', 'Make Your Poster'], ['chess81/', 'Chess81'], ['inquilab/', 'Inquilaab King Ke Saath'], ["lairs/", 'Rescue Your Face'], ['fan-billboard/', 'Billboard & STARKS']]],
-    ['Follow & shop', [['king-intelligence/', 'KING Buzz'], ['srk-daily/', 'SRK Daily'], ['merch/', 'Merch'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos']]],
-    ['Read & watch', [['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['king-studies/', 'KING University'], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['doom-to-king/', 'DOOM to KING']]],
+    // same groups as the header (owner, 4 Nov 2026: 'Yes, match it')
+    ['Games', [['create/', 'Make Your Poster'], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81'], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
+    ['KING Buzz', [['king-intelligence/', 'KING Buzz'], ['srk-daily/', 'SRK DAILY'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
+    ['The Archive', [['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
+    ['Fans', [['inquilab/', 'Inquilaab King Ke Saath'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos'], ['fan-billboard/', 'Billboard & STARKS'], ['merch/', 'Merch']]],
     ['About', [['', 'Home'], ['vision/', 'Vision & Mission'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
   ].forEach(function (g) {
     var col = document.createElement('div'), h = document.createElement('h4'); h.textContent = g[0]; col.appendChild(h);
