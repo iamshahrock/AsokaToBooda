@@ -28,7 +28,8 @@
     ['chess81/', 'Chess81', ['CHESS81.HTML']],
     ['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']],
     ['lairs/', 'Rescue Your Face'],
-    ['king-intelligence/', 'KING Buzz', ['srk-daily/']],
+    ['srk-daily/', 'SRK DAILY'],
+    ['king-intelligence/', 'KING Buzz'],
     ['merch/', 'Merch'],
     ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
@@ -40,10 +41,11 @@
   // The header shows these five groups (owner, 4 Nov 2026: 'consolidate the links ... GAMES as a drop down').
   // LINKS above stays the list of sections (section tabs, 'you are here'); GROUPS is what the bar and the menu show.
   var GROUPS = [
+    ['SRK DAILY', 'srk-daily/'],
     ['Games', [['create/', 'Make Your Poster', ['make-your-poster/']], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81', ['CHESS81.HTML']], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
-    ['KING Buzz', [['king-intelligence/', 'KING Buzz'], ['srk-daily/', 'SRK DAILY'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
+    ['KING Buzz', [['king-intelligence/', 'KING Buzz'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
     ['The Archive', [['gallery/videos/', 'Gallery', ['gallery/']], ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
-    ['Fans', [['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']], ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']], ['fan-billboard/', 'Billboard']]],
+    ['FANVERSE', [['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']], ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']], ['fan-billboard/', 'Billboard']]],
     ['Merch', 'merch/']
   ];
   var UTIL = [['vision/', 'Vision'], ['about/', 'About'], ['fan-billboard/', 'Billboard']];
@@ -276,7 +278,7 @@
     if (typeof g[1] === 'string') {
       var t1 = el('a', { href: root + g[1], text: g[0] }), t2 = el('a', { href: root + g[1] }, [el('small', { text: ('0' + (++n)).slice(-2) }), document.createTextNode(g[0])]);
       if (isHere(g[1])) { t1.setAttribute('aria-current', 'page'); t2.setAttribute('aria-current', 'page'); }
-      nav.appendChild(t1); drawer.appendChild(el('div', { class: 'sh-dgrp', text: 'Shop' })); drawer.appendChild(t2); return;
+      nav.appendChild(t1); drawer.appendChild(el('div', { class: 'sh-dgrp', text: g[1] === 'merch/' ? 'Shop' : 'Read' })); drawer.appendChild(t2); return;
     }
     var btn = el('button', { type: 'button', 'aria-expanded': 'false', 'aria-haspopup': 'true' }); btn.innerHTML = g[0] + CHEV;
     var menu = el('div', { class: 'sh-menu' }), dd = el('div', { class: 'sh-dd' }, [btn, menu]), cur = false;

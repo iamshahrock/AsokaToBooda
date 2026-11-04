@@ -59,6 +59,13 @@ body{background:var(--bg)}
 .mv-f{position:relative;width:min(100%,calc(76vh * var(--r)),420px);aspect-ratio:var(--r);border-radius:10px;overflow:hidden;background:#000;box-shadow:0 24px 70px rgba(0,0,0,.6);border:1px solid var(--line)}
 .mv-f iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .mv-f.wide{width:100%}
+/* tap-to-play: the picture shows first and the YouTube player loads only on tap, so a blocked frame never leaves an empty box */
+.mv-f .mv-p{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#000;cursor:pointer}
+.mv-f .mv-p img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
+.mv-f .mv-p i{position:absolute;left:50%;top:50%;width:76px;height:54px;margin:-27px 0 0 -38px;border-radius:14px;background:#e3242b;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.mv-f .mv-p i::after{content:"";position:absolute;left:31px;top:16px;border-left:20px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.mv-f .mv-p:hover i{background:#ff3a40}
+.mv-yt{display:inline-block;margin-top:10px;font:700 12px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--red-hi);text-decoration:none}
 @media (max-width:900px){.mv-f{width:min(100%,360px)}.mv-f.wide{width:100%}}
 .buzz{display:block;margin:12px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#0d0707;text-decoration:none;color:#e8dfd8;font-size:14px;line-height:1.5}
 .buzz b{display:block;margin:0 0 2px;font:400 20px Anton,sans-serif;letter-spacing:.04em;color:var(--red-hi)}
@@ -268,8 +275,13 @@ body{background:var(--bg)}
   if(!m) return;
   var r=el.getAttribute('data-ratio')||'9/16';
   el.className='mv on';
+  var id=m[1],watch='https://www.youtube.com/watch?v='+id;
   el.innerHTML='<h2 class="mv-h">Inquilaab King Ke Saath<small>The music video</small></h2>'+
-    '<div class="mv-f'+(r==='16/9'?' wide':'')+'" style="--r:'+r+'"><iframe src="https://www.youtube.com/embed/'+m[1]+'?rel=0&amp;playsinline=1" title="Inquilaab King Ke Saath, the music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>';
+    '<div class="mv-f'+(r==='16/9'?' wide':'')+'" style="--r:'+r+'"><button type="button" class="mv-p" aria-label="Play Inquilaab King Ke Saath, the music video"><img src="https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg" alt="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg\'"><i></i></button></div>'+
+    '<a class="mv-yt" href="'+watch+'" target="_blank" rel="noopener">Watch on YouTube →</a>';
+  el.querySelector('.mv-p').addEventListener('click',function(){
+    this.parentNode.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?rel=0&amp;playsinline=1&amp;autoplay=1" title="Inquilaab King Ke Saath, the music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+  });
 })();
 </script>
 <script src="assets/starks.js"></script>

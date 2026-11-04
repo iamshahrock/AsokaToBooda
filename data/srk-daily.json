@@ -1,5 +1,5 @@
 {
- "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}.",
+ "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
    "id": "2026-11-04-agar-main-king-hota",
@@ -364,6 +364,103 @@
    "d": "BAAHEIN KHOL: match his open-arms pose with your camera and collect the card.",
    "img": "/assets/home/01-agar-main-king-hota.webp",
    "url": "/baahein-khol/"
+  }
+ ],
+ "fanverse": {
+  "kicker": "FANVERSE · the fans' first song",
+  "title": "INQUILAAB KING KE SAATH",
+  "line": "The fans' anthem against celebrity persona theft by Big Tech. #FreeMyFace #FreeMyVoice #FreeMyName",
+  "img": "/assets/inquilab/fist-king.webp",
+  "audio": "/assets/inquilab/audio/inquilaab-v1-song-3.mp3?v=2",
+  "file": "inquilaab-v1-song-3.mp3",
+  "credit": "Version 1 · Song 1 · Composed by Pragnesh S. Singh",
+  "credit_url": "https://www.youtube.com/@Swaarstudio",
+  "url": "/inquilab/"
+ },
+ "highlights": [
+  {
+   "t": "Make your KING poster",
+   "d": "Pick any of 118 SRK films, choose one of 6 styles, add your face and step into his poster as the King.",
+   "img": "/assets/home/01-agar-main-king-hota.webp",
+   "url": "/create/",
+   "cta": "Make your poster"
+  },
+  {
+   "t": "Rescue Your Face",
+   "d": "12 arcade games in 2 worlds, from the Underground City to the AI Lab. Shoot the crown, open the safe, take your face back.",
+   "img": "/assets/lairs/scenes/den-abyssal-m.webp",
+   "url": "/lairs/",
+   "cta": "Play the 12 games"
+  },
+  {
+   "t": "Chess81 Rapid Fire",
+   "d": "15 boards, 81 seconds each. Find the one winning move before the clock runs out.",
+   "img": "/assets/home/rapid-fire-cover.webp",
+   "url": "/chess81/rapid-fire/",
+   "cta": "Play Rapid Fire"
+  },
+  {
+   "t": "BAAHEIN KHOL, the pose game",
+   "d": "Open your arms like the King. Your camera reads your pose; match 90% and the card is yours.",
+   "img": "/assets/home/02-check-mate-fire.webp",
+   "url": "/baahein-khol/",
+   "cta": "Strike the pose"
+  },
+  {
+   "t": "The Alter Egos",
+   "d": "118 characters, one close-up each, from Fauji to KING. Which one is your favourite?",
+   "img": "/assets/characters/027.webp",
+   "url": "/srk-characters/",
+   "cta": "See all 118"
+  },
+  {
+   "t": "THE MAN IN MANNAT",
+   "d": "An alternate history in 15 Bureau files: actors as agents, Hoover, the Cold War, and the man in the High Castle by the sea.",
+   "img": "/assets/home/04-asoka-to-booda.webp",
+   "url": "/king-studies/#mannat",
+   "cta": "Open file 001"
+  },
+  {
+   "t": "KING on his 61st",
+   "d": "The birthday minute by minute: the midnight note, the song at 00:09, the 10-minute curve and the balcony at nightfall.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "url": "/king-intelligence/king-61st.html",
+   "cta": "Read the scorecard"
+  },
+  {
+   "t": "RAMAYANA to KING",
+   "d": "Not a clash, a relay: Ramayana at Diwali, KING at Christmas. Six vote rounds and the 'watching both' pledge.",
+   "img": "/assets/dk/figures.webp",
+   "url": "/ramayana-to-king/",
+   "cta": "Cast your votes"
+  },
+  {
+   "t": "Asoka to Boo-Da, the book",
+   "d": "SRK: The Man, The Myth, The King. 46 chapters from Fauji to the Final Frame.",
+   "img": "/assets/home/04-asoka-to-booda.webp",
+   "url": "/asoka-to-booda/",
+   "cta": "Read the book"
+  },
+  {
+   "t": "Fan Universe",
+   "d": "Every fan-made poster, song and trailer we have found, linked to the fan who made it.",
+   "img": "/assets/home/05-fan-made-ai-universe.webp",
+   "url": "/fan-made-ai-universe/",
+   "cta": "See the fans' work"
+  },
+  {
+   "t": "The Gallery",
+   "d": "49,199 pictures and 2,217 videos of the King, year by year, each linked to where it was published.",
+   "img": "/assets/home/06-fan-billboard.webp",
+   "url": "/gallery/videos/",
+   "cta": "Open the Gallery"
+  },
+  {
+   "t": "Merch",
+   "d": "16 designs by the fans, from KING BY FANS to the INQUILAAB #FreeMyFace master. Bulk orders for fan clubs.",
+   "img": "/assets/merch/inquilaab-master.webp",
+   "url": "/merch/",
+   "cta": "See the designs"
   }
  ]
 }
