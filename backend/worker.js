@@ -69,6 +69,7 @@ export default {
     if (path === "/d2k") return d2k(request, env, reply, origin);
     if (path === "/r2k") return r2k(request, env, reply, origin);
     if (path === "/pose") return pose(request, env, reply, origin, new URL(request.url));
+    if (path === "/bise-cards") return biseCards(request, env, reply, origin, new URL(request.url));
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
     if (path === "/merch-bulk") return merchBulk(request, env, reply, origin);
@@ -180,7 +181,8 @@ const RULES = {
   visit: [10, 1], poster: [100, 5], share: [50, 1], lair: [1000, 18], firstclear: [100, 6],
   throne: [400, 3], flush: [1000, 3], allsix: [500, 1], chess: [500, 5],
   chapter: [250, 12], verdict: [750, 2], pledge: [50, 1], vote: [10, 6], inquilab: [50, 1],
-  clipsubmit: [50, 3], comment: [10, 3], pose: [200, 10], study: [500, 30]
+  clipsubmit: [50, 3], comment: [10, 3], pose: [200, 10], study: [500, 30],
+  act: [600, 20], actset: [2000, 6]
 };
 // Awarded only by the Worker itself, after a clip is approved in data/lairs-cinema.json
 const SERVER_RULES = { clip: [500, 3], sotw: [2000, 1] };
@@ -377,6 +379,39 @@ async function pose(request, env, reply, origin, url) {
   await env.DB.prepare("INSERT INTO pose_cards(device, card, best, got, ts) VALUES(?1, ?2, ?3, ?4, ?5) ON CONFLICT(device, card) DO UPDATE SET best=MAX(best, ?3), got=MAX(got, ?4), ts=?5").bind(body.device, card, score, score >= 90 ? 1 : 0, Date.now()).run();
   await bump(env, istDay(), "pose_try");
   return reply(200, await poseState(env, body.device));
+}
+
+// ---------------- SRK SCHOOL OF ACTING (B.I.S.E. studio): scene cards (owner, 4 Nov 2026) ----------------
+// A take's Match score (how close to Raja, 0-100) sets the card level: Bronze <50, Silver 50+, Gold 70+, Diamond 85+.
+// GET  /bise-cards?film=deewana&device=  -> { mine: [{scene, best, takes}], top: [{rank, name, cards, avg}], players }
+// POST /bise-cards {device, film, scene, score} -> keeps the best score per scene
+async function biseState(env, film, device) {
+  const [m, t, c] = await env.DB.batch([
+    env.DB.prepare("SELECT scene, best, takes FROM bise_cards WHERE device=?1 AND film=?2").bind(device || "", film),
+    env.DB.prepare("SELECT p.name AS name, COUNT(*) AS cards, ROUND(AVG(c.best)) AS avg FROM bise_cards c JOIN players p ON p.device=c.device WHERE c.film=?1 AND p.joined=1 AND p.name<>'' GROUP BY c.device ORDER BY cards DESC, avg DESC LIMIT 10").bind(film),
+    env.DB.prepare("SELECT COUNT(DISTINCT device) AS n FROM bise_cards WHERE film=?1").bind(film)
+  ]);
+  return { mine: m.results || [], top: (t.results || []).map((r, i) => ({ rank: i + 1, name: r.name, cards: r.cards, avg: r.avg })), players: ((c.results || [])[0] || {}).n || 0 };
+}
+async function biseCards(request, env, reply, origin, url) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  const okFilm = f => /^[a-z0-9-]{2,40}$/.test(String(f || ""));
+  if (request.method === "GET") {
+    const d = url.searchParams.get("device") || "", f = url.searchParams.get("film") || "deewana";
+    if (!okFilm(f)) return reply(400, { error: "Unknown film." });
+    return reply(200, await biseState(env, f, okDevice(d) ? d : ""), { "Cache-Control": "no-store" });
+  }
+  if (request.method !== "POST") return reply(405, { error: "Use GET or POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "bise:" + ip))) return reply(429, { error: "Too many takes at once. Try again in a minute." });
+  const body = await readBody(request);
+  if (!body || !okDevice(body.device)) return reply(400, { error: "Unknown device." });
+  const film = String(body.film || ""), scene = String(body.scene || ""), score = Math.round(Number(body.score));
+  if (!okFilm(film) || !/^[0-9]{2,5}(-[0-9]{1,2})?$/.test(scene) || !(score >= 0 && score <= 100)) return reply(400, { error: "Unknown scene or score." });
+  await env.DB.prepare("INSERT INTO bise_cards(device, film, scene, best, takes, ts) VALUES(?1, ?2, ?3, ?4, 1, ?5) ON CONFLICT(device, film, scene) DO UPDATE SET best=MAX(best, ?4), takes=takes+1, ts=?5").bind(body.device, film, scene, score, Date.now()).run();
+  await bump(env, istDay(), "bise_take");
+  return reply(200, await biseState(env, film, body.device));
 }
 
 // ---------------- RAMAYANA to KING: fan votes and the "watching both" pledge (owner, 3 Nov 2026) ----------------
