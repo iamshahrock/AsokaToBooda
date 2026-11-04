@@ -214,13 +214,22 @@ $('bRec').onclick=async()=>{
   timer=setInterval(tick,100);
 };
 $('bStop').onclick=()=>stop();
+// switch the camera and microphone off (after Stop, the end of a take, a cancel, or leaving the page)
+function camOff(){
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}
+  const v=$('vid');if(v.srcObject){v.srcObject=null}
+  if(!v.classList.contains('file')){$('camMsg').style.display='flex';$('camMsg').textContent='Camera off. Tap Start camera for another take.'}
+  $('bCam').disabled=false;$('bRec').disabled=true;
+}
 function reset(){
   if(timer){clearInterval(timer);timer=null}
   if(ac){try{ac.close()}catch(e){}ac=null}
-  $('cd').style.display='none';$('recTag').style.display='none';$('bStop').disabled=true;$('bRec').disabled=!stream;
+  $('cd').style.display='none';$('recTag').style.display='none';$('bStop').disabled=true;
+  camOff();
 }
+addEventListener('pagehide',()=>{if(stream)stream.getTracks().forEach(t=>t.stop())});
 function stop(){
-  if(state==='countdown'){state='idle';reset();$('status').textContent='Cancelled. Press Record when you are ready.';return}
+  if(state==='countdown'){state='idle';reset();$('status').textContent='Cancelled. Camera off. Tap Start camera when you are ready.';return}
   if(state!=='rec')return;
   state='idle';reset();finish(take);
 }
@@ -337,7 +346,7 @@ $('bCard').onclick=()=>{
   g.fillStyle='#a89a90';g.font='600 28px Archivo, sans-serif';g.fillText('agarmainkinghota.com/bise/studio',80,1010);
   c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='srk-school-of-acting-'+cur.id+'.png';a.click()},'image/png');
 };
-$('bAgain').onclick=()=>{$('res').style.display='none';$('cam').scrollIntoView({behavior:'smooth'})};
+$('bAgain').onclick=()=>{$('res').style.display='none';$('cam').scrollIntoView({behavior:'smooth'});$('status').textContent='Tap Start camera, then Record.'};
 </script>
 <script src="../../assets/starks.js"></script>
 <script src="../../assets/footer.js" defer></script>
