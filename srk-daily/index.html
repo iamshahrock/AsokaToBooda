@@ -62,8 +62,6 @@
 .np .more{display:block;text-align:right;font:italic 13px 'Libre Baskerville',serif;color:var(--maroon);text-decoration:none;padding:0 12px 10px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .duo.one{grid-template-columns:1fr}
-.np.art .np-head{grid-template-columns:64px 1fr 130px;padding-bottom:4px}.np.art .np-head>a img{width:56px;height:56px}.np.art .np-head h1 img.mh{max-width:300px}
-@media (max-width:640px){.np.art .np-head{grid-template-columns:48px 1fr}.np.art .np-head>a img{width:44px;height:44px}.np.art .np-head .np-btn,.np.art .np-bar{display:none}}
 @media (max-width:520px){.duo{grid-template-columns:1fr}}
 .duo .in a.t{display:block;font:700 15px/1.3 Archivo,sans-serif;color:var(--blue);text-transform:uppercase;text-decoration:none;margin:0 0 6px}
 .duo .in p{font-size:13px;line-height:1.5;margin:0}
@@ -114,6 +112,13 @@
 .back{display:inline-block;margin:0 0 14px;background:var(--blue);color:#fff !important;font:700 12px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;text-decoration:none}
 .back:hover{background:var(--red)}
 .back.end{margin:18px 0 0}
+.mo{border-top:3px double var(--red);margin:26px 0 0;padding-top:4px}
+.mo h3{background:var(--red)!important}
+.mo a{display:block;padding:12px 0;border-bottom:1px dotted var(--rule);text-decoration:none}
+.mo small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;color:var(--red);text-transform:uppercase}
+.mo b{display:block;font:700 20px/1.3 'Libre Baskerville',serif;color:var(--ink);margin:2px 0 4px}
+.mo span{font-size:14px;line-height:1.5;color:var(--muted)}
+.mo a:hover b{color:var(--maroon)}
 </style>
 </head>
 <body class="v2">
@@ -171,17 +176,20 @@
     return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c">'+c+'</div><div class="np-r">'+r+'</div></div>';
   }
   function article(D,x){
-    return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c"><article class="ar"><a class="back" href="./">← SRK DAILY front page</a><p class="k">'+esc(x.kicker)+'</p><h2>'+esc(x.title)+'</h2>'+(x.deck?'<p class="dk">'+esc(x.deck)+'</p>':'')+
+    var more=P.filter(function(p){return p.id!==x.id;});
+    return '<article class="ar"><a class="back" href="./">← SRK DAILY front page</a><p class="k">'+esc(x.kicker)+'</p><h2>'+esc(x.title)+'</h2>'+(x.deck?'<p class="dk">'+esc(x.deck)+'</p>':'')+
       '<p class="by"><span>'+fmt(x.date)+(x.time?' · '+esc(x.time):'')+' · SRK DAILY</span><button data-sh="'+esc(x.id)+'">Share</button></p>'+
       (x.img?'<figure><img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer"><figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
-      '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+'<a class="back end" href="./">← Back to the SRK DAILY front page</a></article></div>'+
-      '<div class="np-r">'+beat(D)+'</div></div>';
+      '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+
+      (more.length?'<section class="mo"><h3>More from SRK DAILY</h3>'+more.map(function(m){return '<a href="?p='+esc(m.id)+'"><small>'+fmt(m.date)+'</small><b>'+esc(m.title)+'</b><span>'+esc(short(m.deck||firstP(m),160))+'</span></a>';}).join('')+'</section>':'')+
+      '<a class="back end" href="./">← Back to the SRK DAILY front page</a></article>';
   }
 
   var P=[],D=null;
   function device(){try{return window.STARKS?STARKS.get().device:'';}catch(e){return '';}}
   function showRes(st){var p=D.poll,t=st.total||0;$('#plRes').innerHTML=p.o.map(function(o,i){var n=(st.counts||{})[i]||0,pc=t?Math.round(n/t*100):0;return '<div>'+esc(o)+' · '+pc+'%<i style="width:'+pc+'%"></i></div>';}).join('')+'<div>'+t.toLocaleString('en-IN')+' vote'+(t===1?'':'s')+'</div>';}
   function wire(){
+    if(!$('#poll'))return;
     var pf=$('#poll'),KEY='amkh-poll-'+D.poll.id,mine=null;try{mine=localStorage.getItem(KEY);}catch(e){}
     if(mine!=null){var r=pf.querySelector('input[value="'+mine+'"]');if(r)r.checked=true;fetch(API+'/daily-poll?poll='+D.poll.id).then(function(r){return r.json();}).then(showRes).catch(function(){});}
     pf.addEventListener('submit',function(e){e.preventDefault();var c=pf.querySelector('input:checked'),m=$('#plMsg');
@@ -211,10 +219,7 @@
     D=d;P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n||9)-(b.n||9));});
     var one=new URLSearchParams(location.search).get('p'),x=one&&P.filter(function(p){return p.id===one;})[0];
     $('#npBody').innerHTML=x?article(D,x):front(D,P);
-    if(x){document.title=x.title+' — SRK DAILY';document.querySelector('.np').classList.add('art');
-      try{history.scrollRestoration='manual';}catch(e){}var ar=document.querySelector('.ar'),moved=false;function go(){if(!ar||moved)return;var sb=document.querySelector('#site-header .sh-bar'),h=sb?sb.offsetHeight:0;window.scrollTo({top:ar.getBoundingClientRect().top+window.scrollY-h-12,behavior:'instant'});}
-      setTimeout(go,60);if(document.readyState!=='complete')window.addEventListener('load',function(){setTimeout(go,50);});setTimeout(go,900);
-      ['wheel','touchstart','keydown'].forEach(function(ev){window.addEventListener(ev,function(){moved=true;},{once:true,passive:true});});}
+    if(x)document.title=x.title+' — SRK DAILY';
     wire();
   });
 })();
