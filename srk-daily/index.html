@@ -111,7 +111,9 @@
 .q{font:italic 700 clamp(24px,3.6vw,32px) 'Libre Baskerville',serif;text-align:center;color:var(--maroon);margin:18px 0}
 .ln{list-style:none;padding:0 !important}.ln a{color:var(--blue);font:600 15px Archivo,sans-serif}
 .tags{font:600 13px Archivo,sans-serif;color:var(--muted)}
-.back{display:inline-block;margin:0 0 14px;font:600 13px Archivo,sans-serif;color:var(--blue)}
+.back{display:inline-block;margin:0 0 14px;background:var(--blue);color:#fff !important;font:700 12px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;text-decoration:none}
+.back:hover{background:var(--red)}
+.back.end{margin:18px 0 0}
 </style>
 </head>
 <body class="v2">
@@ -120,7 +122,7 @@
 <div class="np">
   <header class="np-head">
     <a href="./" aria-label="SRK DAILY front page"><img src="/assets/fan-emblem.png" alt="Shah Rock Jaan" width="96" height="96"></a>
-    <h1><img class="mh" src="/assets/srk-daily-masthead.png" alt="SRK Daily" width="846" height="208"></h1>
+    <h1><a href="./" aria-label="SRK DAILY front page"><img class="mh" src="/assets/srk-daily-masthead.png" alt="SRK Daily" width="846" height="208"></a></h1>
     <a class="np-btn" href="#sub">Subscribe</a>
   </header>
   <div class="np-bar"><span id="npDate"></span><span class="site">WWW.AGARMAINKINGHOTA.COM</span><a class="np-btn f" href="/">Look Around</a></div>
@@ -169,10 +171,10 @@
     return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c">'+c+'</div><div class="np-r">'+r+'</div></div>';
   }
   function article(D,x){
-    return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c"><article class="ar"><a class="back" href="./">← Front page</a><p class="k">'+esc(x.kicker)+'</p><h2>'+esc(x.title)+'</h2>'+(x.deck?'<p class="dk">'+esc(x.deck)+'</p>':'')+
+    return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c"><article class="ar"><a class="back" href="./">← SRK DAILY front page</a><p class="k">'+esc(x.kicker)+'</p><h2>'+esc(x.title)+'</h2>'+(x.deck?'<p class="dk">'+esc(x.deck)+'</p>':'')+
       '<p class="by"><span>'+fmt(x.date)+(x.time?' · '+esc(x.time):'')+' · SRK DAILY</span><button data-sh="'+esc(x.id)+'">Share</button></p>'+
       (x.img?'<figure><img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer"><figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
-      '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+'</article></div>'+
+      '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+'<a class="back end" href="./">← Back to the SRK DAILY front page</a></article></div>'+
       '<div class="np-r">'+beat(D)+'</div></div>';
   }
 

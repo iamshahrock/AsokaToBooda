@@ -109,10 +109,10 @@ for (const [id, path] of pages) {
         const imgs = [...hd.querySelectorAll('img')]; await Promise.all(imgs.map(i => i.decode().catch(() => {})));
         const broken = imgs.filter(i => !i.naturalWidth).map(i => i.src.split('/').pop());
         const bad = imgs.filter(i => { const cs = getComputedStyle(i), w = parseFloat(cs.width), h = parseFloat(cs.height); return w > 2 && h > 2 && Math.abs((w / h) / (i.naturalWidth / i.naturalHeight) - 1) > 0.02; }).map(i => i.src.split('/').pop()); // exact layout size: ignores animation transforms and whole-pixel rounding
-        const links = hd.querySelectorAll('.sh-nav a').length;
+        const links = hd.querySelectorAll('.sh-nav a').length, groups = hd.querySelectorAll('.sh-nav .sh-dd').length;
         if (broken.length) return 'images failed: ' + broken.join(', ');
         if (bad.length) return 'distorted: ' + bad.join(', ');
-        if (links !== 12) return 'expected 12 section links, found ' + links;
+        if (groups !== 4 || links !== 17) return 'expected 4 drop-downs + Merch (17 links), found ' + groups + ' drop-downs, ' + links + ' links';
         return 'ok';
       });
       if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 6 section links`);
