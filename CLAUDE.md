@@ -34,6 +34,10 @@ DOOM to KING (/doom-to-king/), Inquilaab (/inquilab/), KING Fever (/king-fever/,
 ## Tab icon (owner, 27 Oct 2026: 'the icon on the browser tab ... we need to show crown, just like each brand has their own')
 - Every page (all 312 .html) carries: /favicon.ico (16-64 px, crown), /assets/icons/crown-32.png and /assets/icons/apple-touch-icon.png (crown on dark, 180 px). Tab sizes use the crown with the drips cropped so it reads at 16-32 px; 192/512 keep the full dripping crown. Made from assets/studio/crown.png. The deploy copies favicon.ico to the site root (pages.yml). New pages must include the same three link tags.
 
+## Production note · the front-page format (owner, 4 Nov 2026)
+- CITATION: the front-page layout used by SRK DAILY, the KINGNAMA landing page and the homepage comes from SRKWorld's 'The Third Eye' (www.srkworld.com, 2000): Co-Designed by Shailja Gupta, Shah Rukh Khan in 2000. Credit it this way wherever the format is described; never call it a template or a borrowed layout.
+- Homepage headline 'Be the KING of every SRK film' stays on one line at every width (CSS nowrap + a small fit script that shrinks it to the box).
+
 ## Homepage = front-page format (owner, 4 Nov 2026: 'the homepage of the site ... you should use the same format' as SRK DAILY; 'Yes, build it')
 - agarmainkinghota.html <main class="hp fp">: date bar (IST date, site name, days to KING); three columns in the site's dark red/gold boxes: KING BUZZ of the day (kb-line) + SRK DAILY (today's lead story from data/srk-daily.json) + FANVERSE (both anthem players, GA events unchanged) | Framed · the poster game (the whole old hero: headline, 6 styles, countdown, button, game card) + Official · out now (Tu Mil Jaaye) + Play for the crown (Chess81, Rescue Your Face, Billboard) + Fan Universe (random fan cards) | The music video (tap-to-play #mv) + KINGNAMA index + DOOM to KING (+ RAMAYANA link) + Merch. Phones: Framed first. Every link release QA expects is kept. The 27 Oct notes below describe the content; the arrangement is this one.
 
