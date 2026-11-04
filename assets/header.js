@@ -37,6 +37,15 @@
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
     ['doom-to-king/', 'DOOM to KING', ['ramayana-to-king/']]
   ];
+  // The header shows these five groups (owner, 4 Nov 2026: 'consolidate the links ... GAMES as a drop down').
+  // LINKS above stays the list of sections (section tabs, 'you are here'); GROUPS is what the bar and the menu show.
+  var GROUPS = [
+    ['Games', [['create/', 'Make Your Poster', ['make-your-poster/']], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81', ['CHESS81.HTML']], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
+    ['KING Buzz', [['king-intelligence/', 'KING Buzz'], ['srk-daily/', 'SRK DAILY'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
+    ['The Archive', [['gallery/videos/', 'Gallery', ['gallery/']], ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']], ['asoka-to-booda/', 'Asoka to Boo-Da'], ['king-studies/', 'KING University'], ['srk-characters/', 'Alter Egos']]],
+    ['Fans', [['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']], ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']], ['fan-billboard/', 'Billboard']]],
+    ['Merch', 'merch/']
+  ];
   var UTIL = [['vision/', 'Vision'], ['about/', 'About'], ['fan-billboard/', 'Billboard']];
   var MORE = [['contact/', 'Contact'], ['faq/', 'FAQ']];
   // Sub-pages: a slim tab row under the bar on every page of that section, so fans always know where they are.
@@ -118,6 +127,20 @@
     '#site-header .sh-nav a{position:relative;display:inline-block;padding:17px 1px;font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#d9cfc7;cursor:pointer}',
     '#site-header .sh-nav a:hover,#site-header .sh-nav a:focus-visible,#site-header .sh-nav a[aria-current="page"]{color:var(--sh-redtext)}',
     '#site-header .sh-nav a:hover::after,#site-header .sh-nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:9px;height:2px;background:var(--sh-red)}',
+    /* grouped menu with drop-downs (owner, 4 Nov 2026) */
+    '#site-header .sh-nav{gap:2px 30px}',
+    '#site-header .sh-nav .sh-dd{position:relative;display:inline-block}',
+    '#site-header .sh-nav .sh-dd>button{display:inline-flex;align-items:center;gap:6px;padding:17px 1px;font:600 12px Archivo,"Helvetica Neue",Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:#d9cfc7;cursor:pointer;background:none;border:0}',
+    '#site-header .sh-nav .sh-dd>button svg{transition:transform .15s}',
+    '#site-header .sh-nav .sh-dd:hover>button,#site-header .sh-nav .sh-dd.open>button,#site-header .sh-nav .sh-dd.cur>button{color:var(--sh-redtext)}',
+    '#site-header .sh-nav .sh-dd.open>button svg,#site-header .sh-nav .sh-dd:hover>button svg{transform:rotate(180deg)}',
+    '#site-header .sh-nav .sh-dd.cur>button::after{content:"";position:absolute;left:0;right:14px;bottom:9px;height:2px;background:var(--sh-red)}',
+    '#site-header .sh-nav .sh-menu{display:none;position:absolute;left:50%;top:100%;transform:translateX(-50%);z-index:80;min-width:230px;padding:6px 0;background:#0d0909;border:1px solid #3a2626;border-top:2px solid var(--sh-red);box-shadow:0 14px 34px rgba(0,0,0,.6)}',
+    '#site-header .sh-nav .sh-dd:hover .sh-menu,#site-header .sh-nav .sh-dd.open .sh-menu,#site-header .sh-nav .sh-dd:focus-within .sh-menu{display:block}',
+    '#site-header .sh-nav .sh-menu a{display:block;padding:10px 18px;font-size:13px;letter-spacing:.04em;white-space:nowrap}',
+    '#site-header .sh-nav .sh-menu a:hover,#site-header .sh-nav .sh-menu a[aria-current="page"]{background:#1d1111;color:#fff}',
+    '#site-header .sh-nav .sh-menu a::after{display:none!important}',
+    '#site-header .sh-drawer .sh-dgrp{font-family:Archivo,Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sh-redtext);padding:18px 0 2px}',
     '#site-header .sh-burger{display:none;width:48px;height:48px;margin-left:auto;background:transparent;border:1px solid #3a2626;color:#f4efe9;align-items:center;justify-content:center;cursor:pointer}',
     '#site-header .sh-burger:hover,#site-header .sh-burger:focus-visible{border-color:var(--sh-redtext);color:var(--sh-redtext)}',
     '#site-header .sh-util{display:flex;align-items:center;gap:2px 16px;margin-left:auto;padding-left:18px;border-left:1px solid #2a1c1c}',
@@ -139,9 +162,8 @@
     '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-bar-in{gap:12px 6px}#site-header .sh-nav{gap:2px 3px}#site-header .sh-nav a{font-size:12px;letter-spacing:0}#site-header .sh-util{gap:2px 7px;padding-left:7px}#site-header .sh-util a{font-size:11px;letter-spacing:.02em}#site-header .sh-sw{display:none}}',
     '@media (min-width:1600px) and (max-width:1919px){#site-header .sh-nav{gap:2px 6px}#site-header .sh-nav a{font-size:12px;letter-spacing:.05em}#site-header .sh-util{gap:2px 14px}}',
     '@media (min-width:1200px) and (max-width:1359px){#site-header .sh-nav{gap:2px 2px}#site-header .sh-nav a{font-size:11px;letter-spacing:0;padding-left:0;padding-right:0}#site-header .sh-util{gap:2px 4px;padding-left:3px}#site-header .sh-util a{font-size:10.5px;letter-spacing:.01em}#site-header .sh-bar-in{gap:8px 2px;padding:0 2px}}',
-    // 12 sections (KING Studies added 4 Nov 2026): the owner's rule is two rows rather than smaller text, so on desktop the sections get their own row under the brand and utility links.
-    '@media (min-width:1200px){#site-header .sh-bar-in{flex-wrap:wrap;row-gap:0;padding-top:4px}#site-header .sh-nav{order:9;flex:1 0 100%;gap:2px 22px;border-top:1px solid #2a1c1c}#site-header .sh-nav a{padding:11px 1px;font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 16px;padding-left:18px}#site-header .sh-util a{font-size:12px;letter-spacing:.06em}#site-header .sh-sw{display:inline}}',
-    '@media (min-width:1200px) and (max-width:1599px){#site-header .sh-nav{display:grid;grid-template-columns:repeat(6,auto);justify-content:center;gap:0 24px}#site-header .sh-nav a{padding:9px 1px;text-align:center}}',
+    // 5 groups with drop-downs (owner, 4 Nov 2026) fit on one line again at every desktop width
+    '@media (min-width:1200px){#site-header .sh-nav{gap:2px 30px}#site-header .sh-nav>a{font-size:12px;letter-spacing:.07em}#site-header .sh-util{gap:2px 16px;padding-left:18px}#site-header .sh-util a{font-size:12px;letter-spacing:.06em}#site-header .sh-sw{display:inline}#site-header .sh-bar-in{gap:12px 26px;padding:0 clamp(16px,3vw,34px)}}',
     /* tablet and phone: the menu button holds every link, Home included */
     '@media (max-width:1199px){#site-header .sh-nav{display:none}#site-header .sh-home{display:none}#site-header .sh-util{border:0;padding:0;margin-left:auto}#site-header .sh-util a:not(.sh-starks):not(.sh-stats){display:none}#site-header .sh-burger{display:inline-flex}#site-header .sh-brand{display:flex}#site-header .sh-brand img{flex-shrink:0}#site-header .sh-bar-in{justify-content:flex-start;gap:8px}}',
     '@media (max-width:760px){',
@@ -246,11 +268,31 @@
   var drawer = el('div', { class: 'sh-drawer', id: 'sh-drawer', role: 'dialog', 'aria-label': 'Menu' });
   drawer.appendChild(el('a', { href: home }, [el('small', { text: '00' }), document.createTextNode('Home')]));
   var section = null;
-  LINKS.forEach(function (l, i) {
-    var a1 = el('a', { href: root + l[0], text: l[1] }), a2 = el('a', { href: root + l[0] }, [el('small', { text: (i < 9 ? '0' : '') + (i + 1) }), document.createTextNode(l[1])]);
-    if (isHere(l[0]) || (l[2] || []).some(isHere)) { a1.setAttribute('aria-current', 'page'); a2.setAttribute('aria-current', 'page'); section = l; }
-    nav.appendChild(a1); drawer.appendChild(a2);
+  LINKS.forEach(function (l) { if (isHere(l[0]) || (l[2] || []).some(isHere)) section = l; });
+  var CHEV = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+  var n = 0, dds = [];
+  function hereIn(l) { return isHere(l[0]) || (l[2] || []).some(isHere); }
+  GROUPS.forEach(function (g) {
+    if (typeof g[1] === 'string') {
+      var t1 = el('a', { href: root + g[1], text: g[0] }), t2 = el('a', { href: root + g[1] }, [el('small', { text: ('0' + (++n)).slice(-2) }), document.createTextNode(g[0])]);
+      if (isHere(g[1])) { t1.setAttribute('aria-current', 'page'); t2.setAttribute('aria-current', 'page'); }
+      nav.appendChild(t1); drawer.appendChild(el('div', { class: 'sh-dgrp', text: 'Shop' })); drawer.appendChild(t2); return;
+    }
+    var btn = el('button', { type: 'button', 'aria-expanded': 'false', 'aria-haspopup': 'true' }); btn.innerHTML = g[0] + CHEV;
+    var menu = el('div', { class: 'sh-menu' }), dd = el('div', { class: 'sh-dd' }, [btn, menu]), cur = false;
+    drawer.appendChild(el('div', { class: 'sh-dgrp', text: g[0] }));
+    g[1].forEach(function (l) {
+      var a1 = el('a', { href: root + l[0], text: l[1] }), a2 = el('a', { href: root + l[0] }, [el('small', { text: ('0' + (++n)).slice(-2) }), document.createTextNode(l[1])]);
+      // the exact page wins over a section alias (e.g. SRK DAILY inside KING Buzz)
+      if (isHere(l[0]) || (!GROUPS.some(function (h) { return typeof h[1] !== 'string' && h[1].some(function (m) { return m !== l && isHere(m[0]); }); }) && (l[2] || []).some(isHere))) { a1.setAttribute('aria-current', 'page'); a2.setAttribute('aria-current', 'page'); cur = true; }
+      menu.appendChild(a1); drawer.appendChild(a2);
+    });
+    if (cur) dd.classList.add('cur');
+    btn.addEventListener('click', function (e) { e.stopPropagation(); var o = !dd.classList.contains('open'); dds.forEach(function (d) { d.classList.remove('open'); d.firstChild.setAttribute('aria-expanded', 'false'); }); dd.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+    dds.push(dd); nav.appendChild(dd);
   });
+  document.addEventListener('click', function () { dds.forEach(function (d) { d.classList.remove('open'); d.firstChild.setAttribute('aria-expanded', 'false'); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dds.forEach(function (d) { d.classList.remove('open'); }); });
   var util = el('div', { class: 'sh-util' });
   var dutil = el('div', { class: 'sh-dutil' });
   UTIL.forEach(function (l) {
