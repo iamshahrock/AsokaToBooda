@@ -52,6 +52,13 @@
 .nd-ln{list-style:none;padding:0;margin:0 0 14px}
 .nd-ln li{margin:0 0 6px}.nd-ln a{color:var(--gold);font:600 15px Archivo,sans-serif}
 .nd-tags{font:600 13px Archivo,sans-serif;color:#a89a90}
+.nd-sub{max-width:780px;margin:0 auto 22px;border:1px solid #5a3a30;background:#140c0c;padding:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.nd-sub b{font-family:var(--display);font-weight:400;font-size:24px;color:#f4ece4;flex:1 0 100%;line-height:1}
+.nd-sub span{font-size:14px;color:#cfc4bb;flex:1 0 100%}
+.nd-sub input{flex:1 1 180px;background:#0a0707;border:1px solid #3a2626;color:#f4ece4;font:15px Archivo,sans-serif;padding:10px}
+.nd-sub button{background:#e0312b;border:0;color:#fff;font:700 13px Archivo,sans-serif;letter-spacing:.08em;padding:11px 18px;cursor:pointer;text-transform:uppercase}
+.nd-sub .msg{font:600 13px Archivo,sans-serif;flex:1 0 100%;min-height:1em}
+.nd-mast .sb{display:inline-block;margin-top:10px;background:#e0312b;color:#fff;font:700 12px Archivo,sans-serif;letter-spacing:.1em;padding:8px 16px;text-decoration:none;text-transform:uppercase}
 .nd-all{display:block;text-align:center;font:600 14px Archivo,sans-serif;color:var(--gold);margin:0 0 30px}
 </style>
 </head>
@@ -62,9 +69,18 @@
   <div class="top"><span id="ndDate"></span><span>Agar Main King Hota</span><span id="ndDays"></span></div>
   <h1>SRK <span>DAILY</span></h1>
   <p>The news about the King, every day. Real numbers, read by hand.</p>
+  <a class="sb" href="#subscribe">Subscribe to SRK DAILY</a>
 </header>
 <nav class="nd-idx" id="ndIdx" aria-label="Posts"></nav>
 <div id="ndFeed"></div>
+<form class="nd-sub" id="subscribe" novalidate>
+  <b>Subscribe to SRK DAILY</b>
+  <span>The day's King news and numbers in your inbox. One email a day at most; we never share your address.</span>
+  <input id="sbName" maxlength="60" placeholder="Your name (optional)" autocomplete="name">
+  <input id="sbMail" type="email" maxlength="120" placeholder="Your email" autocomplete="email" required>
+  <button type="submit">Subscribe</button>
+  <p class="msg" id="sbMsg"></p>
+</form>
 </main>
 <script>
 (function(){
@@ -96,8 +112,17 @@
     var x=P.filter(function(p){return p.id===b.dataset.sh;})[0],u=location.origin+'/srk-daily/?p='+x.id;
     if(navigator.share)navigator.share({title:x.title,text:x.title,url:u}).catch(function(){});
     else window.open('https://wa.me/?text='+encodeURIComponent(x.title+' '+u),'_blank');});
+  var sb=$('#subscribe');try{if(localStorage.getItem('amkh-daily-sub')){$('#sbMsg').textContent='You are subscribed. Thank you.';$('#sbMsg').style.color='#8fc79a';}}catch(e){}
+  sb.addEventListener('submit',function(e){e.preventDefault();var m=$('#sbMsg'),em=$('#sbMail').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){m.style.color='#f3a39d';m.textContent='Please check your email address.';return;}
+    m.style.color='#cfc4bb';m.textContent='Subscribing…';
+    fetch('https://asokatobooda.iamshahrock.workers.dev/daily-sub',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,name:$('#sbName').value.trim()})})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});}).then(function(x){
+        if(x.ok){m.style.color='#8fc79a';m.textContent='Subscribed. Welcome to SRK DAILY.';try{localStorage.setItem('amkh-daily-sub','1');}catch(e){}}
+        else{m.style.color='#f3a39d';m.textContent=(x.j&&x.j.error)||'Could not subscribe. Try again.';}
+      }).catch(function(){m.style.color='#f3a39d';m.textContent='Could not reach the server. Try again.';});});
   fetch('../data/srk-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-    P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0;});
+    P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n||9)-(b.n||9));});
     var one=new URLSearchParams(location.search).get('p'),show=one?P.filter(function(x){return x.id===one;}):P;
     if(!show.length)show=P;
     $('#ndIdx').innerHTML=P.map(function(x){return '<a href="?p='+esc(x.id)+'" class="'+(x.id===one?'on':'')+'"><small>'+fmt(x.date)+'</small><b>'+esc(x.title)+'</b></a>';}).join('');

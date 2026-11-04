@@ -72,6 +72,7 @@ export default {
     if (path === "/ai-submit") return aiSubmit(request, env, reply, origin);
     if (path === "/inquilab") return inquilab(request, env, reply, origin);
     if (path === "/merch-bulk") return merchBulk(request, env, reply, origin);
+    if (path === "/daily-sub") return dailySub(request, env, reply, origin);
     if (path === "/lairs/claim") return lairsClaim(request, env, reply, origin);
     if (path === "/comments" || path.startsWith("/comments/")) return comments(request, env, reply, origin, path);
     if (path === "/amfh/login" || path === "/amfh/me") return amfh(request, env, reply, origin, path);
@@ -507,6 +508,24 @@ async function buzzYouTube(env, reply) {
     videos[series] = { video_id: id, url: "https://www.youtube.com/watch?v=" + id, views: row ? row.views : null, day: row ? row.day : null, read_at: row ? new Date(row.ts).toISOString() : null };
   }
   return reply(200, { source: "YouTube Data API v3, videos.statistics.viewCount, read by the Worker", note, videos }, { "Cache-Control": "no-store" });
+}
+
+// ---------------- SRK DAILY: subscribe (POST only; the list is read by the owner in D1) ----------------
+// POST /daily-sub {email, name} -> { ok }. Table daily_subs(email PRIMARY KEY, name, ts, src, status).
+async function dailySub(request, env, reply, origin) {
+  if (!env.DB) return reply(503, { error: "Not configured yet." });
+  if (request.method !== "POST") return reply(405, { error: "Use POST." });
+  if (!ALLOWED_ORIGINS.has(origin)) return reply(403, { error: "This website is not authorized." });
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (!(await burst(env, "sub:" + ip))) return reply(429, { error: "Too many requests. Try again in a minute." });
+  const b = await readBody(request);
+  if (!b) return reply(400, { error: "Could not read the form." });
+  const email = String(b.email || "").trim().toLowerCase().slice(0, 120), name = String(b.name || "").replace(/[<>]/g, "").trim().slice(0, 60);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(400, { error: "Please check your email address." });
+  await env.DB.prepare("INSERT INTO daily_subs(email, name, ts, src, status) VALUES(?1, ?2, ?3, 'srk-daily', 'active') ON CONFLICT(email) DO UPDATE SET status='active', name=COALESCE(NULLIF(?2,''), name)")
+    .bind(email, name, Date.now()).run();
+  await bump(env, istDay(), "daily_sub");
+  return reply(200, { ok: true });
 }
 
 // ---------------- MERCH: bulk order requests (POST only; read by the owner in D1) ----------------
