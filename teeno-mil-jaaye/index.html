@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teeno Mil Jaaye — Agar Main King Hota</title>
+<meta name="description" content="Teeno Mil Jaaye: KING's Tu Mil Jaaye beside the fans' version, Teeno Mil Jaaye, by Shah Rock Jaan.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/teeno-mil-jaaye/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+.box{background:#0d0606;border:1px solid #c9a24a;border-top:3px solid var(--red);box-shadow:0 0 22px rgba(229,9,20,.18);margin:24px 0 28px;padding:24px 0 22px}
+.lyr{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media (max-width:760px){.lyr{grid-template-columns:1fr}}
+.version-panel{padding:0 24px 18px;min-width:0}
+.version-panel:first-child{border-right:1px solid #c9a24a}
+@media (max-width:760px){.version-panel{padding:0 18px 18px}.version-panel:first-child{border-right:0;border-bottom:1px solid #c9a24a;margin-bottom:18px}}
+.version-panel h1{font-family:var(--display);font-weight:400;font-size:clamp(24px,3vw,34px);line-height:1.15;margin:0 0 12px;color:#f5f1ed}
+.fan-sub{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:600;color:#d99a00;margin:0 0 14px}
+.fan-sub em{font-style:italic}
+.yt{position:relative;aspect-ratio:16/9;background:#000;border:1px solid #3a2626;margin:0 0 18px;overflow:hidden}
+.yt button{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#000;cursor:pointer}
+.yt button img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9}
+.yt button i{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#e3242b}
+.yt button i::after{content:"";position:absolute;left:27px;top:14px;border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.soon{display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;border:1px dashed #c9a24a;margin:0 0 18px;font:700 13px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d99a00;text-align:center;padding:12px}
+.credits{list-style:none;padding:0;margin:0 0 12px;color:#e6dcd4;font-size:15px;line-height:1.8}
+.credits strong{color:#c9a24a}
+.note{font-size:14px;color:#a89a90;margin:0}
+.note a{color:#f0c24e}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+  <section class="box">
+    <div class="lyr">
+      <section class="version-panel">
+        <h1>KING’S Version - SHAH RUKH KHAN</h1>
+        <p class="fan-sub"><em>Tu</em> Mil Jaaye</p>
+        <div class="yt" id="yt"><button type="button" aria-label="Play Tu Mil Jaaye, the official video"><img src="https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg" alt="" referrerpolicy="no-referrer"><i></i></button></div>
+        <ul class="credits">
+          <li><strong>Music Composer:</strong> Sachin - Jigar</li>
+          <li><strong>Singers:</strong> Ed Sheeran, Arijit Singh, Madhubanti Bagchi</li>
+          <li><strong>Lyrics:</strong> Kumaar (Hindi), Ed Sheeran (English)</li>
+        </ul>
+        <p class="note">The official video, from KING's first song release on 2 November 2026. More on the song: <a href="/tu-mil-jaaye/">Kabhi Jo Tu Mil Jaaye</a>.</p>
+      </section>
+      <section class="version-panel">
+        <h1>ID’s Version - SHAH ROCK JAAN</h1>
+        <p class="fan-sub"><em>Teeno</em> Mil Jaaye</p>
+        <div class="soon">The fans' version · audio coming soon</div>
+        <ul class="credits">
+          <li><strong>Music Re-Composition:</strong> Pragnesh S.S. Singh</li>
+          <li><strong>Singers:</strong> A.I.</li>
+          <li><strong>Lyrics:</strong> Shailja</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+</main>
+<script>
+document.querySelector('#yt button').addEventListener('click',function(){document.getElementById('yt').innerHTML='<iframe src="https://www.youtube.com/embed/BPZkZpGMpXA?rel=0&amp;playsinline=1&amp;autoplay=1" title="Tu Mil Jaaye, the official video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';});
+</script>
+<script src="../assets/starks.js"></script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

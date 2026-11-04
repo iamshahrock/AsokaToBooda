@@ -49,7 +49,7 @@
     ['SRK DAILY & KING Buzz', [['srk-daily/', 'SRK DAILY'], ['king-intelligence/', 'KING Buzz'], ['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']]],
     ['Games', [['create/', 'Make Your Poster'], ['lairs/', 'Rescue Your Face'], ['chess81/', 'Chess81'], ['baahein-khol/', 'Pose Game · BAAHEIN KHOL']]],
     ['KINGNAMA', [['kingnama/', 'All of KINGNAMA'], ['king-studies/', 'KING University'], ['srk-characters/', 'Character Study'], ['asoka-to-booda/', 'Asoka to Boo-Da · the book'], ['gallery/videos/', 'Gallery'], ['on-the-record/video-interviews/', 'On The Record'], ['bise/', 'B.I.S.E. · coming soon']]],
-    ['FANVERSE', [['inquilab/', 'Inquilaab King Ke Saath'], ['KING_Song_01/', 'Teeno Mil Jaaye'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos'], ['fan-billboard/', 'Billboard & STARKS'], ['merch/', 'Merch']]],
+    ['FANVERSE', [['inquilab/', 'Inquilaab King Ke Saath'], ['teeno-mil-jaaye/', 'Teeno Mil Jaaye'], ['fan-made-ai-universe/', 'Fan Universe'], ['fans-king/', 'Fan videos'], ['fan-billboard/', 'Billboard & STARKS'], ['merch/', 'Merch']]],
     ['About', [['', 'Home'], ['vision/', 'Vision & Mission'], ['about/', 'About Us'], ['contact/', 'Contact'], ['faq/', 'FAQ']]]
   ].forEach(function (g) {
     var col = document.createElement('div'), h = document.createElement('h4'); h.textContent = g[0]; col.appendChild(h);
