@@ -167,6 +167,24 @@ button.np-btn{cursor:pointer}
 .mo b{display:block;font:700 20px/1.3 'Libre Baskerville',serif;color:var(--ink);margin:2px 0 4px}
 .mo span{font-size:14px;line-height:1.5;color:var(--muted)}
 .mo a:hover b{color:var(--maroon)}
+/* print / PDF edition (owner, 4 Nov 2026: 'a short intro daily with the PDF version and a link to our daily site') */
+.pr-only{display:none}
+@media print{
+  @page{size:A4;margin:0}
+  html,body{background:#fbf8f1!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #site-footer,.sh-top,.back,.np-head .np-btn,.np-bar button,.ar .by button,.kb,.mo,.tags{display:none!important}
+  main.wrap{padding:0!important;max-width:none!important}
+  .np{box-shadow:none;margin:0;max-width:none;padding:12mm 14mm;min-height:100vh}
+  .np-head{grid-template-columns:90px 1fr}
+  .ar{max-width:none}
+  .ar h2{font-size:34px}
+  .ar figure,.st,.tl,.q,.ar ul{break-inside:avoid}
+  .ar h3{break-after:avoid}
+  .pr-only{display:block}
+  .pr-end{margin:18px 0 0;padding:12px 14px;border:2px solid var(--red);font:700 13px Archivo,sans-serif;letter-spacing:.06em;text-align:center;break-inside:avoid}
+  .pr-end b{display:block;color:var(--red);font-size:16px;margin-bottom:4px}
+}
 </style>
 </head>
 <body class="v2">
@@ -234,7 +252,8 @@ button.np-btn{cursor:pointer}
       (x.img?'<figure><img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer"><figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
       '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+
       (more.length?'<section class="mo"><h3>More from SRK DAILY</h3>'+more.map(function(m){return '<a href="?p='+esc(m.id)+'"><small>'+fmt(m.date)+'</small><b>'+esc(m.title)+'</b><span>'+esc(short(m.deck||firstP(m),160))+'</span></a>';}).join('')+'</section>':'')+
-      '<a class="back end" href="./">← Back to the SRK DAILY front page</a></article>';
+      '<a class="back end" href="./">← Back to the SRK DAILY front page</a>'+
+      '<div class="pr-only pr-end"><b>SRK DAILY · every day at AGARMAINKINGHOTA.COM/SRK-DAILY</b>Read the full edition, vote in the Poll Station, see KING BUZZ of the day and subscribe.</div></article>';
   }
 
   // KING BUZZ of the day: the ledger record of the previous IST day (or the latest one before it)
