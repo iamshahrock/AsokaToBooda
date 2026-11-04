@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KING STUDIES — Agar Main King Hota</title>
-<meta name="description" content="KING STUDIES: Shah Rukh Khan studied the way history studies its emperors, from 1947 to 2026. Pre-K to PhD, question papers, degrees, and THE MAN IN MANNAT, an alternate history.">
+<title>KING UNIVERSITY — Agar Main King Hota</title>
+<meta name="description" content="KING UNIVERSITY: Shah Rukh Khan studied the way history studies its emperors, from 1947 to 2026. Pre-K to PhD, question papers, degrees, and THE MAN IN MANNAT, an alternate history.">
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/king-studies/">
-<meta property="og:title" content="KING STUDIES · 1947 to 2026">
+<meta property="og:title" content="KING UNIVERSITY · 1947 to 2026">
 <meta property="og:description" content="We study Ashoka, Akbar and Aurangzeb. Now we study him. Pre-K to PhD, and THE MAN IN MANNAT, an alternate history.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
@@ -234,12 +234,12 @@
 <section class="ks-hero" id="top">
   <div>
     <p class="ks-yr" aria-hidden="true">1947<b>1947</b></p>
-    <h1>KING <span>STUDIES</span></h1>
+    <h1>KING <span>UNIVERSITY</span></h1>
     <p class="ks-tag">We study Ashoka, Akbar and Aurangzeb. Now we study him.</p>
     <p class="ks-tag2">The biggest name of the 21st century, studied the way history studies its emperors: his feelings, his eras, his business, his ethics, his impact on humanity. From Pre-K to PhD. It begins in 1947, in a bazaar of storytellers.</p>
   </div>
   <div class="ks-id" id="idCard">
-    <small>Student ID · King Studies</small>
+    <small>Student ID · KING University</small>
     <div class="nm" id="idName">Enrol to begin</div>
     <div id="idEnrol"><input id="idIn" maxlength="28" placeholder="Your name, as it goes on your degree"><button class="ks-btn" id="idGo">Enrol</button></div>
     <div class="row"><span>Roll No.</span><b id="idRoll">—</b></div>
@@ -248,7 +248,7 @@
   </div>
 </section>
 
-<nav class="ks-nav" aria-label="King Studies">
+<nav class="ks-nav" aria-label="KING University">
   <a href="#syllabus">Syllabus</a>
   <a href="#school">The courses · Pre-K to PhD</a>
   <a href="#bazaar">1947 reading room</a>
@@ -399,11 +399,11 @@
     var b=e.target.closest('.mk-o button');if(!b)return;
     var f=D.mock.files[+b.dataset.f];
     if(+b.dataset.j!==f.a){b.classList.remove('no');void b.offsetWidth;b.classList.add('no');return;}
-    ST.mock[f.no]=1;save();earn(10,'King Studies · declassified file '+f.no,'ks-mock-'+f.no);
+    ST.mock[f.no]=1;save();earn(10,'KING University · declassified file '+f.no,'ks-mock-'+f.no);
     var y=window.scrollY;mock(D.mock);window.scrollTo(0,y);idCard();renderTr();
     var nx=document.querySelectorAll('.mk-file')[Object.keys(ST.mock).length];
     var cur=document.getElementById('file-'+f.no);if(cur)cur.classList.add('open');
-    if(Object.keys(ST.mock).length===D.mock.files.length){ST.pass.mock={ok:1,sc:100,at:Date.now()};save();earn(200,'King Studies · The Man in Mannat declassified','ks-mock-all');renderTr();idCard();}
+    if(Object.keys(ST.mock).length===D.mock.files.length){ST.pass.mock={ok:1,sc:100,at:Date.now()};save();earn(200,'KING University · The Man in Mannat declassified','ks-mock-all');renderTr();idCard();}
     setTimeout(function(){if(nx)nx.scrollIntoView({behavior:'smooth',block:'start'});},900);
   });
   document.addEventListener('input',function(e){var t=e.target;
@@ -475,7 +475,7 @@
   /* ---------- the paper ---------- */
   function paper(L){
     if(studied(L)<L.lessons.length)return;
-    var h='<button class="x" aria-label="Close">×</button><div class="bd"><small>KING STUDIES BOARD OF EXAMINATION · AGAR MAIN KING HOTA</small><h2>'+esc(L.name.toUpperCase())+' · '+esc(L.title.toUpperCase())+'</h2><p>Annual Examination, '+new Date().getFullYear()+'</p></div>'+
+    var h='<button class="x" aria-label="Close">×</button><div class="bd"><small>KING UNIVERSITY BOARD OF EXAMINATION · AGAR MAIN KING HOTA</small><h2>'+esc(L.name.toUpperCase())+' · '+esc(L.title.toUpperCase())+'</h2><p>Annual Examination, '+new Date().getFullYear()+'</p></div>'+
       '<div class="mt"><span>Time allowed: 81 minutes</span><span>Maximum marks: '+L.lessons.length*5+'</span></div><div class="mt"><span>Name: '+esc(ST.name||'Guest')+'</span><span>Roll No.: '+roll()+'</span></div>'+
       '<p class="gi"><b>General instructions:</b> All questions are compulsory. Each question carries 5 marks. Pass mark: 60%.</p><span class="pstamp" id="pst"></span><ol>';
     L.lessons.forEach(function(x,i){h+='<li data-i="'+i+'"><span class="mk">[5]</span>'+esc(x.q)+x.o.map(function(o,j){return '<label><input type="radio" name="q'+i+'" value="'+j+'"> '+esc(o)+'</label>';}).join('')+'</li>';});
@@ -493,7 +493,7 @@
       $('#xsc').textContent=right+' / '+L.lessons.length+' · '+sc+'%'+msg;
       var st=$('#pst');st.style.display='block';st.className='pstamp'+(ok?'':' f');st.textContent=ok?'PASSED':'TRY AGAIN';
       var f=$('#xpIn .ft .sc-act');
-      if(ok){earn(L.pts,'King Studies · passed '+L.name,'ks-pass-'+L.id);f.innerHTML='<button class="ks-btn" id="xc">Get your certificate</button><button class="ks-btn gh" id="xa">Sit again</button>';$('#xc').onclick=function(){closeX();cert(L.id,ST.pass[L.id].sc);};}
+      if(ok){earn(L.pts,'KING University · passed '+L.name,'ks-pass-'+L.id);f.innerHTML='<button class="ks-btn" id="xc">Get your certificate</button><button class="ks-btn gh" id="xa">Sit again</button>';$('#xc').onclick=function(){closeX();cert(L.id,ST.pass[L.id].sc);};}
       else f.innerHTML='<button class="ks-btn" id="xa">Sit again</button>';
       $('#xa').onclick=function(){paper(L);};
       openLevel(L.id,false);renderTr();idCard();
@@ -515,7 +515,7 @@
       if(crown.complete&&crown.naturalWidth){var cw=180,ch=cw*crown.naturalHeight/crown.naturalWidth;c.drawImage(crown,W/2-cw/2,96,cw,ch);}
       c.textAlign='center';c.fillStyle='#1b1410';
       c.font='700 22px Archivo';c.fillText('AGAR MAIN KING HOTA',W/2,330);
-      c.font='96px Anton';c.fillStyle='#8a1c18';c.fillText('KING STUDIES',W/2,430);
+      c.font='96px Anton';c.fillStyle='#8a1c18';c.fillText('KING UNIVERSITY',W/2,430);
       c.fillStyle='#1b1410';c.font='italic 600 36px "Cormorant Garamond"';c.fillText(id==='mock'?'This is to certify that':'This is to certify that',W/2,505);
       var nm=ST.name||'A Fan of the King';c.font='italic 600 '+(nm.length>20?76:92)+'px "Cormorant Garamond"';c.fillText(nm,W/2,600);
       c.strokeStyle='#b08a2e';c.lineWidth=2;c.beginPath();c.moveTo(W/2-420,620);c.lineTo(W/2+420,620);c.stroke();
@@ -536,7 +536,7 @@
     (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){draw();setTimeout(draw,400);});
     $('#cert').classList.add('on');
     $('#certDl').onclick=function(){var a=document.createElement('a');a.download='king-studies-'+id+'.png';a.href=cv.toDataURL('image/png');a.click();};
-    $('#certSh').onclick=function(){var t='I passed '+(id==='mock'?'THE MAN IN MANNAT':DEG[id])+' at KING STUDIES. We study Ashoka, Akbar and Aurangzeb. Now we study him.';var u='https://agarmainkinghota.com/king-studies/';
+    $('#certSh').onclick=function(){var t='I passed '+(id==='mock'?'THE MAN IN MANNAT':DEG[id])+' at KING UNIVERSITY. We study Ashoka, Akbar and Aurangzeb. Now we study him.';var u='https://agarmainkinghota.com/king-studies/';
       cv.toBlob(function(bl){var f=bl&&window.File?new File([bl],'king-studies.png',{type:'image/png'}):null;
         if(f&&navigator.canShare&&navigator.canShare({files:[f]}))navigator.share({files:[f],text:t+' '+u}).catch(function(){});
         else if(navigator.share)navigator.share({text:t,url:u}).catch(function(){});
