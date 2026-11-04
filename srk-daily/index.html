@@ -184,6 +184,13 @@ button.np-btn{cursor:pointer}
   .pr-only{display:block}
   .pr-end{margin:18px 0 0;padding:12px 14px;border:2px solid var(--red);font:700 13px Archivo,sans-serif;letter-spacing:.06em;text-align:center;break-inside:avoid}
   .pr-end b{display:block;color:var(--red);font-size:16px;margin-bottom:4px}
+  /* front page edition: the whole paper, three columns, KING BUZZ open, no form controls */
+  html.pdf-front .kb{display:block!important}
+  html.pdf-front .np-grid{grid-template-columns:250px 1fr 300px!important}
+  html.pdf-front .np-l{order:0!important}html.pdf-front .np-c{grid-column:auto!important;order:0!important}html.pdf-front .np-r{order:0!important}
+  html.pdf-front .pl button,html.pdf-front .sb input,html.pdf-front .sb button,html.pdf-front .fv audio,html.pdf-front #sbMsg,html.pdf-front #plMsg{display:none!important}
+  html.pdf-front .pr-vote{display:block;font:700 12px Archivo,sans-serif;color:var(--red);text-align:center;margin-top:8px}
+  html.pdf-front .bx,html.pdf-front .bt,html.pdf-front .kb{break-inside:avoid}
 }
 </style>
 </head>
@@ -228,12 +235,12 @@ button.np-btn{cursor:pointer}
     var p=D.poll;
     return '<section class="bx"><h2>Poll Station</h2><div class="in"><form class="pl" id="poll"><small>This week\'s question</small><p>'+esc(p.q)+'</p>'+
       p.o.map(function(o,i){return '<label><input type="radio" name="po" value="'+i+'"> '+esc(o)+'</label>';}).join('')+
-      '<button type="submit">Submit</button><div class="res" id="plRes"></div><p class="msg" id="plMsg"></p></form></div></section>'+
+      '<button type="submit">Submit</button><span class="pr-only pr-vote">Vote at agarmainkinghota.com/srk-daily</span><div class="res" id="plRes"></div><p class="msg" id="plMsg"></p></form></div></section>'+
       (D.fanverse?'<section class="bx r fv"><h2>FANVERSE</h2><div class="in"><small style="color:var(--red);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px">'+esc(D.fanverse.kicker)+'</small><a href="'+esc(D.fanverse.url)+'"><img src="'+esc(D.fanverse.img)+'" alt="INQUILAAB KING KE SAATH" loading="lazy"></a><h3>'+esc(D.fanverse.title)+'</h3><p>'+esc(D.fanverse.line)+'</p>'+
-        '<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(D.fanverse.audio)+'"></audio><small><a href="'+esc(D.fanverse.credit_url)+'" target="_blank" rel="noopener">'+esc(D.fanverse.credit)+'</a> · <a href="'+esc(D.fanverse.url)+'">The anthem →</a></small></div></section>':'')+
+        '<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(D.fanverse.audio)+'"></audio><span class="pr-only pr-vote">Listen at agarmainkinghota.com/inquilab</span><small><a href="'+esc(D.fanverse.credit_url)+'" target="_blank" rel="noopener">'+esc(D.fanverse.credit)+'</a> · <a href="'+esc(D.fanverse.url)+'">The anthem →</a></small></div></section>':'')+
       '<section class="bx r"><h2>Countdown</h2><div class="in cd"><b>'+DK+'</b><span>days to KING · 24 Dec 2026</span></div></section>'+
       '<section class="bx r" id="sub"><h2>Subscribe</h2><form class="in sb" id="sbF" novalidate><p>The day\'s King news and numbers in your inbox. One email a day at most; we never share your address.</p>'+
-      '<input id="sbName" maxlength="60" placeholder="Your name (optional)" autocomplete="name"><input id="sbMail" type="email" maxlength="120" placeholder="Your email" autocomplete="email"><button type="submit">Subscribe to SRK DAILY</button><p class="msg" id="sbMsg"></p></form></section>';
+      '<input id="sbName" maxlength="60" placeholder="Your name (optional)" autocomplete="name"><input id="sbMail" type="email" maxlength="120" placeholder="Your email" autocomplete="email"><button type="submit">Subscribe to SRK DAILY</button><span class="pr-only pr-vote">Subscribe at agarmainkinghota.com/srk-daily</span><p class="msg" id="sbMsg"></p></form></section>';
   }
   function front(D,P){
     var lead=P[0],rest=P.slice(1);
@@ -330,6 +337,10 @@ button.np-btn{cursor:pointer}
     var one=new URLSearchParams(location.search).get('p'),x=one&&P.filter(function(p){return p.id===one;})[0];
     $('#npBody').innerHTML=x?article(D,x):front(D,P);
     if(!x)daily(D);
+    if(!x&&new URLSearchParams(location.search).get('pdf')){document.documentElement.classList.add('pdf-front');
+      var ps=document.createElement('style');ps.textContent='@media print{@page{size:330mm 550mm;margin:0}}';document.head.appendChild(ps);
+      $('#kb').hidden=false;kbLoad();
+      var fix=function(){[].forEach.call(document.querySelectorAll('a[href]'),function(l){var h=l.getAttribute('href');if(/^https?:/i.test(h))return;l.setAttribute('href',new URL(h,'https://agarmainkinghota.com/srk-daily/').href);});};fix();setTimeout(fix,2500);setTimeout(fix,6000);}
     if(x)document.title=x.title+' — SRK DAILY';
     // PDF edition (?pdf=1): every link points at the live site, whatever host printed it
     if(new URLSearchParams(location.search).get('pdf'))[].forEach.call(document.querySelectorAll('a[href]'),function(l){var h=l.getAttribute('href');if(/^https?:/i.test(h))return;l.setAttribute('href',new URL(h,'https://agarmainkinghota.com/srk-daily/').href);});
