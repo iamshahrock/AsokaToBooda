@@ -50,6 +50,23 @@
 .pk-list img{width:96px;height:54px;object-fit:cover;background:#000;flex:none}
 .pk-list b{display:block;font:600 15px Archivo,sans-serif;color:#f4ece4}.pk-list i{font-style:normal;font-size:12px;color:#a89a90}
 .pk-list .none{color:#a89a90;font-size:14px;padding:10px 4px}
+.won{border:2px solid var(--gold-d);background:#140c0a;padding:16px;margin:24px 0 0;display:grid;grid-template-columns:220px 1fr;gap:18px;align-items:center}
+.won[hidden]{display:none}
+@media(max-width:640px){.won{grid-template-columns:1fr}}
+.won h3{margin:0 0 6px;font:400 30px/1.05 var(--display);color:#f4ece4}.won p{margin:0 0 6px}
+.crd{position:relative;background:#0e0909;border:3px solid var(--lv,#3a2626);padding:6px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.crd img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000}
+.crd b{font:600 13px/1.25 Archivo,sans-serif;color:#f4ece4;display:block}
+.crd i{font-style:normal;font-size:11px;color:#a89a90}
+.crd .lv{position:absolute;top:10px;left:10px;background:var(--lv);color:#140c0a;font:700 10px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:2px 6px}
+.crd.off img{filter:grayscale(1) brightness(.35)}.crd.off{border-color:#2a1c1c}.crd.off b{color:#77686a}
+.crd.big{border-width:4px}.crd.big b{font:400 22px/1.1 var(--display)}
+.crd.set{background:linear-gradient(160deg,#2a1d0c,#0e0909)}
+.alb-act{margin:16px 0 0}.alb-act h4{margin:0 0 8px;font:700 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.alb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+@media(max-width:900px){.alb-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:520px){.alb-grid{grid-template-columns:repeat(3,1fr)}}
+.alb-film{display:grid;grid-template-columns:260px 1fr;gap:14px;align-items:center;margin:8px 0 6px}@media(max-width:640px){.alb-film{grid-template-columns:1fr}}
+.sotd{color:var(--gold)}
 .stage{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 @media(max-width:860px){.stage{grid-template-columns:1fr}}
 .box{border:1px solid var(--gold-d);background:var(--card)}
@@ -141,18 +158,25 @@
     </div>
   </div>
 
+  <div id="won" class="won" hidden></div>
   <div id="res">
     <h2>3 · Your take against Raja's</h2>
     <div class="score">
-      <div class="big"><small>Practice score</small><b id="total">–</b><small id="totLab"></small></div>
+      <div class="big"><small>Match score · how close to Raja</small><b id="total">–</b><small id="totLab"></small></div>
       <div class="bars" id="bars"></div>
     </div>
     <ul class="tips" id="tips"></ul>
     <p class="leg"><span><i style="background:#f0c24e"></i>Raja</span><span><i style="background:#5bb8ff"></i>You</span></p>
     <div id="charts"></div>
     <div class="btns"><button class="btn" id="bAgain">Try again</button><button class="btn g" id="bCard">Save my scorecard</button></div>
-    <p class="note">A practice score measured by machine, not a judgement of talent. Head turns and expressions are read from your face; voice from loudness, not words. Raja's numbers come from our study of the film (B.I.S.E.).</p>
+    <p class="note">Match the King: the score measures how close your take comes to Raja's choices (timing, pauses, head, face, voice), not how good an actor you are. Head turns and expressions are read from your face; voice from loudness, not words. Raja's numbers come from our study of the film (B.I.S.E.).</p>
   </div>
+  <section id="album">
+    <h2>Your Deewana album</h2>
+    <p class="note" id="albumSum"></p>
+    <div id="albumBody"></div>
+    <div id="topActors"></div>
+  </section>
   <p style="margin-top:26px"><a class="btn g" href="/bise/">← About B.I.S.E.</a></p>
 </section>
 </main>
@@ -166,6 +190,19 @@ let D=null,cur=null,stream=null,api=null,take=null,stopAt=0,timer=null,ac=null;
 const data=await fetch('/data/bise-deewana.json',{cache:'no-store'}).then(r=>r.json());D=data;
 D.scenes.sort((a,b)=>a.start-b.start);
 const KIND={dialogue:'Dialogue',silent:'Silent / face',song:'Songs / body',action:'Action'};
+// ---- cards: the Match score sets the level ----
+const LV=[{n:'Bronze',c:'#c0814a',at:0,st:20},{n:'Silver',c:'#c9d1d8',at:50,st:50},{n:'Gold',c:'#f0c24e',at:70,st:120},{n:'Diamond',c:'#8fe3ff',at:85,st:300}];
+const level=sc=>sc>=85?3:sc>=70?2:sc>=50?1:0;
+const FILM='deewana',API='https://asokatobooda.iamshahrock.workers.dev/bise-cards';
+const DUO={'The rich boy meets the widow':['Raja + Kajal','1034'],'Winning her':['Raja + Lakshmi Devi','1125'],'Married life':['Raja + Kajal','1271'],'The stranger':['Raja + Ravi','1442'],'Ravi returns':['Raja + Ravi','1741']};
+const TEENO=['Hum Teeno · Raja, Kajal and Ravi','1448'];
+const istDay=()=>new Date(Date.now()+5.5*3600e3).toISOString().slice(0,10);
+const SOTD=D.scenes[Math.abs(Math.round((Date.parse(istDay())-Date.parse('2026-11-04'))/864e5)*7)%D.scenes.length].id;
+let mine={};try{mine=JSON.parse(localStorage.getItem('amkh-bise-'+FILM)||'{}')}catch(e){}
+const saveMine=()=>{try{localStorage.setItem('amkh-bise-'+FILM,JSON.stringify(mine))}catch(e){}};
+const device=()=>window.STARKS&&STARKS.get?STARKS.get().device:'';
+function merge(j){if(!j||!j.mine)return album();for(const r of j.mine)mine[r.scene]=Math.max(mine[r.scene]??0,r.best);saveMine();album(j)}
+fetch(API+'?film='+FILM+'&device='+encodeURIComponent(device()),{cache:'no-store'}).then(r=>r.json()).then(merge).catch(()=>album());
 const thumb=s=>'/assets/bise/deewana/'+s.id+'.webp';
 $('film').innerHTML=`<option>${esc(D.film.title)} (${D.film.year}) · ${esc(D.film.note||'')}</option>`;
 let kindF='',qF='';
@@ -175,7 +212,7 @@ function list(){
   for(const act of (D.acts||[''])){
     const ss=D.scenes.filter(s=>(s.act||'')===act&&(!kindF||s.kind===kindF)&&(!q||(s.title+' '+s.study+' '+act).toLowerCase().includes(q)));
     if(!ss.length)continue;n+=ss.length;
-    h+=(act?`<h4>${esc(act)}</h4>`:'')+ss.map(s=>`<button type="button" role="option" data-id="${esc(s.id)}"${cur&&s.id===cur.id?' class="on"':''}><img loading="lazy" src="${thumb(s)}" alt=""><span><b>${esc(s.title)}</b><i>${fmt(s.start)} · ${Math.round(s.dur)} s · ${KIND[s.kind]||''}</i></span></button>`).join('');
+    h+=(act?`<h4>${esc(act)}</h4>`:'')+ss.map(s=>`<button type="button" role="option" data-id="${esc(s.id)}"${cur&&s.id===cur.id?' class="on"':''}><img loading="lazy" src="${thumb(s)}" alt=""><span><b>${s.id===SOTD?'<span class="sotd">★ </span>':''}${esc(s.title)}${mine[s.id]!=null?' <i class="lvtag" style="color:'+LV[level(mine[s.id])].c+'">'+LV[level(mine[s.id])].n+'</i>':''}</b><i>${fmt(s.start)} · ${Math.round(s.dur)} s · ${KIND[s.kind]||''}${s.id===SOTD?' · <span class="sotd">Scene of the day, double STARKS</span>':''}</i></span></button>`).join('');
   }
   $('plist').innerHTML=n?h:'<p class="none">No scene matches.</p>';
 }
@@ -200,7 +237,7 @@ function choose(i){
   $('sMeta').textContent=Math.round(cur.dur)+' seconds'+(cur.speaks?' · '+cur.speech.length+' speeches':' · no dialogue: scored on head and face');
   $('yt').innerHTML='<img alt="" src="https://i.ytimg.com/vi/'+D.film.youtube+'/hqdefault.jpg"><span>Watch the scene</span>';
   $('sFp').innerHTML=chart({raja:cur});
-  $('res').style.display='none';
+  $('res').style.display='none';$('won').hidden=true;
 }
 $('yt').onclick=()=>{if($('yt').querySelector('iframe'))return;
   $('yt').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${D.film.youtube}?start=${Math.floor(cur.start)}&end=${Math.ceil(cur.end)}&autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Deewana"></iframe>`;};
@@ -360,8 +397,49 @@ function finish(tk){
   $('res').style.display='block';$('res').scrollIntoView({behavior:'smooth'});
   $('status').textContent='Done. Your video stayed on your device.';
   lastResult={total,sc};
+  winCard(total);
 }
 let lastResult=null;
+
+// ---- cards and album ----
+function card(sc,best,cls){
+  const on=best!=null,l=on?LV[level(best)]:null;
+  return `<div class="crd ${cls||''}${on?'':' off'}" style="--lv:${on?l.c:'#3a2626'}"><img loading="lazy" src="${thumb(sc)}" alt="">${on?`<span class="lv">${l.n}</span>`:''}<b>${esc(sc.title)}</b><i>${on?'Match '+best:'Not yet played'}</i></div>`;
+}
+function setCard(title,img,sub,got,lvl){
+  const l=lvl!=null?LV[lvl]:null;
+  return `<div class="crd set${got?'':' off'}" style="--lv:${got?l.c:'#3a2626'}"><img loading="lazy" src="/assets/bise/deewana/${img}.webp" alt="">${got?`<span class="lv">${l.n}</span>`:''}<b>${esc(title)}</b><i>${esc(sub)}</i></div>`;
+}
+function album(j){
+  const acts=D.acts||[];let got=0,h='';
+  const all=D.scenes.length,doneAll=D.scenes.every(s=>mine[s.id]!=null);
+  const avgAll=doneAll?Math.round(D.scenes.reduce((a,s)=>a+mine[s.id],0)/all):null;
+  for(const act of acts){
+    const ss=D.scenes.filter(s=>s.act===act),done=ss.every(s=>mine[s.id]!=null),avg=done?Math.round(ss.reduce((a,s)=>a+mine[s.id],0)/ss.length):null;
+    got+=ss.filter(s=>mine[s.id]!=null).length;
+    const duo=DUO[act]||['Set card',ss[0].id];
+    h+=`<div class="alb-act"><h4>${esc(act)} · ${ss.filter(s=>mine[s.id]!=null).length} of ${ss.length}</h4><div class="alb-grid">${ss.map(s=>card(s,mine[s.id])).join('')}${setCard(duo[0],duo[1],done?'Act complete · average '+avg:'Win every card in this act',done,done?(avg>=70?2:1):null)}</div></div>`;
+  }
+  $('albumSum').textContent=got+' of '+all+' scene cards'+(doneAll?' · film complete':'')+'. Win a card for every scene you play; better matches upgrade it. Finish an act for its duo card, finish the film for Hum Teeno.';
+  $('albumBody').innerHTML=`<div class="alb-film">${setCard(TEENO[0],TEENO[1],doneAll?'All '+all+' scenes · average '+avgAll:'Finish all '+all+' scenes',doneAll,doneAll?level(avgAll):null).replace('class="crd set','class="crd set big')}<p class="note">The film card: Raja, Kajal and Ravi, for every fan who plays all ${all} scenes. Its level is your average across the film.</p></div>`+h;
+  if(j&&j.top&&j.top.length)$('topActors').innerHTML='<h2>Top actors · Deewana</h2><table style="width:100%;border-collapse:collapse;font-size:14px">'+j.top.map(r=>`<tr><td style="padding:6px;border-bottom:1px solid #2a1c1c">${r.rank}</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">${esc(r.name)}</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">${r.cards} cards</td><td style="padding:6px;border-bottom:1px solid #2a1c1c">average ${r.avg}</td></tr>`).join('')+'</table><p class="note">Billboard names only. Join the Billboard to appear here.</p>';
+}
+function winCard(total){
+  const box=$('won');if(total==null){box.hidden=true;return}
+  const prev=mine[cur.id],lv=level(total),was=prev!=null?level(prev):-1,best=Math.max(prev??0,total);
+  mine[cur.id]=best;saveMine();
+  const up=lv>was,dbl=cur.id===SOTD;
+  let starks=0;
+  if(up&&window.STARKS)starks=STARKS.earn('act',LV[lv].st*(dbl?2:1),LV[lv].n+' card · '+cur.title+(dbl?' · Scene of the day':''),'bise-'+FILM+'-'+cur.id+'-'+lv)||0;
+  box.hidden=false;
+  box.innerHTML=`${card(cur,best,'big')}<div><p class="k" style="margin:0 0 4px;color:#e0312b;font:700 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase">${prev==null?'New card':up?'Card upgraded':'Card kept'}</p><h3>${LV[level(best)].n} · ${esc(cur.title)}</h3><p>${prev==null?'You won this scene\'s card.':up?'Your match moved it up to '+LV[lv].n+'.':'Your best stays '+best+'. Beat it to upgrade: Silver 50, Gold 70, Diamond 85.'}</p><p class="note">${starks?'+'+starks+' STARKS'+(dbl?' (Scene of the day, doubled)':''):'STARKS are paid once for each new level.'}</p></div>`;
+  // act and film sets
+  const act=cur.act,ss=D.scenes.filter(s=>s.act===act);
+  if(window.STARKS&&ss.every(s=>mine[s.id]!=null))STARKS.earn('actset',500,'Act complete · '+act,'bise-'+FILM+'-act-'+(D.acts||[]).indexOf(act));
+  if(window.STARKS&&D.scenes.every(s=>mine[s.id]!=null))STARKS.earn('actset',2000,'Hum Teeno · Deewana complete','bise-'+FILM+'-film');
+  album();list&&$('panel').hidden===false&&list();
+  if(device())fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({device:device(),film:FILM,scene:cur.id,score:total})}).then(r=>r.json()).then(merge).catch(()=>{});
+}
 
 // ---- charts ----
 function chart({raja,you}){
