@@ -1,10 +1,10 @@
 {
  "about": "Top of /king-intelligence/: the latest KING news (owner, 27 Oct 2026) and every official KING release by Shah Rukh Khan / Red Chillies Entertainment. Video views are read live from the daily ledger (series_id). Update 'latest' when a new official asset drops. Posters on Instagram have no public view count: shown as N/A, never estimated.",
  "latest": {
-  "date": "2026-11-02",
-  "kicker": "Official · KING's first song",
-  "headline": "Tu Mil Jaaye: KING's first song is out on SRK's 61st birthday",
-  "deck": "Released at 00:09 IST on 2 Nov 2026, the minute SRK turned 61. Sachin-Jigar compose, Kumaar writes, Arijit Singh and Madhubanti Bagchi sing, and Ed Sheeran features. Shah Rukh Khan and Deepika Padukone star. In its first half hour on YouTube: 260,084 views and 40,324 likes.",
+  "date": "2026-11-04",
+  "kicker": "Record · KING's first song",
+  "headline": "Tu Mil Jaaye: the most-watched Indian film song on YouTube in its first 24 hours",
+  "deck": "Reported by Hindustan Times, Bollywood Hungama and UNI from the makers' numbers: 36.3M YouTube views and 430K likes in 24 hours, past Jawan's Zinda Banda (34.6M, as reported). Our own 10-minute log read 35,243,482 views 23 hours after release. On 4 Nov at 11:29 IST it stands at 47,991,463 views and 560,273 likes.",
   "quote": "Yeh Daur Ishq ka Naseeb Waalon ko milta hai... Jahan Barood ki Khushboo mein Gulab khilta hai... Of Love and other Battles....This December, #LoveLikeAKing",
   "quote_by": "@iamsrk on Instagram, 2 Nov 2026, 00:11 IST",
   "image": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
@@ -12,16 +12,24 @@
   "image_credit": "Official video thumbnail, YouTube",
   "sources": [
    {
-    "name": "KING on his 61st: the whole day",
+    "name": "SRK DAILY · today's summary",
+    "url": "/srk-daily/"
+   },
+   {
+    "name": "KING on his 61st: the first 21 hours",
     "url": "/king-intelligence/king-61st.html"
+   },
+   {
+    "name": "Bollywood Hungama",
+    "url": "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-deepika-padukones-tu-mil-jaaye-crosses-36-million-youtube-views-in-24-hours/"
+   },
+   {
+    "name": "UNI",
+    "url": "https://www.uniindia.com/entertainment/ent-tu-mil-jaye-60-million/235147"
    },
    {
     "name": "Watch on YouTube",
     "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
-   },
-   {
-    "name": "SRK on Instagram",
-    "url": "https://www.instagram.com/iamsrk/reel/DfNY_TIO8P4/"
    }
   ]
  },

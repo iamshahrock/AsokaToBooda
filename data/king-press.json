@@ -618,6 +618,49 @@
      "topic": "birthday"
     }
    ]
+  },
+  {
+   "date": "2026-11-04",
+   "count": 6,
+   "articles": [
+    {
+     "outlet": "Hindustan Times",
+     "title": "'King's Tu Mil Jaaye becomes most-watched Indian film song in 24 hours with 36M views",
+     "url": "https://www.instagram.com/hindustantimes/",
+     "topic": "song"
+    },
+    {
+     "outlet": "Bollywood Hungama",
+     "title": "Shah Rukh Khan and Deepika Padukone's 'Tu Mil Jaaye' crosses 36 million YouTube views in 24 hours",
+     "url": "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-deepika-padukones-tu-mil-jaaye-crosses-36-million-youtube-views-in-24-hours/",
+     "topic": "song"
+    },
+    {
+     "outlet": "UNI",
+     "title": "King song 'Tu Mil Jaye' crosses 60 million views",
+     "url": "https://www.uniindia.com/entertainment/ent-tu-mil-jaye-60-million/235147",
+     "topic": "song"
+    },
+    {
+     "outlet": "DNA",
+     "title": "SRK's King song Tu Mil Jaaye creates history, crosses 60 million views in 24 hours",
+     "url": "https://www.dnaindia.com/entertainment/report-srk-s-king-song-tu-mil-jaaye-creates-history-crosses-60-million-views-in-24-hours-deepika-padukone-steals-the-show-3223543",
+     "topic": "song"
+    },
+    {
+     "outlet": "Dynamite News",
+     "title": "Shah Rukh Khan's Tu Mil Jaaye Sets Record With 36 Million YouTube Views in 24 Hours",
+     "url": "https://www.dynamitenews.com/entertainment/shah-rukh-khans-tu-mil-jaaye-sets-record-with-36-million-youtube-views-in-24-hours",
+     "topic": "song"
+    },
+    {
+     "outlet": "tbreak",
+     "title": "Ed Sheeran Tu Mil Jaaye: How He Joined SRK's King",
+     "url": "https://tbreak.com/ed-sheeran-tu-mil-jaaye-king-shah-rukh-khan",
+     "topic": "song"
+    }
+   ],
+   "note": "Found 4 Nov 2026 11:30 IST by search; publication dates 3-4 Nov, filed on the day we read them. The 60M figure (UNI, DNA) is across all digital platforms, not YouTube alone."
   }
  ]
 }

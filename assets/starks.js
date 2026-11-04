@@ -26,7 +26,7 @@
     clipsubmit: ['Submitted a Lairs Cinema clip', 3],
     comment: ['Posted on a Fan Wall', 3],
     pose: ['Collected a BAAHEIN KHOL card', 10],
-    study: ['Studied at KING STUDIES', 30]
+    study: ['Studied at KING UNIVERSITY', 30]
   };
   var TIERS = [[0, 'Fan'], [500, 'Rebel'], [1500, 'Prince'], [4000, 'King'], [10000, 'Royal Flush']];
 

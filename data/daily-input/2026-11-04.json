@@ -1,0 +1,106 @@
+{
+ "date": "2026-11-04",
+ "record_id": "KING-2026-11-04",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 51349568,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-04 11:29 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 32930661,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-04 11:29 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 83765175,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-04 11:29 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 47991463,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-04 11:29 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-04: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-04: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 40,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-04 (no new works filed in the log; the 5 AI fan versions of Tu Mil Jaaye found 3 Nov are in data/fans-king.json)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 2883120,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-04 (no new works filed in the log; the 5 AI fan versions of Tu Mil Jaaye found 3 Nov are in data/fans-king.json)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": null,
+   "unit": "followers",
+   "source": "Not read 2026-11-04 (Instagram not opened in this session)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 3 Nov total located (X sweep of 3 Nov counts only what 10 searches returned: data/king-social.json)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Tu Mil Jaaye: 47,991,463 YouTube views and 560,273 likes at 11:29 IST (59.3 h after release)",
+  "Reported (HT, Bollywood Hungama, UNI, from the makers): most-watched Indian film song on YouTube in its first 24 hours, 36.3M views and 430K likes, past Zinda Banda's 34.6M; our own log read 35,243,482 at 23 h",
+  "KING's two official teasers 84,280,229 vs the Doomsday trailer 83,765,175"
+ ],
+ "notes": [
+  "YouTube counts read from the public watch pages at 11:29 IST in an attended session.",
+  "The 24-hour record is the makers' figure as reported by the press, not an official-handle post; labelled as reported."
+ ]
+}

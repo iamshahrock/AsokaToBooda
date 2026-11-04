@@ -28,11 +28,11 @@
     ['chess81/', 'Chess81', ['CHESS81.HTML']],
     ['inquilab/', 'Inquilaab King Ke Saath', ['king-fever/']],
     ['lairs/', 'Rescue Your Face'],
-    ['king-intelligence/', 'KING Buzz'],
+    ['king-intelligence/', 'KING Buzz', ['srk-daily/']],
     ['merch/', 'Merch'],
     ['fan-made-ai-universe/', 'Fan Universe', ['fans-king/']],
     ['asoka-to-booda/', 'Asoka to Boo-Da'],
-    ['king-studies/', 'KING Studies', ['srk-characters/']],
+    ['king-studies/', 'KING University', ['srk-characters/']],
     ['gallery/videos/', 'Gallery', ['gallery/']],
     ['on-the-record/video-interviews/', 'On The Record', ['on-the-record/']],
     ['doom-to-king/', 'DOOM to KING', ['ramayana-to-king/']]
@@ -49,7 +49,7 @@
     'gallery/videos/': [['gallery/videos/', 'Videos'], ['gallery/', 'Images']],
     'on-the-record/video-interviews/': [['on-the-record/branded/', 'Branded'], ['on-the-record/video-interviews/', 'Video Interviews'], ['on-the-record/king-in-print/', 'King In Print']],
     'inquilab/': [['inquilab/', 'The anthem'], ['inquilab/revolution/', 'The Revolution Starts Now']],
-    'king-studies/': [['king-studies/', 'KING Studies'], ['king-studies/#mannat', 'The Man in Mannat'], ['srk-characters/', 'Alter Egos']],
+    'king-studies/': [['king-studies/', 'KING University'], ['king-studies/#mannat', 'The Man in Mannat'], ['srk-characters/', 'Alter Egos']],
     'doom-to-king/': [['doom-to-king/', 'DOOM to KING'], ['ramayana-to-king/', 'RAMAYANA to KING']],
     'asoka-to-booda/': [['asoka-to-booda/', 'Contents'], ['asoka-to-booda/manuscript/prologue.html', 'Prologue'], ['asoka-to-booda/manuscript/chapter-01.html', 'Part I'], ['asoka-to-booda/manuscript/chapter-39.html', 'The Royal Flush'], ['asoka-to-booda/manuscript/addendum-a.html', 'Academic Addendum'], ['asoka-to-booda/manuscript/final-frame.html', 'The Final Frame']]
   };
