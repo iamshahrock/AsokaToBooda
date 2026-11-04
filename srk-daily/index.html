@@ -331,6 +331,8 @@ button.np-btn{cursor:pointer}
     $('#npBody').innerHTML=x?article(D,x):front(D,P);
     if(!x)daily(D);
     if(x)document.title=x.title+' — SRK DAILY';
+    // PDF edition (?pdf=1): every link points at the live site, whatever host printed it
+    if(new URLSearchParams(location.search).get('pdf'))[].forEach.call(document.querySelectorAll('a[href]'),function(l){var h=l.getAttribute('href');if(/^https?:/i.test(h))return;l.setAttribute('href',new URL(h,'https://agarmainkinghota.com/srk-daily/').href);});
     wire();
   });
 })();
