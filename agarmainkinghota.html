@@ -123,15 +123,93 @@ body{background:var(--bg)}
 .t.sg .sg-row i{font:400 13px Anton,sans-serif;font-style:normal;text-transform:uppercase;color:#e0d6ce}
 .t.sg audio{width:100%;height:32px;display:block}
 .t.soon span{position:static;text-align:center}.t.soon b{font-size:22px}.t.soon small{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+
+/* Front-page layout (owner, 4 Nov 2026: 'the homepage ... use the same format' as SRK DAILY), in the site's own colours */
+.fp-bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;padding:12px 0 10px;margin:8px 0 16px;border-bottom:3px double #8a6d2a;font:700 12px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.fp-bar b{color:var(--red-hi);font:400 18px Anton,sans-serif;letter-spacing:.02em}
+.fp-bar #fpDate{color:var(--ink)}
+@media (max-width:640px){.fp-bar{justify-content:center;text-align:center}.fp-bar .site{display:none}}
+.fp-grid{display:grid;grid-template-columns:270px minmax(0,1fr) 300px;gap:16px;align-items:start}
+@media (max-width:1100px){.fp-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.fp-c{grid-column:1/-1;order:-1}}
+@media (max-width:700px){.fp-grid{grid-template-columns:minmax(0,1fr)}}
+.fp .bx{border:2px solid #b8913f;background:#0f0909;margin:0 0 16px;border-radius:2px}
+.fp .bx.r{border-color:var(--red)}
+.fp .bx>h2{margin:0;background:#b8913f;color:#1b1410;font:700 13px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:7px 6px}
+.fp .bx.r>h2{background:var(--red);color:#fff}
+.fp .bx>h2 a{color:inherit;text-decoration:none}
+.fp .bx .in{padding:12px}
+.fp .hero{display:block;padding:14px 16px 16px}
+.fp .hero h1{max-width:none}
+.fp .buzz{margin:0}
+.fp .sd{display:block;text-decoration:none;color:var(--ink)}
+.fp .sd b{display:block;font:400 21px/1.1 Anton,sans-serif;text-transform:uppercase;color:#fff;margin:0 0 6px}
+.fp .sd span{display:block;font-size:13.5px;line-height:1.5;color:#d6c8c4;margin:0 0 8px}
+.fp .sd small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--red-hi);margin:0 0 4px}
+.fp .sd em{font-style:normal;color:var(--gold);font-weight:700;font-size:13px}
+.fp .fv-h{margin:0 0 4px;font:400 22px/1.05 Anton,sans-serif;text-transform:uppercase}.fp .fv-h a{color:#fff;text-decoration:none}
+.fp .fv-p{margin:0 0 10px;font-size:13.5px;line-height:1.5;color:var(--mute)}
+.fp .t.sg{margin:0 0 10px}
+.fp .duo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+@media (max-width:700px){.fp .duo{grid-template-columns:minmax(0,1fr)}}
+.fp .newrel{margin:0 0 16px;padding:0;border-radius:2px;display:block}
+.fp .newrel .yt{margin:0 0 10px}
+.fp .newrel h3{margin:0 0 6px;font:400 24px/1.05 Anton,sans-serif;text-transform:uppercase;color:#fff}
+.fp .newrel p{margin:0 0 8px;font-size:13.5px;line-height:1.5;color:#d6c8c4}
+.fp a.more{display:inline-block;margin-top:8px;color:var(--gold);font-weight:700;font-size:13px;text-decoration:none}
+.fp .stack{display:grid;gap:10px}
+.fp .stack .t{min-height:120px}
+.fp .stack .t b{font-size:18px}
+.fp .r4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:560px){.fp .r4{grid-template-columns:minmax(0,1fr)}}
+.fp .r4 .t{min-height:180px}
+.fp .mvb .mv-h{display:none}
+.fp .mvb .mv-f{width:100%}
+.fp .ix a{display:block;padding:9px 0;border-bottom:1px dotted #3a2626;text-decoration:none}
+.fp .ix a:last-child{border-bottom:0}
+.fp .ix a b{display:block;font:400 17px/1.1 Anton,sans-serif;text-transform:uppercase;color:#fff}
+.fp .ix a span{font-size:12.5px;color:var(--mute)}
+.fp .ix a:hover b{color:var(--red-hi)}
+.fp .t.dk,.fp .t.ch{min-height:190px}
 </style>
 </head>
 <body class="v2">
 <script src="assets/header.js" data-nav="v2"></script>
-<main class="hp">
+<main class="hp fp">
+  <div class="fp-bar"><span id="fpDate"></span><span class="site">WWW.AGARMAINKINGHOTA.COM</span><span><b id="fpDays">50</b> days to KING · 24 Dec 2026</span></div>
+  <div class="fp-grid">
+    <div class="fp-l">
+      <section class="bx r"><h2>KING BUZZ of the day</h2><div class="in">
+        <a class="buzz" href="king-intelligence/"><b>KING BUZZ</b><span id="kb-line">The daily intelligence report on KING: official releases, views, press and fans, tracked every day since 04 Oct.</span> <em>Read →</em></a>
+      </div></section>
+      <section class="bx"><h2>SRK DAILY</h2><div class="in" id="sdBox">
+        <a class="sd" href="srk-daily/"><b>The fans' daily paper on the King</b><span>Today's story, KING BUZZ of the day, the Poll Station and The Beat.</span><em>Read today's paper →</em></a>
+      </div></section>
+      <section class="bx r"><h2>FANVERSE · the fans' song</h2><div class="in">
+        <h3 class="fv-h"><a href="inquilab/">Inquilaab King Ke Saath</a></h3>
+        <p class="fv-p">The fans' song of revolution against celeb persona theft by Big Tech. #FreeMyFace #FreeMyVoice #FreeMyName</p>
+        <div class="t sg" id="homeSongs">
+        <img class="sg-art" src="assets/inquilab/fist-king.webp" alt="" width="760" height="1362">
+        <div class="sg-in">
+          <b><a href="inquilab/#anthem">Anthem · Version 1</a></b>
+          <small>Composed by <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></small>
+          <div class="sg-row"><i>Song 1</i><audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="assets/inquilab/audio/inquilaab-v1-song-3.mp3?v=2" data-song="1" data-file="inquilaab-v1-song-3.mp3"></audio></div>
+          <div class="sg-row"><i>Song 2</i><audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="assets/inquilab/audio/inquilaab-v1-song-1.mp3?v=2" data-song="2" data-file="inquilaab-v1-song-1.mp3"></audio></div>
+        </div>
+      </div>
+        <div class="t sg" id="homeSongs2">
+        <img class="sg-art" src="assets/inquilab/fist-king.webp" alt="" width="760" height="1362">
+        <div class="sg-in">
+          <b><a href="inquilab/#v2">Anthem · Version 2</a></b>
+          <small>Composed by Shailja Gupta · Re-arranged by <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></small>
+          <div class="sg-row"><i>Play</i><audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="assets/inquilab/audio/inquilaab-v2.mp3?v=2" data-song="1" data-ver="Version 2" data-file="inquilaab-v2.mp3"></audio></div>
+        </div>
+      </div>
+      </div></section>
+    </div>
 
-  <section class="hero" aria-labelledby="hh">
-    <div>
-      <h1 id="hh">Be the <em>KING</em> of every SRK film</h1>
+    <div class="fp-c">
+      <section class="bx lead" aria-labelledby="hh"><h2>Framed · the poster game</h2><div class="in hero">
+        <h1 id="hh">Be the <em>KING</em> of every SRK film</h1>
       <p class="line">Your Face, 6 Styles (118 Movies)</p>
       <div class="styles6" aria-label="Six poster styles">
         <a href="create/"><img src="assets/posters/king/118B/thumb-photo.webp" alt=""><span>Photo</span></a>
@@ -149,96 +227,52 @@ body{background:var(--bg)}
       </div>
       <a class="btn-main" href="create/">Make your KING poster <span aria-hidden="true">→</span></a>
       <a class="game" href="create/"><img src="assets/home/04-asoka-to-booda.webp" alt=""><span><b>Agar Main King Hota · <em>the poster game</em></b><small>Pick any of 118 SRK films, choose one of 6 styles, add your face and step into his poster as the King.</small></span></a>
-    </div>
-    <div class="art">
-      <div class="mv" id="mv" data-yt="https://www.youtube.com/shorts/YB9WoVQwF2I" data-ratio="9/16">
-        <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
-      </div>
-      <a class="buzz" href="king-intelligence/"><b>KING BUZZ</b><span id="kb-line">The daily intelligence report on KING: official releases, views, press and fans, tracked every day since 04 Oct.</span> <em>Read →</em></a>
-    </div>
-  </section>
-
-  <section class="newrel" aria-labelledby="nr-h">
-    <div class="yt"><iframe src="https://www.youtube.com/embed/BPZkZpGMpXA?rel=0&amp;playsinline=1" title="KING: Tu Mil Jaaye, official song" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-    <div>
-      <span class="tag">Official · Out now · 2 Nov 2026, 00:09 IST</span>
-      <h2 id="nr-h">KING: Tu Mil Jaaye</h2>
-      <p>KING's first song, released the minute SRK turned 61. Shah Rukh Khan and Deepika Padukone. Composed by Sachin-Jigar, lyrics by Kumaar, sung by Arijit Singh and Madhubanti Bagchi, featuring Ed Sheeran.</p>
-      <a class="more" href="king-intelligence/">Follow its numbers on KING Buzz →</a>
-    </div>
-  </section>
-
-  <h2 class="kf-h">KING FEVER</h2>
-
-  <div class="blk">
-    <h3><a href="inquilab/">Inquilaab King Ke Saath</a></h3>
-    <p>The fans' song of revolution against celeb persona theft by Big Tech: the King's face, the fans' voice, every artist's right. Listen to both versions, then sing your own. #FreeMyFace #FreeMyVoice #FreeMyName</p>
-    <div class="row r3">
-      <div class="t sg" id="homeSongs">
-        <img class="sg-art" src="assets/inquilab/fist-king.webp" alt="" width="760" height="1362">
-        <div class="sg-in">
-          <b><a href="inquilab/#anthem">Anthem · Version 1</a></b>
-          <small>Composed by <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></small>
-          <div class="sg-row"><i>Song 1</i><audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="assets/inquilab/audio/inquilaab-v1-song-3.mp3?v=2" data-song="1" data-file="inquilaab-v1-song-3.mp3"></audio></div>
-          <div class="sg-row"><i>Song 2</i><audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="assets/inquilab/audio/inquilaab-v1-song-1.mp3?v=2" data-song="2" data-file="inquilaab-v1-song-1.mp3"></audio></div>
-        </div>
-      </div>
-      <div class="t sg" id="homeSongs2">
-        <img class="sg-art" src="assets/inquilab/fist-king.webp" alt="" width="760" height="1362">
-        <div class="sg-in">
-          <b><a href="inquilab/#v2">Anthem · Version 2</a></b>
-          <small>Composed by Shailja Gupta · Re-arranged by <a href="https://www.youtube.com/@Swaarstudio" target="_blank" rel="noopener" data-ga="composer">Pragnesh S. Singh</a></small>
-          <div class="sg-row"><i>Play</i><audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="assets/inquilab/audio/inquilaab-v2.mp3?v=2" data-song="1" data-ver="Version 2" data-file="inquilaab-v2.mp3"></audio></div>
-        </div>
-      </div>
-      <a class="t ch" href="merch/"><img src="assets/merch/ijoo-agar-main-king-hota.webp" alt=""><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
-    </div>
-  </div>
-
-  <div class="blk">
-    <h3><a href="chess81/">Play for the crown</a></h3>
-    <p>Original fan games. Every level and every win earns STARKS.</p>
-    <div class="row r3">
-      <a class="t cv" href="chess81/"><img src="assets/home/chess81-board.webp" alt=""><span><b>Chess81</b><small>81 squares · the King is the strongest piece</small></span></a>
+      </div></section>
+      <div class="duo">
+        <section class="bx r newrel" aria-labelledby="nr-h"><h2>Official · out now</h2><div class="in">
+          <div class="yt"><iframe src="https://www.youtube.com/embed/BPZkZpGMpXA?rel=0&amp;playsinline=1" title="KING: Tu Mil Jaaye, official song" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <h3 id="nr-h">KING: Tu Mil Jaaye</h3>
+          <p>KING's first song, released the minute SRK turned 61. Shah Rukh Khan and Deepika Padukone. Sachin-Jigar, Kumaar, Arijit Singh, Madhubanti Bagchi, featuring Ed Sheeran.</p>
+          <a class="more" href="king-intelligence/">Follow its numbers on KING Buzz →</a>
+        </div></section>
+        <section class="bx"><h2><a href="chess81/">Play for the crown</a></h2><div class="in stack">
+          <a class="t cv" href="chess81/"><img src="assets/home/chess81-board.webp" alt=""><span><b>Chess81</b><small>81 squares · the King is the strongest piece</small></span></a>
       <a class="t" href="lairs/"><img src="assets/lairs/scenes/den-abyssal-m.webp" alt=""><span><b>Rescue Your Face</b><small>2 worlds · 12 arcade games · shoot the crown, free your face</small></span></a>
       <a class="t ch" href="fan-billboard/"><img src="assets/home/06-fan-billboard.webp" alt=""><span><b>Billboard &amp; STARKS</b><small>Your rank among the King's fans</small></span></a>
-    </div>
-  </div>
-
-  <div class="blk">
-    <h3><a href="fan-made-ai-universe/">Fan Universe</a></h3>
-    <p>What fans are making for KING: trailers, songs and posters. Every fan creation lives on one page.</p>
-    <div class="row r4">
-      <a class="t ch" href="fan-made-ai-universe/"><img src="assets/home/05-fan-made-ai-universe.webp" alt=""><span><b>All fan creations →</b><small>245 videos, fan posters and anthem versions</small></span></a>
+        </div></section>
+      </div>
+      <section class="bx"><h2><a href="fan-made-ai-universe/">Fan Universe</a></h2><div class="in">
+        <p class="fv-p">What fans are making for KING: trailers, songs and posters, each linked to the fan who made it.</p>
+        <div class="row r4">
+          <a class="t ch" href="fan-made-ai-universe/"><img src="assets/home/05-fan-made-ai-universe.webp" alt=""><span><b>All fan creations →</b><small>245 videos, fan posters and anthem versions</small></span></a>
       <a class="t fp cv" href="https://www.youtube.com/watch?v=9YcsF7XKtSo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9YcsF7XKtSo/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan trailer</i><span><b>King · Trailer Concept</b><small>Bollygrad Studioz · 1.1M views on YouTube</small></span></a>
       <a class="t fp cv" href="https://www.youtube.com/watch?v=vfot00TxRzQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vfot00TxRzQ/mqdefault.jpg" alt="" referrerpolicy="no-referrer"><i class="tag">Fan song</i><span><b>KING · Trailer Video Song</b><small>Fantasy Studio Originals · 307K views</small></span></a>
       <a class="t fp" href="https://x.com/Shanurugo/status/2114987288014770216" target="_blank" rel="noopener"><img src="https://pbs.twimg.com/media/HVnxuhXXEAAbefS?format=jpg&amp;name=small" alt="" referrerpolicy="no-referrer"><i class="tag">Fan poster</i><span><b>KING with a leading lady</b><small>@Shanurugo on X · 27 Oct 2026</small></span></a>
+        </div>
+      </div></section>
     </div>
-  </div>
 
-  <div class="pair">
-    <div class="blk">
-      <h3><a href="gallery/videos/">Gallery</a></h3>
-      <p>44,857 pictures · 2,217 videos, year by year.</p>
-      <a class="t ch" href="gallery/videos/"><img src="assets/home/01-agar-main-king-hota.webp" alt=""><span><b>Gallery</b><small>44,857 pictures · 2,217 videos, year by year</small></span></a>
-    </div>
-    <div class="blk">
-      <h3><a href="on-the-record/">On The Record</a></h3>
-      <p>Interviews, brand films and King in Print.</p>
-      <a class="t ch" href="on-the-record/"><img src="assets/header/boy.webp" alt=""><span><b>On The Record</b><small>Video interviews · branded · in print</small></span></a>
-    </div>
-  </div>
-
-  <div class="pair">
-    <div class="blk">
-      <h3><a href="asoka-to-booda/">Asoka to Boo-Da</a></h3>
-      <p>SRK: The Man, The Myth, The King. The book, 46 chapters.</p>
-      <a class="t ch" href="asoka-to-booda/"><img src="assets/home/03-king-buzz.webp" alt=""><span><b>The book</b><small>SRK: The Man, The Myth, The King · 46 chapters</small></span></a>
-    </div>
-    <div class="blk">
-      <h3><a href="doom-to-king/">DOOM to KING</a></h3>
-      <p>One Christmas, two crowns. Vote the friendly fixture.</p>
-      <a class="t dk" href="doom-to-king/"><img src="assets/dk/bg.webp" alt=""><img class="fig" src="assets/dk/figures.webp" alt=""><span><b>The fixture</b><small>18 Dec DOOM · 24 Dec KING · watch both</small></span></a>
+    <div class="fp-r">
+      <section class="bx r"><h2>The music video</h2><div class="in mvb">
+        <div class="mv" id="mv" data-yt="https://www.youtube.com/shorts/YB9WoVQwF2I" data-ratio="9/16">
+        <img src="https://pbs.twimg.com/media/HVnEs6faIAAks8S?format=jpg&amp;name=large" alt="KING poster, from @iamsrk" referrerpolicy="no-referrer">
+      </div>
+      </div></section>
+      <section class="bx"><h2><a href="kingnama/">KINGNAMA</a></h2><div class="in ix">
+        <a href="king-studies/"><b>KING University</b><span>Pre-K to PhD, taught through his characters.</span></a>
+        <a href="srk-characters/"><b>Character Study</b><span>118 characters, one at a time.</span></a>
+        <a href="asoka-to-booda/"><b>Asoka to Boo-Da</b><span>The book: SRK, The Man, The Myth, The King.</span></a>
+        <a href="gallery/videos/"><b>Gallery</b><span>49,199 pictures · 2,217 videos, year by year.</span></a>
+        <a href="on-the-record/"><b>On The Record</b><span>Interviews, brand films, King In Print.</span></a>
+        <a href="bise/"><b>B.I.S.E.</b><span>Coming soon: his films read back into scripts.</span></a>
+      </div></section>
+      <section class="bx r"><h2><a href="doom-to-king/">DOOM to KING</a></h2><div class="in">
+        <a class="t dk" href="doom-to-king/"><img src="assets/dk/bg.webp" alt=""><img class="fig" src="assets/dk/figures.webp" alt=""><span><b>The fixture</b><small>18 Dec DOOM · 24 Dec KING · watch both</small></span></a>
+        <a class="more" href="ramayana-to-king/">And RAMAYANA to KING →</a>
+      </div></section>
+      <section class="bx"><h2><a href="merch/">Merch</a></h2><div class="in">
+        <a class="t ch" href="merch/"><img src="assets/merch/ijoo-agar-main-king-hota.webp" alt=""><span><b>Merch</b><small>16 fan designs · wear the crown</small></span></a>
+      </div></section>
     </div>
   </div>
 </main>
@@ -282,6 +316,18 @@ body{background:var(--bg)}
   el.querySelector('.mv-p').addEventListener('click',function(){
     this.parentNode.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?rel=0&amp;playsinline=1&amp;autoplay=1" title="Inquilaab King Ke Saath, the music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
   });
+})();
+</script>
+<script>
+(function(){
+  var IST=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4);
+  var d=document.getElementById('fpDate');if(d)d.textContent=IST.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  var k=document.getElementById('fpDays');if(k)k.textContent=Math.max(0,Math.ceil((Date.parse('2026-12-24T00:00:00+05:30')-Date.now())/864e5));
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  fetch('data/srk-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(D){
+    var P=D.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n||9)-(b.n||9));}),x=P[0];if(!x)return;
+    document.getElementById('sdBox').innerHTML='<a class="sd" href="srk-daily/?p='+esc(x.id)+'"><small>'+esc(x.kicker)+'</small><b>'+esc(x.title)+'</b><span>'+esc(x.deck||'')+'</span><em>Read the story →</em></a><a class="more" href="srk-daily/">The whole paper →</a>';
+  }).catch(function(){});
 })();
 </script>
 <script src="assets/starks.js"></script>
