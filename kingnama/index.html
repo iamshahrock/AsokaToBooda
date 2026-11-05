@@ -145,7 +145,7 @@
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   // today's lesson: the same rotation as SRK DAILY (day 0 = 4 Nov 2026)
-  var t=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4).toISOString().slice(0,10),n=Math.max(0,Math.round((Date.parse(t)-Date.parse('2026-11-04'))/864e5));
+  var t=new Date(Date.now()+330*6e4).toISOString().slice(0,10),n=Math.max(0,Math.round((Date.parse(t)-Date.parse('2026-11-04'))/864e5));
   fetch('../data/king-studies.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(K){
     var all=[];K.levels.forEach(function(L){L.lessons.forEach(function(x,i){all.push({L:L,x:x,i:i});});});if(!all.length)return;
     var u=all[(n*7)%all.length],x=u.x,L=u.L;
