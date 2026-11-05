@@ -341,7 +341,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     // ?snap=1: the front page alone (no site header/footer), KING BUZZ open: used to make the daily link-preview snapshot
     if(!x&&new URLSearchParams(location.search).get('snap')){document.documentElement.classList.add('snap');$('#kb').hidden=false;kbLoad();}
     if(!x&&new URLSearchParams(location.search).get('pdf')){document.documentElement.classList.add('pdf-front');
-      var ps=document.createElement('style');ps.textContent='@media print{@page{size:330mm 550mm;margin:0}}';document.head.appendChild(ps);
+      var ps=document.createElement('style');ps.textContent='@media print{@page{size:330mm 550mm;margin:0}}';document.head.appendChild(ps);/* one sheet whatever the length: the page grows to the paper's height (330 mm wide = 1247 px; +8% for the narrower print layout) */var fit=function(){var nb=document.getElementById('npBody');var hpx=(nb?nb.getBoundingClientRect().bottom+window.scrollY+40:document.documentElement.scrollHeight)*1247/Math.max(1,document.documentElement.clientWidth);var mm=Math.max(550,Math.ceil(hpx*0.2646*1.08)+10);ps.textContent='@media print{@page{size:330mm '+mm+'mm;margin:0}}';};setTimeout(fit,3000);setTimeout(fit,7000);
       $('#kb').hidden=false;kbLoad();
       var fix=function(){[].forEach.call(document.querySelectorAll('a[href]'),function(l){var h=l.getAttribute('href');if(/^https?:/i.test(h))return;l.setAttribute('href',new URL(h,'https://agarmainkinghota.com/srk-daily/').href);});};fix();setTimeout(fix,2500);setTimeout(fix,6000);}
     if(x)document.title=x.title+' — SRK DAILY';
