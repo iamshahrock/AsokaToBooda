@@ -1,0 +1,109 @@
+{
+ "date": "2026-11-06",
+ "record_id": "KING-2026-11-06",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 51627096,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-06 03:20 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 32983968,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-06 03:20 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 84039135,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-06 03:20 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 59170701,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-06 03:20 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-06: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-06: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 40,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-06 (no new works in the 5 Nov scan)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 3971254,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-06 (no new works in the 5 Nov scan)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": null,
+   "unit": "followers",
+   "source": "Not read 2026-11-06 (Instagram not opened in this session)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 4 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Ramayana: Part 1 day 1 (5 Nov): ₹64.85 crore India net, ₹77.50 crore gross, 25,200 shows, 36.0% occupancy (Sacnilk, updated 5 Nov 22:06 IST); Bollywood Hungama ₹62.50 crore",
+  "RAMAYANA to KING at 03:20 IST: KING's 3 official videos 143,781,765 vs Ramayana's 7 at 131,504,196 (KING +12,277,569; was +9,116,197 at 5 Nov 12:40 IST)",
+  "Tu Mil Jaaye 59,170,701 views, 639,796 likes; +4,987,115 since 5 Nov 12:40 IST",
+  "KING's two teasers 84,611,064 vs the Doomsday trailer 84,039,135",
+  "Reported (Pinkvilla via india.com, 3 Nov): KING's pre-release deals about ₹665 crore; not confirmed by the makers"
+ ],
+ "notes": [
+  "YouTube counts read from the public watch pages at 03:20 IST by Claude in the owner's session (owner asleep; overnight run).",
+  "Box office figures are as reported by Sacnilk and Bollywood Hungama; Ramayana's overseas day 1 not available on Sacnilk.",
+  "Official posts by @iamsrk and @RedChilliesEnt since 5 Nov 12:50 IST were not read overnight."
+ ]
+}

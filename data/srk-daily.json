@@ -2,6 +2,201 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-06-ramayana-day-one",
+   "n": 1,
+   "date": "2026-11-06",
+   "time": "03:40 IST",
+   "kicker": "SRK DAILY · Issue 3",
+   "title": "Ramayana's first day: ₹64.85 crore",
+   "deck": "Ramayana: Part 1 opened at ₹64.85 crore net in India, as reported. Jawan's ₹75 crore opening day is still the mark KING is chasing on 24 December.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Ramayana: Part 1 opened on Thursday 5 November, in five languages. By the end of the night, the first-day numbers were in."
+    },
+    {
+     "h": "Day one, as reported"
+    },
+    {
+     "stats": [
+      [
+       "India net, all languages",
+       "₹64.85 crore",
+       "Sacnilk, updated 5 Nov 22:06 IST"
+      ],
+      [
+       "Hindi",
+       "₹47.50 crore",
+       "20,678 shows, 31.6% occupancy"
+      ],
+      [
+       "India gross",
+       "₹77.50 crore",
+       ""
+      ],
+      [
+       "Shows",
+       "25,200",
+       "36.0% occupancy overall"
+      ]
+     ]
+    },
+    {
+     "p": "Kannada (₹7.25 crore), Telugu (₹6.00 crore), Tamil (₹2.60 crore) and Malayalam (₹1.50 crore) make up the rest. Bollywood Hungama reports the opening day at ₹62.50 crore. Overseas: N/A, not yet reported."
+    },
+    {
+     "h": "Where it sits"
+    },
+    {
+     "stats": [
+      [
+       "Jawan (2023), day 1",
+       "₹75.00 crore",
+       "India net, all languages, Sacnilk"
+      ],
+      [
+       "Ramayana: Part 1, day 1",
+       "₹64.85 crore",
+       "India net, all languages, Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana sold more tickets in advance than Jawan, as reported, but Jawan's first day is still higher. Advance booking is a promise. Day one is the walk-in crowd."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "KING opens in 48 days, on 24 December, Christmas Eve. The two numbers to watch are now set: the Hindi opening-day record and the ₹75 crore that Jawan put up in 2023. Ramayana's run over the Diwali weekend will show how big this season's audience is."
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the report, read 6 Nov",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "The YouTube race · day 2",
+       "?p=2026-11-06-ramayana-to-king-day-2"
+      ]
+     ]
+    },
+    {
+     "p": "Sources: Sacnilk (Ramayana day 1, updated 5 Nov 2026 22:06 IST; Jawan day 1), Bollywood Hungama. Figures are as reported by trade trackers, not by the producers."
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#ShahRukhKhan",
+    "#Jawan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-06-ramayana-to-king-day-2",
+   "n": 2,
+   "date": "2026-11-06",
+   "time": "03:40 IST",
+   "kicker": "Analytics · 6 Nov 2026",
+   "title": "RAMAYANA to KING, day 2: KING 12.3 million ahead",
+   "deck": "KING's three official videos lead Ramayana's seven by 12,277,569 views, up from 9,116,197 on release day. Tu Mil Jaaye passes 59 million.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "143,781,765",
+       "read 6 Nov 03:20 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "131,504,196",
+       "read 6 Nov 03:20 IST"
+      ],
+      [
+       "KING ahead by",
+       "12,277,569",
+       "was 9,116,197 on 5 Nov 12:40 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Every official video of both films on YouTube, read from each video's public counter. Ramayana has seven videos across three channels; KING has three."
+    },
+    {
+     "h": "Tu Mil Jaaye, day 5"
+    },
+    {
+     "stats": [
+      [
+       "Views",
+       "59,170,701",
+       "+4,987,115 since 5 Nov 12:40 IST"
+      ],
+      [
+       "Likes",
+       "639,796",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "KING's first song now has 14.2 million more views than Ramayana's official trailer has gathered since 30 July (44,994,689)."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "KING's two teasers",
+       "84,611,064",
+       "Title Reveal 51,627,096 + Date Announcement 32,983,968"
+      ],
+      [
+       "Avengers: Doomsday trailer",
+       "84,039,135",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "The two KING teasers stay ahead of the Doomsday trailer, by 571,929 views."
+    },
+    {
+     "h": "Reported, not confirmed: the money behind KING"
+    },
+    {
+     "p": "Pinkvilla reports, via india.com on 3 November, that KING has closed about ₹665 crore in pre-release deals: overseas distribution with Phars Film (₹175 crore minimum guarantee), India distribution with Pen Marudhar (₹250 crore), streaming with Netflix (₹150 crore, tied to the theatrical run), satellite (₹25 crore) and music (₹65 crore). Neither @iamsrk nor @RedChilliesEnt has confirmed these figures. [Unverified]"
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Sources: YouTube public counters (read 6 Nov 2026 03:20 IST), india.com citing Pinkvilla (3 Nov 2026)."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#Ramayana",
+    "#TuMilJaaye",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-05-ramayana-opens",
    "n": 1,
    "date": "2026-11-05",
@@ -633,30 +828,30 @@
   }
  ],
  "poll": {
-  "id": "r2k-2026-11-05",
-  "q": "Ramayana at Diwali, KING at Christmas. What is your plan?",
+  "id": "opening-2026-11-06",
+  "q": "Ramayana opened at ₹64.85 crore. Where does KING open on 24 December?",
   "o": [
-   "Watching both",
-   "KING only",
-   "Ramayana first, then KING"
+   "Above Jawan's ₹75 crore",
+   "Between ₹65 and ₹75 crore",
+   "Below, but it runs for months"
   ]
  },
  "beat": [
   {
-   "t": "Ramayana opens today",
-   "d": "₹42.96 crore opening-day advance booking (Sacnilk), second only to Dhurandhar 2.",
+   "t": "Ramayana day 1: ₹64.85 crore",
+   "d": "India net, all languages (Sacnilk); Hindi ₹47.50 crore.",
    "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
-   "url": "?p=2026-11-05-ramayana-opens"
+   "url": "?p=2026-11-06-ramayana-day-one"
   },
   {
-   "t": "KING pulls 9.1M ahead",
-   "d": "3 official KING videos 138,676,967 vs Ramayana's 7 at 129,560,770, read 5 Nov 12:40 IST.",
+   "t": "KING 12.3M ahead",
+   "d": "KING's 3 official videos 143,781,765 vs Ramayana's 7 at 131,504,196, read 6 Nov 03:20 IST.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-05-ramayana-to-king"
+   "url": "?p=2026-11-06-ramayana-to-king-day-2"
   },
   {
-   "t": "Tu Mil Jaaye: 54.2M",
-   "d": "54,183,586 views and 614,443 likes on day four.",
+   "t": "Tu Mil Jaaye: 59.2M",
+   "d": "59,170,701 views and 639,796 likes on day five.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
    "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
   },
@@ -665,12 +860,6 @@
    "d": "INQUILAAB KING KE SAATH is open source: make your version, earn 50 STARKS.",
    "img": "/assets/inquilab/fist-king.webp",
    "url": "?p=2026-11-05-inquilaab"
-  },
-  {
-   "t": "KING University opens",
-   "d": "Shah Rukh Khan studied like an emperor: 9 courses, Pre-K to PhD, and THE MAN IN MANNAT.",
-   "img": "/assets/characters/027.webp",
-   "url": "/king-studies/"
   }
  ],
  "fanverse": {
