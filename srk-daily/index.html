@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agarmainkinghota.com/srk-daily/">
 <meta property="og:site_name" content="Agar Main King Hota">
-<meta property="og:image" content="https://agarmainkinghota.com/assets/srk-daily-today.jpg?d=2026-11-05">
+<meta property="og:image" content="https://agarmainkinghota.com/assets/srk-daily-today.jpg?d=2026-11-06">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="SRK Daily, today's front page">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://agarmainkinghota.com/assets/srk-daily-today.jpg?d=2026-11-05">
+<meta name="twitter:image" content="https://agarmainkinghota.com/assets/srk-daily-today.jpg?d=2026-11-06">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
@@ -270,7 +270,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   function kbLoad(){
     if(kbDone)return;kbDone=true;var box=$('#kb');box.innerHTML='<div class="kin"><p>Loading the KING Buzz ledger…</p></div>';
     fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
-      var R=L.records||[],today=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4).toISOString().slice(0,10);
+      var R=L.records||[],today=new Date(Date.now()+330*6e4).toISOString().slice(0,10);
       var before=R.filter(function(r){return r.date<today;}),rec=before.length?before[before.length-1]:R[R.length-1];
       var prev=R.filter(function(r){return r.date<rec.date;});
       function val(r,id){var m=(r.metrics||[]).filter(function(x){return x.series_id===id;})[0];return m&&m.value!=null?m.value:null;}
@@ -290,7 +290,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   $('#kbBtn').addEventListener('click',function(){var box=$('#kb'),o=box.hidden;box.hidden=!o;this.setAttribute('aria-expanded',o?'true':'false');this.textContent='KING BUZZ of the day '+(o?'▴':'▾');if(o){kbLoad();box.scrollIntoView({behavior:'smooth',block:'nearest'});}});
 
   // one thing from the site each IST day, and one KING University lesson each day (owner, 4 Nov 2026)
-  function dayN(){var t=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4).toISOString().slice(0,10);return Math.max(0,Math.round((Date.parse(t)-Date.parse('2026-11-04'))/864e5));}
+  function dayN(){var t=new Date(Date.now()+330*6e4).toISOString().slice(0,10);return Math.max(0,Math.round((Date.parse(t)-Date.parse('2026-11-04'))/864e5));}
   function daily(D){
     var n=dayN(),H=D.highlights||[];
     if(H.length){var h=H[n%H.length];$('#hlBox').innerHTML='<section class="bx r"><h2>From the site today</h2><a class="hl" href="'+esc(h.url)+'"><img src="'+esc(h.img)+'" alt="" loading="lazy"><div><h3>'+esc(h.t)+'</h3><p>'+esc(h.d)+'</p><span>'+esc(h.cta||'Open')+' →</span></div></a></section>';}
