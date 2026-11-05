@@ -1,0 +1,108 @@
+{
+ "date": "2026-11-05",
+ "record_id": "KING-2026-11-05",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 51527630,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-05 12:40 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 32965751,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-05 12:40 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 83931977,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-05 12:40 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 54183586,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-05 12:40 IST in an attended session",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-05: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-05: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 40,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-05",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 3971254,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-05 (14 view counts read from YouTube on 5 Nov; 5 removed videos excluded)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": null,
+   "unit": "followers",
+   "source": "Not read 2026-11-05 (Instagram not opened in this session)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 4 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Ramayana: Part 1 opened 5 Nov; reported final opening-day advance booking ₹42.96 crore gross excl. blocked seats (Sacnilk, 10:08 IST), second behind Dhurandhar 2, ahead of Jawan",
+  "RAMAYANA to KING at 12:40 IST: KING's 3 official videos 138,676,967 vs Ramayana's 7 at 129,560,770 (KING +9,116,197; was +324,348 on 3 Nov)",
+  "Tu Mil Jaaye 54,183,586 views, 614,443 likes; +6,192,123 since 4 Nov 11:29 IST",
+  "KING's two teasers 84,493,381 vs the Doomsday trailer 83,931,977",
+  "New official posts: @RedChilliesEnt 'One KING, too many looks' (5 Nov 12:00 IST) and KING x Bonus playing cards (4 Nov 22:01 IST); no Ramayana wishes from @iamsrk or @RedChilliesEnt on X by 12:50 IST"
+ ],
+ "notes": [
+  "YouTube counts read from the public watch pages at 12:40 IST in an attended session.",
+  "Box office: advance booking figures are as reported by Sacnilk/Koimoi; day-one collection not final, N/A."
+ ]
+}

@@ -205,6 +205,10 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 ## Menu order (owner, 28 Oct 2026)
 - Header, burger menu and footer follow: Make Your Poster, Chess81, Inquilaab King Ke Saath, Rescue Your Face, KING Buzz, Merch, Fan Universe, Asoka to Boo-Da, Gallery, On The Record, DOOM to KING (LINKS in assets/header.js). Footer groups: Play (Poster, Chess81, Inquilaab, Rescue Your Face, Billboard), Follow & shop (KING Buzz, Merch, Fan Universe, Fan videos), Read & watch (book, Gallery, On The Record, DOOM to KING), About.
 
+## SRK DAILY Issue 2 (5 Nov 2026, Ramayana release day)
+- Three stories in data/srk-daily.json: 'Ramayana opens, and the season begins' (final opening-day advance booking ₹42.96 cr gross excl. blocked seats, as reported by Sacnilk 10:08 IST; day 1 collection N/A until final; first reviews with outlet ratings), 'RAMAYANA to KING: the release-day report' (YouTube read 12:40 IST: KING 3 videos 138,676,967 vs Ramayana 7 at 129,560,770), and the anthem 'INQUILAAB KING KE SAATH: the fans' first song'. No Ramayana wishes from @iamsrk or @RedChilliesEnt on X by 12:50 IST, so none are claimed. New poll r2k-2026-11-05; The Beat refreshed.
+- /ramayana-to-king/#report re-read at 12:40 IST on release day; data/daily-input/2026-11-05.json filed. GA snapshot (D1 site_config ga_snapshot) refreshed for 29 Oct – 4 Nov.
+
 ## Fan Universe view counts (5 Nov 2026, after Grok's review: 'Some live counters still fail to load')
 - The N/A counts on /fan-made-ai-universe/ were videos never read, not a loading bug. Read from YouTube 5 Nov 2026: 14 counts filled (views_asof 2026-11-05 in data/ai-creator-log.json); 5 videos are gone (4 unavailable, 1 private) = 'removed' field, shown as 'No longer on YouTube' (static cards + the list script). Other counters on 12 main pages checked: all load; the remaining N/A there are honest (not measured yet).
 

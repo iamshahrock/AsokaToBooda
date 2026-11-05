@@ -2,6 +2,313 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-05-ramayana-opens",
+   "n": 1,
+   "date": "2026-11-05",
+   "time": "12:50 IST",
+   "kicker": "SRK DAILY · Issue 2",
+   "title": "Ramayana opens, and the season begins",
+   "deck": "Ramayana: Part 1 is in cinemas today with the second-biggest opening-day advance booking ever reported for a Bollywood film. KING follows on 24 December.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Diwali week, Thursday 5 November 2026. Nitesh Tiwari's Ramayana: Part 1, produced by Namit Malhotra, with Ranbir Kapoor as Ram, Yash as Ravana and Sai Pallavi as Sita, opened in cinemas this morning."
+    },
+    {
+     "h": "The advance booking"
+    },
+    {
+     "stats": [
+      [
+       "Opening-day advance booking",
+       "₹42.96 crore",
+       "gross, India, excluding blocked seats"
+      ],
+      [
+       "Including blocked seats",
+       "₹50.08 crore",
+       ""
+      ],
+      [
+       "Tickets sold before the first show",
+       "12.14 lakh",
+       "excluding blocked seats"
+      ],
+      [
+       "Shows",
+       "26,615",
+       "in 1,042 cities"
+      ]
+     ]
+    },
+    {
+     "p": "As reported by Sacnilk at 10:08 IST, that is the second-highest opening-day advance booking for a Bollywood film, behind Dhurandhar 2 (₹52.35 crore) and ahead of Jawan (₹40.75 crore). Koimoi reports it as the highest ever for a film that is not a sequel. These are reported pre-sales, not box office."
+    },
+    {
+     "h": "Day one"
+    },
+    {
+     "stats": [
+      [
+       "Day 1 collection",
+       "N/A",
+       "still being counted; the final figure is due tomorrow"
+      ]
+     ]
+    },
+    {
+     "p": "Live trackers were showing different day-one numbers through the morning, so we print N/A until a final figure is reported."
+    },
+    {
+     "h": "First reviews"
+    },
+    {
+     "list": [
+      "Bollywood Hungama: 5 out of 5",
+      "Hindustan Times: 4 stars (as reported by Marksmen Daily)",
+      "Cine-Tales: 4 out of 5",
+      "Flickonclick: 3.5 out of 5"
+     ]
+    },
+    {
+     "p": "The common thread: the scale, the visual effects and Yash's Ravana are praised; the slow first half and the music divide the critics. Part 1 builds the world. The battle is saved for Part 2."
+    },
+    {
+     "h": "Why this matters to KING"
+    },
+    {
+     "p": "Ramayana's pre-sales passed Jawan's, as reported. The bar for a big Hindi opening has just been raised, 49 days before KING opens on 24 December. This season is a relay, not a clash: Ramayana at Diwali, KING at Christmas."
+    },
+    {
+     "p": "Watching both? Take the pledge on RAMAYANA to KING and play the six-round friendly fixture."
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the release-day report",
+       "?p=2026-11-05-ramayana-to-king"
+      ],
+      [
+       "I'm watching both · the pledge",
+       "/ramayana-to-king/"
+      ]
+     ]
+    },
+    {
+     "p": "Sources: Sacnilk (final advance booking, 5 Nov 2026, 10:08 IST), Koimoi, Bollywood Hungama, Cine-Tales, Flickonclick, Marksmen Daily."
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#ShahRukhKhan",
+    "#RamayanaToKing",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-05-ramayana-to-king",
+   "n": 2,
+   "date": "2026-11-05",
+   "time": "12:40 IST",
+   "kicker": "Analytics · 5 Nov 2026",
+   "title": "RAMAYANA to KING: the release-day report",
+   "deck": "Every official YouTube video of both films, read at 12:40 IST on Ramayana's opening day. Two days ago they were level.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "stats": [
+      [
+       "RAMAYANA · 7 official videos",
+       "129,560,770",
+       "+2,356,467 since 3 Nov, 21:15 IST"
+      ],
+      [
+       "KING · 3 official videos",
+       "138,676,967",
+       "+11,148,316 since 3 Nov, 21:15 IST"
+      ],
+      [
+       "KING's lead",
+       "9,116,197",
+       "it was 324,348 on 3 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "On 3 November the two films were level, with KING 324,348 views ahead. Since then KING's first song has pulled away: Tu Mil Jaaye alone added 10,732,163 views, more than four times what Ramayana's seven videos added together (2,356,467)."
+    },
+    {
+     "h": "Video by video"
+    },
+    {
+     "stats": [
+      [
+       "KING · Tu Mil Jaaye (T-Series)",
+       "54,183,586",
+       "posted 2 Nov 2026"
+      ],
+      [
+       "KING · Title Reveal",
+       "51,527,630",
+       "posted 2 Nov 2025"
+      ],
+      [
+       "RAMAYANA · Official Trailer",
+       "43,874,573",
+       "posted 30 Jul 2026"
+      ],
+      [
+       "KING · Date Announcement",
+       "32,965,751",
+       "posted 24 Jan 2026"
+      ],
+      [
+       "RAMAYANA · Rama",
+       "24,025,394",
+       "posted 2 Apr 2026"
+      ],
+      [
+       "RAMAYANA · Rise of a Legend, New Trailer",
+       "20,728,568",
+       "posted 15 Oct 2026"
+      ],
+      [
+       "RAMAYANA · Rise of a Legend, Hindi (T-Series)",
+       "12,853,019",
+       "posted 16 Oct 2026"
+      ],
+      [
+       "RAMAYANA · The Introduction",
+       "12,182,563",
+       "posted 3 Jul 2025"
+      ],
+      [
+       "RAMAYANA · Official Trailer (English)",
+       "11,557,308",
+       "posted 5 Aug 2026"
+      ],
+      [
+       "RAMAYANA · Sai Pallavi as Sita, Promo",
+       "4,339,345",
+       "posted 2 Nov 2026"
+      ]
+     ]
+    },
+    {
+     "h": "Tu Mil Jaaye, day four"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "54,183,586",
+       "read 5 Nov, 12:40 IST"
+      ],
+      [
+       "Likes",
+       "614,443",
+       ""
+      ],
+      [
+       "Since 4 Nov, 11:29 IST",
+       "+6,192,123",
+       "about 246,000 an hour"
+      ]
+     ]
+    },
+    {
+     "p": "Day three ran at about 319,000 views an hour. Day four is about 246,000: still climbing, at a steadier pace."
+    },
+    {
+     "h": "KING vs Doomsday"
+    },
+    {
+     "p": "KING's two official teasers have 84,493,381 YouTube views together; the Avengers: Doomsday trailer has 83,931,977. KING's lead is 561,404, up from 515,054 yesterday. Not like-for-like: two videos against one, and KING has not released a trailer yet."
+    },
+    {
+     "p": "Not like-for-like either: seven videos against three, and a film on its release day against one 49 days away. The race that counts starts at the box office."
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/"
+      ],
+      [
+       "KING Buzz · the daily report",
+       "/king-intelligence/daily.html?date=2026-11-05"
+      ]
+     ]
+    },
+    {
+     "p": "Read at 12:40 IST from each video's public YouTube page. 3 Nov figures: our report of 3 Nov, 21:15 IST."
+    }
+   ],
+   "tags": [
+    "#RamayanaToKing",
+    "#KING",
+    "#Ramayana",
+    "#TuMilJaaye",
+    "#KingBuzz"
+   ]
+  },
+  {
+   "id": "2026-11-05-inquilaab",
+   "n": 3,
+   "date": "2026-11-05",
+   "time": "12:55 IST",
+   "kicker": "FANVERSE · the fans' anthem",
+   "title": "INQUILAAB KING KE SAATH: the fans' first song",
+   "deck": "An open-source fan anthem against celebrity persona theft by Big Tech. Two versions, free for every fan to sing, remake and share.",
+   "img": "/assets/inquilab/fist-king.webp",
+   "blocks": [
+    {
+     "p": "INQUILAAB KING KE SAATH is the anthem of Agar Main King Hota: the fans' song of revolution against celebrity persona theft by Big Tech. The King's face, the fans' voice, every artist's right. #FreeMyFace #FreeMyVoice #FreeMyName"
+    },
+    {
+     "quote": {
+      "q": "इंक़लाब! किंग के साथ! ये आवाज़ किसकी है? किंग के फ़ैन्स की! ये लड़ाई किसकी है? हम सबकी! हम सबकी!",
+      "by": "INQUILAAB KING KE SAATH · Version 1"
+     }
+    },
+    {
+     "h": "Two versions"
+    },
+    {
+     "list": [
+      "Version 1 · Hindi · two songs · composed by Pragnesh S. Singh (Swaar Studio)",
+      "Version 2 · Hinglish · composed by Shailja Gupta, re-arranged by Pragnesh S. Singh"
+     ]
+    },
+    {
+     "h": "Open source"
+    },
+    {
+     "p": "The anthem belongs to the fans. Use it freely: make your own audio or video version, add your voice, your art, your language, and submit the link on the anthem page. Approved fan versions are shown there, and every submission earns 50 STARKS."
+    },
+    {
+     "links": [
+      [
+       "Listen · INQUILAAB KING KE SAATH",
+       "/inquilab/"
+      ],
+      [
+       "The Revolution Starts Now",
+       "/inquilab/revolution/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#InquilaabKingKeSaath",
+    "#FreeMyFace",
+    "#FreeMyVoice",
+    "#FreeMyName",
+    "#KING"
+   ]
+  },
+  {
    "id": "2026-11-04-agar-main-king-hota",
    "n": 1,
    "date": "2026-11-04",
@@ -326,44 +633,44 @@
   }
  ],
  "poll": {
-  "id": "tmj-2026-11",
-  "q": "What did you love most in Tu Mil Jaaye?",
+  "id": "r2k-2026-11-05",
+  "q": "Ramayana at Diwali, KING at Christmas. What is your plan?",
   "o": [
-   "Shah Rukh and Deepika on screen",
-   "Arijit Singh and Madhubanti Bagchi's voices",
-   "Ed Sheeran in a Hindi film song"
+   "Watching both",
+   "KING only",
+   "Ramayana first, then KING"
   ]
  },
  "beat": [
   {
-   "t": "Tu Mil Jaaye: 24-hour record",
-   "d": "Reported: the most-watched Indian film song on YouTube in its first 24 hours, 36.3M views. Now 47,991,463.",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
-   "url": "?p=2026-11-04-agar-main-king-hota"
+   "t": "Ramayana opens today",
+   "d": "₹42.96 crore opening-day advance booking (Sacnilk), second only to Dhurandhar 2.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "url": "?p=2026-11-05-ramayana-opens"
   },
   {
-   "t": "KING ahead of Doomsday",
-   "d": "Two official teasers 84,280,229 vs the Doomsday trailer 83,765,175, read 4 Nov 11:29 IST.",
+   "t": "KING pulls 9.1M ahead",
+   "d": "3 official KING videos 138,676,967 vs Ramayana's 7 at 129,560,770, read 5 Nov 12:40 IST.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-04-analytics"
+   "url": "?p=2026-11-05-ramayana-to-king"
   },
   {
-   "t": "Ramayana opens tomorrow",
-   "d": "Ramayana: Part 1 on 5 November, KING on 24 December. Not a clash, a relay. Cast your votes.",
-   "img": "/assets/dk/figures.webp",
-   "url": "/ramayana-to-king/"
+   "t": "Tu Mil Jaaye: 54.2M",
+   "d": "54,183,586 views and 614,443 likes on day four.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
+   "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+  },
+  {
+   "t": "Sing the anthem",
+   "d": "INQUILAAB KING KE SAATH is open source: make your version, earn 50 STARKS.",
+   "img": "/assets/inquilab/fist-king.webp",
+   "url": "?p=2026-11-05-inquilaab"
   },
   {
    "t": "KING University opens",
    "d": "Shah Rukh Khan studied like an emperor: 9 courses, Pre-K to PhD, and THE MAN IN MANNAT.",
    "img": "/assets/characters/027.webp",
    "url": "/king-studies/"
-  },
-  {
-   "t": "Strike the pose",
-   "d": "BAAHEIN KHOL: match his open-arms pose with your camera and collect the card.",
-   "img": "/assets/home/01-agar-main-king-hota.webp",
-   "url": "/baahein-khol/"
   }
  ],
  "fanverse": {
