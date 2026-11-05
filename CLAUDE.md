@@ -205,6 +205,12 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 ## Menu order (owner, 28 Oct 2026)
 - Header, burger menu and footer follow: Make Your Poster, Chess81, Inquilaab King Ke Saath, Rescue Your Face, KING Buzz, Merch, Fan Universe, Asoka to Boo-Da, Gallery, On The Record, DOOM to KING (LINKS in assets/header.js). Footer groups: Play (Poster, Chess81, Inquilaab, Rescue Your Face, Billboard), Follow & shop (KING Buzz, Merch, Fan Universe, Fan videos), Read & watch (book, Gallery, On The Record, DOOM to KING), About.
 
+## SRK DAILY Issue 3 (6 Nov 2026, overnight while the owner slept)
+- Stories: 'Ramayana's first day: ₹64.85 crore' (Sacnilk India net, updated 5 Nov 22:06 IST; Hindi ₹47.50 cr; BH ₹62.50 cr; Jawan day 1 ₹75.00 cr for context) and 'RAMAYANA to KING, day 2' (YouTube read 6 Nov 03:20 IST: KING 3 videos 143,781,765 vs Ramayana 7 at 131,504,196; Tu Mil Jaaye 59,170,701; Pinkvilla's ₹665 cr pre-release deals labelled [Unverified]). Poll opening-2026-11-06. /ramayana-to-king/#report re-read at 03:20 IST with a day 1 card. data/daily-input/2026-11-06.json filed. GA snapshot (D1 ga_snapshot) refreshed for 30 Oct – 5 Nov.
+- Bug fixed: SRK DAILY (KING BUZZ of the day, Today at KING University) and KINGNAMA computed 'today' as yesterday between 00:00 and 05:30 IST (IST shift cancelled by getTimezoneOffset before toISOString). Use new Date(Date.now()+330*6e4).toISOString() for the IST date string; the (330+offset) form is only right with local-time getters.
+- gh is not on this Mac's PATH in Claude sessions: use "/Users/shailjasrk/Library/Application Support/ai.videodraft/bin/gh".
+- LinkedIn draft + front-page PDF in KING_MOVIE/00000_NOV_2_2026/ (not posted; needs the owner's OK).
+
 ## SRK DAILY Issue 2 (5 Nov 2026, Ramayana release day)
 - Three stories in data/srk-daily.json: 'Ramayana opens, and the season begins' (final opening-day advance booking ₹42.96 cr gross excl. blocked seats, as reported by Sacnilk 10:08 IST; day 1 collection N/A until final; first reviews with outlet ratings), 'RAMAYANA to KING: the release-day report' (YouTube read 12:40 IST: KING 3 videos 138,676,967 vs Ramayana 7 at 129,560,770), and the anthem 'INQUILAAB KING KE SAATH: the fans' first song'. No Ramayana wishes from @iamsrk or @RedChilliesEnt on X by 12:50 IST, so none are claimed. New poll r2k-2026-11-05; The Beat refreshed.
 - /ramayana-to-king/#report re-read at 12:40 IST on release day; data/daily-input/2026-11-05.json filed. GA snapshot (D1 site_config ga_snapshot) refreshed for 29 Oct – 4 Nov.
