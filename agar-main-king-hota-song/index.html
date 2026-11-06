@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agar Main King Hota · the song — Agar Main King Hota</title>
-<meta name="description" content="Agar Main King Hota: a fan song. Lyrics by Shailja Gupta. Song coming soon.">
+<meta name="description" content="Agar Main King Hota: the song. Created by Shailja Gupta, using Claude, ChatGPT and Suno. Listen now.">
 <meta name="theme-color" content="#0a0707">
 <link rel="canonical" href="https://agarmainkinghota.com/agar-main-king-hota-song/">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -20,6 +20,7 @@
 .box h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,44px);line-height:1.1;margin:0 0 16px;color:#f5f1ed}
 .credits{list-style:none;padding:0 0 18px;margin:0 0 22px;border-bottom:1px solid #c9a24a;color:#e6dcd4;font-size:16px;line-height:1.9}
 .credits strong{color:#c9a24a}
+.song{margin:-6px 0 24px}.song audio{width:100%;max-width:640px;display:block}
 .credits .soon{color:#fff;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
 .lyrics{font-family:'Archivo',sans-serif;font-size:17px;line-height:1.85;color:#e6dcd4}
 .lyrics p{margin:0 0 1.6em}
@@ -51,9 +52,11 @@
 <section class="box">
   <h1>Agar Main King Hota</h1>
   <ul class="credits">
-    <li><strong>Song :</strong> <span class="soon">Coming Soon</span></li>
-    <li><strong>Lyrics :</strong> Shailja Gupta</li>
+    <li><strong>Created by :</strong> Shailja Gupta</li>
+    <li><strong>Using :</strong> Claude, ChatGPT, Suno</li>
+    <li><strong>Released :</strong> 6 November 2026 · 6:47</li>
   </ul>
+  <div class="song"><audio id="amkhSong" controls preload="metadata" controlsList="nodownload" src="/assets/songs/agar-main-king-hota.mp3"></audio></div>
     <div class="pair">
 <div class="hk"><span>Agar Main King Hota</span><span lang="hi">अगर मैं किंग होता</span></div>
 <div class="gap"></div>
@@ -241,6 +244,16 @@ Agar main King Na Hota</p>
   </div>
 </section>
 </main>
+<script>
+(function(){ // the song in Google Analytics: song_play / song_progress (25-50-75%) / song_complete
+  var a=document.getElementById('amkhSong'); if(!a) return; var started=false, sent={};
+  var ga=function(n,p){ if(window.gtag) window.gtag('event',n,p); };
+  var p=function(x){ x=x||{}; x.song='Agar Main King Hota'; x.song_file='agar-main-king-hota.mp3'; return x; };
+  a.addEventListener('play',function(){ ga('song_play',p({resumed:started})); started=true; });
+  a.addEventListener('timeupdate',function(){ if(!a.duration) return; var q=Math.floor(a.currentTime/a.duration*4)*25; if(q>=25&&q<100&&!sent[q]){ sent[q]=1; ga('song_progress',p({percent:q})); } });
+  a.addEventListener('ended',function(){ ga('song_complete',p()); });
+})();
+</script>
 <script src="../assets/starks.js"></script>
 <script src="../assets/footer.js" defer></script>
 </body>
