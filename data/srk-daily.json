@@ -2,8 +2,90 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
-   "id": "2026-11-06-ramayana-day-one",
+   "id": "2026-11-06-agar-main-king-hota-song",
    "n": 1,
+   "date": "2026-11-06",
+   "time": "11:15 IST",
+   "kicker": "SRK DAILY · Issue 3",
+   "title": "Agar Main King Hota: the song is out",
+   "deck": "The site's own song, created by Shailja Gupta, is out today: six minutes and 47 seconds of a fan's India, from Bombay to Ladakh, that ends in one line, 'Agar main tu hota'.",
+   "img": "/assets/home/01-agar-main-king-hota.webp",
+   "blocks": [
+    {
+     "p": "Agar Main King Hota, the song this site is named after, was released on Friday 6 November. It was created by Shailja Gupta, using Claude, ChatGPT and Suno, and it plays in full on the site from today."
+    },
+    {
+     "stats": [
+      [
+       "Length",
+       "6:47",
+       ""
+      ],
+      [
+       "Created by",
+       "Shailja Gupta",
+       ""
+      ],
+      [
+       "Using",
+       "Claude, ChatGPT, Suno",
+       ""
+      ],
+      [
+       "Released",
+       "6 Nov 2026",
+       "agarmainkinghota.com"
+      ]
+     ]
+    },
+    {
+     "h": "A map of India, line by line"
+    },
+    {
+     "p": "The song opens on a single question and then walks the country, one city to a line: Bombay is home, Madras the Taj Mahal, Calcutta the adda, Dilli the sky, Kashmir destiny, Darjeeling the fog. A second verse goes on to Lucknow, Banaras, Amritsar, Punjab, Hyderabad, Kerala, Goa, Kanyakumari and Ladakh. Every line ends the same way, 'hota': what would be, if."
+    },
+    {
+     "quote": {
+      "q": "Chehra mera, sirf mera hi hota, / Awaaz meri, par naam sirf tera hota",
+      "by": "Agar Main King Hota"
+     }
+    },
+    {
+     "h": "The turn"
+    },
+    {
+     "p": "Halfway through, the song stops being a king's wish list. The face and the voice become the subject, the same fight the fans' anthem INQUILAAB KING KE SAATH took up on 28 October: a star's face, voice and name belong to him. Then comes the confession of a fan, and a last verse that drops the crown altogether."
+    },
+    {
+     "p": "It ends quietly, on 'Agar main tu hota': if I were you."
+    },
+    {
+     "links": [
+      [
+       "Listen to Agar Main King Hota · lyrics in Hindi and Roman",
+       "/agar-main-king-hota-song/"
+      ],
+      [
+       "The poem it began as",
+       "/vision/#poem"
+      ],
+      [
+       "INQUILAAB KING KE SAATH · the fans' anthem",
+       "/inquilab/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#AgarMainKingHota",
+    "#KING",
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-06-ramayana-day-one",
+   "n": 2,
    "date": "2026-11-06",
    "time": "03:25 IST",
    "kicker": "SRK DAILY · Issue 3",
@@ -96,7 +178,7 @@
   },
   {
    "id": "2026-11-06-ramayana-to-king-day-2",
-   "n": 2,
+   "n": 3,
    "date": "2026-11-06",
    "time": "03:25 IST",
    "kicker": "Analytics · 6 Nov 2026",
@@ -198,7 +280,7 @@
   },
   {
    "id": "2026-11-06-tu-mil-jaaye-reels",
-   "n": 3,
+   "n": 4,
    "date": "2026-11-06",
    "time": "09:25 IST",
    "kicker": "SRK DAILY · Issue 3",
