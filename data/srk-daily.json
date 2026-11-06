@@ -2,6 +2,286 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-07-amkh-final-sheet-music",
+   "n": 1,
+   "date": "2026-11-07",
+   "time": "03:30 IST",
+   "kicker": "SRK DAILY · Issue 4",
+   "title": "Agar Main King Hota: the final mix, and sheet music for every fan",
+   "deck": "The final version of the site's song is out, 6 minutes and 49 seconds, with a new poster of the King and his saxophone, and free sheet music for every instrument.",
+   "img": "/assets/songs/agar-main-king-hota-poster.webp",
+   "blocks": [
+    {
+     "p": "A day after its release, Agar Main King Hota has its final mix. The song, created by Shailja Gupta using Claude, ChatGPT and Suno, now plays on the site in its finished form, with a new poster, the lyrics as they are sung, and sheet music that anyone can download for free."
+    },
+    {
+     "stats": [
+      [
+       "Length",
+       "6:49",
+       "final mix, 7 Nov 2026"
+      ],
+      [
+       "Sheet music",
+       "6 parts + full score",
+       "PDF, MusicXML, MIDI"
+      ],
+      [
+       "Lyrics",
+       "62 lines",
+       "Hindi and Roman, as sung"
+      ],
+      [
+       "Price",
+       "Free",
+       "agarmainkinghota.com"
+      ]
+     ]
+    },
+    {
+     "h": "The King and his saxophone"
+    },
+    {
+     "p": "The new poster puts the King on a bridge at night, in the rain, a saxophone at his lips and a red crown above his head. Its line reads 'Based on SRK's Real Tech Career': the song is a documentary of that career, from Aryan Infomatics and SRKWorld to Little G.ONE."
+    },
+    {
+     "p": "The saxophone is the King's instrument in the song too. It carries the long break at 2:57 and returns before the bridge, answering the voice where the violin used to."
+    },
+    {
+     "h": "Play it yourself"
+    },
+    {
+     "p": "Every instrument has its own sheet: vocals, alto sax in E♭, violin, guitar, bass and drums, plus a full score for a conductor. Each comes as a PDF to print, a MusicXML file to open in MuseScore, Sibelius or Finale, and a MIDI file to hear the part. A band, a school or a fan with a guitar can play the whole song from them, at no cost."
+    },
+    {
+     "quote": {
+      "q": "Agar main tu hota…",
+      "by": "Agar Main King Hota, the last line, sung twice"
+     }
+    },
+    {
+     "p": "The lyrics on the song page now follow the recording line by line, with every chorus, instrumental and the bridge marked. The song closes on 'Agar main tu hota', almost whispered and sung twice, a line left for the King himself."
+    },
+    {
+     "links": [
+      [
+       "Listen · lyrics · free sheet music",
+       "/agar-main-king-hota-song/"
+      ],
+      [
+       "Download all the sheet music (ZIP)",
+       "/agar-main-king-hota-song/sheets/agar-main-king-hota-sheet-music.zip"
+      ],
+      [
+       "Yesterday: the song is out",
+       "?p=2026-11-06-agar-main-king-hota-song"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#AgarMainKingHota",
+    "#KING",
+    "#ShahRukhKhan",
+    "#SheetMusic",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-07-ramayana-day-two",
+   "n": 2,
+   "date": "2026-11-07",
+   "time": "03:30 IST",
+   "kicker": "SRK DAILY · Issue 4",
+   "title": "Ramayana crosses ₹100 crore in two days",
+   "deck": "Ramayana: Part 1 collected ₹48.05 crore net in India on its second day, according to Sacnilk, taking its two-day total to ₹112.90 crore and its worldwide gross to ₹221.05 crore.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Ramayana: Part 1 passed ₹100 crore net in India on Friday 6 November, its second day in cinemas, according to Sacnilk's figures updated at 10:17 PM IST."
+    },
+    {
+     "h": "Day two"
+    },
+    {
+     "stats": [
+      [
+       "Day 2, India net",
+       "₹48.05 crore",
+       "Sacnilk, updated 6 Nov 22:17 IST"
+      ],
+      [
+       "Change from day 1",
+       "▼ 25.9%",
+       "day 1: ₹64.85 crore"
+      ],
+      [
+       "Hindi, day 2",
+       "₹35.50 crore",
+       "19,859 shows"
+      ],
+      [
+       "Shows, day 2",
+       "23,316",
+       "28.9% occupancy"
+      ]
+     ]
+    },
+    {
+     "p": "Kannada (₹5.15 crore), Telugu (₹4.75 crore), Tamil (₹1.50 crore) and Malayalam (₹1.15 crore) make up the rest of the day."
+    },
+    {
+     "h": "Two days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹112.90 crore",
+       ""
+      ],
+      [
+       "India gross",
+       "₹134.80 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹86.25 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹221.05 crore",
+       "Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk estimates 43.6 lakh tickets sold across the two days. Hindi accounts for 73.5% of the India net so far."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "KING opens in 47 days, on 24 December. The Diwali weekend begins today, and Ramayana's Saturday and Sunday will show how far this season's audience can carry a big film before the King arrives at Christmas."
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "Ramayana's first day",
+       "?p=2026-11-06-ramayana-day-one"
+      ]
+     ]
+    },
+    {
+     "p": "Source: Sacnilk (Ramayana box office day 2, updated 6 Nov 2026 22:17 IST)."
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#ShahRukhKhan",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-07-ramayana-to-king-day-3",
+   "n": 3,
+   "date": "2026-11-07",
+   "time": "03:30 IST",
+   "kicker": "Analytics · 7 Nov 2026",
+   "title": "RAMAYANA to KING, day 3: KING 13.1 million ahead",
+   "deck": "KING's three official videos lead Ramayana's seven by 13,054,220 views. Tu Mil Jaaye passes 62 million in five days.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "146,925,501",
+       "read 7 Nov 03:03 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "133,871,281",
+       "read 7 Nov 03:03 IST"
+      ],
+      [
+       "KING ahead by",
+       "13,054,220",
+       "was 12,277,569 on 6 Nov 03:20 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Every official video of both films on YouTube, read from each video's public counter. Ramayana has seven videos across three channels; KING has three."
+    },
+    {
+     "h": "Tu Mil Jaaye, day 6"
+    },
+    {
+     "stats": [
+      [
+       "Views",
+       "62,167,938",
+       "+2,997,237 since 6 Nov 03:20 IST"
+      ]
+     ]
+    },
+    {
+     "p": "KING's first song has 15.6 million more views than Ramayana's official trailer (46,587,799), which has been online since 30 July."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "KING's two teasers",
+       "84,757,563",
+       "Title Reveal 51,754,621 + Date Announcement 33,002,942"
+      ],
+      [
+       "Avengers: Doomsday trailer",
+       "84,213,801",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "The two KING teasers stay ahead of the Doomsday trailer, by 543,762 views."
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube public counters, read 7 Nov 2026 03:03 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#Ramayana",
+    "#TuMilJaaye",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-06-agar-main-king-hota-song",
    "n": 1,
    "date": "2026-11-06",
@@ -990,38 +1270,39 @@
   }
  ],
  "poll": {
-  "id": "opening-2026-11-06",
-  "q": "Ramayana opened at ₹64.85 crore. Where does KING open on 24 December?",
+  "id": "song-part-2026-11-07",
+  "q": "Agar Main King Hota is free to play. Which part would you play?",
   "o": [
-   "Above Jawan's ₹75 crore",
-   "Between ₹65 and ₹75 crore",
-   "Below, but it runs for months"
+   "The vocals",
+   "The King's sax",
+   "Violin",
+   "Guitar, bass or drums"
   ]
  },
  "beat": [
   {
-   "t": "Ramayana day 1: ₹64.85 crore",
-   "d": "India net, all languages (Sacnilk); Hindi ₹47.50 crore.",
+   "t": "Free sheet music",
+   "d": "Agar Main King Hota for vocals, alto sax, violin, guitar, bass and drums, plus the full score.",
+   "img": "/assets/songs/agar-main-king-hota-poster.webp",
+   "url": "/agar-main-king-hota-song/#sheet-music"
+  },
+  {
+   "t": "Ramayana: ₹112.90 crore",
+   "d": "Two days, India net (Sacnilk); day 2 ₹48.05 crore.",
    "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
-   "url": "?p=2026-11-06-ramayana-day-one"
+   "url": "?p=2026-11-07-ramayana-day-two"
   },
   {
-   "t": "KING 12.3M ahead",
-   "d": "KING's 3 official videos 143,781,765 vs Ramayana's 7 at 131,504,196, read 6 Nov 03:20 IST.",
+   "t": "KING 13.1M ahead",
+   "d": "KING's 3 official videos 146,925,501 vs Ramayana's 7 at 133,871,281, read 7 Nov 03:03 IST.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-06-ramayana-to-king-day-2"
+   "url": "?p=2026-11-07-ramayana-to-king-day-3"
   },
   {
-   "t": "Tu Mil Jaaye: 59.2M",
-   "d": "59,170,701 views and 639,796 likes on day five.",
+   "t": "Tu Mil Jaaye: 62.2M",
+   "d": "62,167,938 views on day six.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
    "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
-  },
-  {
-   "t": "Sing the anthem",
-   "d": "INQUILAAB KING KE SAATH is open source: make your version, earn 50 STARKS.",
-   "img": "/assets/inquilab/fist-king.webp",
-   "url": "?p=2026-11-05-inquilaab"
   }
  ],
  "fanverse": {
