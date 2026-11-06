@@ -2177,6 +2177,115 @@
         "Box office figures are as reported by Sacnilk and Bollywood Hungama; Ramayana's overseas day 1 not available on Sacnilk.",
         "Official posts by @iamsrk and @RedChilliesEnt since 5 Nov 12:50 IST were not read overnight."
       ]
+    },
+    {
+      "date": "2026-11-07",
+      "record_id": "KING-2026-11-07",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": 51754621,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-07 03:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": 33002942,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-07 03:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": 84213801,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-07 03:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_tu_mil_jaaye_views",
+          "value": 62167938,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-07 03:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": null,
+          "unit": "indexed posts",
+          "source": "Not read 2026-11-07: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": null,
+          "unit": "indexed #srkking posts",
+          "source": "Not read 2026-11-07: the Display Purposes page draws its count with script and returned no number to a plain read; counts frozen since 06/18 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 40,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json as of 2026-11-07 (not re-scanned overnight)",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 3971254,
+          "unit": "views",
+          "source": "data/ai-creator-log.json as of 2026-11-07 (not re-scanned overnight)",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": null,
+          "unit": "followers",
+          "source": "Not read 2026-11-07 (Instagram not opened in this session)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 4 Nov total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "Agar Main King Hota, final mix (6:49) live on the song page with free sheet music for vocals, alto sax, violin, guitar, bass, drums and full score",
+        "Ramayana: Part 1 day 2 (6 Nov): ₹48.05 crore India net (▼25.9%), two days ₹112.90 crore net, ₹221.05 crore worldwide gross (Sacnilk, updated 6 Nov 22:17 IST)",
+        "RAMAYANA to KING at 03:03 IST: KING's 3 official videos 146,925,501 vs Ramayana's 7 at 133,871,281 (KING +13,054,220; was +12,277,569 at 6 Nov 03:20 IST)",
+        "Tu Mil Jaaye 62,167,938 views; +2,997,237 since 6 Nov 03:20 IST",
+        "KING's two teasers 84,757,563 vs the Doomsday trailer 84,213,801"
+      ],
+      "notes": [
+        "YouTube counts read from the public watch pages at 03:03 IST by Claude in the owner's session (overnight run).",
+        "Box office figures as reported by Sacnilk.",
+        "Official posts by @iamsrk and @RedChilliesEnt since 6 Nov were not read overnight."
+      ]
     }
   ],
   "source_rules": {
