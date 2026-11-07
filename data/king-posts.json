@@ -410,6 +410,90 @@
      }
     }
    ]
+  },
+  {
+   "id": "tmj-verse-2026-11-07",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye verse clip ('a whole new chain reaction')",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2118940446831558777",
+   "posted_at": "2026-11-07T11:05:45+05:30",
+   "readings": [
+    {
+     "at": "2026-11-07T14:45:00+05:30",
+     "metrics": {
+      "replies": 21,
+      "reposts": 401,
+      "likes": 1434,
+      "bookmarks": 56,
+      "views": 27423
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-lovelikeaking-2026-11-06",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "#LoveLikeAKING · Tu Mil Jaaye clip",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2118652311748870306",
+   "posted_at": "2026-11-06T16:00:48+05:30",
+   "readings": [
+    {
+     "at": "2026-11-07T14:45:00+05:30",
+     "metrics": {
+      "replies": 12,
+      "reposts": 309,
+      "likes": 1316,
+      "bookmarks": 20,
+      "views": 17910
+     }
+    }
+   ]
+  },
+  {
+   "id": "king-one-picture-2026-11-06",
+   "release": "king-one-picture-2026-11-06",
+   "title": "'They said you can't recognise a film from one picture!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2118613554182181023",
+   "posted_at": "2026-11-06T13:26:47+05:30",
+   "readings": [
+    {
+     "at": "2026-11-07T14:45:00+05:30",
+     "metrics": {
+      "replies": 20,
+      "reposts": 378,
+      "likes": 1737,
+      "bookmarks": 27,
+      "views": 25848
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-singalong-2026-11-06",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye sing-along clip",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2118578933629436196",
+   "posted_at": "2026-11-06T11:09:13+05:30",
+   "readings": [
+    {
+     "at": "2026-11-07T14:45:00+05:30",
+     "metrics": {
+      "replies": 112,
+      "reposts": 1230,
+      "likes": 4960,
+      "bookmarks": 536,
+      "views": 513308
+     }
+    }
+   ]
   }
  ]
 }
