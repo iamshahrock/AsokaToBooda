@@ -74,7 +74,7 @@
 <main class="wrap">
 <section class="box">
   <figure class="poster"><img src="/assets/songs/agar-main-king-hota-poster-v2.webp" width="1915" height="1080" alt="Agar Main King Hota: the King walks across a rain-soaked bridge at night playing his saxophone, crown above him. Based on SRK's Real Tech Career."></figure>
-  <div class="song"><audio id="amkhSong" controls preload="metadata" controlsList="nodownload" src="/assets/songs/agar-main-king-hota-final-v8.mp3"></audio></div>
+  <div class="song"><audio id="amkhSong" controls preload="metadata" controlsList="nodownload" src="/assets/songs/agar-main-king-hota-nov7.mp3"></audio></div>
   <h1>Agar Main King Hota</h1>
   <p class="about">A bittersweet reality of the world's biggest star. Technology, Shah Rukh Khan's first love, he birthed with Aryan Infomatics, named after his first born, and the struggle he has faced for 26 years. The adversaries he has faced from within his paradise; his "fitoor" that he has been chasing since he almost touched the moon of Silicon Valley.</p>
   <p class="about">The song is free to everyone, with the lyrics and the sheet music for every instrument, so any fan, band or school can play it.</p>
@@ -180,7 +180,7 @@
 (function(){ // the song in Google Analytics: song_play / song_progress (25-50-75%) / song_complete
   var a=document.getElementById('amkhSong'); if(!a) return; var started=false, sent={};
   var ga=function(n,p){ if(window.gtag) window.gtag('event',n,p); };
-  var p=function(x){ x=x||{}; x.song='Agar Main King Hota'; x.song_file='agar-main-king-hota-final-v8.mp3'; return x; };
+  var p=function(x){ x=x||{}; x.song='Agar Main King Hota'; x.song_file='agar-main-king-hota-nov7.mp3'; return x; };
   a.addEventListener('play',function(){ ga('song_play',p({resumed:started})); started=true; });
   a.addEventListener('timeupdate',function(){ if(!a.duration) return; var q=Math.floor(a.currentTime/a.duration*4)*25; if(q>=25&&q<100&&!sent[q]){ sent[q]=1; ga('song_progress',p({percent:q})); } });
   a.addEventListener('ended',function(){ ga('song_complete',p()); });
