@@ -487,6 +487,7 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
 </footer>
 </main>
 
+<script src="../assets/king-series.js"></script>
 <script>
 /* Days to release is computed from today's date in Mumbai (IST), so every visitor sees the same number. */
 (function(){
@@ -568,7 +569,7 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
   var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
   var fmt=function(n){return Number(n).toLocaleString('en-US');};
   var day=function(s){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',{day:'2-digit',month:'short'});};
-  var LABEL={king_title_reveal_views:'KING title reveal',king_date_announcement_views:'KING date announcement',king_tu_mil_jaaye_views:'Tu Mil Jaaye (song)',doomsday_official_trailer_views:'Doomsday trailer',fan_ai_works_logged:'Fan-made AI works',fan_ai_works_views:'Views on fan AI works',srk_indexed_posts:'#srk posts (index)',srkking_indexed_posts:'#srkking posts (index)',iamsrk_instagram_followers:'@iamsrk followers',king_public_observable_posts:'KING posts (all platforms)',king_video_views_tracked:'KING video views (tracked)',doomsday_youtube_views:'Doomsday YouTube views'};
+  var LABEL={king_title_reveal_views:'KING title reveal',king_date_announcement_views:'KING date announcement',king_tu_mil_jaaye_views:'Tu Mil Jaaye (song)',doomsday_official_trailer_views:'Doomsday trailer',fan_ai_works_logged:'Fan-made AI works',fan_ai_works_views:'Views on fan AI works',srk_indexed_posts:'#srk posts (index)',srkking_indexed_posts:'#srkking posts (index)',iamsrk_instagram_followers:'@iamsrk followers',king_public_observable_posts:'KING posts (all platforms)',king_video_views_tracked:'KING video views (tracked)',doomsday_youtube_views:'Doomsday YouTube views'};(window.KING_SERIES||[]).forEach(function(k){LABEL[k.id]=k.short;});
   var link=function(s){var m=String(s||'').match(/https?:\/\/[^\s)]+/);var name=String(s||'').split(/[,(]/)[0];if(/^https?:/.test(name.trim())&&m){try{name=new URL(m[0]).hostname.replace(/^www\./,'');}catch(e){}}return m?'<a href="'+esc(m[0])+'" target="_blank" rel="noopener">'+esc(name)+'</a>':esc(name);};
   var linkify=function(t){return esc(t).replace(/\(?(https?:\/\/[^\s)]+)\)?/g,function(_,u){return '(<a href="'+u+'" target="_blank" rel="noopener">source</a>)';});};
   fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
@@ -596,8 +597,8 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
   var esc=function(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
   var fmt=function(n){return Number(n).toLocaleString('en-US');};
   var dd=function(s,y){return new Date(s+'T00:00:00+05:30').toLocaleDateString('en-GB',y?{day:'2-digit',month:'short',year:'numeric'}:{day:'2-digit',month:'short'});};
-  var LABEL={king_title_reveal_views:'KING title reveal · YouTube views',king_date_announcement_views:'KING date announcement · YouTube views',king_tu_mil_jaaye_views:'Tu Mil Jaaye · YouTube views',doomsday_official_trailer_views:'Doomsday trailer · YouTube views',fan_ai_works_logged:'Fan-made AI works',fan_ai_works_views:'Views on fan AI works',srk_indexed_posts:'#srk posts (Display Purposes index)',srkking_indexed_posts:'#srkking posts (Display Purposes index)',iamsrk_instagram_followers:'@iamsrk followers',king_public_observable_posts:'KING posts (all platforms)',king_video_views_tracked:'KING video views (tracked)',king_top_video_views_tracked:'Top KING video (tracked)',doomsday_youtube_views:'Doomsday YouTube views',king_srk_king_pikory_posts:'#srkking posts (Pikory)',srkking_reels_total_views:'#srkking Reels views',srkking_reels_average_views:'#srkking Reels average',srkking_reel_peak_views:'#srkking top Reel',doomsday_first_24h_views:'Doomsday first 24h views'};
-  var ORDER=['king_title_reveal_views','king_date_announcement_views','king_tu_mil_jaaye_views','doomsday_official_trailer_views','fan_ai_works_logged','fan_ai_works_views','srk_indexed_posts','srkking_indexed_posts'];
+  var LABEL={king_title_reveal_views:'KING title reveal · YouTube views',king_date_announcement_views:'KING date announcement · YouTube views',king_tu_mil_jaaye_views:'Tu Mil Jaaye · YouTube views',doomsday_official_trailer_views:'Doomsday trailer · YouTube views',fan_ai_works_logged:'Fan-made AI works',fan_ai_works_views:'Views on fan AI works',srk_indexed_posts:'#srk posts (Display Purposes index)',srkking_indexed_posts:'#srkking posts (Display Purposes index)',iamsrk_instagram_followers:'@iamsrk followers',king_public_observable_posts:'KING posts (all platforms)',king_video_views_tracked:'KING video views (tracked)',king_top_video_views_tracked:'Top KING video (tracked)',doomsday_youtube_views:'Doomsday YouTube views',king_srk_king_pikory_posts:'#srkking posts (Pikory)',srkking_reels_total_views:'#srkking Reels views',srkking_reels_average_views:'#srkking Reels average',srkking_reel_peak_views:'#srkking top Reel',doomsday_first_24h_views:'Doomsday first 24h views'};(window.KING_SERIES||[]).forEach(function(k){LABEL[k.id]=k.short+' · '+k.unit;});
+  var ORDER=(window.KING_SERIES||[]).map(function(k){return k.id;}).concat(['fan_ai_works_logged','fan_ai_works_views','srk_indexed_posts','srkking_indexed_posts']);
   fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
     var R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;});
     var withVal=R.filter(function(r){return (r.metrics||[]).some(function(m){return m.value!=null&&m.status!=='stale';});});
@@ -698,10 +699,11 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
         if(a&&b){var f=(Date.parse(d)-Date.parse(a.d))/(Date.parse(b.d)-Date.parse(a.d));out[d]={d:d,v:Math.round(a.v+(b.v-a.v)*f),k:'estimated'};}
         else if(b&&P.length>1){var r=(P[1].v-P[0].v)/((Date.parse(P[1].d)-Date.parse(P[0].d))/864e5);out[d]={d:d,v:Math.round(b.v-r*(Date.parse(b.d)-Date.parse(d))/864e5),k:'estimated'};}
         else if(a){out[d]={d:d,v:a.v,k:'estimated'};}});return out;};
-    var LINES=[{id:'king_title_reveal_views',name:'Title Reveal',c:'#e2343e'},{id:'king_date_announcement_views',name:'Date Announcement',c:'#f2cf6b'}];
-    LINES.forEach(function(l){var P=real(l.id),F=fill(P);l.real=P;l.S=DAYS.filter(function(d){return F[d];}).map(function(d){return F[d];});l.base=l.S.length?l.S[0].v:0;});
-    // Tu Mil Jaaye (owner, 7 Nov 2026: 'where is Tu Mil Jaaye in daily reports'): released 2 Nov 00:09 IST, so its line starts at 0 that day; real readings only, no back-filling
-    (function(){var P=real('king_tu_mil_jaaye_views');if(!P.length)return;LINES.push({id:'king_tu_mil_jaaye_views',name:'Tu Mil Jaaye (song)',c:'#3ddc97',real:P,base:0,S:[{d:'2026-11-02',v:0,k:'measured'}].concat(P.filter(function(p){return p.d>'2026-11-02';}))});})();
+    var LINES=(window.KING_SERIES||[]).filter(function(k){return k.official;}).map(function(k){return {id:k.id,name:k.short,c:k.c,released:k.released};});
+    LINES.forEach(function(l){var P=real(l.id),F=fill(P);l.real=P;
+      // released after tracking began: start at 0 on its release day, real readings only (no back-filling)
+      if(l.released>DAYS[0]){l.S=P.length?[{d:l.released,v:0,k:'measured'}].concat(P.filter(function(p){return p.d>l.released;})):[];l.base=0;l.late=true;return;}
+      l.S=DAYS.filter(function(d){return F[d];}).map(function(d){return F[d];});l.base=l.S.length?l.S[0].v:0;});
     // the two official posters (owner, 27 Oct 2026: 'put all the 4'): engagement gained since posting, from the hand readings in data/king-posts.json (0 at the moment of posting)
     var PCOL=['#3fa7ff','#b77dff'];
     (N.releases||[]).filter(function(r){return !r.series_id&&r.release&&P.some(function(p){return p.release===r.release;});}).forEach(function(r,i){
@@ -721,7 +723,7 @@ dialog.fv{width:min(960px,94vw);max-height:90vh;padding:18px;background:#0d0909;
     var tot=VID.reduce(function(s,l){return s+(l.S.length?l.S[l.S.length-1].v:0);},0),gain=VID.reduce(function(s,l){return s+(l.S.length?l.S[l.S.length-1].v-l.base:0);},0);
     $('#ms-big').innerHTML=fmt(tot)+' views on the official KING videos<small>+'+fmt(gain)+' since '+dd(DAYS[0]).slice(0,6)+'</small>';
     $('#ms-range').textContent=dd(DAYS[0]).slice(0,6)+' → '+dd(DAYS[DAYS.length-1]).slice(0,6);
-    $('#ms-note').textContent=VID.map(function(l){var m=l.real.filter(function(p){return p.k==='measured';}).length,ar=l.real.filter(function(p){return p.k==='archived';}).length;if(l.id==='king_tu_mil_jaaye_views')return l.name+': out since 2 Nov, '+m+' days measured by us';return l.name+': '+m+' days measured by us, '+ar+' from archived copies of the YouTube page, '+(DAYS.length-m-ar)+' estimated';}).join(' · ')+'. Views gained are counted from 04 Oct (estimated start). Estimates never enter the daily ledger.';
+    $('#ms-note').textContent=VID.map(function(l){var m=l.real.filter(function(p){return p.k==='measured';}).length,ar=l.real.filter(function(p){return p.k==='archived';}).length;if(l.late)return l.name+': out since '+dd(l.released).slice(0,6)+', '+m+' days measured by us';return l.name+': '+m+' days measured by us, '+ar+' from archived copies of the YouTube page, '+(DAYS.length-m-ar)+' estimated';}).join(' · ')+'. Views gained are counted from 04 Oct (estimated start). Estimates never enter the daily ledger.';
   }).catch(function(){var h=$('#h-news');if(h)h.textContent='The latest news could not load right now.';});
 })();
 </script>

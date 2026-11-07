@@ -516,7 +516,7 @@ async function aiSubmit(request, env, reply, origin) {
 // YOUTUBE_API_KEY, set by the owner in Cloudflare) and keeps one row per video per IST day in D1.
 // GET /buzz/youtube returns the latest reading (and reads once if today's is missing); a GitHub
 // Action copies it into data/buzz/youtube.json before the 21:07 IST daily record.
-const YT_VIDEOS = { king_title_reveal_views: "Uu2QK9Z9X5E", king_date_announcement_views: "M3mfut2RdHk", doomsday_official_trailer_views: "irVNGjRFZGk" };
+const YT_VIDEOS = { king_title_reveal_views: "Uu2QK9Z9X5E", king_date_announcement_views: "M3mfut2RdHk", king_tu_mil_jaaye_views: "BPZkZpGMpXA", /* keep in step with assets/king-series.js */ doomsday_official_trailer_views: "irVNGjRFZGk" };
 async function ytTable(env) {
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS yt_views(video_id TEXT, day TEXT, views INTEGER, ts INTEGER, PRIMARY KEY(video_id, day))").run();
 }
