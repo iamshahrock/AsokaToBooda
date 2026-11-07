@@ -621,7 +621,7 @@
   },
   {
    "date": "2026-11-04",
-   "count": 6,
+   "count": 7,
    "articles": [
     {
      "outlet": "Hindustan Times",
@@ -658,9 +658,45 @@
      "title": "Ed Sheeran Tu Mil Jaaye: How He Joined SRK's King",
      "url": "https://tbreak.com/ed-sheeran-tu-mil-jaaye-king-shah-rukh-khan",
      "topic": "song"
+    },
+    {
+     "outlet": "Koimoi",
+     "title": "King: SRK-Deepika's Chemistry Is Back, And Tu Mil Jaaye Is Already Winning Hearts",
+     "url": "https://www.koimoi.com/bollywood-news/king-srk-deepikas-chemistry-is-back-and-tu-mil-jaaye-is-already-winning-hearts/",
+     "topic": "song"
     }
    ],
    "note": "Found 4 Nov 2026 11:30 IST by search; publication dates 3-4 Nov, filed on the day we read them. The 60M figure (UNI, DNA) is across all digital platforms, not YouTube alone."
+  },
+  {
+   "date": "2026-11-05",
+   "count": 2,
+   "articles": [
+    {
+     "outlet": "Glamsham",
+     "title": "Shah Rukh Khan and Deepika Padukone's Tu Mil Jaaye: 5 reasons why the King song is winning hearts",
+     "url": "https://glamsham.com/bollywood/news/shah-rukh-khan-deepika-padukone-tu-mil-jaaye-5-reasons-king-song/",
+     "topic": "song"
+    },
+    {
+     "outlet": "Voice of Emirates",
+     "title": "Shah Rukh Khan returns to cinema with the film 'King' this coming December",
+     "url": "https://www.voiceofemirates.com/en/lifestyle/2026/11/05/shah-rukh-khan-returns-to-cinema-with-the-film-king-this-coming-december/",
+     "topic": "release"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "count": 1,
+   "articles": [
+    {
+     "outlet": "Indian Opinion",
+     "title": "Shah Rukh Khan's King Telugu release buzz after standee surfaces",
+     "url": "https://indianopinion.org/shah-rukh-khans-king-telugu-release-buzz-after-standee-surfaces/",
+     "topic": "release"
+    }
+   ]
   }
  ]
 }
