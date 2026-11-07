@@ -145,7 +145,7 @@
           +'<ul class="lg-notes">'+pd.articles.map(function(a,i){return (i===15?'</ul><details class="lg-more"><summary>All '+pd.articles.length+' articles</summary><ul class="lg-notes">':'')+'<li><b>'+esc(a.outlet)+'</b>: <a href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'</a>'+(a.topic?' <small style="color:var(--ki-muted)">('+esc(a.topic)+')</small>':'')+'</li>';}).join('')+'</ul>'+(pd.articles.length>15?'</details>':'')+'<p class="ki-note">Articles our searches found that day, not all coverage.</p>';}
       return h;};
     var R=L.records.slice().sort(function(a,b){return a.date<b.date?-1:1;}),by={};R.forEach(function(r){by[r.date]=r;});
-    var UNIT={king_title_reveal_views:'YouTube views',king_date_announcement_views:'YouTube views',doomsday_official_trailer_views:'YouTube views'};
+    var UNIT={king_title_reveal_views:'YouTube views',king_date_announcement_views:'YouTube views',king_tu_mil_jaaye_views:'YouTube views',doomsday_official_trailer_views:'YouTube views'};
     var known=function(id){var m={};(AR[id]||[]).forEach(function(p){m[p.date]={v:p.views,k:'recovered',src:p.snapshot,at:p.read_at_ist};});R.forEach(function(r){(r.metrics||[]).forEach(function(x){if(x.series_id===id&&x.value!=null)m[r.date]={v:x.value,k:'measured'};});});return m;};
     var gapRecord=function(d){var rows=Object.keys(UNIT).map(function(id){var m=known(id);if(m[d])return {series_id:id,unit:UNIT[id],value:m[d].v,status:'recovered',source:'Archived copy of the YouTube page, '+m[d].at+' IST ('+m[d].src+')'};
         var ks=Object.keys(m).sort(),a=null,b=null;ks.forEach(function(k){if(k<d)a=k;if(k>d&&!b)b=k;});
