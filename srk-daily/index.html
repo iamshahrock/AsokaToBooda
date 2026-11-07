@@ -211,6 +211,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
 </div>
 </main>
 <script src="../assets/starks.js"></script>
+<script src="../assets/king-series.js"></script>
 <script>
 (function(){
   var API='https://asokatobooda.iamshahrock.workers.dev';
@@ -266,7 +267,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   }
 
   // KING BUZZ of the day: the ledger record of the previous IST day (or the latest one before it)
-  var KBN={king_title_reveal_views:'KING · Title Reveal',king_date_announcement_views:'KING · Date Announcement',king_tu_mil_jaaye_views:'Tu Mil Jaaye',doomsday_official_trailer_views:'Avengers: Doomsday · trailer'};
+  var KBN={};(window.KING_SERIES||[]).forEach(function(k){KBN[k.id]=k.name;});
   var kbDone=false;
   function kbLoad(){
     if(kbDone)return;kbDone=true;var box=$('#kb');box.innerHTML='<div class="kin"><p>Loading the KING Buzz ledger…</p></div>';

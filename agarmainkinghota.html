@@ -280,6 +280,7 @@ body{background:var(--bg)}
     </div>
   </div>
 </main>
+<script src="assets/king-series.js"></script>
 <script>
 (function(){
   var t=Date.parse('2026-12-24T00:00:00+05:30');
@@ -300,8 +301,8 @@ body{background:var(--bg)}
   }).catch(function(){});
   Promise.all([fetch('data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}),fetch('data/king-press.json',{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {days:[]};})]).then(function(x){
     var R=x[0].records,last=R[R.length-1],v=function(id){var m=(last.metrics||[]).filter(function(m){return m.series_id===id&&m.value!=null;})[0];return m&&m.value;};
-    var a=v('king_title_reveal_views'),b=v('king_date_announcement_views'),p=x[1].days.length?x[1].days[x[1].days.length-1].count:null;
-    if(a&&b)document.getElementById('kb-line').textContent=((a+b)/1e6).toFixed(1)+'M views on the official KING videos'+(p!=null?', '+p+' press stories today':'')+', and every fan move tracked daily since 04 Oct.';
+    var a=(window.KING_SERIES||[]).filter(function(k){return k.official;}).reduce(function(t,k){return t+(v(k.id)||0);},0),b=a,p=x[1].days.length?x[1].days[x[1].days.length-1].count:null;
+    if(a)document.getElementById('kb-line').textContent=(a/1e6).toFixed(1)+'M views on the official KING videos'+(p!=null?', '+p+' press stories today':'')+', and every fan move tracked daily since 04 Oct.';
   }).catch(function(){});
 })();
 </script>
