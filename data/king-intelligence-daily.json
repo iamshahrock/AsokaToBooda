@@ -2286,6 +2286,113 @@
         "Box office figures as reported by Sacnilk.",
         "Official posts by @iamsrk and @RedChilliesEnt since 6 Nov were not read overnight."
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "record_id": "KING-2026-11-08",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": null,
+          "unit": "YouTube views",
+          "source": "Not read 2026-11-08: data/buzz/youtube.json (Worker YouTube reading) does not exist in the repo and the unattended run could not open youtube.com (fetch needs a person's approval) (https://www.youtube.com/watch?v=Uu2QK9Z9X5E)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": null,
+          "unit": "YouTube views",
+          "source": "Not read 2026-11-08: data/buzz/youtube.json (Worker YouTube reading) does not exist in the repo and the unattended run could not open youtube.com (fetch needs a person's approval) (https://www.youtube.com/watch?v=M3mfut2RdHk)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": null,
+          "unit": "YouTube views",
+          "source": "Not read 2026-11-08: data/buzz/youtube.json (Worker YouTube reading) does not exist in the repo and the unattended run could not open youtube.com (fetch needs a person's approval) (https://www.youtube.com/watch?v=irVNGjRFZGk)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_tu_mil_jaaye_views",
+          "value": null,
+          "unit": "YouTube views",
+          "source": "Not read 2026-11-08: data/buzz/youtube.json (Worker YouTube reading) does not exist in the repo and the unattended run could not open youtube.com (fetch needs a person's approval) (https://www.youtube.com/watch?v=BPZkZpGMpXA)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": null,
+          "unit": "indexed posts",
+          "source": "Not read 2026-11-08: https://displaypurposes.com/hashtags/hashtag/srk could not be opened unattended (fetch needs a person's approval); counts frozen since 06/18 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": null,
+          "unit": "indexed #srkking posts",
+          "source": "Not read 2026-11-08: https://displaypurposes.com/hashtags/hashtag/srk could not be opened unattended (fetch needs a person's approval); counts frozen since 06/18 Oct",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 40,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json (updated 2026-11-08)",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 3971254,
+          "unit": "views",
+          "source": "data/ai-creator-log.json (updated 2026-11-08)",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": null,
+          "unit": "followers",
+          "source": "Not read 2026-11-08 (Instagram cannot be opened unattended)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 8 Nov total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "No KING news article dated 8 Nov 2026 (IST) was found by the five press searches of this run",
+        "Latest found: Shah Rukh Khan's King Telugu release buzz, a theatre standee with Telugu text, no official announcement (m9.news, 7 Nov 2026, https://m9.news/movienews/shah-rukh-khan-king-telugu-release-buzz)"
+      ],
+      "notes": [
+        "Unattended 21:08 IST run: YouTube and Display Purposes pages could not be opened (fetch needs a person's approval) and data/buzz/youtube.json is absent (YOUTUBE_API_KEY still not set in Cloudflare), so all four YouTube counters are null, not zero.",
+        "Fan AI works (40) and their views (3,971,254) equal the 7 Nov values: the log shows no new works or new view readings.",
+        "Unchanged values read as flat; posts are not people.",
+        "Official post checkpoints due today with no reading in data/king-posts.json: tmj-verse-2026-11-07 (24h, due 8 Nov 11:05 IST); king-one-picture-2026-11-06 (48h, due 8 Nov 13:26 IST); tmj-singalong-2026-11-06 (48h, due 8 Nov 11:09 IST); tmj-lovelikeaking-2026-11-06 (48h, due 8 Nov 16:00 IST); gemini-2026-11-01-srk-x (7 days, due 8 Nov 14:12 IST)."
+      ]
     }
   ],
   "source_rules": {
