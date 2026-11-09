@@ -274,6 +274,9 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     fetch('../data/king-intelligence-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(L){
       var R=L.records||[],today=new Date(Date.now()+330*6e4).toISOString().slice(0,10);
       var before=R.filter(function(r){return r.date<today;}),rec=before.length?before[before.length-1]:R[R.length-1];
+      /* 9 Nov 2026: a day whose record has no YouTube reading (unattended run filed it blank) falls back to the latest record up to today that has one */
+      var hasYT=function(r){return (r.metrics||[]).some(function(m){return KBN[m.series_id]&&m.value!=null;});};
+      if(!hasYT(rec)){var ok=R.filter(function(r){return r.date<=today&&hasYT(r);});if(ok.length)rec=ok[ok.length-1];}
       var prev=R.filter(function(r){return r.date<rec.date;});
       function val(r,id){var m=(r.metrics||[]).filter(function(x){return x.series_id===id;})[0];return m&&m.value!=null?m.value:null;}
       function last(id){for(var i=prev.length-1;i>=0;i--){var v=val(prev[i],id);if(v!=null)return {v:v,d:prev[i].date};}return null;}
