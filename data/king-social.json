@@ -4166,6 +4166,710 @@
     }
    ],
    "note": "X sweep 3 Nov 2026 ~14:30 IST: 10 searches since 1 Nov (Tu Mil Jaaye, #SRK61, #HappyBirthdaySRK, #LoveLikeAKing, Mannat, #KingKhan, fan made). 118 non-official posts dated this day were read; totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced."
+  },
+  "2026-11-07": {
+   "totals": {
+    "posts_read": 13,
+    "views": 313419,
+    "likes": 1722,
+    "reposts": 557,
+    "replies": 239
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@CNNnews18",
+     "url": "https://x.com/CNNnews18/status/2118966075006345629",
+     "posted_at": "2026-11-07T12:47:00+05:30",
+     "views": 245208,
+     "likes": 251,
+     "reposts": 183,
+     "replies": 184,
+     "text": "news on the saffron-outfit row",
+     "stance": "neutral",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@ajebhuyaar",
+     "url": "https://x.com/ajebhuyaar/status/2119053383718027375",
+     "posted_at": "2026-11-07T18:34:00+05:30",
+     "views": 46495,
+     "likes": 290,
+     "reposts": 17,
+     "replies": 12,
+     "text": "cricket edit set to the song",
+     "stance": "positive",
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@kbryllc",
+     "url": "https://x.com/kbryllc/status/2119039953627759057",
+     "posted_at": "2026-11-07T17:41:00+05:30",
+     "views": 4177,
+     "likes": 59,
+     "reposts": 24,
+     "replies": 10,
+     "text": "song with Turkish subtitles",
+     "stance": "positive",
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@Semranrass1",
+     "url": "https://x.com/Semranrass1/status/2118814771763880217",
+     "posted_at": "2026-11-07T02:46:00+05:30",
+     "views": 3700,
+     "likes": 196,
+     "reposts": 26,
+     "replies": 0,
+     "text": "song clip",
+     "stance": "positive",
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@iamSrkfanking",
+     "url": "https://x.com/iamSrkfanking/status/2118931399357214956",
+     "posted_at": "2026-11-07T10:29:00+05:30",
+     "views": 3093,
+     "likes": 325,
+     "reposts": 130,
+     "replies": 19,
+     "text": "praise for the lyrics",
+     "stance": "positive",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@buster_movies",
+     "url": "https://x.com/buster_movies/status/2118936462393823629",
+     "posted_at": "2026-11-07T10:49:00+05:30",
+     "views": 2060,
+     "likes": 24,
+     "reposts": 13,
+     "replies": 0,
+     "text": "boycott-row news card",
+     "stance": "critical",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@fromepiglottis",
+     "url": "https://x.com/fromepiglottis/status/2118988946952835345",
+     "posted_at": "2026-11-07T14:18:00+05:30",
+     "views": 1602,
+     "likes": 90,
+     "reposts": 20,
+     "replies": 4,
+     "text": "a fan's dance tribute",
+     "stance": "positive",
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@iamharryghai",
+     "url": "https://x.com/iamharryghai/status/2119097715044815067",
+     "posted_at": "2026-11-07T21:30:00+05:30",
+     "views": 1557,
+     "likes": 142,
+     "reposts": 31,
+     "replies": 6,
+     "text": "fan-made KING poster",
+     "stance": "positive",
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@zubyie",
+     "url": "https://x.com/zubyie/status/2118928069184643502",
+     "posted_at": "2026-11-07T10:16:00+05:30",
+     "views": 1444,
+     "likes": 129,
+     "reposts": 36,
+     "replies": 2,
+     "text": "reels craze across India",
+     "stance": "positive",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@Hellojikyahaal",
+     "url": "https://x.com/Hellojikyahaal/status/2118923940814852453",
+     "posted_at": "2026-11-07T10:00:00+05:30",
+     "views": 1263,
+     "likes": 101,
+     "reposts": 34,
+     "replies": 2,
+     "text": "daily views and streams tracker",
+     "stance": "neutral",
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@shahie_bhatt_",
+     "url": "https://x.com/shahie_bhatt_/status/2118987017791115741",
+     "posted_at": "2026-11-07T14:10:00+05:30",
+     "views": 1064,
+     "likes": 36,
+     "reposts": 15,
+     "replies": 0,
+     "text": "Kashmir reel to the song",
+     "stance": "positive",
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@srkkhammamfc",
+     "url": "https://x.com/srkkhammamfc/status/2119026279186116858",
+     "posted_at": "2026-11-07T16:46:00+05:30",
+     "views": 982,
+     "likes": 40,
+     "reposts": 9,
+     "replies": 0,
+     "text": "a KING side artist on SRK",
+     "stance": "positive",
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@srkaryanknights",
+     "url": "https://x.com/srkaryanknights/status/2118946021858295939",
+     "posted_at": "2026-11-07T11:27:00+05:30",
+     "views": 774,
+     "likes": 39,
+     "reposts": 19,
+     "replies": 0,
+     "text": "1.3 lakh reels on the song",
+     "stance": "positive",
+     "kind": "views / record"
+    }
+   ],
+   "videos": [
+    {
+     "platform": "X",
+     "account": "@CNNnews18",
+     "url": "https://x.com/CNNnews18/status/2118966075006345629",
+     "posted_at": "2026-11-07T12:47:00+05:30",
+     "views": 245208,
+     "likes": 251,
+     "thumb": null,
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@ajebhuyaar",
+     "url": "https://x.com/ajebhuyaar/status/2119053383718027375",
+     "posted_at": "2026-11-07T18:34:00+05:30",
+     "views": 46495,
+     "likes": 290,
+     "thumb": null,
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@kbryllc",
+     "url": "https://x.com/kbryllc/status/2119039953627759057",
+     "posted_at": "2026-11-07T17:41:00+05:30",
+     "views": 4177,
+     "likes": 59,
+     "thumb": null,
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@Semranrass1",
+     "url": "https://x.com/Semranrass1/status/2118814771763880217",
+     "posted_at": "2026-11-07T02:46:00+05:30",
+     "views": 3700,
+     "likes": 196,
+     "thumb": null,
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@fromepiglottis",
+     "url": "https://x.com/fromepiglottis/status/2118988946952835345",
+     "posted_at": "2026-11-07T14:18:00+05:30",
+     "views": 1602,
+     "likes": 90,
+     "thumb": null,
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@zubyie",
+     "url": "https://x.com/zubyie/status/2118928069184643502",
+     "posted_at": "2026-11-07T10:16:00+05:30",
+     "views": 1444,
+     "likes": 129,
+     "thumb": null,
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@shahie_bhatt_",
+     "url": "https://x.com/shahie_bhatt_/status/2118987017791115741",
+     "posted_at": "2026-11-07T14:10:00+05:30",
+     "views": 1064,
+     "likes": 36,
+     "thumb": null,
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@srkkhammamfc",
+     "url": "https://x.com/srkkhammamfc/status/2119026279186116858",
+     "posted_at": "2026-11-07T16:46:00+05:30",
+     "views": 982,
+     "likes": 40,
+     "thumb": null,
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@srkaryanknights",
+     "url": "https://x.com/srkaryanknights/status/2118946021858295939",
+     "posted_at": "2026-11-07T11:27:00+05:30",
+     "views": 774,
+     "likes": 39,
+     "thumb": null,
+     "kind": "views / record"
+    }
+   ],
+   "note": "X sweep 9 Nov 2026 ~12:00 IST: 9 searches since 7 Nov (\"Tu Mil Jaaye\", #TuMilJaaye, #KING SRK, KING Deepika saffron, SRK King fan made, #LoveLikeAKing, #19YearsOfOmShantiOm KING, Tu Mil Jaaye cover), top and latest. 13 KING-related non-official posts dated this day were kept; totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced."
+  },
+  "2026-11-08": {
+   "totals": {
+    "posts_read": 14,
+    "views": 69458,
+    "likes": 3465,
+    "reposts": 691,
+    "replies": 75
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@DiscussingRisk",
+     "url": "https://x.com/DiscussingRisk/status/2119422228874019223",
+     "posted_at": "2026-11-08T19:00:00+05:30",
+     "views": 26694,
+     "likes": 734,
+     "reposts": 189,
+     "replies": 4,
+     "text": "the song's craze at events (video)",
+     "stance": "positive",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@imashishsrrk",
+     "url": "https://x.com/imashishsrrk/status/2119355271168614667",
+     "posted_at": "2026-11-08T14:34:00+05:30",
+     "views": 10932,
+     "likes": 350,
+     "reposts": 19,
+     "replies": 46,
+     "text": "poll on Sachin-Jigar's song",
+     "stance": "neutral",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@ASFAN__MAKKAR",
+     "url": "https://x.com/ASFAN__MAKKAR/status/2119332790135329093",
+     "posted_at": "2026-11-08T13:04:00+05:30",
+     "views": 6389,
+     "likes": 330,
+     "reposts": 32,
+     "replies": 0,
+     "text": "favourite part of the song",
+     "stance": "positive",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2119344052399456283",
+     "posted_at": "2026-11-08T13:49:00+05:30",
+     "views": 6353,
+     "likes": 382,
+     "reposts": 65,
+     "replies": 0,
+     "text": "song on repeat",
+     "stance": "positive",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@itsAgent_47",
+     "url": "https://x.com/itsAgent_47/status/2119431257209831725",
+     "posted_at": "2026-11-08T19:36:00+05:30",
+     "views": 3934,
+     "likes": 324,
+     "reposts": 75,
+     "replies": 0,
+     "text": "song at live events",
+     "stance": "positive",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@kingsha715",
+     "url": "https://x.com/kingsha715/status/2119272929838174696",
+     "posted_at": "2026-11-08T09:06:00+05:30",
+     "views": 2948,
+     "likes": 172,
+     "reposts": 46,
+     "replies": 2,
+     "text": "journalist singing the song",
+     "stance": "positive",
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@teamsrkpune",
+     "url": "https://x.com/teamsrkpune/status/2119291764775481394",
+     "posted_at": "2026-11-08T10:21:00+05:30",
+     "views": 2717,
+     "likes": 441,
+     "reposts": 88,
+     "replies": 11,
+     "text": "2 million Spotify streams",
+     "stance": "positive",
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@filmy_imran",
+     "url": "https://x.com/filmy_imran/status/2119489550800302408",
+     "posted_at": "2026-11-08T23:27:00+05:30",
+     "views": 1920,
+     "likes": 128,
+     "reposts": 13,
+     "replies": 0,
+     "text": "female-voice version",
+     "stance": "positive",
+     "kind": "cover"
+    },
+    {
+     "platform": "X",
+     "account": "@iamSrkfanking",
+     "url": "https://x.com/iamSrkfanking/status/2119300336271990812",
+     "posted_at": "2026-11-08T10:55:00+05:30",
+     "views": 1806,
+     "likes": 250,
+     "reposts": 57,
+     "replies": 0,
+     "text": "24-hour record recap",
+     "stance": "positive",
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKsNxtDirector",
+     "url": "https://x.com/SRKsNxtDirector/status/2119381581664227361",
+     "posted_at": "2026-11-08T16:18:00+05:30",
+     "views": 1434,
+     "likes": 154,
+     "reposts": 46,
+     "replies": 3,
+     "text": "comic-style fan edit of the song",
+     "stance": "positive",
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@Hellojikyahaal",
+     "url": "https://x.com/Hellojikyahaal/status/2119286309436948824",
+     "posted_at": "2026-11-08T10:00:00+05:30",
+     "views": 1258,
+     "likes": 68,
+     "reposts": 24,
+     "replies": 2,
+     "text": "daily views and streams tracker",
+     "stance": "neutral",
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@sairu_shines",
+     "url": "https://x.com/sairu_shines/status/2119459718263603378",
+     "posted_at": "2026-11-08T21:29:00+05:30",
+     "views": 1183,
+     "likes": 36,
+     "reposts": 14,
+     "replies": 0,
+     "text": "fan picture thread",
+     "stance": "positive",
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@Farhan555az",
+     "url": "https://x.com/Farhan555az/status/2119324576668934189",
+     "posted_at": "2026-11-08T12:32:00+05:30",
+     "views": 1012,
+     "likes": 55,
+     "reposts": 17,
+     "replies": 7,
+     "text": "comedy reel to the song",
+     "stance": "positive",
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@r57_n",
+     "url": "https://x.com/r57_n/status/2119212826719891932",
+     "posted_at": "2026-11-08T05:08:00+05:30",
+     "views": 878,
+     "likes": 41,
+     "reposts": 6,
+     "replies": 0,
+     "text": "fan video edit",
+     "stance": "positive",
+     "kind": "fan edit"
+    }
+   ],
+   "videos": [
+    {
+     "platform": "X",
+     "account": "@DiscussingRisk",
+     "url": "https://x.com/DiscussingRisk/status/2119422228874019223",
+     "posted_at": "2026-11-08T19:00:00+05:30",
+     "views": 26694,
+     "likes": 734,
+     "thumb": null,
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@ASFAN__MAKKAR",
+     "url": "https://x.com/ASFAN__MAKKAR/status/2119332790135329093",
+     "posted_at": "2026-11-08T13:04:00+05:30",
+     "views": 6389,
+     "likes": 330,
+     "thumb": null,
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2119344052399456283",
+     "posted_at": "2026-11-08T13:49:00+05:30",
+     "views": 6353,
+     "likes": 382,
+     "thumb": null,
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@itsAgent_47",
+     "url": "https://x.com/itsAgent_47/status/2119431257209831725",
+     "posted_at": "2026-11-08T19:36:00+05:30",
+     "views": 3934,
+     "likes": 324,
+     "thumb": null,
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@kingsha715",
+     "url": "https://x.com/kingsha715/status/2119272929838174696",
+     "posted_at": "2026-11-08T09:06:00+05:30",
+     "views": 2948,
+     "likes": 172,
+     "thumb": null,
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@filmy_imran",
+     "url": "https://x.com/filmy_imran/status/2119489550800302408",
+     "posted_at": "2026-11-08T23:27:00+05:30",
+     "views": 1920,
+     "likes": 128,
+     "thumb": null,
+     "kind": "cover"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKsNxtDirector",
+     "url": "https://x.com/SRKsNxtDirector/status/2119381581664227361",
+     "posted_at": "2026-11-08T16:18:00+05:30",
+     "views": 1434,
+     "likes": 154,
+     "thumb": null,
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@Farhan555az",
+     "url": "https://x.com/Farhan555az/status/2119324576668934189",
+     "posted_at": "2026-11-08T12:32:00+05:30",
+     "views": 1012,
+     "likes": 55,
+     "thumb": null,
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@r57_n",
+     "url": "https://x.com/r57_n/status/2119212826719891932",
+     "posted_at": "2026-11-08T05:08:00+05:30",
+     "views": 878,
+     "likes": 41,
+     "thumb": null,
+     "kind": "fan edit"
+    }
+   ],
+   "note": "X sweep 9 Nov 2026 ~12:00 IST: 9 searches since 7 Nov (\"Tu Mil Jaaye\", #TuMilJaaye, #KING SRK, KING Deepika saffron, SRK King fan made, #LoveLikeAKing, #19YearsOfOmShantiOm KING, Tu Mil Jaaye cover), top and latest. 14 KING-related non-official posts dated this day were kept; totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced."
+  },
+  "2026-11-09": {
+   "totals": {
+    "posts_read": 7,
+    "views": 4792,
+    "likes": 306,
+    "reposts": 101,
+    "replies": 13
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@HUNTER__SINGH",
+     "url": "https://x.com/HUNTER__SINGH/status/2119621787038408727",
+     "posted_at": "2026-11-09T08:13:00+05:30",
+     "views": 1206,
+     "likes": 65,
+     "reposts": 16,
+     "replies": 0,
+     "text": "68.2M views milestone",
+     "stance": "positive",
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@iamsrkak1",
+     "url": "https://x.com/iamsrkak1/status/2119576025541796056",
+     "posted_at": "2026-11-09T05:11:00+05:30",
+     "views": 918,
+     "likes": 76,
+     "reposts": 23,
+     "replies": 0,
+     "text": "KING poster on BookMyShow app",
+     "stance": "positive",
+     "kind": "release"
+    },
+    {
+     "platform": "X",
+     "account": "@teamsrkpune",
+     "url": "https://x.com/teamsrkpune/status/2119662225430622377",
+     "posted_at": "2026-11-09T10:53:00+05:30",
+     "views": 909,
+     "likes": 80,
+     "reposts": 39,
+     "replies": 13,
+     "text": "fan club event announcement",
+     "stance": "positive",
+     "kind": "fan reaction"
+    },
+    {
+     "platform": "X",
+     "account": "@AttitudeimSRK12",
+     "url": "https://x.com/AttitudeimSRK12/status/2119628087768068157",
+     "posted_at": "2026-11-09T08:38:00+05:30",
+     "views": 774,
+     "likes": 28,
+     "reposts": 4,
+     "replies": 0,
+     "text": "fan clip",
+     "stance": "positive",
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@Abrarsrkian1",
+     "url": "https://x.com/Abrarsrkian1/status/2119649357863743788",
+     "posted_at": "2026-11-09T10:02:00+05:30",
+     "views": 596,
+     "likes": 43,
+     "reposts": 14,
+     "replies": 0,
+     "text": "day-7 summary of the song",
+     "stance": "neutral",
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@Hellojikyahaal",
+     "url": "https://x.com/Hellojikyahaal/status/2119648719058448857",
+     "posted_at": "2026-11-09T10:00:00+05:30",
+     "views": 332,
+     "likes": 14,
+     "reposts": 5,
+     "replies": 0,
+     "text": "daily views and streams tracker",
+     "stance": "neutral",
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@CineBuff2003",
+     "url": "https://x.com/CineBuff2003/status/2119665249532232028",
+     "posted_at": "2026-11-09T11:05:00+05:30",
+     "views": 57,
+     "likes": 0,
+     "reposts": 0,
+     "replies": 0,
+     "text": "KING cutout in Malegaon",
+     "stance": "positive",
+     "kind": "release"
+    }
+   ],
+   "videos": [
+    {
+     "platform": "X",
+     "account": "@iamsrkak1",
+     "url": "https://x.com/iamsrkak1/status/2119576025541796056",
+     "posted_at": "2026-11-09T05:11:00+05:30",
+     "views": 918,
+     "likes": 76,
+     "thumb": null,
+     "kind": "release"
+    },
+    {
+     "platform": "X",
+     "account": "@AttitudeimSRK12",
+     "url": "https://x.com/AttitudeimSRK12/status/2119628087768068157",
+     "posted_at": "2026-11-09T08:38:00+05:30",
+     "views": 774,
+     "likes": 28,
+     "thumb": null,
+     "kind": "fan share"
+    },
+    {
+     "platform": "X",
+     "account": "@Abrarsrkian1",
+     "url": "https://x.com/Abrarsrkian1/status/2119649357863743788",
+     "posted_at": "2026-11-09T10:02:00+05:30",
+     "views": 596,
+     "likes": 43,
+     "thumb": null,
+     "kind": "views / record"
+    },
+    {
+     "platform": "X",
+     "account": "@Hellojikyahaal",
+     "url": "https://x.com/Hellojikyahaal/status/2119648719058448857",
+     "posted_at": "2026-11-09T10:00:00+05:30",
+     "views": 332,
+     "likes": 14,
+     "thumb": null,
+     "kind": "views / record"
+    }
+   ],
+   "note": "X sweep 9 Nov 2026 ~12:00 IST: 9 searches since 7 Nov (\"Tu Mil Jaaye\", #TuMilJaaye, #KING SRK, KING Deepika saffron, SRK King fan made, #LoveLikeAKing, #19YearsOfOmShantiOm KING, Tu Mil Jaaye cover), top and latest. 7 KING-related non-official posts dated this day were kept; totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced."
   }
  }
 }

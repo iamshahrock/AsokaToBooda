@@ -1,0 +1,111 @@
+{
+ "date": "2026-11-09",
+ "record_id": "KING-2026-11-09",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 51978963,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-09 11:13 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33036701,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-09 11:13 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 84665390,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-09 11:13 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 68421570,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-09 11:13 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-09: Display Purposes not opened in this session; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-09: Display Purposes not opened in this session; counts frozen since 06/18 Oct",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 40,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-09 (daily fan AI scan #464: 0 new works)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 3971254,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-09 (daily fan AI scan #464: 0 new works)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48588270,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ exact count from the profile's follower tooltip, read 2026-11-09 11:15 IST in the owner's signed-in browser",
+   "method": "exact count shown on the profile",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 9 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Tu Mil Jaaye 68,421,570 YouTube views at 11:13 IST (+6,253,632 since 7 Nov 03:03 IST); 704,877 likes",
+  "RAMAYANA to KING at 11:13 IST: KING's 3 official videos 153,437,234 vs Ramayana's 7 at 138,335,100 (KING +15,102,134; was +13,054,220 on 7 Nov 03:03 IST)",
+  "Ramayana day 4 (Sun 8 Nov): ₹56.15 crore India net; 4 days ₹238.85 crore net, ₹507.20 crore worldwide gross (Sacnilk, updated 8 Nov 22:11 IST)",
+  "@RedChilliesEnt: 4 KING-tagged posts on X since 8 Nov (Tu Mil Jaaye full version stream, Diwali, two #19YearsOfOmShantiOm posts); no new KING video, poster or trailer",
+  "Press 5-9 Nov: BJP MLA Ravinder Negi's objection to Deepika Padukone's saffron outfit in Tu Mil Jaaye and boycott call; SRK on Ed Sheeran's fast lyrics and Suhana Khan's lip-sync reel; Bengali singer Moushumi Bhowmik on similarity claims",
+  "KING's two teasers 85,015,664 vs the Doomsday trailer 84,665,390"
+ ],
+ "notes": [
+  "YouTube and Instagram read by Claude in the owner's session at 11:13-11:15 IST.",
+  "Box office figures as reported by Sacnilk.",
+  "The 8 Nov record was filed blank by the unattended run; the ledger is append-only, so 8 Nov stays blank.",
+  "Unchanged values read as flat; posts are not people."
+ ]
+}

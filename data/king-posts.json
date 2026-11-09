@@ -136,6 +136,16 @@
       "replies": 424,
       "bookmarks": 67
      }
+    },
+    {
+     "at": "2026-11-09T11:15:00+05:30",
+     "metrics": {
+      "replies": 1094,
+      "reposts": 5002,
+      "likes": 28502,
+      "bookmarks": 433,
+      "views": 1442805
+     }
     }
    ]
   },
@@ -429,6 +439,16 @@
       "bookmarks": 56,
       "views": 27423
      }
+    },
+    {
+     "at": "2026-11-09T11:25:00+05:30",
+     "metrics": {
+      "replies": 35,
+      "reposts": 698,
+      "likes": 2577,
+      "bookmarks": 117,
+      "views": 77553
+     }
     }
    ]
   },
@@ -449,6 +469,16 @@
       "likes": 1316,
       "bookmarks": 20,
       "views": 17910
+     }
+    },
+    {
+     "at": "2026-11-09T11:25:00+05:30",
+     "metrics": {
+      "replies": 12,
+      "reposts": 343,
+      "likes": 1516,
+      "bookmarks": 25,
+      "views": 20804
      }
     }
    ]
@@ -471,6 +501,16 @@
       "bookmarks": 27,
       "views": 25848
      }
+    },
+    {
+     "at": "2026-11-09T11:25:00+05:30",
+     "metrics": {
+      "replies": 20,
+      "reposts": 399,
+      "likes": 1875,
+      "bookmarks": 28,
+      "views": 28073
+     }
     }
    ]
   },
@@ -491,6 +531,121 @@
       "likes": 4960,
       "bookmarks": 536,
       "views": 513308
+     }
+    },
+    {
+     "at": "2026-11-09T11:25:00+05:30",
+     "metrics": {
+      "replies": 119,
+      "reposts": 1319,
+      "likes": 5416,
+      "bookmarks": 585,
+      "views": 593145
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-stream-2026-11-08",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye full version: 'Warning: You might fall in love with the KING all over again!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2119393095649571085",
+   "posted_at": "2026-11-08T17:04:25+05:30",
+   "readings": [
+    {
+     "at": "2026-11-09T11:20:00+05:30",
+     "metrics": {
+      "replies": 10,
+      "reposts": 254,
+      "likes": 1098,
+      "bookmarks": 20,
+      "views": 14458
+     }
+    }
+   ]
+  },
+  {
+   "id": "diwali-2026-11-08",
+   "release": null,
+   "title": "#HappyDiwali · 'Sky full of fireworks. Heart full of them.' #KING in cinemas on 24.12.2026",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2119423103378087959",
+   "posted_at": "2026-11-08T19:03:39+05:30",
+   "readings": [
+    {
+     "at": "2026-11-09T11:20:00+05:30",
+     "metrics": {
+      "replies": 11,
+      "reposts": 341,
+      "likes": 1809,
+      "bookmarks": 30,
+      "views": 19610
+     }
+    }
+   ]
+  },
+  {
+   "id": "oso19-2026-11-09",
+   "release": null,
+   "title": "#Celebrating19YearsOfOmShantiOm · '19 years later, iss kahaani ki deewangi is still alive'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2119649304260579757",
+   "posted_at": "2026-11-09T10:02:29+05:30",
+   "readings": [
+    {
+     "at": "2026-11-09T11:20:00+05:30",
+     "metrics": {
+      "replies": 9,
+      "reposts": 166,
+      "likes": 681,
+      "bookmarks": 7,
+      "views": 6543
+     }
+    }
+   ]
+  },
+  {
+   "id": "oso19-onemore-2026-11-09",
+   "release": null,
+   "title": "#19YearsofOmShantiOm · 'They really said, One more time!' #KING in cinemas on 24.12.2026",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2119663775552856557",
+   "posted_at": "2026-11-09T11:00:00+05:30",
+   "readings": [
+    {
+     "at": "2026-11-09T11:20:00+05:30",
+     "metrics": {
+      "replies": 2,
+      "reposts": 47,
+      "likes": 118,
+      "bookmarks": 4,
+      "views": 2444
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-mashooqa-2026-11-07",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye full version: 'Mashooqa aisi, ki KING aashiq ho jaaye'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2119014999389864281",
+   "posted_at": "2026-11-07T16:01:59+05:30",
+   "readings": [
+    {
+     "at": "2026-11-09T12:05:00+05:30",
+     "metrics": {
+      "replies": 20,
+      "reposts": 302,
+      "likes": 1190,
+      "bookmarks": 35,
+      "views": 45178
      }
     }
    ]
