@@ -2,6 +2,276 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-09-saffron-row",
+   "n": 1,
+   "date": "2026-11-09",
+   "time": "12:00 IST",
+   "kicker": "SRK DAILY · Issue 5",
+   "title": "Tu Mil Jaaye meets its first boycott call",
+   "deck": "A Delhi BJP MLA wants Deepika Padukone's orange-outfit sequence cut from KING's first song. The song kept climbing: 68.4 million YouTube views on its eighth day.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "KING's first song has its first political fight. BJP MLA Ravi Negi, who represents Delhi's Patparganj constituency, has demanded that the makers remove the sequence in Tu Mil Jaaye in which Deepika Padukone dances with Shah Rukh Khan in an orange outfit, and has called for a nationwide boycott of the film if they do not, Moneycontrol and The Telegraph reported on 6 and 7 November."
+    },
+    {
+     "quote": {
+      "q": "If Shah Rukh Khan does not remove the bhagwa scene, we will call for a nationwide boycott of King.",
+      "by": "Ravi Negi, BJP MLA, speaking to Dainik Samachar (as quoted by Moneycontrol, 7 Nov 2026)"
+     }
+    },
+    {
+     "p": "In the same interview Negi called the actor a \"Jihadi\", Moneycontrol and The Daily Star reported. On 7 November Ayodhya's Mahant Sitaram Das Maharaj told ANI that a dance in saffron \"would not be tolerated\" and suggested the actress wear green instead, according to Bhaskar English."
+    },
+    {
+     "h": "The Pathaan precedent"
+    },
+    {
+     "p": "The row repeats December 2022, when Deepika Padukone's saffron outfit in Besharam Rang, a song from Pathaan, drew protests and a threatened ban in Madhya Pradesh. Siddharth Anand, who directs KING, said then that the colour was chosen for the song's sunny backdrop. Pathaan opened in January 2023 and went on to become one of the highest-grossing Hindi films of all time. MovieTalkies summed up this week's echo: same colour, same actress, same actor, same director."
+    },
+    {
+     "h": "Meanwhile, the song"
+    },
+    {
+     "stats": [
+      [
+       "Tu Mil Jaaye, YouTube views",
+       "68,421,570",
+       "read 9 Nov 11:13 IST"
+      ],
+      [
+       "Likes",
+       "704,877",
+       ""
+      ],
+      [
+       "Added since 7 Nov 03:03 IST",
+       "+6,253,632",
+       "in 56 hours"
+      ]
+     ]
+    },
+    {
+     "p": "On social media, fans answered the boycott call with jokes and reels, iDiva reported. Red Chillies Entertainment kept posting: a full-version streaming link on 8 November, Diwali wishes the same evening and, this morning, two posts for 19 years of Om Shanti Om, the film that first paired Shah Rukh Khan and Deepika Padukone, each signed off \"#KING in cinemas on 24.12.2026\"."
+    },
+    {
+     "links": [
+      [
+       "Moneycontrol: the MLA's demand",
+       "https://www.moneycontrol.com/entertainment/mla-ravi-negi-demands-removal-of-deepika-padukone-s-orange-outfit-scene-from-king-s-song-warns-of-boycott-article-14074285.html"
+      ],
+      [
+       "The Daily Star: boycott call",
+       "https://www.thedailystar.net/culture/tv-film/news/indian-politician-calls-king-boycott-over-deepikas-orange-outfit-4317526"
+      ],
+      [
+       "Watch Tu Mil Jaaye",
+       "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+      ],
+      [
+       "KING Buzz · 9 Nov report",
+       "/king-intelligence/daily.html?date=2026-11-09"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#ShahRukhKhan",
+    "#DeepikaPadukone",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-09-ramayana-four-days",
+   "n": 2,
+   "date": "2026-11-09",
+   "time": "12:00 IST",
+   "kicker": "Box office · Diwali weekend",
+   "title": "Ramayana: ₹238.85 crore in four days",
+   "deck": "Ramayana: Part 1 crossed ₹200 crore net in India on Sunday, its fourth day, according to Sacnilk. Worldwide gross: ₹507.20 crore.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 had its biggest day yet on Saturday and passed ₹200 crore net in India on Sunday 8 November, according to Sacnilk's figures updated at 10:11 PM IST."
+    },
+    {
+     "h": "Day by day, India net"
+    },
+    {
+     "stats": [
+      [
+       "Day 1 · Thu 5 Nov",
+       "₹64.85 crore",
+       ""
+      ],
+      [
+       "Day 2 · Fri 6 Nov",
+       "₹48.05 crore",
+       ""
+      ],
+      [
+       "Day 3 · Sat 7 Nov",
+       "₹69.80 crore",
+       "▲ 45.3% on Friday; Hindi ₹53.00 crore"
+      ],
+      [
+       "Day 4 · Sun 8 Nov",
+       "₹56.15 crore",
+       "▼ 19.6% on Saturday; Hindi ₹36.75 crore"
+      ]
+     ]
+    },
+    {
+     "h": "Four days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹238.85 crore",
+       ""
+      ],
+      [
+       "India gross",
+       "₹285.20 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹222.00 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹507.20 crore",
+       "Sacnilk, updated 8 Nov 22:11 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk estimates 93.4 lakh tickets sold across the four days, 23.5 lakh of them on Sunday, from 93,982 shows."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "KING opens in 45 days, on 24 December. Ramayana's weekend shows the size of the audience this season can bring to cinemas; KING arrives in the Christmas week, seven weeks after it."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 4",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_4"
+      ],
+      [
+       "Sacnilk · Ramayana day 3",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_3"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-09-ramayana-to-king-day-5",
+   "n": 3,
+   "date": "2026-11-09",
+   "time": "12:00 IST",
+   "kicker": "Analytics · 9 Nov 2026",
+   "title": "RAMAYANA to KING, day 5: KING 15.1 million ahead",
+   "deck": "KING's three official videos lead Ramayana's seven by 15,102,134 views. Shah Rukh Khan's Instagram passes 48.58 million followers.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "153,437,234",
+       "read 9 Nov 11:13 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "138,335,100",
+       "read 9 Nov 11:13 IST"
+      ],
+      [
+       "KING ahead by",
+       "15,102,134",
+       "was 13,054,220 on 7 Nov 03:03 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Every official video of both films on YouTube, read from each video's public counter. Ramayana has seven videos across three channels; KING has three. Ramayana's official trailer stands at 49,490,958 views; KING's first song has 18.9 million more."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "KING's two teasers",
+       "85,015,664",
+       "Title Reveal 51,978,963 + Date Announcement 33,036,701"
+      ],
+      [
+       "Avengers: Doomsday trailer",
+       "84,665,390",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "The two KING teasers stay ahead of the Doomsday trailer, by 350,274 views."
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,588,270",
+       "read 9 Nov 11:15 IST; 48,550,966 on 3 Nov"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 9 Nov 2026 11:13-11:15 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#Ramayana",
+    "#TuMilJaaye",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-07-amkh-final-sheet-music",
    "n": 1,
    "date": "2026-11-07",
@@ -1270,39 +1540,39 @@
   }
  ],
  "poll": {
-  "id": "song-part-2026-11-07",
-  "q": "Agar Main King Hota is free to play. Which part would you play?",
+  "id": "tmj-2026-11-09",
+  "q": "Tu Mil Jaaye has 68.4 million views on day 8. Where will it be when KING opens on 24 December?",
   "o": [
-   "The vocals",
-   "The King's sax",
-   "Violin",
-   "Guitar, bass or drums"
+   "100 million",
+   "150 million",
+   "200 million",
+   "More than 200 million"
   ]
  },
  "beat": [
   {
-   "t": "Free sheet music",
-   "d": "Agar Main King Hota for vocals, alto sax, violin, guitar, bass and drums, plus the full score.",
-   "img": "/assets/songs/agar-main-king-hota-poster-v2.webp",
-   "url": "/agar-main-king-hota-song/#sheet-music"
-  },
-  {
-   "t": "Ramayana: ₹112.90 crore",
-   "d": "Two days, India net (Sacnilk); day 2 ₹48.05 crore.",
-   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
-   "url": "?p=2026-11-07-ramayana-day-two"
-  },
-  {
-   "t": "KING 13.1M ahead",
-   "d": "KING's 3 official videos 146,925,501 vs Ramayana's 7 at 133,871,281, read 7 Nov 03:03 IST.",
-   "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-07-ramayana-to-king-day-3"
-  },
-  {
-   "t": "Tu Mil Jaaye: 62.2M",
-   "d": "62,167,938 views on day six.",
+   "t": "The saffron row",
+   "d": "A Delhi BJP MLA calls for a KING boycott over Deepika's orange outfit in Tu Mil Jaaye.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
-   "url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+   "url": "?p=2026-11-09-saffron-row"
+  },
+  {
+   "t": "Ramayana: ₹238.85 crore",
+   "d": "Four days, India net (Sacnilk); ₹507.20 crore worldwide.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "url": "?p=2026-11-09-ramayana-four-days"
+  },
+  {
+   "t": "KING 15.1M ahead",
+   "d": "KING's 3 official videos 153,437,234 vs Ramayana's 7 at 138,335,100, read 9 Nov 11:13 IST.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "url": "?p=2026-11-09-ramayana-to-king-day-5"
+  },
+  {
+   "t": "19 years of Om Shanti Om",
+   "d": "Red Chillies marks the anniversary: 'They really said, One more time!' #KING in cinemas on 24.12.2026.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
+   "url": "https://x.com/RedChilliesEnt/status/2119663775552856557"
   }
  ],
  "fanverse": {
