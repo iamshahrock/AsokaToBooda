@@ -1,0 +1,110 @@
+{
+ "date": "2026-11-10",
+ "record_id": "KING-2026-11-10",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 52062056,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-10 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33049459,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-10 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 84818058,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-10 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 70585299,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-10 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-10: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-10: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 86,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-10 (86 works after the 9 Nov Fan Universe clean-up, PR #468)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 5488213,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-10 (83 YouTube views re-read 10 Nov ~07:40 IST)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48591000,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,591,000 as shown), read 2026-11-10 07:05 IST in the owner's signed-in browser",
+   "method": "count shown in the profile follower tooltip",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 10 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Tu Mil Jaaye 70,585,299 YouTube views at 07:03 IST (+2,163,729 since 9 Nov 11:13 IST); 716,069 likes",
+  "RAMAYANA to KING at 07:03 IST: KING's 3 official videos 155,696,814 vs Ramayana's 7 at 140,159,632 (KING +15,537,182; was +15,102,134 on 9 Nov 11:13 IST)",
+  "Ramayana day 5 (Mon 9 Nov): ₹107.50 crore India net, up 91.5% on day 4; 5 days ₹346.35 crore net, ₹663.90 crore worldwide gross (Sacnilk, updated 9 Nov 22:09 IST)",
+  "KING's Kerala release: E4 Entertainment to handle the Hindi and Tamil versions in Kerala, as reported by Sacnilk (9 Nov 12:39 IST)",
+  "@RedChilliesEnt on X 9 Nov: a third #19YearsOfOmShantiOm post (13:00 IST) and a Tu Mil Jaaye full-version stream post (18:01 IST); no new KING video, poster or trailer",
+  "KING's two teasers 85,111,515 vs the Doomsday trailer 84,818,058"
+ ],
+ "notes": [
+  "YouTube read by Claude from the public watch pages at 07:03 IST; Instagram in the owner's session at 07:05 IST.",
+  "Box office figures as reported by Sacnilk.",
+  "Unchanged values read as flat; posts are not people."
+ ]
+}

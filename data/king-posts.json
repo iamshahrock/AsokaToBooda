@@ -605,6 +605,16 @@
       "bookmarks": 7,
       "views": 6543
      }
+    },
+    {
+     "at": "2026-11-10T07:10:00+05:30",
+     "metrics": {
+      "replies": 15,
+      "reposts": 409,
+      "likes": 1850,
+      "bookmarks": 31,
+      "views": 19362
+     }
     }
    ]
   },
@@ -626,6 +636,16 @@
       "bookmarks": 4,
       "views": 2444
      }
+    },
+    {
+     "at": "2026-11-10T07:10:00+05:30",
+     "metrics": {
+      "replies": 6,
+      "reposts": 254,
+      "likes": 1070,
+      "bookmarks": 21,
+      "views": 12384
+     }
     }
    ]
   },
@@ -646,6 +666,48 @@
       "likes": 1190,
       "bookmarks": 35,
       "views": 45178
+     }
+    }
+   ]
+  },
+  {
+   "id": "oso19-lovestory-2026-11-09",
+   "release": null,
+   "title": "19 years of Om Shanti Om: 'their love story hits DIFFERENT!' #KING in cinemas on 24.12.2026",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2119693975720275983",
+   "posted_at": "2026-11-09T13:00:00+05:30",
+   "readings": [
+    {
+     "at": "2026-11-10T07:10:00+05:30",
+     "metrics": {
+      "replies": 23,
+      "reposts": 463,
+      "likes": 1509,
+      "bookmarks": 90,
+      "views": 45495
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-bothvoices-2026-11-09",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye full version: 'When both voices make you feel everything all at once'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2119769847462764816",
+   "posted_at": "2026-11-09T18:01:29+05:30",
+   "readings": [
+    {
+     "at": "2026-11-10T07:10:00+05:30",
+     "metrics": {
+      "replies": 13,
+      "reposts": 274,
+      "likes": 1164,
+      "bookmarks": 22,
+      "views": 18749
      }
     }
    ]
