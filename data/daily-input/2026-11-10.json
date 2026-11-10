@@ -68,9 +68,9 @@
   },
   {
    "series_id": "fan_ai_works_views",
-   "value": 5464900,
+   "value": 5488213,
    "unit": "views",
-   "source": "data/ai-creator-log.json as of 2026-11-10 (views re-read 9 Nov, PR #468)",
+   "source": "data/ai-creator-log.json as of 2026-11-10 (83 YouTube views re-read 10 Nov ~07:40 IST)",
    "method": "sum of public view counts on the logged works that show views",
    "confidence": "verified/linked",
    "status": "usable"
