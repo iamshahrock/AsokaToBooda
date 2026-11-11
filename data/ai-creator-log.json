@@ -1384,6 +1384,17 @@
         "facebook": 0
       },
       "method": "daily web scan + fan submissions"
+    },
+    {
+      "day": "2026-11-11",
+      "new": 0,
+      "platforms": {
+        "youtube": 0,
+        "instagram": 0,
+        "x": 0,
+        "facebook": 0
+      },
+      "method": "daily web scan + fan submissions (no pending submissions; YouTube oEmbed/watch pages could not be read this run, so unconfirmed candidates were not added)"
     }
   ],
   "reviewed": []
