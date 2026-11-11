@@ -2,6 +2,356 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-11-gaiety-galaxy",
+   "n": 1,
+   "date": "2026-11-11",
+   "time": "11:30 IST",
+   "kicker": "SRK DAILY · Issue 7",
+   "title": "Bandra's Gaiety-Galaxy races to reopen for KING",
+   "deck": "Shut since September, Bandra's landmark G7 cinema complex wants its doors open before KING's Christmas release, Mid-Day reported. Salman Khan's Maatrubhumi, KING's first December rival, released its trailer last night.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Gaiety-Galaxy, the G7 multiplex in Bandra, is working to reopen in the last week of November, Mid-Day reported on Tuesday 10 November. The theatre has been shut since 7 September. According to the paper, its management does not want to miss two of December's biggest Hindi releases: Salman Khan's Maatrubhumi on 4 December and KING on 24 December."
+    },
+    {
+     "p": "The closure followed a police inquiry that found the cinema's entertainment premises licence had allegedly not been renewed since 2021, MovieTalkies reported, citing The Indian Express; a case was registered against the owner, the manager and the operating firm. The management has described it as a technical shutdown caused by burnt cables. The police have said the theatre can reopen once the licence is renewed."
+    },
+    {
+     "h": "December's first rival"
+    },
+    {
+     "p": "Maatrubhumi: May War Rest in Peace, directed by Apoorva Lakhia, released its trailer on the Salman Khan Films YouTube channel at 10:25 PM on Tuesday. By 7:10 AM on Wednesday it had 4,245,759 views. It opens 20 days before KING."
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer, YouTube views",
+       "4,245,759",
+       "read 11 Nov 07:10 IST, about 9 hours after upload"
+      ],
+      [
+       "Maatrubhumi release",
+       "4 December 2026",
+       ""
+      ],
+      [
+       "KING release",
+       "24 December 2026",
+       "43 days from today"
+      ]
+     ]
+    },
+    {
+     "h": "A poster on Ramayana's busiest day"
+    },
+    {
+     "p": "KING's makers also used Ramayana's record Monday. On 9 November, the day after Diwali, fans on X posted screenshots showing the KING poster on the BookMyShow app as people booked tickets for Ramayana, The Lallantop reported. When the Hindi site checked the app on the morning of 10 November, the poster was no longer there."
+    },
+    {
+     "h": "The song, day 10"
+    },
+    {
+     "stats": [
+      [
+       "Tu Mil Jaaye, YouTube views",
+       "72,756,402",
+       "read 11 Nov 07:03 IST"
+      ],
+      [
+       "Likes",
+       "727,600",
+       ""
+      ],
+      [
+       "Added since 10 Nov 07:03 IST",
+       "+2,171,103",
+       "in 24 hours"
+      ]
+     ]
+    },
+    {
+     "p": "Red Chillies Entertainment posted the song's full version twice more on Tuesday, at 11 AM and 7:47 PM, both signed off \"#KING in cinemas on 24.12.2026\". On X, fan clubs in Bengaluru, Chennai and Andhra Pradesh celebrated the song on Spotify, and fan trackers counted more than 200,000 Instagram reels made to it in nine days."
+    },
+    {
+     "h": "The saffron row continues"
+    },
+    {
+     "p": "BJP MLA Ravinder Negi repeated his demand that Deepika Padukone's saffron-outfit sequences be cut from the film, speaking to PTI on 9 November, the Free Press Journal reported. He said protests had begun in Maharashtra and would continue in Delhi until the scenes were removed."
+    },
+    {
+     "links": [
+      [
+       "Mid-Day: Gaiety-Galaxy targets a December comeback",
+       "https://www.mid-day.com/entertainment/bollywood-news/article/gaiety-galaxy-targets-december-comeback-with-maatrubhumi-and-king-23659255"
+      ],
+      [
+       "MovieTalkies: why the theatre shut",
+       "https://www.movietalkies.com/news/gaiety-galaxy-relaunch-with-maatrubhumi-or-king-12798113"
+      ],
+      [
+       "The Lallantop: KING on BookMyShow (Hindi)",
+       "https://www.thelallantop.com/entertainment/post/shah-rukh-khan-joins-hands-with-ramayana-for-a-big-masterstroke-for-king"
+      ],
+      [
+       "Free Press Journal: the MLA, again",
+       "https://www.freepressjournal.in/entertainment/wear-green-bikini-bjp-mla-ravinder-negi-again-targets-deepika-padukones-saffron-outfits-in-shah-rukh-khans-king"
+      ],
+      [
+       "Maatrubhumi trailer on YouTube",
+       "https://www.youtube.com/watch?v=fA8-gXDoAk8"
+      ],
+      [
+       "Yesterday: KING finds its Kerala home",
+       "?p=2026-11-10-king-kerala"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#ShahRukhKhan",
+    "#TuMilJaaye",
+    "#GaietyGalaxy",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-11-ramayana-six-days",
+   "n": 2,
+   "date": "2026-11-11",
+   "time": "11:30 IST",
+   "kicker": "Box office · day 6",
+   "title": "Ramayana crosses ₹400 crore net in six days",
+   "deck": "Ramayana: Part 1 made ₹94.10 crore on Tuesday, its sixth day, and passed ₹400 crore net in India, according to Sacnilk. Worldwide: ₹823.50 crore gross.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹94.10 crore net in India on Tuesday 10 November from 24,344 shows, according to Sacnilk's figures updated at 10:08 PM IST. That is 12.5% below Monday's ₹107.50 crore, and it took the film past ₹400 crore net in six days. Average occupancy was 55.3%."
+    },
+    {
+     "h": "Day 6 by language, India net"
+    },
+    {
+     "stats": [
+      [
+       "Hindi",
+       "₹76.00 crore",
+       "19,845 shows"
+      ],
+      [
+       "Kannada",
+       "₹7.75 crore",
+       "931 shows"
+      ],
+      [
+       "Telugu",
+       "₹4.00 crore",
+       "1,860 shows"
+      ],
+      [
+       "Tamil",
+       "₹3.60 crore",
+       "859 shows"
+      ],
+      [
+       "Malayalam",
+       "₹2.75 crore",
+       "849 shows"
+      ]
+     ]
+    },
+    {
+     "h": "Day by day, India net"
+    },
+    {
+     "stats": [
+      [
+       "Day 1 · Thu 5 Nov",
+       "₹64.85 crore",
+       ""
+      ],
+      [
+       "Day 2 · Fri 6 Nov",
+       "₹48.05 crore",
+       ""
+      ],
+      [
+       "Day 3 · Sat 7 Nov",
+       "₹69.80 crore",
+       ""
+      ],
+      [
+       "Day 4 · Sun 8 Nov",
+       "₹56.15 crore",
+       ""
+      ],
+      [
+       "Day 5 · Mon 9 Nov",
+       "₹107.50 crore",
+       ""
+      ],
+      [
+       "Day 6 · Tue 10 Nov",
+       "₹94.10 crore",
+       "▼ 12.5% on Monday"
+      ]
+     ]
+    },
+    {
+     "h": "Six days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹440.45 crore",
+       ""
+      ],
+      [
+       "India gross",
+       "₹526.50 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹297.00 crore",
+       "Sacnilk's rough estimate"
+      ],
+      [
+       "Worldwide gross",
+       "₹823.50 crore",
+       "Sacnilk, updated 10 Nov 22:08 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Overseas, Sacnilk reported, citing Venky Box Office, that Ramayana's first Monday in North America grossed about $1.37 million, the biggest first Monday there for an Indian film, ahead of Dhurandhar 2. Variety reported that it is the first Indian film to top the UK and Ireland weekend box office. Gulf News and News18 reported that the makers have submitted the film for consideration at the 99th Academy Awards."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "Ramayana's first week has become the benchmark of the season. KING opens on 24 December, 43 days from today, and its first week will be read against these six days."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 6",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_6"
+      ],
+      [
+       "Yesterday: ₹346.35 crore in five days",
+       "?p=2026-11-10-ramayana-five-days"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-11-ramayana-to-king-day-7",
+   "n": 3,
+   "date": "2026-11-11",
+   "time": "11:30 IST",
+   "kicker": "Analytics · 11 Nov 2026",
+   "title": "RAMAYANA to KING, day 7: KING 16 million ahead",
+   "deck": "KING's three official videos lead Ramayana's seven by 15,969,677 views. Avengers: Doomsday is closing on the two KING teasers.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "157,985,556",
+       "read 11 Nov 07:03 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "142,015,879",
+       "read 11 Nov 07:03 IST"
+      ],
+      [
+       "KING ahead by",
+       "15,969,677",
+       "was 15,537,182 on 10 Nov 07:03 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Every official video of both films on YouTube, read from each video's public counter. Ramayana has seven videos across three channels; KING has three. Ramayana's seven gained 1,856,247 views in 24 hours, its official trailer alone 1,253,832; KING's three gained 2,288,742, almost all of it Tu Mil Jaaye's 2,171,103."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "KING's two teasers",
+       "85,229,154",
+       "Title Reveal 52,164,036 + Date Announcement 33,065,118"
+      ],
+      [
+       "Avengers: Doomsday trailer",
+       "84,993,917",
+       ""
+      ],
+      [
+       "KING's lead",
+       "235,237",
+       "was 293,457 on 10 Nov and 350,274 on 9 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "The Marvel trailer gained 175,859 views in the 24 hours, the two KING teasers 117,639. At that pace the Doomsday trailer would pass them in about four days."
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,590,585",
+       "as shown on the profile, 11 Nov 07:05 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 11 Nov 2026 07:03-07:10 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#Ramayana",
+    "#TuMilJaaye",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-10-king-kerala",
    "n": 1,
    "date": "2026-11-10",
@@ -1889,39 +2239,39 @@
   }
  ],
  "poll": {
-  "id": "bo-2026-11-10",
-  "q": "Ramayana made ₹346.35 crore net in India in its first five days. What will KING make in its first five?",
+  "id": "screen-2026-11-11",
+  "q": "Gaiety-Galaxy wants to reopen in time for KING. Where will you watch KING's first show?",
   "o": [
-   "More than Ramayana",
-   "About the same",
-   "Less than Ramayana",
-   "A new all-time record"
+   "A single-screen theatre",
+   "A multiplex",
+   "IMAX or a premium screen",
+   "Not decided yet"
   ]
  },
  "beat": [
   {
-   "t": "KING goes to Kerala",
-   "d": "E4 Entertainment will release KING in Hindi and Tamil in Kerala, Sacnilk reports.",
-   "img": "https://i.ytimg.com/vi/Uu2QK9Z9X5E/mqdefault.jpg",
-   "url": "?p=2026-11-10-king-kerala"
-  },
-  {
-   "t": "Ramayana: ₹107.50 crore Monday",
-   "d": "Day 5, India net; ₹346.35 crore in five days, ₹663.90 crore worldwide (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
-   "url": "?p=2026-11-10-ramayana-five-days"
-  },
-  {
-   "t": "KING 15.5M ahead",
-   "d": "KING's 3 official videos 155,696,814 vs Ramayana's 7 at 140,159,632, read 10 Nov 07:03 IST.",
-   "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-10-ramayana-to-king-day-6"
-  },
-  {
-   "t": "Tu Mil Jaaye, full version",
-   "d": "Red Chillies: 'When both voices make you feel everything all at once.' #KING in cinemas on 24.12.2026.",
+   "t": "Gaiety-Galaxy eyes KING",
+   "d": "Bandra's G7, shut since 7 Sep, aims to reopen in late November for Maatrubhumi and KING (Mid-Day).",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "https://x.com/RedChilliesEnt/status/2119769847462764816"
+   "url": "?p=2026-11-11-gaiety-galaxy"
+  },
+  {
+   "t": "Ramayana: ₹440.45 crore",
+   "d": "Six days, India net; ₹94.10 crore on Tuesday, ₹823.50 crore worldwide (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "url": "?p=2026-11-11-ramayana-six-days"
+  },
+  {
+   "t": "KING 16M ahead",
+   "d": "KING's 3 official videos 157,985,556 vs Ramayana's 7 at 142,015,879, read 11 Nov 07:03 IST.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "url": "?p=2026-11-11-ramayana-to-king-day-7"
+  },
+  {
+   "t": "Maatrubhumi trailer is out",
+   "d": "Salman Khan's 4 December release, 20 days before KING: 4,245,759 views in about 9 hours.",
+   "img": "https://i.ytimg.com/vi/fA8-gXDoAk8/mqdefault.jpg",
+   "url": "https://www.youtube.com/watch?v=fA8-gXDoAk8"
   }
  ],
  "fanverse": {
