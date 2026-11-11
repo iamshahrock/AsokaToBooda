@@ -154,6 +154,7 @@ button.np-btn{cursor:pointer}
 .tl{border-left:3px solid var(--red);padding-left:14px;margin:0 0 14px}
 .tl p{font-size:16px;line-height:1.65;margin:0 0 10px}
 .tl b{font:700 14px Archivo,sans-serif;color:var(--red);margin-right:8px}
+.au{display:grid;grid-template-columns:minmax(120px,38%) 1fr;gap:14px;align-items:center;margin:4px 0 18px;padding:12px;border:1px solid var(--rule);background:rgba(0,0,0,.03)}.au img{width:100%;display:block;border:1px solid var(--rule)}.au b{display:block;font:700 20px 'Libre Baskerville',serif;color:var(--maroon)}.au small{display:block;margin:2px 0 10px;opacity:.75}.au audio{width:100%;height:36px;display:block;margin:0 0 8px}.au .go{font-weight:700;color:var(--red)}@media(max-width:560px){.au{grid-template-columns:1fr}}
 .q{font:italic 700 clamp(24px,3.6vw,32px) 'Libre Baskerville',serif;text-align:center;color:var(--maroon);margin:18px 0}
 .ln{list-style:none;padding:0 !important}.ln a{color:var(--blue);font:600 15px Archivo,sans-serif}
 .tags{font:600 13px Archivo,sans-serif;color:var(--muted)}
@@ -219,6 +220,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   $('#npDate').textContent=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}).replace(/ (\d{4})$/,', $1');
   var DK=Math.max(0,Math.ceil((Date.parse('2026-12-24T00:00:00+05:30')-Date.now())/864e5));
+  document.addEventListener('play',function(e){var t=e.target;if(t&&t.dataset&&t.dataset.ga&&window.gtag)gtag('event','song_play',{song_file:t.dataset.ga,page_section:'srk-daily'});},true);
   function fmt(d){return new Date(d+'T12:00:00+05:30').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});}
   function block(b){
     if(b.h)return '<h3>'+esc(b.h)+'</h3>';
@@ -227,6 +229,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     if(b.time)return '<div class="tl">'+b.time.map(function(t){return '<p><b>'+esc(t[0])+'</b>'+esc(t[1])+'</p>';}).join('')+'</div>';
     if(b.quote)return '<p class="q">'+esc(b.quote.q)+'</p>';
     if(b.links)return '<ul class="ln">'+b.links.map(function(l){return '<li><a href="'+esc(l[1])+'">'+esc(l[0])+' →</a></li>';}).join('')+'</ul>';
+    if(b.audio){var a=b.audio;return '<div class="au">'+(a.img?'<a href="'+esc(a.url||'#')+'"><img src="'+esc(a.img)+'" alt="'+esc(a.t||'')+'" loading="lazy"></a>':'')+'<div><b>'+esc(a.t||'')+'</b>'+(a.sub?'<small>'+esc(a.sub)+'</small>':'')+'<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(a.src)+'" data-ga="'+esc(a.src.split('/').pop())+'"></audio>'+(a.url?'<a class="go" href="'+esc(a.url)+'">'+esc(a.cta||'Open')+' →</a>':'')+'</div></div>';}
     if(b.list)return '<ul>'+b.list.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>';
     return '';
   }
