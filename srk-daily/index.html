@@ -259,7 +259,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     var more=P.filter(function(p){return p.id!==x.id;});
     return '<article class="ar"><a class="back" href="./">← SRK DAILY front page</a><p class="k">'+esc(x.kicker)+'</p><h2>'+esc(x.title)+'</h2>'+(x.deck?'<p class="dk">'+esc(x.deck)+'</p>':'')+
       '<p class="by"><span>'+fmt(x.date)+(x.time?' · '+esc(x.time):'')+' · SRK DAILY</span><button data-sh="'+esc(x.id)+'">Share</button></p>'+
-      (x.img?'<figure><img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer"><figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
+      (x.img?'<figure>'+(x.img_url?'<a href="'+esc(x.img_url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer">'+(x.img_url?'</a>':'')+'<figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
       '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+
       (more.length?'<section class="mo"><h3>More from SRK DAILY</h3>'+more.map(function(m){return '<a href="?p='+esc(m.id)+'"><small>'+fmt(m.date)+'</small><b>'+esc(m.title)+'</b><span>'+esc(short(m.deck||firstP(m),160))+'</span></a>';}).join('')+'</section>':'')+
       '<a class="back end" href="./">← Back to the SRK DAILY front page</a>'+
@@ -339,7 +339,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     if(navigator.share)navigator.share({title:x.title,text:x.title,url:u}).catch(function(){});
     else window.open('https://wa.me/?text='+encodeURIComponent(x.title+' '+u),'_blank');});
   fetch('../data/srk-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-    D=d;P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n||9)-(b.n||9));});
+    D=d;P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n==null?9:a.n)-(b.n==null?9:b.n));});
     var one=new URLSearchParams(location.search).get('p'),x=one&&P.filter(function(p){return p.id===one;})[0];
     $('#npBody').innerHTML=x?article(D,x):front(D,P);
     if(!x)daily(D);

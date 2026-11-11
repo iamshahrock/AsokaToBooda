@@ -2,6 +2,101 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-11-maatrubhumi-to-king",
+   "n": 0,
+   "date": "2026-11-11",
+   "time": "11:30 IST",
+   "kicker": "SRK DAILY · Special Edition",
+   "title": "MAATRUBHUMI to KING: the Karan Arjun of Bollywood",
+   "deck": "Salman Khan's Maatrubhumi released its trailer last night. It opens on 4 December, twenty days before Shah Rukh Khan's KING.",
+   "img": "/assets/srk-daily/2026-11-11-maatrubhumi-trailer.jpg",
+   "img_url": "https://www.youtube.com/watch?v=fA8-gXDoAk8",
+   "img_alt": "Maatrubhumi official trailer, Salman Khan",
+   "img_credit": "Maatrubhumi: May War Rest in Peace, official trailer · Salman Khan Films on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "A friendship that's talked about, written about , read about and discussed by millions for decades, but behind the closed doors of paradise, FANS donot really have any real knowledge or data about the \"real friendship\" between the two other than their public performance."
+    },
+    {
+     "h": "The trailer"
+    },
+    {
+     "p": "Maatrubhumi: May War Rest in Peace released its official trailer on the Salman Khan Films YouTube channel at 10:25 PM IST on Tuesday 10 November. It runs 4 minutes 35 seconds. The film is directed by Apoorva Lakhia and produced by Salma Khan, and was earlier titled Battle of Galwan."
+    },
+    {
+     "p": "Salman Khan plays the commander of a battalion posted on the northern border; the role is based on Colonel B. Santosh Babu of the 16 Bihar Regiment, The Hollywood Reporter India reported. Chitrangda Singh plays his wife. His men fight in the snow with clubs, stones, shields and bare hands, not guns, and the border scenes cut to the couple's love story. The channel's own line for the trailer: \"the greatest victory is when war comes to an end.\""
+    },
+    {
+     "links": [
+      [
+       "Watch the official trailer on YouTube",
+       "https://www.youtube.com/watch?v=fA8-gXDoAk8"
+      ]
+     ]
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer, YouTube views",
+       "9,344,265",
+       "read 11 Nov 10:54 IST, about 12½ hours after upload"
+      ],
+      [
+       "Likes",
+       "176,251",
+       ""
+      ],
+      [
+       "Maatrubhumi release",
+       "4 December 2026",
+       "worldwide"
+      ],
+      [
+       "KING release",
+       "24 December 2026",
+       "43 days from today"
+      ]
+     ]
+    },
+    {
+     "h": "Kisi sarhad ka"
+    },
+    {
+     "quote": {
+      "q": "Kisi sarhad ka, main sipahi na banta."
+     }
+    },
+    {
+     "quote": {
+      "q": "Fauji ki vardi ka koi karza na hota"
+     }
+    },
+    {
+     "p": "These lines seem to sum up the trailer."
+    },
+    {
+     "links": [
+      [
+       "Agar Main King Hota, the song",
+       "/agar-main-king-hota-song/"
+      ],
+      [
+       "KING Buzz: every KING number, every day",
+       "/king-intelligence/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Maatrubhumi",
+    "#SalmanKhan",
+    "#KING",
+    "#ShahRukhKhan",
+    "#KaranArjun",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-11-gaiety-galaxy",
    "n": 1,
    "date": "2026-11-11",
