@@ -688,6 +688,16 @@
       "bookmarks": 90,
       "views": 45495
      }
+    },
+    {
+     "at": "2026-11-11T07:08:00+05:30",
+     "metrics": {
+      "replies": 25,
+      "reposts": 523,
+      "likes": 1747,
+      "bookmarks": 101,
+      "views": 56067
+     }
     }
    ]
   },
@@ -708,6 +718,58 @@
       "likes": 1164,
       "bookmarks": 22,
       "views": 18749
+     }
+    },
+    {
+     "at": "2026-11-11T07:08:00+05:30",
+     "metrics": {
+      "replies": 16,
+      "reposts": 346,
+      "likes": 1595,
+      "bookmarks": 35,
+      "views": 28405
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-dehshat-2026-11-10",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye full version: 'Aag DIL mein lagi hai, DEHSHAT poori duniya dekhegi'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2120026652503912621",
+   "posted_at": "2026-11-10T11:01:56+05:30",
+   "readings": [
+    {
+     "at": "2026-11-11T07:08:00+05:30",
+     "metrics": {
+      "replies": 37,
+      "reposts": 460,
+      "likes": 2294,
+      "bookmarks": 92,
+      "views": 87498
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-everysituation-2026-11-10",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye full version: 'A little something for every kind of situation!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2120158941095321779",
+   "posted_at": "2026-11-10T19:47:36+05:30",
+   "readings": [
+    {
+     "at": "2026-11-11T07:08:00+05:30",
+     "metrics": {
+      "replies": 12,
+      "reposts": 266,
+      "likes": 1186,
+      "bookmarks": 19,
+      "views": 17064
      }
     }
    ]
