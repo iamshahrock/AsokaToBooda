@@ -1075,6 +1075,19 @@
    "found": "2026-11-09",
    "published": "2026-10-20",
    "source": "YouTube sweep 9 Nov 2026 (20 searches, last week + last month)"
+  },
+  {
+   "platform": "youtube",
+   "url": "https://www.youtube.com/watch?v=-hQBMnmh05Y",
+   "id": "-hQBMnmh05Y",
+   "title": "KING - Official Trailer | Shahrukh Khan | Suhana Khan | Deepika P | Siddharth Anand | Ai Fan Made",
+   "creator": "Hamdan Animated",
+   "kind": "AI fan-made concept trailer",
+   "views": null,
+   "views_asof": null,
+   "found": "2026-11-12",
+   "published": "2026-01-19",
+   "source": "daily scan"
   }
  ],
  "scans": [
@@ -1382,6 +1395,17 @@
     "facebook": 0
    },
    "method": "daily web scan + fan submissions (no pending submissions; YouTube oEmbed/watch pages could not be read this run, so unconfirmed candidates were not added)"
+  },
+  {
+   "day": "2026-11-12",
+   "new": 1,
+   "platforms": {
+    "youtube": 1,
+    "instagram": 0,
+    "x": 0,
+    "facebook": 0
+   },
+   "method": "daily web scan + fan submissions (no pending submissions; YouTube oEmbed unavailable, title/channel read from the watch page; view counts blocked, so null)"
   }
  ],
  "reviewed": []
