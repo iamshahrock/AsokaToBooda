@@ -141,6 +141,7 @@ button.np-btn{cursor:pointer}
 .ar .by{font:600 12px Archivo,sans-serif;color:var(--muted);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:6px 0;margin:0 0 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .ar .by button{background:none;border:1px solid var(--red);color:var(--red);font:600 12px Archivo,sans-serif;padding:3px 10px;cursor:pointer}
 .ar figure{margin:0 0 14px}.ar figure img{width:100%;display:block;filter:sepia(.15);border:1px solid var(--rule)}
+.ar figure.fg{margin:6px 0 18px}.ar figure.fg img{max-height:640px;width:auto;max-width:100%;margin:0 auto}
 .ar figcaption{font:italic 12px 'Libre Baskerville',serif;color:var(--muted);margin-top:4px}
 .ar h3{font:700 13px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--blue);display:inline-block;padding:4px 10px;margin:20px 0 10px}
 .ar p.t{font-size:16.5px;line-height:1.75;margin:0 0 12px}
@@ -229,6 +230,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     if(b.time)return '<div class="tl">'+b.time.map(function(t){return '<p><b>'+esc(t[0])+'</b>'+esc(t[1])+'</p>';}).join('')+'</div>';
     if(b.quote)return '<p class="q">'+esc(b.quote.q)+'</p>';
     if(b.links)return '<ul class="ln">'+b.links.map(function(l){return '<li><a href="'+esc(l[1])+'">'+esc(l[0])+' →</a></li>';}).join('')+'</ul>';
+    if(b.fig){var f=b.fig;return '<figure class="fg">'+(f.url?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(f.src)+'" alt="'+esc(f.alt||'')+'" loading="lazy" referrerpolicy="no-referrer">'+(f.url?'</a>':'')+'<figcaption>'+esc(f.cap||'')+'</figcaption></figure>';}
     if(b.audio){var a=b.audio;return '<div class="au">'+(a.img?'<a href="'+esc(a.url||'#')+'"><img src="'+esc(a.img)+'" alt="'+esc(a.t||'')+'" loading="lazy"></a>':'')+'<div><b>'+esc(a.t||'')+'</b>'+(a.sub?'<small>'+esc(a.sub)+'</small>':'')+'<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(a.src)+'" data-ga="'+esc(a.src.split('/').pop())+'"></audio>'+(a.url?'<a class="go" href="'+esc(a.url)+'">'+esc(a.cta||'Open')+' →</a>':'')+'</div></div>';}
     if(b.list)return '<ul>'+b.list.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>';
     return '';
