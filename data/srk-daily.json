@@ -6,62 +6,112 @@
    "n": 1,
    "date": "2026-11-12",
    "time": "07:45 IST",
-   "kicker": "SRK DAILY · Issue 8",
-   "title": "The King dances to his own song in Dubai",
-   "deck": "Shah Rukh Khan performed Tu Mil Jaaye on stage for the first time at a Dubai launch hosted by Karan Johar on Wednesday night. By morning the song had passed 74.8 million views.",
-   "img": "https://i.ytimg.com/vi/y8K8K3Z3lio/maxresdefault.jpg",
-   "img_url": "https://www.youtube.com/watch?v=y8K8K3Z3lio",
-   "img_alt": "Shahrukhz Residences by Danube launch event, 11 November 2026, Shah Rukh Khan and Gauri Khan",
-   "img_credit": "Shahrukhz Residences by Danube · launch event livestream, Danube Properties on YouTube. Tap the picture to watch.",
+   "kicker": "SRK DAILY · Issue 8 · Dubai",
+   "title": "The King's address in Dubai: Shahrukhz by Danube",
+   "deck": "A boy from Ghatkopar built the tower. Gauri Khan designed its penthouses, and they sold out on launch day. Karan Johar hosted the night. And at the end of it, Shah Rukh Khan brought KING to Dubai.",
+   "img": "/assets/srk-daily/2026-11-12-dubai-srk.jpg",
+   "img_url": "https://x.com/SRK_RUSSIAN_FC/status/2120619916583903532",
+   "img_alt": "Shah Rukh Khan on stage at the Shahrukhz Residences by Danube launch in Dubai",
+   "img_credit": "Shah Rukh Khan at the launch of Shahrukhz Residences by Danube, Coca-Cola Arena, Dubai, 11 November 2026. Photo: SRK Russian FC on X.",
    "blocks": [
     {
-     "p": "Shah Rukh Khan took the stage at Dubai's Coca-Cola Arena on Wednesday 11 November for the launch of Shahrukhz Residences by Danube, a 60-storey tower in Dubai Maritime City that carries his name, Khaleej Times reported. Karan Johar hosted the evening, with Gauri Khan, who designed the tower's penthouses, and Danube's Rizwan Sajan and Adel Sajan on stage."
+     "p": "On Wednesday night the Coca-Cola Arena in Dubai filled for a building. Not a film, not a concert: a 60-storey waterfront tower in Dubai Maritime City that carries Shah Rukh Khan's name. Shahrukhz Residences by Danube is the second tower the developer has named after him, and by the time he walked on stage, the evening had already become a family affair, a friendship and a film promotion, all at once."
     },
     {
-     "p": "Then came the moment fans had not been promised. He told the crowd the steps might not come, \"we'll just vibe to it\", Khaleej Times reported, and danced to Tu Mil Jaaye, KING's first song. On X, fan clubs called it the song's first live performance. One clip of it had more than 41,000 views by Thursday morning."
+     "h": "The man who built it"
+    },
+    {
+     "p": "The tower belongs to Rizwan Sajan, and his own story would make a Shah Rukh Khan film. He was born in Mumbai in 1963 and grew up in Ghatkopar. He lost his father at 16 and left school to work, selling books, delivering milk and newspapers, and selling firecrackers at Diwali, Business Today reported. A job in building materials took him to Kuwait; the Gulf War sent him home. In the early 1990s a friend helped him to Dubai, where he started trading hardware. That trading business became Danube Group, today one of Dubai's big home builders. Reports put his own worth at about $2.5 billion."
+    },
+    {
+     "p": "He first put Shah Rukh Khan's name on a building in 2025: Shahrukhz by Danube, a commercial tower on Sheikh Zayed Road, which Danube says sold out on launch day. Wednesday was the reunion. On stage, the two men played it like old friends. Asked by Karan Johar what he would take from the actor, Sajan picked the dimples: with those, he said, he would sell twice as much property. Shah Rukh Khan's answer: then who would watch his films? Sajan also told the arena the advice the actor once gave him: you build the tower, leave the show to me."
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-12-dubai-srk-rizwan-sajan.jpg",
+      "alt": "Shah Rukh Khan with Rizwan Sajan on stage in Dubai",
+      "url": "https://x.com/SRKCHENNAIFC/status/2120647014530867528",
+      "cap": "Shah Rukh Khan with Danube Group founder Rizwan Sajan on stage. Fan clubs said he treated Sajan to a dialogue from Raees. Photo: SRK Chennai FC on X."
+     }
+    },
+    {
+     "h": "Gauri's penthouses, sold on launch day"
+    },
+    {
+     "p": "The penthouses at the top of the tower are Gauri Khan's. She designed them with her team in India, and on stage she called the project “so personal.” Danube's Adel Sajan, Rizwan's son, said she sat in on every Zoom call and worked through every detail, down to the materials and the corners of each room. Bringing her in was his father's idea."
+    },
+    {
+     "p": "All of her penthouses, valued at ₹50 crore each, sold out on launch day, Gulf Good News reported, and fan clubs at the arena posted that they were gone before the evening began. Shah Rukh Khan, for his part, told the arena that at home Gauri decides everything, from the Wi-Fi to the chandeliers. Then he turned to her: “Gauri, what a home you've made.”"
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-12-dubai-srk-gauri-stage.jpg",
+      "alt": "Rizwan Sajan, Shah Rukh Khan, Gauri Khan and Karan Johar on stage",
+      "url": "https://gulfnews.com/entertainment/shah-rukh-khan-tells-karan-johar-in-dubai-why-he-always-wanted-a-home-of-his-own-1.500744268",
+      "cap": "Rizwan Sajan, Shah Rukh Khan, Gauri Khan and Karan Johar on stage at the Coca-Cola Arena. Photo: Gulf News."
+     }
+    },
+    {
+     "h": "Karan Johar, on his own couch"
+    },
+    {
+     "p": "Karan Johar hosted the night, and he brought his couch. The man who directed Shah Rukh Khan in Kuch Kuch Hota Hai, Kabhi Khushi Kabhie Gham, Kabhi Alvida Naa Kehna and My Name Is Khan ran the evening like an episode of his own talk show: an introduction for Gauri, a rapid-fire round for Sajan, and the questions that turned the night from property to life."
     },
     {
      "h": "A home of his own"
     },
     {
-     "p": "On Johar's couch, the conversation turned to houses. \"My biggest yearning in life was to have a house,\" he said, according to Khaleej Times. Gulf News reported that he traced that yearning to his childhood, and called buying his first home, and later Mannat, among his least practical decisions. \"To know that people may choose my name as the address of their home, that's a feeling I've never experienced before,\" he said. It is the second Danube project to carry his name, after a commercial tower on Sheikh Zayed Road."
+     "p": "On that couch, Shah Rukh Khan talked about houses. “My biggest yearning in life was to have a house,” he said, Khaleej Times reported. Gulf News reported that he traced that wish back to a childhood without the home he wanted, and called buying his first home, and later Mannat, two of the least practical decisions of his life. Mannat is now a stop for fans and tourists in Bandra. Now there is an address in Dubai with his name on it. He called that “extremely humbling.”"
     },
     {
-     "h": "The song, day 11"
+     "h": "And then, KING"
+    },
+    {
+     "p": "Before he sat down, he danced. Shah Rukh Khan performed Tu Mil Jaaye, KING's first song, released on his 61st birthday on 2 November. Fan clubs on X called it the song's first live performance. On Instagram, 104 posts about the launch had 4,493,209 plays by Thursday morning. Tu Mil Jaaye itself passed 74.8 million views on YouTube. KING opens in cinemas on 24 December, in the UAE as well. Forty-two days to go."
+    },
+    {
+     "h": "The numbers"
     },
     {
      "stats": [
       [
+       "Shahrukhz Residences by Danube",
+       "60 storeys",
+       "Dubai Maritime City"
+      ],
+      [
+       "Starting price",
+       "AED 1.65 million",
+       "30/70 payment plan · handover Q4 2029"
+      ],
+      [
+       "Instagram, 104 posts on the launch",
+       "4,493,209",
+       "plays · 217,194 likes · read 12 Nov"
+      ],
+      [
+       "Launch livestream",
+       "51,603",
+       "views, Danube Properties on YouTube, read 12 Nov 09:17 IST"
+      ],
+      [
        "Tu Mil Jaaye, YouTube views",
-       "74,818,326",
-       "read 12 Nov 07:04 IST"
+       "74,844,434",
+       "739,100 likes · read 12 Nov 09:17 IST"
       ],
       [
-       "Likes",
-       "738,337",
-       ""
-      ],
-      [
-       "Added since 11 Nov 07:03 IST",
-       "+2,061,924",
-       "in 24 hours"
+       "KING in cinemas",
+       "24 December 2026",
+       "42 days to go"
       ]
      ]
     },
     {
-     "p": "Red Chillies Entertainment posted the song three more times on X between Wednesday noon and Thursday's first hour, the last one captioned \"Our forever KING, with a capital K!\". Singer Madhubanti Bagchi told Mirchi that singing it for Shah Rukh Khan's film \"feels like a dream run\"."
-    },
-    {
-     "p": "In Bangladesh, The Daily Star reported that listeners had pointed to similarities between Tu Mil Jaaye and singer-songwriter Moushumi Bhowmik's \"Ami Shunechi Shedin Tumi\". Bhowmik said she did not hear the resemblance in the same way, and that noticing similarities does not establish a connection between two songs. \"We all carry shadows, knowingly or unknowingly,\" she told the paper."
-    },
-    {
-     "h": "Christmas clears for KING"
-    },
-    {
-     "p": "Hollywood's Jumanji: Open World, starring Dwayne Johnson, is set to move its India release from 25 December to 1 January 2027, Sacnilk reported on Wednesday. Sony Pictures Entertainment India has not announced a new date, but its latest promotion says \"Coming Soon\" instead of Christmas. If the move holds, KING will have its opening weekend free of the Hollywood film."
-    },
-    {
      "links": [
+      [
+       "The full event page: Shahrukhz by Danube, videos and photos",
+       "/shahrukhz-by-danube/"
+      ],
       [
        "Khaleej Times: rapid-fire with Karan Johar",
        "https://www.khaleejtimes.com/entertainment/shah-rukh-khan-gauri-dubai-launch-shahrukhz-residences-rapid-fire"
@@ -71,28 +121,28 @@
        "https://www.khaleejtimes.com/entertainment/shah-rukh-khan-shahrukhz-residences-gauri-khan-karan-johar"
       ],
       [
+       "Khaleej Times: Gauri Khan calls the project 'so personal'",
+       "https://www.khaleejtimes.com/entertainment/gauri-khan-calls-dubai-penthouse-project-so-personal-at-shahrukhz-residences-launch"
+      ],
+      [
        "Gulf News: why he always wanted a home of his own",
        "https://gulfnews.com/entertainment/shah-rukh-khan-tells-karan-johar-in-dubai-why-he-always-wanted-a-home-of-his-own-1.500744268"
       ],
       [
-       "Mirchi: Madhubanti Bagchi on Tu Mil Jaaye",
-       "https://mirchi.in/stories/music/madhubanti-bagchi-tu-mil-jaaye-shah-rukh-khan-king/156493751"
+       "Business Today: the rise of Rizwan Sajan",
+       "https://www.businesstoday.in/latest/trends/story/the-rise-of-rizwan-sajan-how-a-mumbai-boy-built-danube-a-multi-billion-real-estate-empire-in-dubai-533584-2026-05-28"
       ],
       [
-       "The Daily Star: Moushumi Bhowmik",
-       "https://www.thedailystar.net/culture/entertainment/news/we-all-carry-shadows-moushumi-bhowmik-tu-mil-jaaye-plagiarism-claims-4318271"
-      ],
-      [
-       "IMDb / Sacnilk: Jumanji moves",
-       "https://www.imdb.com/news/ni66105813/"
+       "Gulf Good News on Instagram: penthouses sold out",
+       "https://www.instagram.com/p/Dfno7F8MqzZ/"
       ],
       [
        "Watch the launch event on YouTube",
        "https://www.youtube.com/watch?v=y8K8K3Z3lio"
       ],
       [
-       "Yesterday: Gaiety-Galaxy races to reopen for KING",
-       "?p=2026-11-11-gaiety-galaxy"
+       "KING vs DOOM, RAMAYANA and MAATRUBHUMI on KING Buzz",
+       "/king-intelligence/#competition"
       ]
      ]
     }
@@ -100,8 +150,9 @@
    "tags": [
     "#KING",
     "#ShahRukhKhan",
-    "#TuMilJaaye",
+    "#ShahrukhzByDanube",
     "#Dubai",
+    "#TuMilJaaye",
     "#SRKDaily"
    ]
   },
@@ -2808,16 +2859,22 @@
  },
  "beat": [
   {
-   "t": "SRK dances in Dubai",
-   "d": "Tu Mil Jaaye's first live performance, at the Shahrukhz Residences launch hosted by Karan Johar (Khaleej Times).",
-   "img": "https://i.ytimg.com/vi/y8K8K3Z3lio/mqdefault.jpg",
-   "url": "?p=2026-11-12-dubai-tu-mil-jaaye"
+   "t": "Shahrukhz by Danube",
+   "d": "Gauri's penthouses sold out on launch day; Rizwan Sajan, Karan Johar and a Tu Mil Jaaye dance. The full event page.",
+   "img": "/assets/srk-daily/2026-11-12-dubai-srk-gauri-stage.jpg",
+   "url": "/shahrukhz-by-danube/"
   },
   {
    "t": "Ramayana: ₹511.10 crore",
    "d": "First seven days, India net; ₹70.65 crore on Wednesday, ₹934.55 crore worldwide (Sacnilk).",
    "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
    "url": "?p=2026-11-12-ramayana-week-one"
+  },
+  {
+   "t": "'We all carry shadows'",
+   "d": "Singer Moushumi Bhowmik on listeners comparing Tu Mil Jaaye to her song (The Daily Star).",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
+   "url": "https://www.thedailystar.net/culture/entertainment/news/we-all-carry-shadows-moushumi-bhowmik-tu-mil-jaaye-plagiarism-claims-4318271"
   },
   {
    "t": "Doomsday passes KING's teasers",
