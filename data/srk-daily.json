@@ -2,6 +2,392 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-12-dubai-tu-mil-jaaye",
+   "n": 1,
+   "date": "2026-11-12",
+   "time": "07:45 IST",
+   "kicker": "SRK DAILY · Issue 8",
+   "title": "The King dances to his own song in Dubai",
+   "deck": "Shah Rukh Khan performed Tu Mil Jaaye on stage for the first time at a Dubai launch hosted by Karan Johar on Wednesday night. By morning the song had passed 74.8 million views.",
+   "img": "https://i.ytimg.com/vi/y8K8K3Z3lio/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=y8K8K3Z3lio",
+   "img_alt": "Shahrukhz Residences by Danube launch event, 11 November 2026, Shah Rukh Khan and Gauri Khan",
+   "img_credit": "Shahrukhz Residences by Danube · launch event livestream, Danube Properties on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Shah Rukh Khan took the stage at Dubai's Coca-Cola Arena on Wednesday 11 November for the launch of Shahrukhz Residences by Danube, a 60-storey tower in Dubai Maritime City that carries his name, Khaleej Times reported. Karan Johar hosted the evening, with Gauri Khan, who designed the tower's penthouses, and Danube's Rizwan Sajan and Adel Sajan on stage."
+    },
+    {
+     "p": "Then came the moment fans had not been promised. He told the crowd the steps might not come, \"we'll just vibe to it\", Khaleej Times reported, and danced to Tu Mil Jaaye, KING's first song. On X, fan clubs called it the song's first live performance. One clip of it had more than 41,000 views by Thursday morning."
+    },
+    {
+     "h": "A home of his own"
+    },
+    {
+     "p": "On Johar's couch, the conversation turned to houses. \"My biggest yearning in life was to have a house,\" he said, according to Khaleej Times. Gulf News reported that he traced that yearning to his childhood, and called buying his first home, and later Mannat, among his least practical decisions. \"To know that people may choose my name as the address of their home, that's a feeling I've never experienced before,\" he said. It is the second Danube project to carry his name, after a commercial tower on Sheikh Zayed Road."
+    },
+    {
+     "h": "The song, day 11"
+    },
+    {
+     "stats": [
+      [
+       "Tu Mil Jaaye, YouTube views",
+       "74,818,326",
+       "read 12 Nov 07:04 IST"
+      ],
+      [
+       "Likes",
+       "738,337",
+       ""
+      ],
+      [
+       "Added since 11 Nov 07:03 IST",
+       "+2,061,924",
+       "in 24 hours"
+      ]
+     ]
+    },
+    {
+     "p": "Red Chillies Entertainment posted the song three more times on X between Wednesday noon and Thursday's first hour, the last one captioned \"Our forever KING, with a capital K!\". Singer Madhubanti Bagchi told Mirchi that singing it for Shah Rukh Khan's film \"feels like a dream run\"."
+    },
+    {
+     "p": "In Bangladesh, The Daily Star reported that listeners had pointed to similarities between Tu Mil Jaaye and singer-songwriter Moushumi Bhowmik's \"Ami Shunechi Shedin Tumi\". Bhowmik said she did not hear the resemblance in the same way, and that noticing similarities does not establish a connection between two songs. \"We all carry shadows, knowingly or unknowingly,\" she told the paper."
+    },
+    {
+     "h": "Christmas clears for KING"
+    },
+    {
+     "p": "Hollywood's Jumanji: Open World, starring Dwayne Johnson, is set to move its India release from 25 December to 1 January 2027, Sacnilk reported on Wednesday. Sony Pictures Entertainment India has not announced a new date, but its latest promotion says \"Coming Soon\" instead of Christmas. If the move holds, KING will have its opening weekend free of the Hollywood film."
+    },
+    {
+     "links": [
+      [
+       "Khaleej Times: rapid-fire with Karan Johar",
+       "https://www.khaleejtimes.com/entertainment/shah-rukh-khan-gauri-dubai-launch-shahrukhz-residences-rapid-fire"
+      ],
+      [
+       "Khaleej Times: 'a home is where your story begins'",
+       "https://www.khaleejtimes.com/entertainment/shah-rukh-khan-shahrukhz-residences-gauri-khan-karan-johar"
+      ],
+      [
+       "Gulf News: why he always wanted a home of his own",
+       "https://gulfnews.com/entertainment/shah-rukh-khan-tells-karan-johar-in-dubai-why-he-always-wanted-a-home-of-his-own-1.500744268"
+      ],
+      [
+       "Mirchi: Madhubanti Bagchi on Tu Mil Jaaye",
+       "https://mirchi.in/stories/music/madhubanti-bagchi-tu-mil-jaaye-shah-rukh-khan-king/156493751"
+      ],
+      [
+       "The Daily Star: Moushumi Bhowmik",
+       "https://www.thedailystar.net/culture/entertainment/news/we-all-carry-shadows-moushumi-bhowmik-tu-mil-jaaye-plagiarism-claims-4318271"
+      ],
+      [
+       "IMDb / Sacnilk: Jumanji moves",
+       "https://www.imdb.com/news/ni66105813/"
+      ],
+      [
+       "Watch the launch event on YouTube",
+       "https://www.youtube.com/watch?v=y8K8K3Z3lio"
+      ],
+      [
+       "Yesterday: Gaiety-Galaxy races to reopen for KING",
+       "?p=2026-11-11-gaiety-galaxy"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#ShahRukhKhan",
+    "#TuMilJaaye",
+    "#Dubai",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-12-ramayana-week-one",
+   "n": 2,
+   "date": "2026-11-12",
+   "time": "07:45 IST",
+   "kicker": "Box office · week 1",
+   "title": "Ramayana's first week: ₹511.10 crore",
+   "deck": "Ramayana: Part 1 made ₹70.65 crore on Wednesday and closed seven days at ₹511.10 crore net in India, according to Sacnilk. Worldwide: ₹934.55 crore gross.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹70.65 crore net in India on Wednesday 11 November, its seventh day, from 24,239 shows, according to Sacnilk's figures updated at 10:11 PM IST. That is 24.9% below Tuesday's ₹94.10 crore, and it took the film past ₹500 crore net. Average occupancy was 43.4%."
+    },
+    {
+     "h": "Day 7 by language, India net"
+    },
+    {
+     "stats": [
+      [
+       "Hindi",
+       "₹58.00 crore",
+       "19,715 shows"
+      ],
+      [
+       "Kannada",
+       "₹4.50 crore",
+       "922 shows"
+      ],
+      [
+       "Malayalam",
+       "₹2.75 crore",
+       "870 shows"
+      ],
+      [
+       "Telugu",
+       "₹2.75 crore",
+       "1,847 shows"
+      ],
+      [
+       "Tamil",
+       "₹2.65 crore",
+       "885 shows"
+      ]
+     ]
+    },
+    {
+     "h": "Day by day, India net"
+    },
+    {
+     "stats": [
+      [
+       "Day 1 · Thu 5 Nov",
+       "₹64.85 crore",
+       ""
+      ],
+      [
+       "Day 2 · Fri 6 Nov",
+       "₹48.05 crore",
+       ""
+      ],
+      [
+       "Day 3 · Sat 7 Nov",
+       "₹69.80 crore",
+       ""
+      ],
+      [
+       "Day 4 · Sun 8 Nov",
+       "₹56.15 crore",
+       ""
+      ],
+      [
+       "Day 5 · Mon 9 Nov",
+       "₹107.50 crore",
+       ""
+      ],
+      [
+       "Day 6 · Tue 10 Nov",
+       "₹94.10 crore",
+       ""
+      ],
+      [
+       "Day 7 · Wed 11 Nov",
+       "₹70.65 crore",
+       "▼ 24.9% on Tuesday"
+      ]
+     ]
+    },
+    {
+     "h": "Seven days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹511.10 crore",
+       "Hindi ₹394.00 crore"
+      ],
+      [
+       "India gross",
+       "₹611.05 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹323.50 crore",
+       "Sacnilk's rough estimate"
+      ],
+      [
+       "Worldwide gross",
+       "₹934.55 crore",
+       "Sacnilk, updated 11 Nov 22:11 IST"
+      ],
+      [
+       "Tickets sold",
+       "1,97,16,782",
+       "Sacnilk's estimate, across the run"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk's own note on the run: the Hindi version has brought in 77.1% of the India net so far, and the Malayalam version had the fullest halls on Wednesday at 68.0%. Its day 8 report, for Thursday, will close the first full week; a week counts from Thursday to Thursday."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "KING opens on Thursday 24 December, 42 days from today. With a Thursday release, its first week will also run eight days, Christmas to New Year, and it will be read against these numbers."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 7",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_7"
+      ],
+      [
+       "Yesterday: ₹440.45 crore in six days",
+       "?p=2026-11-11-ramayana-six-days"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-12-king-buzz-day-8",
+   "n": 3,
+   "date": "2026-11-12",
+   "time": "07:45 IST",
+   "kicker": "Analytics · 12 Nov 2026",
+   "title": "Doomsday passes KING's teasers as Maatrubhumi's trailer hits 30 million",
+   "deck": "The Avengers: Doomsday trailer is now 19,510 views ahead of KING's two teasers. Maatrubhumi's trailer has 30.8 million views in 33 hours. KING's three videos still lead both films.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "85,371,996",
+       "read 12 Nov 07:04 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,352,486",
+       "Title Reveal 52,272,866 + Date Announcement 33,079,620"
+      ],
+      [
+       "Doomsday ahead by",
+       "19,510",
+       "KING led by 235,237 on 11 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "The Marvel trailer gained 378,079 views in 24 hours, more than double its pace of the day before; KING's two teasers gained 123,332. KING's first song is not counted here: with Tu Mil Jaaye, KING's three official videos stand at 160,170,812."
+    },
+    {
+     "h": "MAATRUBHUMI to KING, day 2"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "30,808,843",
+       "views · 313,384 likes · about 33 hours"
+      ],
+      [
+       "Maatrubhumi, all 7 official videos",
+       "125,046,938",
+       "+21,436,485 since 11 Nov 11:11 IST"
+      ],
+      [
+       "KING, all 3 official videos",
+       "160,170,812",
+       "read 12 Nov 07:04 IST"
+      ],
+      [
+       "KING ahead by",
+       "35,123,874",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "Salman Khan's trailer added 21,257,359 views since 11:11 IST on Wednesday. Maatrubhumi's teaser stands at 26,592,648 and its five songs at 67,645,447. Counts are read from the official Salman Khan Films and Salman Khan Films Music channels at 07:11 IST; lyric versions are not counted."
+    },
+    {
+     "h": "RAMAYANA to KING, day 8"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "160,170,812",
+       "read 12 Nov 07:04 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "143,602,419",
+       "read 12 Nov 07:04 IST"
+      ],
+      [
+       "KING ahead by",
+       "16,568,393",
+       "was 15,969,677 on 11 Nov 07:03 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 1,586,540 views in 24 hours, its official trailer 1,116,921; KING's three gained 2,185,256, most of it Tu Mil Jaaye's 2,061,924."
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,590,544",
+       "as shown on the profile, 12 Nov 07:09 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "MAATRUBHUMI to KING: the Karan Arjun of Bollywood",
+       "?p=2026-11-11-maatrubhumi-to-king"
+      ],
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 12 Nov 2026 07:04-07:11 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#Maatrubhumi",
+    "#Ramayana",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-11-maatrubhumi-to-king",
    "n": 0,
    "date": "2026-11-11",
@@ -2411,39 +2797,39 @@
   }
  ],
  "poll": {
-  "id": "screen-2026-11-11",
-  "q": "Gaiety-Galaxy wants to reopen in time for KING. Where will you watch KING's first show?",
+  "id": "dubai-2026-11-12",
+  "q": "Shah Rukh Khan danced to Tu Mil Jaaye on stage in Dubai. Which KING song do you want him to perform next?",
   "o": [
-   "A single-screen theatre",
-   "A multiplex",
-   "IMAX or a premium screen",
-   "Not decided yet"
+   "Tu Mil Jaaye, again",
+   "KING's title track",
+   "A dance number",
+   "Wait for the trailer first"
   ]
  },
  "beat": [
   {
-   "t": "Gaiety-Galaxy eyes KING",
-   "d": "Bandra's G7, shut since 7 Sep, aims to reopen in late November for Maatrubhumi and KING (Mid-Day).",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "?p=2026-11-11-gaiety-galaxy"
+   "t": "SRK dances in Dubai",
+   "d": "Tu Mil Jaaye's first live performance, at the Shahrukhz Residences launch hosted by Karan Johar (Khaleej Times).",
+   "img": "https://i.ytimg.com/vi/y8K8K3Z3lio/mqdefault.jpg",
+   "url": "?p=2026-11-12-dubai-tu-mil-jaaye"
   },
   {
-   "t": "Ramayana: ₹440.45 crore",
-   "d": "Six days, India net; ₹94.10 crore on Tuesday, ₹823.50 crore worldwide (Sacnilk).",
+   "t": "Ramayana: ₹511.10 crore",
+   "d": "First seven days, India net; ₹70.65 crore on Wednesday, ₹934.55 crore worldwide (Sacnilk).",
    "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
-   "url": "?p=2026-11-11-ramayana-six-days"
+   "url": "?p=2026-11-12-ramayana-week-one"
   },
   {
-   "t": "KING 16M ahead",
-   "d": "KING's 3 official videos 157,985,556 vs Ramayana's 7 at 142,015,879, read 11 Nov 07:03 IST.",
+   "t": "Doomsday passes KING's teasers",
+   "d": "85,371,996 vs 85,352,486, read 12 Nov 07:04 IST; Maatrubhumi's trailer at 30.8 million.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-11-ramayana-to-king-day-7"
+   "url": "?p=2026-11-12-king-buzz-day-8"
   },
   {
-   "t": "Maatrubhumi trailer is out",
-   "d": "Salman Khan's 4 December release, 20 days before KING: 4,245,759 views in about 9 hours.",
-   "img": "/assets/srk-daily/2026-11-11-maatrubhumi-trailer.jpg",
-   "url": "https://www.youtube.com/watch?v=fA8-gXDoAk8"
+   "t": "Jumanji steps aside",
+   "d": "Jumanji: Open World is reported to move its India release to 1 January, off KING's opening weekend (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
+   "url": "https://www.imdb.com/news/ni66105813/"
   }
  ],
  "fanverse": {
