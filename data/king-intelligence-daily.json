@@ -2837,6 +2837,119 @@
         "Box office figures as reported by Sacnilk.",
         "Posts are not people."
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "record_id": "KING-2026-11-13",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": 52379001,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-13 07:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": 33092824,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-13 07:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": 85747373,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-13 07:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_tu_mil_jaaye_views",
+          "value": 76852499,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-13 07:03 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": null,
+          "unit": "indexed posts",
+          "source": "Not read 2026-11-13: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": null,
+          "unit": "indexed #srkking posts",
+          "source": "Not read 2026-11-13: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 85,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json as of 2026-11-12 (85 works)",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 5543193,
+          "unit": "views",
+          "source": "data/ai-creator-log.json as of 2026-11-12 (85 YouTube views re-read 12 Nov)",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": 48587793,
+          "unit": "followers",
+          "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,587,793 as shown), read 2026-11-13 07:06 IST in the owner's signed-in browser",
+          "method": "count shown in the profile follower tooltip",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 13 Nov total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "Tu Mil Jaaye 76,852,499 YouTube views at 07:03 IST (+2,034,173 since 12 Nov 07:04 IST); 750,237 likes",
+        "Choreographers Shazia Samji and Piyush Bhagat told Mid-Day that SRK wanted an age-appropriate presentation in Tu Mil Jaaye; he raps Ed Sheeran's verse sitting in a car; the song was shot over a week in May in Cape Town",
+        "Tu Mil Jaaye is No. 2 on Gaana's Hindi True Fan Chart for 2-8 Nov, behind Gehra Hua (Mirchi Plus, 12 Nov)",
+        "At the Dubai launch SRK said he never had a house of his own until he married Gauri Khan and that Mannat was beyond their means when they bought it (India Today, PTI, 12 Nov)",
+        "Avengers: Doomsday trailer 85,747,373 vs KING's two teasers 85,471,825: Doomsday ahead by 275,548 (19,510 on 12 Nov)",
+        "RAMAYANA to KING at 07:03 IST: KING's 3 official videos 162,324,324 vs Ramayana's 7 at 144,963,254 (KING +17,361,070; was +16,568,393 on 12 Nov)",
+        "Ramayana day 8 (Thu 12 Nov): ₹53.50 crore India net; 8 days ₹564.60 crore net, ₹675.05 crore India gross, ₹1,033.55 crore worldwide gross (Sacnilk, updated 12 Nov 22:19 IST); Sacnilk reports it is the 11th Indian film past ₹1,000 crore worldwide",
+        "MAATRUBHUMI to KING at 07:04 IST: Maatrubhumi trailer 41,067,536 views (+10,258,693 in 24 h); Maatrubhumi's 7 official videos 135,440,419 vs KING's 3 at 162,324,324",
+        "@RedChilliesEnt on X 12 Nov: two Tu Mil Jaaye posts (12:01, 18:03 IST) and a fill-in-the-dialogue KING post (15:00 IST); no new KING video, poster or trailer; no new @iamsrk post"
+      ],
+      "notes": [
+        "YouTube read by Claude from the public watch pages at 07:03-07:04 IST; Instagram in the owner's session at 07:06 IST.",
+        "Box office figures as reported by Sacnilk.",
+        "Posts are not people."
+      ]
     }
   ],
   "source_rules": {
