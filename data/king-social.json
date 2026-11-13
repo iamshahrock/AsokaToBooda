@@ -48,7 +48,10 @@
   "#KING (fan made OR edit OR poster) SRK since:2026-11-10",
   "\"Tu Mil Jaaye\" since:2026-11-11",
   "(#KING OR #TuMilJaaye OR \"Shah Rukh\") (King OR Dubai OR Shahrukhz) since:2026-11-11 min_faves:50",
-  "#KING (fan made OR edit OR poster OR fanmade) SRK since:2026-11-10"
+  "#KING (fan made OR edit OR poster OR fanmade) SRK since:2026-11-10",
+  "\"Tu Mil Jaaye\" since:2026-11-12 -filter:replies",
+  "(#KING OR #KINGMovie) (SRK OR \"Shah Rukh\") since:2026-11-12 -filter:replies",
+  "(\"Shah Rukh\" OR SRK) (Mannat OR Dubai OR Danube) since:2026-11-12 -filter:replies"
  ],
  "days": {
   "2026-10-27": {
@@ -6283,11 +6286,11 @@
   },
   "2026-11-12": {
    "totals": {
-    "posts_read": 9,
-    "views": 15390,
-    "likes": 498,
-    "reposts": 112,
-    "replies": 11
+    "posts_read": 65,
+    "views": 98926,
+    "likes": 3352,
+    "reposts": 689,
+    "replies": 25
    },
    "posts": [
     {
@@ -6295,11 +6298,141 @@
      "account": "@AwaaraHoon",
      "url": "https://x.com/AwaaraHoon/status/2120591973602206198",
      "posted_at": "2026-11-12T00:28:00+05:30",
-     "views": 8028,
-     "likes": 191,
-     "reposts": 32,
+     "views": 11766,
+     "likes": 301,
+     "reposts": 54,
      "replies": 0,
      "text": "SRK vibing on Tu Mil Jaaye unprepared, calls it his new jam",
+     "stance": "positive",
+     "kind": "event clip"
+    },
+    {
+     "platform": "X",
+     "account": "@ifyouarebadiamy",
+     "url": "https://x.com/ifyouarebadiamy/status/2120708670363505080",
+     "posted_at": "2026-11-12T08:12:00+05:30",
+     "views": 10975,
+     "likes": 87,
+     "reposts": 11,
+     "replies": 1,
+     "text": "reads SRK's 'watch KING with family' line in Dubai as a sign the film won't be A-rated",
+     "stance": "neutral",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@JawanKiSena",
+     "url": "https://x.com/JawanKiSena/status/2120842947038183879",
+     "posted_at": "2026-11-12T17:05:00+05:30",
+     "views": 8927,
+     "likes": 419,
+     "reposts": 69,
+     "replies": 3,
+     "text": "fan account claims a new KING action asset will launch on Monday (not announced by the makers)",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2120774855566258279",
+     "posted_at": "2026-11-12T12:35:00+05:30",
+     "views": 6647,
+     "likes": 361,
+     "reposts": 53,
+     "replies": 2,
+     "text": "SRK and Gauri Khan on stage in Dubai",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2120773844835488234",
+     "posted_at": "2026-11-12T12:31:00+05:30",
+     "views": 6270,
+     "likes": 144,
+     "reposts": 30,
+     "replies": 1,
+     "text": "SRK's 'dream big' advice at the Danube launch",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2120613579183526026",
+     "posted_at": "2026-11-12T01:54:00+05:30",
+     "views": 5239,
+     "likes": 154,
+     "reposts": 33,
+     "replies": 0,
+     "text": "Karan Johar's tribute to SRK on stage",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@BOWorldwide",
+     "url": "https://x.com/BOWorldwide/status/2120765061367206174",
+     "posted_at": "2026-11-12T11:56:00+05:30",
+     "views": 4845,
+     "likes": 141,
+     "reposts": 11,
+     "replies": 0,
+     "text": "choreographers say SRK kept his Tu Mil Jaaye look age-appropriate",
+     "stance": "neutral",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@TeamSRKWarriors",
+     "url": "https://x.com/TeamSRKWarriors/status/2120586769490116764",
+     "posted_at": "2026-11-12T00:07:00+05:30",
+     "views": 4694,
+     "likes": 327,
+     "reposts": 73,
+     "replies": 0,
+     "text": "SRK's advice on buying a home, from the Dubai stage",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@TeamSRKWarriors",
+     "url": "https://x.com/TeamSRKWarriors/status/2120598892391903404",
+     "posted_at": "2026-11-12T00:55:00+05:30",
+     "views": 3633,
+     "likes": 282,
+     "reposts": 65,
+     "replies": 6,
+     "text": "asks if 'King with a capital K' hints at a new KING song",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2120775949830754573",
+     "posted_at": "2026-11-12T12:39:00+05:30",
+     "views": 3570,
+     "likes": 108,
+     "reposts": 31,
+     "replies": 0,
+     "text": "SRK's one-line comeback at the event",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@MdImtiyajtxvg",
+     "url": "https://x.com/MdImtiyajtxvg/status/2120804043576717316",
+     "posted_at": "2026-11-12T14:31:00+05:30",
+     "views": 2494,
+     "likes": 158,
+     "reposts": 20,
+     "replies": 4,
+     "text": "clip of SRK's words in Dubai",
      "stance": "positive",
      "kind": "event clip"
     },
@@ -6318,6 +6451,71 @@
     },
     {
      "platform": "X",
+     "account": "@bekhayalime",
+     "url": "https://x.com/bekhayalime/status/2120585179668623387",
+     "posted_at": "2026-11-12T00:01:00+05:30",
+     "views": 2334,
+     "likes": 57,
+     "reposts": 9,
+     "replies": 0,
+     "text": "SRK dancing to Tu Mil Jaaye, 'nobody comes close'",
+     "stance": "positive",
+     "kind": "event clip"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2120610239435399604",
+     "posted_at": "2026-11-12T01:40:00+05:30",
+     "views": 1692,
+     "likes": 62,
+     "reposts": 21,
+     "replies": 0,
+     "text": "Tu Mil Jaaye dance clip from Dubai",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKCHENNAIFC",
+     "url": "https://x.com/SRKCHENNAIFC/status/2120640106717708561",
+     "posted_at": "2026-11-12T03:39:00+05:30",
+     "views": 1509,
+     "likes": 29,
+     "reposts": 6,
+     "replies": 0,
+     "text": "praise for SRK's wit on stage",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@ASFAN__MAKKAR",
+     "url": "https://x.com/ASFAN__MAKKAR/status/2120733364638326873",
+     "posted_at": "2026-11-12T09:50:00+05:30",
+     "views": 1469,
+     "likes": 64,
+     "reposts": 12,
+     "replies": 0,
+     "text": "Tu Mil Jaaye credits card and streaming push",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@ZoomTV",
+     "url": "https://x.com/ZoomTV/status/2120729781151097326",
+     "posted_at": "2026-11-12T09:35:00+05:30",
+     "views": 1357,
+     "likes": 14,
+     "reposts": 2,
+     "replies": 0,
+     "text": "Zoom on SRK's special appearance in Dubai",
+     "stance": "neutral",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
      "account": "@Polytikles",
      "url": "https://x.com/Polytikles/status/2120653519422476493",
      "posted_at": "2026-11-12T04:32:00+05:30",
@@ -6331,16 +6529,55 @@
     },
     {
      "platform": "X",
-     "account": "@TeamSRKWarriors",
-     "url": "https://x.com/TeamSRKWarriors/status/2120598892391903404",
-     "posted_at": "2026-11-12T00:55:00+05:30",
-     "views": 803,
-     "likes": 52,
-     "reposts": 17,
-     "replies": 5,
-     "text": "asks if 'King with a capital K' hints at a new KING song",
+     "account": "@SRKCHENNAIFC",
+     "url": "https://x.com/SRKCHENNAIFC/status/2120645107489833291",
+     "posted_at": "2026-11-12T03:59:00+05:30",
+     "views": 1165,
+     "likes": 19,
+     "reposts": 5,
+     "replies": 0,
+     "text": "calls the second Danube tower a historic milestone",
      "stance": "positive",
-     "kind": "speculation"
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKCHENNAIFC",
+     "url": "https://x.com/SRKCHENNAIFC/status/2120826555450744977",
+     "posted_at": "2026-11-12T16:00:00+05:30",
+     "views": 1048,
+     "likes": 50,
+     "reposts": 13,
+     "replies": 0,
+     "text": "photo set from the Danube event",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKCHENNAIFC",
+     "url": "https://x.com/SRKCHENNAIFC/status/2120756969846046722",
+     "posted_at": "2026-11-12T11:23:00+05:30",
+     "views": 936,
+     "likes": 23,
+     "reposts": 8,
+     "replies": 0,
+     "text": "fans from Birbhum to Dubai, KING fever everywhere",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKforever_1",
+     "url": "https://x.com/SRKforever_1/status/2120587217035034651",
+     "posted_at": "2026-11-12T00:09:00+05:30",
+     "views": 812,
+     "likes": 54,
+     "reposts": 22,
+     "replies": 0,
+     "text": "SRK performing Tu Mil Jaaye at the Shahrukhz launch",
+     "stance": "positive",
+     "kind": "event clip"
     },
     {
      "platform": "X",
@@ -6360,26 +6597,13 @@
      "account": "@SRKCHENNAIFC",
      "url": "https://x.com/SRKChennaiFC/status/2120641556256534795",
      "posted_at": "2026-11-12T03:45:00+05:30",
-     "views": 689,
-     "likes": 13,
-     "reposts": 0,
+     "views": 1042,
+     "likes": 27,
+     "reposts": 6,
      "replies": 0,
      "text": "fan club praise for the Dubai performance",
      "stance": "positive",
      "kind": "fan club"
-    },
-    {
-     "platform": "X",
-     "account": "@SRKforever_1",
-     "url": "https://x.com/SRKforever_1/status/2120587217035034651",
-     "posted_at": "2026-11-12T00:09:00+05:30",
-     "views": 651,
-     "likes": 39,
-     "reposts": 14,
-     "replies": 0,
-     "text": "SRK performing on Tu Mil Jaaye at the Danube event",
-     "stance": "positive",
-     "kind": "event clip"
     },
     {
      "platform": "X",
@@ -6409,7 +6633,59 @@
     }
    ],
    "videos": [],
-   "note": "Totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced. X sweep 12 Nov 2026 ~07:15 IST: 3 searches since 10-11 Nov (\"Tu Mil Jaaye\", #KING/#TuMilJaaye/\"Shah Rukh\" with King/Dubai/Shahrukhz min 50 likes, #KING fan made/edit/poster), top and latest; KING-related non-official posts kept."
+   "note": "Totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced. X sweep 12 Nov 2026 ~07:15 IST: 3 searches since 10-11 Nov (\"Tu Mil Jaaye\", #KING/#TuMilJaaye/\"Shah Rukh\" with King/Dubai/Shahrukhz min 50 likes, #KING fan made/edit/poster), top and latest; KING-related non-official posts kept. Re-swept 13 Nov 07:20 IST with 3 X searches (Tu Mil Jaaye; #KING with SRK; SRK with Mannat/Dubai/Danube): 60 posts read for 12 Nov; counts as read 13 Nov."
+  },
+  "2026-11-13": {
+   "totals": {
+    "posts_read": 3,
+    "views": 1227,
+    "likes": 52,
+    "reposts": 10,
+    "replies": 0
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@filmy_imran",
+     "url": "https://x.com/filmy_imran/status/2120959701978620096",
+     "posted_at": "2026-11-13T00:51:00+05:30",
+     "views": 480,
+     "likes": 17,
+     "reposts": 0,
+     "replies": 0,
+     "text": "calls a KING moment 'goosebumps'",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@TeamSRKsArmy",
+     "url": "https://x.com/TeamSRKsArmy/status/2120948826781700267",
+     "posted_at": "2026-11-13T00:08:00+05:30",
+     "views": 435,
+     "likes": 26,
+     "reposts": 0,
+     "replies": 0,
+     "text": "Tu Mil Jaaye still the fans' pick",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@DopeBollywood",
+     "url": "https://x.com/DopeBollywood/status/2120953394999505396",
+     "posted_at": "2026-11-13T00:26:00+05:30",
+     "views": 312,
+     "likes": 9,
+     "reposts": 0,
+     "replies": 0,
+     "text": "SRK turns any event into a Bollywood night",
+     "stance": "positive",
+     "kind": "event clip"
+    }
+   ],
+   "videos": [],
+   "note": "Partial day: read 13 Nov 07:20 IST."
   }
  }
 }
