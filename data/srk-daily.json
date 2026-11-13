@@ -2,6 +2,345 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-13-tu-mil-jaaye-making",
+   "n": 1,
+   "date": "2026-11-13",
+   "time": "07:45 IST",
+   "kicker": "SRK DAILY · Issue 9 · KING's first song",
+   "title": "A car, a fast rap and a week in Cape Town: how the King chose his own look for Tu Mil Jaaye",
+   "deck": "The choreographers of KING's first song say Shah Rukh Khan wanted a look that suits him at this age, so they sat him in a car for Ed Sheeran's rap. The song is No. 2 on Gaana's Hindi chart and has 76.9 million views.",
+   "img": "/assets/srk-daily/2026-11-13-tu-mil-jaaye.jpg",
+   "img_url": "https://www.youtube.com/watch?v=BPZkZpGMpXA",
+   "img_alt": "Shah Rukh Khan and Deepika Padukone in Tu Mil Jaaye, KING's first song",
+   "img_credit": "Tu Mil Jaaye, KING · T-Series on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Eleven days after its release, the people who staged KING's first song have told how it was made. Choreographers Shazia Samji and Piyush Bhagat spoke to Mid-Day; The Times of India and NewsBytes carried the interview on Thursday."
+    },
+    {
+     "p": "They had asked director Siddharth Anand for a number in the film. He played them Tu Mil Jaaye and told them it was not a typical love song: it had to carry storytelling, romance and action at once. They were asked to pitch how they would shoot it. It was, they were told, Shah Rukh Khan's favourite song in KING, and Piyush Bhagat remembers the director's condition: \"You have to earn this song.\""
+    },
+    {
+     "h": "The look he asked for"
+    },
+    {
+     "p": "Once the director approved, the actor had his own say. According to Piyush Bhagat, Shah Rukh Khan is particular about being presented in a way that suits his age, and about looking cool in his own way. So the choreographers did not build big steps around Ed Sheeran's rap verse. They sat him in a car to deliver it. He thought the rap was too fast and wondered how he would manage it, Bhagat told Mid-Day; on the day it went smoothly."
+    },
+    {
+     "p": "Shazia Samji said the actor told them he would keep rehearsing until a move felt right, and that after each day's shoot he and Deepika Padukone rehearsed at night for the next day. Padukone, who has worked with him before, gave them tips on how the two of them look best together on screen. The song was shot over a week in May in Cape Town, Mid-Day reported."
+    },
+    {
+     "h": "The song's numbers"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "76,852,499",
+       "T-Series, read 13 Nov 07:03 IST"
+      ],
+      [
+       "Likes",
+       "750,237",
+       ""
+      ],
+      [
+       "Gained in 24 hours",
+       "2,034,173",
+       "74,818,326 on 12 Nov 07:04 IST"
+      ],
+      [
+       "Gaana Hindi True Fan Chart",
+       "No. 2",
+       "week of 2-8 Nov, behind Gehra Hua (Mirchi Plus)"
+      ]
+     ]
+    },
+    {
+     "p": "Tu Mil Jaaye is sung by Arijit Singh and Madhubanti Bagchi, with a rap verse by Ed Sheeran, to music by Sachin-Jigar. Sheeran wrote on Instagram on 3 November, in a post shared with Shah Rukh Khan's account, that the actor had asked him for a song in his next film when they first met, and that he wrote and recorded his verse the night Shah Rukh Khan introduced him to Sachin-Jigar at his home. That post has about 778,000 likes."
+    },
+    {
+     "h": "The house he never had"
+    },
+    {
+     "p": "In Dubai on Wednesday night, the King talked about a different dream. At the launch of Shahrukhz Residences by Danube he said his parents died early and he never had a house of his own until he married Gauri Khan, India Today and PTI reported. Both their first home and Mannat, he said, were beyond their means when they bought them. Karan Johar, hosting, told the arena that Mannat now has a cinema hall and cryotherapy."
+    },
+    {
+     "links": [
+      [
+       "Watch Tu Mil Jaaye on YouTube",
+       "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+      ],
+      [
+       "Mid-Day · Why Shah Rukh Khan was particular about his look in Tu Mil Jaaye",
+       "https://www.mid-day.com/entertainment/bollywood-news/article/king-why-shah-rukh-khan-was-particular-about-his-look-in-tu-mil-jaaye-23659515"
+      ],
+      [
+       "Mirchi Plus · Gaana True Fan Charts, 2-8 Nov",
+       "https://mirchi.in/stories/music/tu-mil-jaaye-king-gaana-hindi-true-fan-charts-number-2/156499443"
+      ],
+      [
+       "Shahrukhz by Danube · the event page",
+       "/shahrukhz-by-danube/"
+      ],
+      [
+       "Kabhi Jo Tu Mil Jaaye · the fans' version",
+       "/tu-mil-jaaye/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-13-ramayana-1000-crore",
+   "n": 2,
+   "date": "2026-11-13",
+   "time": "07:45 IST",
+   "kicker": "Box office · day 8",
+   "title": "Ramayana crosses ₹1,000 crore worldwide in eight days",
+   "deck": "Ramayana: Part 1 made ₹53.50 crore on Thursday and has ₹1,033.55 crore gross worldwide after eight days, according to Sacnilk, which calls it the 11th Indian film past the mark.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹53.50 crore net in India on Thursday 12 November, its eighth day, from 24,042 shows, according to Sacnilk's figures updated at 10:19 PM IST. That is 24.3% below Wednesday's ₹70.65 crore. The eight-day total is ₹564.60 crore net in India and ₹1,033.55 crore gross worldwide. Sacnilk reports that Ramayana is the 11th Indian film to cross ₹1,000 crore worldwide, and that it did so in eight days."
+    },
+    {
+     "h": "Eight days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹564.60 crore",
+       "Hindi ₹437.00 crore (77.4%)"
+      ],
+      [
+       "India gross",
+       "₹675.05 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹1,033.55 crore",
+       "Sacnilk, updated 12 Nov 22:19 IST"
+      ],
+      [
+       "Day 8 · Thu 12 Nov",
+       "₹53.50 crore",
+       "▼ 24.3% on Wednesday · Hindi ₹43.00 crore"
+      ]
+     ]
+    },
+    {
+     "h": "The run by language, India net"
+    },
+    {
+     "stats": [
+      [
+       "Hindi",
+       "₹437.00 crore",
+       ""
+      ],
+      [
+       "Kannada",
+       "₹48.95 crore",
+       ""
+      ],
+      [
+       "Telugu",
+       "₹38.05 crore",
+       ""
+      ],
+      [
+       "Tamil",
+       "₹22.15 crore",
+       ""
+      ],
+      [
+       "Malayalam",
+       "₹18.45 crore",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "Overseas markets make up 34.7% of the worldwide gross so far, by Sacnilk's rough estimates. Sacnilk also reported on Thursday that Ramayana is the first Bollywood film to cross ₹20 crore gross in Kerala."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "KING opens on Thursday 24 December, 41 days from today, and its first eight days will run from Christmas Eve to New Year's Eve. Ramayana's eight days, ₹564.60 crore net in India, are now the mark the season will be measured against."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 8",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_8"
+      ],
+      [
+       "Sacnilk · 11th Indian film past ₹1,000 crore",
+       "https://www.sacnilk.com/news/ramayana-becomes-11th-indian-film-to-cross-1000-crore-worldwide-achieves-feat-in-8-days"
+      ],
+      [
+       "Yesterday: ₹511.10 crore in the first week",
+       "?p=2026-11-12-ramayana-week-one"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-13-king-buzz-day-9",
+   "n": 3,
+   "date": "2026-11-13",
+   "time": "07:45 IST",
+   "kicker": "Analytics · 13 Nov 2026",
+   "title": "Maatrubhumi's trailer passes 41 million as Doomsday pulls ahead of KING's teasers",
+   "deck": "Salman Khan's trailer added 10.3 million views in a day. The Avengers: Doomsday trailer now leads KING's two teasers by 275,548. KING's three official videos still lead all three films.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "h": "MAATRUBHUMI to KING, day 3"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "41,067,536",
+       "views · 379,220 likes · about 2⅓ days"
+      ],
+      [
+       "Maatrubhumi, all 7 official videos",
+       "135,440,419",
+       "+10,393,481 since 12 Nov 07:11 IST"
+      ],
+      [
+       "KING, all 3 official videos",
+       "162,324,324",
+       "read 13 Nov 07:03 IST"
+      ],
+      [
+       "KING ahead by",
+       "26,883,905",
+       "was 35,123,874 on 12 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "The trailer gained 10,258,693 views in 24 hours, half its first day's pace. Maatrubhumi's teaser stands at 26,604,590 and its five songs at 67,768,293. Counts are read from the official Salman Khan Films and Salman Khan Films Music channels at 07:04 IST; lyric versions and the reprise are not counted."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "85,747,373",
+       "read 13 Nov 07:03 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,471,825",
+       "Title Reveal 52,379,001 + Date Announcement 33,092,824"
+      ],
+      [
+       "Doomsday ahead by",
+       "275,548",
+       "19,510 on 12 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "The Marvel trailer gained 375,377 views in 24 hours; KING's two teasers gained 119,339. Counted with Tu Mil Jaaye, KING's three official videos lead the Doomsday trailer by 76,576,951."
+    },
+    {
+     "h": "RAMAYANA to KING, day 9"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "162,324,324",
+       "read 13 Nov 07:03 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "144,963,254",
+       "read 13 Nov 07:03 IST"
+      ],
+      [
+       "KING ahead by",
+       "17,361,070",
+       "was 16,568,393 on 12 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 1,360,835 views in 24 hours, its official trailer 952,423; KING's three gained 2,153,512, most of it Tu Mil Jaaye's 2,034,173."
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,587,793",
+       "as shown on the profile, 13 Nov 07:06 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "MAATRUBHUMI to KING: the Karan Arjun of Bollywood",
+       "?p=2026-11-11-maatrubhumi-to-king"
+      ],
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 13 Nov 2026 07:03-07:06 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#Maatrubhumi",
+    "#Ramayana",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-12-dubai-tu-mil-jaaye",
    "n": 1,
    "date": "2026-11-12",
@@ -2859,45 +3198,45 @@
   }
  ],
  "poll": {
-  "id": "dubai-2026-11-12",
-  "q": "Shah Rukh Khan danced to Tu Mil Jaaye on stage in Dubai. Which KING song do you want him to perform next?",
+  "id": "making-2026-11-13",
+  "q": "Shah Rukh Khan raps Ed Sheeran's verse in Tu Mil Jaaye sitting in a car. What is your favourite part of the song?",
   "o": [
-   "Tu Mil Jaaye, again",
-   "KING's title track",
-   "A dance number",
-   "Wait for the trailer first"
+   "The car rap",
+   "Arijit's chorus",
+   "Madhubanti's verse",
+   "SRK and Deepika together"
   ]
  },
  "beat": [
   {
-   "t": "Shahrukhz by Danube",
-   "d": "Gauri's penthouses sold out on launch day; Rizwan Sajan, Karan Johar and a Tu Mil Jaaye dance. The full event page.",
+   "t": "No. 2 on Gaana",
+   "d": "Tu Mil Jaaye enters Gaana's Hindi True Fan Chart for 2-8 Nov at No. 2, behind Gehra Hua (Mirchi Plus).",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
+   "url": "https://mirchi.in/stories/music/tu-mil-jaaye-king-gaana-hindi-true-fan-charts-number-2/156499443"
+  },
+  {
+   "t": "'I never had a house'",
+   "d": "In Dubai the King said Mannat and his first home were both beyond his means when he bought them (India Today).",
    "img": "/assets/srk-daily/2026-11-12-dubai-srk-gauri-stage.jpg",
-   "url": "/shahrukhz-by-danube/"
+   "url": "https://www.indiatoday.in/movies/celebrities/story/shah-rukh-khan-once-yearned-for-a-home-now-mannat-has-a-cinema-hall-cryotherapy-3037362-2026-11-12"
   },
   {
-   "t": "Ramayana: ₹511.10 crore",
-   "d": "First seven days, India net; ₹70.65 crore on Wednesday, ₹934.55 crore worldwide (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
-   "url": "?p=2026-11-12-ramayana-week-one"
+   "t": "Ramayana: ₹1,033.55 crore",
+   "d": "Eight days worldwide gross; ₹53.50 crore net on Thursday (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
+   "url": "?p=2026-11-13-ramayana-1000-crore"
   },
   {
-   "t": "'We all carry shadows'",
-   "d": "Singer Moushumi Bhowmik on listeners comparing Tu Mil Jaaye to her song (The Daily Star).",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "https://www.thedailystar.net/culture/entertainment/news/we-all-carry-shadows-moushumi-bhowmik-tu-mil-jaaye-plagiarism-claims-4318271"
+   "t": "Maatrubhumi trailer: 41 million",
+   "d": "41,067,536 views in about 2⅓ days; Doomsday now 275,548 ahead of KING's teasers.",
+   "img": "/assets/srk-daily/2026-11-11-maatrubhumi-trailer.jpg",
+   "url": "?p=2026-11-13-king-buzz-day-9"
   },
   {
-   "t": "Doomsday passes KING's teasers",
-   "d": "85,371,996 vs 85,352,486, read 12 Nov 07:04 IST; Maatrubhumi's trailer at 30.8 million.",
+   "t": "Fill in the blank",
+   "d": "Red Chillies asked fans to complete a KING line: 'Woh _______ hi kya, jo cheer na de!'",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-12-king-buzz-day-8"
-  },
-  {
-   "t": "Jumanji steps aside",
-   "d": "Jumanji: Open World is reported to move its India release to 1 January, off KING's opening weekend (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "https://www.imdb.com/news/ni66105813/"
+   "url": "https://x.com/RedChilliesEnt/status/2120811267468439708"
   }
  ],
  "fanverse": {

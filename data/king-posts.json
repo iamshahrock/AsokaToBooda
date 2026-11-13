@@ -834,6 +834,79 @@
       "bookmarks": 22,
       "views": 8840
      }
+    },
+    {
+     "at": "2026-11-13T07:10:00+05:30",
+     "metrics": {
+      "replies": 19,
+      "reposts": 490,
+      "likes": 2049,
+      "bookmarks": 63,
+      "views": 28186
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-aashiqdil-2026-11-12",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye: 'Aashiq dil. Qaatil andaaz. Aur bas ek hi naam... KING!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2120766338293743892",
+   "posted_at": "2026-11-12T12:01:11+05:30",
+   "readings": [
+    {
+     "at": "2026-11-13T07:10:00+05:30",
+     "metrics": {
+      "replies": 10,
+      "reposts": 204,
+      "likes": 737,
+      "bookmarks": 15,
+      "views": 14565
+     }
+    }
+   ]
+  },
+  {
+   "id": "king-showtime-2026-11-12",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "KING: 'It's SHOWTIME! Let your answers ROAR' (fill in the dialogue)",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2120811267468439708",
+   "posted_at": "2026-11-12T14:59:43+05:30",
+   "readings": [
+    {
+     "at": "2026-11-13T07:10:00+05:30",
+     "metrics": {
+      "replies": 102,
+      "reposts": 217,
+      "likes": 1156,
+      "bookmarks": 17,
+      "views": 33268
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-obsessed-2026-11-12",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye: 'Not us being completely obsessed with THIS part!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2120857514778738952",
+   "posted_at": "2026-11-12T18:03:29+05:30",
+   "readings": [
+    {
+     "at": "2026-11-13T07:10:00+05:30",
+     "metrics": {
+      "replies": 18,
+      "reposts": 204,
+      "likes": 861,
+      "bookmarks": 26,
+      "views": 15756
+     }
     }
    ]
   }
