@@ -157,6 +157,10 @@ button.np-btn{cursor:pointer}
 .tl b{font:700 14px Archivo,sans-serif;color:var(--red);margin-right:8px}
 .au{display:grid;grid-template-columns:minmax(120px,38%) 1fr;gap:14px;align-items:center;margin:4px 0 18px;padding:12px;border:1px solid var(--rule);background:rgba(0,0,0,.03)}.au img{width:100%;display:block;border:1px solid var(--rule)}.au b{display:block;font:700 20px 'Libre Baskerville',serif;color:var(--maroon)}.au small{display:block;margin:2px 0 10px;opacity:.75}.au audio{width:100%;height:36px;display:block;margin:0 0 8px}.au .go{font-weight:700;color:var(--red)}@media(max-width:560px){.au{grid-template-columns:1fr}}
 .q{font:italic 700 clamp(24px,3.6vw,32px) 'Libre Baskerville',serif;text-align:center;color:var(--maroon);margin:18px 0}
+.fg.vd video{width:100%;display:block;background:#000}
+.vs{margin:22px 0;padding:18px 12px;border-top:1px solid var(--rule,#999);border-bottom:1px solid var(--rule,#999);text-align:center}
+.vs p{font:italic 400 clamp(17px,2.3vw,21px)/1.6 'Libre Baskerville',serif;color:var(--maroon);margin:0}
+.vs p.gap{height:.9em}
 .ln{list-style:none;padding:0 !important}.ln a{color:var(--blue);font:600 15px Archivo,sans-serif}
 .tags{font:600 13px Archivo,sans-serif;color:var(--muted)}
 .back{display:inline-block;margin:0 0 14px;background:var(--blue);color:#fff !important;font:700 12px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;text-decoration:none}
@@ -233,6 +237,8 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     if(b.fig){var f=b.fig;return '<figure class="fg">'+(f.url?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(f.src)+'" alt="'+esc(f.alt||'')+'" loading="lazy" referrerpolicy="no-referrer">'+(f.url?'</a>':'')+'<figcaption>'+esc(f.cap||'')+'</figcaption></figure>';}
     if(b.audio){var a=b.audio;return '<div class="au">'+(a.img?'<a href="'+esc(a.url||'#')+'"><img src="'+esc(a.img)+'" alt="'+esc(a.t||'')+'" loading="lazy"></a>':'')+'<div><b>'+esc(a.t||'')+'</b>'+(a.sub?'<small>'+esc(a.sub)+'</small>':'')+'<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(a.src)+'" data-ga="'+esc(a.src.split('/').pop())+'"></audio>'+(a.url?'<a class="go" href="'+esc(a.url)+'">'+esc(a.cta||'Open')+' →</a>':'')+'</div></div>';}
     if(b.list)return '<ul>'+b.list.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>';
+    if(b.video){var v=b.video;return '<figure class="fg vd"><video controls playsinline preload="metadata"'+(v.poster?' poster="'+esc(v.poster)+'"':'')+' src="'+esc(v.src)+'"></video><figcaption>'+esc(v.cap||'')+(v.url?' <a href="'+esc(v.url)+'" target="_blank" rel="noopener">'+esc(v.cta||'Watch')+' →</a>':'')+'</figcaption></figure>';}
+    if(b.verse)return '<div class="vs">'+b.verse.map(function(t){return t?'<p>'+esc(t)+'</p>':'<p class="gap"></p>';}).join('')+'</div>';
     return '';
   }
   function firstP(x){for(var i=0;i<x.blocks.length;i++)if(x.blocks[i].p)return x.blocks[i].p;return '';}
