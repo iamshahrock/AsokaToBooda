@@ -57,12 +57,17 @@ while s < last:
     while k < len(blank) - 1 and blank[k]: k += 1                         # next page starts at the next ink
     s = max(r / sc, k / sc - 2 * PT); first = False
 out = fitz.open(); N = len(cuts)
+links = [l for l in sp.get_links() if l.get('uri')]
 col = tuple(c / 255 for c in sp.get_pixmap(clip=fitz.Rect(1, 1, 3, 3)).pixel(0, 0)[:3])
 for i, (s, e) in enumerate(cuts):
     pg = out.new_page(width=W, height=A4H)
     pg.draw_rect(pg.rect, color=None, fill=col)
     y = 0 if i == 0 else TOP
     pg.show_pdf_page(fitz.Rect(0, y, W, y + (e - s)), src, 0, clip=fitz.Rect(0, s, W, e))
+    for ln in links:                                                       # keep every link clickable
+        r = ln['from']
+        if r.y0 >= s - 1 and r.y1 <= e + 1:
+            pg.insert_link({'kind': fitz.LINK_URI, 'uri': ln['uri'], 'from': fitz.Rect(r.x0, r.y0 - s + y, r.x1, r.y1 - s + y)})
     t = f"{i + 1} / {N}"
     pg.insert_text((W - 14 * PT - fitz.get_text_length(t, 'helv', 9), A4H - 8 * PT), t, fontname='helv', fontsize=9, color=(0.62, 0.11, 0.13))
 out.save(sys.argv[2], deflate=True, garbage=3)
