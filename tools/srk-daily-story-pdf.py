@@ -3,7 +3,7 @@
    Chrome --headless=new --no-pdf-header-footer --window-size=794,1123 --virtual-time-budget=15000 \
      --print-to-pdf=tall.pdf "https://agarmainkinghota.com/srk-daily/?p=<id>&pdf=1&tall=1"
 2) python3 tools/srk-daily-story-pdf.py tall.pdf out.pdf   (needs pymupdf + numpy)
-The sheet is cut into A4 pages only through rows that are empty paper (between lines, never through text or images)."""
+The sheet is cut into A4 pages between paragraphs, stanzas or pictures (never mid-paragraph unless one is longer than a page), never between a picture and its caption or right after a heading."""
 import sys, numpy as np, pymupdf as fitz
 src = fitz.open(sys.argv[1]); sp = src[0]
 W = sp.rect.width; PT = 72 / 25.4
@@ -24,6 +24,17 @@ for b in sp.get_text('dict')['blocks']:              # never right after a secti
         t = ''.join(x['text'] for x in l['spans']).strip()
         if 2 < len(t) < 40 and t.isupper() and l['bbox'][1] > 60 * PT:
             forbid(l['bbox'][1] - 3 * PT, l['bbox'][3] + 30 * PT)
+        if t.endswith(':'):                          # a lead-in line stays with what it introduces
+            forbid(l['bbox'][3], l['bbox'][3] + 20 * PT)
+para = np.zeros_like(blank)                           # rows inside a gap of 4.5 mm or more = between paragraphs, stanzas, pictures
+r = 0
+while r < len(blank):
+    if blank[r]:
+        k = r
+        while k < len(blank) and blank[k]: k += 1
+        if (k - r) / sc >= 4.5 * PT: para[r:k] = True
+        r = k
+    else: r += 1
 rows = np.nonzero(~blank)[0]; last = rows[-1] / sc + 6 * PT            # end of content
 cuts = []; s = 0.0; first = True
 while s < last:
@@ -31,7 +42,9 @@ while s < last:
     e = s + room
     if e >= last: cuts.append((s, last)); break
     lo, hi = int((s + room * .55) * sc), int(e * sc)
-    cand = [r for r in range(hi, lo, -1) if ok[r]] or [r for r in range(hi, int((s + room * .25) * sc), -1) if ok[r]] or [r for r in range(hi, lo, -1) if blank[r]]
+    lo2 = int((s + room * .3) * sc)
+    cand = ([r for r in range(hi, lo, -1) if ok[r] and para[r]] or [r for r in range(hi, lo2, -1) if ok[r] and para[r]]
+            or [r for r in range(hi, lo, -1) if ok[r]] or [r for r in range(hi, lo, -1) if blank[r]])
     r = cand[0] if cand else hi
     cuts.append((s, r / sc))
     k = r
