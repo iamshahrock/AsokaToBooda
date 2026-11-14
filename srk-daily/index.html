@@ -237,12 +237,12 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   function fmt(d){return new Date(d+'T12:00:00+05:30').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});}
   function block(b){
     if(b.h)return '<h3>'+esc(b.h)+'</h3>';
-    if(b.p)return '<p class="t">'+esc(b.p)+'</p>';
+    if(b.p)return '<p class="t">'+esc(b.p).replace(/\*([^*]+)\*/g,'<em>$1</em>')+'</p>';
     if(b.stats)return '<div class="st">'+b.stats.map(function(s){return '<div><small>'+esc(s[0])+'</small><b>'+esc(s[1])+'</b>'+(s[2]?'<i>'+esc(s[2])+'</i>':'')+'</div>';}).join('')+'</div>';
     if(b.time)return '<div class="tl">'+b.time.map(function(t){return '<p><b>'+esc(t[0])+'</b>'+esc(t[1])+'</p>';}).join('')+'</div>';
     if(b.quote)return '<p class="q">'+esc(b.quote.q)+'</p>';
     if(b.links)return '<ul class="ln">'+b.links.map(function(l){return '<li><a href="'+esc(l[1])+'">'+esc(l[0])+' →</a></li>';}).join('')+'</ul>';
-    if(b.fig){var f=b.fig;return '<figure class="fg'+(f.plain?' plain':'')+(f.side?' side':'')+'">'+(f.url?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(f.src)+'" alt="'+esc(f.alt||'')+'"'+(f.pmax?' style="--pmax:'+f.pmax+'mm"':'')+' loading="lazy" referrerpolicy="no-referrer">'+(f.url?'</a>':'')+'<figcaption>'+esc(f.cap||'')+'</figcaption></figure>';}
+    if(b.fig){var f=b.fig;return '<figure class="fg'+(f.plain?' plain':'')+(f.side?' side':'')+'"'+(f.sw?' style="width:'+f.sw+'%"':'')+'>'+(f.url?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(f.src)+'" alt="'+esc(f.alt||'')+'"'+(f.pmax?' style="--pmax:'+f.pmax+'mm"':'')+' loading="lazy" referrerpolicy="no-referrer">'+(f.url?'</a>':'')+'<figcaption>'+esc(f.cap||'')+'</figcaption></figure>';}
     if(b.audio){var a=b.audio;return '<div class="au">'+(a.img?'<a href="'+esc(a.url||'#')+'"><img src="'+esc(a.img)+'" alt="'+esc(a.t||'')+'" loading="lazy"></a>':'')+'<div><b>'+esc(a.t||'')+'</b>'+(a.sub?'<small>'+esc(a.sub)+'</small>':'')+'<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(a.src)+'" data-ga="'+esc(a.src.split('/').pop())+'"></audio>'+(a.url?'<a class="go" href="'+esc(a.url)+'">'+esc(a.cta||'Open')+' →</a>':'')+'</div></div>';}
     if(b.list)return '<ul>'+b.list.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>';
     if(b.video){var v=b.video;return '<figure class="fg vd">'+(v.poster?'<img class="vp" style="display:none" src="'+esc(v.poster)+'" alt="">':'')+'<video controls playsinline preload="metadata"'+(v.poster?' poster="'+esc(v.poster)+'"':'')+' src="'+esc(v.src)+'"></video><figcaption>'+esc(v.cap||'')+(v.url?' <a href="'+esc(v.url)+'" target="_blank" rel="noopener">'+esc(v.cta||'Watch')+' →</a>':'')+'</figcaption></figure>';}
