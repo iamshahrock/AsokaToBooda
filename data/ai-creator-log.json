@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "note": "Fan-made AI works about KING / Shah Rukh Khan, discovered daily across YouTube, Instagram, X and Facebook. Each item links to the creator's original post; nothing is re-hosted. Views are as reported on the date in views_asof.",
   "items": [
     {
@@ -1443,6 +1443,17 @@
         "facebook": 0
       },
       "method": "daily web scan + fan submissions (no pending submissions; 2 fan concept trailers declined: no AI stated; YouTube oEmbed unavailable, title/channel read from the watch page)"
+    },
+    {
+      "day": "2026-11-14",
+      "new": 0,
+      "platforms": {
+        "youtube": 0,
+        "instagram": 0,
+        "x": 0,
+        "facebook": 0
+      },
+      "method": "daily web scan + fan submissions (no pending submissions; 4 KING concept trailers/covers declined: no AI stated or presented as official; 2 Shorts unconfirmed, YouTube oEmbed unavailable)"
     }
   ],
   "reviewed": []
