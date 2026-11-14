@@ -159,6 +159,7 @@ button.np-btn{cursor:pointer}
 .q{font:italic 700 clamp(24px,3.6vw,32px) 'Libre Baskerville',serif;text-align:center;color:var(--maroon);margin:18px 0}
 .fg.vd video{width:100%;display:block;background:#000}
 .ar figure.plain img{border:0;filter:none}
+.ar figure.hero,.ar figure.fg:not(.side):not(.two):not(.vd){display:table;margin-left:auto;margin-right:auto}.ar figure.hero figcaption,.ar figure.fg:not(.side):not(.two):not(.vd) figcaption{display:table-caption;caption-side:bottom}
 .ar figure.two{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.ar figure.two.eqh{gap:4mm}.ar figure.two.eqh figcaption{text-align:center}.ar figure.two img{flex:1 1 240px;min-width:0;width:auto;max-width:calc(50% - 5px);height:auto;max-height:none!important;object-fit:contain;margin:0}.ar figure.two figcaption{flex-basis:100%}
 .ar figure.two.eqh{flex-wrap:wrap;align-items:center}.ar figure.two.eqh img{flex:none;max-width:none;height:clamp(150px,26vw,260px);width:auto;min-width:0}
 @media (max-width:600px){.ar figure.two.eqh{flex-wrap:wrap}.ar figure.two.eqh img{height:auto;max-width:100%}}
@@ -283,7 +284,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     var more=P.filter(function(p){return p.id!==x.id;});
     return '<article class="ar"><a class="back" href="./">← SRK DAILY front page</a><p class="k">'+esc(x.kicker)+'</p><h2>'+esc(x.title)+'</h2>'+(x.deck?'<p class="dk">'+esc(x.deck)+'</p>':'')+
       '<p class="by"><span>'+fmt(x.date)+(x.time?' · '+esc(x.time):'')+' · SRK DAILY</span><button data-sh="'+esc(x.id)+'">Share</button></p>'+
-      (x.img?'<figure>'+(x.img_url?'<a href="'+esc(x.img_url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer">'+(x.img_url?'</a>':'')+'<figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
+      (x.img?'<figure class="hero">'+(x.img_url?'<a href="'+esc(x.img_url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer">'+(x.img_url?'</a>':'')+'<figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
       '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+
       (more.length?'<section class="mo"><h3>More from SRK DAILY</h3>'+more.map(function(m){return '<a href="?p='+esc(m.id)+'"><small>'+fmt(m.date)+'</small><b>'+esc(m.title)+'</b><span>'+esc(short(m.deck||firstP(m),160))+'</span></a>';}).join('')+'</section>':'')+
       '<a class="back end" href="./">← Back to the SRK DAILY front page</a>'+
