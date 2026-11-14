@@ -51,7 +51,8 @@
   "#KING (fan made OR edit OR poster OR fanmade) SRK since:2026-11-10",
   "\"Tu Mil Jaaye\" since:2026-11-12 -filter:replies",
   "(#KING OR #KINGMovie) (SRK OR \"Shah Rukh\") since:2026-11-12 -filter:replies",
-  "(\"Shah Rukh\" OR SRK) (Mannat OR Dubai OR Danube) since:2026-11-12 -filter:replies"
+  "(\"Shah Rukh\" OR SRK) (Mannat OR Dubai OR Danube) since:2026-11-12 -filter:replies",
+  "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-13 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)"
  ],
  "days": {
   "2026-10-27": {
@@ -6637,13 +6638,234 @@
   },
   "2026-11-13": {
    "totals": {
-    "posts_read": 3,
-    "views": 1227,
-    "likes": 52,
-    "reposts": 10,
-    "replies": 0
+    "posts_read": 20,
+    "views": 100562,
+    "likes": 2503,
+    "reposts": 534,
+    "replies": 27
    },
    "posts": [
+    {
+     "platform": "X",
+     "account": "@PrinceSRKian_2",
+     "url": "https://x.com/PrinceSRKian_2/status/2121134134043234555",
+     "posted_at": "2026-11-13T12:22:00+05:30",
+     "views": 38824,
+     "likes": 484,
+     "reposts": 85,
+     "replies": 2,
+     "text": "video of celebrity barber Aalim Hakim on Tu Mil Jaaye",
+     "stance": "positive",
+     "kind": "video"
+    },
+    {
+     "platform": "X",
+     "account": "@AaoGhumaKLeLu",
+     "url": "https://x.com/AaoGhumaKLeLu/status/2121138800457814236",
+     "posted_at": "2026-11-13T12:41:00+05:30",
+     "views": 24575,
+     "likes": 239,
+     "reposts": 64,
+     "replies": 1,
+     "text": "fan story from Mannat 2024 to the KING season",
+     "stance": "positive",
+     "kind": "video"
+    },
+    {
+     "platform": "X",
+     "account": "@RahulGupta25376",
+     "url": "https://x.com/RahulGupta25376/status/2121147485515288900",
+     "posted_at": "2026-11-13T13:15:00+05:30",
+     "views": 8588,
+     "likes": 206,
+     "reposts": 69,
+     "replies": 8,
+     "text": "KING vs Avengers: Doomsday Christmas clash post",
+     "stance": "neutral",
+     "kind": "comparison"
+    },
+    {
+     "platform": "X",
+     "account": "@srkian341",
+     "url": "https://x.com/srkian341/status/2121233808070779088",
+     "posted_at": "2026-11-13T18:58:00+05:30",
+     "views": 6115,
+     "likes": 215,
+     "reposts": 35,
+     "replies": 0,
+     "text": "praises the KING background score",
+     "stance": "positive",
+     "kind": "clip"
+    },
+    {
+     "platform": "X",
+     "account": "@ReviewBollywoo1",
+     "url": "https://x.com/ReviewBollywoo1/status/2121122583320096842",
+     "posted_at": "2026-11-13T11:36:00+05:30",
+     "views": 4438,
+     "likes": 442,
+     "reposts": 57,
+     "replies": 1,
+     "text": "claims a new KING asset is on the way (speculation)",
+     "stance": "neutral",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@LaviKSays",
+     "url": "https://x.com/LaviKSays/status/2121171564406419842",
+     "posted_at": "2026-11-13T14:51:00+05:30",
+     "views": 3539,
+     "likes": 155,
+     "reposts": 25,
+     "replies": 0,
+     "text": "praises a pub fight sequence seen in KING's promos",
+     "stance": "positive",
+     "kind": "clip"
+    },
+    {
+     "platform": "X",
+     "account": "@xbucking",
+     "url": "https://x.com/xbucking/status/2121212866003194074",
+     "posted_at": "2026-11-13T17:35:00+05:30",
+     "views": 3235,
+     "likes": 216,
+     "reposts": 70,
+     "replies": 5,
+     "text": "claims an overseas cinema count for KING (unconfirmed trade update)",
+     "stance": "neutral",
+     "kind": "trade claim"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKforever_1",
+     "url": "https://x.com/SRKforever_1/status/2121223141007781896",
+     "posted_at": "2026-11-13T18:16:00+05:30",
+     "views": 2311,
+     "likes": 58,
+     "reposts": 25,
+     "replies": 4,
+     "text": "lists actors with multiple ₹1,000 crore films, SRK among them",
+     "stance": "positive",
+     "kind": "stats post"
+    },
+    {
+     "platform": "X",
+     "account": "@filmy_imran",
+     "url": "https://x.com/filmy_imran/status/2121132977086501183",
+     "posted_at": "2026-11-13T12:18:00+05:30",
+     "views": 1763,
+     "likes": 80,
+     "reposts": 13,
+     "replies": 0,
+     "text": "calls a KING visual the world's biggest IMAX moment",
+     "stance": "positive",
+     "kind": "opinion"
+    },
+    {
+     "platform": "X",
+     "account": "@iamsrkian12345",
+     "url": "https://x.com/iamsrkian12345/status/2121172349471137946",
+     "posted_at": "2026-11-13T14:54:00+05:30",
+     "views": 978,
+     "likes": 117,
+     "reposts": 28,
+     "replies": 1,
+     "text": "praises SRK's look in KING",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@LaxmanMallzvyq",
+     "url": "https://x.com/LaxmanMallzvyq/status/2121259357627363413",
+     "posted_at": "2026-11-13T20:40:00+05:30",
+     "views": 930,
+     "likes": 35,
+     "reposts": 9,
+     "replies": 0,
+     "text": "'Shah Rukh Khan is back' KING post",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@_PatilVishwajit",
+     "url": "https://x.com/_PatilVishwajit/status/2121217746545598725",
+     "posted_at": "2026-11-13T17:54:00+05:30",
+     "views": 777,
+     "likes": 22,
+     "reposts": 11,
+     "replies": 2,
+     "text": "says SRK is back to dominating conversations",
+     "stance": "positive",
+     "kind": "opinion"
+    },
+    {
+     "platform": "X",
+     "account": "@SRRRK_osayu",
+     "url": "https://x.com/SRRRK_osayu/status/2121149830747836616",
+     "posted_at": "2026-11-13T13:25:00+05:30",
+     "views": 752,
+     "likes": 24,
+     "reposts": 4,
+     "replies": 0,
+     "text": "Tu Mil Jaaye fan post from an overseas fan",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@iSRKzRK",
+     "url": "https://x.com/iSRKzRK/status/2121086023925154246",
+     "posted_at": "2026-11-13T09:11:00+05:30",
+     "views": 705,
+     "likes": 20,
+     "reposts": 9,
+     "replies": 3,
+     "text": "KING and Queen still from Tu Mil Jaaye",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@King_December26",
+     "url": "https://x.com/King_December26/status/2121078280514335058",
+     "posted_at": "2026-11-13T08:40:00+05:30",
+     "views": 693,
+     "likes": 72,
+     "reposts": 23,
+     "replies": 0,
+     "text": "40 days to go countdown for KING",
+     "stance": "positive",
+     "kind": "countdown"
+    },
+    {
+     "platform": "X",
+     "account": "@zainsrkian1",
+     "url": "https://x.com/zainsrkian1/status/2121276691528241250",
+     "posted_at": "2026-11-13T21:49:00+05:30",
+     "views": 598,
+     "likes": 24,
+     "reposts": 4,
+     "replies": 0,
+     "text": "expects KING's cast to impress",
+     "stance": "positive",
+     "kind": "opinion"
+    },
+    {
+     "platform": "X",
+     "account": "@FirstSrkian",
+     "url": "https://x.com/FirstSrkian/status/2121101971235242215",
+     "posted_at": "2026-11-13T10:14:00+05:30",
+     "views": 514,
+     "likes": 42,
+     "reposts": 3,
+     "replies": 0,
+     "text": "KING fan post",
+     "stance": "positive",
+     "kind": "fan post"
+    },
     {
      "platform": "X",
      "account": "@filmy_imran",
@@ -6685,7 +6907,111 @@
     }
    ],
    "videos": [],
-   "note": "Partial day: read 13 Nov 07:20 IST."
+   "note": "Partial day: read 13 Nov 07:20 IST. X sweep 14 Nov 2026 ~11:40 IST: 1 search (Top tab, min 20 likes, official handles excluded); 17 posts added."
+  },
+  "2026-11-14": {
+   "totals": {
+    "posts_read": 7,
+    "views": 9622,
+    "likes": 502,
+    "reposts": 86,
+    "replies": 13
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@rohitjswl01",
+     "url": "https://x.com/rohitjswl01/status/2121472077610078581",
+     "posted_at": "2026-11-14T10:45:00+05:30",
+     "views": 4249,
+     "likes": 235,
+     "reposts": 48,
+     "replies": 6,
+     "text": "predicts Tu Mil Jaaye will do for KING what Besharam Rang did for Pathaan",
+     "stance": "positive",
+     "kind": "opinion"
+    },
+    {
+     "platform": "X",
+     "account": "@ImshikharNegi",
+     "url": "https://x.com/ImshikharNegi/status/2121388345163186371",
+     "posted_at": "2026-11-14T05:12:00+05:30",
+     "views": 1340,
+     "likes": 89,
+     "reposts": 11,
+     "replies": 1,
+     "text": "predicts SRK's KING performance will be talked about",
+     "stance": "positive",
+     "kind": "opinion"
+    },
+    {
+     "platform": "X",
+     "account": "@BOWorldwide",
+     "url": "https://x.com/BOWorldwide/status/2121477619778760873",
+     "posted_at": "2026-11-14T11:07:00+05:30",
+     "views": 1256,
+     "likes": 38,
+     "reposts": 10,
+     "replies": 1,
+     "text": "says KING is building music buzz",
+     "stance": "positive",
+     "kind": "trade post"
+    },
+    {
+     "platform": "X",
+     "account": "@iamsrkak1",
+     "url": "https://x.com/iamsrkak1/status/2121442761731944454",
+     "posted_at": "2026-11-14T08:49:00+05:30",
+     "views": 1185,
+     "likes": 65,
+     "reposts": 8,
+     "replies": 4,
+     "text": "claims the KING teaser comes on 24 November (speculation)",
+     "stance": "neutral",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@MdImtiyajtxvg",
+     "url": "https://x.com/MdImtiyajtxvg/status/2121323923157741569",
+     "posted_at": "2026-11-14T00:56:00+05:30",
+     "views": 628,
+     "likes": 34,
+     "reposts": 5,
+     "replies": 0,
+     "text": "defends KING against critics",
+     "stance": "positive",
+     "kind": "opinion"
+    },
+    {
+     "platform": "X",
+     "account": "@SRRRK_osayu",
+     "url": "https://x.com/SRRRK_osayu/status/2121380166471733503",
+     "posted_at": "2026-11-14T04:40:00+05:30",
+     "views": 494,
+     "likes": 20,
+     "reposts": 3,
+     "replies": 1,
+     "text": "Tu Mil Jaaye good-morning post from an overseas fan",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@zainsrkian1",
+     "url": "https://x.com/zainsrkian1/status/2121441999266210079",
+     "posted_at": "2026-11-14T08:46:00+05:30",
+     "views": 470,
+     "likes": 21,
+     "reposts": 1,
+     "replies": 0,
+     "text": "40 days to go countdown for KING",
+     "stance": "positive",
+     "kind": "countdown"
+    }
+   ],
+   "videos": [],
+   "note": "Totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced. X sweep 14 Nov 2026 ~11:40 IST: 1 search (Top tab, min 20 likes, official handles excluded); 7 posts added."
   }
  }
 }
