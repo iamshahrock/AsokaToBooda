@@ -1672,7 +1672,7 @@
   },
   {
    "date": "2026-11-13",
-   "count": 2,
+   "count": 24,
    "articles": [
     {
      "outlet": "MissMalini",
@@ -1684,6 +1684,162 @@
      "outlet": "Indiatimes",
      "title": "‘Outside the house, we are free’: Shah Rukh Khan reveals why he and his children cannot complain at Gauri Khan's home",
      "url": "https://www.indiatimes.com/trending/outside-the-house-we-are-free-shah-rukh-khan-reveals-why-he-and-his-children-cannot-complain-at-gauri-khans-home/articleshow/135776941.html",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "IMDb",
+     "title": "Shah Rukh Khan's King Eyes Unbroken Bollywood Opening Day Milestones With ₹66 Cr Advance Target to Beat Dhurandhar 2",
+     "url": "https://www.imdb.com/news/ni66109815/?ref_=nmnw_art_perm",
+     "topic": "KING business"
+    },
+    {
+     "outlet": "NDTV",
+     "title": "'Har Jagah Ghar Nahi Le Sakte': Shah Rukh Khan Reveals Why His Children Tease Him",
+     "url": "https://www.ndtv.com/lifestyle/har-jagah-ghar-nahi-le-sakte-shah-rukh-khan-reveals-why-his-children-tease-him-12321115",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "Livemint",
+     "title": "Proved, once again! How ‘King’ Shah Rukh Khan rewrites Bollywood box office rules - ₹665 cr garnered even before release",
+     "url": "https://www.livemint.com/entertainment/proved-once-again-how-king-shah-rukh-khan-rewrites-bollywood-box-office-rules-665-cr-garnered-even-before-release-11794561340472.html",
+     "topic": "KING business"
+    },
+    {
+     "outlet": "NewsBytes",
+     "title": "Khan's 'King' reportedly secures ₹665cr pre-release rights before Christmas",
+     "url": "https://www.newsbytesapp.com/news/entertainment/khans-king-reportedly-secures-rs665cr-pre-release-rights-before-christmas/tldr",
+     "topic": "KING business"
+    },
+    {
+     "outlet": "Glamsham.com",
+     "title": "Shah Rukh Khan and Deepika Padukone’s Tu Mil Jaaye claims No. 1 spot on weekly music chart",
+     "url": "https://glamsham.com/bollywood/news/shah-rukh-khan-deepika-padukone-tu-mil-jaaye-no-1-spot-weekly-music-chart/",
+     "topic": "Tu Mil Jaaye chart"
+    },
+    {
+     "outlet": "ABP Live English",
+     "title": "Shah Rukh Khan’s Hilarious Confession About Gauri Khan’s House Rules At Dubai Event",
+     "url": "https://news.abplive.com/entertainment/celebrities/shah-rukh-khan-s-hilarious-confession-about-gauri-khan-s-house-rules-at-dubai-event-1875683",
+     "topic": "Dubai event"
+    },
+    {
+     "outlet": "CineBuster",
+     "title": "Shah Rukh Khan and Deepika Padukone’s ‘Tu Mil Jaaye’ from ‘King’ Clinches No. 1 Spot on Ormax Heartbeats’ Top 5 Songs of the Week!",
+     "url": "https://www.cinebuster.in/shah-rukh-khan-and-deepika-padukones-tu-mil-jaaye-from-king-clinches-no-1-spot-on-ormax-heartbeats-top-5-songs-of-the-week/",
+     "topic": "Tu Mil Jaaye chart"
+    },
+    {
+     "outlet": "News24Online",
+     "title": "Shah Rukh Khan sets the dance floor on fire with 'Tu Mil Jaaye' at Dubai event, video goes viral - WATCH",
+     "url": "https://news24online.com/entertainment/shah-rukh-khan-sets-the-dance-floor-on-fire-with-tu-mil-jaaye-at-dubai-event-video-goes-viral-watch/953085/",
+     "topic": "Dubai event"
+    },
+    {
+     "outlet": "mayapuri.com",
+     "title": "Shah Rukh Khan Dance Performs on King Song Tu Mil Jaaye At Dubai Event | Shah Rukh Khan Dance Video",
+     "url": "https://mayapuri.com/videos/music-of-asia/shah-rukh-khan-dance-performs-on-king-song-tu-mil-jaaye-at-dubai-event-shah-rukh-khan-dance-video-12807454",
+     "topic": "Dubai event"
+    },
+    {
+     "outlet": "Bollywood Mascot",
+     "title": "Shah Rukh Khan Jokes About Gauri Khan's Rules at Mannat: 'Kuch Nahin Bol Sakte'",
+     "url": "https://bollywoodmascot.com/bollywood-news/shah-rukh-khan-jokes-about-gauri-khans-rules-at-mannat-kuch-nahin-bol-sakte",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "Magzter",
+     "title": "SRK grooves to “Tu Mil Jaaye’ at Dubai event | The Daily Guardian - newspaper",
+     "url": "https://www.magzter.com/stories/newspaper/The-Daily-Guardian/SRK-GROOVES-TO-TU-MIL-JAAYE-AT-DUBAI-EVENT",
+     "topic": "Dubai event"
+    },
+    {
+     "outlet": "The Sentinel - of this Land, for its People",
+     "title": "Shah Rukh Khan Dazzles Fans in Dubai with Live Performance of 'Tu Mil Jaaye' - The Sentinel",
+     "url": "https://www.sentinelassam.com/more-news/entertainment/shah-rukh-khan-dazzles-fans-in-dubai-with-live-performance-of-tu-mil-jaaye",
+     "topic": "Dubai event"
+    },
+    {
+     "outlet": "Outlook Luxe",
+     "title": "Shah Rukh Khan And Gauri Khan Show Why Monochrome Never Has To Be Boring",
+     "url": "https://luxe.outlookindia.com/amp/story/people/shah-rukh-khan-and-gauri-khan-show-why-monochrome-never-has-to-be-boring",
+     "topic": "SRK style"
+    },
+    {
+     "outlet": "India Today",
+     "title": "Shah Rukh Khan on his first home with Gauri - India Today",
+     "url": "https://www.indiatoday.in/newsmo/short-videos/shah-rukh-khan-on-his-first-home-with-gauri-3038071-2026-11-13",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "Rediff",
+     "title": "What SRK Wants Most In The World",
+     "url": "https://www.rediff.com/news/commentary/2026/nov/13/what-srk-wants-most-in-the-world/9524aa58eadd62782462128c2312ffa4",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "Daily Excelsior",
+     "title": "Shah Rukh Khan says having a home was his biggest dream, recalls buying first house with Gauri",
+     "url": "https://www.dailyexcelsior.com/shah-rukh-khan-says-having-a-home-was-his-biggest-dream-recalls-buying-first-house-with-gauri/amp",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "EasternEye",
+     "title": "Shah Rukh Khan's Emotional Childhood Revelation: 'I Didn't Have a Home'",
+     "url": "https://www.easterneye.biz/shah-rukh-khan-childhood-without-a-home/",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "Realty Plus Magazine",
+     "title": "Shahrukhz Residences by Danube: Gauri Khan-Designed Penthouses Sell Out on Launch Day",
+     "url": "https://www.rprealtyplus.com/news-views/shahrukhz-residences-by-danube-gauri-khan-designed-penthouses-sell-out-on-launch-day-127649.html",
+     "topic": "Shahrukhz by Danube"
+    },
+    {
+     "outlet": "India Education Diary",
+     "title": "Shahrukhz Residences by Danube: Exclusive Gauri Khan-Designed Penthouses Worth INR 50 Crore Each Sell Out on Launch Day",
+     "url": "https://indiaeducationdiary.in/shahrukhz-residences-by-danube-exclusive-gauri-khan-designed-penthouses-worth-inr-50-crore-each-sell-out-on-launch-day/",
+     "topic": "Shahrukhz by Danube"
+    },
+    {
+     "outlet": "Livemint",
+     "title": "Named after Shah Rukh Khan, designed by Gauri Khan, Danube's Dubai penthouses at ₹50 crore sold out on launch day",
+     "url": "https://www.livemint.com/industry/real-estate/named-after-shah-rukh-khan-designed-by-gauri-khan-danubes-dubai-penthouses-at-50-crore-sold-out-on-launch-day-11794582899792.html",
+     "topic": "Shahrukhz by Danube"
+    },
+    {
+     "outlet": "theopenpress.in",
+     "title": "Shah Rukh Khan Opens Up on Mannat, Private Cinema Hall, Cryotherapy and a Home Built With Gauri",
+     "url": "https://theopenpress.in/article/shah-rukh-khan-mannat-private-cinema-hall-cryotherapy-gauri-khan-dubai-danube-launch",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "Campaign India",
+     "title": "Cinépolis India partners Red Chillies Entertainment for King's promotion",
+     "url": "https://www.campaignindia.in/article/cinepolis-india-partners-red-chillies-entertainment-for-king-s-promotion/45z8f36hjmbth2wcyc5kkkm8xn",
+     "topic": "KING promotion"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "count": 3,
+   "articles": [
+    {
+     "outlet": "Sandesh",
+     "title": "Shah Rukh Khan Shah Rukh Khan has a watch worth Rs 18 crore in his hand Only 22 people in the world have this special luxury watch",
+     "url": "https://sandesh.com/entertainment/news/india/shah-rukh-khan-shah-rukh-khan-has-a-watch-worth-rs-18-crore-in-his-hand-only-22-people-in-the-world-have-this-special-luxury-watch",
+     "topic": "SRK style"
+    },
+    {
+     "outlet": "Business Today",
+     "title": "'Even Mannat was beyond our means': Shah Rukh Khan reveals his biggest dream in life",
+     "url": "https://www.businesstoday.in/latest/photo/even-mannat-was-beyond-our-means-shah-rukh-khan-reveals-his-biggest-dream-in-life-567359-2026-11-13",
+     "topic": "Mannat and home"
+    },
+    {
+     "outlet": "Daily Times",
+     "title": "Shahrukh Khan says he has ‘zero say’ in household decisions",
+     "url": "https://dailytimes.com.pk/1581342/shahrukh-khan-says-he-has-zero-say-in-household-decisions/",
      "topic": "Mannat and home"
     }
    ]

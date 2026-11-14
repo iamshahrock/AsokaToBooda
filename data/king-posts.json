@@ -907,6 +907,58 @@
       "bookmarks": 26,
       "views": 15756
      }
+    },
+    {
+     "at": "2026-11-14T11:35:00+05:30",
+     "metrics": {
+      "replies": 24,
+      "reposts": 262,
+      "likes": 1205,
+      "bookmarks": 38,
+      "views": 23810
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-capital-k-2026-11-13",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye: 'KING with a capital K, and an Aashiq with effortless charm!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2121136532996448648",
+   "posted_at": "2026-11-13T12:32:12+05:30",
+   "readings": [
+    {
+     "at": "2026-11-14T11:35:00+05:30",
+     "metrics": {
+      "replies": 38,
+      "reposts": 304,
+      "likes": 1480,
+      "bookmarks": 22,
+      "views": 30988
+     }
+    }
+   ]
+  },
+  {
+   "id": "mashooqa-2026-11-13",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "'Every celebration is incomplete without your mashooqa!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2121173769767284965",
+   "posted_at": "2026-11-13T15:00:10+05:30",
+   "readings": [
+    {
+     "at": "2026-11-14T11:35:00+05:30",
+     "metrics": {
+      "replies": 26,
+      "reposts": 255,
+      "likes": 1510,
+      "bookmarks": 23,
+      "views": 22039
+     }
     }
    ]
   }
