@@ -189,7 +189,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   .ar figure,.st,.tl,.q,.ar ul,.fg.vd{break-inside:avoid}.vs{break-inside:auto}.vs .vg{break-inside:avoid}
   .ar p{orphans:3;widows:3}
   .fg.vd video{display:none}.fg.vd img.vp{display:block!important;width:auto!important;max-width:100%;max-height:80mm;margin:0 auto}
-  .ar figure img{max-height:75mm;width:auto;max-width:100%;margin:0 auto;display:block}
+  .ar figure img,.ar figure.fg img{max-height:100mm;width:auto;max-width:100%;margin:0 auto;display:block}
   .ar h3{break-after:avoid}.ar h3+p,.ar h3+figure{break-before:avoid}
   .pr-only{display:block}
   .pr-end{margin:18px 0 0;padding:12px 14px;border:2px solid var(--red);font:700 13px Archivo,sans-serif;letter-spacing:.06em;text-align:center;break-inside:avoid}
@@ -364,6 +364,8 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
       var fix=function(){[].forEach.call(document.querySelectorAll('a[href]'),function(l){var h=l.getAttribute('href');if(/^https?:/i.test(h))return;l.setAttribute('href',new URL(h,'https://agarmainkinghota.com/srk-daily/').href);});};fix();setTimeout(fix,2500);setTimeout(fix,6000);}
     if(x)document.title=x.title+' — SRK DAILY';
     // PDF edition (?pdf=1): every link points at the live site, whatever host printed it
+    // ?tall=1: the story printed as one long A4-wide sheet, so tools/srk-daily-story-pdf.py can cut it into pages between lines
+    if(new URLSearchParams(location.search).get('tall')){var ts=document.createElement('style');ts.textContent='@media print{@page{size:210mm 4000mm;margin:0}}';document.head.appendChild(ts);var tf=function(){var hmm=Math.ceil((document.documentElement.scrollHeight)*0.2646*794/Math.max(1,document.documentElement.clientWidth))+20;ts.textContent='@media print{@page{size:210mm '+Math.max(297,hmm)+'mm;margin:0}}';};setTimeout(tf,3000);setTimeout(tf,7000);}
     if(new URLSearchParams(location.search).get('pdf'))[].forEach.call(document.querySelectorAll('a[href]'),function(l){var h=l.getAttribute('href');if(/^https?:/i.test(h))return;l.setAttribute('href',new URL(h,'https://agarmainkinghota.com/srk-daily/').href);});
     wire();
   });
