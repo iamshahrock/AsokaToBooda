@@ -2,6 +2,319 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-14-tu-mil-jaaye-no-1",
+   "n": 1,
+   "date": "2026-11-14",
+   "time": "11:40 IST",
+   "kicker": "SRK DAILY · Issue 10 · KING's first song",
+   "title": "Tu Mil Jaaye goes to No. 1, and KING heads for the cinema snack counter",
+   "deck": "KING's first song tops Ormax Heartbeats' Top 5 Songs of the Week and passes 79 million views. Cinépolis India has signed on with Red Chillies to promote the film.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=BPZkZpGMpXA",
+   "img_alt": "Shah Rukh Khan and Deepika Padukone in Tu Mil Jaaye, KING's first song",
+   "img_credit": "Tu Mil Jaaye, KING · T-Series on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Twelve days after its release, Tu Mil Jaaye has reached the top of a weekly chart. Ormax Media's Heartbeats list of the Top 5 Songs of the Week puts KING's first song at No. 1, as reported on Friday by Glamsham and CineBuster. On Gaana's Hindi True Fan Chart for 2-8 November it was No. 2."
+    },
+    {
+     "p": "Both reports point to the same engine: the hookstep. Fans have been recreating it on Instagram since the song came out on 2 November, and the reunion of Shah Rukh Khan and Deepika Padukone on screen remains the talking point. The song is composed by Sachin-Jigar with lyrics by Kumaar, and sung by Arijit Singh, Ed Sheeran and Madhubanti Bagchi."
+    },
+    {
+     "h": "The song's numbers"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "79,081,310",
+       "T-Series, read 14 Nov 11:24 IST"
+      ],
+      [
+       "Likes",
+       "763,369",
+       ""
+      ],
+      [
+       "Gained since Friday morning",
+       "2,228,811",
+       "76,852,499 on 13 Nov 07:03 IST"
+      ],
+      [
+       "Ormax Heartbeats",
+       "No. 1",
+       "Top 5 Songs of the Week"
+      ]
+     ]
+    },
+    {
+     "h": "KING at the cinema counter"
+    },
+    {
+     "p": "KING's promotion has also moved into the multiplex. Cinépolis India has partnered with Red Chillies Entertainment for the film's promotion, Campaign India reported on Friday: Shah Rukh Khan introduces the chain's FOOVIES platform through a co-branded film promotion and an exclusive food offering."
+    },
+    {
+     "p": "KING opens on Thursday 24 December, 40 days from today. The tie-in follows the King's appearance at the Shahrukhz by Danube launch in Dubai earlier this week, where he danced to the song live for the first time."
+    },
+    {
+     "links": [
+      [
+       "CineBuster · Tu Mil Jaaye No. 1 on Ormax Heartbeats",
+       "https://www.cinebuster.in/shah-rukh-khan-and-deepika-padukones-tu-mil-jaaye-from-king-clinches-no-1-spot-on-ormax-heartbeats-top-5-songs-of-the-week/"
+      ],
+      [
+       "Glamsham · No. 1 on the weekly music chart",
+       "https://glamsham.com/bollywood/news/shah-rukh-khan-deepika-padukone-tu-mil-jaaye-no-1-spot-weekly-music-chart/"
+      ],
+      [
+       "Campaign India · Cinépolis partners Red Chillies for KING",
+       "https://www.campaignindia.in/article/cinepolis-india-partners-red-chillies-entertainment-for-king-s-promotion/45z8f36hjmbth2wcyc5kkkm8xn"
+      ],
+      [
+       "Yesterday: how the King chose his look for Tu Mil Jaaye",
+       "?p=2026-11-13-tu-mil-jaaye-making"
+      ],
+      [
+       "Dubai crowns the King again",
+       "?p=2026-11-12-dubai-tu-mil-jaaye"
+      ],
+      [
+       "Tu Mil Jaaye · the fan version page",
+       "/tu-mil-jaaye/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-14-ramayana-day-9",
+   "n": 2,
+   "date": "2026-11-14",
+   "time": "11:40 IST",
+   "kicker": "Box office · day 9",
+   "title": "Ramayana reaches ₹1,111 crore worldwide on its second Friday",
+   "deck": "Ramayana: Part 1 made ₹48.10 crore net on Friday, its ninth day, and stands at ₹612.70 crore net in India and ₹1,111.00 crore gross worldwide, according to Sacnilk.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹48.10 crore net in India on Friday 13 November, its ninth day, from 22,993 shows, according to Sacnilk's figures updated at 10:41 AM IST on Saturday. That is 10.1% below Thursday's ₹53.50 crore. The nine-day total is ₹612.70 crore net in India, ₹732.50 crore gross in India and ₹1,111.00 crore gross worldwide."
+    },
+    {
+     "h": "Nine days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹612.70 crore",
+       "Hindi ₹473.50 crore (77.3%)"
+      ],
+      [
+       "India gross",
+       "₹732.50 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹1,111.00 crore",
+       "Sacnilk, updated 14 Nov 10:41 IST"
+      ],
+      [
+       "Day 9 · Fri 13 Nov",
+       "₹48.10 crore",
+       "▼ 10.1% on Thursday · Hindi ₹36.50 crore"
+      ]
+     ]
+    },
+    {
+     "h": "The run by language, India net"
+    },
+    {
+     "stats": [
+      [
+       "Hindi",
+       "₹473.50 crore",
+       ""
+      ],
+      [
+       "Kannada",
+       "₹51.95 crore",
+       ""
+      ],
+      [
+       "Telugu",
+       "₹40.65 crore",
+       ""
+      ],
+      [
+       "Tamil",
+       "₹24.90 crore",
+       ""
+      ],
+      [
+       "Malayalam",
+       "₹21.70 crore",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "Overseas markets make up 34.1% of the worldwide gross so far, by Sacnilk's estimates. With Ramayana, Sacnilk wrote on Friday, Yash joins Shah Rukh Khan, Prabhas and Ranveer Singh among the actors with more than one ₹1,000 crore film worldwide."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "The second weekend begins today. KING opens on Thursday 24 December, 40 days from now; Ramayana's nine days, ₹612.70 crore net in India, are the mark the Christmas release will be measured against."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 9",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_9"
+      ],
+      [
+       "Yesterday: past ₹1,000 crore in eight days",
+       "?p=2026-11-13-ramayana-1000-crore"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-14-king-buzz-day-10",
+   "n": 3,
+   "date": "2026-11-14",
+   "time": "11:40 IST",
+   "kicker": "Analytics · 14 Nov 2026",
+   "title": "Doomsday's lead over KING's teasers doubles as Maatrubhumi's trailer nears 47.5 million",
+   "deck": "The Avengers: Doomsday trailer is now 566,497 views ahead of KING's two teasers. Counted with Tu Mil Jaaye, KING's three official videos lead Ramayana's seven by 18.4 million.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "86,149,423",
+       "read 14 Nov 11:24 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,582,926",
+       "Title Reveal 52,477,247 + Date Announcement 33,105,679"
+      ],
+      [
+       "Doomsday ahead by",
+       "566,497",
+       "275,548 on 13 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "Since Friday morning the Marvel trailer gained 402,050 views and KING's two teasers 111,101. Counted with Tu Mil Jaaye, KING's three official videos lead the Doomsday trailer by 78,514,813."
+    },
+    {
+     "h": "RAMAYANA to KING, day 10"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "164,664,236",
+       "read 14 Nov 11:24 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "146,278,874",
+       "read 14 Nov 11:24 IST"
+      ],
+      [
+       "KING ahead by",
+       "18,385,362",
+       "was 17,361,070 on 13 Nov 07:03 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 1,315,620 views since Friday morning; KING's three gained 2,339,912, most of it Tu Mil Jaaye's 2,228,811. Ramayana's official trailer stands at 54,963,906."
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "47,487,230",
+       "views · 416,823 likes · read 14 Nov 11:24 IST"
+      ],
+      [
+       "Gained since Friday",
+       "6,419,694",
+       "41,067,536 on 13 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,579,946",
+       "as shown on the profile, 14 Nov 11:27 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 14 Nov 2026 11:24-11:27 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#Maatrubhumi",
+    "#Ramayana",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-13-tu-mil-jaaye-making",
    "n": 1,
    "date": "2026-11-13",
@@ -3198,45 +3511,45 @@
   }
  ],
  "poll": {
-  "id": "making-2026-11-13",
-  "q": "Shah Rukh Khan raps Ed Sheeran's verse in Tu Mil Jaaye sitting in a car. What is your favourite part of the song?",
+  "id": "ormax-2026-11-14",
+  "q": "Tu Mil Jaaye is No. 1 on Ormax Heartbeats this week. How many times have you watched it?",
   "o": [
-   "The car rap",
-   "Arijit's chorus",
-   "Madhubanti's verse",
-   "SRK and Deepika together"
+   "Once or twice",
+   "Every day",
+   "Lost count",
+   "Not yet"
   ]
  },
  "beat": [
   {
-   "t": "No. 2 on Gaana",
-   "d": "Tu Mil Jaaye enters Gaana's Hindi True Fan Chart for 2-8 Nov at No. 2, behind Gehra Hua (Mirchi Plus).",
+   "t": "No. 1 on Ormax",
+   "d": "Tu Mil Jaaye tops Ormax Heartbeats' Top 5 Songs of the Week; 79,081,310 views.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "https://mirchi.in/stories/music/tu-mil-jaaye-king-gaana-hindi-true-fan-charts-number-2/156499443"
+   "url": "?p=2026-11-14-tu-mil-jaaye-no-1"
   },
   {
-   "t": "'I never had a house'",
-   "d": "In Dubai the King said Mannat and his first home were both beyond his means when he bought them (India Today).",
-   "img": "/assets/srk-daily/2026-11-12-dubai-srk-gauri-stage.jpg",
-   "url": "https://www.indiatoday.in/movies/celebrities/story/shah-rukh-khan-once-yearned-for-a-home-now-mannat-has-a-cinema-hall-cryotherapy-3037362-2026-11-12"
-  },
-  {
-   "t": "Ramayana: ₹1,033.55 crore",
-   "d": "Eight days worldwide gross; ₹53.50 crore net on Thursday (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
-   "url": "?p=2026-11-13-ramayana-1000-crore"
-  },
-  {
-   "t": "Maatrubhumi trailer: 41 million",
-   "d": "41,067,536 views in about 2⅓ days; Doomsday now 275,548 ahead of KING's teasers.",
-   "img": "/assets/srk-daily/2026-11-11-maatrubhumi-trailer.jpg",
-   "url": "?p=2026-11-13-king-buzz-day-9"
-  },
-  {
-   "t": "Fill in the blank",
-   "d": "Red Chillies asked fans to complete a KING line: 'Woh _______ hi kya, jo cheer na de!'",
+   "t": "KING at Cinépolis",
+   "d": "Cinépolis India partners Red Chillies for KING's promotion with a co-branded food offering (Campaign India).",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "https://x.com/RedChilliesEnt/status/2120811267468439708"
+   "url": "https://www.campaignindia.in/article/cinepolis-india-partners-red-chillies-entertainment-for-king-s-promotion/45z8f36hjmbth2wcyc5kkkm8xn"
+  },
+  {
+   "t": "Ramayana: ₹1,111 crore",
+   "d": "Nine days worldwide gross; ₹48.10 crore net on Friday (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
+   "url": "?p=2026-11-14-ramayana-day-9"
+  },
+  {
+   "t": "Doomsday +566,497",
+   "d": "The Marvel trailer's lead over KING's two teasers doubled in a day.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "url": "?p=2026-11-14-king-buzz-day-10"
+  },
+  {
+   "t": "Maatrubhumi trailer: 47.5 million",
+   "d": "47,487,230 views on Saturday morning, 6.4 million more than on Friday.",
+   "img": "/assets/srk-daily/2026-11-11-maatrubhumi-trailer.jpg",
+   "url": "?p=2026-11-14-king-buzz-day-10"
   }
  ],
  "fanverse": {
