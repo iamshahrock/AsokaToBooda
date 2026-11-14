@@ -35,11 +35,17 @@ while r < len(blank):
         if (k - r) / sc >= 4.5 * PT: para[r:k] = True
         r = k
     else: r += 1
+forced = sorted((r[1] - 1, r[3] + 1) for r in sp.search_for('PAGEBREAK'))   # editor's page breaks ({"pb": 1} blocks)
 rows = np.nonzero(~blank)[0]; last = rows[-1] / sc + 6 * PT            # end of content
 cuts = []; s = 0.0; first = True
 while s < last:
     room = (A4H - BOT) if first else (A4H - TOP - BOT)
     e = s + room
+    fz = [y for y in forced if s + 2 * PT < y[0] <= e]
+    if fz:                                                                 # editor's break inside this page: cut there
+        y0, y1 = fz[0]; cuts.append((s, y0)); k = int(y1 * sc) + 1
+        while k < len(blank) - 1 and blank[k]: k += 1
+        s = max(y1, k / sc - 2 * PT); first = False; continue
     if e >= last: cuts.append((s, last)); break
     lo, hi = int((s + room * .55) * sc), int(e * sc)
     lo2 = int((s + room * .3) * sc)

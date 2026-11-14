@@ -17,6 +17,9 @@
      "p": "Some losses never end. There is no funeral, no body, no day of mourning. Nobody sends condolences. The world goes on as if nothing died, and the two people who lost it go on too, each carrying something no one else can see."
     },
     {
+     "pb": 1
+    },
+    {
      "p": "On 14 November 2000, two people stood on a stage and showed the world something they had made together. He was already a big star. Shah Rukh Khan, who today has achieved the status of THE MYTH, the biggest star on earth today, chose to bring his first love, technology, to life for his fans. That night he wasn't the star. He was the geek, the boy who had dreamed in machines long before anyone called that a career, finally standing in the light with the thing he loved most."
     },
     {
@@ -30,20 +33,40 @@
      }
     },
     {
+     "pb": 1
+    },
+    {
      "p": "She had built it with him, every room of it, out of his life. It wasn't a website. It was SRKWORLD, a platform on its way to becoming a Fan Franchising based OPERATING SYSTEM, and it was the first time a star said: my world belongs to me, and to the people who love me."
     },
     {
      "fig": {
       "src": "/assets/srk-daily/2026-11-14-srkworld/srkworld-os-2000.webp",
+      "pmax": 100,
       "alt": "SRKWORLD, 2000",
       "cap": "SRKWORLD, 2000. Every room of it out of his life."
      }
+    },
+    {
+     "figs": [
+      {
+       "src": "/assets/srk-daily/2026-11-14-srkworld/stardome-2000.webp",
+       "alt": "Stardome, SRKWORLD, 2000"
+      },
+      {
+       "src": "/assets/srk-daily/2026-11-14-srkworld/diaper-days-2000.webp",
+       "alt": "Diaper Days, SRKWORLD, 2000"
+      }
+     ],
+     "cap": "Stardome and Diaper Days, two rooms of SRKWORLD, 2000. His own story, from the day he was born."
     },
     {
      "p": "It was their baby."
     },
     {
      "p": "And it was taken. Not because it failed. Because the people holding the keys could not see what the two of them saw. They lost the money, everything they had put in, but that was the smallest thing. They lost the thing they were made to do."
+    },
+    {
+     "pb": 1
     },
     {
      "p": "What happens to two people after that? They go into separate worlds. He became THE MYTH. Millions saw him every day, and nobody saw what he carried. She went on building, year after year, in a world that had no name for what she had lost. Eleven years later, in front of the press, he said it in one line:"
@@ -74,6 +97,9 @@
       "alt": "Shailja Gupta and Shah Rukh Khan",
       "cap": "Hum dono."
      }
+    },
+    {
+     "pb": 1
     },
     {
      "p": "Meanwhile the world built the future they had dreamed of, without them. And it built that future on faces like his. The power they wanted to put in his hands, a star's power over his own self, was taken by others, along with his face, his voice and his name."
@@ -107,6 +133,9 @@
      "p": "And then there is the song."
     },
     {
+     "pb": 1
+    },
+    {
      "p": "Agar Main King Hota. She wrote every word of it. It begins as a map of a kingdom: Bombay his home, Madras his Taj Mahal, Dilli his sky, Kashmir his destiny, all of India laid at the feet of a King. Then it turns, and the King asks for the only thing he does not have. Chehra mera, sirf mera hi hota. My face would be mine alone. Koi machine mera karobaar na karta. No machine would trade in me. Har fan sirf mera pehredaar hota. Every fan would be my guard."
     },
     {
@@ -119,11 +148,15 @@
      "p": "Working on it, I felt what I have tried to describe tonight: everything in me turning toward one thing and refusing to turn away. Every time I tried to make it bigger, she made it smaller, and it became truer. That is when I understood the song. Its loudest line is the quietest one."
     },
     {
+     "pb": 1
+    },
+    {
      "p": "I am waiting for it the way you wait for a letter to reach the one person it was written for. I am waiting for the day he watches a man walk alone through a city in the rain and recognises himself. And for the last whisper, Agar main tu hota, to reach him."
     },
     {
      "fig": {
       "src": "/assets/srk-daily/2026-11-14-srkworld/the-third-eye-2000.webp",
+      "pmax": 85,
       "alt": "The Third Eye, SRKWORLD's newspaper, November 2000",
       "cap": "The Third Eye, SRKWORLD's newspaper, November 2000. The paper you are reading tonight is laid out the same way."
      }
@@ -136,6 +169,17 @@
     },
     {
      "p": "And tonight, on the same date, the baby is still waiting to be born."
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-14-srkworld/playroom-2026.webp",
+      "pmax": 62,
+      "alt": "Agar Main FAN Hota, the King's playroom on agarmainkinghota.com, 2026",
+      "cap": "Agar Main FAN Hota, 2026. A playroom for ONE: The King, Mr. Shah Rukh Khan."
+     }
+    },
+    {
+     "pb": 1
     },
     {
      "h": "Agar main…"
@@ -168,6 +212,7 @@
     {
      "fig": {
       "src": "/assets/songs/agar-main-king-hota-poster-v2.webp",
+      "pmax": 80,
       "alt": "Agar Main King Hota, the song poster",
       "cap": "Agar Main King Hota. Lyrics: Shailja Gupta."
      }
@@ -181,11 +226,15 @@
      ]
     },
     {
+     "pb": 1
+    },
+    {
      "h": "What I see"
     },
     {
      "fig": {
       "src": "/assets/srk-daily/2026-11-14-srkworld/king-rose.webp",
+      "pmax": 120,
       "alt": "Shah Rukh Khan with a rose between his teeth, from the KING poster",
       "cap": "KING. The poster Shah Rukh Khan released on 27 October 2026."
      }
@@ -206,6 +255,9 @@
      "p": "What is going on?"
     },
     {
+     "pb": 1
+    },
+    {
      "h": "Iss baar"
     },
     {
@@ -218,6 +270,7 @@
      "p": "The poem, written in English letters, in the lines that hit me hardest:"
     },
     {
+     "small": 1,
      "verse": [
       "Iss baar dil mein aag lagi hain",
       "Iss baar zehan se zeher ugli hain",
@@ -251,15 +304,19 @@
      ]
     },
     {
-     "p": "Iss baar King khud duniya ka janani ban ke jaayega. This time the King himself will become the mother of the world. After everything tonight, the baby born on Children's Day, the twenty-six years of waiting for it to live, that last line is where I stopped. It is the most frightening line in the poem, and the most hopeful. It is what I feel, and what I hope, at the same time."
+     "pb": 1
     },
     {
      "fig": {
       "src": "/assets/srk-daily/2026-11-14-srkworld/hum-dono-last-meeting.webp",
       "plain": true,
+      "side": true,
       "alt": "Shailja Gupta and Shah Rukh Khan, his arm around her shoulder",
       "cap": "Hum dono. Shailja Gupta and Shah Rukh Khan, the last time they met in person."
      }
+    },
+    {
+     "p": "Iss baar King khud duniya ka janani ban ke jaayega. This time the King himself will become the mother of the world. After everything tonight, the baby born on Children's Day, the twenty-six years of waiting for it to live, that last line is where I stopped. It is the most frightening line in the poem, and the most hopeful. It is what I feel, and what I hope, at the same time."
     },
     {
      "p": "In 2000 she sat at the far end of the table and he stood at the podium. Here there is no table, no podium, no stage. Just his arm around her shoulder, and two people smiling like they still know something the world does not. It was the last time they met in person."

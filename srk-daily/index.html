@@ -159,9 +159,14 @@ button.np-btn{cursor:pointer}
 .q{font:italic 700 clamp(24px,3.6vw,32px) 'Libre Baskerville',serif;text-align:center;color:var(--maroon);margin:18px 0}
 .fg.vd video{width:100%;display:block;background:#000}
 .ar figure.plain img{border:0;filter:none}
+.ar figure.two{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.ar figure.two img{flex:1 1 240px;min-width:0;width:auto;max-width:calc(50% - 5px);height:auto;max-height:none!important;object-fit:contain;margin:0}.ar figure.two figcaption{flex-basis:100%}
+@media (min-width:600px){.ar figure.fg.side{float:right;width:36%;margin:4px 0 12px 22px}.ar figure.fg.side img{width:100%;max-height:none}}
+@media print{.ar figure.fg.side{float:right;width:27%;margin:2mm 0 3mm 6mm}.ar figure.fg.side img{width:100%!important;max-height:none!important}.ar h3{clear:both}}
+.pbk{display:none}html.tall .pbk{display:block;height:0;overflow:visible;font-size:2px;line-height:0;color:#fbf8f1}
 .vs{margin:22px 0;padding:18px 12px;border-top:1px solid var(--rule,#999);border-bottom:1px solid var(--rule,#999);text-align:center}
 .vs p{font:italic 400 clamp(17px,2.3vw,21px)/1.6 'Libre Baskerville',serif;color:var(--maroon);margin:0}
 .vs .vg+.vg{margin-top:.9em}
+@media print{.vs.sm p{font-size:15.5px;line-height:1.4}.vs.sm .vg+.vg{margin-top:.55em}}
 .ln{list-style:none;padding:0 !important}.ln a{color:var(--blue);font:600 15px Archivo,sans-serif}
 .tags{font:600 13px Archivo,sans-serif;color:var(--muted)}
 .back{display:inline-block;margin:0 0 14px;background:var(--blue);color:#fff !important;font:700 12px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;text-decoration:none}
@@ -190,10 +195,10 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   .ar figure,.st,.tl,.q,.ar ul,.fg.vd{break-inside:avoid}.vs{break-inside:auto}.vs .vg{break-inside:avoid}
   .ar p{orphans:3;widows:3}
   .fg.vd video{display:none}.fg.vd img.vp{display:block!important;width:auto!important;max-width:100%;max-height:80mm;margin:0 auto}
-  .ar figure img,.ar figure.fg img{max-height:100mm;width:auto;max-width:100%;margin:0 auto;display:block}
+  .ar figure img,.ar figure.fg img{max-height:var(--pmax,100mm);width:auto;max-width:100%;margin:0 auto;display:block}
   .ar h3{break-after:avoid}.ar h3+p,.ar h3+figure{break-before:avoid}
   .pr-only{display:block}
-  .pr-end{margin:18px 0 0;padding:12px 14px;border:2px solid var(--red);font:700 13px Archivo,sans-serif;letter-spacing:.06em;text-align:center;break-inside:avoid}
+  .pr-end{margin:8px 0 0;padding:8px 14px;border:2px solid var(--red);font:700 13px Archivo,sans-serif;letter-spacing:.06em;text-align:center;break-inside:avoid}
   .pr-end b{display:block;color:var(--red);font-size:16px;margin-bottom:4px}
   /* front page edition: the whole paper, three columns, KING BUZZ open, no form controls */
   html.pdf-front .kb{display:block!important}
@@ -237,11 +242,13 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     if(b.time)return '<div class="tl">'+b.time.map(function(t){return '<p><b>'+esc(t[0])+'</b>'+esc(t[1])+'</p>';}).join('')+'</div>';
     if(b.quote)return '<p class="q">'+esc(b.quote.q)+'</p>';
     if(b.links)return '<ul class="ln">'+b.links.map(function(l){return '<li><a href="'+esc(l[1])+'">'+esc(l[0])+' →</a></li>';}).join('')+'</ul>';
-    if(b.fig){var f=b.fig;return '<figure class="fg'+(f.plain?' plain':'')+'">'+(f.url?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(f.src)+'" alt="'+esc(f.alt||'')+'" loading="lazy" referrerpolicy="no-referrer">'+(f.url?'</a>':'')+'<figcaption>'+esc(f.cap||'')+'</figcaption></figure>';}
+    if(b.fig){var f=b.fig;return '<figure class="fg'+(f.plain?' plain':'')+(f.side?' side':'')+'">'+(f.url?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(f.src)+'" alt="'+esc(f.alt||'')+'"'+(f.pmax?' style="--pmax:'+f.pmax+'mm"':'')+' loading="lazy" referrerpolicy="no-referrer">'+(f.url?'</a>':'')+'<figcaption>'+esc(f.cap||'')+'</figcaption></figure>';}
     if(b.audio){var a=b.audio;return '<div class="au">'+(a.img?'<a href="'+esc(a.url||'#')+'"><img src="'+esc(a.img)+'" alt="'+esc(a.t||'')+'" loading="lazy"></a>':'')+'<div><b>'+esc(a.t||'')+'</b>'+(a.sub?'<small>'+esc(a.sub)+'</small>':'')+'<audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="'+esc(a.src)+'" data-ga="'+esc(a.src.split('/').pop())+'"></audio>'+(a.url?'<a class="go" href="'+esc(a.url)+'">'+esc(a.cta||'Open')+' →</a>':'')+'</div></div>';}
     if(b.list)return '<ul>'+b.list.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>';
     if(b.video){var v=b.video;return '<figure class="fg vd">'+(v.poster?'<img class="vp" style="display:none" src="'+esc(v.poster)+'" alt="">':'')+'<video controls playsinline preload="metadata"'+(v.poster?' poster="'+esc(v.poster)+'"':'')+' src="'+esc(v.src)+'"></video><figcaption>'+esc(v.cap||'')+(v.url?' <a href="'+esc(v.url)+'" target="_blank" rel="noopener">'+esc(v.cta||'Watch')+' →</a>':'')+'</figcaption></figure>';}
-    if(b.verse){var g=[[]];b.verse.forEach(function(t){if(t)g[g.length-1].push('<p>'+esc(t)+'</p>');else g.push([]);});return '<div class="vs">'+g.filter(function(x){return x.length;}).map(function(x){return '<div class="vg">'+x.join('')+'</div>';}).join('')+'</div>';}
+    if(b.figs)return '<figure class="fg two">'+b.figs.map(function(f){return '<img src="'+esc(f.src)+'" alt="'+esc(f.alt||'')+'" loading="lazy">';}).join('')+'<figcaption>'+esc(b.cap||'')+'</figcaption></figure>';
+    if(b.pb)return '<div class="pbk">PAGEBREAK</div>';
+    if(b.verse){var g=[[]];b.verse.forEach(function(t){if(t)g[g.length-1].push('<p>'+esc(t)+'</p>');else g.push([]);});return '<div class="vs'+(b.small?' sm':'')+'">'+g.filter(function(x){return x.length;}).map(function(x){return '<div class="vg">'+x.join('')+'</div>';}).join('')+'</div>';}
     return '';
   }
   function firstP(x){for(var i=0;i<x.blocks.length;i++)if(x.blocks[i].p)return x.blocks[i].p;return '';}
@@ -366,7 +373,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     if(x)document.title=x.title+' — SRK DAILY';
     // PDF edition (?pdf=1): every link points at the live site, whatever host printed it
     // ?tall=1: the story printed as one long A4-wide sheet, so tools/srk-daily-story-pdf.py can cut it into pages between lines
-    if(new URLSearchParams(location.search).get('tall')){var ts=document.createElement('style');ts.textContent='@media print{@page{size:210mm 4000mm;margin:0}}';document.head.appendChild(ts);var tf=function(){var hmm=Math.ceil((document.documentElement.scrollHeight)*0.2646*794/Math.max(1,document.documentElement.clientWidth))+20;ts.textContent='@media print{@page{size:210mm '+Math.max(297,hmm)+'mm;margin:0}}';};setTimeout(tf,3000);setTimeout(tf,7000);}
+    if(new URLSearchParams(location.search).get('tall')){document.documentElement.classList.add('tall');var ts=document.createElement('style');ts.textContent='@media print{@page{size:210mm 4000mm;margin:0}}';document.head.appendChild(ts);var tf=function(){var hmm=Math.ceil((document.documentElement.scrollHeight)*0.2646*794/Math.max(1,document.documentElement.clientWidth))+20;ts.textContent='@media print{@page{size:210mm '+Math.max(297,hmm)+'mm;margin:0}}';};setTimeout(tf,3000);setTimeout(tf,7000);}
     if(new URLSearchParams(location.search).get('pdf'))[].forEach.call(document.querySelectorAll('a[href]'),function(l){var h=l.getAttribute('href');if(/^https?:/i.test(h))return;l.setAttribute('href',new URL(h,'https://agarmainkinghota.com/srk-daily/').href);});
     wire();
   });
