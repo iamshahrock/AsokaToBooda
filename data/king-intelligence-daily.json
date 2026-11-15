@@ -3062,6 +3062,119 @@
         "Box office figures as reported by Sacnilk.",
         "Posts are not people."
       ]
+    },
+    {
+      "date": "2026-11-15",
+      "record_id": "KING-2026-11-15",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": 52556420,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-15 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": 33116459,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-15 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": 86444162,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-15 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_tu_mil_jaaye_views",
+          "value": 81089203,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-15 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "srk_indexed_posts",
+          "value": null,
+          "unit": "indexed posts",
+          "source": "Not read 2026-11-15: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "srkking_indexed_posts",
+          "value": null,
+          "unit": "indexed #srkking posts",
+          "source": "Not read 2026-11-15: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 88,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json as of 2026-11-15 (88 works)",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 5567693,
+          "unit": "views",
+          "source": "data/ai-creator-log.json as of 2026-11-15 (YouTube views re-read 13 Nov)",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": 48573099,
+          "unit": "followers",
+          "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,573,099 as shown), read 2026-11-15 07:04 IST in the owner's signed-in browser",
+          "method": "count shown in the profile follower tooltip",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 15 Nov total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "Tu Mil Jaaye 81,089,203 YouTube views at 07:04 IST (+2,007,893 since 14 Nov 11:24 IST); 772,360 likes",
+        "Avengers: Doomsday trailer 86,444,162 vs KING's two teasers 85,672,879: Doomsday ahead by 771,283 (was 566,497 on 14 Nov)",
+        "RAMAYANA to KING at 07:04 IST: KING's 3 official videos 166,762,082 vs Ramayana's 7 at 147,368,678 (KING +19,393,404; was +18,385,362 on 14 Nov)",
+        "Ramayana day 10 (Sat 14 Nov): ₹72.90 crore India net, up 51.6% on Friday; 10 days ₹685.60 crore net, ₹819.50 crore India gross, ₹1,228.00 crore worldwide gross (Sacnilk, updated 14 Nov 11:07 PM IST)",
+        "Trade analyst Sumit Kadel to Filmibeat (14 Nov): if KING's trailer lands at the level of Pathaan or Jawan, a ₹55-65 crore Hindi opening on 24 Dec is possible; Doomsday's impact limited",
+        "A Reddit theory about KING's plot was reported by India.com, Indiatimes, Free Press Journal and Asianet News Hindi (14 Nov); the makers have not released a synopsis",
+        "Maatrubhumi trailer 49,668,146 views at 07:04 IST (+2,154,850 since 14 Nov 11:31 IST); 7 official videos 144,232,867",
+        "New @RedChilliesEnt X post for Tu Mil Jaaye, 14 Nov 12:00 IST ('No one makes DEHSHAT look this effortless!'); no new @iamsrk post",
+        "@iamsrk Instagram 48,573,099 followers at 07:04 IST (6,847 fewer than on 14 Nov)"
+      ],
+      "notes": [
+        "YouTube read by Claude from the public watch pages at 07:04 IST; Instagram in the owner's session at 07:04 IST.",
+        "Box office figures as reported by Sacnilk.",
+        "Posts are not people."
+      ]
     }
   ],
   "source_rules": {
