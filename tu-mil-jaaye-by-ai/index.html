@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tu Mil Jaaye By AI — Agar Main King Hota</title>
+<meta name="description" content="Every AI version of Tu Mil Jaaye, KING's first song, that we can find on YouTube and Instagram: who made it, how many watched, and who earns.">
+<meta name="theme-color" content="#0a0707">
+<link rel="canonical" href="https://agarmainkinghota.com/tu-mil-jaaye-by-ai/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/crown-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+.box{background:#0d0606;border:1px solid #c9a24a;border-top:3px solid var(--red);padding:24px 22px 22px;margin:0 0 26px;box-shadow:0 0 22px rgba(229,9,20,.18)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:44px;line-height:1.05;text-transform:uppercase;margin:0 0 10px;color:#f5f1ed}
+.hero h1 span{color:var(--red-text)}
+.hero .kick{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#c9a24a;margin:0 0 8px}
+.hero p{font-size:17px;line-height:1.65;color:#e6dcd4;margin:0 0 10px;max-width:880px}
+.nums{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0 6px}
+.nums div{border:1px solid rgba(201,162,74,.5);padding:12px;text-align:left}
+.nums b{display:block;font-family:var(--display);font-size:28px;font-weight:400;color:#fff;line-height:1.1}
+.nums span{font-size:12px;color:#c9a24a;text-transform:uppercase;letter-spacing:.06em}
+.nums i{display:block;font-style:normal;font-size:11px;color:#a89a90;margin-top:4px}
+.box h2{font-family:var(--display);font-weight:400;font-size:28px;text-transform:uppercase;margin:0 0 14px}
+.box h2 span{color:var(--red-text)}
+.bars .r{margin:0 0 12px}.bars .l{font-size:14px;color:#e6dcd4;margin:0 0 4px}
+.bars .t{display:flex;align-items:center;gap:10px}.bars i{display:block;height:20px;background:var(--red);min-width:3px}.bars i.o{background:#c9a24a}
+.bars b{font-size:15px;color:#fff;white-space:nowrap}
+.note{font-size:12.5px;color:#a89a90;line-height:1.6;margin:10px 0 0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tabs button{background:transparent;border:1px solid #c9a24a;color:#f5f1ed;padding:7px 14px;font:600 13px Archivo,sans-serif;cursor:pointer}
+.tabs button.on{background:var(--red);border-color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{display:block;color:inherit;text-decoration:none;border:1px solid rgba(201,162,74,.35);background:#120909}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#222}
+.card .c{padding:9px 10px 11px}.card .tt{font-size:13.5px;line-height:1.4;color:#f5f1ed;max-height:3.9em;overflow:hidden}
+.card .m{font-size:12px;color:#c9a24a;margin-top:6px}
+.card.ig .tt{max-height:5.6em}
+.more{margin:16px 0 0;text-align:center}.more button{background:var(--red);border:0;color:#fff;padding:10px 20px;font:700 14px Archivo,sans-serif;cursor:pointer}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.nums{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.hero h1{font-size:32px}.grid{grid-template-columns:repeat(2,1fr)}.nums{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body class="v2">
+<script src="../assets/header.js"></script>
+<main class="wrap">
+  <section class="box hero">
+    <p class="kick">FANVERSE · KING's first song, remade by machines</p>
+    <h1>Tu Mil Jaaye <span>By AI</span></h1>
+    <p id="lead">Every AI version of Tu Mil Jaaye we can find on YouTube and Instagram: who made it, how many watched, and who earns. Made with AI tools, without the consent of the people they copy.</p>
+    <div class="nums" id="nums"></div>
+    <p style="margin:14px 0 0"><a href="/srk-daily/?p=2026-11-15-ai-tech-giants-king" style="color:#fff;background:var(--red);padding:9px 16px;font-weight:700;text-decoration:none;display:inline-block">Read the SRK DAILY special report →</a></p>
+  </section>
+  <section class="box">
+    <h2>The original vs <span>the AI copies</span></h2>
+    <div class="bars" id="bars"></div>
+    <p class="note" id="barnote"></p>
+  </section>
+  <section class="box">
+    <h2>The AI <span>versions</span></h2>
+    <div class="tabs"><button class="on" data-t="yt">YouTube</button><button data-t="ig">Instagram</button></div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><button id="more">Show more</button></div>
+    <p class="note" id="srcnote"></p>
+  </section>
+</main>
+<script>
+(function(){
+  var nf=function(n){return n==null?'N/A':Number(n).toLocaleString('en-US')};
+  var esc=function(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  fetch('../data/tmj-ai.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+    var yt=d.youtube.items, ig=d.instagram.items;
+    var ytv=yt.reduce(function(a,x){return a+(x.views||0)},0), igl=ig.reduce(function(a,x){return a+(x.likes||0)},0);
+    document.getElementById('nums').innerHTML=[
+      [nf(d.official.views),'Official song views',d.official.read],
+      [nf(yt.length),'AI versions on YouTube',nf(ytv)+' views'],
+      [nf(ig.length),'AI versions on Instagram',nf(igl)+' likes'],
+      [d.ads_note||'N/A','Running ads',d.ads_read||''],
+      [nf(new Set(yt.map(function(x){return x.channel}).concat(ig.map(function(x){return x.account}))).size),'Channels and accounts','YouTube + Instagram']
+    ].map(function(n){return '<div><b>'+n[0]+'</b><span>'+n[1]+'</span><i>'+esc(n[2])+'</i></div>'}).join('');
+    var rows=[['Official Tu Mil Jaaye (T-Series)',d.official.views,'o'],['AI versions on YouTube',ytv,''],['Likes on AI versions on Instagram',igl,'']];
+    var mx=Math.max.apply(null,rows.map(function(r){return r[1]||0}));
+    document.getElementById('bars').innerHTML=rows.map(function(r){return '<div class="r"><div class="l">'+r[0]+'</div><div class="t"><i class="'+r[2]+'" style="width:'+Math.max(0.4,(r[1]||0)/mx*80)+'%"></i><b>'+nf(r[1])+'</b></div></div>'}).join('');
+    document.getElementById('barnote').textContent=d.about_bars||'';
+    document.getElementById('srcnote').textContent=d.about||'';
+    var tab='yt',shown=24;
+    function draw(){
+      var L=tab==='yt'?yt:ig, h='';
+      L.slice(0,shown).forEach(function(x){
+        if(tab==='yt') h+='<a class="card" href="https://www.youtube.com/'+(x.short?'shorts/':'watch?v=')+x.id+'" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/'+x.id+'/mqdefault.jpg" alt=""><div class="c"><div class="tt">'+esc(x.title)+'</div><div class="m">'+nf(x.views)+' views'+(x.channel?' · '+esc(x.channel):'')+'</div></div></a>';
+        else h+='<a class="card ig" href="https://www.instagram.com'+x.path+'" target="_blank" rel="noopener"><div class="c"><div class="tt">'+esc(x.caption)+'</div><div class="m">'+nf(x.likes)+' likes · @'+esc(x.account)+' · '+esc(x.date)+'</div></div></a>';
+      });
+      document.getElementById('grid').innerHTML=h;
+      document.getElementById('more').style.display=L.length>shown?'':'none';
+    }
+    document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');tab=b.dataset.t;shown=24;draw()}});
+    document.getElementById('more').onclick=function(){shown+=24;draw()};
+    draw();
+  });
+})();
+</script>
+<script src="../assets/footer.js" defer></script>
+</body>
+</html>

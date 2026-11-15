@@ -2,6 +2,170 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-15-ai-tech-giants-king",
+   "n": 0,
+   "date": "2026-11-15",
+   "time": "12:00 IST",
+   "kicker": "SRK DAILY · Issue 11 · Special report · The economics of AI and the King",
+   "title": "AI tech giants are raking in money from KING illegally, and the law seems to be just for optics",
+   "deck": "Their tools are marketing the film faster than its studio. The fans, mere pawns crazy about SRK, pay for subscriptions to make the videos, and the King is being used as their brand ambassador without his consent.",
+   "img": "/assets/srk-daily/2026-11-15-ai/exhibit-1.webp",
+   "img_alt": "Exhibit 1: the official Tu Mil Jaaye against its AI copies",
+   "img_credit": "Exhibit 1 · The official song against its AI copies. SRK DAILY analysis of YouTube.",
+   "blocks": [
+    {
+     "h": "Key findings"
+    },
+    {
+     "list": [
+      "The AI campaign runs ahead of the official one. KING has not released a trailer. YouTube already carries 46 AI-made ones; the most-watched has 2,145,408 views.",
+      "One song, 71 AI versions. In the 13 days after Tu Mil Jaaye’s release, 71 YouTube videos from 65 channels presented themselves as AI versions of it, with 278,004 views between them.",
+      "Nobody holds the rights. None of the 71 states that Shah Rukh Khan, Deepika Padukone, Arijit Singh or the other people they imitate agreed to it.",
+      "The real prize is valuation. Every video made with their tools is usage, and usage is what AI tech giants sell to investors. The star’s pull pumps their value; the billion-dollar deals are done behind closed doors, and the paperwork follows. The fans who do the work are left with a few thousand rupees in ads.",
+      "It is illegal, and nobody is stopping it. Using a star’s face and voice without consent and copying a song without a licence are both against the law. The companies whose tools do it are never made to answer."
+     ]
+    },
+    {
+     "h": "Two campaigns, one film"
+    },
+    {
+     "p": "KING opens on 24 December. Its producers, Red Chillies Entertainment, have so far released teaser videos, posters and one song. The song, Tu Mil Jaaye, went up on T-Series’ YouTube channel at 00:09 IST on 2 November and stood at 81,262,497 views at 11:15 IST on 15 November."
+    },
+    {
+     "p": "A second campaign has grown alongside it, with no budget and no producer. SRK DAILY’s log of KING fan videos, read on YouTube up to 13 November, holds 138 AI-made KING videos with 5,837,846 views. Almost all of them are trailers, teasers and songs the studio never made."
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-15-ai/exhibit-1.webp",
+      "alt": "Exhibit 1 · The official song against its AI copies, YouTube views",
+      "cap": "Exhibit 1 · The official song against its AI copies, YouTube views",
+      "plain": true
+     }
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-15-ai/exhibit-2.webp",
+      "alt": "Exhibit 2 · What the machines are making: 138 AI-made KING videos by type",
+      "cap": "Exhibit 2 · What the machines are making: 138 AI-made KING videos by type",
+      "plain": true
+     }
+    },
+    {
+     "h": "Tu Mil Jaaye, 71 times over"
+    },
+    {
+     "p": "The song shows how fast the cycle turns. The first AI versions appeared on YouTube on the night of release. By 14 November there were 71 that described themselves as AI: covers in synthetic voices, ‘female versions’, remixes, animated videos, and recasts that put another face in Shah Rukh Khan’s place. The most-watched, with 212,432 views, swaps him for his son Aryan Khan. On Instagram, a version starring the cricketer Virat Kohli drew 24,000 likes."
+    },
+    {
+     "p": "The names do the selling. Shah Rukh Khan appears in the titles of 37 of the 71 videos, Deepika Padukone in 18 and Arijit Singh in 13; three are covers in a cloned voice of the Pakistani cricketer Babar Azam. Twelve are tutorials that teach viewers to ‘recreate’ the King’s scenes with AI tools; the descriptions name Google’s Flow and Gemini and the phone editor CapCut, and one carries a paid plug for an AI video app."
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-15-ai/exhibit-3.webp",
+      "alt": "Exhibit 3 · The 71 AI versions of Tu Mil Jaaye on YouTube, by kind",
+      "cap": "Exhibit 3 · The 71 AI versions of Tu Mil Jaaye on YouTube, by kind",
+      "plain": true
+     }
+    },
+    {
+     "p": "Instagram tells the same story at larger scale. Its search for ‘Tu Mil Jaaye AI edit’ returned 963 posts on 15 November. Of 389 posts about the song that SRK DAILY read, 41 say in their caption that AI made them. Five of those use the same hook, ‘comment a word and I will send you the prompt’, and they collected 106,038 likes and 18,157 comments: 89% of the likes on the 41. The engagement is the product; the prompt, the follow and the sponsorship are what is sold."
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-15-ai/exhibit-4.webp",
+      "alt": "Exhibit 4 · Where the attention goes: likes on 41 AI posts of Tu Mil Jaaye on Instagram",
+      "cap": "Exhibit 4 · Where the attention goes: likes on 41 AI posts of Tu Mil Jaaye on Instagram",
+      "plain": true
+     }
+    },
+    {
+     "h": "Have they taken rights?"
+    },
+    {
+     "p": "No. The descriptions credit the original composers and singers and call the videos ‘fan-made’ or ‘for entertainment only’. Five carry the same line: their credits ‘do not imply permission or authorization’. None states that the people whose faces and voices it imitates agreed."
+    },
+    {
+     "h": "Who gains"
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-15-ai/exhibit-5.webp",
+      "alt": "Exhibit 5 · The value chain of an AI fan video",
+      "cap": "Exhibit 5 · The value chain of an AI fan video",
+      "plain": true
+     }
+    },
+    {
+     "p": "The fans are pawns in this trade. They are crazy about SRK, so they pay for the subscriptions, learn the prompts and make the videos; all their ads together are worth a few thousand rupees. The money that matters is made elsewhere."
+    },
+    {
+     "p": "For the AI tech giants, every video is a data point in a growth story. Users, generations and hours of engagement are the numbers they take to investors, and those numbers set valuations measured in billions of dollars. A star of Shah Rukh Khan’s pull is the best demand they could ask for: his new song arrives, millions of fans rush to the tools, and the usage graph climbs. The deals built on that growth are struck behind closed doors. The licences, consents and paperwork, if they come at all, come later."
+    },
+    {
+     "h": "The business model"
+    },
+    {
+     "p": "Every video engine on the market learned from celebrity performances without holding the celebrities’ rights. The stars’ new releases are now their best advertising. A hit song comes out, and within a day the tools are being sold to fans as the way to remake it with the star’s own face. KING is the season’s biggest Hindi release, so it has become free marketing for the engines, while its own campaign pays for every poster."
+    },
+    {
+     "h": "Where is the partnership?"
+    },
+    {
+     "p": "Shah Rukh Khan is the industry’s sharpest marketer, and he thrives on his fans enjoying his work. That is exactly why the missing piece stands out. When a brand wants to ride a film, it signs an official tie-in with the producers, as Cinépolis did this week. The AI tech giants are riding KING harder than any brand, yet there is no partnership, no official campaign and no system that turns the fans’ AI videos into promotion for the film. They take the marketing value of the biggest star in the country, without asking, and give the film nothing back."
+    },
+    {
+     "h": "Where is the law?"
+    },
+    {
+     "fig": {
+      "src": "/assets/srk-daily/2026-11-15-ai/exhibit-6.webp",
+      "alt": "Exhibit 6 · What the law says, and who it reaches",
+      "cap": "Exhibit 6 · What the law says, and who it reaches",
+      "plain": true
+     }
+    },
+    {
+     "p": "It is illegal. Indian courts have ruled again and again that a star’s face and voice cannot be used without his consent: the Delhi High Court has granted such orders to Aishwarya Rai Bachchan, Salman Khan, Varun Dhawan and others. A song cannot be copied and remade without a licence. Since February, synthetic videos must also be labelled."
+    },
+    {
+     "p": "The law exists, but it seems to be just for optics. What is missing is enforcement where the money is. Each star has to chase the copies one video at a time, after the damage is done, while the AI tech giants whose tools make every copy, and who are paid for every one, are never made to answer. For an industry that sells faces, voices and stories, that is the scandal. Until the companies are held to account at the source, every new release will market the AI engines first and the film second."
+    },
+    {
+     "p": "*Method. YouTube: 40 searches for Tu Mil Jaaye with AI terms on 15 Nov 2026, up to 12 result pages each; 576 videos about the song found, 71 whose titles say AI; each video’s page opened to read views, date, description and whether ads were placed. Instagram: posts from the searches ‘tu mil jaaye ai’ and ‘tu mil jaaye ai edit’, 1,032 read, 389 about the song, 41 saying AI in the caption. Counts are what these searches return, not every AI video in existence; videos that do not say they are AI are not counted. Ad-revenue range is an estimate (views × ₹5–₹50 per 1,000).*"
+    },
+    {
+     "links": [
+      [
+       "Tu Mil Jaaye By AI · every AI version we found",
+       "/tu-mil-jaaye-by-ai/"
+      ],
+      [
+       "Tu Mil Jaaye, the official song (T-Series)",
+       "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+      ],
+      [
+       "Fan Universe · the fan videos we log",
+       "/fan-made-ai-universe/"
+      ],
+      [
+       "The IT Rules amendment, 2026 (Business Today)",
+       "https://www.businesstoday.in/technology/story/govt-tightens-rules-on-ai-generated-content-mandates-labels-and-faster-takedowns-515505-2026-02-10"
+      ],
+      [
+       "Yesterday: Tu Mil Jaaye goes to No. 1",
+       "?p=2026-11-14-tu-mil-jaaye-no-1"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#AI",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-15-king-opening-target",
    "n": 1,
    "date": "2026-11-15",
