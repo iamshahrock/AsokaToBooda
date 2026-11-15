@@ -9,9 +9,9 @@
    "kicker": "SRK DAILY · Issue 11 · Special report · The economics of AI and the King",
    "title": "AI tech giants are raking in money from KING illegally, and the law seems to be just for optics",
    "deck": "Their tools are marketing the film faster than its studio. The fans, mere pawns crazy about SRK, pay for subscriptions to make the videos, and the King is being used as their brand ambassador without his consent.",
-   "img": "/assets/srk-daily/2026-11-15-ai/exhibit-1.webp",
-   "img_alt": "Exhibit 1: the official Tu Mil Jaaye against its AI copies",
-   "img_credit": "Exhibit 1 · The official song against its AI copies. SRK DAILY analysis of YouTube.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
+   "img_alt": "Shah Rukh Khan and Deepika Padukone in Tu Mil Jaaye, KING's first song",
+   "img_credit": "The original: Tu Mil Jaaye, KING · T-Series on YouTube. Tap the picture to watch.",
    "blocks": [
     {
      "h": "Key findings"
@@ -163,7 +163,8 @@
     "#TuMilJaaye",
     "#AI",
     "#SRKDaily"
-   ]
+   ],
+   "img_url": "https://www.youtube.com/watch?v=BPZkZpGMpXA"
   },
   {
    "id": "2026-11-15-king-opening-target",
