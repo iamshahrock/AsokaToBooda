@@ -2,6 +2,349 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-15-king-opening-target",
+   "n": 1,
+   "date": "2026-11-15",
+   "time": "07:45 IST",
+   "kicker": "SRK DAILY · Issue 11 · KING at the box office",
+   "title": "₹55-65 crore on day one, if the trailer lands: the trade starts counting KING's opening",
+   "deck": "Trade analyst Sumit Kadel tells Filmibeat KING can open at ₹55-65 crore in Hindi if its trailer matches Pathaan and Jawan. Sacnilk puts the bar for a Bollywood record at ₹52-66 crore in advance sales.",
+   "img": "https://i.ytimg.com/vi/Uu2QK9Z9X5E/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E",
+   "img_alt": "Shah Rukh Khan in the KING Title Reveal",
+   "img_credit": "KING · Title Reveal, Red Chillies Entertainment on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Thirty-nine days before KING reaches cinemas, the trade has started putting numbers on its first day. Film business analyst Sumit Kadel told Filmibeat on Saturday that if KING's trailer is as good as those of Pathaan and Jawan, the film can take a ₹55-65 crore opening in Hindi on Thursday 24 December, and that the Christmas weekend of 25, 26 and 27 December would follow if audiences like it. \"Gana iska superhit hai aur sab jagah viral ho raha hai,\" he said of Tu Mil Jaaye."
+    },
+    {
+     "p": "On the clash with Avengers: Doomsday, which opens six days earlier on 18 December, Kadel told Filmibeat that a good trailer would leave little room for damage, because the Marvel film would do most of its business in its first eight days."
+    },
+    {
+     "h": "The bar KING has to clear"
+    },
+    {
+     "p": "Sacnilk set out the size of that task in an analysis published on Friday night. Dhurandhar 2 now holds the biggest Bollywood opening, ₹102.55 crore India net, and the biggest Hindi opening, ₹99.10 crore. Pushpa 2 holds the all-language India record, ₹164.25 crore net, and the worldwide record for an Indian film, ₹275.01 crore gross."
+    },
+    {
+     "stats": [
+      [
+       "Biggest Bollywood opening",
+       "₹102.55 crore",
+       "Dhurandhar 2, India net"
+      ],
+      [
+       "Biggest Hindi opening",
+       "₹99.10 crore",
+       "Dhurandhar 2, Hindi net"
+      ],
+      [
+       "Jawan's opening",
+       "₹75 crore",
+       "India net, 2023"
+      ],
+      [
+       "Advance sales KING may need",
+       "₹52-66 crore",
+       "gross, excluding block seats (Sacnilk)"
+      ]
+     ]
+    },
+    {
+     "p": "By Sacnilk's reading of 18 major releases, films that sold ₹30 crore or more in advance finished their first day at 1.87 to 2.35 times their pre-sales. Jawan went into release day with ₹40.75 crore in advances and ended with ₹89.52 crore India gross; Dhurandhar 2 turned ₹52.35 crore into ₹123 crore. At those rates, Sacnilk wrote, KING would need roughly ₹52-66 crore in advance bookings to challenge the record. It also reports that Phars Film acquired KING's overseas rights for ₹175 crore."
+    },
+    {
+     "h": "What is still missing"
+    },
+    {
+     "p": "The trailer itself. KING has released two teasers and one song; advance booking has not opened. Both analyses rest on that trailer, and Red Chillies Entertainment has not announced a date for it."
+    },
+    {
+     "p": "The film's story is also being written by the fans in the meantime. A Reddit post claiming to describe KING's plot, a revenge drama across two generations, was picked up on Saturday by India.com, Indiatimes, Free Press Journal and Asianet News Hindi. The makers have kept the storyline under wraps, India.com noted, and one Reddit user summed up the post as \"Kuch Kuch Hota Hai with masala\"."
+    },
+    {
+     "links": [
+      [
+       "Filmibeat · Sumit Kadel on KING's opening",
+       "https://www.filmibeat.com/bollywood/box-office/2026/king-box-office-prediction-will-srk-film-score-big-amid-avengers-doomsday-clash-sumit-kadel-explains-537975.html"
+      ],
+      [
+       "Sacnilk · the opening-day milestones KING could chase",
+       "https://www.sacnilk.com/news/shah-rukh-khans-king-eyes-unbroken-bollywood-opening-day-milestones-with-66-cr-advance-target-to-beat-dhurandhar-2"
+      ],
+      [
+       "India.com · the Reddit theory",
+       "https://www.india.com/entertainment/bollywood/king-shah-rukh-khans-action-thriller-to-feature-revenge-drama-reddit-theory-about-suhana-and-deepika-padukone-goes-viral-8544920/"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#BoxOffice",
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-15-ramayana-day-10",
+   "n": 2,
+   "date": "2026-11-15",
+   "time": "07:45 IST",
+   "kicker": "Box office · day 10",
+   "title": "Ramayana's second Saturday: ₹72.90 crore, and ₹1,228 crore worldwide",
+   "deck": "Ramayana: Part 1 jumped 51.6% on Saturday, its tenth day, to ₹72.90 crore net. It stands at ₹685.60 crore net in India and ₹1,228.00 crore gross worldwide, according to Sacnilk.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹72.90 crore net in India on Saturday 14 November, its tenth day, from 23,451 shows, according to Sacnilk's figures updated at 11:07 PM IST. That is 51.6% more than Friday's ₹48.10 crore. Hindi brought in ₹53.75 crore of it, 73.7% of the day."
+    },
+    {
+     "h": "Ten days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹685.60 crore",
+       "Hindi ₹527.25 crore (76.9%)"
+      ],
+      [
+       "India gross",
+       "₹819.50 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹408.50 crore",
+       "Sacnilk's rough estimate"
+      ],
+      [
+       "Worldwide gross",
+       "₹1,228.00 crore",
+       "Sacnilk, updated 14 Nov 11:07 PM IST"
+      ],
+      [
+       "Day 10 · Sat 14 Nov",
+       "₹72.90 crore",
+       "▲ 51.6% on Friday · 45.5% occupancy"
+      ]
+     ]
+    },
+    {
+     "h": "The run by language, India net"
+    },
+    {
+     "stats": [
+      [
+       "Hindi",
+       "₹527.25 crore",
+       ""
+      ],
+      [
+       "Kannada",
+       "₹57.35 crore",
+       ""
+      ],
+      [
+       "Telugu",
+       "₹44.90 crore",
+       ""
+      ],
+      [
+       "Tamil",
+       "₹29.65 crore",
+       ""
+      ],
+      [
+       "Malayalam",
+       "₹26.45 crore",
+       ""
+      ]
+     ]
+    },
+    {
+     "p": "The best single day of the run is still day 5, Monday 9 November, at ₹107.50 crore. Sacnilk counts 2,68,18,868 footfalls so far. On Friday, Sacnilk's Sunit Jangir reported that Ramayana's ₹48 crore made it the biggest second Friday in India across all languages, ahead of Dhurandhar 2's ₹42 crore."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "Ramayana's ten-day India net, ₹685.60 crore, has already passed the lifetime totals of Pathaan (₹543.09 crore) and Jawan (₹640.25 crore) as listed by Sacnilk. KING opens on Thursday 24 December, 39 days from today."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 10",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_10"
+      ],
+      [
+       "Yesterday: ₹1,111 crore on the second Friday",
+       "?p=2026-11-14-ramayana-day-9"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-15-king-buzz-day-11",
+   "n": 3,
+   "date": "2026-11-15",
+   "time": "07:45 IST",
+   "kicker": "Analytics · 15 Nov 2026",
+   "title": "Tu Mil Jaaye passes 81 million as Doomsday's lead over KING's teasers grows to 771,283",
+   "deck": "KING's first song added two million views in a day. The Avengers: Doomsday trailer is 771,283 views ahead of KING's two teasers; counted with the song, KING's three official videos lead Ramayana's seven by 19.4 million.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "81,089,203",
+       "T-Series, read 15 Nov 07:04 IST"
+      ],
+      [
+       "Likes",
+       "772,360",
+       ""
+      ],
+      [
+       "Gained since Saturday",
+       "2,007,893",
+       "79,081,310 on 14 Nov 11:24 IST"
+      ]
+     ]
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "86,444,162",
+       "read 15 Nov 07:04 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,672,879",
+       "Title Reveal 52,556,420 + Date Announcement 33,116,459"
+      ],
+      [
+       "Doomsday ahead by",
+       "771,283",
+       "566,497 on 14 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "Since Saturday morning the Marvel trailer gained 294,739 views and KING's two teasers 89,953. Counted with Tu Mil Jaaye, KING's three official videos lead the Doomsday trailer by 80,317,920."
+    },
+    {
+     "h": "RAMAYANA to KING, day 11"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "166,762,082",
+       "read 15 Nov 07:04 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "147,368,678",
+       "read 15 Nov 07:04 IST"
+      ],
+      [
+       "KING ahead by",
+       "19,393,404",
+       "was 18,385,362 on 14 Nov 11:24 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 1,089,804 views since Saturday morning; KING's three gained 2,097,846. Ramayana's official trailer stands at 55,736,488."
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "49,668,146",
+       "read 15 Nov 07:04 IST"
+      ],
+      [
+       "Gained since Saturday",
+       "2,154,850",
+       "47,513,296 on 14 Nov 11:31 IST"
+      ],
+      [
+       "7 official videos",
+       "144,232,867",
+       "KING's three lead by 22,529,215"
+      ]
+     ]
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,573,099",
+       "as shown on the profile, 15 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 15 Nov 2026 07:04 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#Ramayana",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-14-srkworld-26-years",
    "n": 0,
    "date": "2026-11-14",
@@ -3874,45 +4217,45 @@
   }
  ],
  "poll": {
-  "id": "ormax-2026-11-14",
-  "q": "Tu Mil Jaaye is No. 1 on Ormax Heartbeats this week. How many times have you watched it?",
+  "id": "opening-2026-11-15",
+  "q": "The trade says KING can open at ₹55-65 crore in Hindi if the trailer lands. Your call for 24 December?",
   "o": [
-   "Once or twice",
-   "Every day",
-   "Lost count",
-   "Not yet"
+   "Under ₹55 crore",
+   "₹55-65 crore",
+   "₹65-100 crore",
+   "A new record"
   ]
  },
  "beat": [
   {
-   "t": "No. 1 on Ormax",
-   "d": "Tu Mil Jaaye tops Ormax Heartbeats' Top 5 Songs of the Week; 79,081,310 views.",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "?p=2026-11-14-tu-mil-jaaye-no-1"
+   "t": "₹55-65 crore?",
+   "d": "Sumit Kadel's Hindi opening estimate for KING, if the trailer lands (Filmibeat).",
+   "img": "https://i.ytimg.com/vi/Uu2QK9Z9X5E/mqdefault.jpg",
+   "url": "?p=2026-11-15-king-opening-target"
   },
   {
-   "t": "KING at Cinépolis",
-   "d": "Cinépolis India partners Red Chillies for KING's promotion with a co-branded food offering (Campaign India).",
+   "t": "₹52-66 crore",
+   "d": "The advance sales KING may need to challenge Bollywood's opening record, by Sacnilk's analysis.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "https://www.campaignindia.in/article/cinepolis-india-partners-red-chillies-entertainment-for-king-s-promotion/45z8f36hjmbth2wcyc5kkkm8xn"
+   "url": "https://www.sacnilk.com/news/shah-rukh-khans-king-eyes-unbroken-bollywood-opening-day-milestones-with-66-cr-advance-target-to-beat-dhurandhar-2"
   },
   {
-   "t": "Ramayana: ₹1,111 crore",
-   "d": "Nine days worldwide gross; ₹48.10 crore net on Friday (Sacnilk).",
+   "t": "Ramayana: ₹1,228 crore",
+   "d": "Ten days worldwide gross; ₹72.90 crore net on Saturday (Sacnilk).",
    "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
-   "url": "?p=2026-11-14-ramayana-day-9"
+   "url": "?p=2026-11-15-ramayana-day-10"
   },
   {
-   "t": "Doomsday +566,497",
-   "d": "The Marvel trailer's lead over KING's two teasers doubled in a day.",
+   "t": "Tu Mil Jaaye: 81 million",
+   "d": "81,089,203 views on Sunday morning, 2.0 million more than on Saturday.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
+   "url": "?p=2026-11-15-king-buzz-day-11"
+  },
+  {
+   "t": "Doomsday +771,283",
+   "d": "The Marvel trailer's lead over KING's two teasers keeps growing.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-14-king-buzz-day-10"
-  },
-  {
-   "t": "Maatrubhumi trailer: 47.5 million",
-   "d": "47,487,230 views on Saturday morning, 6.4 million more than on Friday.",
-   "img": "/assets/srk-daily/2026-11-11-maatrubhumi-trailer.jpg",
-   "url": "?p=2026-11-14-king-buzz-day-10"
+   "url": "?p=2026-11-15-king-buzz-day-11"
   }
  ],
  "fanverse": {
