@@ -917,6 +917,16 @@
       "bookmarks": 38,
       "views": 23810
      }
+    },
+    {
+     "at": "2026-11-15T07:06:00+05:30",
+     "metrics": {
+      "replies": 24,
+      "reposts": 274,
+      "likes": 1260,
+      "bookmarks": 39,
+      "views": 26279
+     }
     }
    ]
   },
@@ -938,6 +948,16 @@
       "bookmarks": 22,
       "views": 30988
      }
+    },
+    {
+     "at": "2026-11-15T07:06:00+05:30",
+     "metrics": {
+      "replies": 41,
+      "reposts": 335,
+      "likes": 1707,
+      "bookmarks": 27,
+      "views": 36358
+     }
     }
    ]
   },
@@ -958,6 +978,37 @@
       "likes": 1510,
       "bookmarks": 23,
       "views": 22039
+     }
+    },
+    {
+     "at": "2026-11-15T07:06:00+05:30",
+     "metrics": {
+      "replies": 28,
+      "reposts": 295,
+      "likes": 2123,
+      "bookmarks": 32,
+      "views": 31543
+     }
+    }
+   ]
+  },
+  {
+   "id": "dehshat-2026-11-14",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "'No one makes DEHSHAT look this effortless!'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2121491058261664126",
+   "posted_at": "2026-11-14T12:00:58+05:30",
+   "readings": [
+    {
+     "at": "2026-11-15T07:06:00+05:30",
+     "metrics": {
+      "replies": 35,
+      "reposts": 321,
+      "likes": 1534,
+      "bookmarks": 51,
+      "views": 41683
      }
     }
    ]
