@@ -25,19 +25,19 @@
 <style>
 /* The poster, rebuilt from the owner's layers (IssBaar_Poster.psd): header, fire, petals, moon, the two of them.
    The lyrics are real text, set like the poster (Futura Light, gold #FFC000, last two lines red #FF0001). */
-.ib{max-width:760px;margin:0 auto 26px;background:#000;container-type:inline-size;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(255,90,0,.18)}
+.ib{max-width:760px;margin:30px auto 26px;background:#000;container-type:inline-size;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(255,90,0,.18)}
 .ib-head{display:block;width:100%;height:auto}
 .ib-verse{position:relative;min-height:calc(100cqw*1894/1080);background:#000 url(img/fire-top.webp) center/100% 100% no-repeat;padding:calc(100cqw*35/1080) 3% calc(100cqw*40/1080)}
 .ib-verse .pt,.ib-verse .moon{position:absolute;height:auto;pointer-events:none;user-select:none}
-.ib-verse .moon{right:0;top:0;width:25.37%;animation:moon 7s ease-in-out infinite}
-.pt{animation:sway 6.5s ease-in-out infinite;animation-delay:var(--d);transform-origin:50% 60%;filter:drop-shadow(0 0 6px rgba(255,110,0,.55))}
+.ib-verse .moon{right:0;top:0;width:calc(25.37%*var(--k));animation:moon 7s ease-in-out infinite}
+.ib{--k:1}.pt{left:calc(var(--x)*1%*var(--k));width:calc(var(--w)*1%*var(--k));animation:sway 6.5s ease-in-out infinite;animation-delay:var(--d);transform-origin:50% 60%;filter:drop-shadow(0 0 6px rgba(255,110,0,.55))}
 @keyframes sway{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(2px,-7px) rotate(5deg)}}
 @keyframes moon{0%,100%{filter:drop-shadow(0 0 6px rgba(255,150,40,.35))}50%{filter:drop-shadow(0 0 16px rgba(255,150,40,.75))}}
 .lyr{position:relative;z-index:2;margin:0;text-align:center;font-family:'Jost','Futura PT','Futura',sans-serif;font-weight:400;color:#FFC000;
-  font-size:max(15px,calc(100cqw*29/1080));line-height:1.15;text-shadow:0 1px 3px #000,0 0 10px #000}
+  font-size:max(15px,calc(100cqw*27/1080));line-height:1.15;text-shadow:0 1px 3px #000,0 0 10px #000}
 .lyr p{margin:0 0 1.15em;text-wrap:balance}
 .lyr p span{display:block}
-.lyr .end{color:#FF0001;font-size:max(17px,calc(100cqw*33.3/1080));line-height:1.12;margin:1.6em 0 0;text-shadow:0 1px 3px #000,0 0 12px rgba(0,0,0,.9)}
+.lyr .end{color:#FF0001;font-size:max(17px,calc(100cqw*31/1080));line-height:1.12;margin:1.6em 0 0;text-shadow:0 1px 3px #000,0 0 12px rgba(0,0,0,.9)}
 .ib-house{position:relative;aspect-ratio:1080/740;background:url(img/fire-house.webp) center/100% 100% no-repeat}
 .ib-house .couple{position:absolute;left:39.81%;top:41.08%;width:21.2%;height:auto}
 .glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(60% 40% at 45% 58%,rgba(255,120,20,.55),transparent 70%);animation:flick 2.3s steps(1) infinite}
@@ -45,7 +45,7 @@
 .flame{position:absolute;right:0;bottom:0;width:30%;height:45%;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(40% 60% at 70% 70%,rgba(255,140,30,.35),transparent 70%);animation:flick 1.7s steps(1) infinite reverse}
 #embers{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
 @media (prefers-reduced-motion:reduce){.pt,.moon,.glow,.flame{animation:none}#embers{display:none}}
-@media (max-width:520px){.ib-verse{padding-left:9%;padding-right:9%}.lyr{font-size:15px;line-height:1.25}.lyr p span{margin-bottom:.4em}}
+@media (max-width:700px){.ib{--k:.55;margin-top:18px}.ib-verse{padding-left:11%;padding-right:11%}.lyr{font-size:15px;line-height:1.25;padding-top:calc(100cqw*.25*.55*347/274 - 100cqw*35/1080 + 6px)}.lyr p span{margin-bottom:.4em}}
 
 .box{max-width:1080px;margin:0 auto 28px;background:#0d0606;border:1px solid #c9a24a;border-top:3px solid var(--red);padding:26px 26px 30px;box-shadow:0 0 22px rgba(229,9,20,.18)}
 .box h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,44px);line-height:1.1;margin:0 0 16px;color:#f5f1ed}
@@ -72,16 +72,16 @@
   <img class="ib-head" src="img/header.webp" width="1080" height="366" alt="ISS BAAR: Shah Rukh Khan and Shailja Gupta face to face, wounded, fists raised, a gun between them dripping blood onto red roses">
   <div class="ib-verse">
     <img class="moon" src="img/moon.webp" alt="">
-    <img class="pt" src="img/petal-1.webp" alt="" style="left:6.02%;top:0.26%;width:12.50%;--d:-0.73s">
-    <img class="pt" src="img/petal-2.webp" alt="" style="left:13.15%;top:11.88%;width:10.37%;--d:-1.46s">
-    <img class="pt" src="img/petal-3.webp" alt="" style="left:5.00%;top:19.96%;width:8.61%;--d:-2.19s">
-    <img class="pt" src="img/petal-4.webp" alt="" style="left:4.72%;top:32.10%;width:8.52%;--d:-2.92s">
-    <img class="pt" src="img/petal-5.webp" alt="" style="left:10.37%;top:42.56%;width:7.41%;--d:-3.65s">
-    <img class="pt" src="img/petal-6.webp" alt="" style="left:4.35%;top:54.12%;width:6.48%;--d:-4.38s">
-    <img class="pt" src="img/petal-7.webp" alt="" style="left:1.85%;top:67.42%;width:8.15%;--d:-5.11s">
-    <img class="pt" src="img/petal-8.webp" alt="" style="left:5.56%;top:75.71%;width:8.89%;--d:-5.84s">
-    <img class="pt" src="img/petal-9.webp" alt="" style="left:10.28%;top:86.59%;width:9.26%;--d:-6.57s">
-    <img class="pt" src="img/petal-10.webp" alt="" style="left:5.19%;top:95.51%;width:5.93%;--d:-7.30s">
+    <img class="pt" src="img/petal-1.webp" alt="" style="--x:6.02;top:0.26%;--w:12.50;--d:-0.73s">
+    <img class="pt" src="img/petal-2.webp" alt="" style="--x:13.15;top:11.88%;--w:10.37;--d:-1.46s">
+    <img class="pt" src="img/petal-3.webp" alt="" style="--x:5.00;top:19.96%;--w:8.61;--d:-2.19s">
+    <img class="pt" src="img/petal-4.webp" alt="" style="--x:4.72;top:32.10%;--w:8.52;--d:-2.92s">
+    <img class="pt" src="img/petal-5.webp" alt="" style="--x:10.37;top:42.56%;--w:7.41;--d:-3.65s">
+    <img class="pt" src="img/petal-6.webp" alt="" style="--x:4.35;top:54.12%;--w:6.48;--d:-4.38s">
+    <img class="pt" src="img/petal-7.webp" alt="" style="--x:1.85;top:67.42%;--w:8.15;--d:-5.11s">
+    <img class="pt" src="img/petal-8.webp" alt="" style="--x:5.56;top:75.71%;--w:8.89;--d:-5.84s">
+    <img class="pt" src="img/petal-9.webp" alt="" style="--x:10.28;top:86.59%;--w:9.26;--d:-6.57s">
+    <img class="pt" src="img/petal-10.webp" alt="" style="--x:5.19;top:95.51%;--w:5.93;--d:-7.30s">
     <div class="lyr" id="lyrics">
 <p><span>Iss baar dil mein aag lagi hain</span><span>Iss baar zehan se zeher ugli hain</span><span>Iss baar ghar ke bhedi ki baadh nikli hain</span><span>Iss baar King ki duhaai beshumaar lagi hain</span></p>
 <p><span>Iss baar</span><span>Iss baar</span></p>
