@@ -35,7 +35,7 @@
     '#site-footer .sf-cred .pr{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:10px 34px}',
     '#site-footer .sf-cred .pt{display:flex;flex-direction:column;align-items:center;gap:6px}',
     '#site-footer .sf-cred .lg.sw{background:none;padding:0;border-radius:4px;overflow:hidden}',
-    '#site-footer .sf-cred .lg.sw img{width:62px!important;height:44px!important;object-fit:cover}'
+    '#site-footer .sf-cred .lg.sw img{width:44px!important;height:44px!important;object-fit:cover}'
   ].join('\n');
   var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
   if (!document.querySelector('link[href*="fonts.googleapis.com"][href*="Cormorant"]')) {
@@ -75,7 +75,7 @@
   cred.innerHTML = '<h5>Hum Dono Zinda Hain</h5><hr><p class="k">Research &amp; Development</p>' +
     '<div class="pr"><div class="pt"><span class="lg"><img src="' + base + 'about/logo-dome.png" alt="DOME A.I. WORLD" width="60" height="37" loading="lazy"></span>' +
     '<p class="n">Dome Entertainment Group</p></div>' +
-    '<div class="pt"><span class="lg sw"><img src="' + base + 'about/logo-srkworld.webp" alt="SRKWORLD" width="62" height="44" loading="lazy"></span>' +
+    '<div class="pt"><span class="lg sw"><img src="' + base + 'about/logo-srkworld.webp?v=2" alt="SRKWORLD" width="44" height="44" loading="lazy"></span>' +
     '<p class="n">Aryan Infomatics 2000</p></div></div><hr>';
   inner.appendChild(cred);
   f.appendChild(inner);
