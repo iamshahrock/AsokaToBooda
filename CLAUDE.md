@@ -506,4 +506,4 @@ Chats cannot read each other. At the end of any chat that changes the site, upda
 
 ## Credits update (owner, 16 Nov 2026)
 - About Us: Mr. Sanjay Rodrigues / Phenomenal AI tag is now 'Sponsor · Inquilaab PartClip Rendering' (was Tech Sponsor); bio's last line says Phenomenal AI sponsors the part-clip rendering of INQUILAAB.
-- Footer credit block (assets/footer.js): heading 'Hum Dono Zinda Hain' (was 'INQUILAAB - KING KE SAATH'); Research & Development shows two logos side by side: DOME (Dome Entertainment Group) and SRKWORLD (assets/about/logo-srkworld.webp, cropped from the 2000 launch photo, no clean logo file exists) with the line 'Aryan Infomatics 2000' (owner's wording). Swap in a clean SRKWorld logo when the owner sends one.
+- Footer credit block (assets/footer.js): heading 'Hum Dono Zinda Hain' (was 'INQUILAAB - KING KE SAATH'); Research & Development shows two logos side by side: DOME (Dome Entertainment Group) and SRKWORLD (assets/about/logo-srkworld.webp, the emblem from the original 2000 SRKWorld screen PSD, INQUILAAB_PROMO/.../REFS_srkworld_logo, same source as the Inquilaab video ending) with the line 'Aryan Infomatics 2000' (owner's wording).
