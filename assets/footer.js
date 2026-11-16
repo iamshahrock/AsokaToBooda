@@ -31,7 +31,11 @@
     '#site-footer .sf-cred .k{margin:0;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff4a4f}',
     '#site-footer .sf-cred .lg{background:#fff;border-radius:4px;padding:3px 5px;line-height:0}',
     '#site-footer .sf-cred .lg img{width:60px!important;height:auto!important;display:block}',
-    '#site-footer .sf-cred .n{margin:0;font-size:14px;color:#e6dcd4}'
+    '#site-footer .sf-cred .n{margin:0;font-size:14px;color:#e6dcd4}',
+    '#site-footer .sf-cred .pr{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:10px 34px}',
+    '#site-footer .sf-cred .pt{display:flex;flex-direction:column;align-items:center;gap:6px}',
+    '#site-footer .sf-cred .lg.sw{background:none;padding:0;border-radius:4px;overflow:hidden}',
+    '#site-footer .sf-cred .lg.sw img{width:62px!important;height:44px!important;object-fit:cover}'
   ].join('\n');
   var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
   if (!document.querySelector('link[href*="fonts.googleapis.com"][href*="Cormorant"]')) {
@@ -68,9 +72,11 @@
   ].forEach(function (l) { var p = document.createElement('p'); p.className = l[0]; p.textContent = l[1]; inner.appendChild(p); });
   // credits: the anthem's research & development partner
   var cred = document.createElement('div'); cred.className = 'sf-cred';
-  cred.innerHTML = '<h5>INQUILAAB - KING KE SAATH</h5><hr><p class="k">Research &amp; Development</p>' +
-    '<span class="lg"><img src="' + base + 'about/logo-dome.png" alt="DOME A.I. WORLD" width="60" height="37" loading="lazy"></span>' +
-    '<p class="n">Dome Entertainment Group</p><hr>';
+  cred.innerHTML = '<h5>Hum Dono Zinda Hain</h5><hr><p class="k">Research &amp; Development</p>' +
+    '<div class="pr"><div class="pt"><span class="lg"><img src="' + base + 'about/logo-dome.png" alt="DOME A.I. WORLD" width="60" height="37" loading="lazy"></span>' +
+    '<p class="n">Dome Entertainment Group</p></div>' +
+    '<div class="pt"><span class="lg sw"><img src="' + base + 'about/logo-srkworld.webp" alt="SRKWORLD" width="62" height="44" loading="lazy"></span>' +
+    '<p class="n">Aryan Infomatics 2000</p></div></div><hr>';
   inner.appendChild(cred);
   f.appendChild(inner);
   document.body.appendChild(f);
