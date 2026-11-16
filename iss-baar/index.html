@@ -50,7 +50,7 @@
 .box{max-width:1080px;margin:0 auto 28px;background:#0d0606;border:1px solid #c9a24a;border-top:3px solid var(--red);padding:26px 26px 30px;box-shadow:0 0 22px rgba(229,9,20,.18)}
 .box h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,44px);line-height:1.1;margin:0 0 16px;color:#f5f1ed}
 .box h2{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,30px);margin:26px 0 8px;color:#f5f1ed}
-.song{margin:0 0 20px}.song audio{width:100%;max-width:640px;display:block}
+.song{max-width:760px;margin:-8px auto 30px}.song audio{width:100%;display:block}
 .credits{list-style:none;padding:0 0 18px;margin:0 0 6px;border-bottom:1px solid #c9a24a;color:#e6dcd4;font-size:16px;line-height:1.9}
 .credits strong{color:#c9a24a}
 .note{color:#a99a8f;font-size:15px;margin:0 0 12px}
@@ -106,9 +106,9 @@
   </div>
   <canvas id="embers" aria-hidden="true"></canvas>
 </article>
+<div class="song"><audio id="ibSong" controls preload="metadata" controlsList="nodownload" src="/assets/songs/iss-baar.mp3"></audio></div>
 
 <section class="box">
-  <div class="song"><audio id="ibSong" controls preload="metadata" controlsList="nodownload" src="/assets/songs/iss-baar.mp3"></audio></div>
   <h1>Iss Baar</h1>
   <ul class="credits">
     <li><strong>Created by :</strong> Shailja Gupta</li>
