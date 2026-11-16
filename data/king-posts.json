@@ -989,6 +989,16 @@
       "bookmarks": 32,
       "views": 31543
      }
+    },
+    {
+     "at": "2026-11-16T07:06:00+05:30",
+     "metrics": {
+      "replies": 24,
+      "reposts": 316,
+      "likes": 2269,
+      "bookmarks": 35,
+      "views": 34180
+     }
     }
    ]
   },
@@ -1009,6 +1019,58 @@
       "likes": 1534,
       "bookmarks": 51,
       "views": 41683
+     }
+    },
+    {
+     "at": "2026-11-16T07:06:00+05:30",
+     "metrics": {
+      "replies": 39,
+      "reposts": 362,
+      "likes": 1795,
+      "bookmarks": 66,
+      "views": 50109
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-theirworld-2026-11-15",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "Tu Mil Jaaye: 'It's their world, we're just living in it'",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2121853386173858247",
+   "posted_at": "2026-11-15T12:00:44+05:30",
+   "readings": [
+    {
+     "at": "2026-11-16T07:06:00+05:30",
+     "metrics": {
+      "replies": 77,
+      "reposts": 329,
+      "likes": 1423,
+      "bookmarks": 29,
+      "views": 34917
+     }
+    }
+   ]
+  },
+  {
+   "id": "srk-deepika-chemistry-2026-11-15",
+   "release": "tu-mil-jaaye-2026-11-02",
+   "title": "'Years later, we're still just as obsessed!' (Om Shanti Om to Tu Mil Jaaye: 'From Ajab Si feelings to Qaatilana chemistry')",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2121898539995582781",
+   "posted_at": "2026-11-15T15:00:09+05:30",
+   "readings": [
+    {
+     "at": "2026-11-16T07:06:00+05:30",
+     "metrics": {
+      "replies": 35,
+      "reposts": 221,
+      "likes": 999,
+      "bookmarks": 17,
+      "views": 19352
      }
     }
    ]
