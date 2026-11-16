@@ -112,7 +112,7 @@ for (const [id, path] of pages) {
         const links = hd.querySelectorAll('.sh-nav a').length, groups = hd.querySelectorAll('.sh-nav .sh-dd').length;
         if (broken.length) return 'images failed: ' + broken.join(', ');
         if (bad.length) return 'distorted: ' + bad.join(', ');
-        if (groups !== 4 || links !== 22) return 'expected 4 drop-downs + SRK DAILY + Merch (22 links), found ' + groups + ' drop-downs, ' + links + ' links';
+        if (groups !== 4 || links !== 23) return 'expected 4 drop-downs + SRK DAILY + Merch (23 links), found ' + groups + ' drop-downs, ' + links + ' links';
         return 'ok';
       });
       if (h !== 'ok') issues.push('header ' + h); else console.log(`PASS [${id}] story header: all images loaded, none distorted, 6 section links`);
