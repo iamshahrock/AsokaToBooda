@@ -1,0 +1,113 @@
+{
+ "date": "2026-11-16",
+ "record_id": "KING-2026-11-16",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 52631401,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-16 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33126767,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-16 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 86787900,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-16 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 83228582,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-16 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-16: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-16: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 88,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-16 (88 works)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 5567693,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-16 (YouTube views re-read 13 Nov)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48569492,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,569,492 as shown), read 2026-11-16 07:05 IST in the owner's signed-in browser",
+   "method": "count shown in the profile follower tooltip",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 16 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Tu Mil Jaaye 83,228,582 YouTube views at 07:04 IST (+2,139,379 since 15 Nov 07:04 IST); 782,604 likes",
+  "Avengers: Doomsday trailer 86,787,900 vs KING's two teasers 85,758,168: Doomsday ahead by 1,029,732 (was 771,283 on 15 Nov)",
+  "RAMAYANA to KING at 07:04 IST: KING's 3 official videos 168,986,750 vs Ramayana's 7 at 148,415,716 (KING +20,571,034; was +19,393,404 on 15 Nov)",
+  "Ramayana day 11 (Sun 15 Nov): ₹75.00 crore India net, up 2.9% on Saturday; 11 days ₹760.60 crore net, ₹909.00 crore India gross, ₹1,384.50 crore worldwide gross; second weekend ₹196.00 crore net (Sacnilk, updated 15 Nov 10:12 PM IST)",
+  "Tu Mil Jaaye choreographer Piyush Bhagat (co-choreographer with Shazia Samji) shared behind-the-scenes pictures from the Cape Town shoot on Instagram (15 Nov), reported by ANI, India Today, India TV, News18, Bollywood Hungama and others",
+  "Sacnilk (15 Nov): Tu Mil Jaaye is No. 1 on Ormax Heartbeats' Top 5 Songs of the Week; India Today: also top of the JioSaavn charts",
+  "Maatrubhumi trailer passes 50 million: 50,871,495 views at 07:04 IST (+1,203,349 since 15 Nov); 7 official videos 145,517,893",
+  "New @RedChilliesEnt X posts 15 Nov 12:00 IST (Tu Mil Jaaye, 'It's their world, we're just living in it') and 15:00 IST (SRK-Deepika, 'Years later, we're still just as obsessed!'); no new @iamsrk post",
+  "@iamsrk Instagram 48,569,492 followers at 07:05 IST (3,607 fewer than on 15 Nov)"
+ ],
+ "notes": [
+  "YouTube read by Claude from the public watch pages at 07:04 IST; Instagram in the owner's session at 07:05 IST.",
+  "Box office figures as reported by Sacnilk.",
+  "Posts are not people."
+ ]
+}

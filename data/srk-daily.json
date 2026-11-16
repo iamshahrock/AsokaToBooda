@@ -2,6 +2,320 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-16-tmj-cape-town-bts",
+   "n": 1,
+   "date": "2026-11-16",
+   "time": "07:45 IST",
+   "kicker": "SRK DAILY · Issue 12 · KING's music",
+   "title": "\"Summer song in the winters\": the Cape Town shoot behind Tu Mil Jaaye, as the song passes 83 million",
+   "deck": "Choreographer Piyush Bhagat has shared pictures from the Cape Town schedule of KING's first song. On Monday morning Tu Mil Jaaye stood at 83,228,582 YouTube views, 2.1 million more than a day earlier, and at No. 1 on Ormax Heartbeats' songs of the week.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=BPZkZpGMpXA",
+   "img_alt": "Shah Rukh Khan and Deepika Padukone in Tu Mil Jaaye",
+   "img_credit": "Tu Mil Jaaye, T-Series on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "The sunny song that has been playing everywhere for two weeks was shot in the cold. Piyush Bhagat, who choreographed Tu Mil Jaaye with Shazia Samji, posted a set of behind-the-scenes pictures from KING's Cape Town schedule on Instagram on Sunday, and the story was carried by ANI, India Today, India TV, News18, Bollywood Hungama and Moneycontrol among others."
+    },
+    {
+     "p": "\"Team freezing but we did it for the KING !! Summer song in the winters!!\" he wrote under one picture, as reported by India TV. Under another, of the camera rig: \"We shot SRK from this car booth. (Duh…Not with a phone).\" The next shows Shah Rukh Khan himself behind the camera in the same car booth, with the caption \"Now he shot us both lol\". Other pictures are captioned \"With the director Bosss\", \"Spot the DOP\" and \"The pre to the Banger!!!\""
+    },
+    {
+     "h": "The numbers on Monday morning"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "83,228,582",
+       "T-Series, read 16 Nov 07:04 IST"
+      ],
+      [
+       "Gained in 24 hours",
+       "2,139,379",
+       "81,089,203 on 15 Nov 07:04 IST"
+      ],
+      [
+       "Likes",
+       "782,604",
+       ""
+      ],
+      [
+       "Ormax Heartbeats",
+       "No. 1",
+       "Top 5 Songs of the Week, as reported by Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk wrote on Sunday that the song is trending across streaming platforms, with fans recreating its hook step on social media, and that its reception has added to the trade buzz around the film. India Today reported that it has also topped the JioSaavn charts."
+    },
+    {
+     "h": "A song made in one night"
+    },
+    {
+     "p": "The song's other origin story was told by its guest singer. Ed Sheeran wrote on Instagram on 3 November that on his last visit to India he went to Shah Rukh Khan's house to film a cameo for his Sapphire video, that Khan introduced him to Sachin-Jigar that day, and that he wrote and recorded his verse for Tu Mil Jaaye that night. The post, shared with @iamsrk, had 804,900 likes on Monday morning."
+    },
+    {
+     "p": "KING, directed by Siddharth Anand, opens in cinemas on Thursday 24 December, 38 days from today. Its trailer has not been announced."
+    },
+    {
+     "links": [
+      [
+       "Watch Tu Mil Jaaye on YouTube",
+       "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+      ],
+      [
+       "India TV · the Cape Town pictures",
+       "https://www.indiatvnews.com/entertainment/news/king-choreographer-shares-bts-from-shah-rukh-khan-deepika-padukone-tu-mil-jaaye-phone-cameras-car-booths-and-cape-town-winters-2026-11-15-1059534"
+      ],
+      [
+       "Sacnilk · Tu Mil Jaaye rules the charts",
+       "https://www.sacnilk.com/news/shah-rukh-khans-tu-mil-jaaye-from-king-rules-music-charts-builds-strong-buzz-ahead-of-christmas-release"
+      ],
+      [
+       "Kabhi Jo Tu Mil Jaaye · the fans' page",
+       "/tu-mil-jaaye/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#ShahRukhKhan",
+    "#DeepikaPadukone",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-16-ramayana-day-11",
+   "n": 2,
+   "date": "2026-11-16",
+   "time": "07:45 IST",
+   "kicker": "Box office · day 11",
+   "title": "Ramayana's second Sunday: ₹75 crore, and ₹1,384.50 crore worldwide",
+   "deck": "Ramayana: Part 1 took ₹196 crore net over its second weekend and stands at ₹760.60 crore net in India and ₹1,384.50 crore gross worldwide after 11 days, according to Sacnilk.",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹75.00 crore net in India on Sunday 15 November, its eleventh day, from 23,573 shows, according to Sacnilk's figures updated at 10:12 PM IST. That is 2.9% more than Saturday and 33.6% more than the first Sunday's ₹56.15 crore. Hindi brought in ₹55.00 crore of the day."
+    },
+    {
+     "h": "Eleven days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹760.60 crore",
+       "Hindi ₹582.25 crore (76.6%)"
+      ],
+      [
+       "India gross",
+       "₹909.00 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹475.50 crore",
+       "Sacnilk's rough estimate"
+      ],
+      [
+       "Worldwide gross",
+       "₹1,384.50 crore",
+       "Sacnilk, updated 15 Nov 10:12 PM IST"
+      ],
+      [
+       "Second weekend",
+       "₹196.00 crore",
+       "India net, Fri-Sun"
+      ],
+      [
+       "Day 11 · Sun 15 Nov",
+       "₹75.00 crore",
+       "▲ 2.9% on Saturday · 47.9% occupancy"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk counts 2,99,36,019 footfalls so far. Its reporter Sunit Jangir wrote on Sunday that PVR INOX chief executive Kamal Gianchandani expected the film to cross ₹300 crore gross at the multiplex chain alone that day, and, in a separate report, that the makers are preparing releases in China, Russia, Japan and South Korea for early 2027."
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "Ramayana's eleven-day India net is already ₹120 crore more than Jawan's lifetime ₹640.25 crore as listed by Sacnilk. KING opens on Thursday 24 December, 38 days from today, into a December that also holds Maatrubhumi (4 December) and Avengers: Doomsday (18 December)."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 11",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_11"
+      ],
+      [
+       "Yesterday: the second Saturday",
+       "?p=2026-11-15-ramayana-day-10"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-16-king-buzz-day-12",
+   "n": 3,
+   "date": "2026-11-16",
+   "time": "07:45 IST",
+   "kicker": "Analytics · 16 Nov 2026",
+   "title": "Doomsday's lead over KING's teasers passes one million as Maatrubhumi's trailer crosses 50 million",
+   "deck": "The Avengers: Doomsday trailer is now 1,029,732 views ahead of KING's two teasers. Counted with Tu Mil Jaaye, KING's three official videos lead Ramayana's seven by 20.6 million and Maatrubhumi's seven by 23.5 million.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "83,228,582",
+       "T-Series, read 16 Nov 07:04 IST"
+      ],
+      [
+       "Likes",
+       "782,604",
+       ""
+      ],
+      [
+       "Gained since Sunday",
+       "2,139,379",
+       "81,089,203 on 15 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "86,787,900",
+       "read 16 Nov 07:04 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,758,168",
+       "Title Reveal 52,631,401 + Date Announcement 33,126,767"
+      ],
+      [
+       "Doomsday ahead by",
+       "1,029,732",
+       "771,283 on 15 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "In 24 hours the Marvel trailer gained 343,738 views and KING's two teasers 85,289. Counted with Tu Mil Jaaye, KING's three official videos lead the Doomsday trailer by 82,198,850."
+    },
+    {
+     "h": "RAMAYANA to KING, day 12"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "168,986,750",
+       "read 16 Nov 07:04 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "148,415,716",
+       "read 16 Nov 07:04 IST"
+      ],
+      [
+       "KING ahead by",
+       "20,571,034",
+       "was 19,393,404 on 15 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 1,047,038 views in 24 hours; KING's three gained 2,224,668. Ramayana's official trailer stands at 56,485,405."
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "50,871,495",
+       "read 16 Nov 07:04 IST"
+      ],
+      [
+       "Gained since Sunday",
+       "1,203,349",
+       "49,668,146 on 15 Nov 07:04 IST"
+      ],
+      [
+       "7 official videos",
+       "145,517,893",
+       "KING's three lead by 23,468,857"
+      ]
+     ]
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,569,492",
+       "as shown on the profile, 16 Nov 07:05 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 16 Nov 2026 07:04-07:05 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#Ramayana",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-15-ai-tech-giants-king",
    "n": 0,
    "date": "2026-11-15",
@@ -4382,45 +4696,45 @@
   }
  ],
  "poll": {
-  "id": "opening-2026-11-15",
-  "q": "The trade says KING can open at ₹55-65 crore in Hindi if the trailer lands. Your call for 24 December?",
+  "id": "tmj-2026-11-16",
+  "q": "Tu Mil Jaaye has passed 83 million views in two weeks. Where will it stand when KING opens on 24 December?",
   "o": [
-   "Under ₹55 crore",
-   "₹55-65 crore",
-   "₹65-100 crore",
-   "A new record"
+   "Under 100 million",
+   "100-125 million",
+   "125-150 million",
+   "Over 150 million"
   ]
  },
  "beat": [
   {
-   "t": "₹55-65 crore?",
-   "d": "Sumit Kadel's Hindi opening estimate for KING, if the trailer lands (Filmibeat).",
-   "img": "https://i.ytimg.com/vi/Uu2QK9Z9X5E/mqdefault.jpg",
-   "url": "?p=2026-11-15-king-opening-target"
-  },
-  {
-   "t": "₹52-66 crore",
-   "d": "The advance sales KING may need to challenge Bollywood's opening record, by Sacnilk's analysis.",
-   "img": "/assets/home/03-king-buzz.webp",
-   "url": "https://www.sacnilk.com/news/shah-rukh-khans-king-eyes-unbroken-bollywood-opening-day-milestones-with-66-cr-advance-target-to-beat-dhurandhar-2"
-  },
-  {
-   "t": "Ramayana: ₹1,228 crore",
-   "d": "Ten days worldwide gross; ₹72.90 crore net on Saturday (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
-   "url": "?p=2026-11-15-ramayana-day-10"
-  },
-  {
-   "t": "Tu Mil Jaaye: 81 million",
-   "d": "81,089,203 views on Sunday morning, 2.0 million more than on Saturday.",
+   "t": "Summer song, winter shoot",
+   "d": "Piyush Bhagat's pictures from the Cape Town schedule of Tu Mil Jaaye.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "?p=2026-11-15-king-buzz-day-11"
+   "url": "?p=2026-11-16-tmj-cape-town-bts"
   },
   {
-   "t": "Doomsday +771,283",
-   "d": "The Marvel trailer's lead over KING's two teasers keeps growing.",
+   "t": "Tu Mil Jaaye: 83 million",
+   "d": "83,228,582 views on Monday morning, 2.1 million more than on Sunday.",
+   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
+   "url": "?p=2026-11-16-king-buzz-day-12"
+  },
+  {
+   "t": "Ramayana: ₹1,384.50 crore",
+   "d": "Eleven days worldwide gross; ₹75 crore net on the second Sunday (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
+   "url": "?p=2026-11-16-ramayana-day-11"
+  },
+  {
+   "t": "Doomsday +1,029,732",
+   "d": "The Marvel trailer's lead over KING's two teasers passes one million.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-15-king-buzz-day-11"
+   "url": "?p=2026-11-16-king-buzz-day-12"
+  },
+  {
+   "t": "Maatrubhumi: 50 million",
+   "d": "Salman Khan's trailer crosses 50 million views, 18 days before release.",
+   "img": "https://i.ytimg.com/vi/fA8-gXDoAk8/mqdefault.jpg",
+   "url": "?p=2026-11-16-king-buzz-day-12"
   }
  ],
  "fanverse": {
