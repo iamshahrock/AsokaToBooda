@@ -1439,6 +1439,17 @@
         "facebook": 0
       },
       "method": "daily web scan + fan submissions (no pending submissions; 1 KING concept trailer declined: no AI stated and titled 'Official'; 1 AI Tu Mil Jaaye re-upload and 4 KING trailer uploads unconfirmed: YouTube watch pages and oEmbed unavailable)"
+    },
+    {
+      "day": "2026-11-16",
+      "new": 0,
+      "platforms": {
+        "youtube": 0,
+        "instagram": 0,
+        "x": 0,
+        "facebook": 0
+      },
+      "method": "daily web scan + fan submissions (no pending submissions; 1 AI Tu Mil Jaaye version (VfcIFS9uzbQ) unconfirmed: YouTube watch page and oEmbed unavailable, channel unknown; other results were news, official uploads or works already logged)"
     }
   ],
   "reviewed": []
