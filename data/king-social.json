@@ -7966,13 +7966,65 @@
   },
   "2026-11-16": {
    "totals": {
-    "posts_read": 6,
-    "views": 17386,
-    "likes": 573,
-    "reposts": 116,
-    "replies": 18
+    "posts_read": 47,
+    "views": 413293,
+    "likes": 8263,
+    "reposts": 1456,
+    "replies": 357
    },
    "posts": [
+    {
+     "platform": "X",
+     "account": "@edgeandgonee",
+     "url": "https://x.com/edgeandgonee/status/2122348677301985658",
+     "posted_at": "2026-11-16T20:48:00+05:30",
+     "views": 216018,
+     "likes": 2873,
+     "reposts": 318,
+     "replies": 198,
+     "text": "asks whether any actor has a better filmography than Shah Rukh Khan",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@imrizwankhan786",
+     "url": "https://x.com/imrizwankhan786/status/2122223940508508347",
+     "posted_at": "2026-11-16T12:33:00+05:30",
+     "views": 67786,
+     "likes": 408,
+     "reposts": 71,
+     "replies": 46,
+     "text": "says Maatrubhumi has overtaken KING in BookMyShow interest despite a year of KING promotion",
+     "stance": "critical",
+     "kind": "comparison"
+    },
+    {
+     "platform": "X",
+     "account": "@AlwaysBollywood",
+     "url": "https://x.com/AlwaysBollywood/status/2122179813503086643",
+     "posted_at": "2026-11-16T09:37:00+05:30",
+     "views": 21703,
+     "likes": 588,
+     "reposts": 56,
+     "replies": 4,
+     "text": "shares Tu Mil Jaaye behind-the-scenes clip and pictures",
+     "stance": "positive",
+     "kind": "BTS"
+    },
+    {
+     "platform": "X",
+     "account": "@VarietyIndia",
+     "url": "https://x.com/VarietyIndia/status/2122307479971536923",
+     "posted_at": "2026-11-16T18:05:00+05:30",
+     "views": 12781,
+     "likes": 993,
+     "reposts": 261,
+     "replies": 9,
+     "text": "Variety India poll: KING the most anticipated December release (65% on Instagram, 45% on YouTube)",
+     "stance": "positive",
+     "kind": "news"
+    },
     {
      "platform": "X",
      "account": "@SRKs_Leon",
@@ -7998,6 +8050,19 @@
      "text": "reports a KING title song voiced by Diljit Dosanjh, with Sachin-Jigar (reported, not announced by the makers)",
      "stance": "neutral",
      "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@NexaBoxOffice",
+     "url": "https://x.com/NexaBoxOffice/status/2122199564882989548",
+     "posted_at": "2026-11-16T10:56:00+05:30",
+     "views": 3226,
+     "likes": 164,
+     "reposts": 52,
+     "replies": 6,
+     "text": "posts a top-10 Indian movies chart to answer bias claims",
+     "stance": "neutral",
+     "kind": "box office talk"
     },
     {
      "platform": "X",
@@ -8053,7 +8118,7 @@
     }
    ],
    "videos": [],
-   "note": "Totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced. X sweep 16 Nov 2026 ~07:30 IST (owner's signed-in Chrome): 1 search (Top tab, 15 Nov UTC day, min 20 likes, official handles excluded), 45 posts listed; 6 KING-related posts added for this day. Fan accounts and Bollywood Overseas reported a KING title song voiced by Diljit Dosanjh and a new Sachin-Jigar track; the makers have not announced it, recorded as speculation."
+   "note": "Totals are what our searches returned, not all of X. Stance and kind are our reading of each post's text; post text is not reproduced. X sweep 16 Nov 2026 ~07:30 IST (owner's signed-in Chrome): 1 search (Top tab, 15 Nov UTC day, min 20 likes, official handles excluded), 45 posts listed; 6 KING-related posts added for this day. Fan accounts and Bollywood Overseas reported a KING title song voiced by Diljit Dosanjh and a new Sachin-Jigar track; the makers have not announced it, recorded as speculation. Second sweep 17 Nov 2026 ~07:30 IST (owner's signed-in Chrome): 1 search (Top tab, since 16 Nov, min 20 likes, official handles excluded), 41 posts listed and added to the day totals; 5 KING-related posts added above. Fan accounts posted fan-made 'first looks' (Anil Kapoor, Raghav Juyal) and 'asset incoming' teases; none is an official release."
   }
  }
 }
