@@ -2,6 +2,330 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-17-koffee-finale",
+   "n": 1,
+   "date": "2026-11-17",
+   "time": "07:45 IST",
+   "kicker": "SRK DAILY · Issue 13 · KING on the couch",
+   "title": "Koffee With Karan's last season will end where the show began: with Shah Rukh Khan",
+   "deck": "Shah Rukh Khan has filmed a segment for the finale of Koffee With Karan Season 9, which Karan Johar has said will be the show's last, according to Variety India. He was the first guest on the very first episode in 2004.",
+   "img": "https://i.ytimg.com/vi/M3mfut2RdHk/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=M3mfut2RdHk",
+   "img_alt": "KING · Date Announcement",
+   "img_credit": "KING · Date Announcement, Red Chillies Entertainment on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Twenty-two years after he sat on the first Koffee couch, Shah Rukh Khan will close it. He has already shot his part of the Season 9 finale of Karan Johar's chat show, Variety India reported on Monday, in a story carried by ThePrint, the Times of India, MissMalini and Open magazine."
+    },
+    {
+     "p": "It will be a short segment rather than a full episode on the couch, according to the reports, because his schedule is taken up by KING. The same finale is set to mark the television debut of Johar's twins, Yash and Roohi."
+    },
+    {
+     "h": "Full circle"
+    },
+    {
+     "p": "Koffee With Karan opened in 2004 with Shah Rukh Khan and Kajol as its first guests. His last visit was ten years ago, in the opening episode of Season 5 in 2016, with Alia Bhatt, ThePrint noted. Season 9 opened with Salman Khan, and Johar has said this will be the final season of the show, MissMalini reported, so that he can concentrate on directing films."
+    },
+    {
+     "stats": [
+      [
+       "First episode",
+       "2004",
+       "Shah Rukh Khan and Kajol"
+      ],
+      [
+       "Last visit",
+       "2016",
+       "Season 5 opener, with Alia Bhatt"
+      ],
+      [
+       "Season 9 finale",
+       "Segment shot",
+       "as reported by Variety India"
+      ],
+      [
+       "KING in cinemas",
+       "24 Dec 2026",
+       "37 days from today"
+      ]
+     ]
+    },
+    {
+     "p": "The appearance would be the first sit-down promotion of KING on television. The film, directed by Siddharth Anand, has so far been promoted through its title reveal, its date announcement, the 27 October poster and its first song, Tu Mil Jaaye, which stood at 85,248,708 YouTube views on Tuesday morning. Its trailer has not been announced."
+    },
+    {
+     "h": "Also on Monday: a word for Jay Shah"
+    },
+    {
+     "p": "Shah Rukh Khan was among the first to congratulate Jay Shah on his reappointment, unopposed, as chairman of the International Cricket Council. \"Congratulations @JayShah bhai on being reappointed as @ICC Chairman for a second term!\" he wrote on X at 3:14 PM, adding \"Big hugs and all the best for your next endeavours!\" The post had 2,673,968 views on Tuesday morning. Sachin Tendulkar and Gautam Gambhir also sent wishes, India Today reported."
+    },
+    {
+     "links": [
+      [
+       "ThePrint · Shah Rukh Khan to appear on KWK finale",
+       "https://theprint.in/entertainment/shah-rukh-khan-koffee-with-karan-finale-karan-johar-twins/3100208/"
+      ],
+      [
+       "Times of India · the Koffee finale",
+       "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shah-rukh-khan-to-appear-on-the-finale-episode-of-koffee-with-karan-9-with-karan-johars-children-yash-and-roohi-heres-what-we-know/articleshow/135888335.cms"
+      ],
+      [
+       "MissMalini · the last season",
+       "https://www.missmalini.com/2026/11/16/is-shah-rukh-khan-set-to-close-koffee-with-karan-season-9-heres-what-we-know/"
+      ],
+      [
+       "India Today · wishes for Jay Shah",
+       "https://www.indiatoday.in/sports/cricket/story/jay-shah-reappointed-icc-chairman-shah-rukh-khan-sachin-tendulkar-abhinav-bindra-congratulate-3039981-2026-11-16"
+      ],
+      [
+       "His post on X",
+       "https://x.com/iamsrk/status/2122264455237292505"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#KoffeeWithKaran",
+    "#ShahRukhKhan",
+    "#KaranJohar",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-17-ramayana-day-12",
+   "n": 2,
+   "date": "2026-11-17",
+   "time": "07:45 IST",
+   "kicker": "Box office · day 12",
+   "title": "Ramayana's second Monday: ₹32 crore, and ₹1,437.25 crore worldwide",
+   "deck": "Ramayana: Part 1 fell 57.3% on its second Monday but stands at ₹792.60 crore net in India and ₹1,437.25 crore gross worldwide after 12 days, according to Sacnilk, which says 2026 is now the highest-grossing year ever at the Indian box office.",
+   "img": "https://i.ytimg.com/vi/AYkPRN874m8/maxresdefault.jpg",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹32.00 crore net in India on Monday 16 November, its twelfth day, from 22,395 shows, according to Sacnilk's figures updated at 10:12 PM IST. That is 57.3% less than Sunday's ₹75.00 crore, with occupancy at 25.3%. Hindi brought in ₹23.75 crore of the day."
+    },
+    {
+     "h": "Twelve days"
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹792.60 crore",
+       "Hindi ₹606.00 crore (76.5%)"
+      ],
+      [
+       "India gross",
+       "₹947.25 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹490.00 crore",
+       "Sacnilk's rough estimate"
+      ],
+      [
+       "Worldwide gross",
+       "₹1,437.25 crore",
+       "Sacnilk, updated 16 Nov 10:12 PM IST"
+      ],
+      [
+       "Week 2 so far",
+       "₹228.00 crore",
+       "India net, days 9-12"
+      ],
+      [
+       "Day 12 · Mon 16 Nov",
+       "₹32.00 crore",
+       "▼ 57.3% on Sunday · 25.3% occupancy"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk counts 3,14,59,269 footfalls so far. Among Hindi 3D shows on Monday, Bengaluru ran fullest at 31.5%, ahead of Chennai (30.3%) and Pune (29.8%)."
+    },
+    {
+     "h": "A record year, with KING still to come"
+    },
+    {
+     "p": "Sacnilk's Sunit Jangir reported on Monday that 2026 has passed 2025 to become the highest-grossing year ever at the Indian box office, with more than six weeks of the year still left, and credited Ramayana's Diwali-week arrival with taking collections to the new high. The trade site says the market is moving towards ₹15,000 crore for the year."
+    },
+    {
+     "p": "The year's last big releases are still ahead: Maatrubhumi on 4 December, Avengers: Doomsday on 18 December and KING on 24 December, 37 days from today."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 12",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_12"
+      ],
+      [
+       "Yesterday: the second Sunday",
+       "?p=2026-11-16-ramayana-day-11"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-17-king-buzz-day-13",
+   "n": 3,
+   "date": "2026-11-17",
+   "time": "07:45 IST",
+   "kicker": "Analytics · 17 Nov 2026",
+   "title": "Tu Mil Jaaye passes 85 million as Doomsday's lead over KING's teasers grows to 1.33 million",
+   "deck": "KING's first song gained 2 million views in 24 hours. The Avengers: Doomsday trailer is now 1,334,696 views ahead of KING's two teasers, while KING's three official videos lead Ramayana's seven by 21.8 million.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "85,248,708",
+       "T-Series, read 17 Nov 07:04 IST"
+      ],
+      [
+       "Likes",
+       "790,776",
+       ""
+      ],
+      [
+       "Gained since Monday",
+       "2,020,126",
+       "83,228,582 on 16 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Red Chillies Entertainment posted another clip of the song on X at 12:13 PM on Monday: \"The sukoon that our dil gets after listening to this.\" It had 38,949 views on Tuesday morning."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "87,170,498",
+       "read 17 Nov 07:04 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,835,802",
+       "Title Reveal 52,699,174 + Date Announcement 33,136,628"
+      ],
+      [
+       "Doomsday ahead by",
+       "1,334,696",
+       "1,029,732 on 16 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "In 24 hours the Marvel trailer gained 382,598 views and KING's two teasers 77,634. Counted with Tu Mil Jaaye, KING's three official videos lead the Doomsday trailer by 83,914,012."
+    },
+    {
+     "h": "RAMAYANA to KING, day 13"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "171,084,510",
+       "read 17 Nov 07:04 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "149,252,071",
+       "read 17 Nov 07:04 IST"
+      ],
+      [
+       "KING ahead by",
+       "21,832,439",
+       "was 20,571,034 on 16 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 836,355 views in 24 hours; KING's three gained 2,097,760. Ramayana's official trailer stands at 57,054,105."
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "51,661,201",
+       "read 17 Nov 07:04 IST"
+      ],
+      [
+       "Gained since Monday",
+       "789,706",
+       "50,871,495 on 16 Nov 07:04 IST"
+      ],
+      [
+       "7 official videos",
+       "146,385,382",
+       "KING's three lead by 24,699,128"
+      ]
+     ]
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,563,960",
+       "as shown on the profile, 17 Nov 07:06 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 17 Nov 2026 07:04-07:06 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#Ramayana",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-16-tmj-cape-town-bts",
    "n": 1,
    "date": "2026-11-16",
@@ -4696,45 +5020,45 @@
   }
  ],
  "poll": {
-  "id": "tmj-2026-11-16",
-  "q": "Tu Mil Jaaye has passed 83 million views in two weeks. Where will it stand when KING opens on 24 December?",
+  "id": "koffee-2026-11-17",
+  "q": "Shah Rukh Khan is reported to close Koffee With Karan's last season. How should KING be promoted in its last 37 days?",
   "o": [
-   "Under 100 million",
-   "100-125 million",
-   "125-150 million",
-   "Over 150 million"
+   "Talk shows and interviews",
+   "Let the trailer do the talking",
+   "More songs first",
+   "Fan events and Mannat"
   ]
  },
  "beat": [
   {
-   "t": "Summer song, winter shoot",
-   "d": "Piyush Bhagat's pictures from the Cape Town schedule of Tu Mil Jaaye.",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "?p=2026-11-16-tmj-cape-town-bts"
+   "t": "Back on the Koffee couch",
+   "d": "Shah Rukh Khan films a segment for the last season's finale, 22 years after the first episode.",
+   "img": "https://i.ytimg.com/vi/M3mfut2RdHk/mqdefault.jpg",
+   "url": "?p=2026-11-17-koffee-finale"
   },
   {
-   "t": "Tu Mil Jaaye: 83 million",
-   "d": "83,228,582 views on Monday morning, 2.1 million more than on Sunday.",
+   "t": "Tu Mil Jaaye: 85 million",
+   "d": "85,248,708 views on Tuesday morning, 2 million more than on Monday.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "?p=2026-11-16-king-buzz-day-12"
+   "url": "?p=2026-11-17-king-buzz-day-13"
   },
   {
-   "t": "Ramayana: ₹1,384.50 crore",
-   "d": "Eleven days worldwide gross; ₹75 crore net on the second Sunday (Sacnilk).",
+   "t": "Ramayana: ₹1,437.25 crore",
+   "d": "Twelve days worldwide gross; ₹32 crore net on the second Monday (Sacnilk).",
    "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
-   "url": "?p=2026-11-16-ramayana-day-11"
+   "url": "?p=2026-11-17-ramayana-day-12"
   },
   {
-   "t": "Doomsday +1,029,732",
-   "d": "The Marvel trailer's lead over KING's two teasers passes one million.",
+   "t": "A record year",
+   "d": "Sacnilk: 2026 is already the highest-grossing year ever at the Indian box office.",
+   "img": "https://i.ytimg.com/vi/AYkPRN874m8/mqdefault.jpg",
+   "url": "?p=2026-11-17-ramayana-day-12"
+  },
+  {
+   "t": "Doomsday +1,334,696",
+   "d": "The Marvel trailer's lead over KING's two teasers keeps growing.",
    "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-16-king-buzz-day-12"
-  },
-  {
-   "t": "Maatrubhumi: 50 million",
-   "d": "Salman Khan's trailer crosses 50 million views, 18 days before release.",
-   "img": "https://i.ytimg.com/vi/fA8-gXDoAk8/mqdefault.jpg",
-   "url": "?p=2026-11-16-king-buzz-day-12"
+   "url": "?p=2026-11-17-king-buzz-day-13"
   }
  ],
  "fanverse": {
