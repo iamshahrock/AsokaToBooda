@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../assets/portal.css">
 <style>
 /* INQUILAAB KING KE SAATH = the anthem, nothing else (owner, 28 Oct 2026: 'ANTHEM is the only section') */
-.ak-hero{margin-top:18px;border:1px solid var(--line);background:#000;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center;overflow:hidden}
+.ak-hero{margin-top:18px;border:1px solid var(--line);background:#000;display:grid;grid-template-columns:minmax(0,1.2fr) auto auto;align-items:center;overflow:hidden}
 .ak-hero .copy{padding:34px clamp(18px,4vw,52px);display:flex;flex-direction:column;gap:12px}
 .ak-hero .art{display:flex;align-items:center;justify-content:center;padding:14px 0}
 .ak-hero .art img{width:auto;height:auto;max-height:380px;max-width:100%;display:block}
@@ -32,11 +32,12 @@
 .ak-hero .ak-li{display:inline-block;align-self:flex-start;margin-top:12px;color:#c9a24a;font-weight:600;font-size:15px;text-decoration:none;border-bottom:1px solid currentColor}.ak-hero .ak-li:hover{color:#fff}
 .ak-hero .tag{display:inline-block;align-self:flex-start;background:var(--red);color:#fff;font-weight:700;letter-spacing:.06em;padding:6px 12px;font-size:14px}
 .ak-hero .mv{flex-direction:column;gap:8px;padding:18px 18px}
+.ak-hero .fk{padding:14px 18px 14px 0}
 .mv-k{margin:0;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-hi)}
 .mv-f{position:relative;width:min(100%,300px,calc(70vh * 9 / 16));aspect-ratio:9/16;border-radius:10px;overflow:hidden;background:#000;border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.6)}
 .mv-f iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .mv-f .mv-p{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#000;cursor:pointer}
-.mv-f .mv-p img{width:100%;height:100%;object-fit:cover;display:block;max-height:none;opacity:.92}
+.ak-hero .mv-f .mv-p img{width:100%;height:100%;object-fit:cover;display:block;max-height:none;max-width:none;opacity:.92}
 .mv-f .mv-p i{position:absolute;left:50%;top:50%;width:76px;height:54px;margin:-27px 0 0 -38px;border-radius:14px;background:#e3242b;box-shadow:0 8px 24px rgba(0,0,0,.5)}
 .mv-f .mv-p i::after{content:"";position:absolute;left:31px;top:16px;border-left:20px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
 .mv-f .mv-p:hover i{background:#ff3a40}
@@ -77,7 +78,7 @@
 .fv iframe{width:100%;aspect-ratio:16/9;border:0;display:block;margin:0 0 8px}
 .fv a{color:var(--ink,#f4efe9);text-decoration:none}.fv small{color:var(--mute)}
 .fv .empty{border-style:dashed;color:var(--mute);text-align:center;padding:22px 12px}
-@media (max-width:760px){.song{grid-template-columns:minmax(0,1fr);gap:6px}.ak-hero{grid-template-columns:minmax(0,1fr)}.ak-hero .art{order:-1;padding:10px 0 0}.ak-hero .art img{max-height:260px}.mv-f{width:min(100%,320px)}.ak-hero h1{font-size:clamp(20px,7.2vw,36px)}}
+@media (max-width:760px){.song{grid-template-columns:minmax(0,1fr);gap:6px}.ak-hero{grid-template-columns:minmax(0,1fr)}.ak-hero .mv{order:-1;padding:14px 0 0}.ak-hero .fk{padding:0 0 14px}.ak-hero .fk img{max-height:260px}.mv-f{width:min(100%,260px)}.ak-hero h1{font-size:clamp(20px,7.2vw,36px)}}
 </style>
 </head>
 <body class="v2">
@@ -97,6 +98,7 @@
     <div class="mv-f"><button type="button" class="mv-p" aria-label="Play Inquilaab King Ke Saath, the music video"><img src="https://i.ytimg.com/vi/YB9WoVQwF2I/maxresdefault.jpg" alt="Inquilaab King Ke Saath, the music video" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/YB9WoVQwF2I/hqdefault.jpg'"><i></i></button></div>
     <a class="mv-yt" href="https://www.youtube.com/shorts/YB9WoVQwF2I" target="_blank" rel="noopener">Watch on YouTube →</a>
   </div>
+  <div class="art fk"><img src="../assets/inquilab/fist-king.webp" alt="A boy in a red crown and torn shirt, fist raised" width="760" height="1362"></div>
 </section>
 
 <section class="ak-sec" id="anthem" aria-labelledby="anH">
