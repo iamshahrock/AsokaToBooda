@@ -64,6 +64,7 @@ button.np-btn{cursor:pointer}
 @media (max-width:640px){.np-head{grid-template-columns:64px 1fr}.np-head>a img{width:60px;height:60px}.np-head .np-btn{grid-column:1/-1;justify-self:center}.np-bar{justify-content:center;text-align:center}}
 
 .np-grid{display:grid;grid-template-columns:250px 1fr 300px;gap:14px;align-items:start}
+.ixm summary{cursor:pointer;font:700 12px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--red);padding:8px 0 2px;list-style:none}.ixm summary::-webkit-details-marker{display:none}.ixm summary::after{content:' \2193'}.ixm[open] summary::after{content:' \2191'}
 @media (max-width:1000px){.np-grid{grid-template-columns:1fr 1fr}.np-l{order:3}.np-c{grid-column:1/-1;order:1}.np-r{order:2}}
 @media (max-width:640px){.np-grid{grid-template-columns:1fr}}
 .bx{border:2px solid var(--blue);background:#fff;margin:0 0 14px}
@@ -211,6 +212,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   html.pdf-front .pl button,html.pdf-front .sb input,html.pdf-front .sb button,html.pdf-front .fv audio,html.pdf-front #sbMsg,html.pdf-front #plMsg{display:none!important}
   html.pdf-front .pr-vote{display:block;font:700 12px Archivo,sans-serif;color:var(--red);text-align:center;margin-top:8px}
   html.pdf-front .bx,html.pdf-front .bt,html.pdf-front .kb{break-inside:avoid}
+  html.pdf-front .ixm>a{display:none!important}
 }
 </style>
 </head>
@@ -277,7 +279,9 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     var boxes=[{t:'The Big Picture',x:rest[0]},{t:'SpeakEasy',x:rest[1]}].filter(function(b){return b.x;});
     c+='<div class="duo'+(boxes.length<2?' one':'')+'">'+boxes.map(function(b){return '<section class="bx r"><h2>'+b.t+'</h2><div class="in"><a class="t" href="?p='+esc(b.x.id)+'">'+esc(b.x.title)+'</a><p>'+esc(short(b.x.deck||firstP(b.x),170))+'</p></div><a class="more" href="?p='+esc(b.x.id)+'">More</a></section>';}).join('')+'</div>';
     c+='<div id="hlBox"></div><div id="kuBox"></div>';
-    var r=beat(D)+'<section class="bx r"><h2>All the stories</h2><div class="in ix">'+P.map(function(x){return '<a href="?p='+esc(x.id)+'"><small>'+fmt(x.date)+'</small>'+esc(x.title)+'</a>';}).join('')+'</div></section>';
+    // the index shows the latest 8; the rest open on request, so the right column never runs far past the others (owner, 17 Nov 2026)
+    var ixA=function(x){return '<a href="?p='+esc(x.id)+'"><small>'+fmt(x.date)+'</small>'+esc(x.title)+'</a>';};
+    var r=beat(D)+'<section class="bx r"><h2>All the stories</h2><div class="in ix">'+P.slice(0,8).map(ixA).join('')+(P.length>8?'<details class="ixm"><summary>All '+P.length+' stories</summary>'+P.slice(8).map(ixA).join('')+'</details>':'')+'</div></section>';
     return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c">'+c+'</div><div class="np-r">'+r+'</div></div>';
   }
   function article(D,x){
