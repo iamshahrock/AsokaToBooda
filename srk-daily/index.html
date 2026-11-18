@@ -141,6 +141,30 @@ button.np-btn{cursor:pointer}
 .arc .iss a span{display:block;font:400 13px Archivo,sans-serif;opacity:.8;margin-top:3px}
 .arc .iss.none{opacity:.75}.arc .iss.none p{margin:0;padding:10px 12px}
 .ixall{display:block;margin-top:10px;text-align:center}
+.cal .in{padding:10px 12px}
+.cal .cm{display:flex;justify-content:space-between;align-items:center;font:700 13px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.cal .cm button{border:1px solid var(--rule);background:#fff;cursor:pointer;font:700 14px Archivo,sans-serif;padding:2px 9px;color:var(--maroon)}
+.cal .cm button:disabled{opacity:.3;cursor:default}
+.cal .cg{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.cal .cg b{font:700 10px Archivo,sans-serif;opacity:.6;padding:2px 0}
+.cal .cg span,.cal .cg a{display:block;padding:6px 0;font:600 13px Archivo,sans-serif;border:1px solid transparent}
+.cal .cg span{opacity:.35}
+.cal .cg a{background:var(--red);color:#fff;text-decoration:none}
+.cal .cg a:hover{background:var(--maroon)}
+.cal .cg .sel{outline:3px solid var(--maroon);outline-offset:1px}
+.cal .cg .td{border-color:var(--maroon)}
+.cal .ck{font:400 11px Archivo,sans-serif;opacity:.75;margin:8px 0 0}
+.dayv{grid-template-columns:1fr 300px}
+@media (max-width:1000px){.dayv{grid-template-columns:1fr}}
+.dh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:3px double var(--red);margin:0 0 12px;padding:0 0 6px}
+.dh h2{font:900 30px 'Playfair Display',serif;color:var(--maroon);margin:0}
+.dh nav a{font:700 12px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--red);text-decoration:none;margin-left:12px}
+.dc{display:grid;grid-template-columns:160px 1fr;gap:12px;padding:12px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit}
+.dc img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--rule)}
+.dc small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.dc b{display:block;font:700 18px 'Libre Baskerville',serif;color:var(--maroon);margin:2px 0 4px}
+.dc span{font:400 13px Archivo,sans-serif;opacity:.85}
+@media (max-width:520px){.dc{grid-template-columns:96px 1fr}}
 .ix a{display:block;font-size:13px;line-height:1.4;padding:6px 0;border-bottom:1px dotted var(--rule);text-decoration:none}
 .ix a small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;color:var(--red);text-transform:uppercase}
 
@@ -291,14 +315,42 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     c+='<div id="hlBox"></div><div id="kuBox"></div>';
     // the index shows the latest 8; the rest open on request, so the right column never runs far past the others (owner, 17 Nov 2026)
     var ixA=function(x){return '<a href="?p='+esc(x.id)+'"><small>'+fmt(x.date)+'</small>'+esc(x.title)+'</a>';};
-    var r=beat(D)+'<section class="bx r"><h2>All the stories</h2><div class="in ix">'+P.slice(0,8).map(ixA).join('')+'<a class="np-btn f ixall" href="?archive=1">Past issues · all '+P.length+' stories, date-wise →</a></div></section>';
+    var r=cal(P)+beat(D)+'<section class="bx r"><h2>All the stories</h2><div class="in ix">'+P.slice(0,8).map(ixA).join('')+'<a class="np-btn f ixall" href="?archive=1">Past issues · all '+P.length+' stories, date-wise →</a></div></section>';
     return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c">'+c+'</div><div class="np-r">'+r+'</div></div>';
+  }
+  // Calendar (owner, 18 Nov 2026: 'the calendar not being there on the SRK DAILY page'): every date with an issue opens that day's paper
+  var CALM=null,CALSEL=null;
+  function istToday(){return new Date(Date.now()+330*6e4).toISOString().slice(0,10);}
+  function issueNo(P){var ds=[];P.forEach(function(x){if(ds.indexOf(x.date)<0)ds.push(x.date);});ds.sort();var no={};ds.forEach(function(d,i){no[d]=i+1;});return no;}
+  function cal(P,sel,m){
+    var has={};P.forEach(function(x){has[x.date]=1;});var ds=Object.keys(has).sort(),first=ds[0].slice(0,7),last=istToday().slice(0,7);
+    m=m||(sel||istToday()).slice(0,7);CALM=m;CALSEL=sel||null;
+    var y=+m.slice(0,4),mo=+m.slice(5,7),d1=new Date(Date.UTC(y,mo-1,1)),nd=new Date(Date.UTC(y,mo,0)).getUTCDate(),lead=(d1.getUTCDay()+6)%7,td=istToday();
+    var g='<b>Mo</b><b>Tu</b><b>We</b><b>Th</b><b>Fr</b><b>Sa</b><b>Su</b>';for(var i=0;i<lead;i++)g+='<i></i>';
+    for(var d=1;d<=nd;d++){var k=m+'-'+(d<10?'0':'')+d,cl=(k===sel?' sel':'')+(k===td?' td':'');
+      g+=has[k]?'<a class="'+cl+'" href="?d='+k+'" title="SRK DAILY · '+fmt(k)+'">'+d+'</a>':'<span class="'+cl+'">'+d+'</span>';}
+    var name=d1.toLocaleDateString('en-GB',{month:'long',year:'numeric',timeZone:'UTC'});
+    var pm=new Date(Date.UTC(y,mo-2,1)).toISOString().slice(0,7),nm=new Date(Date.UTC(y,mo,1)).toISOString().slice(0,7);
+    return '<section class="bx r cal" id="cal"><h2>Calendar</h2><div class="in"><div class="cm"><button type="button" data-calm="'+pm+'"'+(m<=first?' disabled':'')+' aria-label="Previous month">‹</button><span>'+name+'</span><button type="button" data-calm="'+nm+'"'+(m>=last?' disabled':'')+' aria-label="Next month">›</button></div><div class="cg">'+g+'</div><p class="ck">Red dates have an issue: tap one to read that day\'s paper. <a href="?archive=1">All past issues →</a></p></div></section>';
+  }
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-calm]');if(!b||b.disabled)return;var c=document.getElementById('cal');if(c)c.outerHTML=cal(P,CALSEL,b.dataset.calm);});
+  // ?d=YYYY-MM-DD: that day's paper
+  function day(P,d){
+    var xs=P.filter(function(x){return x.date===d;}).sort(function(a,b){return (a.n==null?9:a.n)-(b.n==null?9:b.n);}),no=issueNo(P);
+    var ds=Object.keys(no).sort(),i=ds.indexOf(d),prev=i>0?ds[i-1]:null,next=i>=0&&i<ds.length-1?ds[i+1]:null;
+    var h='<div class="dh"><h2>'+(xs.length?'Issue '+no[d]+' · ':'')+fmt(d)+'</h2><nav>'+(prev?'<a href="?d='+prev+'">← Issue '+no[prev]+'</a>':'')+(next?'<a href="?d='+next+'">Issue '+no[next]+' →</a>':'')+'<a href="./">Today\'s paper</a></nav></div>';
+    var c;
+    if(!xs.length)c='<section class="bx"><h2>No issue</h2><div class="in"><p>No SRK DAILY was published on '+fmt(d)+'. Pick a red date in the calendar.</p></div></section>';
+    else{var lead=xs[0];
+      c='<section class="bx"><h2>'+(lead.n===0?'Special edition':'Framed')+'</h2><a class="fr" href="?p='+esc(lead.id)+'"><div class="ph"><img src="'+esc(lead.img||'')+'" alt="'+esc(lead.img_alt||'')+'" referrerpolicy="no-referrer"></div><p class="cap"><b>'+esc(lead.title)+'.</b> '+esc(lead.deck||'')+'</p></a><a class="more" href="?p='+esc(lead.id)+'">Read the story…</a></section>';
+      if(xs.length>1)c+='<section class="bx r"><h2>Also in this issue</h2>'+xs.slice(1).map(function(x){return '<a class="dc" href="?p='+esc(x.id)+'">'+(x.img?'<img src="'+esc(x.img)+'" alt="" loading="lazy" referrerpolicy="no-referrer">':'<i></i>')+'<div><small>'+(x.n===0?'Special edition':esc(x.kicker||''))+'</small><b>'+esc(x.title)+'</b><span>'+esc(short(x.deck||firstP(x),170))+'</span></div></a>';}).join('')+'</section>';}
+    return h+'<div class="np-grid dayv"><div class="np-c">'+c+'</div><div class="np-r">'+cal(P,d)+'</div></div>';
   }
   // ?archive=1: every issue, date-wise (owner, 18 Nov 2026: 'Where are all the previous dailies?')
   function archive(P){
     var days=[];P.forEach(function(x){if(days.indexOf(x.date)<0)days.push(x.date);});
     var asc=days.slice().sort(),no={};asc.forEach(function(d,i){no[d]=i+1;});
-    var out='<section class="arc"><a class="back" href="./">← SRK DAILY front page</a><h2 class="ah">Past issues</h2><p class="sub">Every edition of SRK DAILY, newest first: '+asc.length+' issues, '+P.length+' stories since 4 November 2026.</p>';
+    var out='<section class="arc"><a class="back" href="./">← SRK DAILY front page</a><h2 class="ah">Past issues</h2><p class="sub">Every edition of SRK DAILY, newest first: '+asc.length+' issues, '+P.length+' stories since 4 November 2026.</p><div style="max-width:340px">'+cal(P)+'</div>';
     var d0=new Date(asc[0]+'T12:00:00+05:30'),d1=new Date(asc[asc.length-1]+'T12:00:00+05:30'),all=[];
     for(var t=d1;t>=d0;t=new Date(t.getTime()-864e5))all.push(new Date(t.getTime()+330*6e4).toISOString().slice(0,10));
     all.forEach(function(d){
@@ -395,10 +447,12 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   fetch('../data/srk-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
     D=d;P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n==null?9:a.n)-(b.n==null?9:b.n));});
     var one=new URLSearchParams(location.search).get('p'),x=one&&P.filter(function(p){return p.id===one;})[0];
-    var arcv=!x&&new URLSearchParams(location.search).get('archive');
-    $('#npBody').innerHTML=x?article(D,x):arcv?archive(P):front(D,P);
+    var arcv=!x&&new URLSearchParams(location.search).get('archive'),dv=!x&&!arcv&&new URLSearchParams(location.search).get('d');
+    if(dv&&!/^\d{4}-\d{2}-\d{2}$/.test(dv))dv=null;
+    $('#npBody').innerHTML=x?article(D,x):arcv?archive(P):dv?day(P,dv):front(D,P);
     if(arcv)document.title='Past issues — SRK DAILY';
-    if(!x&&!arcv)daily(D);
+    if(dv)document.title='SRK DAILY · '+fmt(dv);
+    if(!x&&!arcv&&!dv)daily(D);
     // ?snap=1: the front page alone (no site header/footer), KING BUZZ open: used to make the daily link-preview snapshot
     if(!x&&new URLSearchParams(location.search).get('snap')){document.documentElement.classList.add('snap');$('#kb').hidden=false;kbLoad();}
     if(!x&&new URLSearchParams(location.search).get('pdf')){document.documentElement.classList.add('pdf-front');
