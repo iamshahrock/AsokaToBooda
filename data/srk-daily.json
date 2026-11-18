@@ -2,6 +2,454 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-18-doomsday-advance",
+   "n": 1,
+   "date": "2026-11-18",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 14 · The Christmas race",
+   "title": "A month before release, Avengers: Doomsday sells ₹10 crore of opening-day tickets in India",
+   "deck": "Marvel opened Indian bookings for Avengers: Doomsday on the night of 16 November, 30 days before its 17 December release, and sold about one lakh tickets at the three big multiplex chains in 19 hours, according to Sacnilk. KING, a week behind it, has not opened bookings or released a trailer.",
+   "img": "https://i.ytimg.com/vi/irVNGjRFZGk/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=irVNGjRFZGk",
+   "img_alt": "Avengers: Doomsday · Official Trailer",
+   "img_credit": "Avengers: Doomsday · Official Trailer, Marvel Entertainment on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "The first shows went on sale after midnight on Monday night at multiplexes in Mumbai, among them PVR Lower Parel and Miraj Wadala, and by Tuesday night Avengers: Doomsday had crossed ₹10 crore gross in opening-day advance bookings in India. About one lakh tickets were sold across PVR, INOX and Cinepolis within roughly 19 hours, Sacnilk reported at 9:47 PM on Tuesday."
+    },
+    {
+     "p": "Bookings for a Marvel film usually open a week or two before release. This one opened 30 days early. In their first 24 hours, Avengers: Endgame took ₹8.27 crore at the same three chains in 2019, Spider-Man: No Way Home ₹6.56 crore and Avengers: Infinity War ₹5.02 crore, according to Sacnilk's figures, though those windows opened much closer to release. BookMyShow also crossed one lakh tickets in a day, selling more than 10,000 an hour at times, the trade site said."
+    },
+    {
+     "stats": [
+      [
+       "Doomsday · day 1 advance",
+       "₹10 crore+",
+       "gross, India, in about 19 hours (Sacnilk)"
+      ],
+      [
+       "Tickets at PVR, INOX, Cinepolis",
+       "about 1 lakh",
+       "first 19 hours"
+      ],
+      [
+       "Costliest ticket",
+       "₹4,200",
+       "4DX 3D midnight show, Cinepolis Seawoods, Nerul (about ₹4,300 with charges)"
+      ],
+      [
+       "Doomsday in India",
+       "Thu 17 Dec",
+       "29 days from today"
+      ],
+      [
+       "KING",
+       "Thu 24 Dec",
+       "36 days · advance booking not open, trailer not out"
+      ]
+     ]
+    },
+    {
+     "h": "What it means for KING"
+    },
+    {
+     "p": "KING arrives one week after the Marvel film. The Hindi news site The Lallantop wrote on Tuesday that the early rush could cut into the makers' plans, reporting that KING's team has asked exhibitors to give it more screens than Avengers: Doomsday, Dune: Part Three and Jumanji: Open World, and that strong Marvel sales would push theatre owners towards an even split between the two films."
+    },
+    {
+     "p": "Online, the two films are close. The Doomsday trailer stood at 87,601,585 YouTube views on Wednesday morning, 1,691,388 ahead of KING's two teasers. KING's first song, Tu Mil Jaaye, posted on 2 November, was at 87,268,883 and gaining about two million views a day: 332,702 short of the trailer that Marvel released in July."
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "87,601,585",
+       "read 18 Nov 07:03 IST"
+      ],
+      [
+       "Tu Mil Jaaye",
+       "87,268,883",
+       "332,702 behind the trailer"
+      ],
+      [
+       "KING's two teasers",
+       "85,910,197",
+       "1,691,388 behind the trailer"
+      ]
+     ]
+    },
+    {
+     "p": "Variety India's December poll, published on Monday, had KING ahead of Doomsday among its followers: 65% to 27% on Instagram and 45% to 26% on YouTube."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Doomsday day 1 advance crosses ₹10 crore",
+       "https://www.sacnilk.com/news/avengers-doomsday-day-1-advance-crosses-10-crore-gross-sells-over-1-lakh-national-chain-tickets-in-just-19-hours"
+      ],
+      [
+       "Sacnilk · advance booking off to an exceptional start",
+       "https://www.sacnilk.com/news/avengers-doomsday-advance-booking-off-to-exceptional-start-in-india-midnight-shows-selling-fast-a-month-before-release"
+      ],
+      [
+       "The Lallantop · what it means for KING (Hindi)",
+       "https://www.thelallantop.com/entertainment/post/avengers-doomsday-makers-new-move-could-ruin-shah-rukh-khan-king-release-plans"
+      ],
+      [
+       "The Indian Express · 50K tickets as booking opens",
+       "https://indianexpress.com/article/entertainment/hollywood/avengers-doomsday-advance-booking-open-50000-tickets-sold-robert-downey-jr-imax-10966256/"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#AvengersDoomsday",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-18-only-one-king",
+   "n": 2,
+   "date": "2026-11-18",
+   "time": "09:00 IST",
+   "kicker": "KING's look",
+   "title": "\"Remember, there is only one KING\": Red Chillies answers, and the stylist says the grey hair was his idea",
+   "deck": "Hours before Marvel's tickets went on sale, Red Chillies Entertainment posted four pictures that read \"Remember / There is / Only one / KING\". The same day KING's stylist, Shaleena Nathani, told The Hollywood Reporter India that the salt-and-pepper hair was Shah Rukh Khan's own idea.",
+   "img": "/assets/king-news/2026-11-17-rce-king.jpg",
+   "img_url": "https://x.com/RedChilliesEnt/status/2122578056795885593",
+   "img_alt": "KING, from Red Chillies Entertainment's post of 17 November",
+   "img_credit": "Red Chillies Entertainment on X, 17 Nov 2026. Tap the picture to see the post.",
+   "blocks": [
+    {
+     "p": "\"Main character? Nah. KING character energy,\" Red Chillies Entertainment wrote on X at noon on Tuesday, with four pictures of Shah Rukh Khan in KING that spell out a single line: Remember. There is. Only one. KING. By Wednesday morning the post had 127,878 views, 3,115 likes and 615 reposts, more than any of its Tu Mil Jaaye clips posted since 14 November."
+    },
+    {
+     "figs": [
+      {
+       "src": "/assets/king-news/2026-11-17-rce-remember.jpg",
+       "alt": "Remember"
+      },
+      {
+       "src": "/assets/king-news/2026-11-17-rce-there-is.jpg",
+       "alt": "There is"
+      }
+     ],
+     "cap": "Remember · There is"
+    },
+    {
+     "figs": [
+      {
+       "src": "/assets/king-news/2026-11-17-rce-only-one.jpg",
+       "alt": "Only one"
+      },
+      {
+       "src": "/assets/king-news/2026-11-17-rce-king.jpg",
+       "alt": "KING"
+      }
+     ],
+     "cap": "Only one · KING. Red Chillies Entertainment on X, 17 Nov 2026"
+    },
+    {
+     "h": "\"The salt-and-pepper hair was his idea\""
+    },
+    {
+     "p": "Shaleena Nathani, who has styled Shah Rukh Khan in Pathaan and Jawan and Deepika Padukone since Love Aaj Kal, spoke to The Hollywood Reporter India a month before KING's release. She said the film was the one she had waited for her entire career, and that he chose the grey himself: \"SRK is very, very specific about what he likes,\" she told the magazine."
+    },
+    {
+     "p": "For Tu Mil Jaaye she made more than ten or twelve changes, much of it for the song's montage, with what she called \"a very macho, kind of Texan look\" for him: boot-cut jeans, cowboy boots, blazers, suits and leather jackets. In the film he also wears stripes, she said, something audiences have not seen him in before. For Padukone the brief was darker colours and nothing like her characters in Pathaan or Fighter."
+    },
+    {
+     "stats": [
+      [
+       "Red Chillies · 17 Nov post",
+       "127,878 views",
+       "3,115 likes · 615 reposts · read 18 Nov 07:02 IST"
+      ],
+      [
+       "Looks in Tu Mil Jaaye",
+       "10-12",
+       "Shaleena Nathani to THR India"
+      ],
+      [
+       "Tu Mil Jaaye",
+       "87,268,883",
+       "YouTube views, 18 Nov 07:03 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "Red Chillies Entertainment · the post",
+       "https://x.com/RedChilliesEnt/status/2122578056795885593"
+      ],
+      [
+       "The Hollywood Reporter India · Shaleena Nathani on dressing KING",
+       "https://www.hollywoodreporterindia.com/lifestyle/fashion/exclusive-shaleena-nathani-on-dressing-shah-rukh-khan-and-deepika-padukone-in-king"
+      ],
+      [
+       "Mirchi Plus · Tu Mil Jaaye shot in freezing cold",
+       "https://mirchi.in/stories/music/shah-rukh-khan-deepika-padukone-tu-mil-jaaye-king-bts-pics/156523110"
+      ],
+      [
+       "Make your KING poster",
+       "/create/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#ShahRukhKhan",
+    "#TuMilJaaye",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-18-ramayana-day-13",
+   "n": 3,
+   "date": "2026-11-18",
+   "time": "09:00 IST",
+   "kicker": "Box office · day 13",
+   "title": "Ramayana's second Tuesday: ₹28.70 crore, and ₹1,483.50 crore worldwide",
+   "deck": "Ramayana: Part 1 slipped 10.3% on Tuesday to ₹28.70 crore net in India, taking it to ₹821.30 crore in 13 days and ₹1,483.50 crore gross worldwide, according to Sacnilk.",
+   "img": "https://i.ytimg.com/vi/T0Uduwg2W2w/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=T0Uduwg2W2w",
+   "img_alt": "Ramayana: Rise of a Legend · New Trailer (Hindi)",
+   "img_credit": "Ramayana: Rise of a Legend, new trailer in Hindi, T-Series on YouTube.",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana: Part 1 collected ₹28.70 crore net in India on Tuesday 17 November, its thirteenth day, from 22,551 shows, according to Sacnilk's figures updated at 10:17 PM IST. That is 10.3% less than Monday's ₹32.00 crore, a much smaller fall than Monday's 57.3%. Hindi brought in ₹21.00 crore, at 21.3% occupancy."
+    },
+    {
+     "stats": [
+      [
+       "India net",
+       "₹821.30 crore",
+       "Hindi ₹627.00 crore (76.3%)"
+      ],
+      [
+       "India gross",
+       "₹981.50 crore",
+       ""
+      ],
+      [
+       "Overseas gross",
+       "₹502.00 crore",
+       "Sacnilk's rough estimate"
+      ],
+      [
+       "Worldwide gross",
+       "₹1,483.50 crore",
+       "Sacnilk, updated 17 Nov 10:17 PM IST"
+      ],
+      [
+       "Week 2 so far",
+       "₹256.70 crore",
+       "India net, days 9-13"
+      ],
+      [
+       "Day 13 · Tue 17 Nov",
+       "₹28.70 crore",
+       "▼ 10.3% on Monday · 22.9% occupancy"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk counts 3,28,43,269 footfalls so far. Among Hindi 3D shows on Tuesday, Bengaluru ran fullest at 30.0%, ahead of Pune (27.8%) and Chennai (26.8%). Of the other languages, Malayalam shows were the fullest, at 45.1%."
+    },
+    {
+     "h": "No. 3 on IMDb"
+    },
+    {
+     "p": "Sacnilk's Sunit Jangir reported on Tuesday that Ramayana is third on IMDb's worldwide Most Popular Movies chart this week, behind You Can See Everything and Ebenezer and ahead of Christopher Nolan's The Odyssey, and the only Indian film in the top ten."
+    },
+    {
+     "p": "Trade writers have begun asking whether Ranbir Kapoor can pass the more than ₹1,400 crore net that Shah Rukh Khan's films took in a single year, as Koimoi put it on Tuesday. KING opens on 24 December, 36 days from today."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 13",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_13"
+      ],
+      [
+       "Koimoi · can Ranbir pass Shah Rukh Khan's ₹1,400 crore year?",
+       "https://www.koimoi.com/box-office/box-office-can-ranbir-kapoor-surpass-shah-rukh-khans-1400-crore-net-to-become-indias-highest-grossing-actor-in-a-single-year/"
+      ],
+      [
+       "Yesterday: the second Monday",
+       "?p=2026-11-17-ramayana-day-12"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#KING",
+    "#BoxOffice",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-18-king-buzz-day-14",
+   "n": 4,
+   "date": "2026-11-18",
+   "time": "09:00 IST",
+   "kicker": "Analytics · 18 Nov 2026",
+   "title": "Tu Mil Jaaye is 332,702 views from passing the Doomsday trailer",
+   "deck": "KING's first song reached 87,268,883 YouTube views on Wednesday morning after another two million in a day. The Avengers: Doomsday trailer's lead over KING's two teasers grew to 1,691,388, while KING's three official videos lead Ramayana's seven by 23.2 million.",
+   "img": "/assets/home/03-king-buzz.webp",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "87,268,883",
+       "T-Series, read 18 Nov 07:03 IST"
+      ],
+      [
+       "Likes",
+       "798,567",
+       ""
+      ],
+      [
+       "Gained since Tuesday",
+       "2,020,175",
+       "85,248,708 on 17 Nov 07:04 IST"
+      ],
+      [
+       "Behind the Doomsday trailer",
+       "332,702",
+       "the trailer has been out since 20 July"
+      ]
+     ]
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "87,601,585",
+       "read 18 Nov 07:03 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,910,197",
+       "Title Reveal 52,764,278 + Date Announcement 33,145,919"
+      ],
+      [
+       "Doomsday ahead by",
+       "1,691,388",
+       "1,334,696 on 17 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "In 24 hours the Marvel trailer gained 431,087 views, as its Indian bookings opened, and KING's two teasers 74,395. Counted with Tu Mil Jaaye, KING's three official videos lead the Doomsday trailer by 85,577,495."
+    },
+    {
+     "h": "RAMAYANA to KING, day 14"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "173,179,080",
+       "read 18 Nov 07:03 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "149,955,284",
+       "read 18 Nov 07:03 IST"
+      ],
+      [
+       "KING ahead by",
+       "23,223,796",
+       "was 21,832,439 on 17 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 703,213 views in 24 hours; KING's three gained 2,094,570. Ramayana's official trailer stands at 57,535,391."
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "52,257,857",
+       "read 18 Nov 07:04 IST"
+      ],
+      [
+       "Gained since Tuesday",
+       "596,656",
+       "51,661,201 on 17 Nov 07:04 IST"
+      ],
+      [
+       "7 official videos",
+       "147,062,839",
+       "KING's three lead by 26,116,241"
+      ]
+     ]
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,556,556",
+       "as shown on the profile, 18 Nov 07:04 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube and Instagram public counters, read 18 Nov 2026 07:03-07:04 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#Ramayana",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-17-koffee-finale",
    "n": 1,
    "date": "2026-11-17",
@@ -5034,45 +5482,45 @@
   }
  ],
  "poll": {
-  "id": "koffee-2026-11-17",
-  "q": "Shah Rukh Khan is reported to close Koffee With Karan's last season. How should KING be promoted in its last 37 days?",
+  "id": "booking-2026-11-18",
+  "q": "Avengers: Doomsday's tickets went on sale a month early. When should KING's advance booking open?",
   "o": [
-   "Talk shows and interviews",
-   "Let the trailer do the talking",
-   "More songs first",
-   "Fan events and Mannat"
+   "Right now",
+   "With the trailer",
+   "Two weeks before release",
+   "One week before release"
   ]
  },
  "beat": [
   {
-   "t": "Back on the Koffee couch",
-   "d": "Shah Rukh Khan films a segment for the last season's finale, 22 years after the first episode.",
-   "img": "https://i.ytimg.com/vi/M3mfut2RdHk/mqdefault.jpg",
-   "url": "?p=2026-11-17-koffee-finale"
+   "t": "Doomsday: ₹10 crore in a day",
+   "d": "Opening-day advance in India crosses ₹10 crore gross a month before release (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/irVNGjRFZGk/mqdefault.jpg",
+   "url": "?p=2026-11-18-doomsday-advance"
   },
   {
-   "t": "Tu Mil Jaaye: 85 million",
-   "d": "85,248,708 views on Tuesday morning, 2 million more than on Monday.",
+   "t": "Only one KING",
+   "d": "Red Chillies' four pictures: Remember. There is. Only one. KING.",
+   "img": "/assets/king-news/2026-11-17-rce-only-one.jpg",
+   "url": "?p=2026-11-18-only-one-king"
+  },
+  {
+   "t": "The grey was his idea",
+   "d": "KING's stylist Shaleena Nathani on dressing Shah Rukh Khan and Deepika Padukone.",
+   "img": "/assets/king-news/2026-11-17-rce-remember.jpg",
+   "url": "?p=2026-11-18-only-one-king"
+  },
+  {
+   "t": "Tu Mil Jaaye: 87.3 million",
+   "d": "332,702 views from passing the Doomsday trailer.",
    "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "?p=2026-11-17-king-buzz-day-13"
+   "url": "?p=2026-11-18-king-buzz-day-14"
   },
   {
-   "t": "Ramayana: ₹1,437.25 crore",
-   "d": "Twelve days worldwide gross; ₹32 crore net on the second Monday (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/1zip1rNaNYs/mqdefault.jpg",
-   "url": "?p=2026-11-17-ramayana-day-12"
-  },
-  {
-   "t": "A record year",
-   "d": "Sacnilk: 2026 is already the highest-grossing year ever at the Indian box office.",
-   "img": "https://i.ytimg.com/vi/AYkPRN874m8/mqdefault.jpg",
-   "url": "?p=2026-11-17-ramayana-day-12"
-  },
-  {
-   "t": "Doomsday +1,334,696",
-   "d": "The Marvel trailer's lead over KING's two teasers keeps growing.",
-   "img": "/assets/home/03-king-buzz.webp",
-   "url": "?p=2026-11-17-king-buzz-day-13"
+   "t": "Ramayana: ₹1,483.50 crore",
+   "d": "Thirteen days worldwide; ₹28.70 crore net on Tuesday (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/T0Uduwg2W2w/mqdefault.jpg",
+   "url": "?p=2026-11-18-ramayana-day-13"
   }
  ],
  "fanverse": {
