@@ -5619,5 +5619,21 @@
    "url": "/merch/",
    "cta": "See the designs"
   }
- ]
+ ],
+ "epaper": {
+  "2026-11-04": "pdf/SRK-DAILY-Issue-1-2026-11-04.pdf",
+  "2026-11-05": "pdf/SRK-DAILY-Issue-2-2026-11-05.pdf",
+  "2026-11-06": "pdf/SRK-DAILY-Issue-3-2026-11-06.pdf",
+  "2026-11-07": "pdf/SRK-DAILY-Issue-4-2026-11-07.pdf",
+  "2026-11-09": "pdf/SRK-DAILY-Issue-5-2026-11-09.pdf",
+  "2026-11-10": "pdf/SRK-DAILY-Issue-6-2026-11-10.pdf",
+  "2026-11-11": "pdf/SRK-DAILY-Issue-7-2026-11-11.pdf",
+  "2026-11-12": "pdf/SRK-DAILY-Issue-8-2026-11-12.pdf",
+  "2026-11-13": "pdf/SRK-DAILY-Issue-9-2026-11-13.pdf",
+  "2026-11-14": "pdf/SRK-DAILY-Issue-10-2026-11-14.pdf",
+  "2026-11-15": "pdf/SRK-DAILY-Issue-11-2026-11-15.pdf",
+  "2026-11-16": "pdf/SRK-DAILY-Issue-12-2026-11-16.pdf",
+  "2026-11-17": "pdf/SRK-DAILY-Issue-13-2026-11-17.pdf",
+  "2026-11-18": "pdf/SRK-DAILY-Issue-14-2026-11-18.pdf"
+ }
 }
