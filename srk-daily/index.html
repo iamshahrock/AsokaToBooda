@@ -165,6 +165,19 @@ button.np-btn{cursor:pointer}
 .dc b{display:block;font:700 18px 'Libre Baskerville',serif;color:var(--maroon);margin:2px 0 4px}
 .dc span{font:400 13px Archivo,sans-serif;opacity:.85}
 @media (max-width:520px){.dc{grid-template-columns:96px 1fr}}
+.ep{display:inline-block;margin:0 0 12px}
+.arc .iss>h3 a{color:#fff;text-decoration:underline;font-weight:700}
+.af{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.af button{border:1px solid var(--red);background:#fff;color:var(--red);font:700 11px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;cursor:pointer}
+.af button.on{background:var(--red);color:#fff}
+.aq{width:100%;max-width:520px;padding:9px 11px;border:2px solid var(--rule);font:400 15px Archivo,sans-serif;margin:0 0 8px;box-sizing:border-box}
+.ah-n{font:400 13px Archivo,sans-serif;opacity:.8;margin:0 0 12px}
+.sn{display:flex;justify-content:space-between;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.sn a{flex:1 1 240px;border:1px solid var(--rule);padding:10px 12px;text-decoration:none;color:inherit;background:#fff}
+.sn a small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.sn a b{font:700 15px 'Libre Baskerville',serif;color:var(--maroon)}
+.sn a.nx{text-align:right}
+.ar .by a.dl{color:inherit}
 .ix a{display:block;font-size:13px;line-height:1.4;padding:6px 0;border-bottom:1px dotted var(--rule);text-decoration:none}
 .ix a small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;color:var(--red);text-transform:uppercase}
 
@@ -335,6 +348,8 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   }
   document.addEventListener('click',function(e){var b=e.target.closest('[data-calm]');if(!b||b.disabled)return;var c=document.getElementById('cal');if(c)c.outerHTML=cal(P,CALSEL,b.dataset.calm);});
   // ?d=YYYY-MM-DD: that day's paper
+  function section(x){var k=String(x.kicker||'');if(x.n===0)return 'Special editions';if(/^Box office/i.test(k))return 'Box office';if(/^Analytics/i.test(k))return 'KING Buzz analytics';if(/^From the Editor/i.test(k))return 'From the editor';if(/^FANVERSE/i.test(k))return 'FANVERSE';return 'News';}
+  function epaper(d){return D&&D.epaper&&D.epaper[d]?'<a class="np-btn ep" href="'+esc(D.epaper[d])+'" target="_blank" rel="noopener">Read the e-paper (PDF) ↗</a>':'';}
   function day(P,d){
     var xs=P.filter(function(x){return x.date===d;}).sort(function(a,b){return (a.n==null?9:a.n)-(b.n==null?9:b.n);}),no=issueNo(P);
     var ds=Object.keys(no).sort(),i=ds.indexOf(d),prev=i>0?ds[i-1]:null,next=i>=0&&i<ds.length-1?ds[i+1]:null;
@@ -344,30 +359,40 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     else{var lead=xs[0];
       c='<section class="bx"><h2>'+(lead.n===0?'Special edition':'Framed')+'</h2><a class="fr" href="?p='+esc(lead.id)+'"><div class="ph"><img src="'+esc(lead.img||'')+'" alt="'+esc(lead.img_alt||'')+'" referrerpolicy="no-referrer"></div><p class="cap"><b>'+esc(lead.title)+'.</b> '+esc(lead.deck||'')+'</p></a><a class="more" href="?p='+esc(lead.id)+'">Read the story…</a></section>';
       if(xs.length>1)c+='<section class="bx r"><h2>Also in this issue</h2>'+xs.slice(1).map(function(x){return '<a class="dc" href="?p='+esc(x.id)+'">'+(x.img?'<img src="'+esc(x.img)+'" alt="" loading="lazy" referrerpolicy="no-referrer">':'<i></i>')+'<div><small>'+(x.n===0?'Special edition':esc(x.kicker||''))+'</small><b>'+esc(x.title)+'</b><span>'+esc(short(x.deck||firstP(x),170))+'</span></div></a>';}).join('')+'</section>';}
-    return h+'<div class="np-grid dayv"><div class="np-c">'+c+'</div><div class="np-r">'+cal(P,d)+'</div></div>';
+    return h+epaper(d)+'<div class="np-grid dayv"><div class="np-c">'+c+'</div><div class="np-r">'+cal(P,d)+'</div></div>';
   }
+  function arcFilter(){var q=($('#aq')||{}).value||'',on=document.querySelector('#af .on'),sec=on?on.dataset.sec:'All',n=0;q=q.toLowerCase().trim();
+    [].forEach.call(document.querySelectorAll('.arc .iss'),function(b){var any=0;[].forEach.call(b.querySelectorAll('a[data-q]'),function(a){var ok=(sec==='All'||a.dataset.sec===sec)&&(!q||q.split(/\s+/).every(function(w){return a.dataset.q.indexOf(w)>=0;}));a.hidden=!ok;if(ok){any++;n++;}});b.hidden=!any&&(q||sec!=='All');});
+    var t=$('#ahn');if(t)t.textContent=(q||sec!=='All')?n+' stor'+(n===1?'y':'ies')+' found':'';}
+  document.addEventListener('input',function(e){if(e.target.id==='aq')arcFilter();});
+  document.addEventListener('click',function(e){var b=e.target.closest('#af button');if(!b)return;[].forEach.call(document.querySelectorAll('#af button'),function(x){x.classList.toggle('on',x===b);});arcFilter();});
   // ?archive=1: every issue, date-wise (owner, 18 Nov 2026: 'Where are all the previous dailies?')
   function archive(P){
     var days=[];P.forEach(function(x){if(days.indexOf(x.date)<0)days.push(x.date);});
     var asc=days.slice().sort(),no={};asc.forEach(function(d,i){no[d]=i+1;});
-    var out='<section class="arc"><a class="back" href="./">← SRK DAILY front page</a><h2 class="ah">Past issues</h2><p class="sub">Every edition of SRK DAILY, newest first: '+asc.length+' issues, '+P.length+' stories since 4 November 2026.</p><div style="max-width:340px">'+cal(P)+'</div>';
+    var out='<section class="arc"><a class="back" href="./">← SRK DAILY front page</a><h2 class="ah">Past issues</h2><p class="sub">Every edition of SRK DAILY, newest first: '+asc.length+' issues, '+P.length+' stories since 4 November 2026.</p><div style="max-width:340px">'+cal(P)+'</div>'+
+      '<input class="aq" id="aq" type="search" placeholder="Search every story: a film, a name, a number…" aria-label="Search SRK DAILY">'+
+      '<div class="af" id="af">'+['All','News','Box office','KING Buzz analytics','Special editions','From the editor','FANVERSE'].map(function(t,i){return '<button type="button" data-sec="'+t+'"'+(i?'':' class="on"')+'>'+t+'</button>';}).join('')+'</div><p class="ah-n" id="ahn"></p>';
     var d0=new Date(asc[0]+'T12:00:00+05:30'),d1=new Date(asc[asc.length-1]+'T12:00:00+05:30'),all=[];
     for(var t=d1;t>=d0;t=new Date(t.getTime()-864e5))all.push(new Date(t.getTime()+330*6e4).toISOString().slice(0,10));
     all.forEach(function(d){
       var xs=P.filter(function(x){return x.date===d;});
       if(!xs.length){out+='<div class="iss none"><h3><span>'+fmt(d)+'</span><span>No issue</span></h3><p>No SRK DAILY was published on this day.</p></div>';return;}
       xs.sort(function(a,b){return (a.n==null?9:a.n)-(b.n==null?9:b.n);});
-      out+='<div class="iss" id="d-'+d+'"><h3><span>Issue '+no[d]+'</span><span>'+fmt(d)+'</span></h3>'+xs.map(function(x){
-        return '<a href="?p='+esc(x.id)+'"><small>'+(x.n===0?'Special edition':esc(x.kicker||''))+'</small>'+esc(x.title)+'<span>'+esc(short(x.deck||firstP(x),150))+'</span></a>';}).join('')+'</div>';});
+      out+='<div class="iss" id="d-'+d+'"><h3><span><a href="?d='+d+'">Issue '+no[d]+'</a></span><span>'+fmt(d)+(D&&D.epaper&&D.epaper[d]?' · <a href="'+esc(D.epaper[d])+'" target="_blank" rel="noopener">E-paper (PDF)</a>':'')+'</span></h3>'+xs.map(function(x){
+        var txt=(x.title+' '+(x.deck||'')+' '+(x.kicker||'')+' '+(x.tags||[]).join(' ')+' '+x.blocks.map(function(b){return b.p||b.h||'';}).join(' ')).toLowerCase();
+        return '<a href="?p='+esc(x.id)+'" data-sec="'+esc(section(x))+'" data-q="'+esc(txt)+'"><small>'+(x.n===0?'Special edition':esc(x.kicker||''))+'</small>'+esc(x.title)+'<span>'+esc(short(x.deck||firstP(x),150))+'</span></a>';}).join('')+'</div>';});
     return out+'<a class="back end" href="./">← Back to the SRK DAILY front page</a></section>';
   }
   function article(D,x){
     var more=P.filter(function(p){return p.id!==x.id;});
     return '<article class="ar"><a class="back" href="./">← SRK DAILY front page</a><p class="k">'+esc(x.kicker)+'</p><h2>'+esc(x.title)+'</h2>'+(x.deck?'<p class="dk">'+esc(x.deck).replace(/\n/g,'<br>')+'</p>':'')+
-      '<p class="by"><span>'+fmt(x.date)+(x.time?' · '+esc(x.time):'')+' · SRK DAILY</span><button data-sh="'+esc(x.id)+'">Share</button></p>'+
+      '<p class="by"><span><a class="dl" href="?d='+esc(x.date)+'">'+fmt(x.date)+'</a>'+(x.time?' · '+esc(x.time):'')+' · SRK DAILY</span><button data-sh="'+esc(x.id)+'">Share</button></p>'+
       (x.img?'<figure class="hero">'+(x.img_url?'<a href="'+esc(x.img_url)+'" target="_blank" rel="noopener">':'')+'<img src="'+esc(x.img)+'" alt="'+esc(x.img_alt||'')+'" referrerpolicy="no-referrer">'+(x.img_url?'</a>':'')+'<figcaption>'+esc(x.img_credit||'')+'</figcaption></figure>':'')+
       '<div class="body">'+x.blocks.map(block).join('')+'</div>'+(x.tags?'<p class="tags">'+x.tags.map(esc).join(' ')+'</p>':'')+
       (more.length?'<section class="mo"><h3>More from SRK DAILY</h3>'+more.map(function(m){return '<a href="?p='+esc(m.id)+'"><small>'+fmt(m.date)+'</small><b>'+esc(m.title)+'</b><span>'+esc(short(m.deck||firstP(m),160))+'</span></a>';}).join('')+'</section>':'')+
+      (function(){var i=P.indexOf(x),nw=i>0?P[i-1]:null,od=i<P.length-1?P[i+1]:null;return (nw||od)?'<nav class="sn">'+(od?'<a href="?p='+esc(od.id)+'"><small>← Next story · '+fmt(od.date)+'</small><b>'+esc(od.title)+'</b></a>':'')+(nw?'<a class="nx" href="?p='+esc(nw.id)+'"><small>Previous story · '+fmt(nw.date)+' →</small><b>'+esc(nw.title)+'</b></a>':'')+'</nav>':'';})()+
+      '<p><a href="?d='+esc(x.date)+'">This story\'s issue: '+fmt(x.date)+'</a> · <a href="?archive=1">All past issues</a></p>'+
       '<a class="back end" href="./">← Back to the SRK DAILY front page</a>'+
       '<div class="pr-only pr-end"><b>SRK DAILY · every day at AGARMAINKINGHOTA.COM/SRK-DAILY</b>Read the full edition, vote in the Poll Station, see KING BUZZ of the day and subscribe.</div></article>';
   }
