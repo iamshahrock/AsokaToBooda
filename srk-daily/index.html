@@ -131,6 +131,16 @@ button.np-btn{cursor:pointer}
 .ku .by2{font:italic 13px 'Libre Baskerville',serif;color:var(--muted);margin:0 0 8px}
 .ku p{font-size:14.5px;line-height:1.6;margin:0 0 10px}
 .ku .go2{background:var(--blue)}
+.arc h2.ah{font:900 34px 'Playfair Display',serif;color:var(--maroon);margin:4px 0 2px}
+.arc .sub{margin:0 0 16px;opacity:.8}
+.arc .iss{border:2px solid var(--rule);background:#fff;margin:0 0 14px}
+.arc .iss>h3{margin:0;padding:8px 12px;background:var(--maroon);color:#fff;font:700 13px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.arc .iss a{display:block;padding:9px 12px;border-bottom:1px dotted var(--rule);text-decoration:none;font:700 16px 'Libre Baskerville',serif;color:var(--ink,#1a1a1a)}
+.arc .iss a:last-child{border-bottom:0}
+.arc .iss a small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:2px}
+.arc .iss a span{display:block;font:400 13px Archivo,sans-serif;opacity:.8;margin-top:3px}
+.arc .iss.none{opacity:.75}.arc .iss.none p{margin:0;padding:10px 12px}
+.ixall{display:block;margin-top:10px;text-align:center}
 .ix a{display:block;font-size:13px;line-height:1.4;padding:6px 0;border-bottom:1px dotted var(--rule);text-decoration:none}
 .ix a small{display:block;font:700 10px Archivo,sans-serif;letter-spacing:.1em;color:var(--red);text-transform:uppercase}
 
@@ -225,7 +235,7 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     <h1><a href="./" aria-label="SRK DAILY front page"><img class="mh" src="/assets/srk-daily-masthead.png" alt="SRK Daily" width="846" height="208"></a></h1>
     <a class="np-btn" href="#sub">Subscribe</a>
   </header>
-  <div class="np-bar"><span id="npDate"></span><span class="site">WWW.AGARMAINKINGHOTA.COM</span><button class="np-btn f" id="kbBtn" type="button" aria-expanded="false" aria-controls="kb">KING BUZZ of the day ▾</button></div>
+  <div class="np-bar"><span id="npDate"></span><span class="site">WWW.AGARMAINKINGHOTA.COM</span><span class="np-acts"><a class="np-btn" href="?archive=1">Past issues</a> <button class="np-btn f" id="kbBtn" type="button" aria-expanded="false" aria-controls="kb">KING BUZZ of the day ▾</button></span></div>
   <section class="kb" id="kb" hidden></section>
   <div id="npBody"></div>
 </div>
@@ -281,8 +291,23 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
     c+='<div id="hlBox"></div><div id="kuBox"></div>';
     // the index shows the latest 8; the rest open on request, so the right column never runs far past the others (owner, 17 Nov 2026)
     var ixA=function(x){return '<a href="?p='+esc(x.id)+'"><small>'+fmt(x.date)+'</small>'+esc(x.title)+'</a>';};
-    var r=beat(D)+'<section class="bx r"><h2>All the stories</h2><div class="in ix">'+P.slice(0,8).map(ixA).join('')+(P.length>8?'<details class="ixm"><summary>All '+P.length+' stories</summary>'+P.slice(8).map(ixA).join('')+'</details>':'')+'</div></section>';
+    var r=beat(D)+'<section class="bx r"><h2>All the stories</h2><div class="in ix">'+P.slice(0,8).map(ixA).join('')+'<a class="np-btn f ixall" href="?archive=1">Past issues · all '+P.length+' stories, date-wise →</a></div></section>';
     return '<div class="np-grid"><div class="np-l">'+sideL(D)+'</div><div class="np-c">'+c+'</div><div class="np-r">'+r+'</div></div>';
+  }
+  // ?archive=1: every issue, date-wise (owner, 18 Nov 2026: 'Where are all the previous dailies?')
+  function archive(P){
+    var days=[];P.forEach(function(x){if(days.indexOf(x.date)<0)days.push(x.date);});
+    var asc=days.slice().sort(),no={};asc.forEach(function(d,i){no[d]=i+1;});
+    var out='<section class="arc"><a class="back" href="./">← SRK DAILY front page</a><h2 class="ah">Past issues</h2><p class="sub">Every edition of SRK DAILY, newest first: '+asc.length+' issues, '+P.length+' stories since 4 November 2026.</p>';
+    var d0=new Date(asc[0]+'T12:00:00+05:30'),d1=new Date(asc[asc.length-1]+'T12:00:00+05:30'),all=[];
+    for(var t=d1;t>=d0;t=new Date(t.getTime()-864e5))all.push(new Date(t.getTime()+330*6e4).toISOString().slice(0,10));
+    all.forEach(function(d){
+      var xs=P.filter(function(x){return x.date===d;});
+      if(!xs.length){out+='<div class="iss none"><h3><span>'+fmt(d)+'</span><span>No issue</span></h3><p>No SRK DAILY was published on this day.</p></div>';return;}
+      xs.sort(function(a,b){return (a.n==null?9:a.n)-(b.n==null?9:b.n);});
+      out+='<div class="iss" id="d-'+d+'"><h3><span>Issue '+no[d]+'</span><span>'+fmt(d)+'</span></h3>'+xs.map(function(x){
+        return '<a href="?p='+esc(x.id)+'"><small>'+(x.n===0?'Special edition':esc(x.kicker||''))+'</small>'+esc(x.title)+'<span>'+esc(short(x.deck||firstP(x),150))+'</span></a>';}).join('')+'</div>';});
+    return out+'<a class="back end" href="./">← Back to the SRK DAILY front page</a></section>';
   }
   function article(D,x){
     var more=P.filter(function(p){return p.id!==x.id;});
@@ -370,8 +395,10 @@ html.snap #site-header,html.snap #site-footer,html.snap .sh-top{display:none!imp
   fetch('../data/srk-daily.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
     D=d;P=d.posts.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:((a.n==null?9:a.n)-(b.n==null?9:b.n));});
     var one=new URLSearchParams(location.search).get('p'),x=one&&P.filter(function(p){return p.id===one;})[0];
-    $('#npBody').innerHTML=x?article(D,x):front(D,P);
-    if(!x)daily(D);
+    var arcv=!x&&new URLSearchParams(location.search).get('archive');
+    $('#npBody').innerHTML=x?article(D,x):arcv?archive(P):front(D,P);
+    if(arcv)document.title='Past issues — SRK DAILY';
+    if(!x&&!arcv)daily(D);
     // ?snap=1: the front page alone (no site header/footer), KING BUZZ open: used to make the daily link-preview snapshot
     if(!x&&new URLSearchParams(location.search).get('snap')){document.documentElement.classList.add('snap');$('#kb').hidden=false;kbLoad();}
     if(!x&&new URLSearchParams(location.search).get('pdf')){document.documentElement.classList.add('pdf-front');
