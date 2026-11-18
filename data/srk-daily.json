@@ -5488,9 +5488,9 @@
    "kicker": "SRK DAILY · Special · The Christmas race, just for fun",
    "title": "Koun Aashiq, Koun Qaatil?",
    "deck": "Will Dr. Doom sit on the throne, or will the KING become the doctor?",
-   "img": "/assets/king-news/2026-11-18-faceoff.jpg",
+   "img": "/assets/king-news/2026-11-18-faceoff-v2.jpg",
    "img_alt": "Robert Downey Jr. as KING with a rose; Shah Rukh Khan arms wide; Shah Rukh Khan as Doctor Doom; Robert Downey Jr. as Doom at Comic-Con",
-   "img_credit": "Left to right: SRK DAILY's swap on KING's poster · fan edit by @filmygyan (two panels) · Robert Downey Jr. unmasked as Doom, San Diego Comic-Con, 27 July 2024.",
+   "img_credit": "Left to right: SRK DAILY's swap on KING's poster · the fans' \"What If…?\" edit by @filmygyan (two panels) · SRK DAILY's swap: Robert Downey Jr.'s Doom from Comic-Con 2024 on the same stage.",
    "blocks": [
     {
      "p": "KING's poster says \"Qaatil nahi… Aashiq hoon.\" This week the fans tested it. A \"What If…?\" edit by @filmygyan, shared on X by @veerpratapz with the line \"Imagine SRK giving us Doctor Doom\", puts Shah Rukh Khan in Doctor Doom's green suit and iron mask, arms flung wide, exactly as Robert Downey Jr. stood when Marvel unmasked him as Doom in Hall H at San Diego Comic-Con on 27 July 2024."
@@ -5498,11 +5498,11 @@
     {
      "figs": [
       {
-       "src": "/assets/king-news/2026-11-18-faceoff-srk-arms-out.jpg",
+       "src": "/assets/king-news/2026-11-18-faceoff-v2-srk-arms-out.jpg",
        "alt": "Shah Rukh Khan on stage, arms wide"
       },
       {
-       "src": "/assets/king-news/2026-11-18-faceoff-srk-as-doom.jpg",
+       "src": "/assets/king-news/2026-11-18-faceoff-v2-srk-as-doom.jpg",
        "alt": "The same pose as Doctor Doom"
       }
      ],
@@ -5514,15 +5514,15 @@
     {
      "figs": [
       {
-       "src": "/assets/king-news/2026-11-18-faceoff-rdj-doom-comic-con.jpg",
-       "alt": "Robert Downey Jr. as Doom at San Diego Comic-Con 2024"
+       "src": "/assets/king-news/2026-11-18-faceoff-v2-rdj-as-doom-stage.jpg",
+       "alt": "Robert Downey Jr. as Doom, arms wide, on the same stage"
       },
       {
-       "src": "/assets/king-news/2026-11-18-faceoff-rdj-as-king.jpg",
+       "src": "/assets/king-news/2026-11-18-faceoff-v2-rdj-as-king.jpg",
        "alt": "Robert Downey Jr. as KING, rose in his teeth"
       }
      ],
-     "cap": "Robert Downey Jr. unmasked as Doom, Comic-Con 2024 · SRK DAILY's swap on KING's poster"
+     "cap": "SRK DAILY's swap: Robert Downey Jr.'s Doom (Comic-Con 2024) on the same stage · and as KING, rose in his teeth"
     },
     {
      "h": "The doctor question"
