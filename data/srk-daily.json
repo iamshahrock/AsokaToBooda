@@ -5479,16 +5479,90 @@
      "p": "Read at 11:29 IST from the public YouTube watch pages. Press: Hindustan Times (Instagram, 4 Nov), Bollywood Hungama, UNI, DNA, Dynamite News."
     }
    ]
+  },
+  {
+   "id": "2026-11-18-koun-aashiq-koun-qaatil",
+   "n": 0,
+   "date": "2026-11-18",
+   "time": "14:00 IST",
+   "kicker": "SRK DAILY · Special · The Christmas race, just for fun",
+   "title": "Koun Aashiq, Koun Qaatil?",
+   "deck": "Will Dr. Doom sit on the throne, or will the KING become the doctor?",
+   "img": "/assets/king-news/2026-11-18-faceoff.jpg",
+   "img_alt": "Robert Downey Jr. as KING with a rose; Shah Rukh Khan arms wide; Shah Rukh Khan as Doctor Doom; Robert Downey Jr. as Doom at Comic-Con",
+   "img_credit": "Left to right: SRK DAILY's swap on KING's poster · fan edit by @filmygyan (two panels) · Robert Downey Jr. unmasked as Doom, San Diego Comic-Con, 27 July 2024.",
+   "blocks": [
+    {
+     "p": "KING's poster says \"Qaatil nahi… Aashiq hoon.\" This week the fans tested it. A \"What If…?\" edit by @filmygyan, shared on X by @veerpratapz with the line \"Imagine SRK giving us Doctor Doom\", puts Shah Rukh Khan in Doctor Doom's green suit and iron mask, arms flung wide, exactly as Robert Downey Jr. stood when Marvel unmasked him as Doom in Hall H at San Diego Comic-Con on 27 July 2024."
+    },
+    {
+     "figs": [
+      {
+       "src": "/assets/king-news/2026-11-18-faceoff-srk-arms-out.jpg",
+       "alt": "Shah Rukh Khan on stage, arms wide"
+      },
+      {
+       "src": "/assets/king-news/2026-11-18-faceoff-srk-as-doom.jpg",
+       "alt": "The same pose as Doctor Doom"
+      }
+     ],
+     "cap": "The fans' swap: a \"What If…?\" edit by @filmygyan, shared by @veerpratapz on X"
+    },
+    {
+     "p": "SRK DAILY returned the favour: Robert Downey Jr. walks out of KING's ring of fire with a rose between his teeth. So now Doom is the aashiq. Who's the qaatil?"
+    },
+    {
+     "figs": [
+      {
+       "src": "/assets/king-news/2026-11-18-faceoff-rdj-doom-comic-con.jpg",
+       "alt": "Robert Downey Jr. as Doom at San Diego Comic-Con 2024"
+      },
+      {
+       "src": "/assets/king-news/2026-11-18-faceoff-rdj-as-king.jpg",
+       "alt": "Robert Downey Jr. as KING, rose in his teeth"
+      }
+     ],
+     "cap": "Robert Downey Jr. unmasked as Doom, Comic-Con 2024 · SRK DAILY's swap on KING's poster"
+    },
+    {
+     "h": "The doctor question"
+    },
+    {
+     "p": "Victor von Doom calls himself Doctor and has never shown a degree. Shah Rukh Khan holds honorary doctorates from the University of Bedfordshire (2009), the University of Edinburgh (2015), the University of Law in London (2019) and La Trobe University in Melbourne (2019). On paper, the KING is already the better-qualified doctor."
+    },
+    {
+     "h": "The throne question"
+    },
+    {
+     "p": "Doom has spent sixty years of comics trying to rule the world. KING does not have to try; it is in the name. The two arrive a week apart, Avengers: Doomsday on 17 December and KING on 24 December, both led by men born in 1965."
+    },
+    {
+     "h": "The real what-if"
+    },
+    {
+     "p": "This swap took fans an evening and a phone. Imagine the AI giants spending their billions and their creativity on an official fan-fiction platform: stars licensing their faces, fans making swaps like this in the open, and studios getting the kind of marketing no budget can buy. Instead, ask most AI image engines for Shah Rukh Khan and they refuse, flagging the star in the name of IP, while the same machines go on doing everything else with everyone's faces. The fans are already making the campaign. The engines are the ones saying no."
+    },
+    {
+     "p": "Koun Aashiq, Koun Qaatil? Vote in today's Poll Station."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#ShahRukhKhan",
+    "#AvengersDoomsday",
+    "#RobertDowneyJr",
+    "#SRKDaily",
+    "#FanFiction"
+   ]
   }
  ],
  "poll": {
-  "id": "booking-2026-11-18",
-  "q": "Avengers: Doomsday's tickets went on sale a month early. When should KING's advance booking open?",
+  "id": "koun-aashiq-2026-11-18",
+  "q": "Koun Aashiq, Koun Qaatil? Swap the Christmas rivals.",
   "o": [
-   "Right now",
-   "With the trailer",
-   "Two weeks before release",
-   "One week before release"
+   "RDJ, the aashiq with the rose",
+   "SRK, the qaatil in the mask",
+   "Both. It's Christmas."
   ]
  },
  "beat": [
