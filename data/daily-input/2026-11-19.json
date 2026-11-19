@@ -1,0 +1,114 @@
+{
+ "date": "2026-11-19",
+ "record_id": "KING-2026-11-19",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 52826563,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-19 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33154949,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-19 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 88196438,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-19 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 89239794,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-19 07:04 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_indexed_posts",
+   "value": null,
+   "unit": "indexed posts",
+   "source": "Not read 2026-11-19: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "srkking_indexed_posts",
+   "value": null,
+   "unit": "indexed #srkking posts",
+   "source": "Not read 2026-11-19: Display Purposes not opened in this session; counts frozen since 06/18 Oct (stale)",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 86,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-18 (86 works)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 5625243,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-18 (YouTube views re-read 18 Nov)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48549227,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,549,227 as shown), read 2026-11-19 07:07 IST in the owner's signed-in browser",
+   "method": "count shown in the profile follower tooltip",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 19 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Variety's 'The 100 Greatest Movie Stars of All Time' (18 Nov 2026): Shah Rukh Khan at No. 92, the only Indian star on the list; 'MUST SEE: Devdas'",
+  "Tu Mil Jaaye 89,239,794 YouTube views at 07:04 IST, now 1,043,356 ahead of the Avengers: Doomsday trailer (88,196,438); was 332,702 behind on 18 Nov 07:03 IST. +1,970,911 in 24 hours vs the trailer's +594,853; 805,892 likes",
+  "Avengers: Doomsday trailer vs KING's two teasers (85,981,512): Doomsday ahead by 2,214,926 (was 1,691,388 on 18 Nov)",
+  "RAMAYANA to KING at 07:04 IST: KING's 3 official videos 175,221,306 vs Ramayana's 7 at 150,573,837 (KING +24,647,469; was +23,223,796 on 18 Nov)",
+  "Ramayana day 14 (Wed 18 Nov): ₹23.20 crore India net, down 18.9%; 14 days ₹844.40 crore net, ₹1,009.05 crore India gross, ₹1,519.05 crore worldwide (Sacnilk, updated 18 Nov 10:16 PM IST); Sacnilk: only the sixth Indian film past ₹1,000 crore India gross. Day 13 revised to ₹28.60 crore",
+  "KING's final schedule: a three-day shoot at the Formula One circuit near Delhi from 18 Nov, the whole track blocked for the film; wrap by end-November, more songs and the trailer after 23 Nov, as reported by Pinkvilla (18 Nov) and Moneycontrol",
+  "New @RedChilliesEnt X post 18 Nov 12:04 IST: a Tu Mil Jaaye clip, 'This part deserves a million more replays!'; 45,961 views by 07:08 IST 19 Nov",
+  "Avengers: Doomsday India presales near ₹15 crore a month ahead of release (The Hollywood Reporter India, 18 Nov)",
+  "Maatrubhumi 7 official videos 147,644,906 at 07:04 IST; trailer 52,753,082 (+495,225)",
+  "@iamsrk Instagram 48,549,227 followers at 07:07 IST (7,329 fewer than on 18 Nov)"
+ ],
+ "notes": [
+  "YouTube read by Claude from the public watch pages at 07:04 IST; Instagram in the owner's session at 07:07 IST.",
+  "Box office as reported by Sacnilk.",
+  "Posts are not people."
+ ]
+}

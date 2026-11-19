@@ -1,31 +1,31 @@
 {
  "about": "Top of /king-intelligence/: the latest KING news (owner, 27 Oct 2026) and every official KING release by Shah Rukh Khan / Red Chillies Entertainment. Video views are read live from the daily ledger (series_id). Update 'latest' when a new official asset drops. Posters on Instagram have no public view count: shown as N/A, never estimated.",
  "latest": {
-  "date": "2026-11-18",
-  "kicker": "News · The Christmas race",
-  "headline": "A month before release, Avengers: Doomsday sells ₹10 crore of opening-day tickets in India",
-  "deck": "Avengers: Doomsday opened Indian bookings 30 days before its 17 December release and crossed ₹10 crore gross in opening-day advance with about one lakh tickets at PVR, INOX and Cinepolis in 19 hours, as reported by Sacnilk (17 Nov, 9:47 PM IST). KING (24 Dec) has not opened bookings. Red Chillies answered on X: 'Remember / There is / Only one / KING.' Tu Mil Jaaye read 87,268,883 YouTube views on 18 Nov at 07:03 IST, 332,702 behind the Doomsday trailer.",
+  "date": "2026-11-19",
+  "kicker": "News · Hall of fame",
+  "headline": "Variety ranks Shah Rukh Khan among the 100 greatest movie stars of all time",
+  "deck": "Variety's critics' list of 'The 100 Greatest Movie Stars of All Time' (18 Nov) puts Shah Rukh Khan at No. 92, the only Indian star on it, and names Devdas as the film to see. The same morning Tu Mil Jaaye passed the Avengers: Doomsday trailer on YouTube: 89,239,794 views to 88,196,438 at 07:04 IST on 19 Nov, while KING's final schedule rolled at the Formula One circuit near Delhi.",
   "quote": "",
   "quote_by": "",
-  "image": "/assets/king-news/2026-11-17-rce-king.jpg",
-  "image_alt": "KING, from Red Chillies Entertainment's post of 17 November",
-  "image_credit": "Red Chillies Entertainment on X, 17 Nov 2026",
+  "image": "/assets/srk-daily/2026-11-19-variety-92.jpg",
+  "image_alt": "Shah Rukh Khan in Baazigar, Darr, Dilwale Dulhania Le Jayenge, Devdas and Jawan",
+  "image_credit": "Close-ups from the films, Character Study on this site",
   "sources": [
    {
-    "name": "SRK DAILY · Issue 14",
-    "url": "/srk-daily/?p=2026-11-18-doomsday-advance"
+    "name": "SRK DAILY · Issue 15",
+    "url": "/srk-daily/?p=2026-11-19-variety-92"
    },
    {
-    "name": "Sacnilk",
-    "url": "https://www.sacnilk.com/news/avengers-doomsday-day-1-advance-crosses-10-crore-gross-sells-over-1-lakh-national-chain-tickets-in-just-19-hours"
+    "name": "Variety",
+    "url": "https://variety.com/lists/greatest-movie-stars-of-all-time/"
    },
    {
-    "name": "Red Chillies Entertainment on X",
-    "url": "https://x.com/RedChilliesEnt/status/2122578056795885593"
+    "name": "Pinkvilla",
+    "url": "https://www.pinkvilla.com/entertainment/exclusives/king-exclusive-shah-rukh-khan-and-siddharth-anand-shoot-for-a-high-octane-sequence-at-formula-one-track-in-delhi-1406513"
    },
    {
-    "name": "KING Buzz · 18 Nov",
-    "url": "/king-intelligence/daily.html?date=2026-11-18"
+    "name": "KING Buzz · 19 Nov",
+    "url": "/king-intelligence/daily.html?date=2026-11-19"
    }
   ]
  },
