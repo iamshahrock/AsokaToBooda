@@ -205,6 +205,9 @@ Verify live before calling anything live: tools/v2-live-e2e.mjs and tools/releas
 ## Menu order (owner, 28 Oct 2026)
 - Header, burger menu and footer follow: Make Your Poster, Chess81, Inquilaab King Ke Saath, Rescue Your Face, KING Buzz, Merch, Fan Universe, Asoka to Boo-Da, Gallery, On The Record, DOOM to KING (LINKS in assets/header.js). Footer groups: Play (Poster, Chess81, Inquilaab, Rescue Your Face, Billboard), Follow & shop (KING Buzz, Merch, Fan Universe, Fan videos), Read & watch (book, Gallery, On The Record, DOOM to KING), About.
 
+## Display Purposes retired (owner, 19 Nov 2026: 'WHY?' on the frozen #srk / #srkking counts)
+- Display Purposes stopped collecting around the end of May 2025 (its #srk page still shows 2,933,427 posts and its newest top posts are dated 24-30 May 2025; 'Last updated' is just the day the page is opened). Our 06/18 Oct readings were already ~16 months old. Series srk_indexed_posts / srkking_indexed_posts are retired (labelled 'frozen since May 2025' on KING Buzz, correction notes on the archive). New series srk_instagram_posts / srkking_instagram_posts from 20 Nov 2026: read in the logged-in browser from Instagram's own search box, as displayed (rounded). First reading 19 Nov 13:31 IST: #srk 7.7M, #srkking 135K.
+
 ## ONE LIST of KING counters (owner, 7 Nov 2026: 'EVERYTHING OF KING RELATED needs to get posted in every relevant section')
 - assets/king-series.js (window.KING_SERIES) is the only list of official KING counters (id, name, colour, release date, YouTube id). The homepage KING BUZZ line, KING Buzz dashboard (graph, series tables), daily reports and SRK DAILY's KING BUZZ of the day all read it. A new official KING release = add one row there + its series_id on the release in data/king-news.json + the YouTube id in YT_VIDEOS in backend/worker.js, and file its readings in the daily input. Tu Mil Jaaye had been read daily since 2 Nov but was missing from every page until this (PR 448 + this PR).
 
