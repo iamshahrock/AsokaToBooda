@@ -2,6 +2,391 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-19-variety-92",
+   "n": 1,
+   "date": "2026-11-19",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 15 · Hall of fame",
+   "title": "Variety ranks Shah Rukh Khan among the 100 greatest movie stars of all time",
+   "deck": "Variety's critics placed Shah Rukh Khan at No. 92 on their list of 'The 100 Greatest Movie Stars of All Time', published on 18 November. He is the only Indian star on it, and the film the magazine tells readers to see is Devdas.",
+   "img": "/assets/srk-daily/2026-11-19-variety-92.jpg",
+   "img_alt": "Shah Rukh Khan in Baazigar, Darr, Dilwale Dulhania Le Jayenge, Devdas and Jawan",
+   "img_credit": "Baazigar, Darr, Dilwale Dulhania Le Jayenge, Devdas, Jawan: close-ups from Character Study on this site.",
+   "blocks": [
+    {
+     "p": "Hollywood's trade paper of record has drawn up its own pantheon, and Shah Rukh Khan is in it. Variety's 'The 100 Greatest Movie Stars of All Time: Critics' Pick', posted on 18 November, ranks him at No. 92. The list counts down from No. 100 to Marilyn Monroe at No. 1."
+    },
+    {
+     "p": "The magazine said it judged stars on a mix of artistry, charisma and popularity. Its top ten, as published: Marilyn Monroe, Humphrey Bogart, Charlie Chaplin, Jack Nicholson, Katharine Hepburn, Sidney Poitier, Marlon Brando, Tom Cruise, Toshiro Mifune and Barbra Streisand. Across the hundred names Shah Rukh Khan is the only star from Indian cinema."
+    },
+    {
+     "stats": [
+      [
+       "Variety's rank",
+       "No. 92",
+       "of 100, critics' list, 18 Nov 2026"
+      ],
+      [
+       "Indian stars on the list",
+       "1",
+       "Shah Rukh Khan"
+      ],
+      [
+       "Variety's 'must see'",
+       "Devdas",
+       "2002"
+      ],
+      [
+       "Films, by Variety's count",
+       "90+",
+       "across four decades"
+      ]
+     ]
+    },
+    {
+     "h": "What Variety wrote"
+    },
+    {
+     "p": "The entry traces the arc fans know by heart: the 1993 breakout as a villain in Baazigar and Darr, the romantic lead of Dilwale Dulhania Le Jayenge and Devdas, the turns to comedy and character parts, and, most recently, the remaking of himself as an action star. Variety credits a showman's flair for drama together with a comic intelligence that knows itself, and notes that local fans call him 'King Khan'. Its last line on him:"
+    },
+    {
+     "quote": {
+      "q": "He remains comfortable in his throne.",
+      "by": "Variety, 18 Nov 2026"
+     }
+    },
+    {
+     "h": "Five weeks to KING"
+    },
+    {
+     "p": "The ranking lands in the last stretch before his next throne: KING opens on 24 December, and its final shooting schedule began this week. Readers answered quickly on Variety's own page, where one asked where Amitabh Bachchan was; the list's post on X had 444,192 views by Thursday morning, and a fan account's copy of the full ranking 1,398,112."
+    },
+    {
+     "links": [
+      [
+       "Variety · The 100 Greatest Movie Stars of All Time",
+       "https://variety.com/lists/greatest-movie-stars-of-all-time/"
+      ],
+      [
+       "Character Study · every SRK character",
+       "/srk-characters/"
+      ],
+      [
+       "Devdas · the character file",
+       "/srk-characters/#053"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#ShahRukhKhan",
+    "#Variety",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-19-tmj-passes-doomsday",
+   "n": 2,
+   "date": "2026-11-19",
+   "time": "09:00 IST",
+   "kicker": "Analytics · 19 Nov 2026",
+   "title": "Tu Mil Jaaye passes the Avengers: Doomsday trailer",
+   "deck": "Seventeen days after its release, KING's first song overtook Marvel's trailer on YouTube overnight: 89,239,794 views to 88,196,438 at 07:04 IST on Thursday. Twenty-four hours earlier it was 332,702 behind.",
+   "img": "/assets/srk-daily/2026-11-19-rce-tmj-clip-wide.jpg",
+   "img_url": "https://x.com/RedChilliesEnt/status/2122941612397650374",
+   "img_alt": "Shah Rukh Khan and Deepika Padukone in Tu Mil Jaaye",
+   "img_credit": "Tu Mil Jaaye, from Red Chillies Entertainment's post on X, 18 Nov 2026. Tap the picture to see the post.",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "89,239,794",
+       "T-Series, read 19 Nov 07:04 IST"
+      ],
+      [
+       "Likes",
+       "805,892",
+       ""
+      ],
+      [
+       "Gained since Wednesday",
+       "1,970,911",
+       "87,268,883 on 18 Nov 07:03 IST"
+      ],
+      [
+       "Ahead of the Doomsday trailer",
+       "1,043,356",
+       "was 332,702 behind on 18 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "The song has gathered its views in 17 days; the Doomsday trailer has been on YouTube since 20 July. In the last 24 hours Tu Mil Jaaye added 1,970,911 views and the trailer 594,853. Red Chillies Entertainment kept the song in the feed on Wednesday with a new clip on X, captioned 'This part deserves a million more replays!'; it had 45,961 views by Thursday morning."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "88,196,438",
+       "read 19 Nov 07:04 IST"
+      ],
+      [
+       "KING's two teasers",
+       "85,981,512",
+       "Title Reveal 52,826,563 + Date Announcement 33,154,949"
+      ],
+      [
+       "Doomsday ahead of the teasers by",
+       "2,214,926",
+       "1,691,388 on 18 Nov"
+      ],
+      [
+       "KING's three videos ahead of the trailer by",
+       "87,024,868",
+       "175,221,306 in all"
+      ]
+     ]
+    },
+    {
+     "h": "RAMAYANA to KING, day 15"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "175,221,306",
+       "read 19 Nov 07:04 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "150,573,837",
+       "read 19 Nov 07:04 IST"
+      ],
+      [
+       "KING ahead by",
+       "24,647,469",
+       "was 23,223,796 on 18 Nov 07:03 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Ramayana's seven videos gained 618,553 views in 24 hours; KING's three gained 2,042,226. Ramayana's official trailer stands at 57,958,394."
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "52,753,082",
+       "read 19 Nov 07:04 IST"
+      ],
+      [
+       "Gained since Wednesday",
+       "495,225",
+       "52,257,857 on 18 Nov 07:04 IST"
+      ],
+      [
+       "7 official videos",
+       "147,644,906",
+       "KING's three lead by 27,576,400"
+      ]
+     ]
+    },
+    {
+     "h": "@iamsrk"
+    },
+    {
+     "stats": [
+      [
+       "Instagram followers",
+       "48,549,227",
+       "as shown on the profile, 19 Nov 07:07 IST"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube, X and Instagram public counters, read 19 Nov 2026 07:04-07:08 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#AvengersDoomsday",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-19-f1-final-leg",
+   "n": 3,
+   "date": "2026-11-19",
+   "time": "09:00 IST",
+   "kicker": "KING · On set",
+   "title": "KING's last lap: three days on a Formula One circuit, then the trailer",
+   "deck": "Shah Rukh Khan and Siddharth Anand began a three-day shoot at the Formula One track outside Delhi on Wednesday, with the whole circuit blocked for the film, Pinkvilla reported. The makers plan to wrap KING by the end of November; more songs and the trailer are expected after 23 November.",
+   "img": "/assets/king-news/2026-11-17-rce-there-is.jpg",
+   "img_alt": "KING, from Red Chillies Entertainment's post of 17 November",
+   "img_credit": "Red Chillies Entertainment on X, 17 Nov 2026",
+   "blocks": [
+    {
+     "p": "KING's final schedule has moved to a racetrack. According to Pinkvilla's report of 18 November, the makers have taken the entire Formula One circuit near Delhi for three days for a high-speed set piece that Siddharth Anand and his international action team spent weeks planning and rehearsing. The sequence is being shot on the real track rather than against green screens, a source told the outlet, to show Shah Rukh Khan in a raw new avatar. TV9 Hindi placed the location about 50 km from Delhi; Moneycontrol, Live Hindustan and others carried the report."
+    },
+    {
+     "p": "This is the last leg of filming, Pinkvilla's source said, with the shoot to wrap by the end of the month. Then the promotions: the remaining songs and the theatrical trailer are expected after 23 November. The same report says Kareena Kapoor Khan has shot a special song with Shah Rukh Khan titled Daddy Cool."
+    },
+    {
+     "stats": [
+      [
+       "Final schedule",
+       "3 days",
+       "Formula One circuit near Delhi, from 18 Nov (Pinkvilla)"
+      ],
+      [
+       "Wrap",
+       "end of November",
+       "as reported"
+      ],
+      [
+       "Trailer and songs",
+       "after 23 Nov",
+       "as reported"
+      ],
+      [
+       "Days to KING",
+       "35",
+       "24 December 2026"
+      ]
+     ]
+    },
+    {
+     "h": "Thirty-three years after Baazigar"
+    },
+    {
+     "p": "The Lallantop asked the question fans were already asking: will he race cars on screen again, 33 years after Baazigar (1993), the film Variety this week named as his breakout? KING is produced by Gauri Khan, Siddharth Anand and Mamta Anand for Red Chillies Entertainment and Marflix Pictures; its cast includes Suhana Khan, Deepika Padukone, Abhishek Bachchan, Anil Kapoor, Jackie Shroff, Rani Mukerji, Jaideep Ahlawat, Arshad Warsi, Abhay Verma and Raghav Juyal."
+    },
+    {
+     "links": [
+      [
+       "Pinkvilla · KING at the Formula One track",
+       "https://www.pinkvilla.com/entertainment/exclusives/king-exclusive-shah-rukh-khan-and-siddharth-anand-shoot-for-a-high-octane-sequence-at-formula-one-track-in-delhi-1406513"
+      ],
+      [
+       "The Lallantop · 33 years after Baazigar",
+       "https://www.thelallantop.com/entertainment/post/shah-rukh-khan-to-race-cars-in-king-33-years-after-baazigar"
+      ],
+      [
+       "Moneycontrol · the final leg of KING",
+       "https://www.moneycontrol.com/entertainment/shah-rukh-khan-kicks-off-the-final-leg-of-king-with-a-three-day-shoot-at-delhi-s-formula-one-track-report-article-14083898.html"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#ShahRukhKhan",
+    "#SiddharthAnand",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-19-ramayana-day-14",
+   "n": 4,
+   "date": "2026-11-19",
+   "time": "09:00 IST",
+   "kicker": "Box office · Ramayana",
+   "title": "Ramayana crosses ₹1,000 crore gross in India in 14 days",
+   "deck": "Ramayana made ₹23.20 crore net in India on its second Wednesday and took its India gross to ₹1,009.05 crore, only the sixth Indian film to cross that mark, as reported by Sacnilk. Worldwide it stands at ₹1,519.05 crore.",
+   "img": "https://i.ytimg.com/vi/YleIZgpTF6w/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=YleIZgpTF6w",
+   "img_alt": "Ramayana · Rama",
+   "img_credit": "Ramayana · Rama, World Of Ramayana on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana, with Ranbir Kapoor, Yash and Sai Pallavi, collected ₹23.20 crore net across India on Wednesday, its fourteenth day, down 18.9% from Tuesday, according to Sacnilk's figures updated at 10:16 PM IST. That lifted its India gross to ₹1,009.05 crore. Sacnilk reports that only five Indian films had crossed ₹1,000 crore gross in India before it, among them Baahubali 2, Pushpa 2, KGF Chapter 2 and the Dhurandhar films."
+    },
+    {
+     "stats": [
+      [
+       "Day 14 · Wed 18 Nov",
+       "₹23.20 crore",
+       "India net, all languages; Hindi ₹16.50 crore"
+      ],
+      [
+       "14 days, India net",
+       "₹844.40 crore",
+       ""
+      ],
+      [
+       "14 days, India gross",
+       "₹1,009.05 crore",
+       "only the sixth Indian film past ₹1,000 crore"
+      ],
+      [
+       "Worldwide gross",
+       "₹1,519.05 crore",
+       "overseas ₹510.00 crore"
+      ],
+      [
+       "Footfalls so far",
+       "3,39,66,897",
+       "as listed by Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk revised Tuesday's figure to ₹28.60 crore from ₹28.70 crore. Wednesday's average occupancy was 18.8% across 22,289 shows; the Malayalam version ran fullest, at 41.1%."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 14",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_14"
+      ],
+      [
+       "Sacnilk · the ₹1,000 crore India gross club",
+       "https://www.sacnilk.com/news/ramayana-joins-1000-crore-india-gross-club-in-14-days-becomes-only-sixth-indian-film-to-achieve-the-milestone"
+      ],
+      [
+       "RAMAYANA to KING · the report",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#BoxOffice",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-18-doomsday-advance",
    "n": 1,
    "date": "2026-11-18",
@@ -5557,44 +5942,44 @@
   }
  ],
  "poll": {
-  "id": "koun-aashiq-2026-11-18",
-  "q": "Koun Aashiq, Koun Qaatil? Swap the Christmas rivals.",
+  "id": "variety-2026-11-19",
+  "q": "Variety's critics put Shah Rukh Khan at No. 92 of the 100 greatest movie stars. Your rank?",
   "o": [
-   "RDJ, the aashiq with the rose",
-   "SRK, the qaatil in the mask",
-   "Both. It's Christmas."
+   "No. 1. Obviously.",
+   "Top 10",
+   "No. 92 is fair"
   ]
  },
  "beat": [
   {
-   "t": "Doomsday: ₹10 crore in a day",
-   "d": "Opening-day advance in India crosses ₹10 crore gross a month before release (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/irVNGjRFZGk/mqdefault.jpg",
-   "url": "?p=2026-11-18-doomsday-advance"
+   "t": "Variety: No. 92",
+   "d": "Shah Rukh Khan, the only Indian on Variety's 100 greatest movie stars.",
+   "img": "/assets/characters/053.webp",
+   "url": "?p=2026-11-19-variety-92"
   },
   {
-   "t": "Only one KING",
-   "d": "Red Chillies' four pictures: Remember. There is. Only one. KING.",
-   "img": "/assets/king-news/2026-11-17-rce-only-one.jpg",
-   "url": "?p=2026-11-18-only-one-king"
+   "t": "Tu Mil Jaaye passes Doomsday",
+   "d": "89.2 million to 88.2 million on YouTube, 19 Nov 07:04 IST.",
+   "img": "/assets/srk-daily/2026-11-19-rce-tmj-clip-wide.jpg",
+   "url": "?p=2026-11-19-tmj-passes-doomsday"
   },
   {
-   "t": "The grey was his idea",
-   "d": "KING's stylist Shaleena Nathani on dressing Shah Rukh Khan and Deepika Padukone.",
-   "img": "/assets/king-news/2026-11-17-rce-remember.jpg",
-   "url": "?p=2026-11-18-only-one-king"
+   "t": "KING on the F1 track",
+   "d": "Three days on the circuit near Delhi; trailer expected after 23 Nov (Pinkvilla).",
+   "img": "/assets/king-news/2026-11-17-rce-there-is.jpg",
+   "url": "?p=2026-11-19-f1-final-leg"
   },
   {
-   "t": "Tu Mil Jaaye: 87.3 million",
-   "d": "332,702 views from passing the Doomsday trailer.",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/mqdefault.jpg",
-   "url": "?p=2026-11-18-king-buzz-day-14"
+   "t": "Ramayana: ₹1,009 crore",
+   "d": "India gross in 14 days; ₹1,519.05 crore worldwide (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/YleIZgpTF6w/mqdefault.jpg",
+   "url": "?p=2026-11-19-ramayana-day-14"
   },
   {
-   "t": "Ramayana: ₹1,483.50 crore",
-   "d": "Thirteen days worldwide; ₹28.70 crore net on Tuesday (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/T0Uduwg2W2w/mqdefault.jpg",
-   "url": "?p=2026-11-18-ramayana-day-13"
+   "t": "Daddy Cool",
+   "d": "Kareena Kapoor Khan has shot a special song with SRK for KING, Pinkvilla reports.",
+   "img": "/assets/characters/019.webp",
+   "url": "?p=2026-11-19-f1-final-leg"
   }
  ],
  "fanverse": {
