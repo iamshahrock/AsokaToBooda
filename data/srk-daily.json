@@ -2,6 +2,458 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-20-golden-goose-king",
+   "n": 1,
+   "date": "2026-11-20",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 16 · The week of the King",
+   "title": "A day after Variety's No. 92, Shah Rukh Khan stars in Golden Goose's D'YAVOL X film",
+   "deck": "Variety's ranking of Shah Rukh Khan among the 100 greatest movie stars ran across the Indian press on Thursday. That evening he released a 93-second film for Golden Goose and his family's label D'YAVOL X, which ends on a cinema marquee: 'NOW SHOWING KING THU 24TH DEC 2026'.",
+   "img": "/assets/srk-daily/2026-11-20-golden-goose.jpg",
+   "img_url": "https://www.youtube.com/watch?v=Bhz096dvyTA",
+   "img_alt": "Shah Rukh Khan with D'YAVOL X sneakers marked 'FOREVER KING'",
+   "img_credit": "Golden Goose x D'YAVOL X, Red Chillies Entertainment on YouTube, 19 Nov 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "On Wednesday night Variety placed Shah Rukh Khan at No. 92 on its critics' list of 'The 100 Greatest Movie Stars of All Time', the only Indian on it, with Devdas as the film to see. By Thursday the ranking was everywhere: NDTV, The Indian Express, The Hollywood Reporter India, ETV Bharat, the Free Press Journal, IMDb's news page and Bangladesh's Daily Observer all carried it. Several led on who he had finished ahead of, Zendaya and Joaquin Phoenix among them; one Indian site, Abstract AF!, argued instead that the list forgets most of the world. Our searches found 12 articles on the list in a single day."
+    },
+    {
+     "p": "Then, at 7:01 PM IST on Thursday, Shah Rukh Khan posted a film of his own on X: 'All you need is belief. Golden Goose and D'YAVOL X.'"
+    },
+    {
+     "h": "The film"
+    },
+    {
+     "p": "The 1 minute 33 second film was published on Red Chillies Entertainment's YouTube channel and on D'YAVOL X's own. Its credits list Shah Rukh Khan as the star, Gauri Khan as producer, Aryan Khan and Nikunj Agarwal for the concept, and Ankit Dahiya as director, with music by Ujwal Gupta, who also scored D'YAVOL X's 2023 film. The collection goes on sale on 24 November in Golden Goose stores in India and on goldengoose.com."
+    },
+    {
+     "p": "It tells a fan's story. A boy in a checked shirt is pushed back in a crowd outside a single-screen cinema, Apsara Talkies, and reaches the ticket counter with a ticket in hand. Cut with him: hands pressed against the window of a star's car, a sneaker marked D'YAVOL and, on the heel, 'FOREVER KING', and Shah Rukh Khan walking a red carpet to a palace cinema whose marquee reads 'NOW SHOWING KING THU 24TH DEC 2026'. He waits in the lobby in front of KING posters and turns to wave to a sea of phones. The voice-over ends:"
+    },
+    {
+     "quote": {
+      "q": "You don't need a crown to be a king. All you need is belief.",
+      "by": "Golden Goose x D'YAVOL X, 19 Nov 2026"
+     }
+    },
+    {
+     "h": "How fans and the market answered"
+    },
+    {
+     "stats": [
+      [
+       "@iamsrk's post on X",
+       "521,127 views",
+       "8,644 likes, 2,100 reposts, 527 replies; read 20 Nov 07:06 IST"
+      ],
+      [
+       "The joint Instagram reel",
+       "355K likes",
+       "4,621 comments, as shown; read 20 Nov 07:12 IST"
+      ],
+      [
+       "Red Chillies' YouTube upload",
+       "36,103 views",
+       "2,102 likes, 169 comments; read 20 Nov 07:08 IST"
+      ],
+      [
+       "D'YAVOL X's YouTube upload",
+       "13,755 views",
+       "320 likes; read 20 Nov 07:08 IST"
+      ],
+      [
+       "Fan posts on X about the film",
+       "22",
+       "8,933 views, in our search of 19 Nov"
+      ],
+      [
+       "Press on the collaboration",
+       "1",
+       "Hypebeast, 19 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "Fans read the film as the first promotion for KING. The most-viewed fan reaction on X, with 15,968 views by Friday morning, pointed out that the release date is written into the frame; another, with 14,649, posted the shot of him beside the KING poster under the words 'Promotion starts'. Others noted that he had already worn D'YAVOL X in the Tu Mil Jaaye video. Hypebeast described the capsule as Italian craftsmanship meeting workwear and reworked Super-Star sneakers."
+    },
+    {
+     "h": "The same week, TIME"
+    },
+    {
+     "p": "The film's co-creator had his own headline on Thursday. TIME named Aryan Khan to its first TIME100 Next India list; the full story is in today's paper."
+    },
+    {
+     "links": [
+      [
+       "Watch · Golden Goose x D'YAVOL X (Red Chillies Entertainment)",
+       "https://www.youtube.com/watch?v=Bhz096dvyTA"
+      ],
+      [
+       "Shah Rukh Khan on X",
+       "https://x.com/iamsrk/status/2123408863735255081"
+      ],
+      [
+       "Variety · The 100 Greatest Movie Stars of All Time",
+       "https://variety.com/lists/greatest-movie-stars-of-all-time/"
+      ],
+      [
+       "Hypebeast · the collaboration",
+       "https://hypebeast.com/2026/11/golden-goose-shah-rukh-khans-dyavol-x-debut-collaboration-release-info"
+      ],
+      [
+       "SRK DAILY, 19 Nov · Variety's No. 92",
+       "/srk-daily/?p=2026-11-19-variety-92"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#ShahRukhKhan",
+    "#GoldenGoose",
+    "#DYAVOLX",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-20-aryan-time100",
+   "n": 2,
+   "date": "2026-11-20",
+   "time": "09:00 IST",
+   "kicker": "TIME100 Next India",
+   "title": "TIME names Aryan Khan to its first TIME100 Next India list",
+   "deck": "TIME's first TIME100 Next India, published on 19 November, includes Aryan Khan among the directors changing Indian cinema, with a tribute by Vishal Bhardwaj. Asked about comparisons with his father, he told TIME: 'He's a beast.'",
+   "img": "https://static.time.com/v3/assets/bltea6093859af6183b/blt0b3b60b7c0a09b15/6af4cd6abd3727efdc7b7721/time100next-india-innovators-aryan-khan.jpg?branch=production&width=1800&quality=75&auto=webp&crop=16:9%2Coffset-x0.00%2Coffset-y46.24",
+   "img_url": "https://time.com/collection/time100-next-india/2026/aryan-khan/",
+   "img_alt": "Aryan Khan, photographed for TIME",
+   "img_credit": "Photograph by Avani Rai for TIME. Tap the picture to read TIME's page.",
+   "blocks": [
+    {
+     "p": "TIME published its first TIME100 Next India on Thursday, and Aryan Khan, 29, is on it. His entry is written by the filmmaker and composer Vishal Bhardwaj, who recalls meeting him at private screenings in Mumbai and expecting the son of a legend to carry some entitlement; instead, he writes, he found a gentle, humble young man. He calls Aryan's creative voice very different from his father's but equally instinctive."
+    },
+    {
+     "p": "A companion piece by Niha Masih, 'Indian Cinema Is Bigger Than Ever. Meet the Directors Raising the Bar', profiles him alongside Payal Kapadia and Theja Rio. TIME notes that he rarely gives interviews and that he sat down with the magazine at Mehboob Studio in Mumbai, where the cover was shot. He is writing a second season of The Ba***ds of Bollywood, the Netflix series he created and directed in 2025, and another project."
+    },
+    {
+     "p": "On being compared with Shah Rukh Khan, he told TIME it was a compliment to be compared to 'the number one guy', and added: 'He's a beast.' Gauri Khan celebrated the news on social media, NDTV reported."
+    },
+    {
+     "stats": [
+      [
+       "List",
+       "TIME100 Next India",
+       "first edition, 19 Nov 2026"
+      ],
+      [
+       "Tribute by",
+       "Vishal Bhardwaj",
+       "filmmaker and composer"
+      ],
+      [
+       "Also on the list",
+       "Alia Bhatt, Diljit Dosanjh, Payal Kapadia, Theja Rio",
+       "among others, as reported"
+      ],
+      [
+       "Next for Aryan Khan",
+       "Season 2",
+       "The Ba***ds of Bollywood, being written"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "TIME · Aryan Khan, TIME100 Next India 2026",
+       "https://time.com/collection/time100-next-india/2026/aryan-khan/"
+      ],
+      [
+       "TIME · Meet the Directors Raising the Bar",
+       "https://time.com/article/2026/11/19/indian-film-time100-next-india-profile/"
+      ],
+      [
+       "ThePrint · Aryan Khan calls SRK a 'beast'",
+       "https://theprint.in/entertainment/aryan-khan-calls-srk-a-beast-features-in-time100-next-india-list-with-payal-kapadia-theja-rio/3102823/"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#AryanKhan",
+    "#TIME100Next",
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-20-king-buzz",
+   "n": 3,
+   "date": "2026-11-20",
+   "time": "09:00 IST",
+   "kicker": "Analytics · 20 Nov 2026",
+   "title": "Tu Mil Jaaye passes 91 million views, 2.6 million ahead of the Doomsday trailer",
+   "deck": "KING's first song added 1,986,635 YouTube views in 24 hours to reach 91,226,429 at 07:03 IST on Friday; the Avengers: Doomsday trailer added 398,960. KING's three official videos now lead Ramayana's seven by 26.2 million.",
+   "img": "https://pbs.twimg.com/media/HXc-mlyasAAa_q5?format=jpg&name=large",
+   "img_url": "https://x.com/Fidelis_apb/status/2123234641562030314",
+   "img_alt": "A fan's AI poster of KING in the style of a Chinese film poster",
+   "img_credit": "Fan-made AI poster by @Fidelis_apb on X, 19 Nov 2026. Tap the picture to see the post.",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "91,226,429",
+       "T-Series, read 20 Nov 07:03 IST"
+      ],
+      [
+       "Likes",
+       "813,105",
+       ""
+      ],
+      [
+       "Gained since Thursday",
+       "1,986,635",
+       "89,239,794 on 19 Nov 07:04 IST"
+      ],
+      [
+       "Ahead of the Doomsday trailer",
+       "2,631,031",
+       "1,043,356 on 19 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "88,595,398",
+       "+398,960 in 24 hours"
+      ],
+      [
+       "KING's two teasers",
+       "86,053,212",
+       "Title Reveal 52,889,802 + Date Announcement 33,163,410"
+      ],
+      [
+       "Doomsday ahead of the teasers by",
+       "2,542,186",
+       "2,214,926 on 19 Nov"
+      ],
+      [
+       "KING's three videos",
+       "177,279,641",
+       "+2,058,335 in 24 hours"
+      ]
+     ]
+    },
+    {
+     "h": "RAMAYANA to KING, day 16"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "177,279,641",
+       "read 20 Nov 07:03 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "151,124,581",
+       "+550,744 in 24 hours"
+      ],
+      [
+       "KING ahead by",
+       "26,155,060",
+       "24,647,469 on 19 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "53,100,338",
+       "+347,256 in 24 hours"
+      ],
+      [
+       "7 official videos",
+       "148,121,422",
+       "KING's three lead by 29,158,219"
+      ]
+     ]
+    },
+    {
+     "h": "Instagram"
+    },
+    {
+     "stats": [
+      [
+       "@iamsrk followers",
+       "48,543,416",
+       "as shown on the profile, 20 Nov 07:05 IST"
+      ],
+      [
+       "#srk posts",
+       "7.7M",
+       "Instagram search, as displayed, 20 Nov 07:07 IST"
+      ],
+      [
+       "#srkking posts",
+       "135K",
+       "Instagram search, as displayed, 20 Nov 07:08 IST"
+      ]
+     ]
+    },
+    {
+     "p": "From today KING Buzz counts hashtag posts from Instagram's own search box, rounded as Instagram shows them. The Display Purposes counter used until now stopped updating in May 2025."
+    },
+    {
+     "h": "FANVERSE and KING data"
+    },
+    {
+     "stats": [
+      [
+       "New YouTube videos about KING, 19 Nov",
+       "32",
+       "updates, reactions, covers, dance and fan-made trailers (not official)"
+      ],
+      [
+       "X posts read, 19 Nov",
+       "46",
+       "64,022 views; @iamsrk, @RedChilliesEnt and @Variety not counted"
+      ],
+      [
+       "Articles found, 19 Nov",
+       "27",
+       "Variety's list 12, TIME100 Next India 9"
+      ],
+      [
+       "Fan-made AI works logged",
+       "86",
+       "5,631,859 views, Fan Universe"
+      ]
+     ]
+    },
+    {
+     "p": "On the site this week SRK DAILY was the most-read page, ahead of the home page."
+    },
+    {
+     "links": [
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · 20 Nov",
+       "/king-intelligence/daily.html?date=2026-11-20"
+      ],
+      [
+       "Fan Universe",
+       "/fan-made-ai-universe/"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube, X and Instagram public counters, read 20 Nov 2026 07:03-07:12 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#AvengersDoomsday",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-20-ramayana-day-15",
+   "n": 4,
+   "date": "2026-11-20",
+   "time": "09:00 IST",
+   "kicker": "Box office · Ramayana",
+   "title": "Ramayana closes its second week at ₹863.75 crore net in India",
+   "deck": "Ramayana made ₹19.35 crore net in India on its fifteenth day, closing a second week of ₹299.15 crore, as reported by Sacnilk. Worldwide it stands at ₹1,547.15 crore, and its Hindi version has passed ₹650 crore net.",
+   "img": "https://i.ytimg.com/vi/74nF-FWAS6M/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=74nF-FWAS6M",
+   "img_alt": "Ramayana · Official Trailer (English)",
+   "img_credit": "Ramayana · Official Trailer (English), Sony Pictures Entertainment on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana collected ₹19.35 crore net across India on Thursday, 19 November, down 16.6% from Wednesday, according to Sacnilk's figures updated at 10:10 PM IST. Its second week, days 9 to 15, came to ₹299.15 crore net, 47.0% below the first."
+    },
+    {
+     "stats": [
+      [
+       "Day 15 · Thu 19 Nov",
+       "₹19.35 crore",
+       "India net, all languages; Hindi ₹14.00 crore"
+      ],
+      [
+       "Week 2 · days 9-15",
+       "₹299.15 crore",
+       "India net, down 47.0% on week 1"
+      ],
+      [
+       "15 days, India net",
+       "₹863.75 crore",
+       ""
+      ],
+      [
+       "15 days, India gross",
+       "₹1,032.15 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹1,547.15 crore",
+       "overseas ₹515.00 crore"
+      ],
+      [
+       "Footfalls so far",
+       "3,48,95,085",
+       "as listed by Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "The Hindi version alone has now made ₹657.50 crore net. Sacnilk wrote on Thursday afternoon that only three films had reached ₹650 crore net in Hindi before it: Pushpa 2 and the two Dhurandhar films. Thursday's average occupancy was 16.9% across 21,437 shows; the Malayalam version ran fullest, at 39.1%."
+    },
+    {
+     "p": "KING opens on 24 December, in 34 days. Its advance booking has not opened."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 15",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_15"
+      ],
+      [
+       "RAMAYANA to KING · the report",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#BoxOffice",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-19-variety-92",
    "n": 1,
    "date": "2026-11-19",
@@ -5942,44 +6394,38 @@
   }
  ],
  "poll": {
-  "id": "variety-2026-11-19",
-  "q": "Variety's critics put Shah Rukh Khan at No. 92 of the 100 greatest movie stars. Your rank?",
+  "id": "goldengoose-2026-11-20",
+  "q": "Shah Rukh Khan's Golden Goose film ends on a KING marquee. Your verdict?",
   "o": [
-   "No. 1. Obviously.",
-   "Top 10",
-   "No. 92 is fair"
+   "The best KING promo yet",
+   "A fine ad. Now the trailer, please",
+   "I'm buying the sneakers"
   ]
  },
  "beat": [
   {
-   "t": "Variety: No. 92",
-   "d": "Shah Rukh Khan, the only Indian on Variety's 100 greatest movie stars.",
-   "img": "/assets/characters/053.webp",
-   "url": "?p=2026-11-19-variety-92"
+   "t": "FOREVER KING",
+   "d": "The Golden Goose x D'YAVOL X film ends on a KING marquee.",
+   "img": "/assets/srk-daily/2026-11-20-golden-goose.jpg",
+   "url": "?p=2026-11-20-golden-goose-king"
   },
   {
-   "t": "Tu Mil Jaaye passes Doomsday",
-   "d": "89.2 million to 88.2 million on YouTube, 19 Nov 07:04 IST.",
-   "img": "/assets/srk-daily/2026-11-19-rce-tmj-clip-wide.jpg",
-   "url": "?p=2026-11-19-tmj-passes-doomsday"
+   "t": "Aryan Khan in TIME",
+   "d": "TIME100 Next India, with a tribute by Vishal Bhardwaj.",
+   "img": "https://static.time.com/v3/assets/bltea6093859af6183b/blt0b3b60b7c0a09b15/6af4cd6abd3727efdc7b7721/time100next-india-innovators-aryan-khan.jpg?branch=production&width=1800&quality=75&auto=webp&crop=16:9%2Coffset-x0.00%2Coffset-y46.24",
+   "url": "?p=2026-11-20-aryan-time100"
   },
   {
-   "t": "KING on the F1 track",
-   "d": "Three days on the circuit near Delhi; trailer expected after 23 Nov (Pinkvilla).",
-   "img": "/assets/king-news/2026-11-17-rce-there-is.jpg",
-   "url": "?p=2026-11-19-f1-final-leg"
+   "t": "Tu Mil Jaaye: 91.2M",
+   "d": "2.6 million ahead of the Doomsday trailer, 20 Nov 07:03 IST.",
+   "img": "https://pbs.twimg.com/media/HXc-mlyasAAa_q5?format=jpg&name=large",
+   "url": "?p=2026-11-20-king-buzz"
   },
   {
-   "t": "Ramayana: ₹1,009 crore",
-   "d": "India gross in 14 days; ₹1,519.05 crore worldwide (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/YleIZgpTF6w/mqdefault.jpg",
-   "url": "?p=2026-11-19-ramayana-day-14"
-  },
-  {
-   "t": "Daddy Cool",
-   "d": "Kareena Kapoor Khan has shot a special song with SRK for KING, Pinkvilla reports.",
-   "img": "/assets/characters/019.webp",
-   "url": "?p=2026-11-19-f1-final-leg"
+   "t": "Ramayana: ₹1,547 crore",
+   "d": "Worldwide in 15 days; Hindi past ₹650 crore net (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/74nF-FWAS6M/maxresdefault.jpg",
+   "url": "?p=2026-11-20-ramayana-day-15"
   }
  ],
  "fanverse": {
