@@ -1,0 +1,115 @@
+{
+ "date": "2026-11-20",
+ "record_id": "KING-2026-11-20",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 52889802,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-20 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33163410,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-20 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 88595398,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-20 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 91226429,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-20 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_instagram_posts",
+   "value": 7700000,
+   "unit": "Instagram #srk posts",
+   "source": "Instagram search box, read 07:07 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srkking_instagram_posts",
+   "value": 135000,
+   "unit": "Instagram #srkking posts",
+   "source": "Instagram search box, read 07:08 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 86,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-19 (86 works)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 5631859,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-19 (YouTube views re-read 19 Nov)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48543416,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,543,416 as shown), read 2026-11-20 07:05 IST in the owner's signed-in browser",
+   "method": "count shown in the profile follower tooltip",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 20 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Golden Goose x D'YAVOL X film (Red Chillies on YouTube, 19 Nov 21:12 IST, 1:33): starring Shah Rukh Khan, produced by Gauri Khan, conceptualised by Aryan Khan and Nikunj Agarwal, directed by Ankit Dahiya; ends on a cinema marquee 'NOW SHOWING KING THU 24TH DEC 2026'. Read 20 Nov 07:08 IST: 36,103 views, 2,102 likes, 169 comments; the D'YAVOL X channel's upload 13,755 views. @iamsrk's X post (19 Nov 19:01 IST) 521,127 views, 8,644 likes; the joint Instagram reel 355K likes, 4,621 comments. Collection drops 24 Nov in Golden Goose stores in India and goldengoose.com",
+  "TIME100 Next India (19 Nov): Aryan Khan named, with a tribute by Vishal Bhardwaj and an interview by Niha Masih ('He's a beast', on his father)",
+  "Variety's 100 Greatest Movie Stars (18 Nov): SRK No. 92, the only Indian; picked up by NDTV, Indian Express, The Hollywood Reporter India, ETV Bharat, Free Press Journal, IMDb and others on 19 Nov",
+  "Tu Mil Jaaye 91,226,429 YouTube views at 07:03 IST (+1,986,635 in 24 h; 813,105 likes), 2,631,031 ahead of the Avengers: Doomsday trailer (88,595,398, +398,960)",
+  "Doomsday trailer ahead of KING's two teasers (86,053,212) by 2,542,186 (2,214,926 on 19 Nov)",
+  "RAMAYANA to KING at 07:04 IST: KING's 3 official videos 177,279,641 vs Ramayana's 7 at 151,124,581 (KING +26,155,060; was +24,647,469)",
+  "Ramayana day 15 (Thu 19 Nov): ₹19.35 crore India net, down 16.6%; 15 days ₹863.75 crore net, ₹1,032.15 crore India gross, ₹1,547.15 crore worldwide; Hindi ₹657.50 crore net (Sacnilk, updated 19 Nov 10:10 PM IST)",
+  "Maatrubhumi 7 official videos 148,121,422; trailer 53,100,338 (+347,256)",
+  "Instagram search (first daily reading): #srk 7.7M posts, #srkking 135K posts",
+  "@iamsrk Instagram 48,543,416 followers at 07:05 IST (5,811 fewer than on 19 Nov)"
+ ],
+ "notes": [
+  "YouTube read by Claude from the public watch pages at 07:03-07:04 IST; Instagram in the owner's session at 07:05-07:08 IST.",
+  "Display Purposes retired (19 Nov); Instagram search counts filed instead.",
+  "Box office as reported by Sacnilk.",
+  "Posts are not people."
+ ]
+}
