@@ -2,6 +2,99 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-22-global-peace-honours",
+   "n": 1,
+   "date": "2026-11-22",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 18 · Gateway of India",
+   "title": "\"Peace is a decision\": Shah Rukh Khan at the Global Peace Honours",
+   "deck": "At the Gateway of India on Friday night, Shah Rukh Khan said we spend our lives fighting, for our dreams, our identity, our own people, even a parking spot, but peace is the one thing we never need to fight for. He told the story of a question from AbRam, and ended with a verse about bowing your head with honour.",
+   "img": "https://i.ytimg.com/vi/_1dLHkkvdYQ/hqdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=_1dLHkkvdYQ",
+   "img_alt": "Shah Rukh Khan speaking at the Global Peace Honours 2026, Gateway of India",
+   "img_credit": "'Shah Rukh Khan's most important message at the Global Peace Honours 2026', AHRAR on YouTube, 21 Nov 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "He arrived late. \"Sorry, I was a little late,\" he told the hosts, Chief Minister Devendra Fadnavis, Eknath Shinde and Amruta Fadnavis, whose Divyaj Foundation runs the Global Peace Honours. \"But traffic ka kuch karenge thode din ke andar.\" (We'll do something about the traffic in a few days.)"
+    },
+    {
+     "p": "Then he began:"
+    },
+    {
+     "quote": {
+      "q": "\"Hum log zindagi mein hamesha bahut saari cheezon ke liye ladte hi rehte hain. Kabhi hum apne sapnon ke liye ladte hain. Kabhi hum apni pehchaan ke liye ladte hain. Apne apnon ke liye ladte hain. Kai baar toh parking spot se lekar apni chhoti si thought ke liye bhi ladaai karni padti hai.\" (We spend our lives fighting for so many things: sometimes for our dreams, sometimes for our identity, for our own people. Sometimes we have to fight for everything from a parking spot to a small thought of our own.)",
+      "by": "Shah Rukh Khan, Global Peace Honours, Gateway of India, 21 Nov 2026"
+     }
+    },
+    {
+     "p": "\"Lekin in sab ke beech mein ek cheez aisi hai jiske liye ladne ki qatai zaroorat nahin hai,\" he went on. \"Aur woh hai shaanti, peace, aman.\" (But among all this there is one thing we never need to fight for: peace.) Peace, he said, begins in a very small place, \"humare andar se, humare apne dil se\" (within us, in our own hearts)."
+    },
+    {
+     "p": "He said he is given love in every country he visits, \"lekin har us kone ke andar mere desh ko usse bhi zyaada izzat milti hai\" (but in every corner, my country is given even more respect)."
+    },
+    {
+     "p": "Then came the line the crowd was waiting for. \"Bade bade deshon mein chhoti chhoti baatein hoti rehti hain,\" he said, and repeated it with a joke about his voice getting heavier with age, \"Senorita\". Then he turned it around:"
+    },
+    {
+     "quote": {
+      "q": "\"Lekin aaj main kahunga ki bade bade deshon mein, bade bade faislon ke beech, insaaniyat ki chhoti si baat ko kabhi bhi chhota mat samjhiyega. Kyunki yahi chhoti baat itihaas badal sakti hai.\" (But today I'll say: in big countries, amid big decisions, never think the small matter of humanity is small. That small thing can change history.)",
+      "by": "Shah Rukh Khan, Global Peace Honours, 21 Nov 2026"
+     }
+    },
+    {
+     "p": "He told the audience his son had asked him how hatred can be turned into love. \"Bade waale nahin,\" he added. \"Woh toh poochhta nahin, woh sirf batata hai. Chhote waale ne poochha.\" (Not the older one. He doesn't ask, he only tells. The younger one asked.) His answer: if we choose dialogue over violence and trust over fear, and live together, \"toh jeet hamesha mohabbat ki hogi\" (love will always win)."
+    },
+    {
+     "p": "Of the people being honoured, he said: \"Shaanti sirf ek khoobsurat khayaal nahin hai. Shaanti ek faisla hai, ek zimmedaari hai, aur har din nibhaaya jaane waala ek vaada hai.\" (Peace is not just a beautiful idea. Peace is a decision, a responsibility, a promise kept every day.) Then, in English: \"Don't forget the power of a common man. And we all are like that, and we all have to come together.\""
+    },
+    {
+     "p": "He closed with a verse:"
+    },
+    {
+     "quote": {
+      "q": "Humein har baat se sehmati nahin dikhaani, / par humein samajhni hai har shakhs ki kahaani. / Hum khoob karein naadaani, / par kisi ko na humse pareshaani. / Hum sar kataane se darte nahin, / par izzat se kabhi-kabhaar sar jhuka bhi lete hain, / kyunki humara dil hai Hindustani. (We needn't agree with everything, but we must understand every person's story. We may be as foolish as we like, but let no one be troubled by us. We are not afraid to lose our heads, but now and then, with honour, we bow them too, because our heart is Hindustani.)",
+      "by": "Shah Rukh Khan, Global Peace Honours, 21 Nov 2026"
+     }
+    },
+    {
+     "p": "Earlier in the evening he thanked Sukhwinder Singh for the sports anthem and Shiamak Davar's troupe, and taught his open-arms pose to Vikrant Massey and Boman Irani on stage."
+    },
+    {
+     "h": "Sources"
+    },
+    {
+     "links": [
+      [
+       "YouTube · SRK at the Global Peace Honours (video posted 21 Nov 2026)",
+       "https://www.youtube.com/watch?v=_1dLHkkvdYQ"
+      ],
+      [
+       "YouTube · video posted 21 Nov 2026",
+       "https://www.youtube.com/watch?v=ArGYg9LBJ2o"
+      ],
+      [
+       "YouTube · video posted 21 Nov 2026",
+       "https://www.youtube.com/watch?v=nMdygcTTde0"
+      ],
+      [
+       "YouTube · video posted 21 Nov 2026",
+       "https://www.youtube.com/watch?v=cMdCkWPpQCU"
+      ],
+      [
+       "ANI via Asianet Newsable · Shah Rukh Khan honours terror victims at Global Peace Honours 2026",
+       "https://newsable.asianetnews.com/entertainment/shah-rukh-khan-honors-terror-victims-at-global-peace-honours-2026-articleshow-nvgqetv"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#ShahRukhKhan",
+    "#GlobalPeaceHonours",
+    "#GatewayOfIndia",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-21-sharad-kapoor",
    "n": 1,
    "date": "2026-11-21",
