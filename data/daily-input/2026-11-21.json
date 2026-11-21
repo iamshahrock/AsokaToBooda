@@ -1,0 +1,115 @@
+{
+ "date": "2026-11-21",
+ "record_id": "KING-2026-11-21",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 52952152,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-21 07:16 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33171734,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-21 07:16 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 88959240,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-21 07:16 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 93211019,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-21 07:16 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_instagram_posts",
+   "value": 7700000,
+   "unit": "Instagram #srk posts",
+   "source": "Instagram search box, read 07:09 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srkking_instagram_posts",
+   "value": 135000,
+   "unit": "Instagram #srkking posts",
+   "source": "Instagram search box, read 07:10 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 86,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-20 (86 works)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 5637722,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-20 (YouTube views re-read 20 Nov)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48536333,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,536,333 as shown), read 2026-11-21 07:06 IST in the owner's signed-in browser",
+   "method": "count shown in the profile follower tooltip",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 21 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "Sharad Kapoor, Shah Rukh Khan's co-star in Josh (2000), told Navbharat Times that Shah Rukh Khan called him after his video appeal for work went viral and offered help, and that he will meet Aryan Khan soon (reported 20 Nov by Hindustan Times, The Indian Express, Times of India, Filmfare and others)",
+  "Tu Mil Jaaye 93,211,019 YouTube views at 07:16 IST (+1,984,590 in 24 h; 819,860 likes), 4,251,779 ahead of the Avengers: Doomsday trailer (88,959,240, +363,842)",
+  "Doomsday trailer ahead of KING's two teasers (86,123,886) by 2,835,354 (2,542,186 on 20 Nov)",
+  "RAMAYANA to KING at 07:16 IST: KING's 3 official videos 179,334,905 vs Ramayana's 7 at 151,638,343 (KING +27,696,562; was +26,155,060)",
+  "Ramayana day 16 (Fri 20 Nov): ₹16.30 crore India net, down 15.8%; 16 days ₹880.05 crore net, ₹1,051.60 crore India gross, ₹1,574.60 crore worldwide; Hindi ₹669.50 crore net (Sacnilk, updated 20 Nov 10:16 PM IST)",
+  "Maatrubhumi released a sixth song, Madirapan (Salman Khan Films Music, 19 Nov 17:38 IST): 10,892,986 views by 07:16 IST on 21 Nov; Maatrubhumi's 8 official videos 159,578,699, KING's three lead by 19,756,206",
+  "Golden Goose x D'YAVOL X film: Red Chillies upload 138,769 views, 4,416 likes at 07:16 IST (36,103 a day earlier); @iamsrk's X post 840,843 views, 11,232 likes",
+  "Gauri Khan's showroom on Juhu Tara Road, Mumbai, plays the KING promo in a loop under two large Shah Rukh Khan billboards (Rediff, 20 Nov, photograph by Hitesh Harisinghani)",
+  "Tu Mil Jaaye choreographers Piyush Bhagat and Shazia Samji in an interview with Faridoon Shahryar (YouTube, 19,218 views on 20 Nov): Shah Rukh Khan the hardest-working person on set, as Faridoon Shahryar quoted them on X",
+  "Instagram search: #srk 7.7M posts, #srkking 135K posts (unchanged)",
+  "@iamsrk Instagram 48,536,333 followers at 07:06 IST (7,083 fewer than on 20 Nov)"
+ ],
+ "notes": [
+  "YouTube read by Claude from the public watch pages at 07:16 IST; Instagram in the owner's session at 07:06-07:10 IST.",
+  "Box office as reported by Sacnilk.",
+  "Posts are not people."
+ ]
+}
