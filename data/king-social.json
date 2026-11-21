@@ -54,7 +54,8 @@
   "(\"Shah Rukh\" OR SRK) (Mannat OR Dubai OR Danube) since:2026-11-12 -filter:replies",
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-13 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-14 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
-  "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-15 until:2026-11-16 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)"
+  "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-15 until:2026-11-16 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
+  "(#KING OR KING OR \"Tu Mil Jaaye\" OR dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-20 until:2026-11-21 -from:iamsrk -from:RedChilliesEnt (top)"
  ],
  "days": {
   "2026-10-27": {
@@ -8703,6 +8704,240 @@
     }
    ],
    "note": "Two X searches read 20 Nov 2026 ~07:30 IST in the owner's Chrome, Top tab: (dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-19 until:2026-11-20 (23 posts loaded) and (#KING OR \"KING\") (srk OR \"shah rukh\") same dates (25 loaded); 46 posted on 19 Nov IST by accounts other than @iamsrk, @RedChilliesEnt and @Variety. @iamsrk's own Golden Goose post (521,127 views) is not counted here; it is in data/king-posts.json. Stance is our reading of each post.",
+   "videos": []
+  },
+  "2026-11-20": {
+   "totals": {
+    "posts_read": 53,
+    "views": 498792,
+    "likes": 5932,
+    "reposts": 994,
+    "replies": 92
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@mythicbxrnn",
+     "url": "https://x.com/mythicbxrnn/status/2123492419153154385",
+     "posted_at": "2026-11-20T00:33:00+05:30",
+     "views": 334100,
+     "likes": 1888,
+     "reposts": 302,
+     "replies": 16,
+     "text": "clip of Sharad Kapoor's interview: asked who in Bollywood genuinely helped him",
+     "stance": "positive",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@AlwaysBollywood",
+     "url": "https://x.com/AlwaysBollywood/status/2123632924990026203",
+     "posted_at": "2026-11-20T09:51:00+05:30",
+     "views": 54887,
+     "likes": 412,
+     "reposts": 64,
+     "replies": 38,
+     "text": "SRK to attend the Global Peace Honours (Divyaj Foundation)",
+     "stance": "neutral",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKAarush",
+     "url": "https://x.com/SRKAarush/status/2123825558618567103",
+     "posted_at": "2026-11-20T22:37:00+05:30",
+     "views": 15924,
+     "likes": 162,
+     "reposts": 44,
+     "replies": 0,
+     "text": "fan comparison of SRK and Salman Khan in a public moment",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@ImshikharNegi",
+     "url": "https://x.com/ImshikharNegi/status/2123728945719967856",
+     "posted_at": "2026-11-20T16:13:00+05:30",
+     "views": 13061,
+     "likes": 493,
+     "reposts": 64,
+     "replies": 3,
+     "text": "Anirudh's music on SRK: wishes for a Jailer-type SRK film",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@SrkianNidhiii",
+     "url": "https://x.com/SrkianNidhiii/status/2123723641204646397",
+     "posted_at": "2026-11-20T15:52:00+05:30",
+     "views": 11075,
+     "likes": 397,
+     "reposts": 82,
+     "replies": 1,
+     "text": "SRK spotted with his family at Noida Airport",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@iFaridoon",
+     "url": "https://x.com/iFaridoon/status/2123697240640217558",
+     "posted_at": "2026-11-20T14:07:00+05:30",
+     "views": 9757,
+     "likes": 266,
+     "reposts": 32,
+     "replies": 0,
+     "text": "choreographers Piyush Bhagat and Shazia: SRK the most hard-working on the Tu Mil Jaaye set",
+     "stance": "positive",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@iamssrrkkk",
+     "url": "https://x.com/iamssrrkkk/status/2123768490876354856",
+     "posted_at": "2026-11-20T18:50:00+05:30",
+     "views": 4978,
+     "likes": 142,
+     "reposts": 18,
+     "replies": 6,
+     "text": "fan account says the next KING asset is coming sooner than expected",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@iamssrrkkk",
+     "url": "https://x.com/iamssrrkkk/status/2123681416470737219",
+     "posted_at": "2026-11-20T13:04:00+05:30",
+     "views": 4777,
+     "likes": 26,
+     "reposts": 4,
+     "replies": 2,
+     "text": "fan account promises a 'KING update' later in the day",
+     "stance": "neutral",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@iSRKzObsessed_",
+     "url": "https://x.com/iSRKzObsessed_/status/2123743614820143407",
+     "posted_at": "2026-11-20T17:11:00+05:30",
+     "views": 4656,
+     "likes": 61,
+     "reposts": 33,
+     "replies": 2,
+     "text": "asks fans for their one favourite SRK romantic song",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@filmydunniyaaa",
+     "url": "https://x.com/filmydunniyaaa/status/2123742459419090974",
+     "posted_at": "2026-11-20T17:07:00+05:30",
+     "views": 4445,
+     "likes": 79,
+     "reposts": 9,
+     "replies": 2,
+     "text": "'Avengers: Doomsday vs King, really?'",
+     "stance": "neutral",
+     "kind": "comparison"
+    },
+    {
+     "platform": "X",
+     "account": "@KnightClub_KKR",
+     "url": "https://x.com/KnightClub_KKR/status/2123660061855957031",
+     "posted_at": "2026-11-20T11:39:00+05:30",
+     "views": 4182,
+     "likes": 407,
+     "reposts": 50,
+     "replies": 2,
+     "text": "KKR: SRK and Finn Allen side by side",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@Psjai740",
+     "url": "https://x.com/Psjai740/status/2123692551911653469",
+     "posted_at": "2026-11-20T13:48:00+05:30",
+     "views": 4050,
+     "likes": 221,
+     "reposts": 41,
+     "replies": 3,
+     "text": "fan-made KING trailer video (says it is not official)",
+     "stance": "positive",
+     "kind": "fan edit"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2123784724800000469",
+     "posted_at": "2026-11-20T19:55:00+05:30",
+     "views": 3319,
+     "likes": 164,
+     "reposts": 36,
+     "replies": 1,
+     "text": "on the Golden Goose x D'YAVOL X collaboration",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@Srk_bangalore",
+     "url": "https://x.com/Srk_bangalore/status/2123701459040800916",
+     "posted_at": "2026-11-20T14:24:00+05:30",
+     "views": 2613,
+     "likes": 90,
+     "reposts": 25,
+     "replies": 2,
+     "text": "Sharad Kapoor to meet Aryan Khan after SRK's call",
+     "stance": "positive",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@MdImtiyajtxvg",
+     "url": "https://x.com/MdImtiyajtxvg/status/2123685185333961139",
+     "posted_at": "2026-11-20T13:19:00+05:30",
+     "views": 2593,
+     "likes": 218,
+     "reposts": 23,
+     "replies": 0,
+     "text": "'KING official teaser coming soon' (fan claim, no source)",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@KhanSaabVerse",
+     "url": "https://x.com/KhanSaabVerse/status/2123624580376072255",
+     "posted_at": "2026-11-20T09:18:00+05:30",
+     "views": 2535,
+     "likes": 173,
+     "reposts": 28,
+     "replies": 2,
+     "text": "fan account names 23/24 Nov for a new KING asset (no source)",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@SrkXUtkarsh",
+     "url": "https://x.com/SrkXUtkarsh/status/2123738044188729784",
+     "posted_at": "2026-11-20T16:49:00+05:30",
+     "views": 1544,
+     "likes": 97,
+     "reposts": 27,
+     "replies": 3,
+     "text": "SRK's upcoming film line-up as fans list it",
+     "stance": "positive",
+     "kind": "speculation"
+    }
+   ],
+   "note": "One X search read 21 Nov 2026 ~07:40 IST in the owner's Chrome, Top tab: (#KING OR KING OR \"Tu Mil Jaaye\" OR dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-20 until:2026-11-21 -from:iamsrk -from:RedChilliesEnt (60 loaded); 53 posted on 20 Nov IST by accounts other than @iamsrk and @RedChilliesEnt. Stance is our reading of each post. Fan claims about new KING assets have no source and are labelled speculation.",
    "videos": []
   }
  }

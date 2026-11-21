@@ -2,6 +2,378 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-21-sharad-kapoor",
+   "n": 1,
+   "date": "2026-11-21",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 17 · Josh, 26 years on",
+   "title": "Shah Rukh Khan calls his Josh co-star Sharad Kapoor after his appeal for work",
+   "deck": "Sharad Kapoor, who played Prakash, the rival gang leader to Shah Rukh Khan's Max in Josh (2000), says the star phoned him after his video asking the industry for work went viral, and told him he was ready to help. Kapoor says he will meet Aryan Khan soon.",
+   "img": "/assets/characters/045.webp",
+   "img_url": "/srk-characters/#045",
+   "img_alt": "Shah Rukh Khan as Max Dias in Josh (2000)",
+   "img_credit": "Shah Rukh Khan as Max Dias in Josh (2000). Character Study on this site; tap the picture to open it.",
+   "blocks": [
+    {
+     "p": "Last week a video of the actor Sharad Kapoor parting with his four pet dogs spread across social media and raised questions about his health. He followed it with a video of his own, saying he had been fighting depression and had injured his leg, and asking senior actors, filmmakers and the cine artistes' association CINTAA to help him find work. 'Money is not the issue,' he said in it. 'The only issue is I am just looking forward to start work again.'"
+    },
+    {
+     "p": "On Thursday Kapoor told Navbharat Times that Shah Rukh Khan had called him. As reported by Hindustan Times, he quoted the star as saying: 'Do whatever you like and wish to do; I am ready to help you.' Kapoor added: 'I will be meeting Aryan Khan soon.'"
+    },
+    {
+     "quote": {
+      "q": "Shah Rukh is a confident actor, bahut bada aadmi hai woh.",
+      "by": "Sharad Kapoor to Navbharat Times, as reported by Hindustan Times, 20 Nov 2026"
+     }
+    },
+    {
+     "h": "Max and Prakash"
+    },
+    {
+     "p": "The two worked together in Mansoor Khan's Josh in 2000, the Goa gang drama in which Shah Rukh Khan played Max Dias, leader of the Eagles, and Kapoor played Prakash Sharma of the rival Bichhoos. Kapoor told the paper they had a great bond on that shoot, and that whenever Shah Rukh Khan got stuck on a line he helped him, even in scenes that went against his own character, because he wanted to make a good film."
+    },
+    {
+     "p": "Salman Khan and Sonu Sood had already come forward, as reported; Kapoor said Sood had arranged doctors to treat his leg and that he would travel to Karjat for treatment. He hopes to start work again in January 2027."
+    },
+    {
+     "h": "The day in the press"
+    },
+    {
+     "stats": [
+      [
+       "Articles on Shah Rukh Khan's call, 20 Nov",
+       "17",
+       "Hindustan Times, The Indian Express, Times of India, Filmfare, Mid-Day, News18, NDTV Profit, Pinkvilla and others, as found by our searches"
+      ],
+      [
+       "The most-viewed X post on it",
+       "334,100 views",
+       "a clip of Kapoor's interview, read 21 Nov 07:40 IST"
+      ],
+      [
+       "All SRK articles we found, 20 Nov",
+       "43",
+       "also: Variety's list 8, TIME100 Next India 7, Golden Goose x D'YAVOL X 6"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "Hindustan Times · Sharad Kapoor says Shah Rukh Khan called him",
+       "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html"
+      ],
+      [
+       "Character Study · Max Dias in Josh",
+       "/srk-characters/#045"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#ShahRukhKhan",
+    "#Josh",
+    "#SharadKapoor",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-21-king-buzz",
+   "n": 2,
+   "date": "2026-11-21",
+   "time": "09:00 IST",
+   "kicker": "Analytics · 21 Nov 2026",
+   "title": "Tu Mil Jaaye passes 93 million views; Maatrubhumi adds a sixth song",
+   "deck": "KING's first song added 1,984,590 YouTube views in 24 hours to reach 93,211,019 at 07:16 IST on Saturday, 4.25 million ahead of the Avengers: Doomsday trailer. Maatrubhumi's new song Madirapan drew 10.9 million views in its first day and a half.",
+   "img": "https://i.ytimg.com/vi/eROZKk-gfOQ/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=eROZKk-gfOQ",
+   "img_alt": "Choreographers Piyush Bhagat and Shazia Samji on making Tu Mil Jaaye",
+   "img_credit": "'Making SRK's Tu Mil Jaaye: Piyush Shazia', Faridoon Shahryar on YouTube, 20 Nov 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "93,211,019",
+       "T-Series, read 21 Nov 07:16 IST"
+      ],
+      [
+       "Likes",
+       "819,860",
+       ""
+      ],
+      [
+       "Gained since Friday",
+       "1,984,590",
+       "91,226,429 on 20 Nov 07:03 IST"
+      ],
+      [
+       "Ahead of the Doomsday trailer",
+       "4,251,779",
+       "2,631,031 on 20 Nov"
+      ]
+     ]
+    },
+    {
+     "p": "The song's choreographers, Piyush Bhagat and Shazia Samji, talked about making it with the film journalist Faridoon Shahryar in a video posted on Friday (19,237 views by Saturday morning). Shahryar wrote on X that the pair called Shah Rukh Khan the most hard-working person on the set."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "88,959,240",
+       "+363,842 in 24 hours"
+      ],
+      [
+       "KING's two teasers",
+       "86,123,886",
+       "Title Reveal 52,952,152 + Date Announcement 33,171,734"
+      ],
+      [
+       "Doomsday ahead of the teasers by",
+       "2,835,354",
+       "2,542,186 on 20 Nov"
+      ],
+      [
+       "KING's three videos",
+       "179,334,905",
+       "+2,055,264 in 24 hours"
+      ]
+     ]
+    },
+    {
+     "h": "RAMAYANA to KING, day 17"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "179,334,905",
+       "read 21 Nov 07:16 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "151,638,343",
+       "+513,762 in 24 hours"
+      ],
+      [
+       "KING ahead by",
+       "27,696,562",
+       "26,155,060 on 20 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "p": "Salman Khan Films Music released Madirapan, Maatrubhumi's sixth song, at 5:38 PM IST on Thursday. Maatrubhumi opens on 4 December, twenty days before KING."
+    },
+    {
+     "stats": [
+      [
+       "Madirapan",
+       "10,892,986",
+       "in about 37 hours"
+      ],
+      [
+       "Maatrubhumi trailer",
+       "53,469,830",
+       "+369,492 in 24 hours"
+      ],
+      [
+       "8 official videos",
+       "159,578,699",
+       "KING's three lead by 19,756,206"
+      ]
+     ]
+    },
+    {
+     "h": "The Golden Goose film, day two"
+    },
+    {
+     "stats": [
+      [
+       "Red Chillies' upload on YouTube",
+       "138,769 views",
+       "4,416 likes; 36,103 views a day earlier"
+      ],
+      [
+       "@iamsrk's post on X",
+       "840,843 views",
+       "11,232 likes, 2,428 reposts; 521,127 views a day earlier"
+      ]
+     ]
+    },
+    {
+     "p": "In Mumbai, Rediff reported on Friday that Gauri Khan's showroom on Juhu Tara Road is playing the KING promo in a loop under two large Shah Rukh Khan billboards, something it said it could not recall seeing there for any of his earlier films."
+    },
+    {
+     "h": "Instagram"
+    },
+    {
+     "stats": [
+      [
+       "@iamsrk followers",
+       "48,536,333",
+       "as shown on the profile, 21 Nov 07:06 IST"
+      ],
+      [
+       "#srk posts",
+       "7.7M",
+       "Instagram search, as displayed"
+      ],
+      [
+       "#srkking posts",
+       "135K",
+       "Instagram search, as displayed"
+      ]
+     ]
+    },
+    {
+     "h": "FANVERSE and KING data"
+    },
+    {
+     "stats": [
+      [
+       "New YouTube videos about KING, 20 Nov",
+       "62",
+       "379,179 views: dance covers, covers, remixes, updates and fan-made trailers (not official)"
+      ],
+      [
+       "X posts read, 20 Nov",
+       "53",
+       "498,792 views; @iamsrk and @RedChilliesEnt not counted"
+      ],
+      [
+       "Articles found, 20 Nov",
+       "43",
+       "Sharad Kapoor 17, Variety's list 8, TIME100 Next India 7"
+      ],
+      [
+       "Fan-made AI works logged",
+       "86",
+       "5,637,722 views, Fan Universe"
+      ]
+     ]
+    },
+    {
+     "p": "On the site this week SRK DAILY was again the most-read page, ahead of the home page."
+    },
+    {
+     "links": [
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · 21 Nov",
+       "/king-intelligence/daily.html?date=2026-11-21"
+      ],
+      [
+       "Fan Universe",
+       "/fan-made-ai-universe/"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube, X and Instagram public counters, read 21 Nov 2026 07:06-07:16 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-21-ramayana-day-16",
+   "n": 3,
+   "date": "2026-11-21",
+   "time": "09:00 IST",
+   "kicker": "Box office · Ramayana",
+   "title": "Ramayana passes ₹880 crore net in India on its third Friday",
+   "deck": "Ramayana made ₹16.30 crore net in India on Friday, its sixteenth day, as reported by Sacnilk. Worldwide it stands at ₹1,574.60 crore, and its Hindi version at ₹669.50 crore net.",
+   "img": "https://i.ytimg.com/vi/F8VR9LQc40s/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=F8VR9LQc40s",
+   "img_alt": "Sai Pallavi as Sita · Promo, Ramayana",
+   "img_credit": "Sai Pallavi as Sita · Promo, World Of Ramayana on YouTube. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana collected ₹16.30 crore net across India on Friday, 20 November, down 15.8% from Thursday, according to Sacnilk's figures updated at 10:16 PM IST. It ran in 15,497 shows, about 6,000 fewer than on Thursday, as its third weekend began."
+    },
+    {
+     "stats": [
+      [
+       "Day 16 · Fri 20 Nov",
+       "₹16.30 crore",
+       "India net, all languages; Hindi ₹12.00 crore"
+      ],
+      [
+       "16 days, India net",
+       "₹880.05 crore",
+       ""
+      ],
+      [
+       "16 days, India gross",
+       "₹1,051.60 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹1,574.60 crore",
+       "overseas ₹523.00 crore"
+      ],
+      [
+       "Hindi version",
+       "₹669.50 crore net",
+       "76.1% of the India total"
+      ],
+      [
+       "Footfalls so far",
+       "3,56,51,737",
+       "as listed by Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "Sacnilk's day-wise chart puts the Hindi 3D shows at 21.35% occupancy on Friday, rising from 8.62% in the morning to 32.54% at night. Kannada (₹71.15 crore) is the second-biggest language version of the run, ahead of Telugu (₹54.85 crore)."
+    },
+    {
+     "p": "KING opens on 24 December, in 33 days. Its advance booking has not opened."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 16",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_16"
+      ],
+      [
+       "RAMAYANA to KING · the report",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#BoxOffice",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-20-golden-goose-king",
    "n": 1,
    "date": "2026-11-20",
@@ -6394,38 +6766,38 @@
   }
  ],
  "poll": {
-  "id": "goldengoose-2026-11-20",
-  "q": "Shah Rukh Khan's Golden Goose film ends on a KING marquee. Your verdict?",
+  "id": "josh-2026-11-21",
+  "q": "Shah Rukh Khan called his Josh co-star Sharad Kapoor. Which of his gang films is your favourite?",
   "o": [
-   "The best KING promo yet",
-   "A fine ad. Now the trailer, please",
-   "I'm buying the sneakers"
+   "Josh (2000)",
+   "Don (2006)",
+   "Raees (2017)"
   ]
  },
  "beat": [
   {
-   "t": "FOREVER KING",
-   "d": "The Golden Goose x D'YAVOL X film ends on a KING marquee.",
-   "img": "/assets/srk-daily/2026-11-20-golden-goose.jpg",
-   "url": "?p=2026-11-20-golden-goose-king"
+   "t": "A call from Max",
+   "d": "Shah Rukh Khan phones his Josh co-star Sharad Kapoor.",
+   "img": "/assets/characters/045.webp",
+   "url": "?p=2026-11-21-sharad-kapoor"
   },
   {
-   "t": "Aryan Khan in TIME",
-   "d": "TIME100 Next India, with a tribute by Vishal Bhardwaj.",
-   "img": "https://static.time.com/v3/assets/bltea6093859af6183b/blt0b3b60b7c0a09b15/6af4cd6abd3727efdc7b7721/time100next-india-innovators-aryan-khan.jpg?branch=production&width=1800&quality=75&auto=webp&crop=16:9%2Coffset-x0.00%2Coffset-y46.24",
-   "url": "?p=2026-11-20-aryan-time100"
+   "t": "Tu Mil Jaaye: 93.2M",
+   "d": "4.25 million ahead of the Doomsday trailer, 21 Nov 07:16 IST.",
+   "img": "https://i.ytimg.com/vi/eROZKk-gfOQ/maxresdefault.jpg",
+   "url": "?p=2026-11-21-king-buzz"
   },
   {
-   "t": "Tu Mil Jaaye: 91.2M",
-   "d": "2.6 million ahead of the Doomsday trailer, 20 Nov 07:03 IST.",
-   "img": "https://pbs.twimg.com/media/HXc-mlyasAAa_q5?format=jpg&name=large",
-   "url": "?p=2026-11-20-king-buzz"
+   "t": "Madirapan: 10.9M",
+   "d": "Maatrubhumi's sixth song, in about 37 hours.",
+   "img": "https://i.ytimg.com/vi/O3a35L3wnB0/maxresdefault.jpg",
+   "url": "?p=2026-11-21-king-buzz"
   },
   {
-   "t": "Ramayana: ₹1,547 crore",
-   "d": "Worldwide in 15 days; Hindi past ₹650 crore net (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/74nF-FWAS6M/maxresdefault.jpg",
-   "url": "?p=2026-11-20-ramayana-day-15"
+   "t": "Ramayana: ₹1,574 crore",
+   "d": "Worldwide in 16 days; ₹880.05 crore net in India (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/F8VR9LQc40s/maxresdefault.jpg",
+   "url": "?p=2026-11-21-ramayana-day-16"
   }
  ],
  "fanverse": {
