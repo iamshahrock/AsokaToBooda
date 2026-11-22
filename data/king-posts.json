@@ -1215,6 +1215,16 @@
       "bookmarks": 43,
       "views": 54244
      }
+    },
+    {
+     "at": "2026-11-22T07:06:00+05:30",
+     "metrics": {
+      "replies": 148,
+      "reposts": 364,
+      "likes": 1599,
+      "bookmarks": 44,
+      "views": 54820
+     }
     }
    ]
   },
@@ -1246,6 +1256,16 @@
       "bookmarks": 333,
       "views": 840843
      }
+    },
+    {
+     "at": "2026-11-22T07:05:00+05:30",
+     "metrics": {
+      "replies": 593,
+      "reposts": 2495,
+      "likes": 11681,
+      "bookmarks": 337,
+      "views": 864370
+     }
     }
    ]
   },
@@ -1266,6 +1286,37 @@
       "likes": 1246,
       "bookmarks": 21,
       "views": 72124
+     }
+    },
+    {
+     "at": "2026-11-22T07:06:00+05:30",
+     "metrics": {
+      "replies": 108,
+      "reposts": 364,
+      "likes": 1403,
+      "bookmarks": 25,
+      "views": 82237
+     }
+    }
+   ]
+  },
+  {
+   "id": "srk-deepika-sukoon-2026-11-21",
+   "release": null,
+   "title": "'Dil ko sukoon aaye, every single time we watch them!' (Om Shanti Om, Chennai Express, KING, Jawan, Happy New Year) #KING in cinemas on 24.12.2026",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2124028263807041837",
+   "posted_at": "2026-11-21T12:02:55+05:30",
+   "readings": [
+    {
+     "at": "2026-11-22T07:06:00+05:30",
+     "metrics": {
+      "replies": 53,
+      "reposts": 263,
+      "likes": 938,
+      "bookmarks": 35,
+      "views": 25584
      }
     }
    ]

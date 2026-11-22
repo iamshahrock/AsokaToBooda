@@ -1,27 +1,27 @@
 {
  "about": "Top of /king-intelligence/: the latest KING news (owner, 27 Oct 2026) and every official KING release by Shah Rukh Khan / Red Chillies Entertainment. Video views are read live from the daily ledger (series_id). Update 'latest' when a new official asset drops. Posters on Instagram have no public view count: shown as N/A, never estimated.",
  "latest": {
-  "date": "2026-11-21",
-  "kicker": "News · Josh, 26 years on",
-  "headline": "Shah Rukh Khan calls his Josh co-star Sharad Kapoor after his appeal for work",
-  "deck": "Sharad Kapoor, Prakash to Shah Rukh Khan's Max in Josh (2000), told Navbharat Times that the star called him after his video appeal for work went viral and offered help; he says he will meet Aryan Khan soon (as reported by Hindustan Times, 20 Nov). On YouTube, Tu Mil Jaaye reached 93,211,019 views at 07:16 IST on 21 Nov, 4,251,779 ahead of the Avengers: Doomsday trailer.",
+  "date": "2026-11-22",
+  "kicker": "News · Trailer on 14 December",
+  "headline": "KING's trailer to drop on 14 December, as reported by Variety India",
+  "deck": "Variety India reported on 21 Nov that KING's trailer will release on 14 December, ten days before the film, with a second song from Sachin-Jigar's soundtrack due later this month. The same day Salman Khan said Maatrubhumi (4 December) would never clash with 'Shah Rukh and his daughter, Suhana', and Shah Rukh Khan spoke at the Global Peace Honours in Mumbai. Tu Mil Jaaye reached 95,263,784 YouTube views at 07:04 IST on 22 Nov.",
   "quote": "",
   "quote_by": "",
-  "image": "/assets/characters/045.webp",
-  "image_alt": "Shah Rukh Khan as Max Dias in Josh (2000)",
-  "image_credit": "Close-up from the film, Character Study on this site",
+  "image": "https://i.ytimg.com/vi/Uu2QK9Z9X5E/maxresdefault.jpg",
+  "image_alt": "KING Title Reveal",
+  "image_credit": "KING Title Reveal, Red Chillies Entertainment on YouTube",
   "sources": [
    {
-    "name": "SRK DAILY · Issue 17",
-    "url": "/srk-daily/?p=2026-11-21-sharad-kapoor"
+    "name": "SRK DAILY · Issue 18",
+    "url": "/srk-daily/?p=2026-11-22-king-trailer-date"
    },
    {
-    "name": "Hindustan Times",
-    "url": "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html"
+    "name": "Variety India",
+    "url": "https://varietyindia.com/shah-rukh-khans-king-trailer-to-drop-on-december-14-10-days-before-theatrical-release-exclusive/"
    },
    {
-    "name": "KING Buzz · 21 Nov",
-    "url": "/king-intelligence/daily.html?date=2026-11-21"
+    "name": "KING Buzz · 22 Nov",
+    "url": "/king-intelligence/daily.html?date=2026-11-22"
    }
   ]
  },
