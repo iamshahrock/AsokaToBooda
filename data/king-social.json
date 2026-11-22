@@ -55,7 +55,8 @@
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-13 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-14 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-15 until:2026-11-16 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
-  "(#KING OR KING OR \"Tu Mil Jaaye\" OR dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-20 until:2026-11-21 -from:iamsrk -from:RedChilliesEnt (top)"
+  "(#KING OR KING OR \"Tu Mil Jaaye\" OR dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-20 until:2026-11-21 -from:iamsrk -from:RedChilliesEnt (top)",
+  "(SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-21 until:2026-11-22 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top)"
  ],
  "days": {
   "2026-10-27": {
@@ -8938,6 +8939,214 @@
     }
    ],
    "note": "One X search read 21 Nov 2026 ~07:40 IST in the owner's Chrome, Top tab: (#KING OR KING OR \"Tu Mil Jaaye\" OR dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-20 until:2026-11-21 -from:iamsrk -from:RedChilliesEnt (60 loaded); 53 posted on 20 Nov IST by accounts other than @iamsrk and @RedChilliesEnt. Stance is our reading of each post. Fan claims about new KING assets have no source and are labelled speculation.",
+   "videos": []
+  },
+  "2026-11-21": {
+   "totals": {
+    "posts_read": 60,
+    "views": 338988,
+    "likes": 11526,
+    "reposts": 2848,
+    "replies": 191
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@VarietyIndia",
+     "url": "https://x.com/VarietyIndia/status/2124013704983540067",
+     "posted_at": "2026-11-21T11:05:00+05:30",
+     "views": 107038,
+     "likes": 1859,
+     "reposts": 580,
+     "replies": 45,
+     "text": "Variety India exclusive: KING's trailer to drop on 14 December",
+     "stance": "positive",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@pictureabhmd",
+     "url": "https://x.com/pictureabhmd/status/2124192095049314306",
+     "posted_at": "2026-11-21T22:53:00+05:30",
+     "views": 32501,
+     "likes": 458,
+     "reposts": 49,
+     "replies": 3,
+     "text": "SRK chatting with Anant Ambani at the Global Peace Honours",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@pictureabhmd",
+     "url": "https://x.com/pictureabhmd/status/2124170209183576223",
+     "posted_at": "2026-11-21T21:26:00+05:30",
+     "views": 17003,
+     "likes": 464,
+     "reposts": 144,
+     "replies": 0,
+     "text": "clip of SRK's Global Peace Honours speech: 'don't forget the power of a common man'",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@pictureabhmd",
+     "url": "https://x.com/pictureabhmd/status/2124181560815751323",
+     "posted_at": "2026-11-21T22:12:00+05:30",
+     "views": 16454,
+     "likes": 644,
+     "reposts": 119,
+     "replies": 1,
+     "text": "SRK thanks Sukhwinder Singh for the Chak De! India title track",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@navedyaara_",
+     "url": "https://x.com/navedyaara_/status/2124002145414393887",
+     "posted_at": "2026-11-21T10:19:00+05:30",
+     "views": 15470,
+     "likes": 573,
+     "reposts": 70,
+     "replies": 0,
+     "text": "old Koffee with Karan clip: Kareena Kapoor names SRK the No. 1 actor",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@PanIndiaReview",
+     "url": "https://x.com/PanIndiaReview/status/2124089746788155784",
+     "posted_at": "2026-11-21T16:07:00+05:30",
+     "views": 14291,
+     "likes": 517,
+     "reposts": 89,
+     "replies": 11,
+     "text": "claims KING made ₹800 crore+ in pre-release deals (unsourced figures)",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@navedyaara_",
+     "url": "https://x.com/navedyaara_/status/2124086986319557060",
+     "posted_at": "2026-11-21T15:56:00+05:30",
+     "views": 14156,
+     "likes": 143,
+     "reposts": 21,
+     "replies": 3,
+     "text": "video on SRK's success story",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@Srkz_Sakir",
+     "url": "https://x.com/Srkz_Sakir/status/2123964417318740467",
+     "posted_at": "2026-11-21T07:49:00+05:30",
+     "views": 10336,
+     "likes": 459,
+     "reposts": 113,
+     "replies": 9,
+     "text": "fan meme: SRK to his fans",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@TeamSRKWarriors",
+     "url": "https://x.com/TeamSRKWarriors/status/2124187714849566999",
+     "posted_at": "2026-11-21T22:36:00+05:30",
+     "views": 9747,
+     "likes": 381,
+     "reposts": 65,
+     "replies": 1,
+     "text": "SRK meets Anant Ambani and Sadhguru at the Global Peace Honours",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@Its_CineHub",
+     "url": "https://x.com/Its_CineHub/status/2124183713080914285",
+     "posted_at": "2026-11-21T22:20:00+05:30",
+     "views": 7897,
+     "likes": 558,
+     "reposts": 86,
+     "replies": 1,
+     "text": "quote from SRK's Global Peace Honours speech",
+     "stance": "positive",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@iamn3el",
+     "url": "https://x.com/iamn3el/status/2124069824813056294",
+     "posted_at": "2026-11-21T14:48:00+05:30",
+     "views": 6897,
+     "likes": 191,
+     "reposts": 51,
+     "replies": 3,
+     "text": "fan wishes KING had a comic-styled intro",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@NexaBoxOffice",
+     "url": "https://x.com/NexaBoxOffice/status/2124019986054193170",
+     "posted_at": "2026-11-21T11:30:00+05:30",
+     "views": 5602,
+     "likes": 372,
+     "reposts": 104,
+     "replies": 5,
+     "text": "KING trailer on 14 December",
+     "stance": "positive",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@AJSRKIANN7",
+     "url": "https://x.com/AJSRKIANN7/status/2124151949587362035",
+     "posted_at": "2026-11-21T20:14:00+05:30",
+     "views": 4817,
+     "likes": 236,
+     "reposts": 86,
+     "replies": 26,
+     "text": "fan joke about Red Chillies' Tu Mil Jaaye posts",
+     "stance": "neutral",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@AaoGhumaKLeLu",
+     "url": "https://x.com/AaoGhumaKLeLu/status/2124017842282799243",
+     "posted_at": "2026-11-21T11:21:00+05:30",
+     "views": 4798,
+     "likes": 128,
+     "reposts": 45,
+     "replies": 10,
+     "text": "quote attributed to SRK about bringing KING in December against a global franchise (no source given)",
+     "stance": "positive",
+     "kind": "speculation"
+    },
+    {
+     "platform": "X",
+     "account": "@srkfeed_x",
+     "url": "https://x.com/srkfeed_x/status/2124153535705309209",
+     "posted_at": "2026-11-21T20:20:00+05:30",
+     "views": 3291,
+     "likes": 172,
+     "reposts": 52,
+     "replies": 4,
+     "text": "fan club: 'Pune, the kingdom is calling' KING event post",
+     "stance": "positive",
+     "kind": "fan post"
+    }
+   ],
+   "note": "One X search read 22 Nov 2026 ~07:10 IST in the owner's Chrome, Top tab: (SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-21 until:2026-11-22 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top) (60 posts loaded). @iamsrk and @RedChilliesEnt not counted. Stance and kind are our one-line reading of each post.",
    "videos": []
   }
  }
