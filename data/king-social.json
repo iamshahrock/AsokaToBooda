@@ -56,7 +56,8 @@
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-14 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-15 until:2026-11-16 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
   "(#KING OR KING OR \"Tu Mil Jaaye\" OR dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-20 until:2026-11-21 -from:iamsrk -from:RedChilliesEnt (top)",
-  "(SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-21 until:2026-11-22 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top)"
+  "(SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-21 until:2026-11-22 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top)",
+  "(SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-22 until:2026-11-23 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top)"
  ],
  "days": {
   "2026-10-27": {
@@ -9147,6 +9148,214 @@
     }
    ],
    "note": "One X search read 22 Nov 2026 ~07:10 IST in the owner's Chrome, Top tab: (SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-21 until:2026-11-22 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top) (60 posts loaded). @iamsrk and @RedChilliesEnt not counted. Stance and kind are our one-line reading of each post.",
+   "videos": []
+  },
+  "2026-11-22": {
+   "totals": {
+    "posts_read": 76,
+    "views": 621905,
+    "likes": 13339,
+    "reposts": 2988,
+    "replies": 243
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@_TweetsOfLamaa",
+     "url": "https://x.com/_TweetsOfLamaa/status/2124346964930404859",
+     "posted_at": "2026-11-22T09:09:00+05:30",
+     "views": 274772,
+     "likes": 311,
+     "reposts": 68,
+     "replies": 15,
+     "text": "mocks a viral Global Peace Honours clip of Anant Ambani gesturing to SRK to keep quiet",
+     "stance": "critical",
+     "kind": "commentary"
+    },
+    {
+     "platform": "X",
+     "account": "@Worship_SRK",
+     "url": "https://x.com/Worship_SRK/status/2124361613772018011",
+     "posted_at": "2026-11-22T10:07:00+05:30",
+     "views": 48370,
+     "likes": 485,
+     "reposts": 150,
+     "replies": 6,
+     "text": "fan reply on the Ambani clip: the Ambanis have called SRK their godfather",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@NetflixIndia",
+     "url": "https://x.com/NetflixIndia/status/2124374819474935962",
+     "posted_at": "2026-11-22T11:00:00+05:30",
+     "views": 44198,
+     "likes": 1824,
+     "reposts": 295,
+     "replies": 28,
+     "text": "'synonyms: badshah, king, SRK'",
+     "stance": "positive",
+     "kind": "brand post"
+    },
+    {
+     "platform": "X",
+     "account": "@JawanKiSena",
+     "url": "https://x.com/JawanKiSena/status/2124423510005321964",
+     "posted_at": "2026-11-22T14:13:00+05:30",
+     "views": 38193,
+     "likes": 1056,
+     "reposts": 198,
+     "replies": 4,
+     "text": "fan post: SRK is making notes on KING's marketing himself",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@IndiaToday",
+     "url": "https://x.com/IndiaToday/status/2124455677007630539",
+     "posted_at": "2026-11-22T16:21:00+05:30",
+     "views": 26858,
+     "likes": 132,
+     "reposts": 19,
+     "replies": 6,
+     "text": "Global Peace Honours 2026 at the Gateway of India",
+     "stance": "neutral",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@Worship_SRK",
+     "url": "https://x.com/Worship_SRK/status/2124452962957394075",
+     "posted_at": "2026-11-22T16:10:00+05:30",
+     "views": 18438,
+     "likes": 533,
+     "reposts": 98,
+     "replies": 5,
+     "text": "KING poster designer: at least 12-15 KING posters, one for each character",
+     "stance": "positive",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@teamsrkfc",
+     "url": "https://x.com/teamsrkfc/status/2124393886047203400",
+     "posted_at": "2026-11-22T12:15:00+05:30",
+     "views": 17353,
+     "likes": 276,
+     "reposts": 75,
+     "replies": 6,
+     "text": "fan club: KING promotion by fans at Dubai Run 2026",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@FilmyKitty",
+     "url": "https://x.com/FilmyKitty/status/2124389970580480406",
+     "posted_at": "2026-11-22T12:00:00+05:30",
+     "views": 14070,
+     "likes": 67,
+     "reposts": 54,
+     "replies": 27,
+     "text": "fan poll on KING",
+     "stance": "neutral",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@iPriiyanka",
+     "url": "https://x.com/iPriiyanka/status/2124398328343589179",
+     "posted_at": "2026-11-22T12:33:00+05:30",
+     "views": 10285,
+     "likes": 707,
+     "reposts": 260,
+     "replies": 11,
+     "text": "KING promotion in front of the crowd at Dubai Run 2026",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2124420377090879513",
+     "posted_at": "2026-11-22T14:01:00+05:30",
+     "views": 9660,
+     "likes": 705,
+     "reposts": 195,
+     "replies": 3,
+     "text": "SRK Universe UAE at Dubai Run: 'When the KING calls, the KINGDOM answers!'",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@Worship_SRK",
+     "url": "https://x.com/Worship_SRK/status/2124395968720199769",
+     "posted_at": "2026-11-22T12:24:00+05:30",
+     "views": 7012,
+     "likes": 585,
+     "reposts": 196,
+     "replies": 11,
+     "text": "KING promotions by fans at Dubai Run 2026",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@navedyaara_",
+     "url": "https://x.com/navedyaara_/status/2124490324143984860",
+     "posted_at": "2026-11-22T18:38:00+05:30",
+     "views": 6049,
+     "likes": 150,
+     "reposts": 17,
+     "replies": 3,
+     "text": "lists KING's writers",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@delhistarboy",
+     "url": "https://x.com/delhistarboy/status/2124405978670186989",
+     "posted_at": "2026-11-22T13:03:00+05:30",
+     "views": 5841,
+     "likes": 112,
+     "reposts": 24,
+     "replies": 3,
+     "text": "notes a KING post shared on Instagram but not on X",
+     "stance": "neutral",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@bolly_talkies",
+     "url": "https://x.com/bolly_talkies/status/2124506333261267134",
+     "posted_at": "2026-11-22T19:42:00+05:30",
+     "views": 5319,
+     "likes": 161,
+     "reposts": 23,
+     "replies": 2,
+     "text": "praises KING's marketing so far",
+     "stance": "positive",
+     "kind": "commentary"
+    },
+    {
+     "platform": "X",
+     "account": "@CinemaTimesx",
+     "url": "https://x.com/CinemaTimesx/status/2124526971564732421",
+     "posted_at": "2026-11-22T21:04:00+05:30",
+     "views": 4798,
+     "likes": 227,
+     "reposts": 37,
+     "replies": 2,
+     "text": "KING's screenplay team",
+     "stance": "positive",
+     "kind": "news"
+    }
+   ],
+   "note": "One X search read 23 Nov 2026 ~07:10 IST in the owner's Chrome, Top tab: (SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-22 until:2026-11-23 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top) (76 posts loaded). @iamsrk and @RedChilliesEnt not counted. Stance and kind are our one-line reading of each post.",
    "videos": []
   }
  }

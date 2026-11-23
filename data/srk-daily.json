@@ -2,6 +2,449 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-23-king-posters",
+   "n": 1,
+   "date": "2026-11-23",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 19 · The posters",
+   "title": "More KING posters to come, says poster designer Rajeev Chudasama",
+   "deck": "Rajeev Chudasama, the designer behind KING's poster, told Faridoon Shahryar in an interview released on Sunday that more KING posters are still to come. Times Now reported that he expects 12 to 15 character posters, one for each actor.",
+   "img": "https://i.ytimg.com/vi/8EvkUtB-pA8/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=8EvkUtB-pA8",
+   "img_alt": "Rajeev Chudasama in conversation with Faridoon Shahryar",
+   "img_credit": "Memorable Conversations: Rajeev Chudasama with Faridoon Shahryar, on YouTube, 22 Nov 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Rajeev Chudasama, one of Hindi cinema's best-known poster designers and the man behind KING's poster, sat down with Faridoon Shahryar for an episode of Memorable Conversations, released on Faridoon Shahryar's YouTube channel at 11:31 AM IST on Sunday. The 49-minute conversation opens with KING."
+    },
+    {
+     "p": "According to the episode's own summary, Chudasama says Shah Rukh Khan's look in KING is based on his own, and takes viewers inside the KING poster shoot. He first worked with Shah Rukh Khan on Om Shanti Om; working with him, the summary says, is a dream for Chudasama, who calls him the hardest-working actor around, with the same charm and aura as when they first met."
+    },
+    {
+     "p": "He also speaks about the response to the KING poster on social media, where some users compared it with AI-made images. Chudasama, who has worked on more than 900 projects, found that comparison hurtful, the summary says, while still believing artificial intelligence can be used ethically in creative work. And there are more KING posters still to come."
+    },
+    {
+     "p": "Times Now, reporting on the conversation, said the designer revealed that 12 to 15 character posters, one for each actor, will be out soon. A fan account's post of that part of the interview on X had 18,438 views by Monday morning."
+    },
+    {
+     "stats": [
+      [
+       "The interview, YouTube",
+       "14,334 views",
+       "Faridoon Shahryar, read 23 Nov 07:12 IST"
+      ],
+      [
+       "Posted",
+       "22 Nov, 11:31 IST",
+       "49 minutes"
+      ],
+      [
+       "KING's poster",
+       "27 Oct 2026",
+       "'Qaatil nahi… Aashiq hoon', posted by Shah Rukh Khan and Red Chillies"
+      ],
+      [
+       "Character posters",
+       "12 to 15",
+       "as reported by Times Now"
+      ],
+      [
+       "Trailer",
+       "14 December",
+       "as reported by Variety India"
+      ],
+      [
+       "KING in cinemas",
+       "24 December",
+       "31 days from today"
+      ]
+     ]
+    },
+    {
+     "p": "In the same conversation Chudasama talks about his wish to collect the unreleased posters from every film he has worked on into a coffee table book, about working under Ram Gopal Varma, and about OTT against theatrical releases."
+    },
+    {
+     "links": [
+      [
+       "Faridoon Shahryar · Rajeev Chudasama, Memorable Conversations",
+       "https://www.youtube.com/watch?v=8EvkUtB-pA8"
+      ],
+      [
+       "Times Now · 12-15 character posters for KING",
+       "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQkFSZnliRERtMFhQMUxkM2FxNFZWc3NSWUxLMW1NaWNxS29iN3BqTl8td3h6eUxhbGZEQ0xHdEd0N0V0TEsyVmpITmw3RndHRWlZYVNuc0dVLTNvbXgxSGp4MDZyU3d6cE5YUUxUd29FWk1XeXR2aGtqd1Blcnd2cUVOX0Z1b0kxdDBBLUpjcXVtTVo0OVJYQi10VmY0UlZubUV6VFdjTWNLdXRFWkROV1lNQkxPZlhqa1NxNjdCTEFHUjRXVTg4dlFlN1lVZGpieS1vbG44NEVTa2w2aXJGS0tLNi1xam1ha01idjVuLVVyaUd2WVhaV0t1aG5yRGYzZVFxcS1ib19ZbWfSAZACQVVfeXFMT2xBd1ZLV0ZDeE9LSTdsRnU1MDdqRnBIYkptYlNHV2k2SkJYZEpzY2twdFNRVnljWW5rUWk4NHlGanp5cndVS0FkNE44UWEtSE8yMllKOFZwS0VGVy1VcGx4ajhVVU1HbklFRTRpYk5ReEh5YVRnVXFjTG50dTU5R28xZlp2bWtmYXZlaUJtNEZPc1ZYaDhhUjZRN0FpNHZYeEhjMzJ6ckpTR1JJVm9xVHNPNUItTHlXanFnaTFVWEI5dTgxRzM2Ui1jNDBsVXFzSVRGQmcxRFdkQzcxVEFkVEE5cXItWkZSYmQxWmRtSVBQenRfTzZmc0pHdlpURnVhaF9Hb1FZaWs2M2RHVWZxXzc?oc=5"
+      ],
+      [
+       "KING Buzz · 23 Nov",
+       "/king-intelligence/daily.html?date=2026-11-23"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#KINGPoster",
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-23-king-buzz",
+   "n": 2,
+   "date": "2026-11-23",
+   "time": "09:00 IST",
+   "kicker": "Analytics · 23 Nov 2026",
+   "title": "Tu Mil Jaaye reaches 97.3 million views, 2.7 million short of 100 million",
+   "deck": "KING's first song added 2,044,946 YouTube views in 24 hours to reach 97,308,730 at 07:04 IST on Monday, 7.6 million ahead of the Avengers: Doomsday trailer. Red Chillies posted a new KING clip, and fan clubs took KING to the Dubai Run.",
+   "img": "https://i.ytimg.com/vi/mBV8Gxl-HaM/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=mBV8Gxl-HaM",
+   "img_alt": "KING clip from Red Chillies Entertainment, 22 Nov 2026",
+   "img_credit": "'The name says it ALL!', Red Chillies Entertainment on YouTube, 22 Nov 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "97,308,730",
+       "T-Series, read 23 Nov 07:04 IST"
+      ],
+      [
+       "Likes",
+       "833,866",
+       ""
+      ],
+      [
+       "Gained since Sunday",
+       "2,044,946",
+       "95,263,784 on 22 Nov 07:04 IST"
+      ],
+      [
+       "Still to go to 100 million",
+       "2,691,270",
+       "about a day and a third at Sunday's pace"
+      ],
+      [
+       "Ahead of the Doomsday trailer",
+       "7,649,998",
+       "5,952,365 on 22 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "89,658,732",
+       "+347,313 in 24 hours"
+      ],
+      [
+       "KING's two teasers",
+       "86,266,451",
+       "Title Reveal 53,076,403 + Date Announcement 33,190,048"
+      ],
+      [
+       "Doomsday ahead of the teasers by",
+       "3,392,281",
+       "3,109,401 on 22 Nov"
+      ],
+      [
+       "KING's three videos",
+       "183,575,181",
+       "+2,109,379 in 24 hours"
+      ]
+     ]
+    },
+    {
+     "h": "RAMAYANA to KING, day 19"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "183,575,181",
+       "read 23 Nov 07:04 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "152,615,557",
+       "+465,089 in 24 hours"
+      ],
+      [
+       "KING ahead by",
+       "30,959,624",
+       "29,315,334 on 22 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "54,225,510",
+       "+364,341 in 24 hours"
+      ],
+      [
+       "Madirapan",
+       "16,219,612",
+       "its sixth song, out 19 Nov"
+      ],
+      [
+       "8 official videos",
+       "166,165,634",
+       "KING's three lead by 17,409,547 (17,416,895 on 22 Nov)"
+      ]
+     ]
+    },
+    {
+     "h": "From Red Chillies and Shah Rukh Khan"
+    },
+    {
+     "p": "Red Chillies Entertainment posted a new KING clip on Sunday: 'The name says it ALL!' on YouTube at 12:34 PM IST and, seventeen minutes later on X, 'Too much aura, not enough frame'. The Golden Goose x D'YAVOL X collection, announced by Shah Rukh Khan on 19 November, goes on sale on Tuesday, 24 November, in Golden Goose stores in India and on goldengoose.com."
+    },
+    {
+     "stats": [
+      [
+       "'Too much aura, not enough frame', X",
+       "64,645 views",
+       "2,409 likes, 407 reposts"
+      ],
+      [
+       "'The name says it ALL!', YouTube",
+       "15,411 views",
+       "1,363 likes"
+      ],
+      [
+       "Golden Goose x D'YAVOL X film, YouTube",
+       "313,716 views",
+       "6,815 likes; 257,531 a day earlier"
+      ],
+      [
+       "@iamsrk's Golden Goose post on X",
+       "872,237 views",
+       "11,718 likes, 2,510 reposts"
+      ]
+     ]
+    },
+    {
+     "h": "KING at the Dubai Run"
+    },
+    {
+     "p": "Fan clubs posted KING banners and chants from Dubai Run 2026 on Sunday morning. SRK Universe's UAE chapter wrote that it was 'all set and on fire', and posts about the KING promotion at the run by @teamsrkfc, @iPriiyanka and @Worship_SRK had 34,650 views between them on X by Monday morning."
+    },
+    {
+     "h": "Instagram"
+    },
+    {
+     "stats": [
+      [
+       "@iamsrk followers",
+       "48,520,052",
+       "as shown on the profile, 23 Nov 07:08 IST"
+      ],
+      [
+       "#srk posts",
+       "7.7M",
+       "Instagram search, as displayed"
+      ],
+      [
+       "#srkking posts",
+       "135K",
+       "Instagram search, as displayed"
+      ]
+     ]
+    },
+    {
+     "h": "FANVERSE and KING data"
+    },
+    {
+     "stats": [
+      [
+       "New YouTube videos about KING, 22 Nov",
+       "54",
+       "219,068 views: updates on the trailer and posters, fan-made trailers (not official), fan songs, reactions, remixes"
+      ],
+      [
+       "X posts read, 22 Nov",
+       "76",
+       "621,905 views; @iamsrk and @RedChilliesEnt not counted"
+      ],
+      [
+       "Articles found, 22 Nov",
+       "65",
+       "Global Peace Honours 40, trailer date 9"
+      ],
+      [
+       "Fan-made AI works logged",
+       "86",
+       "5,650,441 views, Fan Universe"
+      ]
+     ]
+    },
+    {
+     "p": "On the site this week SRK DAILY was again the most-read page, ahead of the home page."
+    },
+    {
+     "links": [
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · 23 Nov",
+       "/king-intelligence/daily.html?date=2026-11-23"
+      ],
+      [
+       "Fan Universe",
+       "/fan-made-ai-universe/"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube, X and Instagram public counters, read 23 Nov 2026 07:04-07:12 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#KINGBuzz",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-23-ramayana-day-18",
+   "n": 3,
+   "date": "2026-11-23",
+   "time": "09:00 IST",
+   "kicker": "Box office · Day 18",
+   "title": "Ramayana makes ₹35.60 crore on its third Sunday, nears ₹950 crore net in India",
+   "deck": "Ramayana collected ₹35.60 crore net in India on Sunday, its eighteenth day, up 28.8% on Saturday, as reported by Sacnilk. It stands at ₹942.75 crore net in India and ₹1,693.50 crore worldwide.",
+   "img": "https://i.ytimg.com/vi/tVhuiXwSpJM/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=tVhuiXwSpJM",
+   "img_alt": "Ramayana: Jai Jai Ram",
+   "img_credit": "Ramayana: Jai Jai Ram (Full Video), T-Series on YouTube, 21 Nov 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana collected ₹35.60 crore net across India on Sunday, 22 November, according to Sacnilk's figures updated at 10:08 PM IST. That is 28.8% more than Saturday, which Sacnilk has revised to ₹27.65 crore from the ₹27.40 crore it first reported, and 52.5% less than the ₹75.00 crore of the Sunday before. The third weekend, Friday to Sunday, came to ₹79.00 crore."
+    },
+    {
+     "stats": [
+      [
+       "Day 18 · Sun 22 Nov",
+       "₹35.60 crore",
+       "India net, all languages; Hindi ₹26.25 crore"
+      ],
+      [
+       "18 days, India net",
+       "₹942.75 crore",
+       "Hindi ₹715.75 crore of it"
+      ],
+      [
+       "18 days, India gross",
+       "₹1,126.50 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹1,693.50 crore",
+       "overseas ₹567.00 crore"
+      ],
+      [
+       "Third weekend (days 16-18)",
+       "₹79.00 crore",
+       "India net"
+      ],
+      [
+       "Footfalls so far",
+       "3,85,55,479",
+       "as listed by Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "By language on Sunday, Sacnilk lists Hindi at ₹26.25 crore from 13,852 shows, Malayalam ₹3.40 crore, Kannada ₹2.50 crore, Tamil ₹2.40 crore and Telugu ₹1.05 crore. The Malayalam shows ran fullest, at 81.1% occupancy; Hindi averaged 32.7%."
+    },
+    {
+     "p": "On Saturday T-Series released the full video of the film's song Jai Jai Ram, composed by A.R. Rahman; it had 980,553 views by Monday morning. KING opens on 24 December, in 31 days. Its advance booking has not opened."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 18",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_18"
+      ],
+      [
+       "RAMAYANA to KING · the report",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#BoxOffice",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-23-raza-murad",
+   "n": 4,
+   "date": "2026-11-23",
+   "time": "09:00 IST",
+   "kicker": "In the news",
+   "title": "Raza Murad calls Shah Rukh Khan 'a human dynamo' on set",
+   "deck": "Veteran actor Raza Murad praised Shah Rukh Khan's energy at work in an interview with Lallantop, as reported by The Indian Express on Sunday. He named Amitabh Bachchan as the only other actor he has seen with as much energy.",
+   "img": "/assets/srk-daily/2026-11-23-raza-murad-srk.jpg",
+   "img_url": "https://indianexpress.com/article/entertainment/bollywood/raza-murad-is-baffled-by-shah-rukh-khans-energy-on-set-10973579/",
+   "img_alt": "Raza Murad and Shah Rukh Khan",
+   "img_credit": "Raza Murad and Shah Rukh Khan, the picture The Indian Express ran with its report, 22 Nov 2026. Tap the picture to read it.",
+   "blocks": [
+    {
+     "p": "Speaking to Lallantop, Raza Murad said Shah Rukh Khan is loaded with talent and has enormous energy, as reported by The Indian Express (Screen) at 2:39 PM IST on Sunday. In his words:"
+    },
+    {
+     "quote": {
+      "q": "When he works, he is a human dynamo.",
+      "by": "Raza Murad to Lallantop, as reported by The Indian Express, 22 Nov 2026"
+     }
+    },
+    {
+     "p": "Murad said he had seen that kind of energy in no one else apart from Amitabh Bachchan, and called it a gift from God. Asked who among the younger actors could be the next superstar, he named Ranveer Singh."
+    },
+    {
+     "p": "The Times of India also carried the interview. On Saturday night Shah Rukh Khan and Ranveer Singh shared the stage at the Global Peace Honours at the Gateway of India, the subject of 40 of the 65 Shah Rukh Khan articles we found on Sunday."
+    },
+    {
+     "links": [
+      [
+       "The Indian Express · Raza Murad on Shah Rukh Khan",
+       "https://indianexpress.com/article/entertainment/bollywood/raza-murad-is-baffled-by-shah-rukh-khans-energy-on-set-10973579/"
+      ],
+      [
+       "\"Peace is a decision\" · SRK DAILY, 22 Nov",
+       "/srk-daily/?p=2026-11-22-global-peace-honours"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-22-global-peace-honours",
    "n": 1,
    "date": "2026-11-22",
@@ -7255,38 +7698,39 @@
   }
  ],
  "poll": {
-  "id": "trailer-2026-11-22",
-  "q": "KING's trailer is reported for 14 December. What do you want to see first?",
+  "id": "posters-2026-11-23",
+  "q": "KING's character posters are said to be coming. Whose do you want to see first?",
   "o": [
-   "Shah Rukh Khan's entry",
-   "Shah Rukh Khan and Suhana Khan together",
-   "The action"
+   "Shah Rukh Khan",
+   "Deepika Padukone",
+   "Suhana Khan",
+   "Abhishek Bachchan"
   ]
  },
  "beat": [
   {
-   "t": "\"Peace is a decision\"",
-   "d": "Shah Rukh Khan at the Global Peace Honours, Gateway of India.",
-   "img": "https://i.ytimg.com/vi/_1dLHkkvdYQ/hqdefault.jpg",
-   "url": "?p=2026-11-22-global-peace-honours"
+   "t": "More KING posters",
+   "d": "12 to 15 character posters, as reported by Times Now.",
+   "img": "https://i.ytimg.com/vi/8EvkUtB-pA8/maxresdefault.jpg",
+   "url": "?p=2026-11-23-king-posters"
   },
   {
-   "t": "Trailer: 14 December",
-   "d": "Ten days before KING, as reported by Variety India.",
-   "img": "/assets/srk-daily/2026-11-22-variety-india-king.jpg",
-   "url": "?p=2026-11-22-king-trailer-date"
+   "t": "Tu Mil Jaaye: 97.3M",
+   "d": "2.7 million short of 100 million, 23 Nov 07:04 IST.",
+   "img": "https://i.ytimg.com/vi/mBV8Gxl-HaM/maxresdefault.jpg",
+   "url": "?p=2026-11-23-king-buzz"
   },
   {
-   "t": "Tu Mil Jaaye: 95.3M",
-   "d": "5.95 million ahead of the Doomsday trailer, 22 Nov 07:04 IST.",
-   "img": "/assets/srk-daily/2026-11-22-rce-srk-deepika.jpg",
-   "url": "?p=2026-11-22-king-buzz"
+   "t": "Ramayana: ₹942.75 crore",
+   "d": "India net in 18 days; ₹1,693.50 crore worldwide (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/tVhuiXwSpJM/maxresdefault.jpg",
+   "url": "?p=2026-11-23-ramayana-day-18"
   },
   {
-   "t": "Ramayana: ₹906.90 crore",
-   "d": "India net in 17 days; ₹1,616.70 crore worldwide (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/8HiWKbDTc7w/maxresdefault.jpg",
-   "url": "?p=2026-11-22-ramayana-day-17"
+   "t": "\"A human dynamo\"",
+   "d": "Raza Murad on Shah Rukh Khan, via The Indian Express.",
+   "img": "/assets/srk-daily/2026-11-23-raza-murad-srk.jpg",
+   "url": "?p=2026-11-23-raza-murad"
   }
  ],
  "fanverse": {

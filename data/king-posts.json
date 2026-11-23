@@ -1266,6 +1266,16 @@
       "bookmarks": 337,
       "views": 864370
      }
+    },
+    {
+     "at": "2026-11-23T07:07:00+05:30",
+     "metrics": {
+      "replies": 601,
+      "reposts": 2510,
+      "likes": 11718,
+      "bookmarks": 336,
+      "views": 872237
+     }
     }
    ]
   },
@@ -1297,6 +1307,16 @@
       "bookmarks": 25,
       "views": 82237
      }
+    },
+    {
+     "at": "2026-11-23T07:06:00+05:30",
+     "metrics": {
+      "replies": 109,
+      "reposts": 367,
+      "likes": 1420,
+      "bookmarks": 27,
+      "views": 83439
+     }
     }
    ]
   },
@@ -1317,6 +1337,37 @@
       "likes": 938,
       "bookmarks": 35,
       "views": 25584
+     }
+    },
+    {
+     "at": "2026-11-23T07:06:00+05:30",
+     "metrics": {
+      "replies": 54,
+      "reposts": 287,
+      "likes": 1068,
+      "bookmarks": 41,
+      "views": 28901
+     }
+    }
+   ]
+  },
+  {
+   "id": "too-much-aura-2026-11-22",
+   "release": null,
+   "title": "'Too much aura, not enough frame' #KING in cinemas on 24.12.2026",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2124402778600886324",
+   "posted_at": "2026-11-22T12:51:06+05:30",
+   "readings": [
+    {
+     "at": "2026-11-23T07:06:00+05:30",
+     "metrics": {
+      "replies": 62,
+      "reposts": 407,
+      "likes": 2409,
+      "bookmarks": 30,
+      "views": 64645
      }
     }
    ]
