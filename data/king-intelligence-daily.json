@@ -3975,6 +3975,122 @@
         "Box office as reported by Sacnilk.",
         "Posts are not people."
       ]
+    },
+    {
+      "date": "2026-11-23",
+      "record_id": "KING-2026-11-23",
+      "role": "DAILY UPDATE",
+      "metrics": [
+        {
+          "series_id": "king_title_reveal_views",
+          "value": 53076403,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-23 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_date_announcement_views",
+          "value": 33190048,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-23 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "doomsday_official_trailer_views",
+          "value": 89658732,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-23 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_tu_mil_jaaye_views",
+          "value": 97308730,
+          "unit": "YouTube views",
+          "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-23 07:04 IST from the public watch page",
+          "method": "exact viewCount from the public YouTube watch page",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "srk_instagram_posts",
+          "value": 7700000,
+          "unit": "Instagram #srk posts",
+          "source": "Instagram search box, read 07:10 IST",
+          "method": "post count as displayed by Instagram search (rounded)",
+          "confidence": "rounded public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "srkking_instagram_posts",
+          "value": 135000,
+          "unit": "Instagram #srkking posts",
+          "source": "Instagram search box, read 07:10 IST",
+          "method": "post count as displayed by Instagram search (rounded)",
+          "confidence": "rounded public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_logged",
+          "value": 86,
+          "unit": "fan-made AI works about KING",
+          "source": "data/ai-creator-log.json as of 2026-11-22 (86 works)",
+          "method": "public posts found and linked by the daily scan",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "fan_ai_works_views",
+          "value": 5650441,
+          "unit": "views",
+          "source": "data/ai-creator-log.json as of 2026-11-22 (YouTube views re-read 22 Nov)",
+          "method": "sum of public view counts on the logged works that show views",
+          "confidence": "verified/linked",
+          "status": "usable"
+        },
+        {
+          "series_id": "iamsrk_instagram_followers",
+          "value": 48520052,
+          "unit": "followers",
+          "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,520,052 as shown), read 2026-11-23 07:08 IST in the owner's signed-in browser",
+          "method": "count shown in the profile follower tooltip",
+          "confidence": "exact public counter",
+          "status": "usable"
+        },
+        {
+          "series_id": "king_public_observable_posts",
+          "value": null,
+          "unit": "posts",
+          "source": "No verified 23 Nov total located",
+          "method": "not reported",
+          "confidence": "unavailable",
+          "status": "missing"
+        }
+      ],
+      "topics": [
+        "KING poster designer Rajeev Chudasama on Faridoon Shahryar's Memorable Conversations (YouTube, 22 Nov): KING's look, the poster shoot with Shah Rukh Khan, the comparison of his poster to AI work, and more KING posters still to come; Times Now reported 12-15 character posters, one for each actor",
+        "Tu Mil Jaaye 97,308,730 YouTube views at 07:04 IST (+2,044,946 in 24 h; 833,866 likes), 7,649,998 ahead of the Avengers: Doomsday trailer (89,658,732, +347,313)",
+        "Doomsday trailer ahead of KING's two teasers (86,266,451) by 3,392,281 (3,109,401 on 22 Nov)",
+        "RAMAYANA to KING at 07:04 IST: KING's 3 official videos 183,575,181 vs Ramayana's 7 at 152,615,557 (KING +30,959,624; was +29,315,334)",
+        "Ramayana day 18 (Sun 22 Nov): ₹35.60 crore India net, up 28.8% on Saturday's revised ₹27.65 crore; 18 days ₹942.75 crore net, ₹1,126.50 crore India gross, ₹1,693.50 crore worldwide (Sacnilk, updated 22 Nov 10:08 PM IST)",
+        "Maatrubhumi's 8 official videos 166,165,634; KING's three lead by 17,409,547",
+        "Red Chillies posted a new KING clip on 22 Nov: 'Too much aura, not enough frame' on X (12:51 IST; 64,645 views by 07:06 IST on 23 Nov) and 'The name says it ALL!' on YouTube (12:34 IST; 15,411 views)",
+        "Fan clubs posted KING promotions at Dubai Run 2026 on 22 Nov (SRK Universe UAE, @teamsrkfc)",
+        "Golden Goose x D'YAVOL X film: Red Chillies upload 313,716 views, 6,815 likes; @iamsrk's X post 872,237 views; the collection goes on sale 24 Nov",
+        "Raza Murad to Lallantop, as reported by The Indian Express (22 Nov): Shah Rukh Khan is 'a human dynamo' on set",
+        "Instagram search: #srk 7.7M posts, #srkking 135K posts (unchanged)",
+        "@iamsrk Instagram 48,520,052 followers at 07:08 IST (3,092 fewer than on 22 Nov)"
+      ],
+      "notes": [
+        "YouTube read by Claude from the public watch pages at 07:04 IST; Instagram in the owner's session at 07:08-07:10 IST.",
+        "Box office as reported by Sacnilk.",
+        "Posts are not people."
+      ]
     }
   ],
   "source_rules": {
