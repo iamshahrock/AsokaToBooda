@@ -2,6 +2,388 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-24-daddy-cool",
+   "n": 1,
+   "date": "2026-11-24",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 20 · The music",
+   "title": "KING's second song, 'Daddy Cool' with Kareena Kapoor, is due on 25 November, Bollywood Hungama reports",
+   "deck": "Shah Rukh Khan and Siddharth Anand are set to release KING's second song, a Hinglish dance number called 'Daddy Cool' featuring Kareena Kapoor, on Wednesday, Bollywood Hungama reported on Monday night, citing a source. The KING title song is also ready.",
+   "img": "/assets/srk-daily/2026-11-24-srk-kareena.jpg",
+   "img_url": "https://www.bollywoodhungama.com/news/bollywood/scoop-shah-rukh-khan-to-launch-daddy-cool-ft-kareena-kapoor-from-king-on-november-25/",
+   "img_alt": "Shah Rukh Khan and Kareena Kapoor",
+   "img_credit": "Shah Rukh Khan and Kareena Kapoor, the picture Bollywood Hungama ran with its report, 23 Nov 2026. Tap the picture to read it.",
+   "blocks": [
+    {
+     "p": "KING's second song will be out on Wednesday, 25 November, Bollywood Hungama reported at 9:33 PM IST on Monday. According to the outlet's source, it is titled 'Daddy Cool', a peppy Hinglish dance number picturised on Shah Rukh Khan and Kareena Kapoor at real locations, with Kareena Kapoor 'a show stealer'. Sachin-Jigar compose KING's music."
+    },
+    {
+     "quote": {
+      "q": "Shah Rukh Khan is unleashing the second layer of King with a peppy dance number on November 25.",
+      "by": "A source, to Bollywood Hungama, 23 Nov 2026"
+     }
+    },
+    {
+     "p": "The same source told Bollywood Hungama that the KING title song is ready too, and that the team could still choose to release the title track first on 25 November. Both songs are to come out within nine days of each other, followed by two more songs and the trailer on 14 December, which Variety India first reported on 21 November."
+    },
+    {
+     "p": "Neither Red Chillies Entertainment nor Shah Rukh Khan had announced the song by 07:10 IST on Tuesday. Bollywood Hungama's post of the scoop on X had 61,342 views by then, the most-viewed KING post our sweep of the day found."
+    },
+    {
+     "stats": [
+      [
+       "Second song",
+       "25 November",
+       "'Daddy Cool', as reported by Bollywood Hungama"
+      ],
+      [
+       "Featuring",
+       "Kareena Kapoor",
+       "with Shah Rukh Khan; music by Sachin-Jigar"
+      ],
+      [
+       "Tu Mil Jaaye, the first song",
+       "99,120,339 views",
+       "T-Series, read 24 Nov 07:03 IST, 22 days after release"
+      ],
+      [
+       "Trailer",
+       "14 December",
+       "as reported by Variety India and Bollywood Hungama"
+      ],
+      [
+       "KING in cinemas",
+       "24 December",
+       "30 days from today"
+      ]
+     ]
+    },
+    {
+     "p": "Also on Monday, KING's choreographers spoke about shooting Tu Mil Jaaye, KING's first song with Shah Rukh Khan and Deepika Padukone. As reported by Hindustan Times, News18 and The Times of India, they said Ranveer Singh came to the set, cheered Deepika Padukone on and kept the rehearsals light. It was the subject of 11 of the 82 Shah Rukh Khan articles we found on Monday."
+    },
+    {
+     "links": [
+      [
+       "Bollywood Hungama · Daddy Cool on 25 November",
+       "https://www.bollywoodhungama.com/news/bollywood/scoop-shah-rukh-khan-to-launch-daddy-cool-ft-kareena-kapoor-from-king-on-november-25/"
+      ],
+      [
+       "Tu Mil Jaaye, the first song, on YouTube",
+       "https://www.youtube.com/watch?v=BPZkZpGMpXA"
+      ],
+      [
+       "KING's trailer on 14 December · SRK DAILY, 22 Nov",
+       "/srk-daily/?p=2026-11-22-king-trailer-date"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#DaddyCool",
+    "#ShahRukhKhan",
+    "#KareenaKapoor",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-24-king-buzz",
+   "n": 2,
+   "date": "2026-11-24",
+   "time": "09:00 IST",
+   "kicker": "Analytics · 24 Nov 2026",
+   "title": "Tu Mil Jaaye is 880,000 views from 100 million as Doomsday releases its final trailer",
+   "deck": "KING's first song added 1,811,609 YouTube views in 24 hours to reach 99,120,339 at 07:03 IST on Tuesday. Overnight Marvel released the Avengers: Doomsday final trailer, which passed 28.7 million views in under twelve hours.",
+   "img": "https://i.ytimg.com/vi/Wb8Tq_HD4E8/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=Wb8Tq_HD4E8",
+   "img_alt": "Avengers: Doomsday final trailer",
+   "img_credit": "Avengers: Doomsday | Final Trailer, Marvel Entertainment on YouTube, 23 Nov 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "h": "Tu Mil Jaaye"
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "99,120,339",
+       "T-Series, read 24 Nov 07:03 IST"
+      ],
+      [
+       "Likes",
+       "840,416",
+       ""
+      ],
+      [
+       "Gained since Monday",
+       "1,811,609",
+       "97,308,730 on 23 Nov 07:04 IST"
+      ],
+      [
+       "Still to go to 100 million",
+       "879,661",
+       "about half a day at Monday's pace"
+      ],
+      [
+       "Ahead of the Doomsday trailer",
+       "8,493,149",
+       "7,649,998 on 23 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "Doomsday's final trailer"
+    },
+    {
+     "p": "Marvel Studios released the final trailer of Avengers: Doomsday at 7:30 PM IST on Monday, 24 days before the film opens in India on 17 December and a week before KING. By 07:06 IST on Tuesday it had 28,721,477 views and 1,255,436 likes on Marvel Entertainment's YouTube channel, and its Hindi version had 3,126,672 views on IndiaMarvel. The first Doomsday trailer, out since 20 July, also gained 968,458 views overnight."
+    },
+    {
+     "h": "KING vs DOOM"
+    },
+    {
+     "stats": [
+      [
+       "Avengers: Doomsday trailer",
+       "90,627,190",
+       "+968,458 in 24 hours"
+      ],
+      [
+       "Doomsday final trailer",
+       "28,721,477",
+       "out 23 Nov, 7:30 PM IST"
+      ],
+      [
+       "KING's two teasers",
+       "86,335,658",
+       "Title Reveal 53,135,488 + Date Announcement 33,200,170"
+      ],
+      [
+       "Doomsday trailer ahead of the teasers by",
+       "4,291,532",
+       "3,392,281 on 23 Nov"
+      ],
+      [
+       "KING's three videos",
+       "185,455,997",
+       "+1,880,816 in 24 hours"
+      ]
+     ]
+    },
+    {
+     "h": "RAMAYANA to KING, day 20"
+    },
+    {
+     "stats": [
+      [
+       "KING · 3 official videos",
+       "185,455,997",
+       "read 24 Nov 07:03 IST"
+      ],
+      [
+       "RAMAYANA · 7 official videos",
+       "152,973,310",
+       "+357,753 in 24 hours"
+      ],
+      [
+       "KING ahead by",
+       "32,482,687",
+       "30,959,624 on 23 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "MAATRUBHUMI"
+    },
+    {
+     "stats": [
+      [
+       "Maatrubhumi trailer",
+       "54,659,262",
+       "+433,752 in 24 hours"
+      ],
+      [
+       "Madirapan",
+       "17,474,768",
+       "its sixth song, out 19 Nov"
+      ],
+      [
+       "8 official videos",
+       "168,063,588",
+       "KING's three lead by 17,392,409 (17,409,547 on 23 Nov)"
+      ]
+     ]
+    },
+    {
+     "h": "From Red Chillies and Shah Rukh Khan"
+    },
+    {
+     "p": "Red Chillies Entertainment posted 'Dubai Ran. KING Arrived.' on Monday, a clip of fans carrying KING through Dubai Run 2026 on Sunday, at 12:20 PM IST on X and on YouTube. The Golden Goose x D'YAVOL X collection, announced by Shah Rukh Khan on 19 November, goes on sale today in Golden Goose stores in India and on goldengoose.com."
+    },
+    {
+     "stats": [
+      [
+       "'Dubai Ran. KING Arrived.', X",
+       "91,265 views",
+       "2,441 likes, 648 reposts"
+      ],
+      [
+       "'Dubai Ran. KING Arrived.', YouTube",
+       "116,734 views",
+       "Red Chillies Entertainment"
+      ],
+      [
+       "'Too much aura, not enough frame', X",
+       "84,628 views",
+       "3,008 likes; 64,645 a day earlier"
+      ],
+      [
+       "@iamsrk's Golden Goose post on X",
+       "879,186 views",
+       "11,757 likes, 2,514 reposts"
+      ],
+      [
+       "@iamsrk on Instagram",
+       "48,515,765 followers",
+       "4,287 fewer than on 23 Nov"
+      ]
+     ]
+    },
+    {
+     "h": "The day in numbers"
+    },
+    {
+     "stats": [
+      [
+       "New YouTube videos about KING, 23 Nov",
+       "50",
+       "299,772 views: Daddy Cool updates, trailer-date updates, fan-made trailers (not official), remixes, KING vs Doomsday"
+      ],
+      [
+       "X posts read, 23 Nov",
+       "53",
+       "216,297 views; @iamsrk and @RedChilliesEnt not counted"
+      ],
+      [
+       "Articles found, 23 Nov",
+       "82",
+       "Global Peace Honours and the Ambani clip 23, Tu Mil Jaaye choreographers 11"
+      ],
+      [
+       "Instagram #srk / #srkking",
+       "7.7M / 135K posts",
+       "as shown by Instagram search, unchanged"
+      ]
+     ]
+    },
+    {
+     "links": [
+      [
+       "DOOM to KING · the report",
+       "/doom-to-king/#report"
+      ],
+      [
+       "RAMAYANA to KING · the full report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "KING Buzz · 24 Nov",
+       "/king-intelligence/daily.html?date=2026-11-24"
+      ],
+      [
+       "Fan Universe",
+       "/fan-made-ai-universe/"
+      ]
+     ]
+    },
+    {
+     "p": "Source: YouTube, X and Instagram public counters, read 24 Nov 2026 07:03-07:12 IST."
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#TuMilJaaye",
+    "#KINGBuzz",
+    "#AvengersDoomsday",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-24-ramayana-day-19",
+   "n": 3,
+   "date": "2026-11-24",
+   "time": "09:00 IST",
+   "kicker": "Box office · Day 19",
+   "title": "Ramayana makes ₹12.70 crore on its third Monday, passes ₹955 crore net in India",
+   "deck": "Ramayana collected ₹12.70 crore net in India on Monday, its nineteenth day, down 64.3% on Sunday, as reported by Sacnilk. It stands at ₹955.45 crore net in India and ₹1,704.65 crore worldwide.",
+   "img": "https://i.ytimg.com/vi/AYkPRN874m8/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=AYkPRN874m8",
+   "img_alt": "Ramayana: Rise of a Legend",
+   "img_credit": "Ramayana: Rise of a Legend, new trailer, Sony Pictures Entertainment on YouTube, 15 Oct 2026. Tap the picture to watch.",
+   "blocks": [
+    {
+     "p": "Nitesh Tiwari's Ramayana collected ₹12.70 crore net across India on Monday, 23 November, according to Sacnilk's figures updated at 10:10 PM IST, 64.3% less than the ₹35.60 crore it made on Sunday. Week three so far, Friday to Monday, stands at ₹91.70 crore."
+    },
+    {
+     "stats": [
+      [
+       "Day 19 · Mon 23 Nov",
+       "₹12.70 crore",
+       "India net, all languages; Hindi ₹9.25 crore"
+      ],
+      [
+       "19 days, India net",
+       "₹955.45 crore",
+       "Hindi ₹725.00 crore of it"
+      ],
+      [
+       "19 days, India gross",
+       "₹1,141.65 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹1,704.65 crore",
+       "overseas ₹563.00 crore"
+      ],
+      [
+       "Week 3 so far (days 16-19)",
+       "₹91.70 crore",
+       "India net"
+      ],
+      [
+       "Footfalls so far",
+       "3,92,26,788",
+       "as listed by Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "By language on Monday, Sacnilk lists Hindi at ₹9.25 crore from 13,442 shows, Malayalam ₹1.50 crore, Kannada ₹85 lakh, Tamil ₹80 lakh and Telugu ₹30 lakh. Malayalam shows ran fullest, at 38.1% occupancy; Hindi averaged 14.9%. For Tuesday, day 20, Sacnilk listed 16,513 shows with ₹8.83 crore already booked by 6:00 AM IST."
+    },
+    {
+     "p": "Sacnilk also reported on Monday that Ramayana has passed Pushpa 2 to become the highest-grossing Indian film in Nepal. KING opens on 24 December, in 30 days. Its advance booking has not opened."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 19",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_19"
+      ],
+      [
+       "RAMAYANA to KING · the report",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#BoxOffice",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-23-king-posters",
    "n": 1,
    "date": "2026-11-23",
@@ -7698,39 +8080,39 @@
   }
  ],
  "poll": {
-  "id": "posters-2026-11-23",
-  "q": "KING's character posters are said to be coming. Whose do you want to see first?",
+  "id": "songs-2026-11-24",
+  "q": "KING's next song is reported for 25 November. Which do you want first?",
   "o": [
-   "Shah Rukh Khan",
-   "Deepika Padukone",
-   "Suhana Khan",
-   "Abhishek Bachchan"
+   "Daddy Cool, with Kareena Kapoor",
+   "The KING title song",
+   "Both, back to back",
+   "Just give us the trailer"
   ]
  },
  "beat": [
   {
-   "t": "More KING posters",
-   "d": "12 to 15 character posters, as reported by Times Now.",
-   "img": "https://i.ytimg.com/vi/8EvkUtB-pA8/maxresdefault.jpg",
-   "url": "?p=2026-11-23-king-posters"
+   "t": "Daddy Cool on 25 Nov",
+   "d": "KING's second song with Kareena Kapoor, as reported by Bollywood Hungama.",
+   "img": "/assets/srk-daily/2026-11-24-srk-kareena.jpg",
+   "url": "?p=2026-11-24-daddy-cool"
   },
   {
-   "t": "Tu Mil Jaaye: 97.3M",
-   "d": "2.7 million short of 100 million, 23 Nov 07:04 IST.",
-   "img": "https://i.ytimg.com/vi/mBV8Gxl-HaM/maxresdefault.jpg",
-   "url": "?p=2026-11-23-king-buzz"
+   "t": "Tu Mil Jaaye: 99.1M",
+   "d": "879,661 short of 100 million, 24 Nov 07:03 IST.",
+   "img": "https://i.ytimg.com/vi/w8jF22IecjM/maxresdefault.jpg",
+   "url": "?p=2026-11-24-king-buzz"
   },
   {
-   "t": "Ramayana: ₹942.75 crore",
-   "d": "India net in 18 days; ₹1,693.50 crore worldwide (Sacnilk).",
-   "img": "https://i.ytimg.com/vi/tVhuiXwSpJM/maxresdefault.jpg",
-   "url": "?p=2026-11-23-ramayana-day-18"
+   "t": "Doomsday's final trailer",
+   "d": "28.7 million views in under 12 hours.",
+   "img": "https://i.ytimg.com/vi/Wb8Tq_HD4E8/maxresdefault.jpg",
+   "url": "?p=2026-11-24-king-buzz"
   },
   {
-   "t": "\"A human dynamo\"",
-   "d": "Raza Murad on Shah Rukh Khan, via The Indian Express.",
-   "img": "/assets/srk-daily/2026-11-23-raza-murad-srk.jpg",
-   "url": "?p=2026-11-23-raza-murad"
+   "t": "Ramayana: ₹955.45 crore",
+   "d": "India net in 19 days; ₹1,704.65 crore worldwide (Sacnilk).",
+   "img": "https://i.ytimg.com/vi/AYkPRN874m8/maxresdefault.jpg",
+   "url": "?p=2026-11-24-ramayana-day-19"
   }
  ],
  "fanverse": {

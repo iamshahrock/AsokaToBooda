@@ -1276,6 +1276,16 @@
       "bookmarks": 336,
       "views": 872237
      }
+    },
+    {
+     "at": "2026-11-24T07:08:00+05:30",
+     "metrics": {
+      "replies": 607,
+      "reposts": 2514,
+      "likes": 11757,
+      "bookmarks": 335,
+      "views": 879186
+     }
     }
    ]
   },
@@ -1317,6 +1327,16 @@
       "bookmarks": 27,
       "views": 83439
      }
+    },
+    {
+     "at": "2026-11-24T07:08:00+05:30",
+     "metrics": {
+      "replies": 109,
+      "reposts": 373,
+      "likes": 1432,
+      "bookmarks": 27,
+      "views": 84537
+     }
     }
    ]
   },
@@ -1348,6 +1368,16 @@
       "bookmarks": 41,
       "views": 28901
      }
+    },
+    {
+     "at": "2026-11-24T07:08:00+05:30",
+     "metrics": {
+      "replies": 54,
+      "reposts": 293,
+      "likes": 1099,
+      "bookmarks": 43,
+      "views": 30998
+     }
     }
    ]
   },
@@ -1368,6 +1398,37 @@
       "likes": 2409,
       "bookmarks": 30,
       "views": 64645
+     }
+    },
+    {
+     "at": "2026-11-24T07:08:00+05:30",
+     "metrics": {
+      "replies": 69,
+      "reposts": 484,
+      "likes": 3008,
+      "bookmarks": 46,
+      "views": 84628
+     }
+    }
+   ]
+  },
+  {
+   "id": "dubai-run-2026-11-23",
+   "release": null,
+   "title": "Dubai Ran. KING Arrived. 👑🔥 The city came together, the energy was unstoppable... #KING in cinemas on 24.12.2026",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2124757516408279533",
+   "posted_at": "2026-11-23T12:20:42+05:30",
+   "readings": [
+    {
+     "at": "2026-11-24T07:08:00+05:30",
+     "metrics": {
+      "replies": 59,
+      "reposts": 648,
+      "likes": 2441,
+      "bookmarks": 66,
+      "views": 91265
      }
     }
    ]
