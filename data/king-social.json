@@ -57,7 +57,9 @@
   "(\"Tu Mil Jaaye\" OR #KING OR \"King\" \"Shah Rukh\") since:2026-11-15 until:2026-11-16 -from:RedChilliesEnt -from:iamsrk min_faves:20 (top)",
   "(#KING OR KING OR \"Tu Mil Jaaye\" OR dyavol OR \"golden goose\") (srk OR \"shah rukh\") since:2026-11-20 until:2026-11-21 -from:iamsrk -from:RedChilliesEnt (top)",
   "(SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-21 until:2026-11-22 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top)",
-  "(SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-22 until:2026-11-23 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top)"
+  "(SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-22 until:2026-11-23 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top)",
+  "(#KING OR \"Daddy Cool\") (SRK OR \"Shah Rukh\") since:2026-11-23 until:2026-11-24 (top)",
+  "(#ShahRukhKhan OR #SRK OR #KingTheFilm OR #TuMilJaaye) since:2026-11-23 until:2026-11-24 (top)"
  ],
  "days": {
   "2026-10-27": {
@@ -9356,6 +9358,214 @@
     }
    ],
    "note": "One X search read 23 Nov 2026 ~07:10 IST in the owner's Chrome, Top tab: (SRK OR \"Shah Rukh\" OR #KING OR ShahRukhKhan) since:2026-11-22 until:2026-11-23 min_faves:30 -from:iamsrk -from:RedChilliesEnt (top) (76 posts loaded). @iamsrk and @RedChilliesEnt not counted. Stance and kind are our one-line reading of each post.",
+   "videos": []
+  },
+  "2026-11-23": {
+   "totals": {
+    "posts_read": 53,
+    "views": 216297,
+    "likes": 7808,
+    "reposts": 1692,
+    "replies": 152
+   },
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@Bollyhungama",
+     "url": "https://x.com/Bollyhungama/status/2124899018610499679",
+     "posted_at": "2026-11-23T21:42:00+05:30",
+     "views": 61342,
+     "likes": 1166,
+     "reposts": 293,
+     "replies": 26,
+     "text": "scoop: SRK to launch 'Daddy Cool', featuring Kareena Kapoor, from KING on 25 Nov",
+     "stance": "neutral",
+     "kind": "news"
+    },
+    {
+     "platform": "X",
+     "account": "@_PatilVishwajit",
+     "url": "https://x.com/_PatilVishwajit/status/2124917627898433563",
+     "posted_at": "2026-11-23T22:56:00+05:30",
+     "views": 38997,
+     "likes": 382,
+     "reposts": 137,
+     "replies": 30,
+     "text": "mocks the Avengers: Doomsday final trailer's VFX, set against the KING poster AI row",
+     "stance": "critical",
+     "kind": "commentary"
+    },
+    {
+     "platform": "X",
+     "account": "@Its_CineHub",
+     "url": "https://x.com/Its_CineHub/status/2124783550620950828",
+     "posted_at": "2026-11-23T14:04:00+05:30",
+     "views": 18438,
+     "likes": 1271,
+     "reposts": 267,
+     "replies": 19,
+     "text": "video of the KING fan craze for SRK in Dubai",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@KingArshad52c",
+     "url": "https://x.com/KingArshad52c/status/2124752410828759369",
+     "posted_at": "2026-11-23T12:00:00+05:30",
+     "views": 18111,
+     "likes": 106,
+     "reposts": 5,
+     "replies": 0,
+     "text": "fan art: 'Daddy Cool' SRK x Kareena",
+     "stance": "positive",
+     "kind": "fan art"
+    },
+    {
+     "platform": "X",
+     "account": "@srkian_ayan_v",
+     "url": "https://x.com/srkian_ayan_v/status/2124712023040917928",
+     "posted_at": "2026-11-23T09:19:00+05:30",
+     "views": 13238,
+     "likes": 329,
+     "reposts": 37,
+     "replies": 22,
+     "text": "clip said to show Suhana Khan in KING",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2124801082765529583",
+     "posted_at": "2026-11-23T15:13:00+05:30",
+     "views": 7286,
+     "likes": 487,
+     "reposts": 96,
+     "replies": 5,
+     "text": "SRK Universe UAE: KING fever at Dubai Run 2026",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@AlwaysBollywood",
+     "url": "https://x.com/AlwaysBollywood/status/2124813447309533666",
+     "posted_at": "2026-11-23T16:02:00+05:30",
+     "views": 6939,
+     "likes": 663,
+     "reposts": 85,
+     "replies": 3,
+     "text": "video: Dubai getting ready for KING",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@Worship_SRK",
+     "url": "https://x.com/Worship_SRK/status/2124795340041949454",
+     "posted_at": "2026-11-23T14:51:00+05:30",
+     "views": 5496,
+     "likes": 278,
+     "reposts": 61,
+     "replies": 4,
+     "text": "fan post: SRK holds the top two spots at the Gulf box office (Jawan, Pathaan)",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@Bolly_BoxOffice",
+     "url": "https://x.com/Bolly_BoxOffice/status/2124847678106611919",
+     "posted_at": "2026-11-23T18:18:00+05:30",
+     "views": 4614,
+     "likes": 303,
+     "reposts": 39,
+     "replies": 2,
+     "text": "KING 'seems to be coming with a completely different vibe'",
+     "stance": "positive",
+     "kind": "commentary"
+    },
+    {
+     "platform": "X",
+     "account": "@PanIndiaReview",
+     "url": "https://x.com/PanIndiaReview/status/2124802180226105808",
+     "posted_at": "2026-11-23T15:18:00+05:30",
+     "views": 3991,
+     "likes": 409,
+     "reposts": 67,
+     "replies": 4,
+     "text": "'Dubai is going crazy for the King'",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@MovieReview_Hub",
+     "url": "https://x.com/MovieReview_Hub/status/2124763995555217586",
+     "posted_at": "2026-11-23T12:46:00+05:30",
+     "views": 3303,
+     "likes": 213,
+     "reposts": 48,
+     "replies": 7,
+     "text": "praises KING's marketing with its overseas distributors",
+     "stance": "positive",
+     "kind": "commentary"
+    },
+    {
+     "platform": "X",
+     "account": "@SRKUniverse",
+     "url": "https://x.com/SRKUniverse/status/2124922094249202043",
+     "posted_at": "2026-11-23T23:14:00+05:30",
+     "views": 2944,
+     "likes": 192,
+     "reposts": 35,
+     "replies": 3,
+     "text": "Golden Goose x D'YAVOL X collection",
+     "stance": "positive",
+     "kind": "fan club"
+    },
+    {
+     "platform": "X",
+     "account": "@PharsFilm",
+     "url": "https://x.com/PharsFilm/status/2124761908859621434",
+     "posted_at": "2026-11-23T12:38:00+05:30",
+     "views": 2309,
+     "likes": 186,
+     "reposts": 62,
+     "replies": 0,
+     "text": "KING's overseas distributor: 'A KING-size takeover at Dubai Run'",
+     "stance": "positive",
+     "kind": "brand post"
+    },
+    {
+     "platform": "X",
+     "account": "@arnavtkx",
+     "url": "https://x.com/arnavtkx/status/2124753906190446793",
+     "posted_at": "2026-11-23T12:06:00+05:30",
+     "views": 2138,
+     "likes": 182,
+     "reposts": 34,
+     "replies": 0,
+     "text": "expects KING's trailer to be 'the best trailer cut in history'",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@KkrCentral",
+     "url": "https://x.com/KkrCentral/status/2124826276376801389",
+     "posted_at": "2026-11-23T16:53:00+05:30",
+     "views": 1342,
+     "likes": 57,
+     "reposts": 5,
+     "replies": 2,
+     "text": "'New poster tomorrow #king #srk'",
+     "stance": "neutral",
+     "kind": "fan post"
+    }
+   ],
+   "note": "Two X searches read 24 Nov 2026 ~07:08 IST in the owner's Chrome, Top tab: (#KING OR \"Daddy Cool\") (SRK OR \"Shah Rukh\") since:2026-11-23 until:2026-11-24 and (#ShahRukhKhan OR #SRK OR #KingTheFilm OR #TuMilJaaye) since:2026-11-23 until:2026-11-24 (89 posts loaded, 53 posted on 23 Nov IST). @iamsrk and @RedChilliesEnt not counted. Stance and kind are our one-line reading of each post.",
    "videos": []
   }
  }
