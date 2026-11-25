@@ -1432,6 +1432,66 @@
      }
     }
    ]
+  },
+  {
+   "id": "1-month-to-go-2026-11-24",
+   "release": null,
+   "title": "Just 1 month till KING's DEHSHAT takes over! #1MonthToGo",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2125114946182922245",
+   "posted_at": "2026-11-24T12:01:00+05:30",
+   "readings": [
+    {
+     "at": "2026-11-25T07:20:00+05:30",
+     "metrics": {
+      "replies": 299,
+      "reposts": 862,
+      "likes": 3200,
+      "views": 118000
+     }
+    }
+   ]
+  },
+  {
+   "id": "tmj-100m-2026-11-24",
+   "release": null,
+   "title": "Love is ruling hearts! 100 Million+ views on YouTube and counting (Tu Mil Jaaye)",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2125274499193221270",
+   "posted_at": "2026-11-24T22:35:00+05:30",
+   "readings": [
+    {
+     "at": "2026-11-25T07:20:00+05:30",
+     "metrics": {
+      "replies": 102,
+      "reposts": 463,
+      "likes": 1800,
+      "views": 26000
+     }
+    }
+   ]
+  },
+  {
+   "id": "golden-goose-collection-2026-11-24",
+   "release": null,
+   "title": "You don't need a crown to be a king. D'YAVOL X and Golden Goose collection now available",
+   "account": "@iamsrk",
+   "platform": "X",
+   "url": "https://x.com/iamsrk/status/2125219991641624845",
+   "posted_at": "2026-11-24T18:58:25+05:30",
+   "readings": [
+    {
+     "at": "2026-11-25T07:20:00+05:30",
+     "metrics": {
+      "replies": 610,
+      "reposts": 1600,
+      "likes": 7800,
+      "views": 476000
+     }
+    }
+   ]
   }
  ]
 }

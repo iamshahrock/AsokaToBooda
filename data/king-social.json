@@ -9567,6 +9567,109 @@
    ],
    "note": "Two X searches read 24 Nov 2026 ~07:08 IST in the owner's Chrome, Top tab: (#KING OR \"Daddy Cool\") (SRK OR \"Shah Rukh\") since:2026-11-23 until:2026-11-24 and (#ShahRukhKhan OR #SRK OR #KingTheFilm OR #TuMilJaaye) since:2026-11-23 until:2026-11-24 (89 posts loaded, 53 posted on 23 Nov IST). @iamsrk and @RedChilliesEnt not counted. Stance and kind are our one-line reading of each post.",
    "videos": []
+  },
+  "2026-11-24": {
+   "totals": {
+    "posts_read": 29,
+    "views": 71083,
+    "likes": 1595,
+    "reposts": 422,
+    "replies": 85
+   },
+   "note": "One X search read 25 Nov 2026 ~07:50 IST in the owner's Chrome, Top tab: (#KING OR \"Daddy Cool\" OR #TuMilJaaye) (SRK OR \"Shah Rukh\") since:2026-11-24 until:2026-11-25 (34 posts loaded, 29 posted on 24 Nov IST). @iamsrk and @RedChilliesEnt not counted. Stance and kind are our one-line reading of each post.",
+   "posts": [
+    {
+     "platform": "X",
+     "account": "@teamsrkfc",
+     "url": "https://x.com/teamsrkfc/status/2125198242027868437",
+     "posted_at": "2026-11-24T17:31:59+05:30",
+     "views": 22000,
+     "likes": 383,
+     "reposts": 147,
+     "replies": 29,
+     "text": "Fan club march in Pune for the 30-day countdown (video)",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@gogokaghagraa",
+     "url": "https://x.com/gogokaghagraa/status/2125114886485352743",
+     "posted_at": "2026-11-24T12:00:46+05:30",
+     "views": 16000,
+     "likes": 75,
+     "reposts": 50,
+     "replies": 23,
+     "text": "Fan poll post, #RukhRukhHotaHai for #King",
+     "stance": "neutral",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@MdImtiyajtxvg",
+     "url": "https://x.com/MdImtiyajtxvg/status/2125274265188790776",
+     "posted_at": "2026-11-24T22:34:05+05:30",
+     "views": 5100,
+     "likes": 183,
+     "reposts": 22,
+     "replies": 1,
+     "text": "KING background music edit (video)",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@be_faizy",
+     "url": "https://x.com/be_faizy/status/2125273705345671627",
+     "posted_at": "2026-11-24T22:31:51+05:30",
+     "views": 4200,
+     "likes": 65,
+     "reposts": 8,
+     "replies": 4,
+     "text": "Fan reaction clip (video)",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@wwsrkx",
+     "url": "https://x.com/wwsrkx/status/2125248306406388029",
+     "posted_at": "2026-11-24T20:50:56+05:30",
+     "views": 4000,
+     "likes": 257,
+     "reposts": 58,
+     "replies": 6,
+     "text": "Hype post ahead of the next 24 hours (video)",
+     "stance": "positive",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@SrkiansK19493",
+     "url": "https://x.com/SrkiansK19493/status/2125239948861440387",
+     "posted_at": "2026-11-24T20:17:43+05:30",
+     "views": 3700,
+     "likes": 61,
+     "reposts": 12,
+     "replies": 1,
+     "text": "Fan complaint about the pace of KING promotion (video)",
+     "stance": "critical",
+     "kind": "fan post"
+    },
+    {
+     "platform": "X",
+     "account": "@KhanSaabVerse",
+     "url": "https://x.com/KhanSaabVerse/status/2125095938205397164",
+     "posted_at": "2026-11-24T10:45:28+05:30",
+     "views": 3300,
+     "likes": 209,
+     "reposts": 43,
+     "replies": 1,
+     "text": "Post on Marvel promotion versus KING (video)",
+     "stance": "critical",
+     "kind": "views / record"
+    }
+   ]
   }
  }
 }
