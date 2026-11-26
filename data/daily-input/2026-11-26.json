@@ -1,0 +1,116 @@
+{
+ "date": "2026-11-26",
+ "record_id": "KING-2026-11-26",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 53267335,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-26 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33224697,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-26 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 91641221,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-26 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 102829086,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-26 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_instagram_posts",
+   "value": 7700000,
+   "unit": "Instagram #srk posts",
+   "source": "Instagram search box, read 07:20 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srkking_instagram_posts",
+   "value": 135000,
+   "unit": "Instagram #srkking posts",
+   "source": "Instagram search box, read 07:20 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 86,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-24 (86 works)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 5661046,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-24 (YouTube views re-read 24 Nov)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48495038,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,495,038 as shown), read 2026-11-26 07:15 IST in the owner's signed-in browser",
+   "method": "count shown in the profile follower tooltip",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 26 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "KING's trailer is being cut to about three to three-and-a-half minutes, Variety India reported on 25 Nov at 10:08 IST from a source ('how much you reveal and how much you hide'); TOI, NDTV, News18, Times Now and others followed; 14+ of 25 Nov's KING articles in our search were on the trailer",
+  "Daddy Cool, reported by Bollywood Hungama for 25 Nov, was not released by 07:00 IST on 26 Nov; no announcement from @iamsrk, @RedChilliesEnt or T-Series",
+  "Cinemark (US cinema chain) posted a video of Shah Rukh Khan wishing audiences a Happy Thanksgiving, 'He'll see you in theaters December 24', tagging Red Chillies, Marflix Pictures and Phars Film (X, 25 Nov 20:37 IST; 47,618 views by 07:10 IST on 26 Nov)",
+  "Koimoi reported KING's North America break-even at about $12.5 million (25 Nov)",
+  "Tu Mil Jaaye 102,829,086 at 07:03 IST on 26 Nov (+1,873,689 in 24 h); leads the Doomsday trailer (91,641,221, +416,549) by 11,187,865",
+  "KING's two teasers 86,492,032 (Title Reveal 53,267,335 + Date Announcement 33,224,697); Doomsday trailer ahead by 5,149,189 (4,811,657 on 25 Nov)",
+  "RAMAYANA to KING at 07:03 IST: KING's 3 official videos 189,321,118 vs Ramayana's 7 at 153,581,186 (KING +35,739,932; was +34,068,452); Maatrubhumi's 8 at 170,638,313",
+  "Ramayana day 21 (Wed 25 Nov): Rs 9.60 crore India net, down 45.1%; 21 days Rs 982.55 crore net, Rs 1,173.60 crore gross, Rs 1,755.60 crore worldwide (Sacnilk, updated 25 Nov 10:22 PM IST)",
+  "Avengers: Doomsday final trailer (Wb8Tq_HD4E8) 53,960,113 views and Hindi final trailer (WwXD5OTlyHg) 12,219,346 at 07:03 IST on 26 Nov",
+  "Shah Rukh Khan travelled to Udaipur for a private wedding on 25 Nov (Udaipur Kiran, fan club videos on X); TOI and others reported his new look ahead of KING promotions",
+  "Instagram search: #srk 7.7M posts, #srkking 135K posts (unchanged)",
+  "@iamsrk Instagram 48,495,038 followers at 07:15 IST (10,451 fewer than on 25 Nov)"
+ ],
+ "notes": [
+  "YouTube read by Claude from the public watch pages at 07:03 IST; Instagram in the owner's session at 07:15-07:20 IST.",
+  "Box office as reported by Sacnilk.",
+  "Posts are not people."
+ ]
+}
