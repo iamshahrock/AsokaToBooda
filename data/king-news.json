@@ -1,27 +1,31 @@
 {
  "about": "Top of /king-intelligence/: the latest KING news (owner, 27 Oct 2026) and every official KING release by Shah Rukh Khan / Red Chillies Entertainment. Video views are read live from the daily ledger (series_id). Update 'latest' when a new official asset drops. Posters on Instagram have no public view count: shown as N/A, never estimated.",
  "latest": {
-  "date": "2026-11-25",
-  "kicker": "News · Tu Mil Jaaye passes 100 million",
-  "headline": "Tu Mil Jaaye passes 100 million YouTube views",
-  "deck": "KING's first song stood at 100,955,397 views at 07:03 IST on 25 Nov, 24 days after release. Red Chillies Entertainment marked the milestone on X on 24 Nov at 10:35 PM IST, and posted #1MonthToGo at 12:01 PM IST.",
-  "quote": "",
-  "quote_by": "",
-  "image": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxresdefault.jpg",
-  "image_alt": "Tu Mil Jaaye, KING's first song",
-  "image_credit": "Official video thumbnail, T-Series on YouTube",
+  "date": "2026-11-26",
+  "kicker": "News · The trailer",
+  "headline": "KING's trailer to run three to three-and-a-half minutes, Variety India reports",
+  "deck": "Variety India reported on 25 Nov, from a source, that KING's trailer is in its final cut at about three to three-and-a-half minutes. Daddy Cool, reported for 25 Nov, had not been released by 07:00 IST on 26 Nov. Cinemark in the US posted Shah Rukh Khan's Thanksgiving message for KING.",
+  "quote": "The most challenging part of putting out a trailer for KING has to be how much you reveal and how much you hide.",
+  "quote_by": "A source, to Variety India",
+  "image": "/assets/srk-daily/2026-11-26-king-trailer.jpg",
+  "image_alt": "Shah Rukh Khan in KING",
+  "image_credit": "KING poster image as run by Times Now",
   "sources": [
    {
-    "name": "SRK DAILY · Issue 21",
-    "url": "/srk-daily/?p=2026-11-25-tu-mil-jaaye-100m"
+    "name": "SRK DAILY · Issue 22",
+    "url": "/srk-daily/?p=2026-11-26-king-trailer"
    },
    {
-    "name": "Red Chillies Entertainment on X",
-    "url": "https://x.com/RedChilliesEnt/status/2125274499193221270"
+    "name": "Variety India",
+    "url": "https://varietyindia.com/shah-rukh-khans-king-trailer-to-clock-in-at-a-little-over-3-minutes-packed-with-action-music-and-a-grand-scale-exclusive/"
    },
    {
-    "name": "KING Buzz · 25 Nov",
-    "url": "/king-intelligence/daily.html?date=2026-11-25"
+    "name": "Cinemark on X",
+    "url": "https://x.com/Cinemark/status/2125607379932684712"
+   },
+   {
+    "name": "KING Buzz · 26 Nov",
+    "url": "/king-intelligence/daily.html?date=2026-11-26"
    }
   ]
  },
