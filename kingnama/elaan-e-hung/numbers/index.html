@@ -48,6 +48,24 @@ td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
 .tw{overflow-x:auto}
 .back{display:inline-block;margin-top:2.4rem;font-family:var(--mono);font-size:.8rem;color:var(--fg);text-decoration:none;border:1px solid var(--silver);padding:.55rem .9rem}
 .back:hover{background:var(--red);border-color:var(--red)}
+.toprow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem 1rem}
+.cd{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--red);color:var(--fg);padding:.35rem .7rem}
+.cd b{color:var(--red);font-size:1rem;margin-right:.3rem}
+h2.first{margin-top:1rem}
+.days{display:flex;gap:.6rem;overflow-x:auto;padding-bottom:.4rem;scroll-snap-type:x mandatory}
+.day{flex:0 0 auto;min-width:9.5rem;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);padding:.7rem .8rem;text-decoration:none;color:var(--fg);font-family:var(--mono)}
+.day:hover{border-color:var(--silver)}
+.day.on{border-color:var(--red);box-shadow:inset 0 3px 0 var(--red)}
+.day .dn{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.day .dv{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:1.35rem;margin-top:.2rem}
+.day .dd{font-size:.7rem;color:#5fd3a6}
+.dayview{background:var(--surface);border:1px solid var(--red);padding:1rem 1.1rem;margin-top:.7rem}
+.dayview h3{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:1.15rem;margin:0 0 .5rem}
+.dayview .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:.6rem;font-family:var(--mono);font-size:.78rem}
+.dayview .g div b{display:block;font-family:var(--display);font-size:1.25rem;font-stretch:110%}
+.dayview .g div span{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em}
+.dayview p{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin:.7rem 0 0}
+.dayview a{color:var(--fg)}
 .tip{font-family:var(--mono);font-size:11px}
 @media (max-width:560px){th.opt,td.opt{display:none}}
 </style>
@@ -55,10 +73,15 @@ td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
 <body>
 <script src="../../../assets/header.js"></script>
 <main class="nw">
-  <div class="kick"><b>KINGNAMA</b> · Elaan-e-Hung · The numbers</div>
+  <div class="toprow"><div class="kick"><b>KINGNAMA</b> · Elaan-e-Hung · The numbers</div><div class="cd" id="cd"></div></div>
   <h1>Daddy Cool<span>:</span> the numbers</h1>
   <p class="sub" id="sub">How the song is growing. One reading every day at 22:00 IST, added to the record and never edited. The article keeps its launch-day snapshot; this page keeps the story since. <a href="../">← Back to the article</a></p>
 
+  <h2 class="first">Day by day</h2>
+  <div class="days" id="days"></div>
+  <div class="dayview" id="dayview" hidden></div>
+
+  <h2>Latest reading</h2>
   <div class="tiles" id="tiles"></div>
 
   <h2>Views since release, against Tu Mil Jaaye</h2>
@@ -139,6 +162,39 @@ Promise.all([fetch('../../../data/daddy-cool-log.json',{cache:'no-store'}).then(
   var rb='';R.slice().reverse().forEach(function(r){rb+='<tr><td>'+ist(r.at)+(r.note?' · '+r.note:'')+'</td><td class="r">'+fmt(r.views)+'</td><td class="r">'+fmt(r.likes)+'</td><td class="r opt">'+fmt(r.comments)+'</td><td class="r opt">'+fmt(r.jiosaavn)+'</td></tr>'});
   document.querySelector('#rd tbody').innerHTML=rb;
 }).catch(function(){document.getElementById('tiles').innerHTML='<p class="note">The numbers could not load. Refresh the page.</p>'});
+})();
+</script>
+<script>
+(function(){
+var KING=new Date('2026-12-24T00:00:00+05:30');
+function istDate(d){return new Date(d).toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'})}
+var left=Math.ceil((KING-new Date())/864e5);
+document.getElementById('cd').innerHTML=left>0?'<b>'+left+'</b> days to KING · 24 Dec':(left===0?'<b>KING</b> is out today':'<b>KING</b> released 24 Dec');
+function fmt(n){return n==null?'·':n.toLocaleString('en-IN')}
+function mil(n){return n>=1e6?(n/1e6).toFixed(n>=1e7?1:2)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':String(n)}
+function lbl(ds){return new Date(ds+'T12:00:00+05:30').toLocaleDateString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'short'}).toUpperCase()}
+function t(iso){return new Date(iso).toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:false})}
+fetch('../../../data/daddy-cool-log.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(D){
+  var R=D.readings,P=D.posted_at,rel=istDate(P),by={};
+  R.forEach(function(r){by[istDate(r.at)]=r});              // the day's latest reading (the 22:00 one once daily readings run)
+  var days=Object.keys(by).sort(),dayNo=function(ds){return Math.round((new Date(ds)-new Date(rel))/864e5)+1};
+  var q=new URLSearchParams(location.search).get('day'),sel=days.indexOf(q)>=0?q:null,h='';
+  days.slice().reverse().forEach(function(ds,i){var r=by[ds],pi=days.indexOf(ds)-1,pv=pi>=0?by[days[pi]].views:0;
+    h+='<a class="day'+(ds===sel?' on':'')+'" href="?day='+ds+'#dayview"><div class="dn">Day '+dayNo(ds)+' · '+lbl(ds)+'</div><div class="dv">'+mil(r.views)+'</div><div class="dd">▲ '+mil(r.views-pv)+(pi>=0?' that day':' since release')+'</div></a>'});
+  h+='<a class="day'+(sel===rel?' on':'')+'" href="?day='+rel+'#dayview"><div class="dn">Day 1 · '+lbl(rel)+'</div><div class="dv">Release</div><div class="dd">'+t(P)+' IST</div></a>';
+  document.getElementById('days').innerHTML=h;
+  if(!sel&&q!==rel)return;
+  var v=document.getElementById('dayview');v.hidden=false;
+  if(q===rel){v.innerHTML='<h3>Day 1 · '+lbl(rel)+' · release</h3><p>Daddy Cool (KING Version) went up on YouTube at '+t(P)+' IST. Our first reading came at 02:07 IST the next morning: '+fmt(R[0].views)+' views. <a href="?">All days →</a></p>';return}
+  var r=by[sel],i=days.indexOf(sel),p=i>0?by[days[i-1]]:{at:P,views:0,likes:0,comments:0,jiosaavn:0},dh=(new Date(r.at)-new Date(p.at))/36e5;
+  var marks=[1e6,5e6,1e7,2.5e7,5e7,7.5e7,1e8,1.5e8,2e8].filter(function(m){return p.views<m&&r.views>=m}).map(mil);
+  var dl=function(k){return (r[k]!=null&&p[k]!=null)?'▲ '+fmt(r[k]-p[k]):''};
+  v.innerHTML='<h3>Day '+dayNo(sel)+' · '+lbl(sel)+' · read '+t(r.at)+' IST</h3><div class="g">'+
+    '<div><span>Views</span><b>'+fmt(r.views)+'</b>'+dl('views')+'</div><div><span>Likes</span><b>'+fmt(r.likes)+'</b>'+dl('likes')+'</div>'+
+    '<div><span>Comments</span><b>'+fmt(r.comments)+'</b>'+dl('comments')+'</div><div><span>JioSaavn</span><b>'+fmt(r.jiosaavn)+'</b>'+dl('jiosaavn')+'</div>'+
+    '<div><span>Views per hour</span><b>'+mil(Math.round((r.views-p.views)/dh))+'</b>over '+dh.toFixed(1)+' h</div></div>'+
+    '<p>'+(marks.length?'Milestones crossed: '+marks.join(', ')+'. ':'')+'Compared with '+(i>0?'the day before ('+lbl(days[i-1])+', '+t(p.at)+' IST)':'release')+'. <a href="?">All days →</a></p>';
+}).catch(function(){});
 })();
 </script>
 <script src="../../../assets/footer.js" defer></script>

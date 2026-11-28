@@ -170,6 +170,9 @@ th{color:var(--muted);font-weight:400;letter-spacing:.06em;text-transform:upperc
 .since .now{color:#5fd3a6}
 .since .go{margin-left:auto;color:var(--red);font-weight:600}
 .since:hover .go{text-decoration:underline}
+.since .dc{color:var(--fg);font-weight:600}
+.livelink{margin:-.4rem 0 1rem;font-family:var(--mono);font-size:.8rem}
+.livelink a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--red)}
 td.num{text-align:left}
 }
 td.num{text-align:right;font-variant-numeric:tabular-nums}
@@ -459,6 +462,7 @@ h2{clear:both}
 <p>And here's the growth: in every one of those songs the power has moved a little more towards her. In <em>K3G</em> he's the guardian. In <em>Don</em> she's the trap. In <em>Billu</em> she's the dream. In <em>Ra.One</em> she's the partner. In <em>Daddy Cool</em> she's the one with the money, buying what Ray Drecker sells. That's why no newer co-star could have done this song. Only Poo has known the jeeja long enough to call his bluff.</p>
 
 <h2><small>The numbers</small>What 28.4 million views actually say</h2>
+<p class="livelink"><a href="numbers/">Live numbers, day by day →</a></p>
 
 <p>Enough poetry. Here are the receipts. The headline numbers below were pulled from the official upload at 22:00 IST on 28 November, 26 hours 3 minutes after it went live. The comment analysis is from an earlier snapshot, at 02:07 IST.</p>
 
@@ -473,8 +477,9 @@ h2{clear:both}
     <div class="stat"><div class="n">44,660</div><div class="l">JioSaavn plays of the full 3:20 song</div></div>
     <div class="stat"><div class="n">1:45</div><div class="l">the YouTube video is the teaser. The full song runs 3:20 on streaming.</div></div>
   </div>
-  <a class="since" id="since" href="numbers/"><span class="k">Launch-day snapshot</span> 28.44M views at 22:00 IST, 28 Nov <span class="now" id="sinceNow"></span><span class="go">See how it grew →</span></a>
+  <a class="since" id="since" href="numbers/"><span class="k">Launch-day snapshot</span><span class="dc" id="sinceDay"></span> 28.44M views at 22:00 IST, 28 Nov <span class="now" id="sinceNow"></span><span class="go">See how it grew →</span></a>
   <script>
+  (function(){var P=new Date('2026-11-27T19:57:00+05:30'),K=new Date('2026-12-24T00:00:00+05:30'),n=new Date(),d=Math.floor((new Date(n.toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'}))-new Date('2026-11-27'))/864e5)+1,l=Math.ceil((K-n)/864e5);document.getElementById('sinceDay').textContent='Day '+d+(l>0?' · '+l+' days to KING':'');})();
   fetch('../../data/daddy-cool-log.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var L=d.readings[d.readings.length-1];if(new Date(L.at)<=new Date('2026-11-28T22:05:00+05:30'))return;
     var t=new Date(L.at).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',hour12:false});
     document.getElementById('sinceNow').textContent='→ Now: '+(L.views/1e6).toFixed(1)+'M · read '+t+' IST';}).catch(function(){});
