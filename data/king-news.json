@@ -1,39 +1,65 @@
 {
  "about": "Top of /king-intelligence/: the latest KING news (owner, 27 Oct 2026) and every official KING release by Shah Rukh Khan / Red Chillies Entertainment. Video views are read live from the daily ledger (series_id). Update 'latest' when a new official asset drops. Posters on Instagram have no public view count: shown as N/A, never estimated.",
  "latest": {
-  "date": "2026-11-27",
-  "kicker": "News · The runtime",
-  "headline": "Fandango lists KING at 3 hours 17 minutes",
-  "deck": "The US ticketing site Fandango lists KING at 3 hr 17 min, release 24 December. Bollywood Hungama reported on 26 Nov that it would be Shah Rukh Khan's first film over three hours since Kabhi Alvida Naa Kehna (2006), if the length holds at certification. Siddharth Anand posted 'It's Time For' the same day.",
-  "quote": "It's Time For",
-  "quote_by": "Siddharth Anand, on X, 26 Nov 2026",
-  "image": "/assets/srk-daily/2026-11-27-king-fandango.jpg",
-  "image_alt": "KING poster on Fandango",
-  "image_credit": "KING poster as listed on Fandango",
+  "date": "2026-11-28",
+  "kicker": "News · The second song",
+  "headline": "Daddy Cool, KING's second song, is out: Shah Rukh Khan and Kareena Kapoor Khan together again after 15 years",
+  "deck": "T-Series posted Daddy Cool (KING Version) on 27 Nov at 19:57 IST. It drew 7,494,167 views on YouTube by 07:04 IST on 28 Nov. Shah Rukh Khan unveiled it at Meta's House of Instagram in Mumbai, in conversation with Karan Johar.",
+  "quote": "Back with Bebo... song Old School... but still Cool!",
+  "quote_by": "Shah Rukh Khan, on X, 27 Nov 2026",
+  "image": "/assets/srk-daily/2026-11-28-daddy-cool.jpg",
+  "image_alt": "Shah Rukh Khan and Kareena Kapoor Khan in Daddy Cool",
+  "image_credit": "Frame from the official video (T-Series)",
   "sources": [
    {
-    "name": "SRK DAILY · Issue 23",
-    "url": "/srk-daily/?p=2026-11-27-king-runtime"
+    "name": "SRK DAILY · Issue 24",
+    "url": "/srk-daily/?p=2026-11-28-daddy-cool"
    },
    {
-    "name": "Fandango · King (2026)",
-    "url": "https://www.fandango.com/king-2026-248678/movie-overview"
+    "name": "Daddy Cool (KING Version) on YouTube",
+    "url": "https://www.youtube.com/watch?v=2pIRdpQhvpU"
    },
    {
-    "name": "Bollywood Hungama",
-    "url": "https://www.bollywoodhungama.com/news/bollywood/breaking-king-expected-to-be-3-hours-and-17-minutes-long-could-become-shah-rukh-khans-first-film-in-20-years-to-cross-the-3-hour-mark-since-kabhi-alvida-naa-kehna/"
+    "name": "Shah Rukh Khan on X",
+    "url": "https://x.com/iamsrk/status/2126322313167798724"
    },
    {
-    "name": "Siddharth Anand on X",
-    "url": "https://x.com/justSidAnand/status/2125829048991682728"
+    "name": "The Indian Express",
+    "url": "https://indianexpress.com/article/entertainment/bollywood/what-shah-rukh-khan-said-at-king-song-daddy-cool-launch-10981543/"
    },
    {
-    "name": "KING Buzz · 27 Nov",
-    "url": "/king-intelligence/daily.html?date=2026-11-27"
+    "name": "KING Buzz · 28 Nov",
+    "url": "/king-intelligence/daily.html?date=2026-11-28"
    }
   ]
  },
  "releases": [
+  {
+   "date": "2026-11-27",
+   "time": "19:57 IST",
+   "type": "Song",
+   "title": "Daddy Cool (KING Version) · KING's second song",
+   "by": "Red Chillies Entertainment · T-Series",
+   "platform": "YouTube",
+   "thumb": "https://i.ytimg.com/vi/2pIRdpQhvpU/mqdefault.jpg",
+   "links": [
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/watch?v=2pIRdpQhvpU"
+    },
+    {
+     "name": "SRK on X",
+     "url": "https://x.com/iamsrk/status/2126322313167798724"
+    },
+    {
+     "name": "SRK Instagram",
+     "url": "https://www.instagram.com/iamsrk/reel/DgP5aG4IbsL/"
+    }
+   ],
+   "series_id": "king_daddy_cool_views",
+   "release": "daddy-cool-2026-11-27",
+   "note": "Shah Rukh Khan, Kareena Kapoor Khan · Sachin-Jigar · Kumaar · Arijit Singh, Shilpa Rao · Boney M original · choreography Vaibhavi Merchant · 1:45 · unveiled at House of Instagram, Mumbai"
+  },
   {
    "date": "2026-11-06",
    "time": "13:26 IST",

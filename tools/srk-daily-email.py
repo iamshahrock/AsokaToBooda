@@ -95,7 +95,7 @@ def build(day):
     before = [r for r in R if r['date'] < day.isoformat()]
     rec = before[-1] if before else R[-1]
     names = {'king_title_reveal_views': 'KING · Title Reveal', 'king_date_announcement_views': 'KING · Date Announcement',
-             'king_tu_mil_jaaye_views': 'Tu Mil Jaaye', 'doomsday_official_trailer_views': 'Avengers: Doomsday · trailer'}
+             'king_tu_mil_jaaye_views': 'Tu Mil Jaaye', 'king_daddy_cool_views': 'Daddy Cool', 'doomsday_official_trailer_views': 'Avengers: Doomsday · trailer'}
     val = lambda r, sid: next((m['value'] for m in r['metrics'] if m['series_id'] == sid and m.get('value') is not None), None)
     vals = [(names[s], val(rec, s), s.startswith('doomsday')) for s in names if val(rec, s) is not None]
     if vals:
