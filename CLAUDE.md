@@ -552,3 +552,7 @@ Chats cannot read each other. At the end of any chat that changes the site, upda
 ## Credits update (owner, 16 Nov 2026)
 - About Us: Mr. Sanjay Rodrigues / Phenomenal AI tag is now 'Sponsor · Inquilaab PartClip Rendering' (was Tech Sponsor); bio's last line says Phenomenal AI sponsors the part-clip rendering of INQUILAAB.
 - Footer credit block (assets/footer.js): heading 'Hum Dono Zinda Hain' (was 'INQUILAAB - KING KE SAATH'); Research & Development shows two logos side by side: DOME (Dome Entertainment Group) and SRKWORLD (assets/about/logo-srkworld.webp, the emblem from the original 2000 SRKWorld screen PSD, INQUILAAB_PROMO/.../REFS_srkworld_logo, same source as the Inquilaab video ending) with the line 'Aryan Infomatics 2000' (owner's wording).
+
+## Elaan-e-Hung · The Daddy Edition (owner, 28 Nov 2026: opinion piece on Daddy Cool, 'Written by Claude, edited by Shailja')
+- /kingnama/elaan-e-hung/ (noindex, NOT linked from the header, homepage, SRK DAILY or KINGNAMA until the owner says post). Master file + images: Desktop/KING_MOVIE/KingNama/Daddy Cool/Elaan-e-Hung.html; the page's img/ keeps the owner's file names exactly (never rename or re-encode her images).
+- Numbers in the piece are a snapshot (headline at 16:51 IST 28 Nov); refresh before the official post. The Palat post-script is the owner's private note to SRK: never edit it.
