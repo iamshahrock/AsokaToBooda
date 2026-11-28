@@ -1,0 +1,127 @@
+{
+ "date": "2026-11-28",
+ "record_id": "KING-2026-11-28",
+ "role": "DAILY UPDATE",
+ "metrics": [
+  {
+   "series_id": "king_title_reveal_views",
+   "value": 53419897,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=Uu2QK9Z9X5E (KING | Title Reveal), read 2026-11-28 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_date_announcement_views",
+   "value": 33252189,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=M3mfut2RdHk (KING | Date Announcement), read 2026-11-28 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "doomsday_official_trailer_views",
+   "value": 92250158,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=irVNGjRFZGk (Avengers: Doomsday | Official Trailer), read 2026-11-28 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_tu_mil_jaaye_views",
+   "value": 106654306,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=BPZkZpGMpXA (T-Series official video), read 2026-11-28 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_daddy_cool_views",
+   "value": 7494167,
+   "unit": "YouTube views",
+   "source": "https://www.youtube.com/watch?v=2pIRdpQhvpU (Daddy Cool (KING Version), T-Series official video, posted 27 Nov 2026 19:57 IST), read 2026-11-28 07:03 IST from the public watch page",
+   "method": "exact viewCount from the public YouTube watch page",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srk_instagram_posts",
+   "value": 7800000,
+   "unit": "Instagram #srk posts",
+   "source": "Instagram search box, read 07:06 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "srkking_instagram_posts",
+   "value": 135000,
+   "unit": "Instagram #srkking posts",
+   "source": "Instagram search box, read 07:06 IST",
+   "method": "post count as displayed by Instagram search (rounded)",
+   "confidence": "rounded public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_logged",
+   "value": 86,
+   "unit": "fan-made AI works about KING",
+   "source": "data/ai-creator-log.json as of 2026-11-24 (86 works)",
+   "method": "public posts found and linked by the daily scan",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "fan_ai_works_views",
+   "value": 5661046,
+   "unit": "views",
+   "source": "data/ai-creator-log.json as of 2026-11-24 (YouTube views re-read 24 Nov)",
+   "method": "sum of public view counts on the logged works that show views",
+   "confidence": "verified/linked",
+   "status": "usable"
+  },
+  {
+   "series_id": "iamsrk_instagram_followers",
+   "value": 48483088,
+   "unit": "followers",
+   "source": "https://www.instagram.com/iamsrk/ count from the profile's follower tooltip (48,483,088 as shown), read 2026-11-28 07:05 IST in the owner's signed-in browser",
+   "method": "count shown in the profile follower tooltip",
+   "confidence": "exact public counter",
+   "status": "usable"
+  },
+  {
+   "series_id": "king_public_observable_posts",
+   "value": null,
+   "unit": "posts",
+   "source": "No verified 28 Nov total located",
+   "method": "not reported",
+   "confidence": "unavailable",
+   "status": "missing"
+  }
+ ],
+ "topics": [
+  "NEW OFFICIAL KING RELEASE: Daddy Cool (KING Version), KING's second song, posted by T-Series on YouTube on 27 Nov 2026 at 19:57 IST (2pIRdpQhvpU, 1:45; also on Zee Music Company's channel as a shared upload, as reported by Bollywood Hungama): Shah Rukh Khan and Kareena Kapoor Khan, Sachin-Jigar, lyrics Kumaar, vocals Arijit Singh and Shilpa Rao, choreography Vaibhavi Merchant, Boney M's original licensed from Sony Music; 7,494,167 views and 137,656 likes by 07:04 IST on 28 Nov",
+  "@iamsrk posted it on X at 19:58 IST ('Back with Bebo... song Old School... but still Cool!'): 1,146,180 views, 16,548 likes, 4,891 reposts, 1,098 replies by 07:05 IST; the Instagram reel (collab, 20:00 IST): 751.6K likes, 20.1K comments by 07:06 IST; @RedChilliesEnt on X at 20:02 IST ('Sau deshon mein badnaam... aur ab ek aur naam'), 34,232 views",
+  "The song was unveiled at Meta's House of Instagram 2026 in Mumbai on 27 Nov, attended by more than 700 creators (Bollywood Hungama); SRK in conversation with Karan Johar ('I really believe I have a kingdom of love', Indian Express), recited the KING line 'Hazaar jurm. Sau deshon mein badnaam. Duniya ne diya sirf ek hi naam... King' (Times Now), danced to Tu Mil Jaaye fan reels and brought fans on stage",
+  "Siddharth Anand posted 'The KING of' on X on 27 Nov at 09:51 IST (686,836 views by 07:00 IST on 28 Nov) and 'ENTERTAINMENT' with the song link at 19:59 IST",
+  "Press: 63 articles on 27 Nov found by 7 Google News searches (Daddy Cool 48, launch event 6, runtime 5, Siddharth Anand 6, other 3, overlaps assigned to one topic)",
+  "X sweep (Top, since 27 Nov): 107 posts dated 27 Nov IST, 1,831,594 views; official handles not counted",
+  "YouTube: 59 KING videos posted 27 Nov found by 12 searches (17 reactions, 14 reviews, 17 news/update, 4 event clips, 4 covers, 3 fan trailers), 1,258,060 views at reading",
+  "KING's four official videos 200,820,559 at 07:03 IST (Title Reveal 53,419,897 + Date Announcement 33,252,189 + Tu Mil Jaaye 106,654,306 + Daddy Cool 7,494,167); three-video total 193,326,392 (+2,111,486 in 24 h)",
+  "RAMAYANA to KING at 07:03 IST: KING's 4 official videos 200,820,559 vs Ramayana's 7 at 154,143,532 (KING +46,677,027; three-video gap was +37,346,831 on 27 Nov, now +39,182,860)",
+  "Tu Mil Jaaye 106,654,306 (+2,005,227 in 24 h); Doomsday trailer 92,250,158 (+259,293); Doomsday final trailer 67,088,841, Hindi final trailer 17,035,890",
+  "Ramayana day 23 (Fri 27 Nov): Rs 8.45 crore India net (down 12.4%); 23 days Rs 1,000.55 crore net, past Rs 1,000 crore net; Rs 1,195.10 crore India gross, Rs 1,790.10 crore worldwide (Sacnilk, updated 27 Nov 10:27 PM IST)",
+  "Instagram search: #srk 7.8M posts (7.7M on 27 Nov), #srkking 135K",
+  "@iamsrk Instagram 48,483,088 followers at 07:05 IST (2,817 fewer than on 27 Nov)"
+ ],
+ "notes": [
+  "YouTube read by Claude from the public watch pages at 07:03 IST; Instagram in the owner's session at 07:05-07:07 IST; X in the owner's Chrome at 07:05-07:30 IST.",
+  "Box office as reported by Sacnilk.",
+  "Daddy Cool (king_daddy_cool_views) is a new series from this record; KING's official-video total now counts four videos.",
+  "Posts are not people."
+ ]
+}

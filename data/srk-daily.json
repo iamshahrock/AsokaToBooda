@@ -2,6 +2,318 @@
  "about": "SRK DAILY (owner, 4 Nov 2026: 'we need to have a daily blog ... News about SRK, like a newsdaily'). One post per item, newest date first; 'n' orders posts of the same day. Numbers are real readings with the time read, or N/A. Press claims are labelled as reported. Blocks: h (heading), p (paragraph), stats [[label, value, note]], list [..], time [[time, text]], quote {q, by}, links [[label, url]]. poll {id,q,o} = the Poll Station (Worker /daily-poll, D1 daily_votes); beat[] = THE BEAT column {t,d,img,url}. fanverse{} = the FANVERSE song box (audio from assets/inquilab/audio). highlights[] = 'From the site today', one per IST day in order (day 0 = 4 Nov 2026), {t,d,img,url,cta}. 'Today at KING University' picks one lesson a day from data/king-studies.json the same way.",
  "posts": [
   {
+   "id": "2026-11-28-daddy-cool",
+   "n": 1,
+   "date": "2026-11-28",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 24 · The second song",
+   "title": "Daddy Cool is out: Shah Rukh Khan and Kareena Kapoor Khan together again after 15 years",
+   "deck": "KING's second song, a new Hindi version of Boney M's 1976 hit, drew 7.49 million views on YouTube in its first eleven hours. Shah Rukh Khan's own post called it 'Old School... but still Cool!'",
+   "img": "/assets/srk-daily/2026-11-28-daddy-cool.jpg",
+   "img_url": "https://www.youtube.com/watch?v=2pIRdpQhvpU",
+   "img_alt": "Shah Rukh Khan and Kareena Kapoor Khan on the Daddy Cool (KING Version) title card",
+   "img_credit": "The title card of Daddy Cool (KING Version), from the official video on T-Series. Tap the picture to watch it.",
+   "blocks": [
+    {
+     "p": "T-Series released Daddy Cool (KING Version), the second song from Siddharth Anand's KING, on Friday at 7:57 PM IST. It pairs Shah Rukh Khan with Kareena Kapoor Khan for the first time since Ra.One in 2011, the film that gave the pair Chammak Challo. The video runs 1 minute 45 seconds and ends on the line that KING is in cinemas on 24 December."
+    },
+    {
+     "p": "The song is Sachin-Jigar's reworking of Boney M's Daddy Cool, written by Frank Farian and George Reyam, with the original recording licensed from Sony Music India. Kumaar wrote the Hindi lyrics, Arijit Singh and Shilpa Rao sing it, and Vaibhavi Merchant choreographed it. The video is a shared upload on the YouTube channels of T-Series and Zee Music Company, Bollywood Hungama reports."
+    },
+    {
+     "stats": [
+      [
+       "YouTube views",
+       "7,494,167",
+       "read 28 Nov 07:04 IST, 11 hours after release"
+      ],
+      [
+       "YouTube likes",
+       "137,656",
+       "same reading"
+      ],
+      [
+       "SRK's post on X",
+       "1,146,180 views",
+       "16,548 likes, 4,891 reposts; read 07:05 IST"
+      ],
+      [
+       "SRK's Instagram reel",
+       "751.6K likes",
+       "20.1K comments; read 07:06 IST"
+      ],
+      [
+       "Press stories on 27 Nov",
+       "63",
+       "found by our Google News searches"
+      ],
+      [
+       "Days to KING",
+       "26",
+       "opens 24 December 2026"
+      ]
+     ]
+    },
+    {
+     "quote": {
+      "q": "Back with Bebo... song Old School... but still Cool!",
+      "by": "Shah Rukh Khan, on X, 27 Nov 2026"
+     }
+    },
+    {
+     "h": "What the fans said"
+    },
+    {
+     "p": "Most reaction on X was about the pair. Trade analyst Taran Adarsh's post on the reunion drew 234,803 views. Among fans, the most-viewed posts praised the chemistry and the nostalgia; a smaller group called the song a copy of the original, or said it did not match Kareena's earlier dance numbers. Of the 59 new KING videos our YouTube searches found from Friday, 31 were reactions or reviews, nearly all of them of the new song; the most-watched, a review by Filmi Indian, had 252,332 views by Saturday morning."
+    },
+    {
+     "p": "Siddharth Anand had teased the release all day, posting 'The KING of' in the morning and 'ENTERTAINMENT' with the link at 7:59 PM. For comparison, the makers reported 36.3 million views in 24 hours for KING's first song, Tu Mil Jaaye, on 2 November; it stood at 106,654,306 on Saturday morning."
+    },
+    {
+     "links": [
+      [
+       "Watch Daddy Cool (KING Version) on YouTube",
+       "https://www.youtube.com/watch?v=2pIRdpQhvpU"
+      ],
+      [
+       "Shah Rukh Khan's post on X",
+       "https://x.com/iamsrk/status/2126322313167798724"
+      ],
+      [
+       "Bollywood Hungama · the song",
+       "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-reunite-after-15-years-in-daddy-cool-from-king-song-out/"
+      ],
+      [
+       "Next: Shah Rukh Khan at House of Instagram",
+       "?p=2026-11-28-house-of-instagram"
+      ],
+      [
+       "KING Buzz · daily reports",
+       "/king-intelligence/daily.html"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#DaddyCool",
+    "#ShahRukhKhan",
+    "#KareenaKapoorKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-28-house-of-instagram",
+   "n": 2,
+   "date": "2026-11-28",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 24 · The launch",
+   "title": "At House of Instagram, Shah Rukh Khan launches Daddy Cool and talks of a 'kingdom of love'",
+   "deck": "The song was unveiled on stage in Mumbai before more than 700 creators. In conversation with Karan Johar, Shah Rukh Khan gave KING's Instagram bio as a line from the film.",
+   "img": "https://i.ytimg.com/vi/wEDlSyF4cUo/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=wEDlSyF4cUo",
+   "img_alt": "Shah Rukh Khan on stage at the KING event in Mumbai",
+   "img_credit": "Shah Rukh Khan on stage at House of Instagram, from Zoom's video of the event. Tap the picture to watch it.",
+   "blocks": [
+    {
+     "p": "Shah Rukh Khan unveiled Daddy Cool at House of Instagram 2026, Meta's flagship event in Mumbai, on Friday evening. Bollywood Hungama reports that more than 700 content creators from across the country attended. He sat down with filmmaker Karan Johar, watched creators' reels made to Tu Mil Jaaye, and called a few fans on stage, the Indian Express reports."
+    },
+    {
+     "p": "Asked about his fans, he told the audience he does not like the word fandom. 'I really believe I have a kingdom of love,' he said, as reported by the Indian Express."
+    },
+    {
+     "p": "When Karan Johar asked what KING's Instagram bio would say, he first named Johar's own bio as his favourite, then offered a line from the film, Times Now reports: 'Hazaar jurm. Sau deshon mein badnaam. Duniya ne diya sirf ek hi naam... King.' Red Chillies Entertainment used the same words, 'Sau deshon mein badnaam', in its own post for the song."
+    },
+    {
+     "p": "He also spoke to the creators about heartbreak and giving, recited a line from Om Shanti Om, and asked a fan named Raj to imitate him, the Indian Express reports. Zoom's video of his entry had 24,490 views on YouTube by Saturday morning, and Filmfare's post of his open-arms pose on stage drew 35,239 views on X."
+    },
+    {
+     "links": [
+      [
+       "The Indian Express · what he said at the launch",
+       "https://indianexpress.com/article/entertainment/bollywood/what-shah-rukh-khan-said-at-king-song-daddy-cool-launch-10981543/"
+      ],
+      [
+       "Times Now · KING's Instagram bio",
+       "https://www.timesnownews.com/entertainment-news/bollywood/what-should-kings-instagram-bio-say-shah-rukh-khan-has-a-filmy-suggestion-article-156576656"
+      ],
+      [
+       "Zoom · his entry at the event",
+       "https://www.youtube.com/watch?v=wEDlSyF4cUo"
+      ],
+      [
+       "Back: Daddy Cool is out",
+       "?p=2026-11-28-daddy-cool"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#DaddyCool",
+    "#HouseOfInstagram",
+    "#ShahRukhKhan",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-28-king-buzz",
+   "n": 3,
+   "date": "2026-11-28",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 24 · KING Buzz",
+   "title": "KING's four official videos pass 200 million views, 46.7 million ahead of Ramayana's seven",
+   "deck": "With Daddy Cool added, KING's official YouTube videos stand at 200,820,559. Tu Mil Jaaye gained two million views in a day and leads the Doomsday trailer by 14.4 million.",
+   "img": "https://i.ytimg.com/vi/2pIRdpQhvpU/maxres2.jpg",
+   "img_url": "https://www.youtube.com/watch?v=2pIRdpQhvpU",
+   "img_alt": "Shah Rukh Khan and Kareena Kapoor Khan in Daddy Cool",
+   "img_credit": "A frame from Daddy Cool (KING Version), T-Series.",
+   "blocks": [
+    {
+     "p": "KING's official videos on YouTube passed 200 million views on Saturday morning. At 07:03 IST the two teasers and two songs stood at 200,820,559: Title Reveal 53,419,897, Date Announcement 33,252,189, Tu Mil Jaaye 106,654,306 and Daddy Cool 7,494,167. Ramayana's seven official videos stood at 154,143,532, so KING leads by 46,677,027. Counting only the three videos compared until Friday, the lead grew from 37,346,831 to 39,182,860 in a day."
+    },
+    {
+     "stats": [
+      [
+       "KING · 4 official videos",
+       "200,820,559",
+       "read 28 Nov 07:03 IST"
+      ],
+      [
+       "MAATRUBHUMI · 8 videos",
+       "172,567,361",
+       "read 07:17 IST; opens 4 Dec"
+      ],
+      [
+       "RAMAYANA · 7 videos",
+       "154,143,532",
+       "in cinemas since 5 Nov"
+      ],
+      [
+       "DOOMSDAY · official trailer",
+       "92,250,158",
+       "final trailer 67,088,841"
+      ],
+      [
+       "Tu Mil Jaaye",
+       "106,654,306",
+       "+2,005,227 in 24 hours"
+      ],
+      [
+       "@iamsrk on Instagram",
+       "48,483,088",
+       "followers, read 07:05 IST"
+      ]
+     ]
+    },
+    {
+     "p": "Tu Mil Jaaye added 2,005,227 views in 24 hours (1,819,993 the day before) and leads the Doomsday official trailer by 14,404,148. The Doomsday trailer is still 5,578,072 ahead of KING's two teasers. Marvel's final trailer for Doomsday reached 67,088,841 views, and its Hindi version 17,035,890."
+    },
+    {
+     "p": "On Instagram, the #srk hashtag showed 7.8 million posts on Saturday, up from 7.7 million, and #srkking 135,000. On X, our search of Friday's posts about KING and Daddy Cool read 107 posts with 1,831,594 views between them, not counting the official accounts."
+    },
+    {
+     "links": [
+      [
+       "RAMAYANA to KING · the report",
+       "/ramayana-to-king/#report"
+      ],
+      [
+       "DOOM to KING",
+       "/doom-to-king/"
+      ],
+      [
+       "KING Buzz · competition",
+       "/king-intelligence/#competition"
+      ],
+      [
+       "KING Buzz · 28 Nov",
+       "/king-intelligence/daily.html?date=2026-11-28"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#KING",
+    "#KINGBuzz",
+    "#Ramayana",
+    "#SRKDaily"
+   ]
+  },
+  {
+   "id": "2026-11-28-ramayana-1000-crore",
+   "n": 4,
+   "date": "2026-11-28",
+   "time": "09:00 IST",
+   "kicker": "SRK DAILY · Issue 24 · Box office",
+   "title": "Ramayana passes ₹1,000 crore net in India on its 23rd day",
+   "deck": "Nitesh Tiwari's film made ₹8.45 crore on its fourth Friday, taking its India net to ₹1,000.55 crore and its worldwide gross to ₹1,790.10 crore, as reported by Sacnilk.",
+   "img": "https://i.ytimg.com/vi/Ju092MU7aW8/maxresdefault.jpg",
+   "img_url": "https://www.youtube.com/watch?v=Ju092MU7aW8",
+   "img_alt": "Ranbir Kapoor and Sai Pallavi in Ram Ki Sita from Ramayana",
+   "img_credit": "Ram Ki Sita, Ramayana's new song video, released by T-Series on 27 Nov.",
+   "blocks": [
+    {
+     "p": "Ramayana crossed ₹1,000 crore net in India on Friday, its 23rd day in cinemas. Sacnilk reports ₹8.45 crore net for the day across 6,584 shows, down 12.4% from Thursday's ₹9.65 crore, taking the India total to ₹1,000.55 crore net and ₹1,195.10 crore gross. Its worldwide gross is ₹1,790.10 crore, with ₹595.00 crore from overseas, which Sacnilk calls a rough estimate."
+    },
+    {
+     "stats": [
+      [
+       "Day 23 · Fri 27 Nov",
+       "₹8.45 crore",
+       "India net, all languages"
+      ],
+      [
+       "Hindi, day 23",
+       "₹5.00 crore",
+       "4,976 shows"
+      ],
+      [
+       "India net · 23 days",
+       "₹1,000.55 crore",
+       "Hindi ₹757.65 crore, 75.7%"
+      ],
+      [
+       "India gross · 23 days",
+       "₹1,195.10 crore",
+       ""
+      ],
+      [
+       "Worldwide gross",
+       "₹1,790.10 crore",
+       "Sacnilk, updated 27 Nov 10:27 PM IST"
+      ],
+      [
+       "Footfalls so far",
+       "4,17,51,090",
+       "as reported by Sacnilk"
+      ]
+     ]
+    },
+    {
+     "p": "The film's makers released a new song video on Friday afternoon: Ram Ki Sita, with Ranbir Kapoor and Sai Pallavi, posted by T-Series at 1:09 PM IST, had 823,910 views by Saturday morning. Ravana Tandav came out a day earlier. KING opens on 24 December, 49 days after Ramayana."
+    },
+    {
+     "links": [
+      [
+       "Sacnilk · Ramayana day 23",
+       "https://www.sacnilk.com/quicknews/ramayana_part_1_2026_Box_Office_Collection_Day_23"
+      ],
+      [
+       "RAMAYANA to KING",
+       "/ramayana-to-king/#report"
+      ]
+     ]
+    }
+   ],
+   "tags": [
+    "#Ramayana",
+    "#BoxOffice",
+    "#KING",
+    "#SRKDaily"
+   ]
+  },
+  {
    "id": "2026-11-24-daddy-cool",
    "n": 1,
    "date": "2026-11-24",
@@ -9158,39 +9470,39 @@
   }
  ],
  "poll": {
-  "id": "runtime-2026-11-27",
-  "q": "Fandango lists KING at 3 hours 17 minutes. How long do you want it?",
+  "id": "daddy-cool-2026-11-28",
+  "q": "Daddy Cool (KING Version) is out. Your verdict?",
   "o": [
-   "The longer the better",
-   "Up to three hours",
-   "Under two and a half hours",
-   "Length doesn't matter, it's SRK"
+   "Banger, on repeat",
+   "SRK and Kareena steal it",
+   "I prefer Tu Mil Jaaye",
+   "Waiting for the title track"
   ]
  },
  "beat": [
   {
-   "t": "KING: 3 hr 17 min",
-   "d": "The runtime Fandango lists for KING.",
-   "img": "/assets/srk-daily/2026-11-27-king-fandango.jpg",
-   "url": "?p=2026-11-27-king-runtime"
+   "t": "Daddy Cool: 7.49M views",
+   "d": "KING's second song, in its first 11 hours.",
+   "img": "/assets/srk-daily/2026-11-28-daddy-cool.jpg",
+   "url": "?p=2026-11-28-daddy-cool"
   },
   {
-   "t": "'It's Time For'",
-   "d": "Siddharth Anand's post; next song reported for 27 Nov.",
-   "img": "https://i.ytimg.com/vi/Uu2QK9Z9X5E/maxres2.jpg",
-   "url": "?p=2026-11-27-its-time-for"
+   "t": "'A kingdom of love'",
+   "d": "SRK at House of Instagram, Mumbai.",
+   "img": "https://i.ytimg.com/vi/wEDlSyF4cUo/maxresdefault.jpg",
+   "url": "?p=2026-11-28-house-of-instagram"
   },
   {
-   "t": "KING: 191.2M views",
-   "d": "Three official videos, 37.3M ahead of Ramayana's seven.",
-   "img": "https://i.ytimg.com/vi/BPZkZpGMpXA/maxres2.jpg",
-   "url": "?p=2026-11-27-king-buzz"
+   "t": "KING: 200.8M views",
+   "d": "Four official videos, 46.7M ahead of Ramayana's seven.",
+   "img": "https://i.ytimg.com/vi/2pIRdpQhvpU/maxres2.jpg",
+   "url": "?p=2026-11-28-king-buzz"
   },
   {
-   "t": "Ramayana: ₹992.10 cr",
-   "d": "₹7.90 crore short of ₹1,000 crore net in India.",
-   "img": "https://i.ytimg.com/vi/T0Uduwg2W2w/maxres2.jpg",
-   "url": "?p=2026-11-27-ramayana-day-22"
+   "t": "Ramayana: ₹1,000.55 cr",
+   "d": "Past ₹1,000 crore net in India on day 23.",
+   "img": "https://i.ytimg.com/vi/Ju092MU7aW8/maxresdefault.jpg",
+   "url": "?p=2026-11-28-ramayana-1000-crore"
   }
  ],
  "fanverse": {

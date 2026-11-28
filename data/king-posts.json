@@ -1544,6 +1544,73 @@
       "likes": 10273,
       "views": 726818
      }
+    },
+    {
+     "at": "2026-11-28T07:05:00+05:30",
+     "metrics": {
+      "replies": 681,
+      "reposts": 1984,
+      "likes": 10379,
+      "views": 741585
+     }
+    }
+   ]
+  },
+  {
+   "id": "daddy-cool-srk-x-2026-11-27",
+   "release": "daddy-cool-2026-11-27",
+   "title": "Back with Bebo... song Old School... but still Cool! Daddy Cool (King Version) song out now.",
+   "account": "@iamsrk",
+   "platform": "X",
+   "url": "https://x.com/iamsrk/status/2126322313167798724",
+   "posted_at": "2026-11-27T19:58:39+05:30",
+   "readings": [
+    {
+     "at": "2026-11-28T07:05:00+05:30",
+     "metrics": {
+      "replies": 1098,
+      "reposts": 4891,
+      "likes": 16548,
+      "views": 1146180
+     }
+    }
+   ]
+  },
+  {
+   "id": "daddy-cool-srk-ig-2026-11-27",
+   "release": "daddy-cool-2026-11-27",
+   "title": "Back with Bebo... song Old School... but still Cool! (collab reel)",
+   "account": "@iamsrk",
+   "platform": "Instagram",
+   "url": "https://www.instagram.com/iamsrk/reel/DgP5aG4IbsL/",
+   "posted_at": "2026-11-27T20:00:22+05:30",
+   "readings": [
+    {
+     "at": "2026-11-28T07:06:00+05:30",
+     "metrics": {
+      "likes": 751600,
+      "comments": 20100
+     }
+    }
+   ]
+  },
+  {
+   "id": "daddy-cool-rce-x-2026-11-27",
+   "release": "daddy-cool-2026-11-27",
+   "title": "Sau deshon mein badnaam... aur ab ek aur naam. Daddy Cool (King version) out now!",
+   "account": "@redchilliesent",
+   "platform": "X",
+   "url": "https://x.com/RedChilliesEnt/status/2126323298229498030",
+   "posted_at": "2026-11-27T20:02:34+05:30",
+   "readings": [
+    {
+     "at": "2026-11-28T07:15:00+05:30",
+     "metrics": {
+      "replies": 42,
+      "reposts": 881,
+      "likes": 2710,
+      "views": 34232
+     }
     }
    ]
   }
